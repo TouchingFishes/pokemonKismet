@@ -2432,4 +2432,57 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    // ---- Kismet custom abilities ----
+
+    [ABILITY_CACOPHONY] =
+    {
+        .name = _("CACOPHONY"),
+        // The fork hardcodes five moves (Snore, Uproar, Hyper Voice, Bug Buzz,
+        // Boomburst) because 1.x had no sound flag. 2.0 has one, so this keys
+        // off IsSoundMove and covers every sound move, which is what the
+        // fork's own description promises.
+        .description = COMPOUND_STRING("Powers up sound moves."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_CHITINIZE] =
+    {
+        .name = _("CHITINIZE"),
+        .description = COMPOUND_STRING("Normal moves turn Bug."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_IMMOLATE] =
+    {
+        .name = _("IMMOLATE"),
+        .description = COMPOUND_STRING("Normal moves turn Fire."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_PSI_CONDUIT] =
+    {
+        .name = _("PSI CONDUIT"),
+        .description = COMPOUND_STRING("Ups Psychic-type moves."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_SKITTISH] =
+    {
+        .name = _("SKITTISH"),
+        // Run Away and Early Bird in one: always escapes, and burns sleep
+        // turns twice as fast.
+        .description = COMPOUND_STRING("Wakes easily and flees."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_PUGILIST] =
+    {
+        .name = _("PUGILIST"),
+        // Iron Fist's mechanic at 1.6x instead of 1.2x. Uses IsPunchingMove, so
+        // it picks up every punching move automatically. Intended as
+        // Hitmonchan's sole ability - not yet assigned in species_info.
+        .description = COMPOUND_STRING("Greatly ups punching moves."),
+        .aiRating = 8,
+    },
 };

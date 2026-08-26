@@ -4241,7 +4241,9 @@ u8 IsRunningFromBattleImpossible(enum BattlerId battler)
         return BATTLE_RUN_SUCCESS;
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
         return BATTLE_RUN_SUCCESS;
-    if (GetBattlerAbility(battler) == ABILITY_RUN_AWAY)
+    // Kismet: Skittish is Run Away and Early Bird in one ability.
+    if (GetBattlerAbility(battler) == ABILITY_RUN_AWAY
+     || GetBattlerAbility(battler) == ABILITY_SKITTISH)
         return BATTLE_RUN_SUCCESS;
 
     if ((i = IsAbilityPreventingEscape(battler)))
@@ -6094,6 +6096,12 @@ enum Type TrySetAteType(enum Move move, enum BattlerId battlerAtk, enum Ability 
         break;
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
+        break;
+    case ABILITY_CHITINIZE: // Kismet custom
+        ateType = TYPE_BUG;
+        break;
+    case ABILITY_IMMOLATE: // Kismet custom
+        ateType = TYPE_FIRE;
         break;
     default:
         ateType = TYPE_NONE;

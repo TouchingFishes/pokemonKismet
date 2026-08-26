@@ -148,7 +148,9 @@ u32 BattlePalace_TryEscapeStatus(enum BattlerId battler)
                 {
                     u32 toSub;
 
-                    if (GetBattlerAbility(battler) == ABILITY_EARLY_BIRD)
+                    // Kismet: Skittish is Run Away and Early Bird in one ability.
+                    if (GetBattlerAbility(battler) == ABILITY_EARLY_BIRD
+                     || GetBattlerAbility(battler) == ABILITY_SKITTISH)
                         toSub = 2;
                     else
                         toSub = 1;

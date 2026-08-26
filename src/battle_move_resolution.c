@@ -124,7 +124,9 @@ static enum CancelerResult CancelerAsleepOrFrozen(struct BattleContext *ctx)
         else
         {
             u32 toSub;
-            if (IsAbilityAndRecord(ctx->battlerAtk, ctx->abilityAtk, ABILITY_EARLY_BIRD))
+            // Kismet: Skittish is Run Away and Early Bird in one ability.
+            if (IsAbilityAndRecord(ctx->battlerAtk, ctx->abilityAtk, ABILITY_EARLY_BIRD)
+             || IsAbilityAndRecord(ctx->battlerAtk, ctx->abilityAtk, ABILITY_SKITTISH))
                 toSub = 2;
             else
                 toSub = 1;

@@ -166,7 +166,7 @@
     F(B_PICKUP_WILD,               pickupWild,              (u32, GEN_COUNT - 1)) \
     F(B_MAGIC_GUARD,               magicGuard,              (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_BATTLE_BOND,               battleBond,              (u32, GEN_COUNT - 1)) \
-    F(B_ATE_MULTIPLIER,            ateMultiplier,           (u32, GEN_COUNT - 1)) \
+    F(B_ATE_MULTIPLIER,            ateMultiplier,           (u32, CUSTOM_FOR_KISMET)) \
     F(B_DEFIANT_STICKY_WEB,        defiantStickyWeb,        (u32, GEN_COUNT - 1)) \
     F(B_INFILTRATOR_SUBSTITUTE,    infiltratorSubstitute,   (u32, GEN_COUNT - 1)) \
     /* Item settings */ \

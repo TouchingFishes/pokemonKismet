@@ -569,7 +569,10 @@ bool32 TryRunFromBattle(enum BattlerId battler)
     {
         effect++;
     }
-    else if (GetBattlerAbility(battler) == ABILITY_RUN_AWAY)
+    // Kismet: Skittish is Run Away and Early Bird in one ability. gLastUsedAbility
+    // takes whichever one actually fired, so the message names the right ability.
+    else if (GetBattlerAbility(battler) == ABILITY_RUN_AWAY
+          || GetBattlerAbility(battler) == ABILITY_SKITTISH)
     {
         if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
         {
@@ -578,14 +581,14 @@ bool32 TryRunFromBattle(enum BattlerId battler)
             speedVar = (gBattleMons[battler].speed * pyramidMultiplier) / (gBattleMons[BATTLE_OPPOSITE(battler)].speed) + (gBattleStruct->runTries * 30);
             if (speedVar > (Random() & 0xFF))
             {
-                gLastUsedAbility = ABILITY_RUN_AWAY;
+                gLastUsedAbility = GetBattlerAbility(battler);
                 gProtectStructs[battler].fleeType = FLEE_ABILITY;
                 effect++;
             }
         }
         else
         {
-            gLastUsedAbility = ABILITY_RUN_AWAY;
+            gLastUsedAbility = GetBattlerAbility(battler);
             gProtectStructs[battler].fleeType = FLEE_ABILITY;
             effect++;
         }
@@ -685,6 +688,7 @@ void HandleAction_Run(void)
         {
             if (GetBattlerHoldEffect(gBattlerAttacker) != HOLD_EFFECT_CAN_ALWAYS_RUN
              && GetBattlerAbility(gBattlerAttacker) != ABILITY_RUN_AWAY
+             && GetBattlerAbility(gBattlerAttacker) != ABILITY_SKITTISH // Kismet
              && !CanBattlerEscape(gBattlerAttacker))
             {
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ATTACKER_CANT_ESCAPE;
@@ -6568,6 +6572,18 @@ static inline u32 CalcMoveBasePower(struct BattleContext *ctx)
     return basePower;
 }
 
+// Kismet: the -ate multiplier lives here so every -ate ability shares one value.
+// Stock expansion splits 1.2 (Gen7+) from 1.3 (earlier), and gives Normalize no
+// boost at all before Gen7. CUSTOM_FOR_KISMET gives all of them a flat 1.3 -
+// Normalize and the custom Chitinize / Immolate included. Change the value here,
+// or set B_ATE_MULTIPLIER back to GEN_LATEST in config/battle.h for stock rules.
+static inline uq4_12_t GetAteMultiplier(void)
+{
+    if (GetConfig(B_ATE_MULTIPLIER) == CUSTOM_FOR_KISMET)
+        return UQ_4_12(1.3);
+    return UQ_4_12(GetConfig(B_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3);
+}
+
 static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
 {
     u32 holdEffectParamAtk;
@@ -6670,6 +6686,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
         if (IsPunchingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
+    case ABILITY_PUGILIST: // Kismet custom: Iron Fist's mechanic, 1.6x instead of 1.2x
+        if (IsPunchingMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.6));
+        break;
     case ABILITY_SHEER_FORCE:
         if (MoveIsAffectedBySheerForce(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
@@ -6711,27 +6731,39 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
         break;
     case ABILITY_PIXILATE:
         if (moveType == TYPE_FAIRY && gBattleStruct->battlerState[battlerAtk].ateBoost)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(B_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
+            modifier = uq4_12_multiply(modifier, GetAteMultiplier());
         break;
     case ABILITY_GALVANIZE:
         if (moveType == TYPE_ELECTRIC && gBattleStruct->battlerState[battlerAtk].ateBoost)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(B_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
+            modifier = uq4_12_multiply(modifier, GetAteMultiplier());
         break;
     case ABILITY_REFRIGERATE:
         if (moveType == TYPE_ICE && gBattleStruct->battlerState[battlerAtk].ateBoost)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(B_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
+            modifier = uq4_12_multiply(modifier, GetAteMultiplier());
         break;
     case ABILITY_AERILATE:
         if (moveType == TYPE_FLYING && gBattleStruct->battlerState[battlerAtk].ateBoost)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(B_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
+            modifier = uq4_12_multiply(modifier, GetAteMultiplier());
         break;
     case ABILITY_NORMALIZE:
         if (moveType == TYPE_NORMAL && gBattleStruct->battlerState[battlerAtk].ateBoost && GetConfig(B_ATE_MULTIPLIER) >= GEN_7)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+            modifier = uq4_12_multiply(modifier, GetAteMultiplier());
+        break;
+    case ABILITY_CHITINIZE: // Kismet custom
+        if (moveType == TYPE_BUG && gBattleStruct->battlerState[battlerAtk].ateBoost)
+            modifier = uq4_12_multiply(modifier, GetAteMultiplier());
+        break;
+    case ABILITY_IMMOLATE: // Kismet custom
+        if (moveType == TYPE_FIRE && gBattleStruct->battlerState[battlerAtk].ateBoost)
+            modifier = uq4_12_multiply(modifier, GetAteMultiplier());
         break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
+    case ABILITY_CACOPHONY: // Kismet custom: Punk Rock's offence, none of its defence
+        if (IsSoundMove(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_STEELY_SPIRIT:
         if (moveType == TYPE_STEEL)
@@ -7077,6 +7109,10 @@ static inline u32 CalcAttackStat(struct BattleContext *ctx)
     case ABILITY_ROCKY_PAYLOAD:
         if (moveType == TYPE_ROCK)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_PSI_CONDUIT: // Kismet custom. 1.75x is the fork's value - higher
+        if (moveType == TYPE_PSYCHIC) // than any official type-boost ability.
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.75));
         break;
     case ABILITY_PROTOSYNTHESIS:
         if (!(gBattleMons[battlerAtk].volatiles.transformed))

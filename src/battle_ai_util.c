@@ -3865,8 +3865,10 @@ bool32 IsWakeupTurn(enum BattlerId battler)
     if (sleepTurns == 0)
         return FALSE;
 
-    // Early Bird reduces the sleep timer twice as fast.
-    if (gAiLogicData->abilities[battler] == ABILITY_EARLY_BIRD)
+    // Early Bird reduces the sleep timer twice as fast. So does Kismet's
+    // Skittish, which bundles Early Bird with Run Away.
+    if (gAiLogicData->abilities[battler] == ABILITY_EARLY_BIRD
+     || gAiLogicData->abilities[battler] == ABILITY_SKITTISH)
         toSub = 2;
     else
         toSub = 1;

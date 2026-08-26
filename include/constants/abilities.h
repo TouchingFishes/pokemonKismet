@@ -333,7 +333,18 @@ enum __attribute__((packed)) Ability
     ABILITY_TERAFORM_ZERO = 309,
     ABILITY_POISON_PUPPETEER = 310,
     ABILITIES_COUNT_GEN9,
-    ABILITIES_COUNT = ABILITIES_COUNT_GEN9,
+
+    // Add any custom abilities here, not further up - the entries above are
+    // official and their numbering is shared with upstream data.
+    // Kismet custom abilities, ported over.
+    ABILITY_CACOPHONY = ABILITIES_COUNT_GEN9,
+    ABILITY_CHITINIZE,
+    ABILITY_IMMOLATE,
+    ABILITY_PSI_CONDUIT,
+    ABILITY_SKITTISH,
+    ABILITY_PUGILIST,
+
+    ABILITIES_COUNT,
 };
 
 #endif  // GUARD_CONSTANTS_ABILITIES_H
