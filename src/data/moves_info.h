@@ -21408,6 +21408,72 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
+    // ---- Kismet custom moves, ported from pokemonHnS ----
+    [MOVE_DRAIN_LIFE] =
+    {
+        .name = COMPOUND_STRING("DRAIN LIFE"),
+        .description = COMPOUND_STRING(
+            "An attack that absorbs\n"
+            "half the damage inflicted."),
+        .effect = EFFECT_ABSORB,
+        .power = 60,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .absorbPercentage = 50 },
+        .makesContact = TRUE,
+        .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_3 || B_UPDATED_MOVE_FLAGS == GEN_4),
+        .battleAnimScript = gBattleAnimMove_DrainLife,
+    },
+
+    [MOVE_BRAIN_FREEZE] =
+    {
+        .name = COMPOUND_STRING("BRAIN FREEZE"),
+        .description = COMPOUND_STRING(
+            "A chilling blast that may\n"
+            "confuse or freeze the foe."),
+        .effect = EFFECT_HIT,
+        .power = 85,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 15,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS(
+        {
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 15,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+            .chance = 15,
+        }),
+        .battleAnimScript = gBattleAnimMove_BrainFreeze,
+    },
+
+    [MOVE_METAMORPH] =
+    {
+        .name = COMPOUND_STRING("METAMORPH"),
+        .description = COMPOUND_STRING(
+            "Cocoons up, then raises\n"
+            "Attack, Sp. Atk & Speed."),
+        .effect = EFFECT_METAMORPH,
+        .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 0,
+        .pp = 10,
+        .target = TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .snatchAffected = TRUE,
+        .argument.twoTurnAttack = { .stringId = STRINGID_PKMNSPUNCOCOON },
+        .battleAnimScript = gBattleAnimMove_Metamorph,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

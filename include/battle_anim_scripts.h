@@ -850,6 +850,11 @@ extern const u8 gBattleAnimMove_SupercellSlam[];
 extern const u8 gBattleAnimMove_PsychicNoise[];
 extern const u8 gBattleAnimMove_UpperHand[];
 extern const u8 gBattleAnimMove_MalignantChain[];
+
+// Kismet custom moves, ported from pokemonHnS.
+extern const u8 gBattleAnimMove_DrainLife[];
+extern const u8 gBattleAnimMove_BrainFreeze[];
+extern const u8 gBattleAnimMove_Metamorph[];
 extern const u8 gBattleAnimMove_BreakneckBlitz[];
 extern const u8 gBattleAnimMove_AllOutPummeling[];
 extern const u8 gBattleAnimMove_SupersonicSkystrike[];

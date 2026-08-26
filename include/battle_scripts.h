@@ -765,6 +765,7 @@ extern const u8 BattleScript_EffectStrengthSap[];
 extern const u8 BattleScript_EffectPurify[];
 extern const u8 BattleScript_EffectShoreUp[];
 extern const u8 BattleScript_EffectGeomancy[];
+extern const u8 BattleScript_EffectMetamorph[]; // Kismet custom
 extern const u8 BattleScript_EffectFairyLock[];
 extern const u8 BattleScript_EffectAllySwitch[];
 extern const u8 BattleScript_MoveEffectEerieSpell[];
