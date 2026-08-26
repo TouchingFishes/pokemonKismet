@@ -72,6 +72,19 @@
 // Changing GEN_LATEST's value to a different Generation will change every default setting that uses it at once.
 #define GEN_LATEST GEN_9
 
+// Kismet's own balance pass, selectable like a generation. Computed from GEN_COUNT
+// rather than hardcoded, so it moves automatically if a generation is ever added -
+// a literal would collide with GEN_10 the moment one exists. Properties relied on:
+//   - sits above every real GEN_x, so all `>= GEN_x` tests stay true and expansion's
+//     latest data remains the fallback for moves Kismet does not override;
+//   - all `== GEN_x` tests stay false (they only ever target GEN_1..GEN_5);
+//   - takes the first slot after overworld.h's GEN_6_ORAS / GEN_8_PLA / TIME_DEBUG
+//     (GEN_COUNT + 1..+3), so no two sentinels ever share a number;
+//   - fits the config bitfields in generational_changes.h, which size themselves
+//     from this value via BIT_SIZE.
+// Set a gate back to GEN_LATEST to get stock expansion behaviour for it.
+#define CUSTOM_FOR_KISMET (GEN_COUNT + 4)
+
 // General settings
 #define EXPANSION_INTRO              TRUE    // If TRUE, a custom RHH intro will play after the vanilla copyright screen.
 #define HQ_RANDOM                    TRUE    // If TRUE, replaces the default RNG with an implementation of SFC32 RNG. May break code that relies on RNG.

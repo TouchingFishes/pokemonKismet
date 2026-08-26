@@ -60,8 +60,8 @@
     F(B_RECALC_TURN_AFTER_ACTIONS, recalcTurnAfterActions,  (u32, GEN_COUNT - 1)) \
     F(B_FAINT_SWITCH_IN,           faintSwitchIn,           (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     /* Move data settings */ \
-    F(B_UPDATED_MOVE_DATA,         updatedMoveData,         (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
-    F(B_UPDATED_MOVE_TYPES,        updatedMoveTypes,        (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
+    F(B_UPDATED_MOVE_DATA,         updatedMoveData,         (u32, CUSTOM_FOR_KISMET)) /* TODO: use in tests */ \
+    F(B_UPDATED_MOVE_TYPES,        updatedMoveTypes,        (u32, CUSTOM_FOR_KISMET)) /* TODO: use in tests */ \
     F(B_UPDATED_MOVE_FLAGS,        updatedMoveFlags,        (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_PHYSICAL_SPECIAL_SPLIT,    physicalSpecialSplit,    (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_RECOIL_IF_MISS_DMG,        recoilIfMissDmg,         (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
