@@ -527,6 +527,10 @@ const u16 gItemIconPalette_IceStone[] = INCBIN_U16("graphics/items/icon_palettes
 const u32 gItemIcon_SunStone[] = INCBIN_U32("graphics/items/icons/sun_stone.4bpp.smol");
 const u16 gItemIconPalette_SunStone[] = INCBIN_U16("graphics/items/icon_palettes/sun_stone.gbapal");
 
+// Kismet custom
+const u32 gItemIcon_StarlitShard[] = INCBIN_U32("graphics/items/icons/starlit_shard.4bpp.smol");
+const u16 gItemIconPalette_StarlitShard[] = INCBIN_U16("graphics/items/icon_palettes/starlit_shard.gbapal");
+
 const u32 gItemIcon_MoonStone[] = INCBIN_U32("graphics/items/icons/moon_stone.4bpp.smol");
 const u16 gItemIconPalette_MoonStone[] = INCBIN_U16("graphics/items/icon_palettes/moon_stone.gbapal");
 

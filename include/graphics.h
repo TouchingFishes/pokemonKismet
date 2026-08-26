@@ -849,6 +849,8 @@ extern const u16 gItemIconPalette_LeafStone[];
 extern const u32 gItemIcon_IceStone[];
 extern const u16 gItemIconPalette_IceStone[];
 extern const u32 gItemIcon_SunStone[];
+extern const u32 gItemIcon_StarlitShard[]; // Kismet custom
+extern const u16 gItemIconPalette_StarlitShard[]; // Kismet custom
 extern const u16 gItemIconPalette_SunStone[];
 extern const u32 gItemIcon_MoonStone[];
 extern const u16 gItemIconPalette_MoonStone[];

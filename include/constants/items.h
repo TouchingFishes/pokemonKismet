@@ -1081,6 +1081,9 @@ enum __attribute__((packed)) Item
     ITEM_UNUSED_BERRY_3,
     ITEM_AZURE_FLUTE,
 
+    // Kismet custom items, ported from pokemonHnS.
+    ITEM_STARLIT_SHARD,
+
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
 };

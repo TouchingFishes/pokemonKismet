@@ -4214,6 +4214,25 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_IceStone,
     },
 
+    // ---- Kismet custom items, ported from pokemonHnS ----
+    [ITEM_STARLIT_SHARD] =
+    {
+        .name = ITEM_NAME("STARLIT SHARD"),
+        .price = 0, // unsellable in the fork
+        .description = COMPOUND_STRING(
+            "A shard of falling\n"
+            "star. Wondrously\n"
+            "rare. Evolves one."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_EVOLUTION_STONE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
+        .flingPower = 30,
+        .iconPic = gItemIcon_StarlitShard,
+        .iconPalette = gItemIconPalette_StarlitShard,
+    },
+
     [ITEM_SUN_STONE] =
     {
         .name = ITEM_NAME("SUN STONE"),
