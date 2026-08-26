@@ -12637,9 +12637,17 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_SLUDGE_WAVE] =
     {
         .name = COMPOUND_STRING("SLUDGE WAVE"),
+        // Gated with the mechanic: the Kismet version also cuts Speed,
+        // and a description that omits that is misleading in-game.
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+        .description = COMPOUND_STRING(
+            "A wave of sludge that may\n"
+            "poison or lower Speed."),
+        #else
         .description = COMPOUND_STRING(
             "Swamps all others with a wave\n"
             "of sludge. May also poison."),
+        #endif
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 100 : 95,
         .type = TYPE_POISON,
@@ -12648,10 +12656,29 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_FOES_AND_ALLY,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_POISON,
-            .chance = 10,
-        }),
+        // HnS replaces the poison outright with a Speed drop - its
+        // BattleScript_EffectSludgeWave is just `setmoveeffect
+        // MOVE_EFFECT_SPD_MINUS_1`, which was the only way to retarget a
+        // secondary in the 1.x engine. Kismet keeps both. 2.0 needs no bespoke
+        // effect for this: additionalEffects takes several entries with
+        // independent chances. 15% is HnS's retuned rate (stock is 10).
+        // An #if rather than a ternary because the entry count differs.
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+            .additionalEffects = ADDITIONAL_EFFECTS(
+            {
+                .moveEffect = MOVE_EFFECT_POISON,
+                .chance = 15,
+            },
+            {
+                .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
+                .chance = 15,
+            }),
+        #else
+            .additionalEffects = ADDITIONAL_EFFECTS({
+                .moveEffect = MOVE_EFFECT_POISON,
+                .chance = 10,
+            }),
+        #endif
         .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,

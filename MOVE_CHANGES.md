@@ -18,7 +18,7 @@ Regenerate with `py -3 .claude/gen_move_changes.py`. Do not hand-edit — it is 
 | | |
 |---|---:|
 | Moves changed | 118 |
-| Field changes applied | 162 |
+| Field changes applied | 163 |
 | …whose base value is itself a gen-gated expression | 60 |
 | Excluded by decision | 8 |
 | Representation-only differences, not ported | 37 |
@@ -57,7 +57,7 @@ Nothing is hardcoded. `include/config/general.h` defines `CUSTOM_FOR_KISMET` as 
 
 To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATED_MOVE_TYPES` in `include/config/battle.h` back to `GEN_LATEST`. The two gates are independent: types and numeric data can be reverted separately.
 
-60 of the 162 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
+60 of the 163 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
 
 ## All changes
 
@@ -193,6 +193,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `SKY_ATTACK` | Power | 140 | **180** |  |
 | `SKY_UPPERCUT` | Power | 85 | **110** |  |
 | `SLUDGE_WAVE` | Accuracy | 100 | **85** |  |
+| `SLUDGE_WAVE` | additionalEffect | POISON @10% | **POISON @15% + SPD_MINUS_1 @15%** |  |
 | `SLUDGE_WAVE` | Power | 95 | **100** |  |
 | `SMOG` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 30 : 20) | **50** | yes |
 | `SNORE` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 50 : 40) | **75** | yes |
