@@ -5748,6 +5748,7 @@ static const struct {
     u8 altType;
 } sFairyMoveAltTypes[] = {
     { MOVE_FAIRY_WIND,           TYPE_NORMAL   },
+    { MOVE_GLITTER_WIND,         TYPE_FLYING   },  // Kismet custom; HnS stored it as Flying
     { MOVE_DISARMING_VOICE,      TYPE_NORMAL   },
     { MOVE_DAZZLING_GLEAM,       TYPE_NORMAL   },
     { MOVE_MOONBLAST,            TYPE_DARK     },

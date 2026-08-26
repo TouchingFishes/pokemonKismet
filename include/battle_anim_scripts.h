@@ -587,6 +587,7 @@ extern const u8 gBattleAnimMove_MistyTerrain[];
 extern const u8 gBattleAnimMove_Electrify[];
 extern const u8 gBattleAnimMove_PlayRough[];
 extern const u8 gBattleAnimMove_FairyWind[];
+extern const u8 gBattleAnimMove_GlitterWind[]; // Kismet custom
 extern const u8 gBattleAnimMove_Moonblast[];
 extern const u8 gBattleAnimMove_Boomburst[];
 extern const u8 gBattleAnimMove_FairyLock[];

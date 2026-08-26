@@ -910,6 +910,7 @@ enum __attribute__((packed)) Move
     MOVE_DRAIN_LIFE = MOVES_COUNT_GEN9,
     MOVE_BRAIN_FREEZE,
     MOVE_METAMORPH,
+    MOVE_GLITTER_WIND,
 
     MOVES_COUNT,
 

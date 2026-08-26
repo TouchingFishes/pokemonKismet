@@ -2978,6 +2978,7 @@ bool32 IsAttackBoostMoveEffect(enum BattleMoveEffects effect)
     case EFFECT_BULK_UP:
     case EFFECT_GROWTH:
     case EFFECT_FILLET_AWAY:
+    case EFFECT_METAMORPH: // Kismet custom; raises Atk alongside SpAtk and Speed
         return TRUE;
     default:
         return FALSE;
@@ -3020,6 +3021,7 @@ bool32 IsStatRaisingEffect(enum BattleMoveEffects effect)
     case EFFECT_QUIVER_DANCE:
     case EFFECT_BULK_UP:
     case EFFECT_GEOMANCY:
+    case EFFECT_METAMORPH: // Kismet custom
     case EFFECT_STOCKPILE:
     case EFFECT_VICTORY_DANCE:
         return TRUE;

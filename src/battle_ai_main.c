@@ -1581,6 +1581,20 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
         else if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_DEF))
             ADJUST_SCORE(-6);
         break;
+    case EFFECT_METAMORPH: // Kismet custom: +1 Atk / +1 SpAtk / +2 Speed
+        // Mixed setup, unlike the single-category cases above: either attacking
+        // category makes it worthwhile, and it raises no defensive stat.
+        if (AI_IsAbilityOnSide(battlerDef, ABILITY_UNAWARE))
+            ADJUST_SCORE(-10);
+        if (!HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL)
+         && !HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL))
+            ADJUST_SCORE(-10);
+        else if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_ATK)
+              && !BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPATK))
+            ADJUST_SCORE(-10);
+        else if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPEED))
+            ADJUST_SCORE(-8);
+        break;
     case EFFECT_SHIFT_GEAR:
         if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_ATK) || !HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL))
             ADJUST_SCORE(-10);
@@ -5380,6 +5394,25 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
             ADJUST_SCORE(statUpScore);
         break;
     }
+    case EFFECT_METAMORPH: // Kismet custom: +1 Atk / +1 SpAtk / +2 Speed
+    {
+        s32 statUpScore = 0;
+
+        // Two-turn, so Power Herb skipping the charge is worth as much here as
+        // it is for Geomancy above.
+        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_POWER_HERB)
+            ADJUST_SCORE(GOOD_EFFECT);
+
+        statUpScore += IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED);
+        statUpScore += IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_ATK);
+        statUpScore += IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK);
+
+        if (statUpScore > BEST_EFFECT)
+            ADJUST_SCORE(BEST_EFFECT);
+        else
+            ADJUST_SCORE(statUpScore);
+        break;
+    }
     case EFFECT_SHELL_SMASH:
     {
         if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_WHITE_HERB)
@@ -6390,6 +6423,7 @@ static s32 AI_ForceSetupFirstTurn(enum BattlerId battlerAtk, enum BattlerId batt
     case EFFECT_WEATHER:
     case EFFECT_WEATHER_AND_SWITCH:
     case EFFECT_GEOMANCY:
+    case EFFECT_METAMORPH: // Kismet custom
     case EFFECT_VICTORY_DANCE:
     case EFFECT_CEASELESS_EDGE:
     case EFFECT_STONE_AXE:

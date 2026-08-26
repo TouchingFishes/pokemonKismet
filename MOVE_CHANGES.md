@@ -17,16 +17,39 @@ Regenerate with `py -3 .claude/gen_move_changes.py`. Do not hand-edit — it is 
 
 | | |
 |---|---:|
-| Moves changed | 116 |
-| Field changes applied | 154 |
+| Moves changed | 118 |
+| Field changes applied | 162 |
 | …whose base value is itself a gen-gated expression | 60 |
-| Excluded by decision | 1 |
+| Excluded by decision | 8 |
 | Representation-only differences, not ported | 37 |
+
+### Shipped as a separate custom move
+
+The old fork gave these official moves a different move's mechanics. Porting the stats would overwrite a move that should stay stock, so the fork's version ships under its own constant and the official move is left alone. (The inverse of the reskin case, where a custom *name* hides an official move.)
+
+- **FAIRY_WIND** → `MOVE_GLITTER_WIND` — differs in power, pp, type. The official `FAIRY_WIND` keeps 2.0's data.
 
 ### Excluded
 
 - **BLOOD_MOON** accuracy — 2.0 keeps `100`, fork had `90`. Excluded by Moritz; deliberate exception.
 - **BLOOD_MOON** type — 2.0 keeps `NORMAL`, fork had `GHOST`. Excluded by Moritz; deliberate exception.
+
+### Conditional-Fairy types — deliberately not ported
+
+Both trees let the player switch the Fairy type off, but with opposite polarity. The old fork stores the *fallback* type and upgrades to Fairy at runtime; 2.0 stores `TYPE_FAIRY` and downgrades through `sFairyMoveAltTypes` (`src/pokemon.c`) when the setting is off.
+
+So the fork's stored type is an implementation detail, not a balance decision. Porting it **disables the feature**: `GetMoveType` keys off `type == TYPE_FAIRY`, so a move stored as `TYPE_NORMAL` never enters the branch and can no longer be turned back into a Fairy move. Kismet keeps 2.0's system, which is strictly more complete — 34 moves plus species types.
+
+Where the fork's fallback differs from 2.0's, the difference belongs in `sFairyMoveAltTypes`, not here.
+
+| Move | Fork's stored fallback | 2.0 `sFairyMoveAltTypes` |
+|---|---|---|
+| `CHARM` | NORMAL | NORMAL |
+| `MOONBLAST` | NORMAL | DARK ← differs |
+| `MOONLIGHT` | NORMAL | DARK ← differs |
+| `PLAY_ROUGH` | NORMAL | NORMAL |
+| `SPIRIT_BREAK` | DARK | FIGHTING ← differs |
+| `SWEET_KISS` | NORMAL | NORMAL |
 
 ## Reverting
 
@@ -34,7 +57,7 @@ Nothing is hardcoded. `include/config/general.h` defines `CUSTOM_FOR_KISMET` as 
 
 To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATED_MOVE_TYPES` in `include/config/battle.h` back to `GEN_LATEST`. The two gates are independent: types and numeric data can be reverted separately.
 
-60 of the 154 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
+60 of the 162 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
 
 ## All changes
 
@@ -45,6 +68,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `ABSORB` | Power | 20 | **35** |  |
 | `ABSORB` | PP | (B_UPDATED_MOVE_DATA >= GEN_4 ? 25 : 20) | **30** | yes |
 | `AURA_SPHERE` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 80 : 90) | **90** | yes |
+| `AURORA_BEAM` | Secondary chance | (B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33) | **15** | yes |
 | `BARRAGE` | Power | 15 | **25** |  |
 | `BEAT_UP` | Power | (B_UPDATED_MOVE_DATA >= GEN_5 ? 1 : 10) | **20** | yes |
 | `BIND` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_5 ? 85 : 75) | **75** | yes |
@@ -52,18 +76,20 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `BLAST_BURN` | Accuracy | 90 | **100** |  |
 | `BLAST_BURN` | Power | 150 | **200** |  |
 | `BLAZE_KICK` | Accuracy | 90 | **100** |  |
+| `BLAZE_KICK` | Secondary chance | 10 | **20** |  |
 | `BLAZE_KICK` | Power | 85 | **90** |  |
 | `BLAZE_KICK` | PP | 10 | **15** |  |
 | `BLIZZARD` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_2 ? 70 : 90) | **75** | yes |
 | `BLIZZARD` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 110 : 120) | **120** | yes |
 | `BONEMERANG` | Accuracy | 90 | **95** |  |
 | `BONEMERANG` | Power | 50 | **55** |  |
+| `BONE_CLUB` | Secondary chance | 10 | **20** |  |
 | `BONE_CLUB` | Power | 65 | **75** |  |
 | `BONE_CLUB` | PP | 20 | **25** |  |
 | `BONE_RUSH` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 80) | **80** | yes |
 | `BUBBLE` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 40 : 20) | **25** | yes |
+| `BUBBLE_BEAM` | Secondary chance | (B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33) | **15** | yes |
 | `BULLET_SEED` | Power | (B_UPDATED_MOVE_DATA >= GEN_5 ? 25 : 10) | **20** | yes |
-| `CHARM` | Type | (B_UPDATED_MOVE_TYPES >= GEN_6 ? FAIRY : NORMAL) | **NORMAL** | yes |
 | `CLAMP` | Power | 35 | **50** |  |
 | `COMET_PUNCH` | Accuracy | 85 | **100** |  |
 | `COMET_PUNCH` | Power | 18 | **30** |  |
@@ -72,8 +98,11 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `CRABHAMMER` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 85) | **100** | yes |
 | `CRABHAMMER` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 100 : 90) | **110** | yes |
 | `CRABHAMMER` | PP | 10 | **15** |  |
+| `CROSS_POISON` | Secondary chance | 10 | **25** |  |
 | `CROSS_POISON` | Power | 70 | **75** |  |
+| `CRUSH_CLAW` | Secondary chance | 50 | **75** |  |
 | `CURSE` | Type | (B_UPDATED_MOVE_TYPES >= GEN_5 ? GHOST : MYSTERY) | **MYSTERY** | yes |
+| `CUT` | Crit stage | 0 | **1** |  |
 | `CUT` | Power | 50 | **55** |  |
 | `CUT` | Type | NORMAL | **BUG** |  |
 | `DARK_PULSE` | Power | 80 | **95** |  |
@@ -81,15 +110,16 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `DIZZY_PUNCH` | Power | 70 | **85** |  |
 | `DOOM_DESIRE` | Power | (B_UPDATED_MOVE_DATA >= GEN_5 ? 140 : 120) | **150** | yes |
 | `DOUBLE_SLAP` | Power | 15 | **20** |  |
+| `DRAGON_CLAW` | additionalEffect | none | **DEF_MINUS_1 @30%** |  |
 | `DRAGON_PULSE` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 85 : 90) | **95** | yes |
+| `DRILL_PECK` | Crit stage | 0 | **1** |  |
 | `DYNAMIC_PUNCH` | Accuracy | 50 | **60** |  |
 | `DYNAMIC_PUNCH` | Power | 100 | **120** |  |
 | `EGG_BOMB` | Accuracy | 75 | **85** |  |
+| `EGG_BOMB` | additionalEffect | none | **FLINCH @15%** |  |
 | `EGG_BOMB` | Power | 100 | **120** |  |
 | `ENERGY_BALL` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 80) | **95** | yes |
-| `FAIRY_WIND` | Power | 40 | **60** |  |
-| `FAIRY_WIND` | PP | 30 | **5** |  |
-| `FAIRY_WIND` | Type | FAIRY | **FLYING** |  |
+| `EXTRASENSORY` | Secondary chance | 10 | **25** |  |
 | `FIRE_BLAST` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 110 : 120) | **120** | yes |
 | `FIRE_FANG` | Accuracy | 95 | **90** |  |
 | `FIRE_SPIN` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_5 ? 85 : 70) | **95** | yes |
@@ -105,6 +135,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `FURY_SWIPES` | Power | 18 | **20** |  |
 | `GIGA_DRAIN` | PP | 25 | **10** |  |
 | `GRASS_WHISTLE` | Accuracy | 55 | **80** |  |
+| `HEAT_WAVE` | Secondary chance | 10 | **20** |  |
 | `HEAT_WAVE` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 95 : 100) | **100** | yes |
 | `HEAVY_SLAM` | Power | 1 | **100** |  |
 | `HIDDEN_POWER` | Type | NORMAL | **MYSTERY** |  |
@@ -128,9 +159,9 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `METEOR_MASH` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 100) | **100** | yes |
 | `MILK_DRINK` | PP | (B_UPDATED_MOVE_DATA >= GEN_9 ? 5 : 10) | **10** | yes |
 | `MIST_BALL` | Power | ((B_UPDATED_MOVE_DATA >= GEN_9) ? 95 : 70) | **70** | yes |
+| `MOONBLAST` | Secondary chance | 30 | **20** |  |
 | `MOONBLAST` | PP | 15 | **10** |  |
-| `MOONBLAST` | Type | FAIRY | **NORMAL** |  |
-| `MOONLIGHT` | Type | (B_UPDATED_MOVE_TYPES >= GEN_6 ? FAIRY : NORMAL) | **NORMAL** | yes |
+| `MUDDY_WATER` | Secondary chance | 30 | **35** |  |
 | `MUDDY_WATER` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95) | **105** | yes |
 | `MUDDY_WATER` | Type | WATER | **GROUND** |  |
 | `MUD_SLAP` | Power | 20 | **35** |  |
@@ -143,10 +174,11 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `PETAL_DANCE` | PP | (B_UPDATED_MOVE_DATA >= GEN_5 ? 10 : 20) | **20** | yes |
 | `PIN_MISSILE` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_6 ? 95 : 85) | **85** | yes |
 | `PIN_MISSILE` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 25 : 14) | **15** | yes |
-| `PLAY_ROUGH` | Type | FAIRY | **NORMAL** |  |
 | `POISON_FANG` | Power | 50 | **60** |  |
 | `POISON_JAB` | PP | 20 | **15** |  |
+| `POISON_STING` | Secondary chance | (B_UPDATED_MOVE_DATA >= GEN_2 ? 30 : 20) | **25** | yes |
 | `POISON_TAIL` | Power | 50 | **80** |  |
+| `POWDER_SNOW` | Secondary chance | 10 | **15** |  |
 | `POWDER_SNOW` | Power | 40 | **45** |  |
 | `RAZOR_WIND` | Power | 80 | **120** |  |
 | `RAZOR_WIND` | Type | NORMAL | **FLYING** |  |
@@ -155,6 +187,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `ROLLING_KICK` | Accuracy | 85 | **100** |  |
 | `ROLLING_KICK` | Power | 60 | **75** |  |
 | `SHADOW_PUNCH` | Power | 60 | **80** |  |
+| `SIGNAL_BEAM` | Secondary chance | 10 | **20** |  |
 | `SKULL_BASH` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 130 : 100) | **100** | yes |
 | `SKY_ATTACK` | Accuracy | 90 | **100** |  |
 | `SKY_ATTACK` | Power | 140 | **180** |  |
@@ -165,13 +198,11 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `SNORE` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 50 : 40) | **75** | yes |
 | `SPIKE_CANNON` | Power | 20 | **30** |  |
 | `SPIKE_CANNON` | Type | NORMAL | **BUG** |  |
-| `SPIRIT_BREAK` | Type | FAIRY | **DARK** |  |
 | `SPIT_UP` | Power | 1 | **100** |  |
 | `STOCKPILE` | PP | (B_UPDATED_MOVE_DATA >= GEN_4 ? 20 : 10) | **10** | yes |
 | `SUBMISSION` | PP | (B_UPDATED_MOVE_DATA >= GEN_6 ? 20 : 25) | **25** | yes |
 | `SUPERSONIC` | Accuracy | 55 | **65** |  |
 | `SURF` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95) | **95** | yes |
-| `SWEET_KISS` | Type | (B_UPDATED_MOVE_TYPES >= GEN_6 ? FAIRY : NORMAL) | **NORMAL** | yes |
 | `TACKLE` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_5 ? 100 : 95) | **95** | yes |
 | `TACKLE` | Power | 40 | **35** |  |
 | `TAKE_DOWN` | Power | 90 | **95** |  |

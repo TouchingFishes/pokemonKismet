@@ -516,6 +516,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 1 : 0,   // HnS: EFFECT_HIGH_CRITICAL
         .makesContact = TRUE,
         .slicingMove = TRUE,
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_BADLY_STARTLE_MONS_WITH_GOOD_APPEALS,
@@ -1172,7 +1173,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_POISON,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 30 : 20,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 25 : (B_UPDATED_MOVE_DATA >= GEN_2 ? 30 : 20),
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
         .contestCategory = CONTEST_CATEGORY_SMART,
@@ -1738,7 +1739,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 15 : (B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33),
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MON : CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -1763,7 +1764,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ATK_MINUS_1,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 15 : (B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33),
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MON : CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -1833,6 +1834,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 1 : 0,   // HnS: EFFECT_HIGH_CRITICAL
         .makesContact = TRUE,
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL : CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -3320,6 +3322,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        // HnS: MOVE_EFFECT_FLINCH at 15% - 2.0 has no secondary effect here, so this is
+        // an #if rather than a ternary; .chance = 0 would read as guaranteed.
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+            .additionalEffects = ADDITIONAL_EFFECTS({
+                .moveEffect = MOVE_EFFECT_FLINCH,
+                .chance = 15,
+            }),
+        #endif
         .ballisticMove = TRUE,
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_CUTE : CONTEST_CATEGORY_TOUGH,
@@ -3422,7 +3432,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 20 : 10,
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_REPETITION_NOT_BORING : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -4950,7 +4960,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 15 : 10,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -5071,7 +5081,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "look. May cause confusion."),
         .effect = EFFECT_CONFUSE,
         .power = 0,
-        .type = B_UPDATED_MOVE_TYPES == CUSTOM_FOR_KISMET ? TYPE_NORMAL : (B_UPDATED_MOVE_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL),
+        .type = B_UPDATED_MOVE_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL,
         .accuracy = 75,
         .pp = 10,
         .target = TARGET_SELECTED,
@@ -5557,7 +5567,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "reduces its Attack."),
         .effect = EFFECT_ATTACK_DOWN_2,
         .power = 0,
-        .type = B_UPDATED_MOVE_TYPES == CUSTOM_FOR_KISMET ? TYPE_NORMAL : (B_UPDATED_MOVE_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL),
+        .type = B_UPDATED_MOVE_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
         .target = TARGET_SELECTED,
@@ -6390,7 +6400,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "varies with the weather."),
         .effect = EFFECT_MOONLIGHT,
         .power = 0,
-        .type = B_UPDATED_MOVE_TYPES == CUSTOM_FOR_KISMET ? TYPE_NORMAL : (B_UPDATED_MOVE_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL),
+        .type = B_UPDATED_MOVE_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL,
         .accuracy = 0,
         .pp = 5,
         .target = TARGET_USER,
@@ -6980,7 +6990,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .windMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 20 : 10,
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MONS : CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -8084,7 +8094,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 20 : 10,
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_REPETITION_NOT_BORING : CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_COOL : CONTEST_CATEGORY_BEAUTY,
@@ -8269,7 +8279,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
-            .chance = 50,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 75 : 50,
         }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -8736,7 +8746,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_CONFUSION,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 20 : 10,
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_SHIFT_JUDGE_ATTENTION : CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -8787,7 +8797,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS < GEN_4,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 25 : 10,
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -8889,7 +8899,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .skyBattleBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
-            .chance = 30,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 35 : 30,
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MONS : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -9060,6 +9070,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        // HnS: MOVE_EFFECT_DEF_MINUS_1 at 30% - 2.0 has no secondary effect here, so this is
+        // an #if rather than a ternary; .chance = 0 would read as guaranteed.
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+            .additionalEffects = ADDITIONAL_EFFECTS({
+                .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
+                .chance = 30,
+            }),
+        #endif
         .makesContact = TRUE,
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -11612,7 +11630,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .slicingMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_POISON,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 25 : 10,
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -15088,7 +15106,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "May lower Attack."),
         .effect = EFFECT_HIT,
         .power = 90,
-        .type = B_UPDATED_MOVE_TYPES == CUSTOM_FOR_KISMET ? TYPE_NORMAL : TYPE_FAIRY,
+        .type = TYPE_FAIRY,
         .accuracy = 90,
         .pp = 10,
         .target = TARGET_SELECTED,
@@ -15113,10 +15131,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Stirs up a fairy wind to\n"
             "strike the foe."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 60 : 40,
-        .type = B_UPDATED_MOVE_TYPES == CUSTOM_FOR_KISMET ? TYPE_FLYING : TYPE_FAIRY,
+        .power = 40,
+        .type = TYPE_FAIRY,
         .accuracy = 100,
-        .pp = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 5 : 30,
+        .pp = 30,
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -15136,7 +15154,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "the moon. May lower Sp. Atk."),
         .effect = EFFECT_HIT,
         .power = 95,
-        .type = B_UPDATED_MOVE_TYPES == CUSTOM_FOR_KISMET ? TYPE_NORMAL : TYPE_FAIRY,
+        .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 10 : 15,
         .target = TARGET_SELECTED,
@@ -15144,7 +15162,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
-            .chance = 30,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 20 : 30,
         }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -18412,7 +18430,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "force. Lowers Sp. Atk."),
         .effect = EFFECT_HIT,
         .power = 75,
-        .type = B_UPDATED_MOVE_TYPES == CUSTOM_FOR_KISMET ? TYPE_DARK : TYPE_FAIRY,
+        .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = 15,
         .target = TARGET_SELECTED,
@@ -21470,8 +21488,48 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .snatchAffected = TRUE,
+        // Every other two-turn move sets both. The engine has generic
+        // twoTurnEffect guards, but the AI's Instruct scoring checks
+        // IsMoveInstructBanned() without one, so without this the AI can pick
+        // Instruct against a charging Metamorph and waste the turn.
+        .sleepTalkBanned = TRUE,
+        .instructBanned = TRUE,
         .argument.twoTurnAttack = { .stringId = STRINGID_PKMNSPUNCOCOON },
         .battleAnimScript = gBattleAnimMove_Metamorph,
+    },
+
+    // The Fairy member of the AncientPower / Silver Wind / Ominous Wind family.
+    // Those three are all 60/100/5 with a 10 percent all-stats boost; this
+    // matches them exactly. HnS shipped these mechanics on top of
+    // MOVE_FAIRY_WIND, which is left stock here. .self keeps the stat boost on
+    // the user, and .windMove makes it feed Wind Rider, Wind Power and the AI's
+    // switching logic. Fairy-typed, so GetMoveType swaps in the alt type from
+    // sFairyMoveAltTypes (Flying, per HnS) when Fairy types are turned off.
+    [MOVE_GLITTER_WIND] =
+    {
+        .name = COMPOUND_STRING("GLITTER WIND"),
+        .description = COMPOUND_STRING(
+            "A glittering gust that may\n"
+            "raise abilities."),
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 5,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ALL_STATS_UP,
+            .self = TRUE,
+            .chance = 10,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_GlitterWind,
     },
 
     // Z-Moves

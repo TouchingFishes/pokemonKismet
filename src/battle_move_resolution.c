@@ -1483,8 +1483,13 @@ static enum CancelerResult CancelerExplosion(struct BattleContext *ctx)
 
 static bool32 CanTwoTurnMoveFireThisTurn(struct BattleContext *ctx)
 {
+    // Geomancy and Metamorph have no weather that skips their charge turn, and
+    // GetMoveTwoTurnAttackWeather asserts on any effect other than
+    // EFFECT_TWO_TURNS_ATTACK / EFFECT_SOLAR_BEAM - so they must short-circuit
+    // before it is called, or a debug build pops a crash screen on every use.
     if (gBattleMoveEffects[GetMoveEffect(ctx->move)].semiInvulnerableEffect
      || GetMoveEffect(ctx->move) == EFFECT_GEOMANCY
+     || GetMoveEffect(ctx->move) == EFFECT_METAMORPH
      || !IsBattlerWeatherAffected(ctx->battlerAtk, GetMoveTwoTurnAttackWeather(ctx->move)))
         return FALSE;
     return TRUE;
