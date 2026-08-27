@@ -6712,7 +6712,9 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-#if P_HISUIAN_FORMS
+// SPECIES_ALT_TYPHLOSION borrows this art, so it must survive P_HISUIAN_FORMS
+// going FALSE. The Hisuian *species* stays gated; only the assets are shared.
+#if P_HISUIAN_FORMS || P_KISMET_FAKEMON
     const u32 gMonFrontPic_TyphlosionHisui[] = INCBIN_U32("graphics/pokemon/typhlosion/hisui/front.4bpp.smol");
     const u16 gMonPalette_TyphlosionHisui[] = INCBIN_U16("graphics/pokemon/typhlosion/hisui/normal.gbapal");
     const u32 gMonBackPic_TyphlosionHisui[] = INCBIN_U32("graphics/pokemon/typhlosion/hisui/back.4bpp.smol");
@@ -6725,7 +6727,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_TyphlosionHisui[] = INCBIN_U16("graphics/pokemon/typhlosion/hisui/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
-#endif //P_HISUIAN_FORMS
+#endif //P_HISUIAN_FORMS || P_KISMET_FAKEMON
 #endif //P_FAMILY_CYNDAQUIL
 
 #if P_FAMILY_TOTODILE

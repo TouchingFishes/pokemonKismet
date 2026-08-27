@@ -978,6 +978,69 @@
     },
 #endif //P_FAMILY_CHIKORITA
 
+#if P_FAMILY_CYNDAQUIL // borrows Hisuian Typhlosion's graphics, which live behind this gate
+    [SPECIES_ALT_TYPHLOSION] =
+    {
+        .baseHP        = 78,
+        .baseAttack    = 84,
+        .baseDefense   = 78,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 109,
+        .baseSpDefense = 85,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_GHOST),
+        .catchRate = 45,
+        .expYield = 240,
+        .evYield_Speed = 3,
+        .genderRatio = PERCENT_FEMALE(87.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("TYPHLOSION"),
+        .cryId = CRY_TYPHLOSION,
+        .natDexNum = NATIONAL_DEX_ALT_TYPHLOSION,
+        .categoryName = _("Ghost Flame"),
+        .height = 16,
+        .weight = 698,
+        .description = COMPOUND_STRING(
+            "Said to purify lost, forsaken souls with\n"
+            "its flames and guide them to the afterlife.\n"
+            "It's believed its form was influenced by\n"
+            "the energy of Mt. Coronet in ancient times."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 268,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_TyphlosionHisui,
+        .frontPicSize = MON_COORDS_SIZE(48, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_TyphlosionHisui,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 2,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
+        .palette = gMonPalette_TyphlosionHisui,
+        .shinyPalette = gMonShinyPalette_TyphlosionHisui,
+        .iconSprite = gMonIcon_TyphlosionHisui,
+        .iconPalIndex = 1,
+        FOOTPRINT(Typhlosion)
+        OVERWORLD(
+            sPicTable_TyphlosionHisui,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_TyphlosionHisui,
+            gShinyOverworldPalette_TyphlosionHisui
+        )
+        .levelUpLearnset = sTyphlosionLevelUpLearnset,
+        .teachableLearnset = sNoneTeachableLearnset,
+    },
+#endif //P_FAMILY_CYNDAQUIL
+
 #if P_FAMILY_TOTODILE // borrows Feraligatr's graphics, which live behind this gate
     [SPECIES_ALT_FERALIGATR] =
     {

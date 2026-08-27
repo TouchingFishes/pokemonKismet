@@ -1427,11 +1427,13 @@ static const struct SpriteFrameImage sPicTable_Quilava[] = {
 static const struct SpriteFrameImage sPicTable_Typhlosion[] = {
     overworld_ascending_frames(gObjectEventPic_Typhlosion, 4, 4),
 };
-#if P_HISUIAN_FORMS
+// Shared with SPECIES_ALT_TYPHLOSION - see the matching gate in
+// src/data/graphics/pokemon.h.
+#if P_HISUIAN_FORMS || P_KISMET_FAKEMON
 static const struct SpriteFrameImage sPicTable_TyphlosionHisui[] = {
     overworld_ascending_frames(gObjectEventPic_TyphlosionHisui, 4, 4),
 };
-#endif //P_HISUIAN_FORMS
+#endif //P_HISUIAN_FORMS || P_KISMET_FAKEMON
 #endif //P_FAMILY_CYNDAQUIL
 
 #if P_FAMILY_TOTODILE

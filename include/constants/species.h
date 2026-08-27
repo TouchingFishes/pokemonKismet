@@ -1709,7 +1709,8 @@
 #define SPECIES_CORSOREEF                               1588
 #define SPECIES_KUJINOUGHT                              1589
 #define SPECIES_ALT_MEGANIUM                            1590
-#define SPECIES_ALT_FERALIGATR                          1591
+#define SPECIES_ALT_TYPHLOSION                          1591
+#define SPECIES_ALT_FERALIGATR                          1592
 
 #define SPECIES_EGG                                     (SPECIES_ALT_FERALIGATR + 1)
 
