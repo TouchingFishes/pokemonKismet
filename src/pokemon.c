@@ -5860,9 +5860,23 @@ const struct LevelUpMove *GetSpeciesLevelUpLearnset(u16 species)
     const struct LevelUpMove *learnset;
     u16 sanitized = SanitizeSpeciesId(species);
 
+    // Kismet's own movepools, ported from pokemonHnS, override the
+    // generational data for the species the fork actually retuned. Both sets
+    // are sparse: a NULL entry means "this species was not retuned", so the
+    // lookup falls through to expansion's data rather than to nothing.
     if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Modern_Moves == 0)
     {
+        learnset = gLevelUpLearnsets_KismetGen3[sanitized];
+        if (learnset != NULL)
+            return learnset;
+
         learnset = gLevelUpLearnsets_Gen3[sanitized];
+        if (learnset != NULL)
+            return learnset;
+    }
+    else
+    {
+        learnset = gLevelUpLearnsets_Kismet[sanitized];
         if (learnset != NULL)
             return learnset;
     }
@@ -5886,9 +5900,20 @@ const u16 *GetSpeciesEggMoves(u16 species)
     const u16 *learnset;
     u16 sanitized = SanitizeSpeciesId(species);
 
+    // Kismet's ported egg moves, layered the same way as the level-up sets.
     if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Modern_Moves == 0)
     {
+        learnset = gEggMoves_KismetGen3[sanitized];
+        if (learnset != NULL)
+            return learnset;
+
         learnset = gEggMoves_Gen3[sanitized];
+        if (learnset != NULL)
+            return learnset;
+    }
+    else
+    {
+        learnset = gEggMoves_Kismet[sanitized];
         if (learnset != NULL)
             return learnset;
     }

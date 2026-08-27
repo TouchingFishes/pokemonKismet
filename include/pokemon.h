@@ -725,7 +725,14 @@ extern const u16 gFacilityClassToPicIndex[];
 extern const enum TrainerClassID gFacilityClassToTrainerClass[];
 extern const struct SpeciesInfo gSpeciesInfo[];
 extern const struct LevelUpMove *const gLevelUpLearnsets_Gen3[];
+// Kismet's ported movepools. Sparse - NULL means "not retuned by the fork",
+// so GetSpeciesLevelUpLearnset falls through to the generational data.
+extern const struct LevelUpMove *const gLevelUpLearnsets_Kismet[];
+extern const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[];
 extern const u16 *const gEggMoves_Gen3[];
+// Kismet's ported egg moves. Sparse, like the level-up tables above.
+extern const u16 *const gEggMoves_Kismet[];
+extern const u16 *const gEggMoves_KismetGen3[];
 extern const u32 gExperienceTables[][MAX_LEVEL + 1];
 extern const u8 gPPUpGetMask[];
 extern const u8 gPPUpClearMask[];
