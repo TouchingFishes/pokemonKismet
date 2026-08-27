@@ -1,6 +1,8 @@
 #ifndef GUARD_GRAPHICS_H
 #define GUARD_GRAPHICS_H
 
+#include "config/species_enabled.h"
+
 // overworld
 extern const u8 gSignpostWindow_Gfx[];
 extern const u8 gMessageBox_Gfx[];
@@ -3636,5 +3638,117 @@ extern const u16 gBattleIcons_Pal2[];
 
 extern const u32 gGhostFrontPic[];
 extern const u16 gGhostPalette[];
+
+#if P_KISMET_FAKEMON
+// ---- Kismet custom species ----
+extern const u32 gMonFrontPic_Psychu[];
+extern const u32 gMonBackPic_Psychu[];
+extern const u16 gMonPalette_Psychu[];
+extern const u16 gMonShinyPalette_Psychu[];
+extern const u8 gMonIcon_Psychu[];
+extern const u8 gMonFootprint_Psychu[];
+extern const u32 gMonFrontPic_Geowatt[];
+extern const u32 gMonBackPic_Geowatt[];
+extern const u16 gMonPalette_Geowatt[];
+extern const u16 gMonShinyPalette_Geowatt[];
+extern const u8 gMonIcon_Geowatt[];
+extern const u8 gMonFootprint_Geowatt[];
+extern const u32 gMonFrontPic_Raelic[];
+extern const u32 gMonBackPic_Raelic[];
+extern const u16 gMonPalette_Raelic[];
+extern const u16 gMonShinyPalette_Raelic[];
+extern const u8 gMonIcon_Raelic[];
+extern const u8 gMonFootprint_Raelic[];
+extern const u32 gMonFrontPic_Romushu[];
+extern const u32 gMonBackPic_Romushu[];
+extern const u16 gMonPalette_Romushu[];
+extern const u16 gMonShinyPalette_Romushu[];
+extern const u8 gMonIcon_Romushu[];
+extern const u8 gMonFootprint_Romushu[];
+extern const u32 gMonFrontPic_Fusang[];
+extern const u32 gMonBackPic_Fusang[];
+extern const u16 gMonPalette_Fusang[];
+extern const u16 gMonShinyPalette_Fusang[];
+extern const u8 gMonIcon_Fusang[];
+extern const u8 gMonFootprint_Fusang[];
+extern const u32 gMonFrontPic_Larvicid[];
+extern const u32 gMonBackPic_Larvicid[];
+extern const u16 gMonPalette_Larvicid[];
+extern const u16 gMonShinyPalette_Larvicid[];
+extern const u8 gMonIcon_Larvicid[];
+extern const u8 gMonFootprint_Larvicid[];
+extern const u32 gMonFrontPic_Pendragon[];
+extern const u32 gMonBackPic_Pendragon[];
+extern const u16 gMonPalette_Pendragon[];
+extern const u16 gMonShinyPalette_Pendragon[];
+extern const u8 gMonIcon_Pendragon[];
+extern const u8 gMonFootprint_Pendragon[];
+extern const u32 gMonFrontPic_Krolucada[];
+extern const u32 gMonBackPic_Krolucada[];
+extern const u16 gMonPalette_Krolucada[];
+extern const u16 gMonShinyPalette_Krolucada[];
+extern const u8 gMonIcon_Krolucada[];
+extern const u8 gMonFootprint_Krolucada[];
+extern const u32 gMonFrontPic_Krolucard[];
+extern const u32 gMonBackPic_Krolucard[];
+extern const u16 gMonPalette_Krolucard[];
+extern const u16 gMonShinyPalette_Krolucard[];
+extern const u8 gMonIcon_Krolucard[];
+extern const u8 gMonFootprint_Krolucard[];
+extern const u32 gMonFrontPic_Dundrag[];
+extern const u32 gMonBackPic_Dundrag[];
+extern const u16 gMonPalette_Dundrag[];
+extern const u16 gMonShinyPalette_Dundrag[];
+extern const u8 gMonIcon_Dundrag[];
+extern const u8 gMonFootprint_Dundrag[];
+extern const u32 gMonFrontPic_Dunlong[];
+extern const u32 gMonBackPic_Dunlong[];
+extern const u16 gMonPalette_Dunlong[];
+extern const u16 gMonShinyPalette_Dunlong[];
+extern const u8 gMonIcon_Dunlong[];
+extern const u8 gMonFootprint_Dunlong[];
+extern const u32 gMonFrontPic_Mlloy[];
+extern const u32 gMonBackPic_Mlloy[];
+extern const u16 gMonPalette_Mlloy[];
+extern const u16 gMonShinyPalette_Mlloy[];
+extern const u8 gMonIcon_Mlloy[];
+extern const u8 gMonFootprint_Mlloy[];
+extern const u32 gMonFrontPic_Purgislug[];
+extern const u32 gMonBackPic_Purgislug[];
+extern const u16 gMonPalette_Purgislug[];
+extern const u16 gMonShinyPalette_Purgislug[];
+extern const u8 gMonIcon_Purgislug[];
+extern const u8 gMonFootprint_Purgislug[];
+extern const u32 gMonFrontPic_Decibelle[];
+extern const u32 gMonBackPic_Decibelle[];
+extern const u16 gMonPalette_Decibelle[];
+extern const u16 gMonShinyPalette_Decibelle[];
+extern const u8 gMonIcon_Decibelle[];
+extern const u8 gMonFootprint_Decibelle[];
+extern const u32 gMonFrontPic_Gekopon[];
+extern const u32 gMonBackPic_Gekopon[];
+extern const u16 gMonPalette_Gekopon[];
+extern const u16 gMonShinyPalette_Gekopon[];
+extern const u8 gMonIcon_Gekopon[];
+extern const u8 gMonFootprint_Gekopon[];
+extern const u32 gObjectEventPic_Gekopon[];
+extern const u16 gOverworldPalette_Gekopon[];
+extern const u16 gShinyOverworldPalette_Gekopon[];
+extern const u32 gMonFrontPic_Corsoreef[];
+extern const u32 gMonBackPic_Corsoreef[];
+extern const u16 gMonPalette_Corsoreef[];
+extern const u16 gMonShinyPalette_Corsoreef[];
+extern const u8 gMonIcon_Corsoreef[];
+extern const u8 gMonFootprint_Corsoreef[];
+extern const u32 gObjectEventPic_Corsoreef[];
+extern const u16 gOverworldPalette_Corsoreef[];
+extern const u16 gShinyOverworldPalette_Corsoreef[];
+extern const u32 gMonFrontPic_Kujinought[];
+extern const u32 gMonBackPic_Kujinought[];
+extern const u16 gMonPalette_Kujinought[];
+extern const u16 gMonShinyPalette_Kujinought[];
+extern const u8 gMonIcon_Kujinought[];
+extern const u8 gMonFootprint_Kujinought[];
+#endif //P_KISMET_FAKEMON
 
 #endif //GUARD_GRAPHICS_H

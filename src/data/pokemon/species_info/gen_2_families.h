@@ -889,7 +889,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_RUN_AWAY, ABILITY_KEEN_EYE, ABILITY_FRISK },
+        .abilities = { ABILITY_SKITTISH, ABILITY_KEEN_EYE, ABILITY_FRISK }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("SENTRET"),
         .cryId = CRY_SENTRET,
@@ -4659,7 +4659,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SERENE_GRACE, ABILITY_RUN_AWAY, ABILITY_RATTLED },
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_SKITTISH, ABILITY_RATTLED }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("DUNSPARCE"),
         .cryId = CRY_DUNSPARCE,
@@ -4710,9 +4710,19 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sDunsparceLevelUpLearnset,
         .teachableLearnset = sDunsparceTeachableLearnset,
         .eggMoveLearnset = sDunsparceEggMoveLearnset,
-    #if P_GEN_9_CROSS_EVOS
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_DUDUNSPARCE_TWO_SEGMENT, CONDITIONS({IF_KNOWS_MOVE, MOVE_HYPER_DRILL}, {IF_PID_MODULO_100_GT, 0})},
-                                {EVO_LEVEL, 0, SPECIES_DUDUNSPARCE_THREE_SEGMENT, CONDITIONS({IF_KNOWS_MOVE, MOVE_HYPER_DRILL}, {IF_PID_MODULO_100_EQ, 0})}),
+    #if P_GEN_9_CROSS_EVOS || P_KISMET_FAKEMON
+        .evolutions = EVOLUTION(
+                            #if P_GEN_9_CROSS_EVOS
+                                {EVO_LEVEL, 0, SPECIES_DUDUNSPARCE_TWO_SEGMENT, CONDITIONS({IF_KNOWS_MOVE, MOVE_HYPER_DRILL}, {IF_PID_MODULO_100_GT, 0})},
+                                {EVO_LEVEL, 0, SPECIES_DUDUNSPARCE_THREE_SEGMENT, CONDITIONS({IF_KNOWS_MOVE, MOVE_HYPER_DRILL}, {IF_PID_MODULO_100_EQ, 0})}
+                            #endif
+                            #if P_KISMET_FAKEMON
+                            #if P_GEN_9_CROSS_EVOS
+                                ,
+                            #endif
+                                {EVO_LEVEL, 0, SPECIES_DUNDRAG, CONDITIONS({IF_KNOWS_MOVE_TYPE, TYPE_DRAGON})} // evolves into a custom species
+                            #endif //P_KISMET_FAKEMON
+                              ),
     #endif
     },
 
@@ -4780,6 +4790,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sDudunsparceTeachableLearnset,
         .formSpeciesIdTable = sDudunsparceFormSpeciesIdTable,
         .randomizerMode = MON_RANDOMIZER_SPECIAL_FORM,
+        #if P_KISMET_FAKEMON // evolves into a custom species
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_STARLIT_SHARD, SPECIES_DUNLONG}),
+        #endif //P_KISMET_FAKEMON
     },
 
     [SPECIES_DUDUNSPARCE_THREE_SEGMENT] =
@@ -4845,6 +4858,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sDudunsparceTeachableLearnset,
         .formSpeciesIdTable = sDudunsparceFormSpeciesIdTable,
         .randomizerMode = MON_RANDOMIZER_INVALID,
+        #if P_KISMET_FAKEMON // evolves into a custom species
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_STARLIT_SHARD, SPECIES_DUNLONG}),
+        #endif //P_KISMET_FAKEMON
     },
 #endif //P_GEN_9_CROSS_EVOS
 #endif //P_FAMILY_DUNSPARCE
@@ -6742,6 +6758,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sCorsolaTeachableLearnset,
         .eggMoveLearnset = sCorsolaEggMoveLearnset,
         .formSpeciesIdTable = sCorsolaFormSpeciesIdTable,
+        #if P_KISMET_FAKEMON // evolves into a custom species
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_CORSOREEF, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})}),
+        #endif //P_KISMET_FAKEMON
     },
 
 #if P_GALARIAN_FORMS
@@ -7051,6 +7070,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sOctilleryLevelUpLearnset,
         .teachableLearnset = sOctilleryTeachableLearnset,
+        #if P_KISMET_FAKEMON // evolves into a custom species
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_KUJINOUGHT}),
+        #endif //P_KISMET_FAKEMON
     },
 #endif //P_FAMILY_REMORAID
 

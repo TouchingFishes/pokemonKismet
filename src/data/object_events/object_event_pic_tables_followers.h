@@ -3,6 +3,16 @@ static const struct SpriteFrameImage sPicTable_Substitute[] = {
 };
 
 #if OW_POKEMON_OBJECT_EVENTS
+#if P_KISMET_FAKEMON
+// Kismet custom species. Only these two have follower sprites in the fork;
+// the rest omit OVERWORLD() and simply cannot follow.
+static const struct SpriteFrameImage sPicTable_Gekopon[] = {
+    overworld_ascending_frames(gObjectEventPic_Gekopon, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_Corsoreef[] = {
+    overworld_ascending_frames(gObjectEventPic_Corsoreef, 4, 4),
+};
+#endif //P_KISMET_FAKEMON
 #if P_FAMILY_BULBASAUR
 static const struct SpriteFrameImage sPicTable_Bulbasaur[] = {
     overworld_ascending_frames(gObjectEventPic_Bulbasaur, 4, 4),

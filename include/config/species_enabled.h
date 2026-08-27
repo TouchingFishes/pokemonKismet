@@ -605,4 +605,8 @@
 #define P_FAMILY_TERAPAGOS               P_GEN_9_POKEMON
 #define P_FAMILY_PECHARUNT               P_GEN_9_POKEMON
 
+// Kismet custom species ported from pokemonHnS. Set FALSE to compile the
+// fakemon out entirely - their constants stay defined, the data does not.
+#define P_KISMET_FAKEMON                 TRUE
+
 #endif // GUARD_CONFIG_SPECIES_ENABLED_H

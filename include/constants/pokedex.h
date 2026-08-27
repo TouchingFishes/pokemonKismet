@@ -1109,6 +1109,30 @@ enum NationalDexOrder
     NATIONAL_DEX_WOOPER_PALDEA,
 #endif
 #endif
+
+#if P_KISMET_FAKEMON
+    // Kismet custom species. Last in the enum so the official numbering
+    // is untouched no matter which form gates are enabled.
+    NATIONAL_DEX_PSYCHU,
+    NATIONAL_DEX_GEOWATT,
+    NATIONAL_DEX_RAELIC,
+    NATIONAL_DEX_ROMUSHU,
+    NATIONAL_DEX_FUSANG,
+    NATIONAL_DEX_LARVICID,
+    NATIONAL_DEX_PENDRAGON,
+    NATIONAL_DEX_KROLUCADA,
+    NATIONAL_DEX_KROLUCARD,
+    NATIONAL_DEX_DUNDRAG,
+    NATIONAL_DEX_DUNLONG,
+    NATIONAL_DEX_MLLOY,
+    NATIONAL_DEX_PURGISLUG,
+    NATIONAL_DEX_DECIBELLE,
+    NATIONAL_DEX_GEKOPON,
+    NATIONAL_DEX_CORSOREEF,
+    NATIONAL_DEX_KUJINOUGHT,
+    NATIONAL_DEX_ALT_MEGANIUM,
+    NATIONAL_DEX_ALT_FERALIGATR,
+#endif //P_KISMET_FAKEMON
 };
 
 #if P_SEPARATE_REGIONAL_FORMS && (P_PALDEAN_FORMS || P_HISUIAN_FORMS || P_GALARIAN_FORMS || P_ALOLAN_FORMS)
@@ -1162,6 +1186,15 @@ enum NationalDexOrder
 #endif
 
 #endif
+
+// Kismet: the fakemon are appended after every official entry and every
+// form gate, so the real count is always the last of them. Redefined here
+// rather than threaded through the chain above, which selects a different
+// last-official entry for each combination of P_GEN_* / P_*_FORMS.
+#if P_KISMET_FAKEMON
+#undef NATIONAL_DEX_COUNT
+#define NATIONAL_DEX_COUNT  NATIONAL_DEX_ALT_FERALIGATR
+#endif //P_KISMET_FAKEMON
 
 #define POKEMON_SLOTS_NUMBER (NATIONAL_DEX_COUNT + 1)
 

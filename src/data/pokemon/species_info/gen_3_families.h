@@ -955,7 +955,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_RUN_AWAY, ABILITY_QUICK_FEET, ABILITY_RATTLED },
+        .abilities = { ABILITY_SKITTISH, ABILITY_QUICK_FEET, ABILITY_RATTLED }, // Kismet: custom ability
     #else
         .abilities = { ABILITY_RUN_AWAY, ABILITY_NONE, ABILITY_RATTLED },
     #endif
@@ -2153,7 +2153,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_EARLY_BIRD, ABILITY_PICKPOCKET },
+        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_SKITTISH, ABILITY_PICKPOCKET }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("SEEDOT"),
         .cryId = CRY_SEEDOT,
@@ -2229,7 +2229,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_EARLY_BIRD, ABILITY_PICKPOCKET },
+        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_SKITTISH, ABILITY_PICKPOCKET }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("NUZLEAF"),
         .cryId = CRY_NUZLEAF,
@@ -3950,7 +3950,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SOUNDPROOF, ABILITY_NONE, ABILITY_RATTLED },
+        .abilities = { ABILITY_CACOPHONY, ABILITY_SOUNDPROOF, ABILITY_RATTLED }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("WHISMUR"),
         .cryId = CRY_WHISMUR,
@@ -4026,7 +4026,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SOUNDPROOF, ABILITY_NONE, ABILITY_SCRAPPY },
+        .abilities = { ABILITY_CACOPHONY, ABILITY_SOUNDPROOF, ABILITY_SCRAPPY }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("LOUDRED"),
         .cryId = CRY_LOUDRED,
@@ -4104,7 +4104,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SOUNDPROOF, ABILITY_NONE, ABILITY_SCRAPPY },
+        .abilities = { ABILITY_CACOPHONY, ABILITY_SOUNDPROOF, ABILITY_SCRAPPY }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("EXPLOUD"),
         .cryId = CRY_EXPLOUD,
@@ -10363,6 +10363,9 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggMoveLearnset = sChimechoEggMoveLearnset,
         .formSpeciesIdTable = sChimechoFormSpeciesIdTable,
         .formChangeTable = sChimechoFormChangeTable,
+        #if P_KISMET_FAKEMON // evolves into a custom species
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_DECIBELLE}),
+        #endif //P_KISMET_FAKEMON
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS

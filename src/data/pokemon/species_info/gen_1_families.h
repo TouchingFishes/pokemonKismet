@@ -2107,7 +2107,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_RUN_AWAY, ABILITY_GUTS, ABILITY_HUSTLE },
+        .abilities = { ABILITY_SKITTISH, ABILITY_GUTS, ABILITY_HUSTLE }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("RATTATA"),
         .cryId = CRY_RATTATA,
@@ -2191,7 +2191,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_RUN_AWAY, ABILITY_GUTS, ABILITY_HUSTLE },
+        .abilities = { ABILITY_SKITTISH, ABILITY_GUTS, ABILITY_HUSTLE }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("RATICATE"),
         .cryId = CRY_RATICATE,
@@ -3038,7 +3038,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
                             #if P_ALOLAN_FORMS
                                 ,{EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_RAICHU_ALOLA, CONDITIONS({IF_REGION, REGION_ALOLA})}
                             #endif
-                            ),
+                                #if P_KISMET_FAKEMON
+                                    ,{EVO_ITEM, ITEM_SUN_STONE, SPECIES_PSYCHU} // Kismet: evolves into a custom species
+                                #endif //P_KISMET_FAKEMON
+                              ),
     },
 
 #if P_COSPLAY_PIKACHU_FORMS
@@ -7124,7 +7127,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SAND_VEIL, ABILITY_ARENA_TRAP, ABILITY_SAND_FORCE },
+        .abilities = { ABILITY_SAND_VEIL, ABILITY_SKITTISH, ABILITY_ARENA_TRAP }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("DIGLETT"),
         .cryId = CRY_DIGLETT,
@@ -8040,7 +8043,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
-        .abilities = { ABILITY_DAMP, ABILITY_CLOUD_NINE, ABILITY_SWIFT_SWIM },
+        .abilities = { ABILITY_PSI_CONDUIT, ABILITY_CLOUD_NINE, ABILITY_SWIFT_SWIM }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("GOLDUCK"),
         .cryId = CRY_GOLDUCK,
@@ -10189,7 +10192,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sGravelerTeachableLearnset,
         .formSpeciesIdTable = sGravelerFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_GOLEM},
-                                {EVO_LEVEL, 38, SPECIES_GOLEM}),
+                                {EVO_LEVEL, 38, SPECIES_GOLEM}
+                            #if P_KISMET_FAKEMON
+                               ,{EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_GEOWATT} // evolves into a custom species
+                            #endif //P_KISMET_FAKEMON
+                              ),
     },
 
     [SPECIES_GOLEM] =
@@ -10534,7 +10541,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_RUN_AWAY, ABILITY_FLASH_FIRE, ABILITY_FLAME_BODY },
+        .abilities = { ABILITY_SKITTISH, ABILITY_FLASH_FIRE, ABILITY_FLAME_BODY }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("PONYTA"),
         .cryId = CRY_PONYTA,
@@ -11673,6 +11680,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sFarfetchdTeachableLearnset,
         .eggMoveLearnset = sFarfetchdEggMoveLearnset,
         .formSpeciesIdTable = sFarfetchdFormSpeciesIdTable,
+        #if P_KISMET_FAKEMON // evolves into a custom species
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MLLOY, CONDITIONS({IF_HOLD_ITEM, ITEM_BERRY_JUICE})}),
+        #endif //P_KISMET_FAKEMON
     },
 
 #if P_GALARIAN_FORMS
@@ -11845,7 +11855,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_RUN_AWAY, ABILITY_EARLY_BIRD, ABILITY_TANGLED_FEET },
+        .abilities = { ABILITY_SKITTISH, ABILITY_HUSTLE, ABILITY_TANGLED_FEET }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("DODUO"),
         .cryId = CRY_DODUO,
@@ -14630,11 +14640,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-    #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_KEEN_EYE, ABILITY_IRON_FIST, ABILITY_INNER_FOCUS },
-    #else
-        .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_INNER_FOCUS },
-    #endif
+        // Kismet: Pugilist is Hitmonchan's signature ability, so it is the only
+        // one it can have. The P_UPDATED_ABILITIES split no longer applies -
+        // that gate existed to withhold Iron Fist before Gen 4.
+        .abilities = { ABILITY_PUGILIST, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("HITMONCHAN"),
         .cryId = CRY_HITMONCHAN,
@@ -17840,7 +17849,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_HYPER_CUTTER, ABILITY_MOLD_BREAKER, ABILITY_MOXIE },
+        .abilities = { ABILITY_CHITINIZE, ABILITY_HYPER_CUTTER, ABILITY_MOXIE }, // Kismet: custom ability
     #else
         .abilities = { ABILITY_HYPER_CUTTER, ABILITY_NONE, ABILITY_MOXIE },
     #endif
@@ -18758,9 +18767,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #define EEVEE_SP_ATK (P_UPDATED_STATS >= GEN_2 ? 45 : 65)
 
 #if P_UPDATED_ABILITIES >= GEN_4
-    #define EEVEE_ABILITIES { ABILITY_RUN_AWAY, ABILITY_ADAPTABILITY, ABILITY_ANTICIPATION }
+    #define EEVEE_ABILITIES { ABILITY_SKITTISH, ABILITY_ADAPTABILITY, ABILITY_ANTICIPATION } // Kismet: custom ability
 #else
-    #define EEVEE_ABILITIES { ABILITY_RUN_AWAY, ABILITY_NONE, ABILITY_ANTICIPATION }
+    #define EEVEE_ABILITIES { ABILITY_SKITTISH, ABILITY_NONE, ABILITY_ANTICIPATION } // Kismet: custom ability
 #endif
 
     [SPECIES_EEVEE] =
@@ -19963,7 +19972,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_WATER_3),
-        .abilities = { ABILITY_SWIFT_SWIM, ABILITY_BATTLE_ARMOR, ABILITY_WEAK_ARMOR },
+        .abilities = { ABILITY_CHITINIZE, ABILITY_BATTLE_ARMOR, ABILITY_SWIFT_SWIM }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("KABUTO"),
         .cryId = CRY_KABUTO,
@@ -20043,7 +20052,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_WATER_3),
-        .abilities = { ABILITY_SWIFT_SWIM, ABILITY_BATTLE_ARMOR, ABILITY_WEAK_ARMOR },
+        .abilities = { ABILITY_CHITINIZE, ABILITY_BATTLE_ARMOR, ABILITY_SWIFT_SWIM }, // Kismet: custom ability
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("KABUTOPS"),
         .cryId = CRY_KABUTOPS,

@@ -2552,6 +2552,29 @@ gCryTable::
 .if P_FAMILY_PECHARUNT == TRUE
 	cry Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
+
+@ Kismet custom species. Gated on their own config, not on an
+@ unrelated official family - the CRY_* enum is gated the same way,
+@ so the table and the enum can never disagree.
+.if P_KISMET_FAKEMON == TRUE
+	cry Cry_Psychu
+	cry Cry_Geowatt
+	cry Cry_Raelic
+	cry Cry_Romushu
+	cry Cry_Fusang
+	cry Cry_Larvicid
+	cry Cry_Pendragon
+	cry Cry_Krolucada
+	cry Cry_Krolucard
+	cry Cry_Dundrag
+	cry Cry_Dunlong
+	cry Cry_Mlloy
+	cry Cry_Purgislug
+	cry Cry_Decibelle
+	cry Cry_Gekopon
+	cry Cry_Corsoreef
+	cry Cry_Kujinought
+.endif @ P_KISMET_FAKEMON
 .endif @ P_CRIES_ENABLED
 
 	.align 2
@@ -5108,4 +5131,27 @@ gCryTable_Reverse::
 .if P_FAMILY_PECHARUNT == TRUE
 	cry_reverse Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
+
+@ Kismet custom species. Gated on their own config, not on an
+@ unrelated official family - the CRY_* enum is gated the same way,
+@ so the table and the enum can never disagree.
+.if P_KISMET_FAKEMON == TRUE
+	cry_reverse Cry_Psychu
+	cry_reverse Cry_Geowatt
+	cry_reverse Cry_Raelic
+	cry_reverse Cry_Romushu
+	cry_reverse Cry_Fusang
+	cry_reverse Cry_Larvicid
+	cry_reverse Cry_Pendragon
+	cry_reverse Cry_Krolucada
+	cry_reverse Cry_Krolucard
+	cry_reverse Cry_Dundrag
+	cry_reverse Cry_Dunlong
+	cry_reverse Cry_Mlloy
+	cry_reverse Cry_Purgislug
+	cry_reverse Cry_Decibelle
+	cry_reverse Cry_Gekopon
+	cry_reverse Cry_Corsoreef
+	cry_reverse Cry_Kujinought
+.endif @ P_KISMET_FAKEMON
 .endif @ P_CRIES_ENABLED

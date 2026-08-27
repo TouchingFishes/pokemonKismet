@@ -9693,3 +9693,108 @@ DirectSoundWaveData_pl_musicbox62::
 	.align 2
 DirectSoundWaveData_pl_musicbox79::
 	.incbin "sound/direct_sound_samples/pl_musicbox79.bin"
+
+@ ---- Kismet custom species ----
+.if P_KISMET_FAKEMON == TRUE
+	.align 2
+Cry_Psychu::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/psychu.bin"
+.endif
+
+	.align 2
+Cry_Geowatt::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/geowatt.bin"
+.endif
+
+	.align 2
+Cry_Raelic::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/raelic.bin"
+.endif
+
+	.align 2
+Cry_Romushu::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/romushu.bin"
+.endif
+
+	.align 2
+Cry_Fusang::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/fusang.bin"
+.endif
+
+	.align 2
+Cry_Larvicid::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/larvicid.bin"
+.endif
+
+	.align 2
+Cry_Pendragon::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/pendragon.bin"
+.endif
+
+	.align 2
+Cry_Krolucada::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/krolucada.bin"
+.endif
+
+	.align 2
+Cry_Krolucard::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/krolucard.bin"
+.endif
+
+	.align 2
+Cry_Dundrag::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/dundrag.bin"
+.endif
+
+	.align 2
+Cry_Dunlong::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/dunlong.bin"
+.endif
+
+	.align 2
+Cry_Mlloy::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/mlloy.bin"
+.endif
+
+	.align 2
+Cry_Purgislug::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/purgislug.bin"
+.endif
+
+	.align 2
+Cry_Decibelle::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/decibelle.bin"
+.endif
+
+	.align 2
+Cry_Gekopon::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/gekopon.bin"
+.endif
+
+	.align 2
+Cry_Corsoreef::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/corsoreef.bin"
+.endif
+
+	.align 2
+Cry_Kujinought::
+.if TESTING == FALSE
+	.incbin "sound/direct_sound_samples/cries/kujinought.bin"
+.endif
+.endif @ P_KISMET_FAKEMON

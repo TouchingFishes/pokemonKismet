@@ -1,6 +1,8 @@
 #ifndef GUARD_CONSTANTS_CRIES_H
 #define GUARD_CONSTANTS_CRIES_H
 
+#include "config/species_enabled.h"
+
 enum PokemonCry
 {
     CRY_NONE,
@@ -2555,6 +2557,27 @@ enum PokemonCry
 #if P_FAMILY_PECHARUNT
     CRY_PECHARUNT,
 #endif //P_FAMILY_PECHARUNT
+#if P_KISMET_FAKEMON
+    // Kismet custom species. The two ALT_ starters reuse their original
+    // species' cry, so they get no entry of their own.
+    CRY_PSYCHU,
+    CRY_GEOWATT,
+    CRY_RAELIC,
+    CRY_ROMUSHU,
+    CRY_FUSANG,
+    CRY_LARVICID,
+    CRY_PENDRAGON,
+    CRY_KROLUCADA,
+    CRY_KROLUCARD,
+    CRY_DUNDRAG,
+    CRY_DUNLONG,
+    CRY_MLLOY,
+    CRY_PURGISLUG,
+    CRY_DECIBELLE,
+    CRY_GEKOPON,
+    CRY_CORSOREEF,
+    CRY_KUJINOUGHT,
+#endif //P_KISMET_FAKEMON
     CRY_COUNT,
 };
 
