@@ -359,11 +359,6 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES] = {
 #if P_FAMILY_RALTS
     [SPECIES_RALTS] = sRaltsEggMoveLearnset_KismetGen3,
 #endif
-#if P_FAMILY_RALTS
-#if P_GEN_4_CROSS_EVOS
-    [SPECIES_GALLADE] = sGalladeEggMoveLearnset_KismetGen3,
-#endif
-#endif
 #if P_FAMILY_SURSKIT
     [SPECIES_SURSKIT] = sSurskitEggMoveLearnset_KismetGen3,
 #endif

@@ -4,8 +4,10 @@
 // the script. Sparse: only species the fork retunes appear here,
 // everything else falls through to gSpeciesInfo[].eggMoveLearnset.
 //
-// Four fork lists are deliberately absent - see the script's
-// docstring. They are copy-paste leftovers from species swaps.
+// Six fork lists are deliberately absent - see the script's
+// docstring. Four are copy-paste leftovers from species swaps;
+// Drapion's and Gallade's could never fire, as nothing hatches
+// as either.
 
 #include "constants/moves.h"
 
@@ -1716,18 +1718,6 @@ static const u16 sRaltsEggMoveLearnset_Kismet[] = {
 };
 
 #endif
-#if P_FAMILY_RALTS
-#if P_GEN_4_CROSS_EVOS
-static const u16 sGalladeEggMoveLearnset_Kismet[] = {
-    MOVE_SWORDS_DANCE,
-    MOVE_CURSE,
-    MOVE_DESTINY_BOND,
-    MOVE_SHADOW_BALL,
-    MOVE_UNAVAILABLE,
-};
-
-#endif
-#endif
 #if P_FAMILY_SURSKIT
 static const u16 sSurskitEggMoveLearnset_Kismet[] = {
     MOVE_FORESIGHT,
@@ -2222,21 +2212,6 @@ static const u16 sSkorupiEggMoveLearnset_Kismet[] = {
     MOVE_SWALLOW,
     MOVE_SPIT_UP,
     MOVE_BODY_SLAM,
-    MOVE_UNAVAILABLE,
-};
-
-static const u16 sDrapionEggMoveLearnset_Kismet[] = {
-    MOVE_FLAIL,
-    MOVE_DISABLE,
-    MOVE_FURY_SWIPES,
-    MOVE_METAL_CLAW,
-    MOVE_DOUBLE_KICK,
-    MOVE_RAZOR_WIND,
-    MOVE_COUNTER,
-    MOVE_ROAR,
-    MOVE_CURSE,
-    MOVE_FOCUS_BLAST,
-    MOVE_REVENGE,
     MOVE_UNAVAILABLE,
 };
 

@@ -359,11 +359,6 @@ const u16 *const gEggMoves_Kismet[NUM_SPECIES] = {
 #if P_FAMILY_RALTS
     [SPECIES_RALTS] = sRaltsEggMoveLearnset_Kismet,
 #endif
-#if P_FAMILY_RALTS
-#if P_GEN_4_CROSS_EVOS
-    [SPECIES_GALLADE] = sGalladeEggMoveLearnset_Kismet,
-#endif
-#endif
 #if P_FAMILY_SURSKIT
     [SPECIES_SURSKIT] = sSurskitEggMoveLearnset_Kismet,
 #endif
@@ -477,7 +472,6 @@ const u16 *const gEggMoves_Kismet[NUM_SPECIES] = {
 #endif
 #if P_FAMILY_SKORUPI
     [SPECIES_SKORUPI] = sSkorupiEggMoveLearnset_Kismet,
-    [SPECIES_DRAPION] = sDrapionEggMoveLearnset_Kismet,
 #endif
 #if P_FAMILY_VANILLITE
     [SPECIES_VANILLITE] = sVanilliteEggMoveLearnset_Kismet,
