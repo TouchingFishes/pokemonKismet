@@ -17,8 +17,8 @@ Regenerate with `py -3 .claude/gen_move_changes.py`. Do not hand-edit — it is 
 
 | | |
 |---|---:|
-| Moves changed | 118 |
-| Field changes applied | 163 |
+| Moves changed | 119 |
+| Field changes applied | 164 |
 | …whose base value is itself a gen-gated expression | 60 |
 | Excluded by decision | 8 |
 | Representation-only differences, not ported | 37 |
@@ -57,7 +57,7 @@ Nothing is hardcoded. `include/config/general.h` defines `CUSTOM_FOR_KISMET` as 
 
 To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATED_MOVE_TYPES` in `include/config/battle.h` back to `GEN_LATEST`. The two gates are independent: types and numeric data can be reverted separately.
 
-60 of the 163 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
+60 of the 164 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
 
 ## All changes
 
@@ -180,6 +180,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `POISON_TAIL` | Power | 50 | **80** |  |
 | `POWDER_SNOW` | Secondary chance | 10 | **15** |  |
 | `POWDER_SNOW` | Power | 40 | **45** |  |
+| `PSYSHIELD_BASH` | Power | 70 | **90** |  |
 | `RAZOR_WIND` | Power | 80 | **120** |  |
 | `RAZOR_WIND` | Type | NORMAL | **FLYING** |  |
 | `ROCK_BLAST` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 80) | **80** | yes |
