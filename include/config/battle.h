@@ -283,6 +283,21 @@
 
 #define B_VAR_DIFFICULTY            0     // If not 0, you can use this var to control which difficulty version of a Trainer is loaded. This should be manually set by the developer using Script_SetDifficulty AFTER NewGameInitData has run.
 
+// Ported from the HnS 1.x fork (GetScaledLevel in its src/battle_setup.c).
+// Shifts every trainer mon's level by a badge-scaled amount on non-normal
+// difficulty: +N on HARD, -N on EASY, where N is 1/2/3/6 by badge count and 10
+// once the player is Champion.
+//
+// OFF by default, and that is deliberate rather than cautious. Expansion
+// already expresses difficulty by loading an entirely different party per
+// difficulty (gTrainers[difficulty][id], see GetTrainerDifficultyLevel), which
+// is strictly more expressive than a level offset. Turning this on stacks the
+// two: a HARD-difficulty party would ALSO get its levels raised. That may be
+// what you want, but it is a balance decision, so it has to be made explicitly.
+//
+// Independent of LEVEL_BASED_ON_BADGE, which works regardless of this setting.
+#define B_LEVEL_SCALING_DIFFICULTY  FALSE
+
 // No bag settings
 #define NO_BAG_RESTRICTION       0
 #define NO_BAG_AGAINST_TRAINER   1

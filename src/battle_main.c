@@ -23,6 +23,7 @@
 #include "debug.h"
 #include "decompress.h"
 #include "dexnav.h"
+#include "difficulty.h"
 #include "dma3.h"
 #include "event_data.h"
 #include "evolution_scene.h"
@@ -2064,7 +2065,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 #if RANDOMIZER_AVAILABLE == TRUE
                 species = RandomizeTrainerMon(trainer->trainerClass, i, monsCount, species);
                 #endif
-                CreateMon(&party[i], species, partyData[monIndex].lvl, personalityValue, otId);
+                CreateMon(&party[i], species, GetScaledTrainerMonLevel(partyData[monIndex].lvl), personalityValue, otId);
             }
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 

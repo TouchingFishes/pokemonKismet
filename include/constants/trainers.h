@@ -706,4 +706,26 @@ enum TrainerClassID
 #define TRAINER_MON_FEMALE        2
 #define TRAINER_MON_RANDOM_GENDER 3
 
+// Badge-relative trainer levels. A party mon's .lvl is a u8, and real levels
+// only reach MAX_LEVEL (100), so the dead range above it encodes "scale with
+// the player's progress" instead of a fixed level:
+//
+//     Level: Badge      -> exactly the baseline for the player's badge count
+//     Level: Badge+2    -> two above it
+//     Level: Badge-3    -> three below it
+//
+// Write these in the .party files; trainerproc emits LEVEL_BASED_ON_BADGE plus
+// the offset, and ResolveTrainerMonLevel() decodes it at party creation against
+// sBadgeCountLevelTable in src/difficulty.c. Anything <= MAX_LEVEL is taken as
+// a literal level and passes through untouched, so the two styles mix freely
+// within one party.
+//
+// Valid offsets are -99 to +55, bounded at both ends by the u8 field:
+//   - +55 lands on 255, the ceiling. Higher wraps.
+//   - -100 lands on exactly 100, which reads back as a literal level rather
+//     than a sentinel, so -99 is the floor.
+// trainerproc rejects anything outside that range rather than emitting a value
+// that would silently mean something else.
+#define LEVEL_BASED_ON_BADGE 200
+
 #endif  // GUARD_TRAINERS_H

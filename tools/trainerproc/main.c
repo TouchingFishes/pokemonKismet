@@ -65,6 +65,9 @@ struct Pokemon
 
     int level;
     int level_line;
+    // When set, 'level' is a signed offset from the badge baseline rather than
+    // a literal level, and is emitted as LEVEL_BASED_ON_BADGE + offset.
+    bool level_is_badge_relative;
 
     struct String ball;
     int ball_line;
@@ -279,6 +282,7 @@ struct Parsed
     int default_level;
     int default_level_line;
     bool default_level_off;
+    bool default_level_is_badge_relative;
 };
 
 static bool set_parse_error(struct Parser *p, struct SourceLocation location, const char *error)
@@ -1006,6 +1010,60 @@ static bool token_int(struct Parser *p, const struct Token *t, int *i)
     return true;
 }
 
+// Bounds on a badge-relative offset, forced by '.lvl' being a u8 holding
+// LEVEL_BASED_ON_BADGE (200) plus the offset. See the comment on
+// LEVEL_BASED_ON_BADGE in include/constants/trainers.h:
+//   +55 lands on 255, the ceiling;
+//   -100 lands on exactly 100, which the game reads back as a literal level,
+//   so -99 is the floor.
+#define BADGE_LEVEL_MIN_OFFSET (-99)
+#define BADGE_LEVEL_MAX_OFFSET (55)
+
+// Accepts either a literal level ("38") or a badge-relative one ("Badge",
+// "Badge+2", "Badge-3"). On success *badge_relative reports which form was
+// used, and *i holds the literal level or the signed offset accordingly.
+static bool token_level(struct Parser *p, const struct Token *t, int *i, bool *badge_relative)
+{
+    static const char sBadge[] = "Badge";
+    const int badgeLen = (int)sizeof(sBadge) - 1;
+    const unsigned char *buffer = t->source->buffer;
+    int k;
+    char *end;
+    long l;
+
+    if (t->end - t->begin < badgeLen
+     || strncmp((const char *)&buffer[t->begin], sBadge, badgeLen) != 0)
+    {
+        *badge_relative = false;
+        return token_int(p, t, i);
+    }
+
+    *badge_relative = true;
+
+    k = t->begin + badgeLen;
+    while (k < t->end && (buffer[k] == ' ' || buffer[k] == '\t'))
+        k++;
+
+    // Bare "Badge" - exactly the baseline for the player's badge count.
+    if (k == t->end)
+    {
+        *i = 0;
+        return true;
+    }
+
+    if (buffer[k] != '+' && buffer[k] != '-')
+        return set_parse_error(p, t->location, "expected '+' or '-' after 'Badge'");
+
+    l = strtol((const char *)&buffer[k], &end, 10);
+    if ((unsigned char *)end != &buffer[t->end])
+        return set_parse_error(p, t->location, "invalid offset after 'Badge', expected e.g. 'Badge+2'");
+    if (!(BADGE_LEVEL_MIN_OFFSET <= l && l <= BADGE_LEVEL_MAX_OFFSET))
+        return set_parse_error(p, t->location, "'Badge' offset must be between -99 and +55");
+
+    *i = (int)l;
+    return true;
+}
+
 static bool token_bool(struct Parser *p, const struct Token *t, bool *b)
 {
     if (is_literal_token(t, "Yes"))
@@ -1068,7 +1126,7 @@ static bool parse_pragma(struct Parser *p, struct Parsed *parsed)
         match_until_eol(&p_, &t);
         if (is_literal_token(&t, "explicit"))
             parsed->default_level_off = true;
-        else if (!token_int(p, &t, &parsed->default_level))
+        else if (!token_level(p, &t, &parsed->default_level, &parsed->default_level_is_badge_relative))
             return show_parse_error(p);
     }
     else
@@ -1430,7 +1488,7 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
                 if (pokemon->level_line)
                     any_error = !set_show_parse_error(p, key.location, "duplicate 'Level'");
                 pokemon->level_line = value.location.line;
-                if (!token_int(p, &value, &pokemon->level))
+                if (!token_level(p, &value, &pokemon->level, &pokemon->level_is_badge_relative))
                     any_error = !show_parse_error(p);
             }
             else if (is_literal_token(&key, "Ball"))
@@ -1505,6 +1563,7 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
             if (!parsed->default_level_off)
             {
                 pokemon->level = parsed->default_level;
+                pokemon->level_is_badge_relative = parsed->default_level_is_badge_relative;
                 pokemon->level_line = p->location.line;
             }
             else
@@ -2037,7 +2096,21 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
             if (pokemon->level_line)
             {
                 fprintf(f, "#line %d\n", pokemon->level_line);
-                fprintf(f, "            .lvl = %d,\n", pokemon->level);
+                if (pokemon->level_is_badge_relative)
+                {
+                    // Emitted symbolically so the sentinel's value stays defined
+                    // in exactly one place, include/constants/trainers.h.
+                    if (pokemon->level == 0)
+                        fprintf(f, "            .lvl = LEVEL_BASED_ON_BADGE,\n");
+                    else
+                        fprintf(f, "            .lvl = LEVEL_BASED_ON_BADGE %c %d,\n",
+                                pokemon->level < 0 ? '-' : '+',
+                                pokemon->level < 0 ? -pokemon->level : pokemon->level);
+                }
+                else
+                {
+                    fprintf(f, "            .lvl = %d,\n", pokemon->level);
+                }
             }
 
             if (pokemon->ball_line)
