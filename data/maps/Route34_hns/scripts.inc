@@ -119,7 +119,7 @@ Route34_EventScript_Item_RareCandy::
 	end
 	
 Route34_EventScript_Item_Embargo::
-    finditem ITEM_TM_EMBARGO
+    finditem ITEM_TM_HONE_CLAWS
     end
 
 

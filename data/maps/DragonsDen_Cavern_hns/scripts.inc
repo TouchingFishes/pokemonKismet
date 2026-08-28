@@ -84,7 +84,7 @@ DragonsDen_Cavern_Trigger_ClairRight::
 DragonsDen_Cavern_EventScript_Clair::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	msgbox DragonsDen_Cavern_Text_Clair_GiveTM, MSGBOX_DEFAULT
-	giveitem ITEM_TM_DRAGON_PULSE
+	giveitem ITEM_TM_DRAGON_CLAW
 	msgbox DragonsDen_Cavern_Text_Clair_ExplainTM, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -141,11 +141,11 @@ DragonsDen_Cavern_Text_Clair_GiveTM:
     .string "Here, take this as my apology.$"
 
 DragonsDen_Cavern_Text_Clair_ExplainTM:
-    .string "DRAGON PULSE is a kind of er...\n"
-	.string "never mind!\p"
-	.string "It's a huge energy of some kind.\p"
-	.string "If you don't want it, you don't have\n"
-	.string "to take it.$"
+    .string "That contains DRAGON CLAW.\p"
+	.string "No, it doesn't have anything to\n"
+	.string "do with my nails.\p"
+	.string "If you don't want it, you don't\n"
+	.string "have to take it.$"
 
 DragonsDen_Cavern_Text_ClairWhatsTheMatter:
     .string "What's the matter? Aren't\n"

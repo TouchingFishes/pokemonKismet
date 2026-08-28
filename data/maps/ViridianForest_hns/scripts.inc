@@ -225,7 +225,7 @@ ViridianForest_EventScript_SpikyEaredPichuRan::
 	end
 
 ViridianForest_EventScript_Item_Psych_Up::
-    finditem ITEM_TM_PSYCH_UP
+    finditem ITEM_TM_SILVER_WIND
     end
 
 ViridianForest_EventScript_MaxPotion::

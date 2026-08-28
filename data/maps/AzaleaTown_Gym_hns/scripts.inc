@@ -537,8 +537,8 @@ AzaleaTown_Gym_EventScript_Bugsy::
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 2
 	call Common_EventScript_SetGymTrainers_hns
-	giveitem ITEM_TM_U_TURN
-	msgbox AzaleaTown_Gym_Text_FuryCutterSpeech, MSGBOX_DEFAULT
+	giveitem ITEM_TM_POUNCE
+	msgbox AzaleaTown_Gym_Text_PounceSpeech, MSGBOX_DEFAULT
 	setvar VAR_AZALEA_TOWN_STATE, 5
 	closemessage
 	setflag FLAG_HIDE_AZALEA_TOWN_FARFETCHD
@@ -697,12 +697,16 @@ AzaleaTown_Gym_Text_HiveBadgeSpeech:
 	.string "Here, I also want you to\n"
 	.string "have this.$"
 
-AzaleaTown_Gym_Text_FuryCutterSpeech:
-	.string "TM89 contains U-TURN.\p"
-	.string "U-TURN lets you do damage and\n"
-	.string "switch your POKéMON in the same\l"
-	.string "turn!\p"
-	.string "Isn't that great?\n"
+AzaleaTown_Gym_Text_PounceSpeech:
+	.string "TM73 contains POUNCE!\p"
+	.string "This move is like a tricky\n"
+	.string "hunter's ambush strike.\p"
+	.string "The user leaps in a flash,\n"
+	.string "slamming into the foe and\n"
+	.string "lowering their SPEED!\p"
+	.string "Once you've been caught…\n"
+	.string "there's no easy escape.\p"
+	.string "Isn't that amazing?\n"
 	.string "I discovered it!$"
 
 AzaleaTown_Gym_Text_BugsyAdvice:

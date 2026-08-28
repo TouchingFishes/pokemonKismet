@@ -24,8 +24,9 @@
 
 #include "item.h"
 // Highest TM the randomizer can roll for field items. Derived from the active
-// FOREACH_TM list so each build target (Emerald/FRLG: TM50, HnS: TM92) covers
-// its full TM range instead of a hardcoded bound.
+// FOREACH_TM list so each build target (Emerald/FRLG: TM50, HnS: TM100) covers
+// its full TM range instead of a hardcoded bound. The value tracks the list on
+// its own; only this comment needed updating when the HnS list grew to 100.
 #define RANDOMIZER_MAX_TM           (ITEM_TM01 + NUM_TECHNICAL_MACHINES - 1)
 
 // Force-enable/disable overrides (uncomment to force)

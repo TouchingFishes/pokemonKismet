@@ -51,7 +51,7 @@ FuchsiaCity_Gym_EventScript_Janine::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox FuchsiaCity_Gym_Text_Janine_GiveTM, MSGBOX_DEFAULT
-	giveitem ITEM_TM_POISON_JAB
+	giveitem ITEM_TM_TOXIC
 	msgbox FuchsiaCity_Gym_Text_Janine_ExplainTM, MSGBOX_DEFAULT
 	setflag FLAG_BADGE14_GET
 	setflag FLAG_DEFEATED_FUCHSIA_GYM
@@ -105,8 +105,8 @@ FuchsiaCity_Gym_Text_Janine_GiveTM:
 	.string "special gift!$"
 
 FuchsiaCity_Gym_Text_Janine_ExplainTM:
-	.string "It's POISON JAB, a powerful Poison-type\n"
-	.string "move that may poison its victim.$"
+	.string "It's TOXIC, a powerful poison that\n"
+	.string "steadily saps the victim's HP.$"
 
 FuchsiaCity_Gym_Text_Janine_ApplyMyself:
 	.string "JANINE: I'm going to really apply\n"

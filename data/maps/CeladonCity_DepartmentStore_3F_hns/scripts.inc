@@ -26,16 +26,14 @@ CeladonDept3_EventScript_Clerk::
 
 	.align 2
 CeladonDept3_Pokemart:
-	.2byte ITEM_TM_SAFEGUARD
-	.2byte ITEM_TM_CAPTIVATE
-	.2byte ITEM_TM_STEALTH_ROCK
-	.2byte ITEM_TM_BRINE
-	.2byte ITEM_TM_AVALANCHE
-	.2byte ITEM_TM_DARK_PULSE
-	.2byte ITEM_TM_GYRO_BALL
-	.2byte ITEM_TM_DREAM_EATER
-	.2byte ITEM_TM_GIGA_IMPACT
-	.2byte ITEM_TM_ENDURE
+	.2byte ITEM_TM_REFLECT
+	.2byte ITEM_TM_LIGHT_SCREEN
+	.2byte ITEM_TM_DIG
+	.2byte ITEM_TM_BRICK_BREAK
+	.2byte ITEM_TM_FIRE_BLAST
+	.2byte ITEM_TM_THUNDER
+	.2byte ITEM_TM_BLIZZARD
+	.2byte ITEM_TM_HYPER_BEAM
 	pokemartlistend
 
 CeladonDept3_EventScript_Directory::

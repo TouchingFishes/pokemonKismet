@@ -733,6 +733,9 @@ extern const u16 *const gEggMoves_Gen3[];
 // Kismet's ported egg moves. Sparse, like the level-up tables above.
 extern const u16 *const gEggMoves_Kismet[];
 extern const u16 *const gEggMoves_KismetGen3[];
+// Kismet's ported TM/HM access. Sparse; each entry already carries the
+// generated list's tutor and universal moves, which the fork does not model.
+extern const u16 *const gTeachableLearnsets_Kismet[];
 extern const u32 gExperienceTables[][MAX_LEVEL + 1];
 extern const u8 gPPUpGetMask[];
 extern const u8 gPPUpClearMask[];

@@ -104,9 +104,9 @@ Route13_EventScript_RematchKenny::
 	end
 
 Route13_EventScript_RematchKennyTryGiveItem::
-	checkitem ITEM_TM_STONE_EDGE
+	checkitem ITEM_TM_GYRO_BALL
 	goto_if_eq VAR_RESULT, TRUE, Common_EventScript_NoOp
-	giveitem ITEM_TM_STONE_EDGE
+	giveitem ITEM_TM_GYRO_BALL
 	closemessage
 	end
 

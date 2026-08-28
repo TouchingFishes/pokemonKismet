@@ -8,7 +8,7 @@ VictoryRoadKanto_1F_EventScript_Item_MaxEther::
 	finditem ITEM_MAX_ETHER
 	end
 VictoryRoadKanto_EventScript_Item_Dark_Pulse::
-    finditem ITEM_TM_DARK_PULSE
+    finditem ITEM_TM_PSYSHOCK
     end
 
 VictoryRoadKanto_1F_Trigger::

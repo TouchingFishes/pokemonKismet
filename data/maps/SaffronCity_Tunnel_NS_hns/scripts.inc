@@ -4,6 +4,9 @@ SaffronCity_Tunnel_NS_hns_MapScripts::
 SaffronCity_Tunnel_NS_EventScript_BaldingMan::
 	lock
 	faceplayer
+@ FLAG_ITEM_UNDERGROUND_PATH_TM_EXPLOSION still names the OLD move. The flag is
+@ reused deliberately - renaming it would orphan the bit in existing saves - but
+@ this man now hands over ITEM_TM_HYPER_BEAM, not Explosion.
 	goto_if_set FLAG_ITEM_UNDERGROUND_PATH_TM_EXPLOSION, SaffronCity_Tunnel_NS_EventScript_BaldingManAfter
 	msgbox SaffronCity_Tunnel_NS_Text_BaldingManIntro, MSGBOX_DEFAULT
 	checkitem ITEM_RAGE_CANDY_BAR
@@ -20,7 +23,7 @@ SaffronCity_Tunnel_NS_EventScript_BaldingManDetected::
 	msgbox SaffronCity_Tunnel_NS_Text_BaldingManCandybarDetected, MSGBOX_DEFAULT
 	removeitem ITEM_RAGE_CANDY_BAR
 	msgbox SaffronCity_Tunnel_NS_Text_BaldingManGaveCandybar, MSGBOX_DEFAULT
-	giveitem ITEM_TM_EXPLOSION
+	giveitem ITEM_TM_HYPER_BEAM
 	setflag FLAG_ITEM_UNDERGROUND_PATH_TM_EXPLOSION
 SaffronCity_Tunnel_NS_EventScript_BaldingManAfter::
 	msgbox SaffronCity_Tunnel_NS_Text_BaldingManGaveTm, MSGBOX_DEFAULT

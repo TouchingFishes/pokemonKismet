@@ -5889,7 +5889,19 @@ const struct LevelUpMove *GetSpeciesLevelUpLearnset(u16 species)
 
 const u16 *GetSpeciesTeachableLearnset(u16 species)
 {
-    const u16 *learnset = gSpeciesInfo[SanitizeSpeciesId(species)].teachableLearnset;
+    u16 sanitized = SanitizeSpeciesId(species);
+
+    // Kismet's TM/HM access, ported from pokemonHnS. Sparse like the movepool
+    // tables: NULL means the fork had no opinion on this species, so the
+    // lookup falls through to make_teachables.py's generated list. The ported
+    // entries already carry that list's tutor and universal moves - the fork
+    // only models TMs and HMs, so replacing rather than merging would have
+    // deleted tutor access.
+    const u16 *learnset = gTeachableLearnsets_Kismet[sanitized];
+    if (learnset != NULL)
+        return learnset;
+
+    learnset = gSpeciesInfo[sanitized].teachableLearnset;
     if (learnset == NULL)
         return gSpeciesInfo[SPECIES_NONE].teachableLearnset;
     return learnset;

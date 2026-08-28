@@ -181,9 +181,9 @@ Route14_EventScript_RematchCarter::
 	end
 
 Route14_EventScript_RematchCarterTryGiveItem::
-	checkitem ITEM_TM_THUNDER_WAVE
+	checkitem ITEM_TM_AERIAL_ACE
 	goto_if_eq VAR_RESULT, TRUE, Common_EventScript_NoOp
-	giveitem ITEM_TM_THUNDER_WAVE
+	giveitem ITEM_TM_AERIAL_ACE
 	closemessage
 	end
 

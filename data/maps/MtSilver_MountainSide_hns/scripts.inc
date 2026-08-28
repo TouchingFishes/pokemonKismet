@@ -8,5 +8,5 @@ MtSilver_MountainSide_OnTransition:
 	end
 
 MtSilver_MountainSide_EventScript_Item_Stealth_Rock::
-    finditem ITEM_TM_STEALTH_ROCK
+    finditem ITEM_TM_METEOR_BEAM
     end

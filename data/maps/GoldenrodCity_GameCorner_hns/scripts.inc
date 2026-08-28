@@ -215,8 +215,11 @@ GoldenrodCity_GameCorner_EventScript_SendMon::
 	.set TM_FLAMETHROWER_COINS, 4000
 	.set TM_THUNDERBOLT_COINS, 4000
 	.set TM_REST_COINS, 2000
-	.set TM_SWORDS_DANCE_COINS, 3000
-	.set TM_SUBSTITUTE_COINS, 2000
+	.set TM_SEED_BOMB_COINS, 3000
+	.set TM_DETECT_COINS, 2000
+	.set TM_HYPER_BEAM_COINS, 4000
+	.set TM_GIGA_IMPACT_COINS, 4000
+	.set LAVA_PLUME_TUTOR_COINS, 2500
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_PrizeClerkTMs::
 	lock
@@ -240,15 +243,17 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReturnToChooseTMPrize::
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ChooseTMPrize
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_ChooseTMPrize::
-	dynmultichoice 12, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, GoldenrodCity_GameCorner_PrizeRoom_Text_TM44, GoldenrodCity_GameCorner_PrizeRoom_Text_TM90, GoldenrodCity_GameCorner_PrizeRoom_Text_TM75, GoldenrodCity_GameCorner_PrizeRoom_Text_TM13, GoldenrodCity_GameCorner_PrizeRoom_Text_TM24, GoldenrodCity_GameCorner_PrizeRoom_Text_TM35, GoldenrodCity_GameCorner_PrizeRoom_Text_Cancel
+	dynmultichoice 12, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, GoldenrodCity_GameCorner_PrizeRoom_Text_TM44, GoldenrodCity_GameCorner_PrizeRoom_Text_TM90, GoldenrodCity_GameCorner_PrizeRoom_Text_TM93, GoldenrodCity_GameCorner_PrizeRoom_Text_TM13, GoldenrodCity_GameCorner_PrizeRoom_Text_TM24, GoldenrodCity_GameCorner_PrizeRoom_Text_TM35, GoldenrodCity_GameCorner_PrizeRoom_Text_TM15, GoldenrodCity_GameCorner_PrizeRoom_Text_TM100, GoldenrodCity_GameCorner_PrizeRoom_Text_Cancel
 	switch VAR_RESULT
 	case 0, GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMRest
-	case 1, GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMSubstitute
-	case 2, GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMSwordsDance
+	case 1, GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMDetect
+	case 2, GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMSeedBomb
 	case 3, GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMIceBeam
 	case 4, GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMThunderbolt
 	case 5, GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMFlamethrower
-	case 6, GoldenrodCity_GameCorner_PrizeRoom_EventScript_CancelTMSelect
+	case 6, GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMHyperBeam
+	case 7, GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMGigaImpact
+	case 8, GoldenrodCity_GameCorner_PrizeRoom_EventScript_CancelTMSelect
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_CancelTMSelect
 	end
 
@@ -276,16 +281,28 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMRest::
 	setvar VAR_0x8004, ITEM_TM_REST
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ConfirmTMPrize
 
-GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMSwordsDance::
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMSeedBomb::
 	setvar VAR_TEMP_1, 4
-	bufferitemname STR_VAR_1, ITEM_TM75
-	setvar VAR_0x8004, ITEM_TM75
+	bufferitemname STR_VAR_1, ITEM_TM_SEED_BOMB
+	setvar VAR_0x8004, ITEM_TM_SEED_BOMB
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ConfirmTMPrize
 
-GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMSubstitute::
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMDetect::
 	setvar VAR_TEMP_1, 5
-	bufferitemname STR_VAR_1, ITEM_TM90
-	setvar VAR_0x8004, ITEM_TM90
+	bufferitemname STR_VAR_1, ITEM_TM_DETECT
+	setvar VAR_0x8004, ITEM_TM_DETECT
+	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ConfirmTMPrize
+
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMHyperBeam::
+	setvar VAR_TEMP_1, 7
+	bufferitemname STR_VAR_1, ITEM_TM_HYPER_BEAM
+	setvar VAR_0x8004, ITEM_TM_HYPER_BEAM
+	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ConfirmTMPrize
+
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_TMGigaImpact::
+	setvar VAR_TEMP_1, 8
+	bufferitemname STR_VAR_1, ITEM_TM_GIGA_IMPACT
+	setvar VAR_0x8004, ITEM_TM_GIGA_IMPACT
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ConfirmTMPrize
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_ConfirmTMPrize::
@@ -297,9 +314,11 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_ConfirmTMPrize::
 	case 1, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMIceBeam
 	case 2, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMFlamethrower
 	case 3, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMRest
-	case 4, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSwordsDance
-	case 5, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSubstitute
+	case 4, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSeedBomb
+	case 5, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMDetect
 	case 6, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMThunderbolt
+	case 7, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMHyperBeam
+	case 8, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMGigaImpact
 	end
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_ConfirmTMPrizeInfinite::
@@ -307,9 +326,37 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_ConfirmTMPrizeInfinite::
 	case 1, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMIceBeamInfinite
 	case 2, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMFlamethrowerInfinite
 	case 3, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMRestInfinite
-	case 4, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSwordsDanceInfinite
-	case 5, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSubstituteInfinite
+	case 4, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSeedBombInfinite
+	case 5, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMDetectInfinite
 	case 6, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMThunderboltInfinite
+	case 7, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMHyperBeamInfinite
+	case 8, GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMGigaImpactInfinite
+	end
+
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMHyperBeamInfinite::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_HYPER_BEAM_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
+	checkitem ITEM_TM_HYPER_BEAM, 1
+	goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_YouAlreadyHaveThis
+	removecoins TM_HYPER_BEAM_COINS
+	additem ITEM_TM_HYPER_BEAM
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorHereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMGigaImpactInfinite::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_GIGA_IMPACT_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
+	checkitem ITEM_TM_GIGA_IMPACT, 1
+	goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_YouAlreadyHaveThis
+	removecoins TM_GIGA_IMPACT_COINS
+	additem ITEM_TM_GIGA_IMPACT
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorHereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReturnToChooseTMPrize
 	end
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMIceBeamInfinite::
@@ -364,26 +411,52 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMRestInfinite::
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReturnToChooseTMPrize
 	end
 
-GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSwordsDanceInfinite::
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSeedBombInfinite::
 	checkcoins VAR_TEMP_2
-	goto_if_lt VAR_TEMP_2, TM_SWORDS_DANCE_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
-	checkitem ITEM_TM75, 1
+	goto_if_lt VAR_TEMP_2, TM_SEED_BOMB_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
+	checkitem ITEM_TM_SEED_BOMB, 1
 	goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_YouAlreadyHaveThis
-	removecoins TM_SWORDS_DANCE_COINS
-	additem ITEM_TM75
+	removecoins TM_SEED_BOMB_COINS
+	additem ITEM_TM_SEED_BOMB
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorHereYouGo, MSGBOX_DEFAULT
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReturnToChooseTMPrize
 	end
 
-GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSubstituteInfinite::
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMDetectInfinite::
 	checkcoins VAR_TEMP_2
-	goto_if_lt VAR_TEMP_2, TM_SUBSTITUTE_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
-	checkitem ITEM_TM90, 1
+	goto_if_lt VAR_TEMP_2, TM_DETECT_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
+	checkitem ITEM_TM_DETECT, 1
 	goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_YouAlreadyHaveThis
-	removecoins TM_SUBSTITUTE_COINS
-	additem ITEM_TM90
+	removecoins TM_DETECT_COINS
+	additem ITEM_TM_DETECT
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorHereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMHyperBeam::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_HYPER_BEAM_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
+	checkitemspace ITEM_TM_HYPER_BEAM
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NoRoomForTM
+	removecoins TM_HYPER_BEAM_COINS
+	additem ITEM_TM_HYPER_BEAM
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorHereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMGigaImpact::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_GIGA_IMPACT_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
+	checkitemspace ITEM_TM_GIGA_IMPACT
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NoRoomForTM
+	removecoins TM_GIGA_IMPACT_COINS
+	additem ITEM_TM_GIGA_IMPACT
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorHereYouGo, MSGBOX_DEFAULT
@@ -442,26 +515,26 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMRest::
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReturnToChooseTMPrize
 	end
 
-GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSwordsDance::
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSeedBomb::
 	checkcoins VAR_TEMP_2
-	goto_if_lt VAR_TEMP_2, TM_SWORDS_DANCE_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
-	checkitemspace ITEM_TM75
+	goto_if_lt VAR_TEMP_2, TM_SEED_BOMB_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
+	checkitemspace ITEM_TM_SEED_BOMB
 	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NoRoomForTM
-	removecoins TM_SWORDS_DANCE_COINS
-	additem ITEM_TM75
+	removecoins TM_SEED_BOMB_COINS
+	additem ITEM_TM_SEED_BOMB
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorHereYouGo, MSGBOX_DEFAULT
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ReturnToChooseTMPrize
 	end
 
-GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMSubstitute::
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_BuyTMDetect::
 	checkcoins VAR_TEMP_2
-	goto_if_lt VAR_TEMP_2, TM_SUBSTITUTE_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
-	checkitemspace ITEM_TM90
+	goto_if_lt VAR_TEMP_2, TM_DETECT_COINS, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoinsForTM
+	checkitemspace ITEM_TM_DETECT
 	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NoRoomForTM
-	removecoins TM_SUBSTITUTE_COINS
-	additem ITEM_TM90
+	removecoins TM_DETECT_COINS
+	additem ITEM_TM_DETECT
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorHereYouGo, MSGBOX_DEFAULT
@@ -493,10 +566,10 @@ GoldenrodCity_GameCorner_PrizeRoom_Text_TM44:
 	.string "REST{CLEAR_TO 0x58}2,000 C.$"
 
 GoldenrodCity_GameCorner_PrizeRoom_Text_TM90:
-	.string "SUBSTITUTE{CLEAR_TO 0x58}2,000 C.$"
+	.string "DETECT{CLEAR_TO 0x58}2,000 C.$"
 
-GoldenrodCity_GameCorner_PrizeRoom_Text_TM75:
-	.string "SWORDS DANCE{CLEAR_TO 0x58}3,000 C.$"
+GoldenrodCity_GameCorner_PrizeRoom_Text_TM93:
+	.string "SEED BOMB{CLEAR_TO 0x58}3,000 C.$"
 
 GoldenrodCity_GameCorner_PrizeRoom_Text_TM13:
 	.string "ICE BEAM{CLEAR_TO 0x58}4,000 C.$"
@@ -506,6 +579,12 @@ GoldenrodCity_GameCorner_PrizeRoom_Text_TM24:
 
 GoldenrodCity_GameCorner_PrizeRoom_Text_TM35:
 	.string "FLAMETHROWER{CLEAR_TO 0x58}4,000 C.$"
+
+GoldenrodCity_GameCorner_PrizeRoom_Text_TM15:
+	.string "HYPER BEAM{CLEAR_TO 0x58}4,000 C.$"
+
+GoldenrodCity_GameCorner_PrizeRoom_Text_TM100:
+	.string "GIGA IMPACT{CLEAR_TO 0x58}4,000 C.$"
 
 GoldenrodCity_GameCorner_PrizeRoom_Text_Cancel:
 	.string "EXIT$"
@@ -901,3 +980,80 @@ GoldenrodCity_GameCorner_Text_VFAttendant1:
 GoldenrodCity_GameCorner_Text_VFAttendant2:
 	.string "Try the other side of\n"
 	.string "the table, pal.$"
+
+@ Coin-cost move tutor. Lava Plume is deliberately not a TM, so this old man
+@ is the only source for it. tools/learnset_helpers/make_tutors.py registers
+@ it by finding BOTH the VAR_0x8005 setvar and the chooseboxmon in this file.
+@
+@ TODO: he is present every day. He is meant to appear only on certain
+@ weekdays, like the HGSS day-of-week NPCs. That is not a flag check away -
+@ the tree has WEEKDAY_* in constants/siirtc.h and a dayOfWeek field in
+@ src/datetime.c, but NO script-side accessor: data/specials.inc has no
+@ weekday special, and the only script command is fwdweekday, which advances
+@ time rather than reading it. Gating him needs that accessor built first.
+GoldenrodCity_GameCorner_EventScript_LavaPlumeTutor::
+	lock
+	faceplayer
+	checkitem ITEM_COIN_CASE
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_LavaPlumeTutorNoCase
+	msgbox GoldenrodCity_GameCorner_Text_LavaPlumeTutorIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, GoldenrodCity_GameCorner_EventScript_LavaPlumeTutorDecline
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, LAVA_PLUME_TUTOR_COINS, GoldenrodCity_GameCorner_EventScript_LavaPlumeTutorNotEnough
+	setvar VAR_0x8005, MOVE_LAVA_PLUME
+	msgbox GoldenrodCity_GameCorner_Text_LavaPlumeTutorWhichMon, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	chooseboxmon SELECT_PC_MON_MOVE_TUTOR
+	waitstate
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_LavaPlumeTutorDecline
+	removecoins LAVA_PLUME_TUTOR_COINS
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_LavaPlumeTutorDone, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_LavaPlumeTutorNoCase::
+	msgbox GoldenrodCity_GameCorner_Text_LavaPlumeTutorNoCase, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_LavaPlumeTutorNotEnough::
+	msgbox GoldenrodCity_GameCorner_Text_LavaPlumeTutorNotEnough, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_LavaPlumeTutorDecline::
+	msgbox GoldenrodCity_GameCorner_Text_LavaPlumeTutorDecline, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_LavaPlumeTutorIntro:
+	.string "Heh… I ran the furnaces up at\n"
+	.string "the CAPE, back when they still\n"
+	.string "burned.\p"
+	.string "I can still teach a POKéMON to\n"
+	.string "spit a sheet of molten rock.\p"
+	.string "LAVA PLUME. 2500 coins.\n"
+	.string "Interested?$"
+
+GoldenrodCity_GameCorner_Text_LavaPlumeTutorWhichMon:
+	.string "Then bring me the one that wants\n"
+	.string "to learn it.$"
+
+GoldenrodCity_GameCorner_Text_LavaPlumeTutorDone:
+	.string "There. It scorches everything\n"
+	.string "around it, friend or foe.\p"
+	.string "Mind where you point it.$"
+
+GoldenrodCity_GameCorner_Text_LavaPlumeTutorNotEnough:
+	.string "2500 coins. Not a chip less.\p"
+	.string "Come back when you have won\n"
+	.string "some more.$"
+
+GoldenrodCity_GameCorner_Text_LavaPlumeTutorNoCase:
+	.string "No COIN CASE? Then we have\n"
+	.string "nothing to discuss.$"
+
+GoldenrodCity_GameCorner_Text_LavaPlumeTutorDecline:
+	.string "Suit yourself. The furnace is not\n"
+	.string "going anywhere.$"

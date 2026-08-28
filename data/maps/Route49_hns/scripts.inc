@@ -403,5 +403,5 @@ Route49_EventScript_WyrdeerRan::
 	end
 
 Route49_EventScript_Item_TMRockClimb::
-	finditem ITEM_TM_ROCK_CLIMB
+	finditem ITEM_TM_GIGA_IMPACT
 	end
