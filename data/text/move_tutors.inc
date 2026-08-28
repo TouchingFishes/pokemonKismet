@@ -3,14 +3,16 @@ MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce:
 	.string "once. Is that okay?$"
 
 MoveTutor_Text_SwaggerTeach:
-	.string "Heh! My POKéMON totally rules!\n"
-	.string "It's cooler than any POKéMON!\p"
-	.string "I was lipping off with a swagger in\n"
-	.string "my step like that when the CHAIRMAN\l"
-	.string "chewed me out.\p"
-	.string "That took the swagger out of my step.\p"
-	.string "If you'd like, I'll teach the move\n"
-	.string "SWAGGER to a POKéMON of yours.$"
+	.string "Heh! My POKéMON totally rules!\p"
+	.string "I was strutting like that coming\n"
+	.string "out of MT.MOON…\p"
+	.string "Then a BUG CATCHER's WEEDLE put me\n"
+	.string "flat on my back.\p"
+	.string "Took the swagger right out of my\n"
+	.string "step.\p"
+	.string "For just ¥2500, I'll teach the\n"
+	.string "move SWAGGER to a POKéMON\n"
+	.string "of yours.$"
 
 MoveTutor_Text_SwaggerDeclined:
 	.string "What, no? Can't you get into\n"
@@ -25,15 +27,14 @@ MoveTutor_Text_SwaggerTaught:
 	.string "on without the swagger.$"
 
 MoveTutor_Text_RolloutTeach:
-	.string "Did you know that you can go from\n"
-	.string "here a long way in that direction\l"
-	.string "without changing direction?\p"
-	.string "I might even be able to roll\n"
-	.string "that way.\p"
-	.string "Do you think your POKéMON will\n"
-	.string "want to roll, too?\p"
+	.string "See the boulders they haul down\n"
+	.string "from MT.MOON?\p"
+	.string "Once one starts rolling it just\n"
+	.string "keeps going. Faster and faster.\p"
+	.string "Do you think your POKéMON would\n"
+	.string "like to roll like that?\p"
 	.string "I can teach one the move ROLLOUT\n"
-	.string "if you'd like.$"
+	.string "for just ¥2500.$"
 
 MoveTutor_Text_RolloutDeclined:
 	.string "You don't need to be shy about it.\n"
@@ -48,12 +49,14 @@ MoveTutor_Text_RolloutTaught:
 	.string "happy. Come on, let's roll!$"
 
 MoveTutor_Text_FuryCutterTeach:
-	.string "There's a move that gets stronger\n"
-	.string "when you keep using it in a row.\p"
-	.string "It's a BUG-type move, and it is\n"
-	.string "wickedly cool.\p"
-	.string "It's called FURY CUTTER.\n"
-	.string "Want me to teach it to a POKéMON?$"
+	.string "Hear that? The BUG POKéMON in\n"
+	.string "this forest never stop moving.\p"
+	.string "There's a move like that. Weak at\n"
+	.string "first-then stronger every time\l"
+	.string "it lands.\p"
+	.string "It's called FURY CUTTER.\p"
+	.string "I'll teach it to a POKéMON of\n"
+	.string "yours for just ¥3500.$"
 
 MoveTutor_Text_FuryCutterDeclined:
 	.string "We're not on the same wavelength.$"
@@ -66,39 +69,55 @@ MoveTutor_Text_FuryCutterTaught:
 	.string "I get a thrill watching to see if\n"
 	.string "the move keeps hitting in succession!$"
 
-MoveTutor_MimicTeach:
-	.string "Ah, young one!\p"
-	.string "I am also a young one, but I mimic\n"
-	.string "the styles and speech of the elderly\l"
-	.string "folks of this town.\p"
-	.string "What do you say, young one?\n"
-	.string "Would you agree to it if I were to\l"
-	.string "offer to teach the move MIMIC?$"
+MoveTutor_TriAttackTeach:
+	.string "Ah! A TRAINER! Excellent timing!\p"
+	.string "I've been conducting research on\n"
+	.string "multi-phase attack systems!\p"
+	.string "Most moves rely on a single\n"
+	.string "energy output…\p"
+	.string "But TRI ATTACK?\p"
+	.string "A perfect triad! Three distinct\n"
+	.string "energies acting in harmony!\p"
+	.string "Fire, ice, and electricity…\n"
+	.string "a beautifully unstable system!\p"
+	.string "Fascinating, isn't it?\p"
+	.string "For just ¥3333, I can teach your\n"
+	.string "POKéMON this phenomenon!\p"
+	.string "Well? Care to participate in\n"
+	.string "my experiment?$"
 
-MoveTutor_MimicDeclined:
-	.string "Oh, boo! I wanted to teach MIMIC\n"
-	.string "to your POKéMON!$"
+MoveTutor_TriAttackDeclined:
+	.string "Ah… a shame.\p"
+	.string "Not everyone appreciates\n"
+	.string "elegant equations in motion…$"
 
-MoveTutor_Text_MimicWhichMon:
-	.string "Fwofwo! And so I shall!\n"
-	.string "Let me see the POKéMON\l"
-	.string "you wish me to teach.$"
+MoveTutor_Text_TriAttackWhichMon:
+	.string "Splendid!\p"
+	.string "Now then, which POKéMON shall\n"
+	.string "serve as our test subject-ah,\l"
+	.string "I mean, student?$"
 
-MoveTutor_Text_MimicTaught:
-	.string "MIMIC is a move of great depth.\p"
-	.string "Could you execute it to perfection\n"
-	.string "as well as me…?$"
+MoveTutor_Text_TriAttackTaught:
+	.string "Remarkable!\p"
+	.string "A perfect balance of opposing\n"
+	.string "forces!\p"
+	.string "Too much of one element and the\n"
+	.string "system collapses.\p"
+	.string "But in harmony…\n"
+	.string "it becomes something greater.$"
 
 MoveTutor_Text_MetronomeTeach:
 	.string "I want all sorts of things!\n"
 	.string "But I used up my allowance…\p"
+	.string "Every ship that docks here brings\n"
+	.string "something new to want.\p"
 	.string "Wouldn't it be nice if there were\n"
-	.string "a spell that made money appear when\l"
-	.string "you waggle a finger?\p"
-	.string "If you want, I can teach your POKéMON\n"
-	.string "the move METRONOME.\p"
-	.string "Money won't appear, but your POKéMON\n"
-	.string "will waggle a finger. Yes?$"
+	.string "a spell that made money appear\l"
+	.string "when you waggle a finger?\p"
+	.string "I can teach your POKéMON the move\n"
+	.string "METRONOME for just ¥2500.\p"
+	.string "Money won't appear, but your\n"
+	.string "POKéMON will waggle a finger. Yes?$"
 
 MoveTutor_Text_MetronomeDeclined:
 	.string "Okay. I'll be here if you change\n"
@@ -115,38 +134,52 @@ MoveTutor_Text_MetronomeTaught:
 	.string "Wouldn't it be nice if we could\n"
 	.string "use it, too?$"
 
-MoveTutor_Text_SleepTalkTeach:
-	.string "Humph! My wife relies on HIDDEN\n"
-	.string "POWER to stay awake.\p"
-	.string "She should just take a nap like I do,\n"
-	.string "and SLEEP TALK.\p"
-	.string "I can teach your POKéMON how to\n"
-	.string "SLEEP TALK instead. Interested?$"
+MoveTutor_Text_FocusBlastTeach:
+	.string "…Listen closely.\p"
+	.string "Where I trained there was no\n"
+	.string "room for distractions.\p"
+	.string "Power must be gathered…\n"
+	.string "then released all at once.\p"
+	.string "That is the essence of\n"
+	.string "FOCUS BLAST.\p"
+	.string "It is not an easy technique.\n"
+	.string "But in the right moment…\l"
+	.string "it decides everything.\p"
+	.string "I can teach it to your POKéMON\n"
+	.string "for ¥20000.\p"
+	.string "Will you learn to strike with\n"
+	.string "true focus?$"
 
-MoveTutor_Text_SleepTalkDeclined:
-	.string "Oh, fine, fine. You want to stay awake\n"
-	.string "with HIDDEN POWER, too…$"
+MoveTutor_Text_FocusBlastDeclined:
+	.string "…I see.\p"
+	.string "Then return when your focus\n"
+	.string "is stronger.$"
 
-MoveTutor_Text_SleepTalkWhichMon:
-	.string "Ah, an appreciative child!\n"
-	.string "Which POKéMON should I teach?$"
+MoveTutor_Text_FocusBlastWhichMon:
+	.string "Good.\p"
+	.string "Which POKéMON will learn to\n"
+	.string "gather its strength?$"
 
-MoveTutor_Text_SleepTalkTaught:
-	.string "I've never once gotten my wife's\n"
-	.string "coin trick right.\p"
-	.string "I would be happy if I got it right\n"
-	.string "even as I SLEEP TALK…$"
+MoveTutor_Text_FocusBlastTaught:
+	.string "Do not waste that power.\p"
+	.string "FOCUS BLAST demands patience…\n"
+	.string "and perfect timing.$"
 
 MoveTutor_Text_SubstituteTeach:
-	.string "When I see the wide world from up\n"
-	.string "here on the roof…\p"
-	.string "I think about how nice it would be\n"
-	.string "if there were more than just one me\l"
-	.string "so I could enjoy all sorts of lives.\p"
-	.string "Of course it's not possible.\n"
-	.string "Giggle…\p"
-	.string "I know! Would you be interested in\n"
-	.string "having a POKéMON learn SUBSTITUTE?$"
+	.string "…You're a TRAINER, right?\p"
+	.string "Then you know hesitation costs\n"
+	.string "you everything.\p"
+	.string "On TRAINER HILL there's no room\n"
+	.string "for mistakes.\p"
+	.string "You either outplay your opponent…\n"
+	.string "or you lose.\p"
+	.string "SUBSTITUTE is the ultimate tool.\p"
+	.string "Create an opening.\n"
+	.string "Force your opponent to react.\p"
+	.string "Control the battle.\p"
+	.string "For ¥12500 I'll teach your\n"
+	.string "POKéMON SUBSTITUTE.\p"
+	.string "If you're serious about winning.$"
 
 MoveTutor_Text_SubstituteDeclined:
 	.string "Oh, no?\p"
@@ -163,41 +196,65 @@ MoveTutor_Text_SubstituteTaught:
 	.string "own lives to the utmost!\p"
 	.string "I hope you'll get that way, too!$"
 
-MoveTutor_Text_DynamicPunchTeach:
-	.string "I can't do this anymore!\p"
-	.string "It's utterly hopeless!\p"
-	.string "I'm a FIGHTING-type TRAINER,\n"
-	.string "so I can't win at the GYM\l"
-	.string "no matter how hard I try!\p"
-	.string "Argh! Punch! Punch! Punch!\n"
-	.string "Punch! Punch! Punch!\p"
-	.string "What, don't look at me that way!\n"
-	.string "I'm only hitting the ground!\p"
-	.string "Or do you want me to teach your\n"
-	.string "POKéMON DYNAMICPUNCH?$"
+MoveTutor_Text_FocusPunchTeach:
+	.string "Hrrm…?\p"
+	.string "Oh! A challenger?!\n"
+	.string "Or are you here to admire my\l"
+	.string "magnificent physique?!\p"
+	.string "…Eh? Not impressed?\p"
+	.string "Tch! Youth these days!\p"
+	.string "Listen well!\p"
+	.string "In my prime I trained on remote\n"
+	.string "islands!\p"
+	.string "Carried boulders! Fought waves!\n"
+	.string "Ate nothing but discipline!\p"
+	.string "FOCUS PUNCH…\p"
+	.string "is the ultimate technique!\p"
+	.string "You stand still… meditate…\n"
+	.string "and strike at the right moment!\p"
+	.string "Miss that moment, and you look\n"
+	.string "like a complete fool!\p"
+	.string "WAHAHA!\p"
+	.string "For ¥5000, I'll teach your\n"
+	.string "POKéMON the secret!\p"
+	.string "If you've got the nerve!$"
 
-MoveTutor_Text_DynamicPunchDeclined:
-	.string "Darn! You're even making fun of me?\n"
-	.string "Punch! Punch! Punch!$"
+MoveTutor_Text_FocusPunchDeclined:
+	.string "Hmph!\p"
+	.string "No guts, no glory!\p"
+	.string "Come back when you're ready\n"
+	.string "to ask again!$"
 
-MoveTutor_Text_DynamicPunchWhichMon:
-	.string "What? You do? You're a good person!\n"
-	.string "Which POKéMON should I teach?$"
+MoveTutor_Text_FocusPunchWhichMon:
+	.string "Oho! Brave, are we?!\p"
+	.string "Good! Good!\p"
+	.string "Now then… which POKéMON will\n"
+	.string "risk looking like a fool?!$"
 
-MoveTutor_Text_DynamicPunchTaught:
-	.string "I want you to win at the MOSSDEEP GYM\n"
-	.string "using that DYNAMICPUNCH!$"
+MoveTutor_Text_FocusPunchTaught:
+	.string "WAHAHA! Excellent!\p"
+	.string "You felt it, didn't you?!\p"
+	.string "That moment… that PERFECT timing!\p"
+	.string "Remember this, youngster!\p"
+	.string "Strength isn't in the punch…\n"
+	.string "it's in the patience before it!\p"
+	.string "Now go! Train! Fail! Get hit!\n"
+	.string "That's how you grow!$"
 
 MoveTutor_Text_DoubleEdgeTeach:
 	.string "Sigh…\p"
-	.string "The GYM LEADER is really\n"
+	.string "VIRIDIAN's GYM LEADER is really\n"
 	.string "lovably admirable.\p"
 	.string "But that also means I have many\n"
 	.string "rivals for his attention.\p"
-	.string "He's got appeal with a DOUBLE-EDGE.\n"
+	.string "He has appeal with a DOUBLE-EDGE.\n"
 	.string "I couldn't even catch his eye.\p"
-	.string "Please, let me teach your POKéMON\n"
-	.string "the move DOUBLE-EDGE!$"
+	.string "If I'm to move forward, I need to\n"
+	.string "be stronger, too.\p"
+	.string "For ¥15000, let me teach your\n"
+	.string "POKéMON DOUBLE-EDGE.\p"
+	.string "A move that gives everything,\n"
+	.string "no matter the cost.$"
 
 MoveTutor_Text_DoubleEdgeDeclined:
 	.string "Oh…\n"
@@ -212,14 +269,22 @@ MoveTutor_Text_DoubleEdgeTaught:
 	.string "I'll become tough!$"
 
 MoveTutor_Text_ExplosionTeach:
-	.string "I don't intend to be going nowhere\n"
-	.string "fast in the sticks like this forever.\p"
-	.string "You watch me, I'll get out to the city\n"
-	.string "and become a huge hit.\p"
-	.string "Seriously, I'm going to cause\n"
-	.string "a huge EXPLOSION of popularity!\p"
-	.string "If you overheard that, I'll happily\n"
-	.string "teach EXPLOSION to your POKéMON!$"
+	.string "…You hear it, don't you?\p"
+	.string "Even now… beneath the silence.\p"
+	.string "Like a chord still ringing\n"
+	.string "after the song is over.\p"
+	.string "I used to play here on CINNABAR.\n"
+	.string "Loud. Proud.\p"
+	.string "Then the volcano answered back.\p"
+	.string "One note… louder than anything\n"
+	.string "I ever played.\p"
+	.string "EXPLOSION is like that.\p"
+	.string "Not a melody…\n"
+	.string "just a final, overwhelming sound.\p"
+	.string "For ¥15000 I'll teach it to your\n"
+	.string "POKéMON.\p"
+	.string "But understand what you're asking\n"
+	.string "for.$"
 
 MoveTutor_Text_ExplosionDeclined:
 	.string "Gaah! You're turning me down because\n"
@@ -238,11 +303,13 @@ MoveTutor_Text_ExplosionTaught:
 
 MoveTutor_Text_HeadbuttTeach:
 	.string "What am I doing?\p"
-	.string "I'm shaking trees using HEADBUTT.\p"
-	.string "Do you think your POKéMON will\n"
-	.string "want to HEADBUTT, too?\p"
+	.string "Shaking trees. A good HEADBUTT\n"
+	.string "knocks loose whatever's up there-\l"
+	.string "BERRIES, POKéMON, odd surprises.\p"
+	.string "Do you think your POKéMON would\n"
+	.string "like to try?\p"
 	.string "I can teach one the move HEADBUTT\n"
-	.string "if you'd like. It's fun!$"
+	.string "for just ¥1000. It's fun!$"
 	
 MoveTutor_Text_HeadbuttWhichMon:
 	.string "Ehehe, sure thing! It'd be great if\n"
@@ -255,3 +322,103 @@ MoveTutor_Text_HeadbuttDeclined:
 MoveTutor_Text_HeadbuttTaught:
 	.string "Rattle trees with HEADBUTT.\n"
 	.string "Sometimes, sleeping POKéMON fall out.$"
+
+@ Ported verbatim from the fork (data/text/move_tutors.inc). Two rendering
+@ fixes were needed and are the only deviations: the fork writes a third
+@ textbox line ending in \n where the engine needs \l or \p, which would have
+@ rendered off the bottom of the box. Its "5000¥" is also normalised to the
+@ "¥5000" every other tutor here uses.
+MoveTutor_Text_AcrobaticsTeach:
+	.string "Humph! My wife… always leaping\n"
+	.string "from branch to branch.\p"
+	.string "Flipping, spinning… never still\n"
+	.string "for a moment!\p"
+	.string "Says it's about grace.\n"
+	.string "About trusting the air itself.\p"
+	.string "...\p"
+	.string "Me? I used to think it was foolish.\p"
+	.string "Too flashy. Too risky.\p"
+	.string "But… there's something to it.\p"
+	.string "When you carry nothing…\n"
+	.string "when you commit completely…\p"
+	.string "you move faster than anything\n"
+	.string "bound to the ground.\p"
+	.string "...\p"
+	.string "For ¥5000, I'll teach your\n"
+	.string "POKéMON ACROBATICS.\p"
+	.string "If you're willing to let it move\n"
+	.string "free.$"
+
+MoveTutor_Text_AcrobaticsDeclined:
+	.string "Hmph…\p"
+	.string "Then keep your feet on the ground.\n"
+	.string "Just don't expect to outpace\l"
+	.string "those who don't.$"
+
+MoveTutor_Text_AcrobaticsWhichMon:
+	.string "Heh… so you've got some sense.\p"
+	.string "Which POKéMON will learn to\n"
+	.string "trust the air?$"
+
+MoveTutor_Text_AcrobaticsTaught:
+	.string "…There.\p"
+	.string "Light. Unburdened.\p"
+	.string "...\p"
+	.string "Maybe my wife was right all along.\p"
+	.string "Move freely… strike swiftly.\n"
+	.string "That's ACROBATICS.$"
+
+MoveTutor_Text_MegaPunchTeach:
+	.string "A punch of roaring ferocity!\p"
+	.string "Packed with destructive power!\p"
+	.string "When the chips are down,\n"
+	.string "MEGA PUNCH is the ultimate attack!\l"
+	.string "You agree, yes?\p"
+	.string "Now!\p"
+	.string "For just ¥5000, I will teach it\n"
+	.string "to your POKéMON!$"
+
+MoveTutor_Text_MegaPunchDeclined:
+	.string "You'll be back when you understand\n"
+	.string "the worth of MEGA PUNCH.$"
+
+MoveTutor_Text_MegaPunchWhichMon:
+	.string "Fine!\n"
+	.string "Which POKéMON will learn it?$"
+
+MoveTutor_Text_MegaPunchTaught:
+	.string "Now, we are comrades in the way of\n"
+	.string "punching!\p"
+	.string "You should go before you're seen\n"
+	.string "by the misguided fool who trains\l"
+	.string "only his silly kicking over there.$"
+
+MoveTutor_Text_MegaKickTeach:
+	.string "A kick of brutal ferocity!\p"
+	.string "Packed with destructive power!\p"
+	.string "When you get right down to it,\n"
+	.string "MEGA KICK is the ultimate attack!\l"
+	.string "Don't you agree?\p"
+	.string "Okay!\p"
+	.string "For just ¥5000, I'll teach it to\n"
+	.string "your POKéMON!$"
+
+MoveTutor_Text_MegaKickDeclined:
+	.string "You'll come crawling back when you\n"
+	.string "realize the value of MEGA KICK.$"
+
+MoveTutor_Text_MegaKickWhichMon:
+	.string "All right!\n"
+	.string "Which POKéMON wants to learn it?$"
+
+MoveTutor_Text_MegaKickTaught:
+	.string "Now, we are soul mates in the way\n"
+	.string "of kicking!\p"
+	.string "You should run before you're seen\n"
+	.string "by the deluded nitwit who trains\l"
+	.string "only simple punching over there.$"
+
+MoveTutor_Text_NotEnoughMoney:
+	.string "Oh? You don't have enough\n"
+	.string "money for that.\p"
+	.string "Come back when you do!$"

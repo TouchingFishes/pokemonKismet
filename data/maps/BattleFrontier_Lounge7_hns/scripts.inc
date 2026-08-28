@@ -1,3 +1,15 @@
+@ ============================================================
+@ PRELIMINARY - all six BP tutor slots below are placeholders, NOT
+@ final. Hypnosis, Flare Blitz, Mountain Gale, Headlong Rush, Belly
+@ Drum and Electro Ball replaced Dream Eater, Fire Punch, Ice
+@ Punch, Mud-Slap, Swift and Thunder Punch, which became TMs.
+@ Electro Ball is also the only source for that move: it was slated
+@ for TM24 before Thunderbolt was restored there, which left it
+@ obtainable nowhere.
+@ Only the _hns copy was changed; the Hoenn BattleFrontier_Lounge7
+@ is untouched. Revisit with the D13 tutor port.
+@ ============================================================
+
 BattleFrontier_Lounge7_hns_MapScripts::
 	.byte 0
 
@@ -30,7 +42,7 @@ BattleFrontier_Lounge7_EventScript_ChooseLeftTutorMove_hns::
 	switch VAR_RESULT
 	case 0, BattleFrontier_Lounge7_EventScript_Softboiled_hns
 	case 1, BattleFrontier_Lounge7_EventScript_SeismicToss_hns
-	case 2, BattleFrontier_Lounge7_EventScript_DreamEater_hns
+	case 2, BattleFrontier_Lounge7_EventScript_Hypnosis_hns
 	case 3, BattleFrontier_Lounge7_EventScript_MegaPunch_hns
 	case 4, BattleFrontier_Lounge7_EventScript_MegaKick_hns
 	case 5, BattleFrontier_Lounge7_EventScript_BodySlam_hns
@@ -54,7 +66,7 @@ BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove_hns::
 	switch VAR_RESULT
 	case 0, BattleFrontier_Lounge7_EventScript_Softboiled_hns
 	case 1, BattleFrontier_Lounge7_EventScript_SeismicToss_hns
-	case 2, BattleFrontier_Lounge7_EventScript_DreamEater_hns
+	case 2, BattleFrontier_Lounge7_EventScript_Hypnosis_hns
 	case 3, BattleFrontier_Lounge7_EventScript_MegaPunch_hns
 	case 4, BattleFrontier_Lounge7_EventScript_MegaKick_hns
 	case 5, BattleFrontier_Lounge7_EventScript_BodySlam_hns
@@ -78,9 +90,9 @@ BattleFrontier_Lounge7_EventScript_SeismicToss_hns::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
 	end
 
-BattleFrontier_Lounge7_EventScript_DreamEater_hns::
+BattleFrontier_Lounge7_EventScript_Hypnosis_hns::
 	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_DREAM_EATER
+	setvar VAR_0x8005, MOVE_HYPNOSIS
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
 	end
 
@@ -154,14 +166,14 @@ BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove_hns::
 	switch VAR_RESULT
 	case 0, BattleFrontier_Lounge7_EventScript_DefenseCurl_hns
 	case 1, BattleFrontier_Lounge7_EventScript_Snore_hns
-	case 2, BattleFrontier_Lounge7_EventScript_MudSlap_hns
-	case 3, BattleFrontier_Lounge7_EventScript_Swift_hns
+	case 2, BattleFrontier_Lounge7_EventScript_HeadlongRush_hns
+	case 3, BattleFrontier_Lounge7_EventScript_BellyDrum_hns
 	case 4, BattleFrontier_Lounge7_EventScript_IcyWind_hns
 	case 5, BattleFrontier_Lounge7_EventScript_Endure_hns
 	case 6, BattleFrontier_Lounge7_EventScript_PsychUp_hns
-	case 7, BattleFrontier_Lounge7_EventScript_IcePunch_hns
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderPunch_hns
-	case 9, BattleFrontier_Lounge7_EventScript_FirePunch_hns
+	case 7, BattleFrontier_Lounge7_EventScript_MountainGale_hns
+	case 8, BattleFrontier_Lounge7_EventScript_ElectroBall_hns
+	case 9, BattleFrontier_Lounge7_EventScript_FlareBlitz_hns
 	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect_hns_hns
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect_hns_hns
 	end
@@ -178,14 +190,14 @@ BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove_hns::
 	switch VAR_RESULT
 	case 0, BattleFrontier_Lounge7_EventScript_DefenseCurl_hns
 	case 1, BattleFrontier_Lounge7_EventScript_Snore_hns
-	case 2, BattleFrontier_Lounge7_EventScript_MudSlap_hns
-	case 3, BattleFrontier_Lounge7_EventScript_Swift_hns
+	case 2, BattleFrontier_Lounge7_EventScript_HeadlongRush_hns
+	case 3, BattleFrontier_Lounge7_EventScript_BellyDrum_hns
 	case 4, BattleFrontier_Lounge7_EventScript_IcyWind_hns
 	case 5, BattleFrontier_Lounge7_EventScript_Endure_hns
 	case 6, BattleFrontier_Lounge7_EventScript_PsychUp_hns
-	case 7, BattleFrontier_Lounge7_EventScript_IcePunch_hns
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderPunch_hns
-	case 9, BattleFrontier_Lounge7_EventScript_FirePunch_hns
+	case 7, BattleFrontier_Lounge7_EventScript_MountainGale_hns
+	case 8, BattleFrontier_Lounge7_EventScript_ElectroBall_hns
+	case 9, BattleFrontier_Lounge7_EventScript_FlareBlitz_hns
 	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect_hns_hns
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect_hns_hns
 	end
@@ -202,15 +214,15 @@ BattleFrontier_Lounge7_EventScript_Snore_hns::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
 	end
 
-BattleFrontier_Lounge7_EventScript_MudSlap_hns::
+BattleFrontier_Lounge7_EventScript_HeadlongRush_hns::
 	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_MUD_SLAP
+	setvar VAR_0x8005, MOVE_HEADLONG_RUSH
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
 	end
 
-BattleFrontier_Lounge7_EventScript_Swift_hns::
+BattleFrontier_Lounge7_EventScript_BellyDrum_hns::
 	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_SWIFT
+	setvar VAR_0x8005, MOVE_BELLY_DRUM
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
 	end
 
@@ -232,21 +244,21 @@ BattleFrontier_Lounge7_EventScript_PsychUp_hns::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
 	end
 
-BattleFrontier_Lounge7_EventScript_IcePunch_hns::
+BattleFrontier_Lounge7_EventScript_MountainGale_hns::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_ICE_PUNCH
+	setvar VAR_0x8005, MOVE_MOUNTAIN_GALE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
 	end
 
-BattleFrontier_Lounge7_EventScript_ThunderPunch_hns::
+BattleFrontier_Lounge7_EventScript_ElectroBall_hns::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_THUNDER_PUNCH
+	setvar VAR_0x8005, MOVE_ELECTRO_BALL
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
 	end
 
-BattleFrontier_Lounge7_EventScript_FirePunch_hns::
+BattleFrontier_Lounge7_EventScript_FlareBlitz_hns::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_FIRE_PUNCH
+	setvar VAR_0x8005, MOVE_FLARE_BLITZ
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
 	end
 
@@ -488,10 +500,10 @@ BattleFrontier_Lounge7_Text_SeismicTossDesc_hns::
 	.string "identical to the\n"
 	.string "user's level.$"
 
-BattleFrontier_Lounge7_Text_DreamEaterDesc_hns::
-	.string "Recovers half the\n"
-	.string "damage inflicted\n"
-	.string "on a sleeping foe.$"
+BattleFrontier_Lounge7_Text_HypnosisDesc_hns::
+	.string "Uses hypnotic\n"
+	.string "suggestion to\n"
+	.string "make the foe sleep.$"
 
 BattleFrontier_Lounge7_Text_MegaPunchDesc_hns::
 	.string "A strong punch\n"
@@ -538,15 +550,15 @@ BattleFrontier_Lounge7_Text_SnoreDesc_hns::
 	.string "that can be used\n"
 	.string "only while asleep.$"
 
-BattleFrontier_Lounge7_Text_MudSlapDesc_hns::
-	.string "Hurls mud in the\n"
-	.string "foe's face to re-\n"
-	.string "duce its accuracy.$"
+BattleFrontier_Lounge7_Text_HeadlongRushDesc_hns::
+	.string "A full-body tackle\n"
+	.string "that lowers the\n"
+	.string "user's DEFENSE.$"
 
-BattleFrontier_Lounge7_Text_SwiftDesc_hns::
-	.string "Sprays star-\n"
-	.string "shaped rays\n"
-	.string "that never miss.$"
+BattleFrontier_Lounge7_Text_BellyDrumDesc_hns::
+	.string "Maximizes ATTACK\n"
+	.string "in exchange for\n"
+	.string "half of its HP.$"
 
 BattleFrontier_Lounge7_Text_IcyWindDesc_hns::
 	.string "A chilling attack\n"
@@ -563,20 +575,20 @@ BattleFrontier_Lounge7_Text_PsychUpDesc_hns::
 	.string "effect(s) and\n"
 	.string "gives to the user.$"
 
-BattleFrontier_Lounge7_Text_IcePunchDesc_hns::
-	.string "An icy punch\n"
-	.string "that may\n"
-	.string "freeze the foe.$"
+BattleFrontier_Lounge7_Text_MountainGaleDesc_hns::
+	.string "Hurls huge chunks\n"
+	.string "of ice that may\n"
+	.string "make the foe flinch.$"
 
-BattleFrontier_Lounge7_Text_ThunderPunchDesc_hns::
-	.string "An electrified\n"
-	.string "punch that may\n"
-	.string "paralyze the foe.$"
+BattleFrontier_Lounge7_Text_ElectroBallDesc_hns::
+	.string "Hits harder the\n"
+	.string "faster the user is\n"
+	.string "than the foe.$"
 
-BattleFrontier_Lounge7_Text_FirePunchDesc_hns::
-	.string "A fiery punch\n"
-	.string "that may burn\n"
-	.string "the foe.$"
+BattleFrontier_Lounge7_Text_FlareBlitzDesc_hns::
+	.string "A fiery charge\n"
+	.string "that hurts the\n"
+	.string "user a little.$"
 
 
 BattleFrontier_Lounge7_Text_ElementalTutorIntro::

@@ -1845,6 +1845,9 @@
 #define FLAG_BATTLED_DEOXYS                  0
 #define FLAG_SHOWN_EON_TICKET                0
 #define FLAG_SHOWN_OLD_SEA_MAP               0
+// UNUSED - see the note on these in flags.h. Already stubbed to 0 here, and
+// since D13 made the move tutors money-based and repeatable nothing sets or
+// reads them in any build. Kept defined so shared scripts still compile.
 #define FLAG_MOVE_TUTOR_TAUGHT_SWAGGER       0
 #define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0
 #define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0

@@ -2744,22 +2744,27 @@
 	msgbox \tradeCompleteMsg, MSGBOX_DEFAULT
 	.endm
 
-	.macro move_tutor moveId:req, wantTeachingMsg:req, monSelectMsg:req, declinedJmp:req, taughtJmp:req, flagId=0
-	.if \flagId
-		goto_if_set \flagId, \taughtJmp
-	.endif
+	@ Money-cost move tutor (D13). `cost` of 0 keeps the old free behaviour;
+	@ any other value charges that much and makes the tutor repeatable.
+	@
+	@ This replaced a `flagId` parameter that gated each tutor to one use.
+	@ Charging money is the fork's model and is what frees the ten
+	@ FLAG_MOVE_TUTOR_TAUGHT_* bits - a paid tutor does not need to remember
+	@ that it already fired. Money is checked BEFORE the party menu opens, so
+	@ the player is not asked to pick a Pokemon only to be refused.
+	.macro move_tutor moveId:req, wantTeachingMsg:req, monSelectMsg:req, declinedJmp:req, taughtJmp:req, cost=0
 	msgbox \wantTeachingMsg, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, \declinedJmp
-	.if \flagId
-		call MoveTutor_EventScript_CanOnlyBeLearnedOnce
-		goto_if_eq VAR_RESULT, NO, \declinedJmp
+	.if \cost
+		checkmoney \cost, 0
+		goto_if_eq VAR_RESULT, FALSE, MoveTutor_EventScript_NotEnoughMoney
 	.endif
 	msgbox \monSelectMsg, MSGBOX_DEFAULT
 	setvar VAR_0x8005, \moveId
 	call MoveTutor_EventScript_OpenBox
 	goto_if_eq VAR_RESULT, FALSE, \declinedJmp
-	.if \flagId
-		setflag \flagId
+	.if \cost
+		removemoney \cost, 0
 	.endif
 	goto \taughtJmp
 	.endm

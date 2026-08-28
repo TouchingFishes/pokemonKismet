@@ -480,16 +480,30 @@
 #define FLAG_SHOWN_EON_TICKET                0x1AE
 #define FLAG_SHOWN_AURORA_TICKET             0x1AF
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
-#define FLAG_MOVE_TUTOR_TAUGHT_SWAGGER       0x1B1
-#define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0x1B2
-#define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0x1B3
-#define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4
-#define FLAG_MOVE_TUTOR_TAUGHT_METRONOME     0x1B5
-#define FLAG_MOVE_TUTOR_TAUGHT_SLEEP_TALK    0x1B6
-#define FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE    0x1B7
-#define FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH  0x1B8
-#define FLAG_MOVE_TUTOR_TAUGHT_DOUBLE_EDGE   0x1B9
-#define FLAG_MOVE_TUTOR_TAUGHT_EXPLOSION     0x1BA
+// UNUSED - free for reuse (D13). The move tutors in data/scripts/move_tutors.inc
+// used to be free and gated to one use each by these ten flags. They now cost
+// money and are repeatable, so nothing sets or reads any of them: a paid tutor
+// has no reason to remember that it already fired.
+//
+// Kept DEFINED on purpose. Deleting them would renumber every flag above 0x1B0
+// and invalidate existing saves; the bits themselves cost nothing. Three of the
+// names were already stale before this - MIMIC, SLEEP_TALK and DYNAMICPUNCH
+// gated the tutors that now teach Tri Attack, Focus Blast and Focus Punch.
+//
+// Reuse freely, but rename when you do - a flag called
+// FLAG_MOVE_TUTOR_TAUGHT_MIMIC guarding something unrelated is worse than a
+// gap. Old saves may have these bits set from before the rework; anything
+// reusing one must treat a set bit as meaningless rather than as its own state.
+#define FLAG_MOVE_TUTOR_TAUGHT_SWAGGER       0x1B1  // unused
+#define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0x1B2  // unused
+#define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0x1B3  // unused
+#define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4  // unused
+#define FLAG_MOVE_TUTOR_TAUGHT_METRONOME     0x1B5  // unused
+#define FLAG_MOVE_TUTOR_TAUGHT_SLEEP_TALK    0x1B6  // unused
+#define FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE    0x1B7  // unused
+#define FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH  0x1B8  // unused
+#define FLAG_MOVE_TUTOR_TAUGHT_DOUBLE_EDGE   0x1B9  // unused
+#define FLAG_MOVE_TUTOR_TAUGHT_EXPLOSION     0x1BA  // unused
 #define FLAG_DEFEATED_REGIROCK               0x1BB
 #define FLAG_DEFEATED_REGICE                 0x1BC
 #define FLAG_DEFEATED_REGISTEEL              0x1BD

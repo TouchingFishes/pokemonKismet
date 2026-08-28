@@ -631,6 +631,10 @@
 #define FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR         0x24A
 #define FLAG_MET_FRONTIER_ELEMENTAL_MOVE_TUTOR      0x24B
 #define FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR        0x24C
+// A real bit, unlike the ten stubs below, but effectively unused: the Headbutt
+// tutor never passed a flag to move_tutor, so nothing ever SETS or READS it.
+// The one reference left is a stray `clearflag` in AzaleaTown_hns/scripts.inc,
+// which clears a bit that is never set. Free to reuse - rename it if you do.
 #define FLAG_MOVE_TUTOR_TAUGHT_HEADBUTT             0x24D
 
 #define HNS_MOVE_TUTOR_COUNT                        4
@@ -1594,6 +1598,14 @@
 #define FLAG_ARRIVED_AT_NAVEL_ROCK                  0
 
 // Emerald move tutors
+// UNUSED - and note these are STUBS, not real bits. Because they expand to 0,
+// the `.if lagId` inside the move_tutor macro was already false in this
+// build, so the once-per-save gate was compiled out and these ten tutors were
+// always free and repeatable here. The gate only ever applied to Emerald,
+// whose flags.h gives them real bits (0x1B1-0x1BA).
+//
+// D13 made the tutors money-based, so nothing sets or reads them in any build
+// now. Kept defined so the shared move_tutors.inc still compiles.
 #define FLAG_MOVE_TUTOR_TAUGHT_SWAGGER              0
 #define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT              0
 #define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER          0

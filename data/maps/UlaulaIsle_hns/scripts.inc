@@ -1,3 +1,10 @@
+@ ============================================================
+@ PRELIMINARY - three tutor slots here are placeholders, NOT final.
+@ Inferno, Eerie Spell and Belch replaced Flame Charge, Psyshock and
+@ Venoshock, which became TMs. Revisit with the D13 tutor port.
+@ The Frost Breath tutor is deliberately untouched.
+@ ============================================================
+
 UlaulaIsle_hns_MapScripts::
 	.byte 0
 
@@ -399,7 +406,7 @@ Alola_Ulaula_EventScript_MoveTutor::
 Alola_Ulaula_EventScript_MoveTutorMenu::
 	message Alola_Ulaula_Text_MoveTutorChoose
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Alola_Ulaula_Text_TutorMove_Acrobatics, Alola_Ulaula_Text_TutorMove_AuroraVeil, Alola_Ulaula_Text_TutorMove_BrutalSwing, Alola_Ulaula_Text_TutorMove_Bulldoze, Alola_Ulaula_Text_TutorMove_Confide, Alola_Ulaula_Text_TutorMove_DazzlingGleam, Alola_Ulaula_Text_TutorMove_DragonTail, Alola_Ulaula_Text_TutorMove_EchoedVoice, Alola_Ulaula_Text_TutorMove_FlameCharge, Alola_Ulaula_Text_TutorMove_FrostBreath, Alola_Ulaula_Text_TutorMove_Infestation, Alola_Ulaula_Text_TutorMove_LeechLife, Alola_Ulaula_Text_TutorMove_LowSweep, Alola_Ulaula_Text_TutorMove_Psyshock, Alola_Ulaula_Text_TutorMove_Quash, Alola_Ulaula_Text_TutorMove_Round, Alola_Ulaula_Text_TutorMove_Scald, Alola_Ulaula_Text_TutorMove_SkyDrop, Alola_Ulaula_Text_TutorMove_SludgeWave, Alola_Ulaula_Text_TutorMove_SmackDown, Alola_Ulaula_Text_TutorMove_SmartStrike, Alola_Ulaula_Text_TutorMove_Snarl, Alola_Ulaula_Text_TutorMove_Venoshock, Alola_Ulaula_Text_TutorMove_VoltSwitch, Alola_Ulaula_Text_TutorMove_WildCharge, Alola_Ulaula_Text_TutorMove_WorkUp, Alola_Ulaula_Text_TutorMove_Cancel
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, Alola_Ulaula_Text_TutorMove_Acrobatics, Alola_Ulaula_Text_TutorMove_AuroraVeil, Alola_Ulaula_Text_TutorMove_BrutalSwing, Alola_Ulaula_Text_TutorMove_Bulldoze, Alola_Ulaula_Text_TutorMove_Confide, Alola_Ulaula_Text_TutorMove_DazzlingGleam, Alola_Ulaula_Text_TutorMove_DragonTail, Alola_Ulaula_Text_TutorMove_EchoedVoice, Alola_Ulaula_Text_TutorMove_Inferno, Alola_Ulaula_Text_TutorMove_FrostBreath, Alola_Ulaula_Text_TutorMove_Infestation, Alola_Ulaula_Text_TutorMove_LeechLife, Alola_Ulaula_Text_TutorMove_LowSweep, Alola_Ulaula_Text_TutorMove_EerieSpell, Alola_Ulaula_Text_TutorMove_Quash, Alola_Ulaula_Text_TutorMove_Round, Alola_Ulaula_Text_TutorMove_Scald, Alola_Ulaula_Text_TutorMove_SkyDrop, Alola_Ulaula_Text_TutorMove_SludgeWave, Alola_Ulaula_Text_TutorMove_SmackDown, Alola_Ulaula_Text_TutorMove_SmartStrike, Alola_Ulaula_Text_TutorMove_Snarl, Alola_Ulaula_Text_TutorMove_Belch, Alola_Ulaula_Text_TutorMove_VoltSwitch, Alola_Ulaula_Text_TutorMove_WildCharge, Alola_Ulaula_Text_TutorMove_WorkUp, Alola_Ulaula_Text_TutorMove_Cancel
 	switch VAR_RESULT
 	case 0, Alola_Ulaula_EventScript_TutorTeach_Acrobatics
 	case 1, Alola_Ulaula_EventScript_TutorTeach_AuroraVeil
@@ -409,12 +416,12 @@ Alola_Ulaula_EventScript_MoveTutorMenu::
 	case 5, Alola_Ulaula_EventScript_TutorTeach_DazzlingGleam
 	case 6, Alola_Ulaula_EventScript_TutorTeach_DragonTail
 	case 7, Alola_Ulaula_EventScript_TutorTeach_EchoedVoice
-	case 8, Alola_Ulaula_EventScript_TutorTeach_FlameCharge
+	case 8, Alola_Ulaula_EventScript_TutorTeach_Inferno
 	case 9, Alola_Ulaula_EventScript_TutorTeach_FrostBreath
 	case 10, Alola_Ulaula_EventScript_TutorTeach_Infestation
 	case 11, Alola_Ulaula_EventScript_TutorTeach_LeechLife
 	case 12, Alola_Ulaula_EventScript_TutorTeach_LowSweep
-	case 13, Alola_Ulaula_EventScript_TutorTeach_Psyshock
+	case 13, Alola_Ulaula_EventScript_TutorTeach_EerieSpell
 	case 14, Alola_Ulaula_EventScript_TutorTeach_Quash
 	case 15, Alola_Ulaula_EventScript_TutorTeach_Round
 	case 16, Alola_Ulaula_EventScript_TutorTeach_Scald
@@ -423,7 +430,7 @@ Alola_Ulaula_EventScript_MoveTutorMenu::
 	case 19, Alola_Ulaula_EventScript_TutorTeach_SmackDown
 	case 20, Alola_Ulaula_EventScript_TutorTeach_SmartStrike
 	case 21, Alola_Ulaula_EventScript_TutorTeach_Snarl
-	case 22, Alola_Ulaula_EventScript_TutorTeach_Venoshock
+	case 22, Alola_Ulaula_EventScript_TutorTeach_Belch
 	case 23, Alola_Ulaula_EventScript_TutorTeach_VoltSwitch
 	case 24, Alola_Ulaula_EventScript_TutorTeach_WildCharge
 	case 25, Alola_Ulaula_EventScript_TutorTeach_WorkUp
@@ -471,8 +478,8 @@ Alola_Ulaula_EventScript_TutorTeach_EchoedVoice::
 	goto Alola_Ulaula_EventScript_MoveTutorTeachMove
 	end
 
-Alola_Ulaula_EventScript_TutorTeach_FlameCharge::
-	setvar VAR_0x8005, MOVE_FLAME_CHARGE
+Alola_Ulaula_EventScript_TutorTeach_Inferno::
+	setvar VAR_0x8005, MOVE_INFERNO
 	goto Alola_Ulaula_EventScript_MoveTutorTeachMove
 	end
 
@@ -496,8 +503,8 @@ Alola_Ulaula_EventScript_TutorTeach_LowSweep::
 	goto Alola_Ulaula_EventScript_MoveTutorTeachMove
 	end
 
-Alola_Ulaula_EventScript_TutorTeach_Psyshock::
-	setvar VAR_0x8005, MOVE_PSYSHOCK
+Alola_Ulaula_EventScript_TutorTeach_EerieSpell::
+	setvar VAR_0x8005, MOVE_EERIE_SPELL
 	goto Alola_Ulaula_EventScript_MoveTutorTeachMove
 	end
 
@@ -541,8 +548,8 @@ Alola_Ulaula_EventScript_TutorTeach_Snarl::
 	goto Alola_Ulaula_EventScript_MoveTutorTeachMove
 	end
 
-Alola_Ulaula_EventScript_TutorTeach_Venoshock::
-	setvar VAR_0x8005, MOVE_VENOSHOCK
+Alola_Ulaula_EventScript_TutorTeach_Belch::
+	setvar VAR_0x8005, MOVE_BELCH
 	goto Alola_Ulaula_EventScript_MoveTutorTeachMove
 	end
 
@@ -656,8 +663,8 @@ Alola_Ulaula_Text_TutorMove_DragonTail:
 Alola_Ulaula_Text_TutorMove_EchoedVoice:
 	.string "ECHOED VOICE$"
 
-Alola_Ulaula_Text_TutorMove_FlameCharge:
-	.string "FLAME CHARGE$"
+Alola_Ulaula_Text_TutorMove_Inferno:
+	.string "INFERNO$"
 
 Alola_Ulaula_Text_TutorMove_FrostBreath:
 	.string "FROST BREATH$"
@@ -671,8 +678,8 @@ Alola_Ulaula_Text_TutorMove_LeechLife:
 Alola_Ulaula_Text_TutorMove_LowSweep:
 	.string "LOW SWEEP$"
 
-Alola_Ulaula_Text_TutorMove_Psyshock:
-	.string "PSYSHOCK$"
+Alola_Ulaula_Text_TutorMove_EerieSpell:
+	.string "EERIE SPELL$"
 
 Alola_Ulaula_Text_TutorMove_Quash:
 	.string "QUASH$"
@@ -698,8 +705,8 @@ Alola_Ulaula_Text_TutorMove_SmartStrike:
 Alola_Ulaula_Text_TutorMove_Snarl:
 	.string "SNARL$"
 
-Alola_Ulaula_Text_TutorMove_Venoshock:
-	.string "VENOSHOCK$"
+Alola_Ulaula_Text_TutorMove_Belch:
+	.string "BELCH$"
 
 Alola_Ulaula_Text_TutorMove_VoltSwitch:
 	.string "VOLT SWITCH$"
