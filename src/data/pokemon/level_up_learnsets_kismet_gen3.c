@@ -6,7 +6,10 @@
 
 // NULL for every species the fork does not override, which
 // GetSpeciesLevelUpLearnset reads as "fall through to the baseline".
-const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES] = {
+// NUM_SPECIES + 1: NUM_SPECIES == SPECIES_EGG and SanitizeSpeciesId
+// returns it unchanged, so a bare NUM_SPECIES sizing lets an egg
+// read one element past the end.
+const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = {
 #if P_FAMILY_CHARMANDER
     [SPECIES_CHARMANDER] = sCharmanderLevelUpLearnset_KismetGen3,
     [SPECIES_CHARMELEON] = sCharmeleonLevelUpLearnset_KismetGen3,

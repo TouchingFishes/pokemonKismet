@@ -4,7 +4,13 @@
 
 #include "level_up_learnsets/gen_3.h"
 
-const struct LevelUpMove *const gLevelUpLearnsets_Gen3[NUM_SPECIES] = {
+// NUM_SPECIES + 1, not NUM_SPECIES: NUM_SPECIES == SPECIES_EGG, and
+// SanitizeSpeciesId returns SPECIES_EGG unchanged (its assert is <=, and
+// IsSpeciesEnabled special-cases the egg to TRUE). Sizing this to
+// NUM_SPECIES would let an egg read one element past the end and walk
+// whatever garbage followed as a move list. gSpeciesInfo gets away with
+// the bare index only because it has an explicit [SPECIES_EGG] entry.
+const struct LevelUpMove *const gLevelUpLearnsets_Gen3[NUM_SPECIES + 1] = {
 #if P_FAMILY_BULBASAUR
     [SPECIES_BULBASAUR] = sBulbasaurLevelUpLearnset,
     [SPECIES_IVYSAUR] = sIvysaurLevelUpLearnset,

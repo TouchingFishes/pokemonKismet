@@ -4,7 +4,10 @@
 
 #include "egg_moves_kismet_gen3.h"
 
-const u16 *const gEggMoves_KismetGen3[NUM_SPECIES] = {
+// NUM_SPECIES + 1: NUM_SPECIES == SPECIES_EGG and SanitizeSpeciesId
+// returns it unchanged, so a bare NUM_SPECIES sizing lets an egg
+// read one element past the end.
+const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
 #if P_FAMILY_BULBASAUR
     [SPECIES_BULBASAUR] = sBulbasaurEggMoveLearnset_KismetGen3,
 #endif
