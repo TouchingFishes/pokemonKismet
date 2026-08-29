@@ -15,8 +15,8 @@ IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_ROSS_HNS ===
 Name: ROSS
-Class: Collector Hns
-Pic: Collector
+Class: Scientist Hns
+Pic: Scientist Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -24,16 +24,16 @@ AI: Check Bad Move
 
 SPECIES_MAGNEMITE
 Level: Badge+2
-IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_MAGNEMITE
 Level: Badge+2
-IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_MITCH_HNS ===
 Name: MITCH
-Class: Collector Hns
-Pic: Collector
+Class: Scientist Hns
+Pic: Scientist Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -41,12 +41,12 @@ AI: Check Bad Move
 
 SPECIES_DITTO
 Level: Badge+8
-IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_JED_HNS ===
 Name: JED
-Class: Collector Hns
-Pic: Collector
+Class: Scientist Hns
+Pic: Scientist Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -54,16 +54,16 @@ AI: Check Bad Move
 
 SPECIES_OMANYTE
 Level: Badge+4
-IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_KABUTO
 Level: Badge+4
-IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_MARC_HNS ===
 Name: MARC
-Class: Collector Hns
-Pic: Collector
+Class: Scientist Hns
+Pic: Scientist Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -71,12 +71,12 @@ AI: Check Bad Move
 
 SPECIES_PORYGON
 Level: 37
-IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_RICH_HNS ===
 Name: RICH
-Class: Collector Hns
-Pic: Collector
+Class: Scientist Hns
+Pic: Scientist Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -84,7 +84,7 @@ AI: Check Bad Move
 
 SPECIES_OMASTAR
 Level: 40
-IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_JOEY_HNS ===
 Name: JOEY
@@ -169,8 +169,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_IAN_HNS ===
 Name: IAN
-Class: Youngster Hns
-Pic: Youngster Hns
+Class: Gambler Hns
+Pic: Gamer Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -721,8 +721,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_CARRIE_HNS ===
 Name: CARRIE
-Class: Lass Hns
-Pic: Lass
+Class: Beauty Hns
+Pic: Beauty
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -730,7 +730,7 @@ AI: Check Bad Move
 
 SPECIES_SKITTY
 Level: 18
-IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_BRIDGET_HNS ===
 Name: BRIDGET
@@ -928,7 +928,7 @@ IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_NICK_HNS ===
 Name: NICK
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -949,7 +949,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_AARON_HNS ===
 Name: AARON
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -970,8 +970,8 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_PAUL_HNS ===
 Name: PAUL
-Class: Dragon Tamer Hns
-Pic: Dragon Tamer
+Class: Ace Trainer Hns
+Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
 Double Battle: No
@@ -979,19 +979,19 @@ AI: Check Bad Move
 
 SPECIES_DRATINI
 Level: 37
-IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 SPECIES_DRATINI
 Level: 37
-IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 SPECIES_DRAGONAIR
 Level: 39
-IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 SPECIES_TROPIUS
 Level: 40
-IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_CODY_HNS ===
 Name: CODY
@@ -1016,8 +1016,8 @@ IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 === TRAINER_MIKE_HNS ===
 Name: MIKE
-Class: Dragon Tamer Hns
-Pic: Dragon Tamer
+Class: Ace Trainer Hns
+Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
 Double Battle: No
@@ -1025,23 +1025,23 @@ AI: Check Bad Move
 
 SPECIES_GYARADOS
 Level: 43
-IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 SPECIES_SWABLU
 Level: 37
-IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 SPECIES_SWABLU
 Level: 37
-IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 SPECIES_DRAGONAIR
 Level: 43
-IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_GAVEN_HNS ===
 Name: GAVEN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1070,7 +1070,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_RYAN_HNS ===
 Name: RYAN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1091,7 +1091,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_JAKE_HNS ===
 Name: JAKE
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1116,7 +1116,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_BLAKE_HNS ===
 Name: BLAKE
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1141,7 +1141,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_BRIAN_HNS ===
 Name: BRIAN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1166,7 +1166,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_ERICK_HNS ===
 Name: ERICK
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1187,7 +1187,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_ANDY_HNS ===
 Name: ANDY
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1208,8 +1208,8 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_TYLER_HNS ===
 Name: TYLER
-Class: Cooltrainer Hns
-Pic: Cooltrainer M
+Class: Swimmer M Hns
+Pic: Swimmer M
 Gender: Male
 Music: Hg Suspicious 2
 Double Battle: No
@@ -1217,11 +1217,11 @@ AI: Check Bad Move
 
 SPECIES_CROCONAW
 Level: Badge+3
-IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_SEAN_HNS ===
 Name: SEAN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1242,7 +1242,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_KEVIN_HNS ===
 Name: KEVIN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1275,7 +1275,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_STEVE_HNS ===
 Name: STEVE
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1296,7 +1296,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_ALLEN_HNS ===
 Name: ALLEN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -1322,7 +1322,7 @@ IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 === TRAINER_GWEN_HNS ===
 Name: GWEN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1347,7 +1347,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_LOIS_HNS ===
 Name: LOIS
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1364,7 +1364,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_FRAN_HNS ===
 Name: FRAN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1381,7 +1381,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_LOLA_HNS ===
 Name: LOLA
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1402,7 +1402,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_KATE_HNS ===
 Name: KATE
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1419,7 +1419,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_IRENE_HNS ===
 Name: IRENE
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1436,7 +1436,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_KELLY_HNS ===
 Name: KELLY
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1461,7 +1461,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_JOYCE_HNS ===
 Name: JOYCE
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1490,7 +1490,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_BETH_HNS ===
 Name: BETH
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1515,7 +1515,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_REENA_HNS ===
 Name: REENA
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1540,7 +1540,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_MEGAN_HNS ===
 Name: MEGAN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1565,7 +1565,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_CAROL_HNS ===
 Name: CAROL
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1586,7 +1586,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_QUINN_HNS ===
 Name: QUINN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1615,7 +1615,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_EMMA_HNS ===
 Name: EMMA
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1628,7 +1628,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_CYBIL_HNS ===
 Name: CYBIL
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1653,7 +1653,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_JENN_HNS ===
 Name: JENN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1670,7 +1670,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_CARA_HNS ===
 Name: CARA
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -1691,8 +1691,8 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_VICTORIA_HNS ===
 Name: VICTORIA
-Class: Beauty Hns
-Pic: Beauty
+Class: Lady Hns
+Pic: Lady Hns
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1700,7 +1700,7 @@ AI: Check Bad Move
 
 SPECIES_FURRET @ ITEM_NUGGET
 Level: 15
-IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
+IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
 - MOVE_QUICK_ATTACK
 - MOVE_MUD_SLAP
 - MOVE_METRONOME
@@ -1708,7 +1708,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 
 SPECIES_FURRET @ ITEM_NUGGET
 Level: 17
-IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
+IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
 - MOVE_QUICK_ATTACK
 - MOVE_ICE_PUNCH
 - MOVE_FIRE_PUNCH
@@ -1733,8 +1733,8 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_JULIE_HNS ===
 Name: JULIE
-Class: Beauty Hns
-Pic: Beauty
+Class: Pkmn Ranger Hns
+Pic: Pokemon Ranger F Hns
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1742,15 +1742,15 @@ AI: Check Bad Move
 
 SPECIES_EXEGGCUTE
 Level: Badge+3
-IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
 SPECIES_FOMANTIS
 Level: Badge+3
-IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
 SPECIES_RHYHORN
 Level: Badge+5
-IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
 === TRAINER_JACLYN_HNS ===
 Name: JACLYN
@@ -1801,8 +1801,8 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_CAROLINE_HNS ===
 Name: CAROLINE
-Class: Beauty Hns
-Pic: Beauty
+Class: Painter Hns
+Pic: Painter Hns
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1810,7 +1810,7 @@ AI: Check Bad Move
 
 SPECIES_SMEARGLE
 Level: Badge+7
-IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - MOVE_FLY
 - MOVE_DIG
 - MOVE_DIVE
@@ -1818,7 +1818,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 
 SPECIES_GLIGAR
 Level: 36
-IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - MOVE_CROSS_CHOP
 - MOVE_MEGAHORN
 - MOVE_DOUBLE_EDGE
@@ -3016,8 +3016,8 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 === TRAINER_HILLARY_HNS ===
 Name: HILLARY
-Class: Lass Hns
-Pic: Lass
+Class: Expert Hns
+Pic: Expert F
 Gender: Female
 Music: Hg Girl 2
 Double Battle: No
@@ -3025,19 +3025,19 @@ AI: Check Bad Move
 
 SPECIES_AIPOM
 Level: 55
-IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 SPECIES_TROPIUS
 Level: 55
-IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 SPECIES_LEDIAN
 Level: 55
-IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 SPECIES_MAROWAK
 Level: 58
-IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 === TRAINER_SHIRLEY_HNS ===
 Name: SHIRLEY
@@ -3184,8 +3184,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_JOSH_HNS ===
 Name: JOSH
-Class: Bug Catcher Hns
-Pic: Bug Catcher
+Class: Bug Maniac Hns
+Pic: Bug Maniac Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3193,7 +3193,7 @@ AI: Check Bad Move
 
 SPECIES_LEDIAN
 Level: 18
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 - MOVE_MACH_PUNCH
 - MOVE_THUNDER_PUNCH
 - MOVE_SUPERSONIC
@@ -4289,8 +4289,8 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_JODY_HNS ===
 Name: JODY
-Class: Swimmer F Hns
-Pic: Swimmer F
+Class: Beauty Hns
+Pic: Beauty
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4298,7 +4298,7 @@ AI: Check Bad Move
 
 SPECIES_WIGGLYTUFF
 Level: Badge+3
-IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_NIKKI_HNS ===
 Name: NIKKI
@@ -6074,8 +6074,8 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 
 === TRAINER_KIM_HNS ===
 Name: KIM
-Class: Picnicker Hns
-Pic: Picnicker
+Class: Aroma Lady Hns
+Pic: Aroma Lady Hns
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6083,11 +6083,11 @@ AI: Check Bad Move
 
 SPECIES_SUNKERN
 Level: 12
-IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
+IVs: 16 HP / 12 Atk / 18 Def / 22 SpA / 18 SpD / 22 Spe
 
 SPECIES_CHIKORITA
 Level: 14
-IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
+IVs: 16 HP / 12 Atk / 18 Def / 22 SpA / 18 SpD / 22 Spe
 
 === TRAINER_CINDY_HNS ===
 Name: CINDY
@@ -6286,8 +6286,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_IVAN_HNS ===
 Name: IVAN
-Class: Camper Hns
-Pic: Camper
+Class: Pkmn Ranger Hns
+Pic: Pokemon Ranger M Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6295,11 +6295,11 @@ AI: Check Bad Move
 
 SPECIES_MANKEY
 Level: 14
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
 SPECIES_DIGLETT
 Level: 14
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
 === TRAINER_ELLIOT_HNS ===
 Name: ELLIOT
@@ -6409,8 +6409,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_DALE_HNS ===
 Name: DALE
-Class: Camper Hns
-Pic: Camper
+Class: Bug Maniac Hns
+Pic: Bug Maniac Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6418,7 +6418,7 @@ AI: Check Bad Move
 
 SPECIES_FOMANTIS
 Level: 19
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 - MOVE_RAZOR_LEAF
 - MOVE_CUT
 - MOVE_BEAT_UP
@@ -6426,7 +6426,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_YANMA
 Level: 17
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 - MOVE_SILVER_WIND
 - MOVE_QUICK_ATTACK
 - MOVE_DOUBLE_TEAM
@@ -6434,7 +6434,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_FOMANTIS
 Level: 19
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 - MOVE_RAZOR_LEAF
 - MOVE_CUT
 - MOVE_INGRAIN
@@ -6484,8 +6484,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_LEROY_HNS ===
 Name: LEROY
-Class: Camper Hns
-Pic: Camper
+Class: Swimmer M Hns
+Pic: Swimmer M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6576,8 +6576,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_GRANT_HNS ===
 Name: GRANT
-Class: Camper Hns
-Pic: Camper
+Class: Pkmn Ranger Hns
+Pic: Pokemon Ranger M Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6585,19 +6585,19 @@ AI: Check Bad Move
 
 SPECIES_JUMPLUFF
 Level: 40
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
 SPECIES_AZUMARILL
 Level: 40
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
 SPECIES_NIDOKING
 Level: 43
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
 SPECIES_RAPIDASH
 Level: 43
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
 === TRAINER_SPENCER_HNS ===
 Name: SPENCER
@@ -6656,11 +6656,11 @@ AI: Check Bad Move
 
 SPECIES_BELLSPROUT
 Level: 3
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_BELLSPROUT
 Level: 3
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_NICO_HNS ===
 Name: NICO
@@ -6673,15 +6673,15 @@ AI: Check Bad Move
 
 SPECIES_BELLSPROUT
 Level: 2
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_HOOTHOOT
 Level: 4
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_BELLSPROUT
 Level: 2
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_JIN_HNS ===
 Name: JIN
@@ -6694,7 +6694,7 @@ AI: Check Bad Move
 
 Bellsprout
 Level: 6
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_TROY_HNS ===
 Name: TROY
@@ -6707,11 +6707,11 @@ AI: Check Bad Move
 
 SPECIES_BELLSPROUT
 Level: 6
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_BELLSPROUT
 Level: 6
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_JEFFREY_HNS ===
 Name: JEFFREY
@@ -6724,7 +6724,7 @@ AI: Check Bad Move
 
 SPECIES_HAUNTER
 Level: 25
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_PING_HNS ===
 Name: PING
@@ -6737,19 +6737,19 @@ AI: Check Bad Move
 
 SPECIES_GASTLY
 Level: 20
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_GASTLY
 Level: 20
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_GASTLY
 Level: 20
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_GASTLY
 Level: 20
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_EDMOND_HNS ===
 Name: EDMOND
@@ -6762,11 +6762,11 @@ AI: Check Bad Move
 
 SPECIES_BELLSPROUT
 Level: 3
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_LOTAD
 Level: 3
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_NEAL_HNS ===
 Name: NEAL
@@ -6779,15 +6779,15 @@ AI: Check Bad Move
 
 SPECIES_BELLSPROUT
 Level: 5
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_HOOTHOOT
 Level: 5
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_LI_HNS ===
 Name: LI
-Class: Sage Hns
+Class: Elder Hns
 Pic: Sage Leader Hns
 Gender: Male
 Music: Hg Sage
@@ -6817,23 +6817,23 @@ AI: Check Bad Move
 
 SPECIES_NOCTOWL
 Level: 42
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_WYRDEER
 Level: 42
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_LUDICOLO
 Level: 42
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_CLAYDOL
 Level: 42
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_INFERNAPE
 Level: 44
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_MASA_HNS ===
 Name: MASA
@@ -6846,23 +6846,23 @@ AI: Check Bad Move
 
 SPECIES_TALONFLAME
 Level: 42
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_WYRDEER
 Level: 42
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_LUDICOLO
 Level: 42
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_DECIBELLE
 Level: 42
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_TORTERRA
 Level: 44
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_KOJI_HNS ===
 Name: KOJI
@@ -6891,8 +6891,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_MARTHA_HNS ===
 Name: MARTHA
-Class: Hex Maniac Hns
-Pic: Hex Maniac
+Class: Channeler Hns
+Pic: Channeler Hns
 Gender: Male
 Music: Hg Sage
 Double Battle: No
@@ -6900,20 +6900,20 @@ AI: Check Bad Move
 
 SPECIES_DUSKULL
 Level: 19
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_LITWICK
 Level: 23
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_DUSKULL
 Level: 19
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_GRACE_HNS ===
 Name: GRACE
-Class: Hex Maniac Hns
-Pic: Hex Maniac
+Class: Channeler Hns
+Pic: Channeler Hns
 Gender: Male
 Music: Hg Sage
 Double Battle: No
@@ -6921,11 +6921,11 @@ AI: Check Bad Move
 
 SPECIES_SHUPPET
 Level: 23
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_LITWICK
 Level: 23
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_BETHANY_HNS ===
 Name: BETHANY
@@ -7312,8 +7312,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_ALLAN_HNS ===
 Name: ALLAN
-Class: Camper HnS
-Pic: Camper
+Class: Pokefan Hns
+Pic: Pokefan M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13345,7 +13345,7 @@ Level: 38
 
 === TRAINER_GAVEN_2_HNS ===
 Name: GAVEN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -13374,7 +13374,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_GAVEN_3_HNS ===
 Name: GAVEN
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Suspicious 2
@@ -13407,7 +13407,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_BETH_2_HNS ===
 Name: BETH
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -13436,7 +13436,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_BETH_3_HNS ===
 Name: BETH
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -13515,7 +13515,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_REENA_2_HNS ===
 Name: REENA
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -13540,7 +13540,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
 === TRAINER_REENA_3_HNS ===
 Name: REENA
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
@@ -14812,7 +14812,7 @@ IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_ULAULA_COOLTRAINER_HNS ===
 Name: LOIS
-Class: Cooltrainer Hns
+Class: Ace Trainer Hns
 Pic: Cooltrainer F
 Gender: Female
 Music: Hg Girl 2
@@ -15065,7 +15065,7 @@ Ability: Levitate
 Level: 70 
 EVs: 252 SpA / 252 Spe  
 Modest Nature  
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Dragon Cheer  
 - Alluring Voice  
 - Heat Wave  
@@ -15086,7 +15086,7 @@ Ability: Sniper
 Level: 70  
 EVs: 148 Def / 252 SpA / 108 SpD  
 Modest Nature  
-IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Flash Cannon  
 - Muddy Water  
 - Whirlpool  
@@ -15290,6 +15290,212 @@ Naive Nature
 - Focus Energy  
 - Drill Peck  
 - Double-Edge  
+
+/* ===== cameo characters ported from the 1.x fork =====
+ *
+ * PLACEHOLDER PARTIES. None of these characters is a trainer in the fork - only
+ * their sprites exist there - so there is nothing to port for their teams and
+ * the single mon below is a stub. Replace before placing any of them.
+ *
+ * They share TRAINER_CLASS_PKMN_TRAINER_1_HNS, the tree's existing cameo class
+ * (Red and Steven already use it), so the intro reads "{PKMN} TRAINER CYNTHIA".
+ * A class per character would render as "CYNTHIA CYNTHIA".
+ *
+ * NOTE: that class currently has no money multiplier, so these battles pay 0.
+ *
+ * Alder and Bato reuse `Pic: Red Hns` as an explicit placeholder - their fork
+ * sprites were deliberately not ported.
+ *
+ * GENDER IS NOT COSMETIC. CreateNPCTrainerPartyFromTrainer picks the party's
+ * personality seed from it (battle_main.c: TRAINER_GENDER_FEMALE -> 0x78, else
+ * 0x88), which biases the gender of every Pokemon the trainer fields. These
+ * headers were written from one template and all said Male; Cynthia, Iris and
+ * both Soras are female and now say so, before the real parties land and
+ * inherit the wrong bias. Buck, Alder, Yama and Bato are male - Bato confirmed
+ * by Moritz, 2026-08-29, since there is no art or source to check it against.
+ */
+
+=== TRAINER_CYNTHIA_HNS ===
+Name: CYNTHIA
+Class: Pkmn Trainer 1 Hns
+Pic: Cynthia Hns
+Gender: Female
+Music: Hg Champion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_MAGIKARP
+Level: 5
+
+=== TRAINER_IRIS_HNS ===
+Name: IRIS
+Class: Pkmn Trainer 1 Hns
+Pic: Iris Hns
+Gender: Female
+Music: Hg Champion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_MAGIKARP
+Level: 5
+
+=== TRAINER_SORA_HNS ===
+Name: SORA
+Class: Pkmn Trainer 1 Hns
+Pic: Sora Hns
+Gender: Female
+Music: Hg Champion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_MAGIKARP
+Level: 5
+
+=== TRAINER_SORA_2_HNS ===
+Name: SORA
+Class: Pkmn Trainer 1 Hns
+Pic: Sora With Cat Hns
+Gender: Female
+Music: Hg Champion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_MAGIKARP
+Level: 5
+
+=== TRAINER_BUCK_HNS ===
+Name: BUCK
+Class: Pkmn Trainer 1 Hns
+Pic: Buck Hns
+Gender: Male
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_MAGIKARP
+Level: 5
+
+=== TRAINER_ALDER_HNS ===
+Name: ALDER
+Class: Pkmn Trainer 1 Hns
+Pic: Red Hns
+Gender: Male
+Music: Hg Champion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_MAGIKARP
+Level: 5
+
+=== TRAINER_BATO_HNS ===
+Name: BATO
+Class: Pkmn Trainer 1 Hns
+Pic: Red Hns
+Gender: Male
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_MAGIKARP
+Level: 5
+
+/* ===== MASTER YAMA - secret end boss =====
+ *
+ * Party ported from CustomShireCrystal (data/trainers/parties.asm, MasterGroup),
+ * where Yama is the MASTER class - the only class in that hack with a flat 31
+ * IV row. Sprite is Touching_Fishes' master_yama.png; the 1.x fork carries the
+ * pic constant but no MASTER class and no trainer using it.
+ *
+ * Gen 2 item translation: MINT_BERRY -> Lum Berry (cures status),
+ * BERRY -> Oran Berry (restores 10 HP, the same effect). MAGICAL_FIRE is the
+ * fork's name for Mystical Fire; PSYCHIC_M is Gen 2's constant for Psychic.
+ * Krolucard, Fusang and Drain Life are Kismet content and all already exist.
+ *
+ * TWO DELIBERATE CHANGES from Crystal's set:
+ *   - Misdreavus -> MISMAGIUS. Crystal fielded the unevolved form on its final
+ *     boss; the evolution is +60 BST (435 -> 495) with SpA/SpD/Spe 85 -> 105,
+ *     and every move carries over unchanged.
+ *   - Krolucard's MOVES, not its species. At 85/70/80/93/80/123 it is already
+ *     the fastest thing on the team; the weakness was Razor Wind (two-turn, so
+ *     the player gets a free turn) and Ominous Wind (60, not even STAB). Now
+ *     Nasty Plot + Psychic + Dark Pulse, keeping Drain Life for identity and
+ *     for the recovery its EFFECT_ABSORB provides.
+ *
+ * ITEMS UPGRADED from the faithful Gen 2 translation: Oran Berry restores only
+ * 10 HP, which is meaningless on a level 95+ boss. Chesto pairs with Snorlax's
+ * Rest, Lum protects Gyarados' Dragon Dance sweep from status, Life Orb suits
+ * coverage. Fusang keeps Leftovers behind its 160 base Sp. Def.
+ *
+ * The two special attackers take DIFFERENT items rather than doubling up on
+ * Life Orb. Krolucard runs Nasty Plot, so it cannot be Choice-locked and wants
+ * the immediate power.
+ *
+ * Mismagius deliberately does NOT hold Choice Specs, despite its four-attack
+ * set being the textbook user. This tree's AI scores Choice items well when
+ * PICKING a move - it applies the 1.5x in its damage maths and refuses to lock
+ * into status moves (battle_ai_main.c, "Choice items") - but it has no notion
+ * of being ALREADY locked: `choicedMove` appears nowhere in battle_ai_main.c,
+ * battle_ai_util.c or battle_ai_switch_items.c. So a player who switches a
+ * Normal type into a locked Shadow Ball gets free turns the AI cannot escape.
+ * Wise Glasses gives a flat +10% special with no such exploit.
+ */
+=== TRAINER_YAMA_HNS ===
+Name: YAMA
+Class: Master Hns
+Pic: Master Yama Hns
+Gender: Male
+Music: Hg Champion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Dark Red
+
+SPECIES_SNORLAX @ ITEM_CHESTO_BERRY
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_CURSE
+- MOVE_REST
+- MOVE_BODY_SLAM
+- MOVE_EARTHQUAKE
+
+SPECIES_KROLUCARD @ ITEM_LIFE_ORB
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_NASTY_PLOT
+- MOVE_PSYCHIC
+- MOVE_DARK_PULSE
+- MOVE_DRAIN_LIFE
+
+SPECIES_MISMAGIUS @ ITEM_WISE_GLASSES
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SHADOW_BALL
+- MOVE_THUNDERBOLT
+- MOVE_PSYCHIC
+- MOVE_MYSTICAL_FIRE
+
+SPECIES_GYARADOS @ ITEM_LUM_BERRY
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_TWISTER
+- MOVE_EARTHQUAKE
+- MOVE_CRUNCH
+- MOVE_DRAGON_DANCE
+
+SPECIES_INFERNAPE @ ITEM_EXPERT_BELT
+Level: 97
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FLAMETHROWER
+- MOVE_THUNDER_PUNCH
+- MOVE_AERIAL_ACE
+- MOVE_BRICK_BREAK
+
+SPECIES_FUSANG @ ITEM_LEFTOVERS
+Level: 99
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_GIGA_DRAIN
+- MOVE_DRAGON_PULSE
+- MOVE_EARTHQUAKE
+- MOVE_ANCIENT_POWER
 
 /* ===== ported from the 1.x fork - generated by .claude/port_new_trainers.py ===== */
 
@@ -18092,8 +18298,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_AMALA_HNS ===
 Name: AMALA
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
+Class: Pkmn Breeder Hns
+Pic: Pokemon Breeder F Hns
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18124,8 +18330,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_AMALA_2_HNS ===
 Name: AMALA
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
+Class: Pkmn Breeder Hns
+Pic: Pokemon Breeder F Hns
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18156,8 +18362,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_AMALA_3_HNS ===
 Name: AMALA
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
+Class: Pkmn Breeder Hns
+Pic: Pokemon Breeder F Hns
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18188,8 +18394,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_AMBER_HNS ===
 Name: AMBER
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
+Class: Pkmn Breeder Hns
+Pic: Pokemon Breeder F Hns
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18260,8 +18466,8 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_CORBYN_HNS ===
 Name: CORBYN
-Class: Bug Maniac
-Pic: Bug Maniac
+Class: Bug Maniac Hns
+Pic: Bug Maniac Hns
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
@@ -18300,8 +18506,8 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 
 === TRAINER_CORY_HNS ===
 Name: CORY
-Class: Pkmn Breeder
-Pic: Pokemon Breeder M
+Class: Pkmn Breeder Hns
+Pic: Pokemon Breeder M Hns
 Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move
@@ -18360,8 +18566,8 @@ IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_DUSTY_HNS ===
 Name: DUSTY
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Class: Ruin Maniac Hns
+Pic: Ruin Maniac Hns
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
@@ -18404,8 +18610,8 @@ IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
 
 === TRAINER_ELENORE_HNS ===
 Name: ELENORE
-Class: Lady
-Pic: Lady
+Class: Lady Hns
+Pic: Lady Hns
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18452,8 +18658,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_HUNTER_HNS ===
 Name: HUNTER
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Class: Ruin Maniac Hns
+Pic: Ruin Maniac Hns
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
@@ -18604,8 +18810,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_MERCY_HNS ===
 Name: MERCY
-Class: Channeler Frlg
-Pic: Channeler Frlg
+Class: Channeler Hns
+Pic: Channeler Hns
 Music: Hg Sage
 Double Battle: No
 AI: Check Bad Move
@@ -18684,8 +18890,8 @@ IVs: 16 HP / 26 Atk / 16 Def / 26 SpA / 16 SpD / 31 Spe
 
 === TRAINER_PRISCILLA_HNS ===
 Name: PRISCILLA
-Class: Lady
-Pic: Lady
+Class: Lady Hns
+Pic: Lady Hns
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18700,8 +18906,8 @@ IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
 
 === TRAINER_ROMAN_HNS ===
 Name: ROMAN
-Class: Rich Boy
-Pic: Rich Boy
+Class: Rich Boy Hns
+Pic: Rich Boy Hns
 Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move
@@ -18712,8 +18918,8 @@ IVs: 20 HP / 28 Atk / 28 Def / 20 SpA / 20 SpD / 20 Spe
 
 === TRAINER_ROSE_HNS ===
 Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
+Class: Aroma Lady Hns
+Pic: Aroma Lady Hns
 Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move

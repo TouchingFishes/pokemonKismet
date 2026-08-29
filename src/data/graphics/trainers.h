@@ -632,6 +632,46 @@ const u16 gTrainerPalette_YoungsterHns[] = INCBIN_U16("graphics/trainers/palette
 const u32 gTrainerFrontPic_SamsonOakHns[] = INCBIN_U32("graphics/trainers/front_pics/samson_oak_hns.4bpp.smol");
 const u16 gTrainerPalette_SamsonOakHns[] = INCBIN_U16("graphics/trainers/front_pics/samson_oak_hns.gbapal");
 
+// Cameo characters from the 1.x fork. Like Samson Oak above, these ship as a
+// .png only - the .gbapal is generated from the image's own palette, so there
+// is no separate .pal file to port.
+const u32 gTrainerFrontPic_MasterYamaHns[] = INCBIN_U32("graphics/trainers/front_pics/master_yama_hns.4bpp.smol");
+const u16 gTrainerPalette_MasterYamaHns[] = INCBIN_U16("graphics/trainers/front_pics/master_yama_hns.gbapal");
+const u32 gTrainerFrontPic_ChannelerHns[] = INCBIN_U32("graphics/trainers/front_pics/channeler_hns.4bpp.smol");
+const u16 gTrainerPalette_ChannelerHns[] = INCBIN_U16("graphics/trainers/front_pics/channeler_hns.gbapal");
+const u32 gTrainerFrontPic_PokemonRangerMHns[] = INCBIN_U32("graphics/trainers/front_pics/pokemon_ranger_m_hns.4bpp.smol");
+const u16 gTrainerPalette_PokemonRangerMHns[] = INCBIN_U16("graphics/trainers/front_pics/pokemon_ranger_m_hns.gbapal");
+const u32 gTrainerFrontPic_PokemonRangerFHns[] = INCBIN_U32("graphics/trainers/front_pics/pokemon_ranger_f_hns.4bpp.smol");
+const u16 gTrainerPalette_PokemonRangerFHns[] = INCBIN_U16("graphics/trainers/front_pics/pokemon_ranger_f_hns.gbapal");
+const u32 gTrainerFrontPic_BugManiacHns[] = INCBIN_U32("graphics/trainers/front_pics/bug_maniac_hns.4bpp.smol");
+const u16 gTrainerPalette_BugManiacHns[] = INCBIN_U16("graphics/trainers/front_pics/bug_maniac_hns.gbapal");
+const u32 gTrainerFrontPic_PokemonBreederFHns[] = INCBIN_U32("graphics/trainers/front_pics/pokemon_breeder_f_hns.4bpp.smol");
+const u16 gTrainerPalette_PokemonBreederFHns[] = INCBIN_U16("graphics/trainers/front_pics/pokemon_breeder_f_hns.gbapal");
+const u32 gTrainerFrontPic_PokemonBreederMHns[] = INCBIN_U32("graphics/trainers/front_pics/pokemon_breeder_m_hns.4bpp.smol");
+const u16 gTrainerPalette_PokemonBreederMHns[] = INCBIN_U16("graphics/trainers/front_pics/pokemon_breeder_m_hns.gbapal");
+const u32 gTrainerFrontPic_AromaLadyHns[] = INCBIN_U32("graphics/trainers/front_pics/aroma_lady_hns.4bpp.smol");
+const u16 gTrainerPalette_AromaLadyHns[] = INCBIN_U16("graphics/trainers/front_pics/aroma_lady_hns.gbapal");
+const u32 gTrainerFrontPic_LadyHns[] = INCBIN_U32("graphics/trainers/front_pics/lady_hns.4bpp.smol");
+const u16 gTrainerPalette_LadyHns[] = INCBIN_U16("graphics/trainers/front_pics/lady_hns.gbapal");
+const u32 gTrainerFrontPic_RuinManiacHns[] = INCBIN_U32("graphics/trainers/front_pics/ruin_maniac_hns.4bpp.smol");
+const u16 gTrainerPalette_RuinManiacHns[] = INCBIN_U16("graphics/trainers/front_pics/ruin_maniac_hns.gbapal");
+const u32 gTrainerFrontPic_RichBoyHns[] = INCBIN_U32("graphics/trainers/front_pics/rich_boy_hns.4bpp.smol");
+const u16 gTrainerPalette_RichBoyHns[] = INCBIN_U16("graphics/trainers/front_pics/rich_boy_hns.gbapal");
+const u32 gTrainerFrontPic_ScientistHns[] = INCBIN_U32("graphics/trainers/front_pics/scientist_hns.4bpp.smol");
+const u16 gTrainerPalette_ScientistHns[] = INCBIN_U16("graphics/trainers/front_pics/scientist_hns.gbapal");
+const u32 gTrainerFrontPic_PainterHns[] = INCBIN_U32("graphics/trainers/front_pics/painter_hns.4bpp.smol");
+const u16 gTrainerPalette_PainterHns[] = INCBIN_U16("graphics/trainers/front_pics/painter_hns.gbapal");
+const u32 gTrainerFrontPic_CynthiaHns[] = INCBIN_U32("graphics/trainers/front_pics/cynthia_hns.4bpp.smol");
+const u16 gTrainerPalette_CynthiaHns[] = INCBIN_U16("graphics/trainers/front_pics/cynthia_hns.gbapal");
+const u32 gTrainerFrontPic_IrisHns[] = INCBIN_U32("graphics/trainers/front_pics/iris_hns.4bpp.smol");
+const u16 gTrainerPalette_IrisHns[] = INCBIN_U16("graphics/trainers/front_pics/iris_hns.gbapal");
+const u32 gTrainerFrontPic_SoraHns[] = INCBIN_U32("graphics/trainers/front_pics/sora_hns.4bpp.smol");
+const u16 gTrainerPalette_SoraHns[] = INCBIN_U16("graphics/trainers/front_pics/sora_hns.gbapal");
+const u32 gTrainerFrontPic_SoraWithCatHns[] = INCBIN_U32("graphics/trainers/front_pics/sora_with_cat_hns.4bpp.smol");
+const u16 gTrainerPalette_SoraWithCatHns[] = INCBIN_U16("graphics/trainers/front_pics/sora_with_cat_hns.gbapal");
+const u32 gTrainerFrontPic_BuckHns[] = INCBIN_U32("graphics/trainers/front_pics/buck_hns.4bpp.smol");
+const u16 gTrainerPalette_BuckHns[] = INCBIN_U16("graphics/trainers/front_pics/buck_hns.gbapal");
+
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -885,6 +925,24 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FRONT_TWINS_HNS, gTrainerFrontPic_TwinsHns, gTrainerPalette_TwinsHns),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_YOUNGSTER_HNS, gTrainerFrontPic_YoungsterHns, gTrainerPalette_YoungsterHns),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_SAMSON_OAK_HNS, gTrainerFrontPic_SamsonOakHns, gTrainerPalette_SamsonOakHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_MASTER_YAMA_HNS, gTrainerFrontPic_MasterYamaHns, gTrainerPalette_MasterYamaHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_CHANNELER_HNS, gTrainerFrontPic_ChannelerHns, gTrainerPalette_ChannelerHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_POKEMON_RANGER_M_HNS, gTrainerFrontPic_PokemonRangerMHns, gTrainerPalette_PokemonRangerMHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_POKEMON_RANGER_F_HNS, gTrainerFrontPic_PokemonRangerFHns, gTrainerPalette_PokemonRangerFHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_BUG_MANIAC_HNS, gTrainerFrontPic_BugManiacHns, gTrainerPalette_BugManiacHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_POKEMON_BREEDER_F_HNS, gTrainerFrontPic_PokemonBreederFHns, gTrainerPalette_PokemonBreederFHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_POKEMON_BREEDER_M_HNS, gTrainerFrontPic_PokemonBreederMHns, gTrainerPalette_PokemonBreederMHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_AROMA_LADY_HNS, gTrainerFrontPic_AromaLadyHns, gTrainerPalette_AromaLadyHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_LADY_HNS, gTrainerFrontPic_LadyHns, gTrainerPalette_LadyHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_RUIN_MANIAC_HNS, gTrainerFrontPic_RuinManiacHns, gTrainerPalette_RuinManiacHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_RICH_BOY_HNS, gTrainerFrontPic_RichBoyHns, gTrainerPalette_RichBoyHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_SCIENTIST_HNS, gTrainerFrontPic_ScientistHns, gTrainerPalette_ScientistHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_PAINTER_HNS, gTrainerFrontPic_PainterHns, gTrainerPalette_PainterHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_CYNTHIA_HNS, gTrainerFrontPic_CynthiaHns, gTrainerPalette_CynthiaHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_IRIS_HNS, gTrainerFrontPic_IrisHns, gTrainerPalette_IrisHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_SORA_HNS, gTrainerFrontPic_SoraHns, gTrainerPalette_SoraHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_SORA_WITH_CAT_HNS, gTrainerFrontPic_SoraWithCatHns, gTrainerPalette_SoraWithCatHns),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_BUCK_HNS, gTrainerFrontPic_BuckHns, gTrainerPalette_BuckHns),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

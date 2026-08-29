@@ -228,6 +228,26 @@ enum __attribute__((packed)) TrainerPicID
     TRAINER_PIC_FRONT_TWINS_HNS,
     TRAINER_PIC_FRONT_YOUNGSTER_HNS,
     TRAINER_PIC_FRONT_SAMSON_OAK_HNS,
+    // Cameo characters ported from the 1.x fork. Bato and Alder are deliberately
+    // absent - they reuse an existing pic as a placeholder for now.
+    TRAINER_PIC_FRONT_SCIENTIST_HNS,
+    TRAINER_PIC_FRONT_PAINTER_HNS,
+    TRAINER_PIC_FRONT_MASTER_YAMA_HNS,
+    TRAINER_PIC_FRONT_CHANNELER_HNS,
+    TRAINER_PIC_FRONT_POKEMON_RANGER_M_HNS,
+    TRAINER_PIC_FRONT_POKEMON_RANGER_F_HNS,
+    TRAINER_PIC_FRONT_BUG_MANIAC_HNS,
+    TRAINER_PIC_FRONT_POKEMON_BREEDER_F_HNS,
+    TRAINER_PIC_FRONT_POKEMON_BREEDER_M_HNS,
+    TRAINER_PIC_FRONT_AROMA_LADY_HNS,
+    TRAINER_PIC_FRONT_LADY_HNS,
+    TRAINER_PIC_FRONT_RUIN_MANIAC_HNS,
+    TRAINER_PIC_FRONT_RICH_BOY_HNS,
+    TRAINER_PIC_FRONT_CYNTHIA_HNS,
+    TRAINER_PIC_FRONT_IRIS_HNS,
+    TRAINER_PIC_FRONT_SORA_HNS,
+    TRAINER_PIC_FRONT_SORA_WITH_CAT_HNS,
+    TRAINER_PIC_FRONT_BUCK_HNS,
     TRAINER_PIC_FRONT_COUNT,
     TRAINER_PIC_BACK_BRENDAN = TRAINER_PIC_FRONT_COUNT, // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
     TRAINER_PIC_BACK_MAY,
@@ -622,7 +642,10 @@ enum TrainerClassID
     TRAINER_CLASS_CAMPER_HNS,
     TRAINER_CLASS_CHAMPION_HNS,
     TRAINER_CLASS_COLLECTOR_HNS,
-    TRAINER_CLASS_COOLTRAINER_HNS,
+    // "Cooltrainer" is the Gen 3 name; HGSS - which this build follows - calls
+    // the class Ace Trainer. The Hoenn and FireRed classes keep COOLTRAINER
+    // because that is the text those games actually display.
+    TRAINER_CLASS_ACE_TRAINER_HNS,
     TRAINER_CLASS_DOME_ACE_HNS,
     TRAINER_CLASS_DRAGON_TAMER_HNS,
     TRAINER_CLASS_ELITE_FOUR_HNS,
@@ -667,6 +690,29 @@ enum TrainerClassID
     TRAINER_CLASS_PROFESSOR_HNS,
     TRAINER_CLASS_DEVELOPER_HNS,
     TRAINER_CLASS_PYRAMID_KING_HNS,
+    // The Game Corner class. Japanese GAMBLER, censored to "Gamer" for the
+    // western releases - TRAINER_CLASS_GAMER_FRLG is the same character. Kept
+    // under the original name here; trainers reuse the FireRed sprite via
+    // `Pic: Gamer Frlg`, so no new art is needed.
+    TRAINER_CLASS_GAMBLER_HNS,
+    // Ported from the 1.x fork. Nurse brings its own sprite; Elder and Ex Elite
+    // are class-only - Elder deliberately reuses the Sage pic for now rather
+    // than porting the fork's Mr Fuji sprite.
+    TRAINER_CLASS_NURSE_HNS,
+    TRAINER_CLASS_ELDER_HNS,
+    TRAINER_CLASS_EX_ELITE_HNS,
+    TRAINER_CLASS_SCIENTIST_HNS,
+    TRAINER_CLASS_PAINTER_HNS,
+    // The secret end boss. Crystal's MASTER class, whose IV row is a flat 31.
+    TRAINER_CLASS_MASTER_HNS,
+    TRAINER_CLASS_CHANNELER_HNS,
+    TRAINER_CLASS_PKMN_RANGER_HNS,
+    TRAINER_CLASS_BUG_MANIAC_HNS,
+    TRAINER_CLASS_PKMN_BREEDER_HNS,
+    TRAINER_CLASS_AROMA_LADY_HNS,
+    TRAINER_CLASS_LADY_HNS,
+    TRAINER_CLASS_RUIN_MANIAC_HNS,
+    TRAINER_CLASS_RICH_BOY_HNS,
 
     TRAINER_CLASS_COUNT,
 };

@@ -750,8 +750,21 @@
 #define TRAINER_ZANDER_3_HNS                     726
 // <<< ported from the 1.x fork
 
+// Cameo characters ported from the 1.x fork (sprites only - see the
+// placeholder-party note in trainers_hns.party).
+#define TRAINER_CYNTHIA_HNS                      727
+#define TRAINER_IRIS_HNS                         728
+#define TRAINER_SORA_HNS                         729
+#define TRAINER_SORA_2_HNS                       730
+#define TRAINER_BUCK_HNS                         731
+#define TRAINER_ALDER_HNS                        732
+#define TRAINER_BATO_HNS                         733
+
+// The secret end boss - see the party note in trainers_hns.party.
+#define TRAINER_YAMA_HNS                         734
+
 // 618 is TRAINER_TANYA_HNS, relocated out of the TRAINER_FRONTIER_BRAIN slot (330).
-#define TRAINERS_COUNT_HNS                       727
+#define TRAINERS_COUNT_HNS                       735
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
