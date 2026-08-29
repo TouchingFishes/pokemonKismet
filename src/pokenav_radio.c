@@ -138,7 +138,6 @@ static u32 LoopedTask_ExitRadio(s32 state);
 static u32 LoopedTask_ScrollRadio(s32 state);
 static bool32 GetCurrentRadioLoopedTaskActive(void);
 static u8 FindStation(s32 tuningPos);
-static bool8 IsPlayerInJohto(void);
 static void PrintStationName(struct Pokenav_RadioGfx *gfx, u8 station);
 static void PrintRadioText(struct Pokenav_RadioGfx *gfx, const u8 *text);
 static void ClearRadioText(struct Pokenav_RadioGfx *gfx);
@@ -265,6 +264,27 @@ static const u16 sWeatherPlacesKanto[] =
     MAPSEC_SAFFRON_CITY,
     MAPSEC_FUCHSIA_CITY,
     MAPSEC_CINNABAR_ISLAND,
+};
+
+// Only the island map sections carry a climate; Akala Forest has none and would
+// report the fallback line, so it is left out.
+static const u16 sWeatherPlacesAlola[] =
+{
+    MAPSEC_MELEMELE_ISLAND,
+    MAPSEC_AKALA_ISLAND,
+    MAPSEC_ULAULA_ISLAND,
+    MAPSEC_PONI_ISLAND,
+    MAPSEC_ALOLA_OCEAN,
+};
+
+// Snowswept Cavern is omitted for the same reason -- it is a cave with no
+// climate row.
+static const u16 sWeatherPlacesSinjoh[] =
+{
+    MAPSEC_NEW_SINJOH,
+    MAPSEC_SINJOH_RUINS,
+    MAPSEC_ROUTE_49,
+    MAPSEC_ROUTE_50,
 };
 
 // Only the weathers the climate tables can actually produce are spelled out;
@@ -960,15 +980,30 @@ static void GenerateStationContent(struct Pokenav_Radio *radio, u8 station)
         u32 numPlaces, firstPick, secondPick, i;
         u8 mapNameBuf[24];
 
-        if (IsPlayerInJohto())
+        // GetCurrentRegion() rather than IsPlayerInJohto(): the Hisui map
+        // sections sit *inside* the Johto range, so the simple bounds test
+        // reports Sinjoh as Johto. GetRegionForSectionId() tests Hisui first.
+        switch (GetCurrentRegion())
         {
-            places = sWeatherPlacesJohto;
-            numPlaces = ARRAY_COUNT(sWeatherPlacesJohto);
-        }
-        else
-        {
+        case REGION_KANTO:
             places = sWeatherPlacesKanto;
             numPlaces = ARRAY_COUNT(sWeatherPlacesKanto);
+            break;
+        case REGION_ALOLA:
+            places = sWeatherPlacesAlola;
+            numPlaces = ARRAY_COUNT(sWeatherPlacesAlola);
+            break;
+        case REGION_HISUI:
+            places = sWeatherPlacesSinjoh;
+            numPlaces = ARRAY_COUNT(sWeatherPlacesSinjoh);
+            break;
+        // Johto is also the fallback for anywhere else the player can tune in,
+        // such as the Hoenn-side Battle Frontier.
+        case REGION_JOHTO:
+        default:
+            places = sWeatherPlacesJohto;
+            numPlaces = ARRAY_COUNT(sWeatherPlacesJohto);
+            break;
         }
 
         radio->lines[n++] = sRadioText_Wx_Intro1;
