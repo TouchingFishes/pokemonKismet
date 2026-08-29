@@ -15,6 +15,7 @@
 #include "wallclock.h"
 #include "constants/form_change_types.h"
 #include "apricorn_tree.h"
+#include "weather_climate.h"
 
 static void UpdatePerDay(struct Time *localTime);
 static void UpdatePerMinute(struct Time *localTime);
@@ -22,6 +23,7 @@ static void UpdatePerMinute(struct Time *localTime);
 void InitTimeBasedEvents(void)
 {
     FlagSet(FLAG_SYS_CLOCK_SET);
+    RollDailyWeatherPattern();
     RtcCalcLocalTime();
     gSaveBlock2Ptr->lastBerryTreeUpdate = gLocalTime;
     VarSet(VAR_DAYS, gLocalTime.days);
@@ -49,6 +51,7 @@ static void UpdatePerDay(struct Time *localTime)
         UpdateDewfordTrendPerDay(daysSince);
         UpdateTVShowsPerDay(daysSince);
         UpdateWeatherPerDay(daysSince);
+        RollDailyWeatherPattern();
         UpdatePartyPokerusTime(daysSince);
         UpdateMirageRnd(daysSince);
         UpdateBirchState(daysSince);

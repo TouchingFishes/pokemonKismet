@@ -19,6 +19,27 @@ static const u8 sRadioStationName_LetsAllSing[]     = _("Let's All Sing!");
 static const u8 sRadioStationName_PokeFlute[]       = _("POKé FLUTE");
 
 static const u8 sRadioStationName_HoennSound[]  = _("Hoenn Sound");
+static const u8 sRadioStationName_Weather[]     = _("Weather Report");
+
+// ==========================================================
+// Weather Report
+// ==========================================================
+
+static const u8 sRadioText_Wx_Intro1[] = _("You're tuned in to the");
+static const u8 sRadioText_Wx_Intro2[] = _("WEATHER REPORT!");
+static const u8 sRadioText_Wx_Here[]   = _("Conditions right now in...");
+static const u8 sRadioText_Wx_Later[]  = _("Later today, look out for...");
+static const u8 sRadioText_Wx_Else[]   = _("And elsewhere today...");
+static const u8 sRadioText_Wx_Outro[]  = _("That's your forecast. Stay dry!");
+
+static const u8 sRadioText_Wx_Sunny[]  = _("It's clear and sunny!");
+static const u8 sRadioText_Wx_Cloudy[] = _("Cloudy skies overhead.");
+static const u8 sRadioText_Wx_Rain[]   = _("Rain is falling steadily.");
+static const u8 sRadioText_Wx_Pour[]   = _("It's absolutely pouring!");
+static const u8 sRadioText_Wx_Storm[]  = _("Thunderstorms rolling in!");
+static const u8 sRadioText_Wx_Snow[]   = _("Snow is coming down.");
+static const u8 sRadioText_Wx_Fog[]    = _("A thick fog has settled in.");
+static const u8 sRadioText_Wx_Calm[]   = _("Conditions are calm.");
 
 // ==========================================================
 // Hoenn Sound

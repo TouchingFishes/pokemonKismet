@@ -239,6 +239,7 @@ bool8 Leaves_Finish(void);
 
 u8 GetSavedWeather(void);
 void SetSavedWeather(u32 weather);
+bool32 MapHeaderNamesWeather(void);
 void SetSavedWeatherFromCurrMapHeader(void);
 void SetWeather(u32 weather);
 void DoCurrentWeather(void);

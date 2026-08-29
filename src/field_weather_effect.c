@@ -15,6 +15,7 @@
 #include "trig.h"
 #include "gpu_regs.h"
 #include "palette.h"
+#include "weather_climate.h"
 
 EWRAM_DATA static u8 sCurrentAbnormalWeather = 0;
 
@@ -2526,10 +2527,31 @@ u8 GetSavedWeather(void)
     return gSaveBlock1Ptr->weather;
 }
 
+// The single predicate for "does this map's header own its weather?", shared
+// with the dynamic climate system so both of its entry points agree with this
+// one. It has to run the header value through TranslateWeatherNum(), because
+// that maps unrecognized values to WEATHER_NONE as well -- a raw
+// `gMapHeader.weather != WEATHER_NONE` test would let such a map take climate
+// weather at load and then never update through the day.
+bool32 MapHeaderNamesWeather(void)
+{
+    return TranslateWeatherNum(gMapHeader.weather) != WEATHER_NONE;
+}
+
 void SetSavedWeatherFromCurrMapHeader(void)
 {
     u8 oldWeather = gSaveBlock1Ptr->weather;
-    gSaveBlock1Ptr->weather = TranslateWeatherNum(gMapHeader.weather);
+    u8 newWeather = TranslateWeatherNum(gMapHeader.weather);
+
+    // A header that names a specific weather always wins. Only headers left at
+    // WEATHER_NONE fall through to the regional climate system. This test is
+    // MapHeaderNamesWeather() inlined -- the translated value is needed here
+    // anyway, so it is not called twice.
+    if (newWeather == WEATHER_NONE)
+        newWeather = GetRegionalWeather(gMapHeader.regionMapSectionId, gMapHeader.mapType);
+
+    NoteResolvedWeather(newWeather);
+    gSaveBlock1Ptr->weather = newWeather;
     UpdateRainCounter(gSaveBlock1Ptr->weather, oldWeather);
 }
 

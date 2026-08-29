@@ -30,6 +30,8 @@
 #include "constants/pokedex.h"
 #include "constants/songs.h"
 #include "constants/region_map_sections.h"
+#include "constants/weather.h"
+#include "weather_climate.h"
 #include "regions.h"
 #include "constants/flags_hns.h"
 #include "constants/vars_hns.h"
@@ -70,6 +72,7 @@ enum RadioStation
     RADIO_STATION_EVOLUTION,
     RADIO_STATION_ROCKET,
     RADIO_STATION_HOENN_SOUND,
+    RADIO_STATION_WEATHER,
     NUM_RADIO_STATIONS,
 };
 
@@ -135,6 +138,7 @@ static u32 LoopedTask_ExitRadio(s32 state);
 static u32 LoopedTask_ScrollRadio(s32 state);
 static bool32 GetCurrentRadioLoopedTaskActive(void);
 static u8 FindStation(s32 tuningPos);
+static bool8 IsPlayerInJohto(void);
 static void PrintStationName(struct Pokenav_RadioGfx *gfx, u8 station);
 static void PrintRadioText(struct Pokenav_RadioGfx *gfx, const u8 *text);
 static void ClearRadioText(struct Pokenav_RadioGfx *gfx);
@@ -161,6 +165,7 @@ static const struct RadioChannelEntry sRadioChannels[] =
     { .tuningPos = 57, .station = RADIO_STATION_LETS_ALL_SING,    .name = sRadioStationName_LetsAllSing },
     { .tuningPos = 61, .station = RADIO_STATION_POKE_FLUTE,       .name = sRadioStationName_PokeFlute },
     { .tuningPos = 63, .station = RADIO_STATION_EVOLUTION,        .name = sRadioStationName_Unown },
+    { .tuningPos = 45, .station = RADIO_STATION_WEATHER,          .name = sRadioStationName_Weather },
 };
 
 static const u8 sRadioText_NoStation[] = _("- - - -");
@@ -180,6 +185,7 @@ static const u16 sRadioStationMusic[NUM_RADIO_STATIONS] =
     [RADIO_STATION_EVOLUTION]        = MUS_HG_RADIO_ROCKET,
     [RADIO_STATION_ROCKET]           = MUS_HG_ROCKET_TAKEOVER,
     [RADIO_STATION_HOENN_SOUND]      = MUS_HG_RADIO_ROUTE101,
+    [RADIO_STATION_WEATHER]          = MUS_HG_RADIO_MARCH,
 };
 
 static const u16 sHoennSoundSongs[] =
@@ -228,6 +234,58 @@ static const u8 *const sDayOfWeekNames[] =
     gText_Sunday, gText_Monday, gText_Tuesday, gText_Wednesday,
     gText_Thursday, gText_Friday, gText_Saturday,
 };
+
+// Towns the Weather Report cites, split by region so it talks about places the
+// player can relate to. Every entry has a climate row in weather_climate.c, so
+// none of them can report an empty forecast.
+static const u16 sWeatherPlacesJohto[] =
+{
+    MAPSEC_NEW_BARK_TOWN,
+    MAPSEC_CHERRYGROVE_CITY,
+    MAPSEC_VIOLET_CITY,
+    MAPSEC_AZALEA_TOWN,
+    MAPSEC_GOLDENROD_CITY,
+    MAPSEC_ECRUTEAK_CITY,
+    MAPSEC_OLIVINE_CITY,
+    MAPSEC_CIANWOOD_CITY,
+    MAPSEC_MAHOGANY_TOWN,
+    MAPSEC_BLACKTHORN_CITY,
+    MAPSEC_LAKE_OF_RAGE,
+};
+
+static const u16 sWeatherPlacesKanto[] =
+{
+    MAPSEC_PALLET_TOWN,
+    MAPSEC_VIRIDIAN_CITY,
+    MAPSEC_PEWTER_CITY,
+    MAPSEC_CERULEAN_CITY,
+    MAPSEC_VERMILION_CITY,
+    MAPSEC_LAVENDER_TOWN,
+    MAPSEC_CELADON_CITY,
+    MAPSEC_SAFFRON_CITY,
+    MAPSEC_FUCHSIA_CITY,
+    MAPSEC_CINNABAR_ISLAND,
+};
+
+// Only the weathers the climate tables can actually produce are spelled out;
+// anything else falls back to the calm line.
+static const u8 *const sWeatherPhrases[WEATHER_COUNT] =
+{
+    [WEATHER_SUNNY]             = sRadioText_Wx_Sunny,
+    [WEATHER_SHADE]             = sRadioText_Wx_Cloudy,
+    [WEATHER_RAIN]              = sRadioText_Wx_Rain,
+    [WEATHER_DOWNPOUR]          = sRadioText_Wx_Pour,
+    [WEATHER_RAIN_THUNDERSTORM] = sRadioText_Wx_Storm,
+    [WEATHER_SNOW]              = sRadioText_Wx_Snow,
+    [WEATHER_FOG_HORIZONTAL]    = sRadioText_Wx_Fog,
+};
+
+static const u8 *GetWeatherPhrase(u8 weather)
+{
+    if (weather < WEATHER_COUNT && sWeatherPhrases[weather] != NULL)
+        return sWeatherPhrases[weather];
+    return sRadioText_Wx_Calm;
+}
 
 static const u16 sPnPPlaces[] =
 {
@@ -893,6 +951,69 @@ static void GenerateStationContent(struct Pokenav_Radio *radio, u8 station)
         radio->lines[n++] = sRadioText_Hoenn3;
         radio->lines[n++] = sRadioText_Hoenn4;
         break;
+
+    case RADIO_STATION_WEATHER:
+    {
+        u32 slot = GetCurrentWeatherSlot();
+        u16 here = gMapHeader.regionMapSectionId;
+        const u16 *places;
+        u32 numPlaces, firstPick, secondPick, i;
+        u8 mapNameBuf[24];
+
+        if (IsPlayerInJohto())
+        {
+            places = sWeatherPlacesJohto;
+            numPlaces = ARRAY_COUNT(sWeatherPlacesJohto);
+        }
+        else
+        {
+            places = sWeatherPlacesKanto;
+            numPlaces = ARRAY_COUNT(sWeatherPlacesKanto);
+        }
+
+        radio->lines[n++] = sRadioText_Wx_Intro1;
+        radio->lines[n++] = sRadioText_Wx_Intro2;
+
+        // Where the player is standing, reported even indoors -- the whole
+        // point of a forecast is the sky you cannot currently see. So this
+        // asks the climate directly rather than going through
+        // GetRegionalWeather(), which would answer WEATHER_NONE inside a cave.
+        radio->lines[n++] = sRadioText_Wx_Here;
+        GetMapName(mapNameBuf, here, 0);
+        dst = radio->lineBuffers[buf];
+        StringCopy(dst, mapNameBuf);
+        radio->lines[n++] = radio->lineBuffers[buf++];
+        radio->lines[n++] = GetWeatherPhrase(GetRegionalWeatherAtSlot(here, slot));
+
+        // A look-ahead is only honest inside today. Tomorrow's pattern is
+        // rolled at the day rollover and cannot be known yet.
+        if (slot + 1 < WEATHER_SLOTS_PER_DAY)
+        {
+            radio->lines[n++] = sRadioText_Wx_Later;
+            radio->lines[n++] = GetWeatherPhrase(GetRegionalWeatherAtSlot(here, slot + 1));
+        }
+
+        radio->lines[n++] = sRadioText_Wx_Else;
+
+        // Two distinct towns: offsetting the second pick guarantees it differs
+        // without a retry loop.
+        firstPick = Random() % numPlaces;
+        secondPick = (firstPick + 1 + (Random() % (numPlaces - 1))) % numPlaces;
+
+        for (i = 0; i < 2; i++)
+        {
+            u16 mapsec = places[i == 0 ? firstPick : secondPick];
+
+            GetMapName(mapNameBuf, mapsec, 0);
+            dst = radio->lineBuffers[buf];
+            StringCopy(dst, mapNameBuf);
+            radio->lines[n++] = radio->lineBuffers[buf++];
+            radio->lines[n++] = GetWeatherPhrase(GetRegionalWeatherAtSlot(mapsec, slot));
+        }
+
+        radio->lines[n++] = sRadioText_Wx_Outro;
+        break;
+    }
 
     case RADIO_STATION_UNOWN:
     case RADIO_STATION_POKE_FLUTE:

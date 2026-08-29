@@ -71,6 +71,7 @@
 #include "tv.h"
 #include "scanline_effect.h"
 #include "wild_encounter.h"
+#include "weather_climate.h"
 #include "vs_seeker.h"
 #include "frontier_util.h"
 #include "constants/abilities.h"
@@ -2201,6 +2202,9 @@ void CB2_ContinueSavedGame(void)
 
     UnfreezeObjectEvents();
     DoTimeBasedEvents();
+    // After DoTimeBasedEvents(), so a day rollover has already rerolled the
+    // day's weather pattern and this resolves against the new one.
+    TryResolveWeatherOnContinue();
     UpdateMiscOverworldStates();
     if ((gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR || gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR_HNS))
         InitBattlePyramidMap(TRUE);
