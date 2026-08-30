@@ -27,6 +27,7 @@ NewBarkTown_PlayersHouse_2F_Script_ClockSetupTrigger1::
     msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	call PlayersHouse_2F_EventScript_SetWallClock
 	delay 30
+	call PlayerHouse_2F_EventScript_AskWeekDay
 	setvar VAR_NEWBARK_TOWN_STATE, 1
 	setflag FLAG_SET_WALL_CLOCK
 	helpwindow HELP_GAMESTART_WINDOW
@@ -43,6 +44,7 @@ NewBarkTown_PlayersHouse_2F_Script_ClockSetupTrigger2::
     msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	call PlayersHouse_2F_EventScript_SetWallClock
 	delay 30
+	call PlayerHouse_2F_EventScript_AskWeekDay
 	setvar VAR_NEWBARK_TOWN_STATE, 1
 	setflag FLAG_SET_WALL_CLOCK
 	helpwindow HELP_GAMESTART_WINDOW
@@ -86,3 +88,8 @@ NewBarkTown_PlayersHouse_2F_Text_NES:
     .string "{PLAYER} played with the NES.\p"
     .string "…Okay!\n"
     .string "It's time to go!$"
+
+PlayersHouse_2F_Text_OversleptWhatDay:
+	.string "Huh…? I totally overslept!\p"
+	.string "Wait…\n"
+	.string "what day is it again?$"

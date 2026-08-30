@@ -703,7 +703,10 @@ static u32 WrapDexTextIntoLines(struct Pokenav_Radio *radio, const u8 *text, u32
 
 static void GeneratePokemonMusicContent(struct Pokenav_Radio *radio, u32 *n, u32 *buf, bool32 isBen)
 {
-    u32 dayOfWeek = GetDayOfWeek();
+    // GetWeekDay(), not GetDayOfWeek(): the radio schedule has to line up with
+    // the day the player declared at the wall clock, or the alternation runs
+    // against the weekday the game tells them it is.
+    u32 dayOfWeek = GetWeekDay();
     bool32 isEvenDay = (dayOfWeek % 2) == 0;
     u8 *dst;
 
@@ -1432,7 +1435,9 @@ static u32 LoopedTask_TuneRadio(s32 state)
             if (radio->currentStation == RADIO_STATION_POKEMON_MUSIC
                 || radio->currentStation == RADIO_STATION_LETS_ALL_SING)
             {
-                music = (GetDayOfWeek() % 2 == 0) ? MUS_HG_RADIO_MARCH : MUS_HG_RADIO_LULLABY;
+                // Must use the same day source as GeneratePokemonMusicContent(),
+                // or the track contradicts the DJ that introduced it.
+                music = (GetWeekDay() % 2 == 0) ? MUS_HG_RADIO_MARCH : MUS_HG_RADIO_LULLABY;
             }
             else if (radio->currentStation == RADIO_STATION_HOENN_SOUND)
             {

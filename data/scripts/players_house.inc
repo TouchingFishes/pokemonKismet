@@ -117,6 +117,20 @@ PlayersHouse_2F_EventScript_SetWallClock::
 	waitstate
 	return
 
+PlayerHouse_2F_EventScript_AskWeekDay::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	waitmovement 0
+	msgbox PlayersHouse_2F_Text_OversleptWhatDay, MSGBOX_DEFAULT
+	closemessage
+PlayerHouse_2F_EventScript_AskWeekDay_Loop::
+@ Option 7 is Exit. SetChosenWeekDay cannot tell it from a real answer - the mod
+@ would silently turn it into Sunday - so re-ask instead of accepting it.
+	multichoice 20, 0, MULTI_DAYS_OF_WEEK, TRUE
+	goto_if_eq VAR_RESULT, 7, PlayerHouse_2F_EventScript_AskWeekDay_Loop
+	copyvar VAR_0x8004, VAR_RESULT
+	special SetChosenWeekDay
+	return
+
 PlayersHouse_2F_Movement_MomEntersMale:
 	delay_8
 	walk_down

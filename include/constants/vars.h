@@ -175,7 +175,7 @@
 #define VAR_PETALBURG_WOODS_STATE                        0x4098
 #define VAR_LILYCOVE_CONTEST_LOBBY_STATE                 0x4099
 #define VAR_RUSTURF_TUNNEL_STATE                         0x409A
-#define VAR_UNUSED_0x409B                                0x409B // Unused Var
+#define VAR_WEEKDAY_OFFSET                               0x409B // Corrects GetDayOfWeek() to the day the player declared
 #define VAR_ELITE_4_STATE                                0x409C
 #define VAR_WEATHER_PATTERN                              0x409D // Dynamic weather: today's pattern, rerolled per day
 #define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E

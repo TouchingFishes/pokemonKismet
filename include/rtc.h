@@ -38,6 +38,8 @@ u16 GetFullYear(void);
 enum Month GetMonth(void);
 u8 GetDay(void);
 enum Weekday GetDayOfWeek(void);
+enum Weekday GetWeekDay(void);
+void SetWeekDay(enum Weekday weekDay);
 enum TimeOfDay GenConfigTimeOfDay(enum TimeOfDay timeOfDay);
 enum TimeOfDay TryIncrementTimeOfDay(enum TimeOfDay timeOfDay);
 enum TimeOfDay TryDecrementTimeOfDay(enum TimeOfDay timeOfDay);

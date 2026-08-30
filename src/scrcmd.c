@@ -893,10 +893,14 @@ bool8 ScrCmd_initclock(struct ScriptContext *ctx)
 {
     u8 hour = VarGet(ScriptReadHalfword(ctx));
     u8 minute = VarGet(ScriptReadHalfword(ctx));
+    // See Task_SetClock_Confirmed: the offset has to be re-anchored across a
+    // clock init, which zeroes gLocalTime.days.
+    enum Weekday weekDay = GetWeekDay();
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
     RtcInitLocalTimeOffset(hour, minute);
+    SetWeekDay(weekDay);
     return FALSE;
 }
 

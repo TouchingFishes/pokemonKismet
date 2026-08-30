@@ -852,7 +852,14 @@ static void Task_SetClock_HandleConfirmInput(u8 taskId)
 
 static void Task_SetClock_Confirmed(u8 taskId)
 {
+    // Read the day before the clock is set, then restore it after.
+    // RtcInitLocalTimeOffset() zeroes gLocalTime.days, which moves the calendar
+    // underneath VAR_WEEKDAY_OFFSET; re-anchoring keeps the player's declared
+    // day pointing at the same weekday.
+    enum Weekday weekDay = GetWeekDay();
+
     RtcInitLocalTimeOffset(gTasks[taskId].tHours, gTasks[taskId].tMinutes);
+    SetWeekDay(weekDay);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_SetClock_Exit;
 }

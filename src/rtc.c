@@ -2,7 +2,9 @@
 #include "battle_pike.h"
 #include "battle_pyramid.h"
 #include "datetime.h"
+#include "event_data.h"
 #include "rtc.h"
+#include "constants/vars.h"
 #include "string_util.h"
 #include "strings.h"
 #include "text.h"
@@ -458,6 +460,26 @@ enum Weekday GetDayOfWeek(void)
     ConvertTimeToDateTime(&dateTime, &gLocalTime);
 
     return dateTime.dayOfWeek;
+}
+
+/*  The in-game calendar is anchored to gGen3Epoch (2000-01-01, a Saturday) and
+ *  counts forward from gLocalTime.days -- but RtcInitLocalTimeOffset() resets
+ *  that to 0 when the player sets the wall clock. So GetDayOfWeek() is stable
+ *  and self-consistent, yet arbitrary: whatever day the clock is set on becomes
+ *  a Saturday, and the player has no way to say otherwise.
+ *
+ *  VAR_WEEKDAY_OFFSET carries the correction, so GetWeekDay() is the one to use
+ *  for anything the player should perceive as a real day of the week.
+ *  GetDayOfWeek() remains the raw calendar value.
+ */
+enum Weekday GetWeekDay(void)
+{
+    return (enum Weekday)((GetDayOfWeek() + VarGet(VAR_WEEKDAY_OFFSET)) % WEEKDAY_COUNT);
+}
+
+void SetWeekDay(enum Weekday weekDay)
+{
+    VarSet(VAR_WEEKDAY_OFFSET, (weekDay + WEEKDAY_COUNT - GetDayOfWeek()) % WEEKDAY_COUNT);
 }
 
 enum TimeOfDay GenConfigTimeOfDay(enum TimeOfDay timeOfDay)

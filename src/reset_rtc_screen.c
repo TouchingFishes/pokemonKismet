@@ -716,6 +716,7 @@ enum {
 
 #define tState data[0]
 #define tSubTaskId data[1]
+#define tWeekDay data[2]
 
 static void Task_ResetRtcScreen(u8 taskId)
 {
@@ -739,6 +740,11 @@ static void Task_ResetRtcScreen(u8 taskId)
             else
             {
                 RtcCalcLocalTime();
+                // Capture the declared weekday now, while gLocalTime is still
+                // the real current time. MAINSTATE_START_SET_TIME overwrites
+                // gLocalTime with lastBerryTreeUpdate, after which GetWeekDay()
+                // would answer for the wrong moment.
+                tWeekDay = GetWeekDay();
                 tSubTaskId = CreateTask(Task_ShowResetRtcPrompt, 80);
                 tState = MAINSTATE_START_SET_TIME;
             }
@@ -774,6 +780,11 @@ static void Task_ResetRtcScreen(u8 taskId)
                     gLocalTime.hours,
                     gLocalTime.minutes,
                     gLocalTime.seconds);
+                // Re-anchor: RtcCalcLocalTimeOffset() moves the calendar out
+                // from under VAR_WEEKDAY_OFFSET, exactly as it does in
+                // Task_SetClock_Confirmed. Without this a clock reset silently
+                // shifts the day the player declared.
+                SetWeekDay((enum Weekday)tWeekDay);
                 gSaveBlock2Ptr->lastBerryTreeUpdate = gLocalTime;
                 VarSet(VAR_DAYS, gLocalTime.days);
                 DisableResetRTC();

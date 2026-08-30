@@ -4687,6 +4687,16 @@ void DaisyMassageServices(void)
     VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 0);
 }
 
+u16 ScriptGetWeekDay(void)
+{
+    return GetWeekDay();
+}
+
+void SetChosenWeekDay(void)
+{
+    SetWeekDay((enum Weekday)gSpecialVar_0x8004);
+}
+
 u8 GetLeadMonFriendship(void)
 {
     struct Pokemon * pokemon = &gPlayerParty[GetLeadMonIndex()];
