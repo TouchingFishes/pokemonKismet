@@ -25,10 +25,13 @@
 #include "constants/map_types.h"
 #include "decoration_inventory.h"
 #include "randomizer.h"
+#include "difficulty.h"
+#include "constants/characters.h"
 
 extern const u8 EventScript_MomGiftCall_Item[];
 extern const u8 EventScript_MomGiftCall_Berry[];
 extern const u8 EventScript_MomGiftCall_Decoration[];
+extern const u8 EventScript_MomGiftCall_Rare[];
 
 #define MAX_PLAYER_MONEY 9999999
 #define MOM_GIFT_STARTER_DOLL 0xFFFF
@@ -49,6 +52,17 @@ static const struct MomGiftSequential sMomGifts_Sequential[] = {
 
 #define MOM_ITEMS_SEQUENTIAL_COUNT ARRAY_COUNT(sMomGifts_Sequential)
 
+/*  normalGiftFlags bits 0..MOM_ITEMS_SEQUENTIAL_COUNT-1 mark which sequential
+ *  gifts have already been given
+ *
+ *  This is recorded rather than inferred. Asking "is the item in
+ *  sMomRareItemTable?" looks equivalent and is not: ITEM_MOON_STONE sits in both
+ *  that table and the sequential ladder, so the milestone gift would be
+ *  announced as a bargain hunt.
+ */
+#define MOM_FLAG_GIFT_IS_RARE (1 << 15)
+STATIC_ASSERT(MOM_ITEMS_SEQUENTIAL_COUNT <= 15, MomRareFlagCollidesWithGiftFlags);
+
 static const u16 sMomGifts_Berries[] = {
     ITEM_PECHA_BERRY,
     ITEM_RAWST_BERRY,
@@ -61,9 +75,81 @@ static const u16 sMomGifts_Berries[] = {
 
 #define MOM_BERRIES_COUNT ARRAY_COUNT(sMomGifts_Berries)
 
-static bool8 Mom_CheckSequentialGifts(u32 balance, u16 *purchasedItem);
-static bool8 Mom_CheckRandomBerries(u32 newBalance, u32 oldBalance, u16 *purchasedItem);
-static void Mom_AddItemToPC(u16 itemId, u16 quantity, bool8 isDecoration);
+/*  Badge-tiered purchases, ported over. Between the sequential milestone gifts above, Mom
+ *  spends the savings on something useful, and what she can reach scales with
+ *  the player's badges: a 9-wide window slides up sMomItemTable as the tier
+ *  rises
+ */
+
+// Cumulative percentages, one per window slot. Index 0 is the cheapest item in
+// the current tier and the most likely; index 8 is the priciest and rarest.
+// The last entry is the fallthrough - Mom_CheckBadgeTierPurchase never tests it,
+// so its value only documents that the ladder ends at 100.
+static const u16 sMomItemProbabilities[] = { 30, 42, 53, 63, 72, 80, 87, 94, 100 };
+
+// Cheap -> pricey. 18 entries: the window is 9 wide and the tier maxes at 9.
+static const u16 sMomItemTable[] =
+{
+    ITEM_ANTIDOTE,
+    ITEM_PARALYZE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_BURN_HEAL,
+    ITEM_SUPER_POTION,
+    ITEM_GREAT_BALL,
+    ITEM_FULL_HEAL,
+    ITEM_REPEL,
+    ITEM_ULTRA_BALL,
+    ITEM_HYPER_POTION,
+    ITEM_ETHER,
+    ITEM_REVIVE,
+    ITEM_MAX_ETHER,
+    ITEM_FULL_RESTORE,
+    ITEM_MAX_REVIVE,
+    ITEM_PP_UP,
+    ITEM_NUGGET,
+    ITEM_KINGS_ROCK,
+};
+
+// MOM_RARE_ITEM_CHANCE% of the time she ignores the tier window and picks here.
+static const u16 sMomRareItemTable[] =
+{
+    ITEM_FIRE_STONE,
+    ITEM_THUNDER_STONE,
+    ITEM_WATER_STONE,
+    ITEM_MOON_STONE,
+    ITEM_SUN_STONE,
+    ITEM_WISE_GLASSES,
+    ITEM_MUSCLE_BAND,
+    ITEM_RARE_CANDY,
+};
+
+// Articles for BufferMomGiftItemName(). Lower case: they sit mid-sentence.
+static const u8 gText_MomArticle_A[]    = _("a");
+static const u8 gText_MomArticle_An[]   = _("an");
+static const u8 gText_MomArticle_Some[] = _("some");
+
+#define MOM_RARE_ITEM_CHANCE 5   // percent
+#define MOM_WINDOW_SIZE      ARRAY_COUNT(sMomItemProbabilities)
+#define MOM_MAX_TIER         (ARRAY_COUNT(sMomItemTable) - MOM_WINDOW_SIZE)
+#define MOM_DISCOUNT_NUM     9   // she shops the sales: 10% off
+#define MOM_DISCOUNT_DEN     10
+
+// Both are unsigned, so a table shorter than the window would not give a
+// negative MOM_MAX_TIER - it would wrap to an enormous one, the tier clamp in
+// Mom_CheckBadgeTierPurchase would never fire, and the window would run off the
+// end of the table.
+STATIC_ASSERT(ARRAY_COUNT(sMomItemTable) >= MOM_WINDOW_SIZE, MomItemTableShorterThanWindow);
+
+/*  These only choose - they never spend. Storage can refuse the item (a full PC
+ *  or a full decoration inventory), and money taken for a gift that never
+ *  arrives is gone twice over, so Mom_CheckForGiftPurchase stores first and
+ *  settles up afterwards. Each selector reports what the choice would cost.
+ */
+static bool8 Mom_CheckSequentialGifts(u32 balance, u16 *purchasedItem, u32 *giftIndex);
+static void Mom_CommitSequentialGift(u32 giftIndex);
+static bool8 Mom_CheckBadgeTierPurchase(u16 *purchasedItem, u16 *quantity, u32 *cost);
+static bool8 Mom_CheckRandomBerries(u16 *purchasedItem, u32 *cost);
+static bool8 Mom_AddItemToPC(u16 itemId, u16 quantity, bool8 isDecoration);
 
 void InitMomSavings(void)
 {
@@ -105,27 +191,31 @@ u32 Mom_GetBalance(void)
 bool8 Mom_TryDepositMoney(u32 amount)
 {
     struct MomSavingsData *mom = &gSaveBlock1Ptr->momSavings;
-    u32 oldBalance = mom->momsMoney;
 
     mom->momsMoney += amount;
     if (mom->momsMoney > MOM_MAX_MONEY)
         mom->momsMoney = MOM_MAX_MONEY;
 
-    Mom_CheckForGiftPurchase(mom->momsMoney, oldBalance, FALSE);
+    Mom_CheckForGiftPurchase(mom->momsMoney, FALSE);
     return TRUE;
 }
 
-bool8 Mom_AutoDepositFromBattle(u32 amount)
+// Returns the amount actually banked
+u32 Mom_AutoDepositFromBattle(u32 amount)
 {
     struct MomSavingsData *mom = &gSaveBlock1Ptr->momSavings;
     u32 oldBalance = mom->momsMoney;
+    u32 capacity = MOM_MAX_MONEY - oldBalance;
 
-    mom->momsMoney += amount;
-    if (mom->momsMoney > MOM_MAX_MONEY)
-        mom->momsMoney = MOM_MAX_MONEY;
+    if (amount > capacity)
+        amount = capacity;
 
-    Mom_CheckForGiftPurchase(mom->momsMoney, oldBalance, TRUE);
-    return TRUE;
+    mom->momsMoney = oldBalance + amount;
+
+    // Called even when nothing was banked: at the cap, spending is the only
+    // thing that can bring the balance back down.
+    Mom_CheckForGiftPurchase(mom->momsMoney, TRUE);
+    return amount;
 }
 
 bool8 Mom_TryWithdrawMoney(u32 amount)
@@ -139,17 +229,30 @@ bool8 Mom_TryWithdrawMoney(u32 amount)
     return TRUE;
 }
 
-bool8 Mom_CheckForGiftPurchase(u32 newBalance, u32 oldBalance, bool8 isAutomatic)
+bool8 Mom_CheckForGiftPurchase(u32 balance, bool8 isAutomatic)
 {
     u16 purchasedItem = ITEM_NONE;
     u16 quantity = 1;
     bool8 isDecoration = FALSE;
+    u32 giftIndex = 0;
+    u32 cost = 0;
 
     if (FlagGet(FLAG_MOM_HAS_GIFT))
         return FALSE;
 
-    if (Mom_CheckSequentialGifts(newBalance, &purchasedItem))
+    // Nothing is waiting, so any rare marker left from the last gift is stale.
+    // Cleared here rather than when the call is answered, so it cannot outlive
+    // the gift it described.
+    gSaveBlock1Ptr->momSavings.normalGiftFlags &= ~MOM_FLAG_GIFT_IS_RARE;
+
+    if (Mom_CheckSequentialGifts(balance, &purchasedItem, &giftIndex))
     {
+        // Read from the chosen row rather than searching the table by item id:
+        // the starter doll resolves to a species-specific decoration below, and
+        // the randomizer can replace an ordinary gift outright, so by the time
+        // the item is added it may not appear in the table at all.
+        isDecoration = sMomGifts_Sequential[giftIndex].isDecoration;
+
         if (purchasedItem == MOM_GIFT_STARTER_DOLL)
         {
             u16 starterChoice = VarGet(VAR_STARTER_MON);
@@ -168,19 +271,9 @@ bool8 Mom_CheckForGiftPurchase(u32 newBalance, u32 oldBalance, bool8 isAutomatic
                     purchasedItem = DECOR_TOGEPI_DOLL;
                     break;
             }
-            isDecoration = TRUE;
         }
         else
         {
-            for (u32 i = 0; i < MOM_ITEMS_SEQUENTIAL_COUNT; i++)
-            {
-                if (sMomGifts_Sequential[i].itemId == purchasedItem)
-                {
-                    isDecoration = sMomGifts_Sequential[i].isDecoration;
-                    break;
-                }
-            }
-
 #if RANDOMIZER_AVAILABLE
             if (!isDecoration && RandomizerFeatureEnabled(RANDOMIZE_FIELD_ITEMS))
                 purchasedItem = RandomizeFoundItem(purchasedItem, 0, 0, 0);
@@ -188,7 +281,10 @@ bool8 Mom_CheckForGiftPurchase(u32 newBalance, u32 oldBalance, bool8 isAutomatic
         }
 
         quantity = 1;
-        Mom_AddItemToPC(purchasedItem, quantity, isDecoration);
+        if (!Mom_AddItemToPC(purchasedItem, quantity, isDecoration))
+            return FALSE;   // No room. Nothing spent, and the milestone stays unclaimed.
+
+        Mom_CommitSequentialGift(giftIndex);
 
         VarSet(VAR_MOM_GIFT_ITEM, purchasedItem);
         VarSet(VAR_MOM_GIFT_QUANTITY, isDecoration ? 0 : quantity);
@@ -197,10 +293,23 @@ bool8 Mom_CheckForGiftPurchase(u32 newBalance, u32 oldBalance, bool8 isAutomatic
         return TRUE;
     }
 
-    if (isAutomatic && Mom_CheckRandomBerries(newBalance, oldBalance, &purchasedItem))
+    // Between milestones, Mom shops. Quantity defaults to the berry count and
+    // is overwritten to 1 when she buys a real item, since berries come in
+    // handfuls and purchases do not.
+    quantity = MOM_BERRY_QUANTITY;
+    if (isAutomatic && Mom_CheckBadgeTierPurchase(&purchasedItem, &quantity, &cost))
     {
-        quantity = MOM_BERRY_QUANTITY;
-        Mom_AddItemToPC(purchasedItem, quantity, FALSE);
+        if (!Mom_AddItemToPC(purchasedItem, quantity, FALSE))
+        {
+            // No room in the PC. Nothing was spent, so drop the rare marker too
+            // and leave the daily flag clear - she tries again on the next
+            // deposit rather than losing the day.
+            gSaveBlock1Ptr->momSavings.normalGiftFlags &= ~MOM_FLAG_GIFT_IS_RARE;
+            return FALSE;
+        }
+
+        gSaveBlock1Ptr->momSavings.momsMoney -= cost;
+        FlagSet(FLAG_DAILY_MOM_ITEM_GIFT);
 
         VarSet(VAR_MOM_GIFT_ITEM, purchasedItem);
         VarSet(VAR_MOM_GIFT_QUANTITY, quantity);
@@ -212,7 +321,7 @@ bool8 Mom_CheckForGiftPurchase(u32 newBalance, u32 oldBalance, bool8 isAutomatic
     return FALSE;
 }
 
-static bool8 Mom_CheckSequentialGifts(u32 balance, u16 *purchasedItem)
+static bool8 Mom_CheckSequentialGifts(u32 balance, u16 *purchasedItem, u32 *giftIndex)
 {
     struct MomSavingsData *mom = &gSaveBlock1Ptr->momSavings;
 
@@ -224,9 +333,8 @@ static bool8 Mom_CheckSequentialGifts(u32 balance, u16 *purchasedItem)
         if (balance < sMomGifts_Sequential[i].threshold)
             continue;
 
-        mom->normalGiftFlags |= (1 << i);
-        mom->momsMoney -= sMomGifts_Sequential[i].cost;
         *purchasedItem = sMomGifts_Sequential[i].itemId;
+        *giftIndex = i;
 
         return TRUE;
     }
@@ -234,21 +342,112 @@ static bool8 Mom_CheckSequentialGifts(u32 balance, u16 *purchasedItem)
     return FALSE;
 }
 
-static bool8 Mom_CheckRandomBerries(u32 newBalance, u32 oldBalance, u16 *purchasedItem)
+// Marks the milestone spent. Every row costs less than the threshold that
+// unlocks it, and the balance has already reached that threshold, so the
+// subtraction cannot underflow.
+static void Mom_CommitSequentialGift(u32 giftIndex)
 {
     struct MomSavingsData *mom = &gSaveBlock1Ptr->momSavings;
 
-    u32 newTier = newBalance / MOM_RANDOM_THRESHOLD;
-    u32 oldTier = oldBalance / MOM_RANDOM_THRESHOLD;
+    mom->normalGiftFlags |= (1 << giftIndex);
+    mom->momsMoney -= sMomGifts_Sequential[giftIndex].cost;
+}
 
-    if (newTier <= oldTier)
+static u32 Mom_GetDiscountedPrice(u16 itemId)
+{
+    return (GetItemPrice((enum Item)itemId) * MOM_DISCOUNT_NUM) / MOM_DISCOUNT_DEN;
+}
+
+/*  Mom shops once a day, which is how the fork paced it: TryMomPurchase sat
+ *  behind FLAG_DAILY_MOM_ITEM_GIFT, so calling on her twice in a day bought
+ *  nothing the second time.
+ *
+ *  2.0 paced it instead on the balance crossing a multiple of
+ *  MOM_RANDOM_THRESHOLD, which does not survive contact with the fork's item
+ *  table. That test is not a ratchet: her own purchase drops the balance back
+ *  below the boundary it just crossed, so the next small deposit re-crosses it
+ *  and she buys again. With deposits smaller than the item price - the normal
+ *  early game, where a quarter of a trainer prize is tens of yen against a
+ *  ~180 item - the savings pin to the boundary and never grow, which also puts
+ *  every milestone past the first out of reach. It was tolerable in 2.0 only
+ *  because the sole purchase there was a 100 berry.
+ */
+static bool8 Mom_CheckBadgeTierPurchase(u16 *purchasedItem, u16 *quantity, u32 *cost)
+{
+    struct MomSavingsData *mom = &gSaveBlock1Ptr->momSavings;
+    u32 tier, roll, slot;
+    u16 chosenItem;
+    u32 price;
+
+    if (FlagGet(FLAG_DAILY_MOM_ITEM_GIFT))
+        return FALSE;
+
+    bool8 isRare = FALSE;
+
+    if ((Random() % 100) < MOM_RARE_ITEM_CHANCE)
+    {
+        chosenItem = sMomRareItemTable[Random() % ARRAY_COUNT(sMomRareItemTable)];
+        isRare = TRUE;
+    }
+    else
+    {
+        // The window is sMomItemTable[tier .. tier + 8]. The table only reaches
+        // MOM_MAX_TIER (9), so the ninth badge opens the top window and any
+        // beyond it change nothing - HnS has 16 badges, the other builds 8.
+        tier = GetBadgeCount();
+        if (tier > MOM_MAX_TIER)
+            tier = MOM_MAX_TIER;
+
+        // Stops one short of the end so the last slot is the fallthrough. That
+        // keeps slot within the window whatever the probability ladder says:
+        // relying on it ending at exactly 100 would put slot at MOM_WINDOW_SIZE
+        // the moment anyone retuned the last entry, reading one past the table.
+        roll = Random() % 100;
+        for (slot = 0; slot < MOM_WINDOW_SIZE - 1; slot++)
+        {
+            if (sMomItemProbabilities[slot] > roll)
+                break;
+        }
+
+        chosenItem = sMomItemTable[tier + slot];
+    }
+
+    price = Mom_GetDiscountedPrice(chosenItem);
+
+    // Priceless or unaffordable: fall back to a berry rather than skipping the
+    // cycle entirely, which is what the fork did. Keeping the berry keeps 2.0's
+    // content alive and means Mom never silently does nothing.
+    if (price == 0 || price > mom->momsMoney)
+        return Mom_CheckRandomBerries(purchasedItem, cost);
+
+    *purchasedItem = chosenItem;
+    *quantity = 1;
+    *cost = price;
+
+    // Set here rather than by the caller because only this function knows which
+    // table the item came from. The caller clears it again if storage refuses
+    // the item, and Mom_CheckForGiftPurchase clears it whenever nothing is
+    // waiting, so it cannot describe a gift that was never bought.
+    if (isRare)
+        mom->normalGiftFlags |= MOM_FLAG_GIFT_IS_RARE;
+
+    return TRUE;
+}
+
+// Only reached from Mom_CheckBadgeTierPurchase, which has already checked the
+// daily flag, so this does not re-check it.
+static bool8 Mom_CheckRandomBerries(u16 *purchasedItem, u32 *cost)
+{
+    struct MomSavingsData *mom = &gSaveBlock1Ptr->momSavings;
+
+    if (mom->momsMoney < MOM_BERRY_COST)
         return FALSE;
 
     u32 randomIndex = Random() % MOM_BERRIES_COUNT;
     u16 berryId = sMomGifts_Berries[randomIndex];
 
-    mom->momsMoney -= MOM_BERRY_COST;
     *purchasedItem = berryId;
+    *cost = MOM_BERRY_COST;
 
     return TRUE;
 }
@@ -257,6 +456,13 @@ static bool8 Mom_GiftIsBerry(void)
 {
     u16 item = VarGet(VAR_MOM_GIFT_ITEM);
     return (item >= ITEM_CHERI_BERRY && item <= ITEM_ENIGMA_BERRY);
+}
+
+// Did Mom turn up something out of the ordinary? See MOM_FLAG_GIFT_IS_RARE
+// for why this is recorded at purchase rather than inferred from the item.
+static bool8 Mom_GiftIsSpecial(void)
+{
+    return (gSaveBlock1Ptr->momSavings.normalGiftFlags & MOM_FLAG_GIFT_IS_RARE) != 0;
 }
 
 static bool8 Mom_GiftIsDecoration(void)
@@ -279,6 +485,8 @@ bool8 Mom_TryTriggerGiftCall(void)
         ScriptContext_SetupScript(EventScript_MomGiftCall_Decoration);
     else if (Mom_GiftIsBerry())
         ScriptContext_SetupScript(EventScript_MomGiftCall_Berry);
+    else if (Mom_GiftIsSpecial())
+        ScriptContext_SetupScript(EventScript_MomGiftCall_Rare);
     else
         ScriptContext_SetupScript(EventScript_MomGiftCall_Item);
 
@@ -473,12 +681,62 @@ static void MomInput_Open(bool8 isDeposit)
     ScriptContext_Stop();
 }
 
-static void Mom_AddItemToPC(u16 itemId, u16 quantity, bool8 isDecoration)
+// FALSE when storage is full
+static bool8 Mom_AddItemToPC(u16 itemId, u16 quantity, bool8 isDecoration)
 {
     if (isDecoration)
-        DecorationAdd(itemId);
+        return DecorationAdd(itemId);
+
+    return AddPCItem(itemId, quantity);
+}
+
+/*  Buffers the gift Mom is calling about so her dialogue can name it:
+ *    gStringVar1 = the item's name
+ *    gStringVar2 = the article to put in front of it
+ *
+ *  The article is the whole reason this is a special rather than a plain
+ *  bufferitemname. Naming a dynamically chosen item breaks grammar in two ways,
+ *  and both are covered here:
+ *
+ *    - "a" vs "an"      -> ANTIDOTE, AWAKENING, ETHER, ORAN BERRY, ULTRA BALL
+ *    - mass/plural      -> LEFTOVERS, which must be "some", never "a"
+ *
+ *  Verified exhaustively against every item Mom can reach: the sequential
+ *  ladder, sMomItemTable, sMomRareItemTable and the berries -- 34 in total, all
+ *  correct under these rules. If items are ever added to those tables, re-check:
+ *  the trap to watch for is a consonant-sounding vowel ("a UNIQUE...") or a
+ *  vowel-sounding consonant ("an HOUR..."), neither of which occurs today.
+ */
+void BufferMomGiftItemName(void)
+{
+    u16 itemId = VarGet(VAR_MOM_GIFT_ITEM);
+    const u8 *name = GetItemName((enum Item)itemId);
+    u8 first;
+
+    StringCopy(gStringVar1, name);
+
+    first = gStringVar1[0];
+    if (first >= CHAR_a && first <= CHAR_z)
+        first -= (CHAR_a - CHAR_A);
+
+    // Trailing S means a plural or mass noun, unless it is a double S.
+    {
+        u32 len = StringLength(gStringVar1);
+        u8 last = len ? gStringVar1[len - 1] : EOS;
+        u8 prev = len > 1 ? gStringVar1[len - 2] : EOS;
+
+        if (last == CHAR_S && prev != CHAR_S)
+        {
+            StringCopy(gStringVar2, gText_MomArticle_Some);
+            return;
+        }
+    }
+
+    if (first == CHAR_A || first == CHAR_E || first == CHAR_I
+     || first == CHAR_O || first == CHAR_U)
+        StringCopy(gStringVar2, gText_MomArticle_An);
     else
-        AddPCItem(itemId, quantity);
+        StringCopy(gStringVar2, gText_MomArticle_A);
 }
 
 void Special_MomEnableSaving(void)

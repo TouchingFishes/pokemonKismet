@@ -4190,6 +4190,12 @@ BattleScript_LocalBattleWonReward::
 	getmoneyreward
 	printstring STRINGID_PLAYERGOTMONEY
 	waitmessage B_WAIT_TIME_LONG
+.if IS_HNS
+	@ getmoneyreward sets the chooser when Mom banked part of the prize.
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 0, BattleScript_PayDayMoneyAndPickUpItems
+	printstring STRINGID_MOMSAVEDMONEY
+	waitmessage B_WAIT_TIME_LONG
+.endif
 BattleScript_PayDayMoneyAndPickUpItems::
 	givepaydaymoney
 	callnative BS_TryGiveDroppedItems

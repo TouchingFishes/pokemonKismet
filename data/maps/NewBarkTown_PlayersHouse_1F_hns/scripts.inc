@@ -42,6 +42,21 @@ NewBarkTown_PlayersHouse_1F_MomEventScript_GoodLuck::
 	setflag FLAG_MOM_VISITED
 	clearflag FLAG_HIDE_ROUTE_30_NPCS
 	setvar VAR_NEWBARK_TOWN_STATE, 5
+	goto NewBarkTown_PlayersHouse_1F_EventScript_MomProposesSaving
+	end
+
+NewBarkTown_PlayersHouse_1F_EventScript_MomProposesSaving::
+	special Special_MomEnsureInitialized
+	msgbox NewBarkTown_PlayersHouse_1F_Text_MomProposesSaving, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_1F_EventScript_MomStartSavingInitial
+	msgbox NewBarkTown_PlayersHouse_1F_Text_MomNowGo, MSGBOX_DEFAULT
+	release
+	end
+
+NewBarkTown_PlayersHouse_1F_EventScript_MomStartSavingInitial::
+	special Special_MomEnableSaving
+	msgbox NewBarkTown_PlayersHouse_1F_Text_MomSavingsConfirm, MSGBOX_DEFAULT
+	msgbox NewBarkTown_PlayersHouse_1F_Text_MomNowGo, MSGBOX_DEFAULT
 	release
 	end
 
@@ -345,6 +360,22 @@ NewBarkTown_PlayersHouse_1F_Text_MomLeaving:
 	.string "That does sound challenging...\p"
 	.string "Just be careful.\p"
 	.string "POKéMON are your friends.\n"
-	.string "You need to work as a team.\p"
+	.string "You need to work as a team.$"
+
+NewBarkTown_PlayersHouse_1F_Text_MomProposesSaving:
+	.string "MOM: By the way, {PLAYER}...\p"
+	.string "Would you like me to save some\n"
+	.string "of your prize money?\p"
+	.string "It's good to have a little put\n"
+	.string "away for a rainy day.$"
+
+NewBarkTown_PlayersHouse_1F_Text_MomSavingsConfirm:
+	.string "OK!\p"
+	.string "I'll put away a little money\n"
+	.string "from every battle.\p"
+	.string "You can ask me for it\n"
+	.string "whenever you come home.$"
+
+NewBarkTown_PlayersHouse_1F_Text_MomNowGo:
 	.string "Now, go on!\n"
 	.string "I'm behind you all the way!$"

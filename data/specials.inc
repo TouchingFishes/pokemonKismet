@@ -691,6 +691,7 @@ gSpecials::
 	def_special Special_MomEnsureInitialized
 	def_special Special_MomOpenDepositInput
 	def_special Special_MomOpenWithdrawInput
+	def_special BufferMomGiftItemName
     def_special PartyMonHasSkyRibbon
 	def_special GivePartyMonSkyRibbon
     def_special PartyMonHasLandRibbon

@@ -703,6 +703,7 @@ enum StringID
     STRINGID_WILDPKMNDROPPEDITEM,
     STRINGID_DROPPEDITEMBAGFULL,
     STRINGID_PKMNSPUNCOCOON, // Kismet: Metamorph charge turn
+    STRINGID_MOMSAVEDMONEY,  // Kismet: Mom's cut of the prize money
     STRINGID_COUNT
 };
 

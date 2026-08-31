@@ -6246,15 +6246,26 @@ static void Cmd_getmoneyreward(void)
         money = GetTrainerMoneyToGive(TRAINER_BATTLE_PARAM.opponentA);
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
             money += GetTrainerMoneyToGive(TRAINER_BATTLE_PARAM.opponentB);
-        AddMoney(&gSaveBlock1Ptr->money, money);
 #if IS_HNS
-        if (Mom_IsSavingEnabled())
+        // Mom's cut comes OUT of the prize
         {
-            u32 depositAmount = money / 4;
-            if (depositAmount > 0)
-                Mom_AutoDepositFromBattle(depositAmount);
+            u32 savingsCut = 0;
+
+            // Bank first, then subtract what Mom actually took
+            if (Mom_IsSavingEnabled())
+                savingsCut = Mom_AutoDepositFromBattle((money * MOM_SAVINGS_PERCENTAGE) / 100);
+
+            if (savingsCut != 0)
+            {
+                money -= savingsCut;
+                PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff2, 5, savingsCut);
+            }
+
+            // Tells BattleScript_LocalBattleWonReward whether to mention Mom
+            gBattleCommunication[MULTISTRING_CHOOSER] = (savingsCut != 0);
         }
 #endif
+        AddMoney(&gSaveBlock1Ptr->money, money);
     }
     else
     {
