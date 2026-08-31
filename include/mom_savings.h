@@ -21,8 +21,8 @@ struct MomGiftSequential
 void Mom_EnableSaving(bool8 enable);
 bool8 Mom_IsSavingEnabled(void);
 u32 Mom_GetBalance(void);
-bool8 Mom_TryDepositMoney(u32 amount);
-u32 Mom_AutoDepositFromBattle(u32 amount); // returns the amount Mom banked
+u32 Mom_TryDepositMoney(u32 amount);
+u32 Mom_AutoDepositFromBattle(u32 amount);
 bool8 Mom_TryWithdrawMoney(u32 amount);
 bool8 Mom_CheckForGiftPurchase(u32 balance, bool8 isAutomatic);
 void Mom_EnsureInitialized(void);

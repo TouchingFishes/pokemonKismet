@@ -188,16 +188,19 @@ u32 Mom_GetBalance(void)
     return gSaveBlock1Ptr->momSavings.momsMoney;
 }
 
-bool8 Mom_TryDepositMoney(u32 amount)
+// Returns the amount actually banked, like Mom_AutoDepositFromBattle
+u32 Mom_TryDepositMoney(u32 amount)
 {
     struct MomSavingsData *mom = &gSaveBlock1Ptr->momSavings;
+    u32 capacity = MOM_MAX_MONEY - mom->momsMoney;
+
+    if (amount > capacity)
+        amount = capacity;
 
     mom->momsMoney += amount;
-    if (mom->momsMoney > MOM_MAX_MONEY)
-        mom->momsMoney = MOM_MAX_MONEY;
 
     Mom_CheckForGiftPurchase(mom->momsMoney, FALSE);
-    return TRUE;
+    return amount;
 }
 
 // Returns the amount actually banked
@@ -591,17 +594,34 @@ static void Task_MomInput_HandleInput(u8 taskId)
     else if (JOY_NEW(A_BUTTON))
     {
         PlaySE(SE_SELECT);
-        gSpecialVar_0x8000 = sMomInputAmount;
-
+        /*  Report what actually moved, not what was asked for. Both sides are
+         *  capped, and sMomInputMaxAmount does not fully protect against that:
+         *  the amount seeds at 1 while the cap can leave room for 0, because
+         *  AdjustQuantityAccordingToDPadInput_MomVersion clamps only on D-pad
+         *  input, never on entry
+         */
         if (tIsDeposit)
         {
+            u32 banked;
+
             RemoveMoney(&gSaveBlock1Ptr->money, sMomInputAmount);
-            Mom_TryDepositMoney(sMomInputAmount);
+            banked = Mom_TryDepositMoney(sMomInputAmount);
+            if (banked < sMomInputAmount)
+                AddMoney(&gSaveBlock1Ptr->money, sMomInputAmount - banked);
+
+            gSpecialVar_0x8000 = banked;
         }
         else
         {
-            Mom_TryWithdrawMoney(sMomInputAmount);
-            AddMoney(&gSaveBlock1Ptr->money, sMomInputAmount);
+            u32 room = MAX_PLAYER_MONEY - GetMoney(&gSaveBlock1Ptr->money);
+            u32 taken = min(sMomInputAmount, room);
+
+            if (taken != 0 && Mom_TryWithdrawMoney(taken) == TRUE)
+                AddMoney(&gSaveBlock1Ptr->money, taken);
+            else
+                taken = 0;
+
+            gSpecialVar_0x8000 = taken;
         }
 
         MomInput_CleanupWindows(taskId);
@@ -757,19 +777,6 @@ void Special_MomGetBalance(void)
     gSpecialVar_Result = balance;
 }
 
-void Special_MomDeposit(void)
-{
-    u32 amount = gSpecialVar_0x8000;
-    bool8 success = Mom_TryDepositMoney(amount);
-    gSpecialVar_Result = success;
-}
-
-void Special_MomWithdraw(void)
-{
-    u32 amount = gSpecialVar_0x8000;
-    bool8 success = Mom_TryWithdrawMoney(amount);
-    gSpecialVar_Result = success;
-}
 
 void Special_MomIsSavingEnabled(void)
 {
