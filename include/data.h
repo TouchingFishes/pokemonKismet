@@ -264,10 +264,15 @@ static inline u16 GetPartnerIdFromTrainerId(u16 trainerId)
     return (trainerId - TRAINER_PARTNER(PARTNER_NONE));
 }
 
+// src/starter_generation.c. Redirects Silver's twenty-one Johto trainer IDs
+u16 GetRivalTrainerIdForStarterChoice(u16 trainerId);
+
 static inline const struct Trainer *GetTrainerStructFromId(u16 trainerId)
 {
     if (gIsDebugBattle) return GetDebugAiTrainer();
     enum DifficultyLevel difficulty;
+
+    trainerId = GetRivalTrainerIdForStarterChoice(trainerId);
 
     if (IsPartnerTrainerId(trainerId))
     {

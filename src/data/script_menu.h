@@ -273,6 +273,14 @@ static const struct MenuAction MultichoiceList_GameCornerDolls2[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_StarterRegionChoice[] =
+{
+    {COMPOUND_STRING("JOHTO POKéMON")},
+    {COMPOUND_STRING("KANTO POKéMON")},
+    {COMPOUND_STRING("HOENN POKéMON")},
+    {COMPOUND_STRING("SINNOH POKéMON")},
+};
+
 static const struct MenuAction MultichoiceList_PrizeMons[] = 
 {
     {COMPOUND_STRING("ABRA{CLEAR_TO 0x61}120 C.")},
@@ -1443,6 +1451,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BATTLE_MODE_HNS]            = MULTICHOICE(MultichoiceList_BattleModeHns),
     [MULTI_FOSSIL_HNS]                = MULTICHOICE(MultichoiceList_FossilHns),
     [MULTI_GAME_CORNER_DOLLS2]         = MULTICHOICE(MultichoiceList_GameCornerDolls2),
+    [MULTI_STARTER_REGION_CHOICE]      = MULTICHOICE(MultichoiceList_StarterRegionChoice),
 };
 
 const u8 *const gStdStrings[] =

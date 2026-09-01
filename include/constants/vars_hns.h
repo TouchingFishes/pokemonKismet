@@ -152,8 +152,14 @@
 #define VAR_UNUSED_HNS_0x40FB                            0x40FB
 #define VAR_UNUSED_HNS_0x40FC                            0x40FC
 #define VAR_UNUSED_HNS_0x40FD                            0x40FD
-#define VAR_UNUSED_HNS_0x40FE                            0x40FE
+#define VAR_STARTER_REGION                               0x40FE
 #define VAR_UNUSED_HNS_0x40FF                            0x40FF
+
+#define STARTER_REGION_JOHTO     0
+#define STARTER_REGION_KANTO     1
+#define STARTER_REGION_HOENN     2
+#define STARTER_REGION_SINNOH    3
+#define STARTER_REGION_COUNT     4
 
 // Alola Vars
 #define VAR_ALOLA_TRAVEL                                 0x40AD // var for setting up mapscripts when traveling to and from alola.

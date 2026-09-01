@@ -133,6 +133,62 @@ NewBarkTown_Lab_EventScript_ElmAccepted::
 	waitmovement 0
 	delay 30
 	msgbox NewBarkTown_Lab_Text_ElmMissionFromMrPokemon, MSGBOX_DEFAULT
+	goto NewBarkTown_Lab_EventScript_ElmChooseStarterRegion
+	end
+
+NewBarkTown_Lab_EventScript_ElmChooseStarterRegion::
+	message NewBarkTown_Lab_Text_ElmChooseAStarterRegion
+	waitmessage
+	goto NewBarkTown_Lab_EventScript_RegionMenu
+
+NewBarkTown_Lab_EventScript_RegionMenuReask::
+	message NewBarkTown_Lab_Text_ElmWhichRegionAgain
+	waitmessage
+NewBarkTown_Lab_EventScript_RegionMenu::
+	multichoice 20, 0, MULTI_STARTER_REGION_CHOICE, FALSE
+	switch VAR_RESULT
+	case 0, NewBarkTown_Lab_EventScript_ConfirmJohto
+	case 1, NewBarkTown_Lab_EventScript_ConfirmKanto
+	case 2, NewBarkTown_Lab_EventScript_ConfirmHoenn
+	case 3, NewBarkTown_Lab_EventScript_ConfirmSinnoh
+	goto NewBarkTown_Lab_EventScript_RegionMenuReask
+
+NewBarkTown_Lab_EventScript_ConfirmJohto::
+	msgbox NewBarkTown_Lab_Text_ConfirmJohto, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, NewBarkTown_Lab_EventScript_RegionMenuReask
+	setvar VAR_STARTER_REGION, STARTER_REGION_JOHTO
+	goto NewBarkTown_Lab_EventScript_ElmConfiguresChoice
+
+NewBarkTown_Lab_EventScript_ConfirmKanto::
+	msgbox NewBarkTown_Lab_Text_ConfirmKanto, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, NewBarkTown_Lab_EventScript_RegionMenuReask
+	setvar VAR_STARTER_REGION, STARTER_REGION_KANTO
+	goto NewBarkTown_Lab_EventScript_ElmConfiguresChoice
+
+NewBarkTown_Lab_EventScript_ConfirmHoenn::
+	msgbox NewBarkTown_Lab_Text_ConfirmHoenn, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, NewBarkTown_Lab_EventScript_RegionMenuReask
+	setvar VAR_STARTER_REGION, STARTER_REGION_HOENN
+	goto NewBarkTown_Lab_EventScript_ElmConfiguresChoice
+
+NewBarkTown_Lab_EventScript_ConfirmSinnoh::
+	msgbox NewBarkTown_Lab_Text_ConfirmSinnoh, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, NewBarkTown_Lab_EventScript_RegionMenuReask
+	setvar VAR_STARTER_REGION, STARTER_REGION_SINNOH
+	goto NewBarkTown_Lab_EventScript_ElmConfiguresChoice
+
+NewBarkTown_Lab_EventScript_ElmConfiguresChoice::
+	msgbox NewBarkTown_Lab_Text_ElmConfigureStarterChoice, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	applymovement LOCALID_ELM, NewBarkTown_Lab_Movement_CheckEmail
+	waitmovement 0
+	delay 10
+	msgbox NewBarkTown_Lab_Text_ElmConfiguringStarterChoice, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ELM, NewBarkTown_Lab_Movement_ReturnFromEmail
+	waitmovement 0
+	delay 30
 	goto NewBarkTown_Lab_EventScript_ElmChoosePokemon
 	end
 
@@ -171,7 +227,7 @@ NewBarkTown_Lab_EventScript_ChikoritaBall::
 NewBarkTown_Lab_EventScript_ChikoritaBall_Choice::
 	@callnative DisableStaticRandomizer
 	setvar VAR_STARTER_MON, 0
-	setvar PLAYER_STARTER_SPECIES, SPECIES_CHIKORITA
+	callnative SetStarterSpeciesFromChoice
 	showmonpic PLAYER_STARTER_SPECIES, 10, 3
 	playmoncry PLAYER_STARTER_SPECIES, CRY_MODE_NORMAL
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
@@ -193,7 +249,7 @@ NewBarkTown_Lab_EventScript_CyndaquilBall::
 NewBarkTown_Lab_EventScript_CyndaquilBall_Choice::
 	@callnative DisableStaticRandomizer
 	setvar VAR_STARTER_MON, 1
-	setvar PLAYER_STARTER_SPECIES, SPECIES_CYNDAQUIL
+	callnative SetStarterSpeciesFromChoice
 	showmonpic PLAYER_STARTER_SPECIES, 10, 3
 	playmoncry PLAYER_STARTER_SPECIES, CRY_MODE_NORMAL
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
@@ -215,7 +271,7 @@ NewBarkTown_Lab_EventScript_TotodileBall::
 NewBarkTown_Lab_EventScript_TotodileBall_Choice::
 	@callnative DisableStaticRandomizer
 	setvar VAR_STARTER_MON, 2
-	setvar PLAYER_STARTER_SPECIES, SPECIES_TOTODILE
+	callnative SetStarterSpeciesFromChoice
 	showmonpic PLAYER_STARTER_SPECIES, 10, 3
 	playmoncry PLAYER_STARTER_SPECIES, CRY_MODE_NORMAL
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
@@ -707,11 +763,63 @@ NewBarkTown_Lab_Text_ElmMissionFromMrPokemon:
 	.string "place?$"
 
 NewBarkTown_Lab_Text_ElmChooseAPokemon:
-	.string "I want you to raise one of\n"
-	.string "the POKéMON contained in these BALLS.\p"
-	.string "You'll be that POKéMON's\n"
-	.string "first partner, {PLAYER}!\p"
-	.string "Go on. Pick one!$"
+	.string "Now that you have chosen the\n"
+	.string "region of your new partner, you\p"
+	.string "should go ahead and pick your POKéMON.\n"
+	.string "You'll be its first partner\p"
+	.string "Go on. {PLAYER}!\p"
+	.string "pick one!$"
+
+NewBarkTown_Lab_Text_ElmChooseAStarterRegion:
+	.string "Thank you for your help. Hopefully this\n"
+	.string "will also be a great experience for you!\p"
+	.string "Now before you head out, I have one\n"
+	.string "important request I would like to make.\p"
+	.string "I want you to raise one of the POKéMON\n"
+	.string "contained in these BALLS,\p"
+	.string "and because you are such a great\n"
+	.string "help. I will allow you to make a\p"
+	.string "very special choice…\p"
+	.string "You may choose which region your\n"
+	.string "first POKéMON should come from!\p"
+	.string "So… what kind of POKéMON do you\n"
+	.string "want to start with?$"
+
+NewBarkTown_Lab_Text_ElmWhichRegionAgain:
+	.string "Take your time, this decides which\n"
+	.string "POKéMON will journey with you.\p"
+	.string "Which region shall it be?$"
+
+NewBarkTown_Lab_Text_ConfirmJohto:
+	.string "The JOHTO trio, then:\n"
+	.string "CHIKORITA, CYNDAQUIL and TOTODILE.\p"
+	.string "shall I set that up?$"
+
+NewBarkTown_Lab_Text_ConfirmKanto:
+	.string "The KANTO trio, then:\n"
+	.string "BULBASAUR, CHARMANDER and SQUIRTLE.\p"
+	.string "shall I set that up?$"
+
+NewBarkTown_Lab_Text_ConfirmHoenn:
+	.string "The HOENN trio, then:\n"
+	.string "TREECKO, TORCHIC and MUDKIP.\p"
+	.string "shall I set that up?$"
+
+NewBarkTown_Lab_Text_ConfirmSinnoh:
+	.string "The SINNOH trio, then:\n"
+	.string "TURTWIG, CHIMCHAR and PIPLUP.\p"
+	.string "shall I set that up?$"
+
+NewBarkTown_Lab_Text_ElmConfigureStarterChoice:
+	.string "Let me quickly configure your\n"
+	.string "POKéMON choice. This will only\p"
+	.string "take a second…$"
+
+NewBarkTown_Lab_Text_ElmConfiguringStarterChoice:
+	.string "Just a few quick clicks…\p"
+	.string "… … …\n"
+	.string "Hm… and here…\p"
+	.string "That should do it!$"
 
 NewBarkTown_Lab_Text_ElmWhereGoing:
 	.string "ELM: Wait! Where are you\n"

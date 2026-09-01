@@ -1969,6 +1969,12 @@ enum JohtoDexOrder
     JOHTO_DEX_AERODACTYL,
     JOHTO_DEX_MUNCHLAX,
     JOHTO_DEX_SNORLAX,
+    // Starter windows. Slots 1-9 hold whichever generation the player chose
+    // from Elm; the twenty-seven slots below hold the other three, in
+    // generational order. Both are resolved at runtime by
+    // GetStarterJohtoDexEntry, so the names here are only the default layout
+    // (the player picked Johto). Do not reorder without updating
+    // sStarterDexBlocks in src/starter_generation.c.
     JOHTO_DEX_BULBASAUR,
     JOHTO_DEX_IVYSAUR,
     JOHTO_DEX_VENUSAUR,
@@ -1978,6 +1984,25 @@ enum JohtoDexOrder
     JOHTO_DEX_SQUIRTLE,
     JOHTO_DEX_WARTORTLE,
     JOHTO_DEX_BLASTOISE,
+    JOHTO_DEX_TREECKO,
+    JOHTO_DEX_GROVYLE,
+    JOHTO_DEX_SCEPTILE,
+    JOHTO_DEX_TORCHIC,
+    JOHTO_DEX_COMBUSKEN,
+    JOHTO_DEX_BLAZIKEN,
+    JOHTO_DEX_MUDKIP,
+    JOHTO_DEX_MARSHTOMP,
+    JOHTO_DEX_SWAMPERT,
+    JOHTO_DEX_TURTWIG,
+    JOHTO_DEX_GROTLE,
+    JOHTO_DEX_TORTERRA,
+    JOHTO_DEX_CHIMCHAR,
+    JOHTO_DEX_MONFERNO,
+    JOHTO_DEX_INFERNAPE,
+    JOHTO_DEX_PIPLUP,
+    JOHTO_DEX_PRINPLUP,
+    JOHTO_DEX_EMPOLEON,
+    // End of the starter windows.
     JOHTO_DEX_ARTICUNO,
     JOHTO_DEX_ZAPDOS,
     JOHTO_DEX_MOLTRES,

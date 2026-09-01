@@ -15,6 +15,7 @@
 #include "sound.h"
 #include "sprite.h"
 #include "starter_choose.h"
+#include "starter_generation.h"
 #include "strings.h"
 #include "task.h"
 #include "text.h"
@@ -424,6 +425,12 @@ u16 GetStarterPokemon(u16 chosenStarterId)
             sOneTypeChallengeStarters[chosenStarterId] = PickOneTypeChallengeStarter(chosenStarterId);
         return sOneTypeChallengeStarters[chosenStarterId];
     }
+
+    // HnS hands out its starter from Elm's lab, not from this screen, and which
+    // trio he offers is the player's choice - so sStarterMon (Hoenn, or Kanto
+    // for FRLG) is not the answer here.
+    if (IS_HNS)
+        return GetStarterForRegionAndSlot(GetStarterRegion(), chosenStarterId);
 
     return sStarterMon[chosenStarterId];
 }

@@ -12,6 +12,7 @@
 #include "battle_tower.h"
 #include "battle_z_move.h"
 #include "caps.h"
+#include "starter_generation.h"
 #include "data.h"
 #include "daycare.h"
 #include "dexnav.h"
@@ -919,6 +920,24 @@ static const enum NationalDexOrder sJohtoToNationalOrder[JOHTO_DEX_COUNT] =
     JOHTO_TO_NATIONAL(SQUIRTLE),
     JOHTO_TO_NATIONAL(WARTORTLE),
     JOHTO_TO_NATIONAL(BLASTOISE),
+    JOHTO_TO_NATIONAL(TREECKO),
+    JOHTO_TO_NATIONAL(GROVYLE),
+    JOHTO_TO_NATIONAL(SCEPTILE),
+    JOHTO_TO_NATIONAL(TORCHIC),
+    JOHTO_TO_NATIONAL(COMBUSKEN),
+    JOHTO_TO_NATIONAL(BLAZIKEN),
+    JOHTO_TO_NATIONAL(MUDKIP),
+    JOHTO_TO_NATIONAL(MARSHTOMP),
+    JOHTO_TO_NATIONAL(SWAMPERT),
+    JOHTO_TO_NATIONAL(TURTWIG),
+    JOHTO_TO_NATIONAL(GROTLE),
+    JOHTO_TO_NATIONAL(TORTERRA),
+    JOHTO_TO_NATIONAL(CHIMCHAR),
+    JOHTO_TO_NATIONAL(MONFERNO),
+    JOHTO_TO_NATIONAL(INFERNAPE),
+    JOHTO_TO_NATIONAL(PIPLUP),
+    JOHTO_TO_NATIONAL(PRINPLUP),
+    JOHTO_TO_NATIONAL(EMPOLEON),
     JOHTO_TO_NATIONAL(ARTICUNO),
     JOHTO_TO_NATIONAL(ZAPDOS),
     JOHTO_TO_NATIONAL(MOLTRES),
@@ -7569,15 +7588,15 @@ enum JohtoDexOrder NationalToJohtoOrder(enum NationalDexOrder nationalNum)
     if (!nationalNum)
         return 0;
 
-    johtoNum = 0;
+    // Searches through JohtoToNationalOrder rather than the raw table so the
+    // two stay exact inverses once the starter windows have been reshuffled.
+    for (johtoNum = 1; johtoNum < JOHTO_DEX_COUNT; johtoNum++)
+    {
+        if (JohtoToNationalOrder(johtoNum) == nationalNum)
+            return johtoNum;
+    }
 
-    while (johtoNum < JOHTO_DEX_COUNT && sJohtoToNationalOrder[johtoNum] != nationalNum)
-        johtoNum++;
-
-    if (johtoNum >= JOHTO_DEX_COUNT)
-        return 0;
-
-    return johtoNum + 1;
+    return 0;
 }
 
 enum JohtoDexOrder SpeciesToJohtoPokedexNum(u16 species)
@@ -7589,8 +7608,15 @@ enum JohtoDexOrder SpeciesToJohtoPokedexNum(u16 species)
 
 enum NationalDexOrder JohtoToNationalOrder(enum JohtoDexOrder johtoNum)
 {
+    enum NationalDexOrder starter;
+
     if (!johtoNum || johtoNum >= (JOHTO_DEX_COUNT + 1))
         return 0;
+
+    // Slots 1-9 and 257-283 follow the starter generation the player chose, so
+    // the static table below only holds the default (Johto) layout.
+    if (GetStarterJohtoDexEntry(johtoNum, &starter))
+        return starter;
 
     return sJohtoToNationalOrder[johtoNum - 1];
 }
