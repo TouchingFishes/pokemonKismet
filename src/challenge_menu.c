@@ -393,9 +393,9 @@ static const u8 *const sChoices_TypeMode[] = {
 };
 static const u8 *const sDesc_FairyTypes[] = {
     COMPOUND_STRING("{PKMN} keep their classic,\noriginal, pre-balance TYPES."),
-    COMPOUND_STRING("Affected {PKMN} use this game's\nchanged TYPES. No FAIRY TYPE."),
+    COMPOUND_STRING("This game's changed TYPES, no\nFAIRY. Recommended Option."),
     COMPOUND_STRING("FAIRY TYPE is added to certain\n{PKMN}, as in GEN VI."),
-    COMPOUND_STRING("FAIRY TYPE is added and TYPES\nare changed. Recommended Option."),
+    COMPOUND_STRING("FAIRY TYPE is added and this\ngame's TYPE changes apply too."),
 };
 static const u8 *const sDesc_LegAbilities[] = {
     COMPOUND_STRING("PRESSURE stays as the main\nability of some legendaries."),
@@ -422,8 +422,8 @@ static const u8 *const sDesc_IgnoreEVCap[] = {
     COMPOUND_STRING("The 510 EV total is lifted. Each\nSTAT is still capped on its own."),
 };
 static const u8 *const sDesc_NewEffectiveness[] = {
-    COMPOUND_STRING("STEEL resists GHOST and DARK.\nBUG hits FAIRY normally."),
-    COMPOUND_STRING("The TYPE chart as of GEN VI.\nRecommended Option."),
+    COMPOUND_STRING("GEN III chart, STEEL resists GHOST\nand DARK. FAIRY doesn't resist BUG."),
+    COMPOUND_STRING("GEN VI type chart. STEEL no longer\nresists GHOST and DARK."),
 };
 static const u8 *const sDesc_Split[] = {
     COMPOUND_STRING("PHYSICAL and SPECIAL MOVES\ndepend on the {PKMN} TYPE."),
@@ -1401,16 +1401,16 @@ static void ApplyRecommendedPresets(void)
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SYNCHRONIZE)        = 1; // NEW
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_STURDY)             = 1; // NEW
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_CITRUS)         = 1; // NEW
-    *GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES)        = 2; // FAIRY
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES)        = 1; // V+
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_LEGENDARY_ABILITIES)= 1; // ON
-    *GetSelectionPtr(TAB_MODE, ITEM_MODE_INFINITE_TMS)       = 1; // ON
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_INFINITE_TMS)       = 0; // OFF
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_MINTS)              = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SURVIVE_POISON)     = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SPLIT)              = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE)   = 0; // GEN 3
-    *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = 1; // ON  - natures currently affect stats
-    *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = 0; // OFF - 510 cap currently applies
-    *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = 1; // MODERN - the current chart
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = 0; // OFF
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = 1; // ON
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = 0; // GEN 3
 }
 
 // =============================================================================
@@ -1879,11 +1879,16 @@ static void ProcessLeftRight(void)
             *GetSelectionPtr(TAB_NUZLOCKE, ITEM_NUZLOCKE_RARE_CANDY)     = 1; // OFF
         }
 
-        // If Fairy monotype challenge set, force "Add Fairy Type" on
+        // If Fairy monotype challenge set, force TYPE MODE to a Fairy-enabled
+        // state - otherwise the challenge is unplayable. Step up to the nearest
+        // one rather than jumping to FAIRY outright, so a player already on V+
+        // keeps this hack's retypings instead of silently losing them.
         if (sMenu->currentTab == TAB_CHALLENGES && itemIndex == ITEM_CHALLENGES_ONE_TYPE
             && *sel == (TYPE_FAIRY - 2))
         {
-            *GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES) = 2; // FAIRY
+            u8 *typeMode = GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES);
+            if (*typeMode < 2)
+                *typeMode += 2; // VANILLA -> FAIRY, V+ -> F+
         }
 
         PlaySE(SE_SELECT);
@@ -2254,11 +2259,14 @@ void CB2_InitChallengeMenu(void)
              && cs->tx_Mode_Synchronize == 1
              && cs->tx_Mode_Sturdy == 1
              && cs->tx_Mode_New_Citrus == 1
-             && cs->tx_Mode_Fairy_Types == 2
+             && cs->tx_Mode_Fairy_Types == 1
              && cs->tx_Mode_Legendary_Abilities == 1
-             && cs->tx_Mode_InfiniteTMs == 1
+             && cs->tx_Mode_InfiniteTMs == 0
              && cs->tx_Mode_Mints == 1
              && cs->tx_Mode_PoisonSurvive == 1
+             && cs->tx_Mode_Natures == 0
+             && cs->tx_Mode_IgnoreEVCap == 1
+             && cs->tx_Mode_TypeEffectiveness == 0
              && cs->optionStyle == 0
              && cs->genOneRecharge == 0)
                 *GetSelectionPtr(TAB_MODE, ITEM_MODE_GAMEMODE) = 0; // RECOMMENDED

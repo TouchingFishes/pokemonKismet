@@ -109,7 +109,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
-    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
 }
@@ -143,11 +143,14 @@ void SetDefaultChallengeSettings(void)
     gSaveblock3.challengeSettings.tx_Mode_Synchronize        = 1;
     gSaveblock3.challengeSettings.tx_Mode_Sturdy             = 1;
     gSaveblock3.challengeSettings.tx_Mode_New_Citrus         = 1;
-    gSaveblock3.challengeSettings.tx_Mode_Fairy_Types        = TYPE_MODE_FAIRY;
+    gSaveblock3.challengeSettings.tx_Mode_Fairy_Types        = TYPE_MODE_ALTERED;
     gSaveblock3.challengeSettings.tx_Mode_Legendary_Abilities = 1;
-    gSaveblock3.challengeSettings.tx_Mode_InfiniteTMs        = 1;
+    gSaveblock3.challengeSettings.tx_Mode_InfiniteTMs        = 0;
     gSaveblock3.challengeSettings.tx_Mode_Mints              = 1;
     gSaveblock3.challengeSettings.tx_Mode_PoisonSurvive      = 1;
+    gSaveblock3.challengeSettings.tx_Mode_Natures            = 0;
+    gSaveblock3.challengeSettings.tx_Mode_IgnoreEVCap        = 1;
+    gSaveblock3.challengeSettings.tx_Mode_TypeEffectiveness  = 0;
 
     // Randomizer defaults (shown when Randomizer is ON)
     gSaveblock3.challengeSettings.tx_Random_Similar          = 1;
