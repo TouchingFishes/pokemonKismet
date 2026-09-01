@@ -138,6 +138,10 @@ u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)
 
 u32 GetCurrentEVCap(void)
 {
+    // "Ignore EV cap" lifts the 510 TOTAL limit, to "mirror" STAT EXP from Gen2
+    if (gSaveBlock3Ptr->challengeSettings.tx_Mode_IgnoreEVCap)
+        return NUM_STATS * MAX_PER_STAT_EVS;
+
     static const u16 sEvCapFlagMap[][2] = {
         // Define EV caps for each milestone
         {FLAG_BADGE01_GET, MAX_TOTAL_EVS *  1 / 17},

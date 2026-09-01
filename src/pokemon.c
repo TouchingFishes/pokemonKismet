@@ -6096,7 +6096,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
     bool8 isLevelUpItem;
 
     // Determine the EV cap to use
-    u32 maxAllowedEVs = !B_EV_ITEMS_CAP ? MAX_TOTAL_EVS : GetCurrentEVCap();
+    // GetCurrentEVCap honours the "ignore EV cap" toggle, but the !B_EV_ITEMS_CAP
+    // branch bypasses it, so the toggle is checked here too - otherwise vitamins
+    // would still stop at 510 while battle EVs did not.
+    u32 maxAllowedEVs = gSaveBlock3Ptr->challengeSettings.tx_Mode_IgnoreEVCap ? GetCurrentEVCap()
+                      : (!B_EV_ITEMS_CAP ? MAX_TOTAL_EVS : GetCurrentEVCap());
 
     // Get item hold effect
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM);
@@ -7727,6 +7731,11 @@ u8 GetTrainerEncounterMusicId(u16 trainerOpponentId)
 
 u16 ModifyStatByNature(u8 nature, u16 stat, enum Stat statIndex)
 {
+    // Natures can be switched off from the challenge menu, in which case every
+    // nature behaves like a neutral one
+    if (!gSaveBlock3Ptr->challengeSettings.tx_Mode_Natures)
+        return stat;
+
     // Don't modify HP, Accuracy, or Evasion by nature
     if (statIndex <= STAT_HP || statIndex > NUM_NATURE_STATS || gNaturesInfo[nature].statUp == gNaturesInfo[nature].statDown)
         return stat;

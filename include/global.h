@@ -338,6 +338,10 @@ struct ChallengeSettings
     u8 tx_Features_FrontierBans:1;
     u8 tx_Difficulty_EscapeRopeDig:1;
     u8 tx_Features_ShinyChance:4;
+    // Ported from the fork's tx menu
+    u8 tx_Mode_Natures:1;
+    u8 tx_Mode_IgnoreEVCap:1;
+    u8 tx_Mode_TypeEffectiveness:1;
 };
 
 struct SaveBlock3

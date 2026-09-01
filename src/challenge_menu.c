@@ -59,6 +59,9 @@ enum {
     ITEM_MODE_NEW_CITRUS,
     ITEM_MODE_LEGENDARY_ABILITIES,
     ITEM_MODE_SURVIVE_POISON,
+    ITEM_MODE_NATURES,
+    ITEM_MODE_IGNORE_EV_CAP,
+    ITEM_MODE_NEW_EFFECTIVENESS,
     ITEM_MODE_NEXT,
     ITEM_MODE_COUNT,
 };
@@ -402,9 +405,25 @@ static const u8 *const sDesc_SurvivePoison[] = {
     COMPOUND_STRING("Your {PKMN} will faint if they are\nPOISONED."),
     COMPOUND_STRING("Your {PKMN} will survive the POISON\nstatus with 1HP."),
 };
+static const u8 *const sDesc_Natures[] = {
+    COMPOUND_STRING("NATURES are stored but do not\naffect any STATS."),
+    COMPOUND_STRING("NATURES raise one STAT and lower\nanother, as usual."),
+};
+static const u8 *const sDesc_IgnoreEVCap[] = {
+    COMPOUND_STRING("EVs are limited to 510 in total,\nas usual."),
+    COMPOUND_STRING("The 510 EV total is lifted. Each\nSTAT is still capped on its own."),
+};
+static const u8 *const sDesc_NewEffectiveness[] = {
+    COMPOUND_STRING("STEEL resists GHOST and DARK.\nBUG hits FAIRY normally."),
+    COMPOUND_STRING("The TYPE chart as of GEN VI.\nRecommended Option."),
+};
 static const u8 *const sDesc_Split[] = {
     COMPOUND_STRING("PHYSICAL and SPECIAL MOVES\ndepend on the {PKMN} TYPE."),
     COMPOUND_STRING("PHYSICAL and SPECIAL MOVES\nare MOVE specific."),
+};
+static const u8 *const sChoices_Gen3Modern[] = {
+    COMPOUND_STRING("GEN 3"),
+    COMPOUND_STRING("MODERN"),
 };
 static const u8 *const sChoices_Gen3Gen7[] = {
     COMPOUND_STRING("GEN 3"),
@@ -482,6 +501,24 @@ static const struct ChallengeMenuItem sTabItems_Mode[] = {
         .descriptions = sDesc_SurvivePoison,
         .numChoices   = 2,
         .choiceNames  = sChoices_OffOn,
+    },
+    [ITEM_MODE_NATURES] = {
+        .name         = COMPOUND_STRING("NATURES"),
+        .descriptions = sDesc_Natures,
+        .numChoices   = 2,
+        .choiceNames  = sChoices_OffOn,
+    },
+    [ITEM_MODE_IGNORE_EV_CAP] = {
+        .name         = COMPOUND_STRING("IGNORE EV CAP"),
+        .descriptions = sDesc_IgnoreEVCap,
+        .numChoices   = 2,
+        .choiceNames  = sChoices_OffOn,
+    },
+    [ITEM_MODE_NEW_EFFECTIVENESS] = {
+        .name         = COMPOUND_STRING("TYPE CHART"),
+        .descriptions = sDesc_NewEffectiveness,
+        .numChoices   = 2,
+        .choiceNames  = sChoices_Gen3Modern,
     },
     [ITEM_MODE_SPLIT] = {
         .name         = COMPOUND_STRING("PHYS/SP SPLIT"),
@@ -1363,6 +1400,9 @@ static void ApplyRecommendedPresets(void)
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SURVIVE_POISON)     = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SPLIT)              = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE)   = 0; // GEN 3
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = 1; // ON  - natures currently affect stats
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = 0; // OFF - 510 cap currently applies
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = 1; // MODERN - the current chart
 }
 
 // =============================================================================
@@ -1969,6 +2009,9 @@ static void Task_ConfirmSaveYes(u8 taskId)
     else
         FlagSet(FLAG_MINTS_DISABLED);
     cs->tx_Mode_PoisonSurvive      = *GetSelectionPtr(TAB_MODE, ITEM_MODE_SURVIVE_POISON);
+    cs->tx_Mode_Natures            = *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES);
+    cs->tx_Mode_IgnoreEVCap        = *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP);
+    cs->tx_Mode_TypeEffectiveness  = *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS);
     cs->optionStyle                = !*GetSelectionPtr(TAB_MODE, ITEM_MODE_SPLIT);
     cs->genOneRecharge             = *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE);
 
@@ -2193,6 +2236,9 @@ void CB2_InitChallengeMenu(void)
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_INFINITE_TMS)       = cs->tx_Mode_InfiniteTMs;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_MINTS)              = cs->tx_Mode_Mints;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_SURVIVE_POISON)     = cs->tx_Mode_PoisonSurvive;
+            *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = cs->tx_Mode_Natures;
+            *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = cs->tx_Mode_IgnoreEVCap;
+            *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = cs->tx_Mode_TypeEffectiveness;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_SPLIT)              = !cs->optionStyle;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE)   = cs->genOneRecharge;
 

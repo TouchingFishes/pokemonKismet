@@ -8567,9 +8567,27 @@ uq4_12_t GetTypeModifier(enum Type atkType, enum Type defType)
     if (RandomizerFeatureEnabled(RANDOMIZE_TYPE_EFFECTIVENESS))
         atkType = RandomizeType(atkType);
 #endif
+    uq4_12_t modifier = gTypeEffectivenessTable[atkType][defType];
+
+    /*  TYPE CHART setting. 1 = the modern Gen 6+ chart, which is what
+     *  gTypeEffectivenessTable already holds while B_UPDATED_TYPE_MATCHUPS is
+     *  GEN_LATEST. 0 = a Gen 3 style chart, reached by overriding only certain
+     *  matchups 
+     *
+     *  Gen 3 -> Gen 6 changed exactly one thing outside of Fairy: Steel lost
+     *  its resistance to Ghost and Dark
+     */
+    if (!gSaveBlock3Ptr->challengeSettings.tx_Mode_TypeEffectiveness)
+    {
+        if (defType == TYPE_STEEL && (atkType == TYPE_GHOST || atkType == TYPE_DARK))
+            modifier = UQ_4_12(0.5);   // STL_RS: Steel resisted Ghost/Dark before Gen 6
+        else if (atkType == TYPE_BUG && defType == TYPE_FAIRY)
+            modifier = UQ_4_12(1.0);   // Fairy nerf: Bug no longer resisted
+    }
+
     if (B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE))
-        return GetInverseTypeMultiplier(gTypeEffectivenessTable[atkType][defType]);
-    return gTypeEffectivenessTable[atkType][defType];
+        return GetInverseTypeMultiplier(modifier);
+    return modifier;
 }
 
 s32 GetStealthHazardDamageByTypesAndHP(enum TypeSideHazard hazardType, enum Type type1, enum Type type2, u32 maxHp)
