@@ -2485,4 +2485,22 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Greatly ups punching moves."),
         .aiRating = 8,
     },
+
+    [ABILITY_GLACIAL_DRIFT] =
+    {
+        .name = _("GLACIAL DRIFT"),
+        // Slush Rush and Levitate, both gated on hail or snow. Cryogonal's
+        // signature ability
+        .description = COMPOUND_STRING("Floats and speeds up in hail."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_SUNBLOOM] =
+    {
+        .name = _("SUNBLOOM"),
+        // Quarters incoming Fire damage at all times, and adds 20% to the
+        // holder's own moves while the sun is up. Sunflora's ability.
+        .description = COMPOUND_STRING("Shrugs off fire, thrives in sun."),
+        .aiRating = 6,
+    },
 };

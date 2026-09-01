@@ -336,13 +336,15 @@ enum __attribute__((packed)) Ability
 
     // Add any custom abilities here, not further up - the entries above are
     // official and their numbering is shared with upstream data.
-    // Kismet custom abilities, ported over.
+    // Kismet custom abilities
     ABILITY_CACOPHONY = ABILITIES_COUNT_GEN9,
     ABILITY_CHITINIZE,
     ABILITY_IMMOLATE,
     ABILITY_PSI_CONDUIT,
     ABILITY_SKITTISH,
     ABILITY_PUGILIST,
+    ABILITY_GLACIAL_DRIFT,
+    ABILITY_SUNBLOOM,
 
     ABILITIES_COUNT,
 };

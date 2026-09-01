@@ -6015,6 +6015,8 @@ static bool32 IsBattlerUngroundedByAbilityItemOrEffect(enum BattlerId battler, e
         return TRUE;
     if (ability == ABILITY_LEVITATE)
         return TRUE;
+    if (ability == ABILITY_GLACIAL_DRIFT && IsBattlerWeatherAffected(battler, B_WEATHER_ICY_ANY))
+        return TRUE;
     return FALSE;
 }
 
@@ -6690,6 +6692,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
         if (IsPunchingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.6));
         break;
+    case ABILITY_SUNBLOOM: // Kismet custom: every move, not just one type, while the sun is up
+        if (ctx->weather & B_WEATHER_SUN)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+        break;
     case ABILITY_SHEER_FORCE:
         if (MoveIsAffectedBySheerForce(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
@@ -6819,6 +6825,14 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
         if (moveType == TYPE_FIRE)
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ctx->abilityDef);
+        }
+        break;
+    case ABILITY_SUNBLOOM: // Kismet custom: Heatproof's mechanic at a quarter, always on
+        if (moveType == TYPE_FIRE)
+        {
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.25));
             if (ctx->updateFlags)
                 RecordAbilityBattle(battlerDef, ctx->abilityDef);
         }
@@ -8416,12 +8430,12 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct BattleCont
         && !(ctx->holdEffectDef == HOLD_EFFECT_RING_TARGET && IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_FLYING) && !IsBattlerUngroundedByAbilityItemOrEffect(ctx->battlerDef, ctx->abilityDef, ctx->holdEffectDef)))
     {
         modifier = UQ_4_12(0.0);
-        if (ctx->updateFlags && ctx->abilityDef == ABILITY_LEVITATE)
+        if (ctx->updateFlags && (ctx->abilityDef == ABILITY_LEVITATE || ctx->abilityDef == ABILITY_GLACIAL_DRIFT))
         {
             gBattleStruct->moveResultFlags[ctx->battlerDef] |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
-            gLastUsedAbility = ABILITY_LEVITATE;
+            gLastUsedAbility = ctx->abilityDef;
             ctx->abilityBlocked = TRUE;
-            RecordAbilityBattle(ctx->battlerDef, ABILITY_LEVITATE);
+            RecordAbilityBattle(ctx->battlerDef, ctx->abilityDef);
         }
         else if (ctx->holdEffectDef == HOLD_EFFECT_AIR_BALLOON)
         {
@@ -8508,7 +8522,9 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(enum Move move, u16 speciesDef,
         if (GetSpeciesType(speciesDef, 1) != GetSpeciesType(speciesDef, 0))
             MulByTypeEffectiveness(&ctx, &modifier, GetSpeciesType(speciesDef, 1));
 
-        if (ctx.moveType == TYPE_GROUND && abilityDef == ABILITY_LEVITATE && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
+        if (ctx.moveType == TYPE_GROUND && !(gFieldStatuses & STATUS_FIELD_GRAVITY)
+            && (abilityDef == ABILITY_LEVITATE
+                || (abilityDef == ABILITY_GLACIAL_DRIFT && (gBattleWeather & B_WEATHER_ICY_ANY))))
             modifier = UQ_4_12(0.0);
         if (abilityDef == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
             modifier = UQ_4_12(0.0);
