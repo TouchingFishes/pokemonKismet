@@ -552,6 +552,47 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisFishing
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisWatering_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KrisDecorating_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AlolaOak_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lady_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DragonTamer_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RichBoy_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanF_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanM_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExpertM_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExpertF_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicF_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AromaLady_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederF_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederM_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Painter_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LoverF_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LoverM_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugManiac_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistTrainer_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirdCatcher_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Farmer_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GuitaristM_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brawly_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Drake_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Flannery_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Glacia_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Liza_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Norman_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Phoebe_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxanne_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sidney_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tasso_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tate_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wallace_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wally_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wattson_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Winona_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemaniac_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiac_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokerangerF_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokerangerM_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Collector_hns;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -1076,6 +1117,47 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKE_CENTER_LIGHT_HNS] = &gObjectEventGraphicsInfo_PokeCenterLight_Hns,
     [OBJ_EVENT_GFX_SMALL_LIGHT_HNS] =       &gObjectEventGraphicsInfo_SmallLight_Hns,
     [OBJ_EVENT_GFX_ALOLA_OAK_HNS] =         &gObjectEventGraphicsInfo_AlolaOak_hns,
+    [OBJ_EVENT_GFX_CYNTHIA_HNS] = &gObjectEventGraphicsInfo_Cynthia_hns,
+    [OBJ_EVENT_GFX_LADY_HNS] = &gObjectEventGraphicsInfo_Lady_hns,
+    [OBJ_EVENT_GFX_DRAGON_TAMER_HNS] = &gObjectEventGraphicsInfo_DragonTamer_hns,
+    [OBJ_EVENT_GFX_RICH_BOY_HNS] = &gObjectEventGraphicsInfo_RichBoy_hns,
+    [OBJ_EVENT_GFX_POKEFAN_F_HNS] = &gObjectEventGraphicsInfo_PokefanF_hns,
+    [OBJ_EVENT_GFX_POKEFAN_M_HNS] = &gObjectEventGraphicsInfo_PokefanM_hns,
+    [OBJ_EVENT_GFX_EXPERT_M_HNS] = &gObjectEventGraphicsInfo_ExpertM_hns,
+    [OBJ_EVENT_GFX_EXPERT_F_HNS] = &gObjectEventGraphicsInfo_ExpertF_hns,
+    [OBJ_EVENT_GFX_PSYCHIC_F_HNS] = &gObjectEventGraphicsInfo_PsychicF_hns,
+    [OBJ_EVENT_GFX_AROMA_LADY_HNS] = &gObjectEventGraphicsInfo_AromaLady_hns,
+    [OBJ_EVENT_GFX_BREEDER_F_HNS] = &gObjectEventGraphicsInfo_BreederF_hns,
+    [OBJ_EVENT_GFX_BREEDER_M_HNS] = &gObjectEventGraphicsInfo_BreederM_hns,
+    [OBJ_EVENT_GFX_PAINTER_HNS] = &gObjectEventGraphicsInfo_Painter_hns,
+    [OBJ_EVENT_GFX_LOVER_F_HNS] = &gObjectEventGraphicsInfo_LoverF_hns,
+    [OBJ_EVENT_GFX_LOVER_M_HNS] = &gObjectEventGraphicsInfo_LoverM_hns,
+    [OBJ_EVENT_GFX_BUG_MANIAC_HNS] = &gObjectEventGraphicsInfo_BugManiac_hns,
+    [OBJ_EVENT_GFX_SCIENTIST_TRAINER_HNS] = &gObjectEventGraphicsInfo_ScientistTrainer_hns,
+    [OBJ_EVENT_GFX_BIRD_CATCHER_HNS] = &gObjectEventGraphicsInfo_BirdCatcher_hns,
+    [OBJ_EVENT_GFX_FARMER_HNS] = &gObjectEventGraphicsInfo_Farmer_hns,
+    [OBJ_EVENT_GFX_GUITARIST_M_HNS] = &gObjectEventGraphicsInfo_GuitaristM_hns,
+    [OBJ_EVENT_GFX_BRAWLY_HNS] = &gObjectEventGraphicsInfo_Brawly_hns,
+    [OBJ_EVENT_GFX_DRAKE_HNS] = &gObjectEventGraphicsInfo_Drake_hns,
+    [OBJ_EVENT_GFX_FLANNERY_HNS] = &gObjectEventGraphicsInfo_Flannery_hns,
+    [OBJ_EVENT_GFX_GLACIA_HNS] = &gObjectEventGraphicsInfo_Glacia_hns,
+    [OBJ_EVENT_GFX_LIZA_HNS] = &gObjectEventGraphicsInfo_Liza_hns,
+    [OBJ_EVENT_GFX_NORMAN_HNS] = &gObjectEventGraphicsInfo_Norman_hns,
+    [OBJ_EVENT_GFX_PHOEBE_HNS] = &gObjectEventGraphicsInfo_Phoebe_hns,
+    [OBJ_EVENT_GFX_ROXANNE_HNS] = &gObjectEventGraphicsInfo_Roxanne_hns,
+    [OBJ_EVENT_GFX_SIDNEY_HNS] = &gObjectEventGraphicsInfo_Sidney_hns,
+    [OBJ_EVENT_GFX_TASSO_HNS] = &gObjectEventGraphicsInfo_Tasso_hns,
+    [OBJ_EVENT_GFX_TATE_HNS] = &gObjectEventGraphicsInfo_Tate_hns,
+    [OBJ_EVENT_GFX_WALLACE_HNS] = &gObjectEventGraphicsInfo_Wallace_hns,
+    [OBJ_EVENT_GFX_WALLY_HNS] = &gObjectEventGraphicsInfo_Wally_hns,
+    [OBJ_EVENT_GFX_WATTSON_HNS] = &gObjectEventGraphicsInfo_Wattson_hns,
+    [OBJ_EVENT_GFX_WINONA_HNS] = &gObjectEventGraphicsInfo_Winona_hns,
+    [OBJ_EVENT_GFX_POKEMANIAC_HNS] = &gObjectEventGraphicsInfo_Pokemaniac_hns,
+    [OBJ_EVENT_GFX_RUIN_MANIAC_HNS] = &gObjectEventGraphicsInfo_RuinManiac_hns,
+    [OBJ_EVENT_GFX_POKERANGER_F_HNS] = &gObjectEventGraphicsInfo_PokerangerF_hns,
+    [OBJ_EVENT_GFX_POKERANGER_M_HNS] = &gObjectEventGraphicsInfo_PokerangerM_hns,
+    [OBJ_EVENT_GFX_HEX_MANIAC_HNS] = &gObjectEventGraphicsInfo_HexManiac_hns,
+    [OBJ_EVENT_GFX_COLLECTOR_HNS] = &gObjectEventGraphicsInfo_Collector_hns,
     // HnS protagonists
     [OBJ_EVENT_GFX_GOLD_NORMAL_HNS] =       &gObjectEventGraphicsInfo_GoldNormal_hns,
     [OBJ_EVENT_GFX_GOLD_MACH_BIKE_HNS] =    &gObjectEventGraphicsInfo_GoldMachBike_hns,

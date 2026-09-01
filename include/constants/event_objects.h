@@ -583,7 +583,51 @@
 #define OBJ_EVENT_GFX_SKIER_F_HNS               545
 #define OBJ_EVENT_GFX_SKIER_M_HNS               546
 #define OBJ_EVENT_GFX_ALOLA_OAK_HNS             547
-#define NUM_OBJ_EVENT_GFX                        548
+#define OBJ_EVENT_GFX_CYNTHIA_HNS               548
+#define OBJ_EVENT_GFX_LADY_HNS                  549
+#define OBJ_EVENT_GFX_DRAGON_TAMER_HNS          550
+// Distinct art from the unsuffixed OBJ_EVENT_GFX_RICH_BOY, which Hoenn maps use.
+#define OBJ_EVENT_GFX_RICH_BOY_HNS              551
+// Hoenn maps use the unsuffixed constants for these five, so the fork's
+// versions are added alongside rather than replacing them.
+#define OBJ_EVENT_GFX_POKEFAN_F_HNS             552
+#define OBJ_EVENT_GFX_POKEFAN_M_HNS             553
+#define OBJ_EVENT_GFX_EXPERT_M_HNS              554
+#define OBJ_EVENT_GFX_EXPERT_F_HNS              555
+#define OBJ_EVENT_GFX_PSYCHIC_F_HNS             556
+#define OBJ_EVENT_GFX_AROMA_LADY_HNS            557
+#define OBJ_EVENT_GFX_BREEDER_F_HNS             558
+#define OBJ_EVENT_GFX_BREEDER_M_HNS             559
+#define OBJ_EVENT_GFX_PAINTER_HNS               560
+#define OBJ_EVENT_GFX_LOVER_F_HNS               561
+#define OBJ_EVENT_GFX_LOVER_M_HNS               562
+#define OBJ_EVENT_GFX_BUG_MANIAC_HNS            563
+#define OBJ_EVENT_GFX_SCIENTIST_TRAINER_HNS     564
+#define OBJ_EVENT_GFX_BIRD_CATCHER_HNS          565
+#define OBJ_EVENT_GFX_FARMER_HNS                566
+#define OBJ_EVENT_GFX_GUITARIST_M_HNS           567
+#define OBJ_EVENT_GFX_BRAWLY_HNS                568
+#define OBJ_EVENT_GFX_DRAKE_HNS                 569
+#define OBJ_EVENT_GFX_FLANNERY_HNS              570
+#define OBJ_EVENT_GFX_GLACIA_HNS                571
+#define OBJ_EVENT_GFX_LIZA_HNS                  572
+#define OBJ_EVENT_GFX_NORMAN_HNS                573
+#define OBJ_EVENT_GFX_PHOEBE_HNS                574
+#define OBJ_EVENT_GFX_ROXANNE_HNS               575
+#define OBJ_EVENT_GFX_SIDNEY_HNS                576
+#define OBJ_EVENT_GFX_TASSO_HNS                 577
+#define OBJ_EVENT_GFX_TATE_HNS                  578
+#define OBJ_EVENT_GFX_WALLACE_HNS               579
+#define OBJ_EVENT_GFX_WALLY_HNS                 580
+#define OBJ_EVENT_GFX_WATTSON_HNS               581
+#define OBJ_EVENT_GFX_WINONA_HNS                582
+#define OBJ_EVENT_GFX_POKEMANIAC_HNS            583
+#define OBJ_EVENT_GFX_RUIN_MANIAC_HNS           584
+#define OBJ_EVENT_GFX_POKERANGER_F_HNS          585
+#define OBJ_EVENT_GFX_POKERANGER_M_HNS          586
+#define OBJ_EVENT_GFX_HEX_MANIAC_HNS            587
+#define OBJ_EVENT_GFX_COLLECTOR_HNS             588
+#define NUM_OBJ_EVENT_GFX                        589
 
 
 // These are dynamic object gfx ids.
@@ -779,6 +823,50 @@
 #define OBJ_EVENT_PAL_TAG_KRIS_HNS                0x119A
 #define OBJ_EVENT_PAL_TAG_KRIS_REFLECTION_HNS     0x119B
 #define OBJ_EVENT_PAL_TAG_ALOLA_OAK_HNS           0x119C
+// Shared by Lady and Rich Boy, whose sheets carry an identical palette.
+// The Dragon Tamer shares it in the source fork, but Kalarie's sheet - the one
+// actually used here - has its own colours and needs its own tag.
+#define OBJ_EVENT_PAL_TAG_LADY_HNS                0x119D
+#define OBJ_EVENT_PAL_TAG_CYNTHIA_HNS             0x119E
+#define OBJ_EVENT_PAL_TAG_DRAGON_TAMER_HNS        0x119F
+#define OBJ_EVENT_PAL_TAG_PSYCHIC_HNS             0x11A0
+#define OBJ_EVENT_PAL_TAG_AROMA_LADY_HNS            0x11A2
+#define OBJ_EVENT_PAL_TAG_BREEDER_HNS               0x11A3
+#define OBJ_EVENT_PAL_TAG_PAINTER_HNS               0x11A4
+#define OBJ_EVENT_PAL_TAG_TWIN_HNS                  0x11A5
+#define OBJ_EVENT_PAL_TAG_LOVER_HNS                 0x11A6
+#define OBJ_EVENT_PAL_TAG_HIKER_HNS                 0x11A7
+#define OBJ_EVENT_PAL_TAG_BUG_MANIAC_HNS            0x11A8
+#define OBJ_EVENT_PAL_TAG_SCIENTIST_TRAINER_HNS     0x11A9
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_M_HNS         0x11AA
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_F_HNS         0x11AB
+#define OBJ_EVENT_PAL_TAG_ROCKER_HNS                0x11AC
+#define OBJ_EVENT_PAL_TAG_BIRD_CATCHER_HNS          0x11AD
+#define OBJ_EVENT_PAL_TAG_FARMER_HNS                0x11AE
+#define OBJ_EVENT_PAL_TAG_GUITARIST_M_HNS           0x11AF
+#define OBJ_EVENT_PAL_TAG_BRAWLY_HNS                0x11B0
+#define OBJ_EVENT_PAL_TAG_DRAKE_HNS                 0x11B1
+#define OBJ_EVENT_PAL_TAG_FLANNERY_HNS              0x11B2
+#define OBJ_EVENT_PAL_TAG_GLACIA_HNS                0x11B3
+#define OBJ_EVENT_PAL_TAG_GRETA_HNS                 0x11B4
+#define OBJ_EVENT_PAL_TAG_LIZA_HNS                  0x11B5
+#define OBJ_EVENT_PAL_TAG_LUCY_HNS                  0x11B6
+#define OBJ_EVENT_PAL_TAG_NORMAN_HNS                0x11B7
+#define OBJ_EVENT_PAL_TAG_PHOEBE_HNS                0x11B8
+#define OBJ_EVENT_PAL_TAG_ROXANNE_HNS               0x11B9
+#define OBJ_EVENT_PAL_TAG_SIDNEY_HNS                0x11BA
+#define OBJ_EVENT_PAL_TAG_SPENSER_HNS               0x11BB
+#define OBJ_EVENT_PAL_TAG_TASSO_HNS                 0x11BC
+#define OBJ_EVENT_PAL_TAG_TATE_HNS                  0x11BD
+#define OBJ_EVENT_PAL_TAG_WALLACE_HNS               0x11BE
+#define OBJ_EVENT_PAL_TAG_WALLY_HNS                 0x11BF
+#define OBJ_EVENT_PAL_TAG_WATTSON_HNS               0x11C0
+#define OBJ_EVENT_PAL_TAG_WINONA_HNS                0x11C1
+#define OBJ_EVENT_PAL_TAG_POKEMANIAC_HNS            0x11C2
+#define OBJ_EVENT_PAL_TAG_RUIN_MANIAC_HNS           0x11C3
+#define OBJ_EVENT_PAL_TAG_POKERANGER_HNS            0x11C4
+#define OBJ_EVENT_PAL_TAG_HEX_MANIAC_HNS            0x11C5
+#define OBJ_EVENT_PAL_TAG_COLLECTOR_HNS             0x11C6
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

@@ -1,0 +1,128 @@
+Kismet asset credits
+====================
+
+Attribution for art assets ported into this fork. The root CREDITS.md is
+pokeemerald-expansion's contributor table and is not ours to edit; this file is
+for the art we bring in.
+
+Two upstream credit files feed this list, and they describe DIFFERENT sprites
+that happen to share a name. Check which file an asset actually came from
+before copying an attribution across:
+
+  A. pokemonHnS/credits.txt          - the HnS fork's own sprite set
+  B. Assets/FireRed Overworld Sprites/credits.txt
+     (PokeCommunity "Fire Red Overworld Sprite Resource",
+      https://www.pokecommunity.com/threads/fire-red-overworld-sprite-resource.407124/)
+
+The Dragon Tamer is the worked example: source A lists one under its group
+credit, source B credits Kalarie. Both are correct - they are separate sheets
+(144x32 sharing the Lady palette vs 160x32 with its own). Kismet ships B's.
+
+
+Overworld sprites
+-----------------
+
+Dragon Tamer (dragon_tamer_hns)       Kalarie                        [source B]
+
+Cynthia (cynthia_hns)                 spilledpizza                   [source A]
+Lady (lady_hns)                       TheWiggliestJiggliest
+Rich Boy (rich_boy_hns)               RichardPT
+                                      robloxmaster376
+                                      The Spriters Resource
+                                      The Radiant Quartz / Prismatic
+                                      Platinum team
+
+  Source A credits these three collectively to the names above rather than
+  naming an artist per sprite, so they are listed as a group.
+
+
+Sage (sage_hns)                       MrDollSteak                    [source A]
+Expert M / F (expert_m_hns,           Spherical Ice                  [source A]
+  expert_f_hns)
+Psychic M (psychic_m_hns)             Avatar                         [source A]
+Psychic F (psychic_f_hns)             Kalarie                        [source A]
+Pokefan F (pokefan_f_hns)             Aveontrainer                   [source A]
+
+  Source A marks the Aveontrainer entry "Aveontrainer(?)" - the question mark
+  is theirs, so treat that attribution as unconfirmed.
+
+Pokefan M (pokefan_m_hns)             UNATTRIBUTED
+
+  Source A credits Pokefan_F but never Pokefan_M, and the sprite appears in no
+  other credits file here. Left blank rather than assumed to share Pokefan_F's
+  artist.
+
+
+Aroma Lady (aroma_lady_hns)           Kalarie                        [source B]
+Breeder M / F (breeder_m_hns,         Kalarie                        [source B]
+  breeder_f_hns)                        (listed as "Pokemon Breeder")
+Twin (twin_hns)                       Kalarie                        [source B]
+Lover M / F (lover_m_hns,             Kalarie                        [source B]
+  lover_f_hns)                          (listed as "Young Couple")
+
+Painter (painter_hns)                 MrDollSteak                    [source B]
+Hiker (hiker_hns)                     MrDollSteak                    [source A]
+Bug Maniac (bug_maniac_hns)           Aveontrainer                   [source A]
+Scientist (scientist_trainer_hns)     UNATTRIBUTED
+
+  Hiker and Bug Maniac are not named in source B, so their attributions come
+  from source A. Source B does not credit a Scientist at all, and neither does
+  source A - left blank rather than guessed.
+
+  The Lover M/F attribution is inferred from a category name rather than the
+  sprite filename: source B lists "Young Couple" rather than "Lover". Moritz
+  drew the same inference independently, so it stands.
+
+
+Ace Trainer M / F                     Aveontrainer
+  (cooltrainer_m_hns, cooltrainer_f_hns)
+Bird Catcher (bird_catcher_hns)       Spherical Ice
+Farmer (farmer_hns)                   Spherical Ice
+Guitarist M (guitarist_m_hns)         Aveontrainer                   [source A]
+Rocker (rocker_hns)                   Kalarie                        [source B]
+
+  ⚠ The Ace Trainer / Bird Catcher pairing is inferred, not stated. Moritz gave
+  the two names without pairing them to the two sprites. Source A assigns
+  "Cooltrainer (Female and Male)" to Aveontrainer and "Bird_Keeper" to
+  Spherical Ice, and Cooltrainer is the old name for Ace Trainer, so the
+  mapping above follows that evidence. Swap them if that is wrong.
+  Farmer is the other half of the same Bird Catcher pair (bird_catcher.png vs
+  bird_catcher_rse.png) and inherits the same attribution.
+
+
+PokeManiac (pokemaniac_hns)           MrDollSteak                    [source B]
+Pokeranger M / F                      MrDollSteak                    [source B]
+  (pokeranger_m_hns, pokeranger_f_hns)
+Ruin Maniac (ruin_maniac_hns)         Spherical Ice                  [source B]
+Hex Maniac (hex_maniac_hns)           Aveontrainer                   [source A]
+Collector (collector_hns)             Aveontrainer                   [source A]
+
+  Hex Maniac and Collector are not named in source B; both come from source A's
+  Aveontrainer line, which carries that file's own "(?)" - unconfirmed.
+
+  Ruin Maniac ships source B's ruin_maniac1.png. ruin_maniac2.png is the same
+  character in a lighter recolour and was not used.
+
+Hoenn overworld sprites
+-----------------------
+
+Brawly, Drake, Flannery, Glacia, Greta, Liza, Lucy, Norman, Phoebe, Roxanne,
+Sidney, Spenser, Tasso, Tate, Wallace, Wally, Wattson, Winona
+                                      UNATTRIBUTED - artist not found
+
+  These 18 came from a loose Assets folder with no credits file, and no
+  attribution for them exists in any source here. Both Crystal decomps' credits
+  and both sprite-resource credits files were searched.
+
+  One near miss worth recording so it is not re-checked: source A credits a
+  Wallace OW sprite to RavePossum / PoffinCase. That is a DIFFERENT sheet - the
+  two were compared pixel by pixel and share no colour mapping, so the credit
+  does not transfer to the one shipped here.
+
+  Phoebe and Roxanne were 17- and 18-colour images and had to be reduced to fit
+  4bpp. The merges are recorded here for honesty:
+    Phoebe   (72,48,48)     2 px -> (58,58,25)
+    Roxanne  (255,255,255)  4 px -> (248,216,184)
+             (72,48,48)     2 px -> (58,58,25)
+  Six pixels total across 9,216 per sheet. Every other sheet converted with no
+  colour loss.
