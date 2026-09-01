@@ -385,9 +385,17 @@ static const u8 *const sDesc_NewCitrus[] = {
     COMPOUND_STRING("SITRUS BERRY restores 30HP.\nSame as GEN III."),
     COMPOUND_STRING("SITRUS BERRY restores 25% of\ntotal HP. Same as GEN IV and up."),
 };
+static const u8 *const sChoices_TypeMode[] = {
+    COMPOUND_STRING("VANILLA"),
+    COMPOUND_STRING("V+"),
+    COMPOUND_STRING("FAIRY"),
+    COMPOUND_STRING("F+"),
+};
 static const u8 *const sDesc_FairyTypes[] = {
-    COMPOUND_STRING("FAIRY TYPE isn't added to {PKMN}\nthat got it in GEN VI."),
-    COMPOUND_STRING("FAIRY TYPE is added / changed to\ncertain {PKMN}, as in GEN VI."),
+    COMPOUND_STRING("{PKMN} keep their classic,\noriginal, pre-balance TYPES."),
+    COMPOUND_STRING("Affected {PKMN} use this game's\nchanged TYPES. No FAIRY TYPE."),
+    COMPOUND_STRING("FAIRY TYPE is added to certain\n{PKMN}, as in GEN VI."),
+    COMPOUND_STRING("FAIRY TYPE is added and TYPES\nare changed. Recommended Option."),
 };
 static const u8 *const sDesc_LegAbilities[] = {
     COMPOUND_STRING("PRESSURE stays as the main\nability of some legendaries."),
@@ -473,10 +481,10 @@ static const struct ChallengeMenuItem sTabItems_Mode[] = {
         .choiceNames  = sChoices_OriginalModern,
     },
     [ITEM_MODE_FAIRY_TYPES] = {
-        .name         = COMPOUND_STRING("ADD FAIRY TYPE"),
+        .name         = COMPOUND_STRING("TYPE MODE"),
         .descriptions = sDesc_FairyTypes,
-        .numChoices   = 2,
-        .choiceNames  = sChoices_OffOn,
+        .numChoices   = 4,
+        .choiceNames  = sChoices_TypeMode,
     },
     [ITEM_MODE_LEGENDARY_ABILITIES] = {
         .name         = COMPOUND_STRING("LEGEN. ABILITIES"),
@@ -1393,7 +1401,7 @@ static void ApplyRecommendedPresets(void)
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SYNCHRONIZE)        = 1; // NEW
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_STURDY)             = 1; // NEW
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_CITRUS)         = 1; // NEW
-    *GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES)        = 1; // ON
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES)        = 2; // FAIRY
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_LEGENDARY_ABILITIES)= 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_INFINITE_TMS)       = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_MINTS)              = 1; // ON
@@ -1875,7 +1883,7 @@ static void ProcessLeftRight(void)
         if (sMenu->currentTab == TAB_CHALLENGES && itemIndex == ITEM_CHALLENGES_ONE_TYPE
             && *sel == (TYPE_FAIRY - 2))
         {
-            *GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES) = 1; // ON
+            *GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES) = 2; // FAIRY
         }
 
         PlaySE(SE_SELECT);
@@ -2246,7 +2254,7 @@ void CB2_InitChallengeMenu(void)
              && cs->tx_Mode_Synchronize == 1
              && cs->tx_Mode_Sturdy == 1
              && cs->tx_Mode_New_Citrus == 1
-             && cs->tx_Mode_Fairy_Types == 1
+             && cs->tx_Mode_Fairy_Types == 2
              && cs->tx_Mode_Legendary_Abilities == 1
              && cs->tx_Mode_InfiniteTMs == 1
              && cs->tx_Mode_Mints == 1

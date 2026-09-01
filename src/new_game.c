@@ -143,7 +143,7 @@ void SetDefaultChallengeSettings(void)
     gSaveblock3.challengeSettings.tx_Mode_Synchronize        = 1;
     gSaveblock3.challengeSettings.tx_Mode_Sturdy             = 1;
     gSaveblock3.challengeSettings.tx_Mode_New_Citrus         = 1;
-    gSaveblock3.challengeSettings.tx_Mode_Fairy_Types        = 1;
+    gSaveblock3.challengeSettings.tx_Mode_Fairy_Types        = TYPE_MODE_FAIRY;
     gSaveblock3.challengeSettings.tx_Mode_Legendary_Abilities = 1;
     gSaveblock3.challengeSettings.tx_Mode_InfiniteTMs        = 1;
     gSaveblock3.challengeSettings.tx_Mode_Mints              = 1;

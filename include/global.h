@@ -327,7 +327,7 @@ struct ChallengeSettings
     u8 tx_Mode_Synchronize:1;
     u8 tx_Mode_Mints:1;
     u8 tx_Mode_New_Citrus:1;
-    u8 tx_Mode_Fairy_Types:1;
+    u8 tx_Mode_Fairy_Types:2;   // TYPE_MODE_* - 4-way now, see constants/pokemon.h for more info
     u8 tx_Mode_Sturdy:1;
     u8 tx_Mode_Modern_Moves:1;
     u8 tx_Mode_Legendary_Abilities:1;

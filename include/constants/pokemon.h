@@ -403,4 +403,14 @@ enum ShinyMode {
 #define LEGENDARY_PERFECT_IV_COUNT 0
 #endif
 
+
+// tx_Mode_Fairy_Types is a 4-way species typing switch. The two axes 
+// are independent: bit 1 turns Fairy on, bit 0 turns retypings on.
+// Fairy is active whenever the value is >= TYPE_MODE_FAIRY.
+#define TYPE_MODE_VANILLA        0  // original pre-Fairy, pre-rebalance types
+#define TYPE_MODE_ALTERED        1  // this hack's retypings, still no Fairy
+#define TYPE_MODE_FAIRY          2  // official Gen 6 Fairy, no other changes
+#define TYPE_MODE_ALTERED_FAIRY  3  // this hack's retypings AND its own Fairy picks
+#define TYPE_MODE_COUNT          4
+
 #endif // GUARD_CONSTANTS_POKEMON_H

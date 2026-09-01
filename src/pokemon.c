@@ -5726,6 +5726,52 @@ static const struct {
     { SPECIES_MAWILE,      { TYPE_STEEL,   TYPE_STEEL   } },
 };
 
+// The two tables below are the second axis of tx_Mode_Fairy_Types.
+// The hack's non-Fairy retypings. Active in ALTERED and ALTERED_FAIRY.
+static const struct {
+    u16 species;
+    u8 types[2];
+} sAlteredTypes[] = {
+    { SPECIES_ARBOK,       { TYPE_POISON,   TYPE_DARK     } },
+    { SPECIES_MARILL,      { TYPE_WATER,    TYPE_NORMAL   } },
+    { SPECIES_AZUMARILL,   { TYPE_WATER,    TYPE_NORMAL   } },
+    { SPECIES_BRAVIARY,    { TYPE_FIGHTING, TYPE_FLYING   } },
+    { SPECIES_ELECTIVIRE,  { TYPE_ELECTRIC, TYPE_FIGHTING } },
+    { SPECIES_GREAVARD,    { TYPE_GHOST,    TYPE_NORMAL   } },
+    { SPECIES_HOUNDSTONE,  { TYPE_GHOST,    TYPE_NORMAL   } },
+    { SPECIES_SABLEYE,     { TYPE_GHOST,    TYPE_ROCK     } },
+};
+
+// The hack's own Fairy assignments, which are NOT the official Gen 6 set.
+// Active only in ALTERED_FAIRY, where they outrank sAlteredTypes.
+static const struct {
+    u16 species;
+    u8 types[2];
+} sAlteredFairyTypes[] = {
+    { SPECIES_RAPIDASH,    { TYPE_FIRE,     TYPE_FAIRY    } },
+    { SPECIES_MR_MIME,     { TYPE_PSYCHIC,  TYPE_PSYCHIC  } },
+    { SPECIES_MEGANIUM,    { TYPE_GRASS,    TYPE_FAIRY    } },
+    { SPECIES_BELLOSSOM,   { TYPE_GRASS,    TYPE_FAIRY    } },
+    { SPECIES_MARILL,      { TYPE_WATER,    TYPE_NORMAL   } },
+    { SPECIES_AZUMARILL,   { TYPE_WATER,    TYPE_NORMAL   } },
+    { SPECIES_SNUBBULL,    { TYPE_NORMAL,   TYPE_FAIRY    } },
+    { SPECIES_GRANBULL,    { TYPE_NORMAL,   TYPE_FAIRY    } },
+    { SPECIES_CELEBI,      { TYPE_GRASS,    TYPE_FAIRY    } },
+    { SPECIES_DELCATTY,    { TYPE_NORMAL,   TYPE_FAIRY    } },
+    { SPECIES_GALLADE,     { TYPE_FIGHTING, TYPE_FAIRY    } },
+    { SPECIES_LUVDISC,     { TYPE_WATER,    TYPE_FAIRY    } },
+    { SPECIES_VANILLITE,   { TYPE_ICE,      TYPE_FAIRY    } },
+    { SPECIES_VANILLISH,   { TYPE_ICE,      TYPE_FAIRY    } },
+    { SPECIES_VANILLUXE,   { TYPE_ICE,      TYPE_FAIRY    } },
+    { SPECIES_GOREBYSS,    { TYPE_WATER,    TYPE_FAIRY    } },
+    { SPECIES_ABSOL,       { TYPE_DARK,     TYPE_FAIRY    } },
+    { SPECIES_CHIMECHO,    { TYPE_FAIRY,    TYPE_PSYCHIC  } },
+    { SPECIES_DECIBELLE,   { TYPE_FAIRY,    TYPE_STEEL    } },
+    { SPECIES_MISMAGIUS,   { TYPE_GHOST,    TYPE_FAIRY    } },
+    { SPECIES_MIMIKYU,     { TYPE_GHOST,    TYPE_DARK     } },
+    { SPECIES_MAWILE,      { TYPE_STEEL,    TYPE_STEEL    } },
+};
+
 enum Type GetSpeciesType(u16 species, u8 slot)
 {
     species = SanitizeSpeciesId(species);
@@ -5733,7 +5779,34 @@ enum Type GetSpeciesType(u16 species, u8 slot)
     if (RandomizerFeatureEnabled(RANDOMIZE_MON_TYPES))
         return RandomizeMonType(species, slot);
 #endif
-    if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Fairy_Types == 0)
+    u32 typeMode = gSaveBlock3Ptr->challengeSettings.tx_Mode_Fairy_Types;
+
+    /*  Same precedence the fork used, expressed as overrides on the stored
+     *  modern types rather than four parallel arrays:
+     *    ALTERED_FAIRY -> sAlteredFairyTypes, then sAlteredTypes, then stored
+     *    ALTERED       -> sAlteredTypes, then sPreFairyTypes, then stored
+     *    VANILLA       -> sPreFairyTypes, then stored
+     *    FAIRY         -> stored
+     */
+    if (typeMode == TYPE_MODE_ALTERED_FAIRY)
+    {
+        for (u32 i = 0; i < ARRAY_COUNT(sAlteredFairyTypes); i++)
+        {
+            if (sAlteredFairyTypes[i].species == species)
+                return sAlteredFairyTypes[i].types[slot];
+        }
+    }
+
+    if (typeMode == TYPE_MODE_ALTERED || typeMode == TYPE_MODE_ALTERED_FAIRY)
+    {
+        for (u32 i = 0; i < ARRAY_COUNT(sAlteredTypes); i++)
+        {
+            if (sAlteredTypes[i].species == species)
+                return sAlteredTypes[i].types[slot];
+        }
+    }
+
+    if (typeMode < TYPE_MODE_FAIRY)
     {
         for (u32 i = 0; i < ARRAY_COUNT(sPreFairyTypes); i++)
         {
@@ -5788,7 +5861,8 @@ static const struct {
 enum Type GetMoveType(enum Move moveId)
 {
     enum Type type = gMovesInfo[SanitizeMoveId(moveId)].type;
-    if (type == TYPE_FAIRY && gSaveBlock3Ptr->challengeSettings.tx_Mode_Fairy_Types == 0)
+    // Fairy axis only. The ALTERED axis deliberately does not retype moves.
+    if (type == TYPE_FAIRY && gSaveBlock3Ptr->challengeSettings.tx_Mode_Fairy_Types < TYPE_MODE_FAIRY)
     {
         for (u32 i = 0; i < ARRAY_COUNT(sFairyMoveAltTypes); i++)
         {
