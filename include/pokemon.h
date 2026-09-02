@@ -876,6 +876,7 @@ enum HoennDexOrder SpeciesToHoennPokedexNum(u16 species);
 enum JohtoDexOrder SpeciesToJohtoPokedexNum(u16 species);
 enum ObtainableDexOrder SpeciesToObtainablePokedexNum(u16 species);
 enum NationalDexOrder RegionalToNationalOrder(u32 regionNum);
+u32 GetRegionalDexCount(void);
 enum NationalDexOrder KantoToNationalOrder(enum KantoDexOrder kantoNum);
 enum NationalDexOrder HoennToNationalOrder(enum HoennDexOrder hoennNum);
 enum NationalDexOrder JohtoToNationalOrder(enum JohtoDexOrder johtoNum);

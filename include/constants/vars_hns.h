@@ -153,7 +153,14 @@
 #define VAR_UNUSED_HNS_0x40FC                            0x40FC
 #define VAR_UNUSED_HNS_0x40FD                            0x40FD
 #define VAR_STARTER_REGION                               0x40FE
-#define VAR_UNUSED_HNS_0x40FF                            0x40FF
+// How far the staged regional dex is
+#define VAR_DEX_STAGE                                    0x40FF
+
+#define DEX_STAGE_JOHTO          0
+#define DEX_STAGE_KANTO          1
+#define DEX_STAGE_ALOLA          2
+#define DEX_STAGE_SINJOH         3
+#define DEX_STAGE_COUNT          4
 
 #define STARTER_REGION_JOHTO     0
 #define STARTER_REGION_KANTO     1

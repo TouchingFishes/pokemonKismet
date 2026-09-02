@@ -2191,7 +2191,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
     {
     default:
     case DEX_MODE_HOENN:
-        temp_dexCount = REGIONAL_DEX_COUNT;
+        temp_dexCount = GetRegionalDexCount();
         temp_isHoennDex = TRUE;
         break;
     case DEX_MODE_NATIONAL:
@@ -2202,7 +2202,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         }
         else
         {
-            temp_dexCount = REGIONAL_DEX_COUNT;
+            temp_dexCount = GetRegionalDexCount();
             temp_isHoennDex = TRUE;
         }
         break;
