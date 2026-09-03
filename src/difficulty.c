@@ -15,7 +15,7 @@
 // 8-badge build simply never indexes past entry 8.
 static const u8 sBadgeCountLevelTable[] =
 {
-     4,  8, 12, 16, 20, 24, 28, 32, 36,  //  0-8 badges
+     4,  8, 12, 16, 20, 24, 28, 35, 39,  //  0-8 badges
     40, 43, 46, 49, 52, 55, 58, 61,      // 9-16 badges
 };
 

@@ -9298,7 +9298,7 @@ Mugshot: Pink
 Items: Full Restore / Full Restore
 
 SPECIES_XATU @ ITEM_SITRUS_BERRY
-Level: 48
+Level: Badge+9
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_AIR_SLASH
 - MOVE_BATON_PASS
@@ -9306,7 +9306,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PSYCHIC
 
 SPECIES_SLOWKING @ ITEM_QUICK_CLAW
-Level: 50
+Level: Badge+11
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_ICE_BEAM
 - MOVE_FLAMETHROWER
@@ -9314,7 +9314,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PSYCHIC
 
 SPECIES_PSYCHU
-Level: 48
+Level: Badge+9
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_BATON_PASS
 - MOVE_CALM_MIND
@@ -9322,7 +9322,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PSYCHIC
 
 SPECIES_EXEGGUTOR
-Level: 50
+Level: Badge+11
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_ANCIENT_POWER
 - MOVE_EGG_BOMB
@@ -9330,7 +9330,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PSYCHIC
 
 SPECIES_XATU @ ITEM_TWISTED_SPOON
-Level: 51
+Level: Badge+12
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DRILL_PECK
 - MOVE_MYSTICAL_FIRE
@@ -9349,7 +9349,7 @@ Mugshot: Pink
 Items: Full Restore / Full Restore
 
 SPECIES_XATU @ ITEM_TWISTED_SPOON
-Level: 66
+Level: 67
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_AIR_SLASH
 - MOVE_BATON_PASS
@@ -9357,7 +9357,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PSYCHIC
 
 SPECIES_PSYCHU @ ITEM_FOCUS_BAND
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_BATON_PASS
 - MOVE_CALM_MIND
@@ -9365,7 +9365,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PSYCHIC
 
 SPECIES_EXEGGUTOR @ ITEM_SITRUS_BERRY
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_ANCIENT_POWER
 - MOVE_SLEEP_POWDER
@@ -9373,7 +9373,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_SOFT_BOILED
 
 SPECIES_BRONZONG @ ITEM_LEFTOVERS
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_CALM_MIND
 - MOVE_POWER_GEM
@@ -9381,7 +9381,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PSYCHIC
 
 SPECIES_SLOWKING @ ITEM_QUICK_CLAW
-Level: 66
+Level: 67
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_ICE_BEAM
 - MOVE_FLAMETHROWER
@@ -9389,7 +9389,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PSYCHIC
 
 SPECIES_XATU @ ITEM_TWISTED_SPOON
-Level: 68
+Level: 69
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DRILL_PECK
 - MOVE_MYSTICAL_FIRE
@@ -9408,7 +9408,7 @@ Mugshot: Orange
 Items: Full Restore / Full Restore
 
 SPECIES_BRAVIARY
-Level: 54
+Level: Badge+15
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_ACROBATICS
 - MOVE_ROCK_TOMB
@@ -9416,7 +9416,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_SUPERPOWER
 
 SPECIES_HITMONCHAN @ ITEM_BLACK_BELT
-Level: 52
+Level: Badge+13
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_MACH_PUNCH
 - MOVE_THUNDER_PUNCH
@@ -9424,7 +9424,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_FIRE_PUNCH
 
 SPECIES_STEELIX @ ITEM_SOFT_SAND
-Level: 53
+Level: Badge+14
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_CRUNCH
 - MOVE_EARTHQUAKE
@@ -9432,7 +9432,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_HEAVY_SLAM
 
 SPECIES_HITMONLEE @ ITEM_BLACK_BELT
-Level: 52
+Level: Badge+13
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DOUBLE_EDGE
 - MOVE_EARTHQUAKE
@@ -9440,7 +9440,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_HI_JUMP_KICK
 
 SPECIES_MACHAMP @ ITEM_BLACK_BELT
-Level: 55
+Level: Badge+16
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DYNAMIC_PUNCH
 - MOVE_ROCK_SLIDE
@@ -9459,7 +9459,7 @@ Mugshot: Orange
 Items: Full Restore / Full Restore
 
 SPECIES_STEELIX @ ITEM_HARD_STONE
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_CRUNCH
 - MOVE_EARTHQUAKE
@@ -9467,7 +9467,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_HEAVY_SLAM
 
 SPECIES_BRAVIARY @ ITEM_CHOICE_BAND
-Level: 68
+Level: 69
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DRILL_PECK
 - MOVE_ROCK_SLIDE
@@ -9475,7 +9475,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_SUPERPOWER
 
 SPECIES_HITMONLEE @ ITEM_BLACK_BELT
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DOUBLE_EDGE
 - MOVE_EARTHQUAKE
@@ -9483,7 +9483,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_HI_JUMP_KICK
 
 SPECIES_HITMONCHAN @ ITEM_BLACK_BELT
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_MACH_PUNCH
 - MOVE_THUNDER_PUNCH
@@ -9491,7 +9491,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_FIRE_PUNCH
 
 SPECIES_BLAZIKEN
-Level: 68
+Level: 69
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_BLAZE_KICK
 - MOVE_BRICK_BREAK
@@ -9499,7 +9499,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_SWORDS_DANCE
 
 SPECIES_MACHAMP @ ITEM_BLACK_BELT
-Level: 68
+Level: 69
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DYNAMIC_PUNCH
 - MOVE_ROCK_SLIDE
@@ -9518,7 +9518,7 @@ Mugshot: Yellow
 Items: Full Restore / Full Restore
 
 SPECIES_UMBREON @ ITEM_SITRUS_BERRY
-Level: 53
+Level: Badge+14
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_FAINT_ATTACK
 - MOVE_DOUBLE_TEAM
@@ -9526,7 +9526,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_MOONLIGHT
 
 SPECIES_MISMAGIUS
-Level: 55
+Level: Badge+16
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_SHADOW_BALL
 - MOVE_MAGICAL_LEAF
@@ -9534,7 +9534,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_CONFUSE_RAY
 
 SPECIES_VILEPLUME @ ITEM_LEFTOVERS
-Level: 54
+Level: Badge+15
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_SLEEP_POWDER
 - MOVE_GIGA_DRAIN
@@ -9542,7 +9542,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_SUBSTITUTE
 
 SPECIES_BOMBIRDIER
-Level: 55
+Level: Badge+16
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_ROCK_SLIDE
 - MOVE_SKY_ATTACK
@@ -9550,7 +9550,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_HAZE
 
 SPECIES_HOUNDOOM @ ITEM_BLACK_GLASSES
-Level: 57
+Level: Badge+18
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_FLAMETHROWER
 - MOVE_DARK_PULSE
@@ -9569,7 +9569,7 @@ Mugshot: Yellow
 Items: Full Restore / Full Restore
 
 SPECIES_UMBREON @ ITEM_SITRUS_BERRY
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_COSMIC_POWER
 - MOVE_SHADOW_BALL
@@ -9577,7 +9577,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_BATON_PASS
 
 SPECIES_KROLUCARD @ ITEM_BLACK_GLASSES
-Level: 68
+Level: 69
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_DRAIN_LIFE
 - MOVE_SILVER_WIND
@@ -9585,7 +9585,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_DARK_PULSE
 
 SPECIES_MISMAGIUS @ ITEM_SCOPE_LENS
-Level: 68
+Level: 69
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_SHADOW_BALL
 - MOVE_MAGICAL_LEAF
@@ -9593,7 +9593,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_POWER_GEM
 
 SPECIES_BOMBIRDIER @ ITEM_HARD_STONE
-Level: 68
+Level: 69
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_STONE_EDGE
 - MOVE_AERIAL_ACE
@@ -9601,7 +9601,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_SOFT_BOILED
 
 SPECIES_VILEPLUME @ ITEM_LEFTOVERS
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_SLEEP_POWDER
 - MOVE_GIGA_DRAIN
@@ -9609,7 +9609,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_SUBSTITUTE
 
 SPECIES_HOUNDOOM @ ITEM_CHARCOAL
-Level: 69
+Level: 70
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_FLAMETHROWER
 - MOVE_DARK_PULSE
@@ -9628,7 +9628,7 @@ Mugshot: Purple
 Items: Full Restore / Full Restore
 
 SPECIES_MUK @ ITEM_LEFTOVERS
-Level: 52
+Level: Badge+13
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_MINIMIZE
 - MOVE_FIRE_BLAST
@@ -9636,7 +9636,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_TOXIC
 
 SPECIES_QWILFISH
-Level: 50
+Level: Badge+11
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_SURF
 - MOVE_TOXIC
@@ -9644,7 +9644,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_GUNK_SHOT
 
 SPECIES_WEEZING @ ITEM_POISON_BARB
-Level: 52
+Level: Badge+13
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_THUNDERBOLT
 - MOVE_GUNK_SHOT
@@ -9652,7 +9652,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PROTECT
 
 SPECIES_FORRETRESS
-Level: 51
+Level: Badge+12
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_ZAP_CANNON
 - MOVE_STEAMROLLER
@@ -9660,7 +9660,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_TOXIC
 
 SPECIES_CROBAT @ ITEM_BRIGHT_POWDER
-Level: 53
+Level: Badge+14
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DOUBLE_TEAM
 - MOVE_TOXIC
@@ -9679,7 +9679,7 @@ Mugshot: Purple
 Items: Full Restore / Full Restore
 
 SPECIES_QWILFISH @ ITEM_SILK_SCARF
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DIVE
 - MOVE_EXPLOSION
@@ -9687,7 +9687,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_GUNK_SHOT
 
 SPECIES_MUK @ ITEM_LEFTOVERS
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_MINIMIZE
 - MOVE_FIRE_BLAST
@@ -9695,7 +9695,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_TOXIC
 
 SPECIES_WEEZING @ ITEM_POISON_BARB
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_THUNDERBOLT
 - MOVE_GUNK_SHOT
@@ -9703,7 +9703,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PROTECT
 
 SPECIES_DRAPION @ ITEM_QUICK_CLAW
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_CROSS_POISON
 - MOVE_CRUNCH
@@ -9711,7 +9711,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_TOXIC
 
 SPECIES_FORRETRESS @ ITEM_SITRUS_BERRY
-Level: 67
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_ZAP_CANNON
 - MOVE_STEAMROLLER
@@ -9719,7 +9719,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_TOXIC
 
 SPECIES_CROBAT @ ITEM_BRIGHT_POWDER
-Level: 68
+Level: 69
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_PROTECT
 - MOVE_FLY
@@ -9738,7 +9738,7 @@ Items: Full Restore / Full Restore
 Mugshot: Blue
 
 SPECIES_EELEKTROSS @ ITEM_LEFTOVERS
-Level: 57
+Level: Badge+18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDERBOLT
 - MOVE_DRAGON_CLAW
@@ -9746,7 +9746,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HYPER_BEAM
 
 SPECIES_HAXORUS @ ITEM_SILK_SCARF
-Level: 57
+Level: Badge+18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_DRAGON_CLAW
 - MOVE_X_SCISSOR
@@ -9754,7 +9754,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HYPER_BEAM
 
 SPECIES_LUCARIO @ ITEM_BLACK_BELT
-Level: 57
+Level: Badge+18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_PSYCHIC
 - MOVE_AURA_SPHERE
@@ -9762,7 +9762,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HYPER_BEAM
 
 SPECIES_DRAGONITE @ ITEM_DRAGON_FANG
-Level: 59
+Level: Badge+20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_OUTRAGE
 - MOVE_THUNDER
@@ -9770,7 +9770,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_BLIZZARD
 
 SPECIES_AERODACTYL @ ITEM_SITRUS_BERRY
-Level: 58
+Level: Badge+19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_AERIAL_ACE
 - MOVE_HEAD_SMASH
@@ -9778,7 +9778,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HYPER_BEAM
 
 SPECIES_DRAGONITE @ ITEM_LIECHI_BERRY
-Level: 59
+Level: Badge+20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_TWISTER
 - MOVE_DRAGON_DANCE
@@ -9797,7 +9797,7 @@ Items: Full Restore / Full Restore
 Mugshot: Blue
 
 SPECIES_EELEKTROSS @ ITEM_LEFTOVERS
-Level: 69
+Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDERBOLT
 - MOVE_DRAGON_CLAW
@@ -9805,7 +9805,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HYPER_BEAM
 
 SPECIES_HAXORUS @ ITEM_SITRUS_BERRY
-Level: 68
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_BLIZZARD
 - MOVE_EXTREME_SPEED
@@ -9813,7 +9813,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HYPER_BEAM
 
 SPECIES_LUCARIO @ ITEM_BLACK_BELT
-Level: 69
+Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_PSYCHIC
 - MOVE_AURA_SPHERE
@@ -9821,7 +9821,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HYPER_BEAM
 
 SPECIES_DRAGONITE @ ITEM_SITRUS_BERRY
-Level: 70
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_BLIZZARD
 - MOVE_EXTREME_SPEED
@@ -9829,7 +9829,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HYPER_BEAM
 
 SPECIES_AERODACTYL @ ITEM_SCOPE_LENS
-Level: 69
+Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SKY_ATTACK
 - MOVE_ROCK_SLIDE
@@ -9837,7 +9837,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_IRON_TAIL
 
 SPECIES_DRAGONITE @ ITEM_SITRUS_BERRY
-Level: 70
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_BLIZZARD
 - MOVE_EXTREME_SPEED
