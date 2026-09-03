@@ -63,6 +63,7 @@ enum {
     ITEM_MODE_IGNORE_EV_CAP,
     ITEM_MODE_NEW_EFFECTIVENESS,
     ITEM_MODE_WEATHER,
+    ITEM_MODE_ABILITIES,
     ITEM_MODE_NEXT,
     ITEM_MODE_COUNT,
 };
@@ -410,6 +411,14 @@ static const u8 *const sDesc_WeatherMode[] = {
     COMPOUND_STRING("ABILITY WEATHER fades after 5\nturns. No stat buffs."),
     COMPOUND_STRING("ABILITY WEATHER fades after 5\nturns and buffs stats. GEN IX."),
 };
+static const u8 *const sChoices_OfficialKismet[] = {
+    COMPOUND_STRING("OFFICIAL"),
+    COMPOUND_STRING("KISMET"),
+};
+static const u8 *const sDesc_AbilityMode[] = {
+    COMPOUND_STRING("Every {PKMN} keeps its official\nABILITIES."),
+    COMPOUND_STRING("This game's own ABILITIES and the\n{PKMN} that carry them. Recommended."),
+};
 static const u8 *const sDesc_LegAbilities[] = {
     COMPOUND_STRING("PRESSURE stays as the main\nability of some legendaries."),
     COMPOUND_STRING("Legendaries have PRESSURE changed\nfor a better ability."),
@@ -558,6 +567,12 @@ static const struct ChallengeMenuItem sTabItems_Mode[] = {
         .descriptions = sDesc_WeatherMode,
         .numChoices   = 4,
         .choiceNames  = sChoices_WeatherMode,
+    },
+    [ITEM_MODE_ABILITIES] = {
+        .name         = COMPOUND_STRING("ABILITIES"),
+        .descriptions = sDesc_AbilityMode,
+        .numChoices   = 2,
+        .choiceNames  = sChoices_OfficialKismet,
     },
     [ITEM_MODE_NEXT] = {
         .name         = COMPOUND_STRING("NEXT"),
@@ -1431,6 +1446,7 @@ static void ApplyRecommendedPresets(void)
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = 0; // GEN 3
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_WEATHER)            = WEATHER_MODE_PERMANENT_BUFF;
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_ABILITIES)          = 1; // KISMET's new abilities
 }
 
 // =============================================================================
@@ -2046,6 +2062,7 @@ static void Task_ConfirmSaveYes(u8 taskId)
     cs->tx_Mode_IgnoreEVCap        = *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP);
     cs->tx_Mode_TypeEffectiveness  = *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS);
     cs->tx_Mode_Weather            = *GetSelectionPtr(TAB_MODE, ITEM_MODE_WEATHER);
+    cs->tx_Mode_Abilities          = *GetSelectionPtr(TAB_MODE, ITEM_MODE_ABILITIES);
     cs->optionStyle                = !*GetSelectionPtr(TAB_MODE, ITEM_MODE_SPLIT);
     cs->genOneRecharge             = *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE);
 
@@ -2274,6 +2291,7 @@ void CB2_InitChallengeMenu(void)
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = cs->tx_Mode_IgnoreEVCap;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = cs->tx_Mode_TypeEffectiveness;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_WEATHER)            = cs->tx_Mode_Weather;
+            *GetSelectionPtr(TAB_MODE, ITEM_MODE_ABILITIES)          = cs->tx_Mode_Abilities;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_SPLIT)              = !cs->optionStyle;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE)   = cs->genOneRecharge;
 
@@ -2290,6 +2308,7 @@ void CB2_InitChallengeMenu(void)
              && cs->tx_Mode_IgnoreEVCap == 1
              && cs->tx_Mode_TypeEffectiveness == 0
              && cs->tx_Mode_Weather == WEATHER_MODE_PERMANENT_BUFF
+             && cs->tx_Mode_Abilities == 1
              && cs->optionStyle == 0
              && cs->genOneRecharge == 0)
                 *GetSelectionPtr(TAB_MODE, ITEM_MODE_GAMEMODE) = 0; // RECOMMENDED

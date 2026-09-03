@@ -2480,6 +2480,10 @@ bool32 CanAbilityAbsorbMove(struct BattleContext *ctx)
         if (ctx->moveType == TYPE_FIRE)
             battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_DEF, 2);
         break;
+    case ABILITY_MAGMA_ARMOR:
+        if (ctx->moveType == TYPE_WATER && gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1)
+            battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_DEF, 2);
+        break;
     case ABILITY_WIND_RIDER:
         if (IsWindMove(ctx->move))
             battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_ATK, 1);
@@ -7069,6 +7073,11 @@ static inline u32 CalcAttackStat(struct BattleContext *ctx)
         break;
     case ABILITY_OVERGROW:
         if (moveType == TYPE_GRASS && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_ILLUMINATE:
+        if (moveType == TYPE_ELECTRIC && gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1
+         && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_PLUS:

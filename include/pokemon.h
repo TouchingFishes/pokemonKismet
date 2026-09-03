@@ -833,6 +833,7 @@ u32 GetSpeciesHeight(u16 species);
 u32 GetSpeciesWeight(u16 species);
 enum Type GetSpeciesType(u16 species, u8 slot);
 enum Ability GetSpeciesAbility(u16 species, u8 slot);
+const u8 *GetAbilityDescription(enum Ability ability);
 u32 GetSpeciesBaseHP(u16 species);
 u32 GetSpeciesBaseAttack(u16 species);
 u32 GetSpeciesBaseDefense(u16 species);

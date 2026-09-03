@@ -343,6 +343,7 @@ struct ChallengeSettings
     u8 tx_Mode_IgnoreEVCap:1;
     u8 tx_Mode_TypeEffectiveness:1;
     u8 tx_Mode_Weather:2;
+    u8 tx_Mode_Abilities:1;
 };
 
 struct SaveBlock3
