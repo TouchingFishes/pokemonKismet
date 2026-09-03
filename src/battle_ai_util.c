@@ -6,6 +6,7 @@
 #include "battle_ai_field_statuses.h"
 #include "battle_ai_util.h"
 #include "battle_ai_main.h"
+#include "battle_util.h"
 #include "battle_controllers.h"
 #include "battle_factory.h"
 #include "battle_setup.h"
@@ -3366,6 +3367,7 @@ static bool32 DoesBattlerTakeSandstormDamage(enum BattlerId battlerId, enum Abil
         return FALSE;
 
     if (!IS_BATTLER_ANY_TYPE(battlerId, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
+      && !IsShelteredFromSandstorm(ability)
       && ability != ABILITY_SAND_VEIL
       && ability != ABILITY_SAND_FORCE
       && ability != ABILITY_SAND_RUSH
@@ -3381,6 +3383,7 @@ static bool32 DoesBattlerTakeHailDamage(enum BattlerId battlerId, enum Ability a
         return FALSE;
 
     if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_ICE)
+      && !IsShelteredFromIcyWeather(ability)
       && ability != ABILITY_SNOW_CLOAK
       && ability != ABILITY_ICE_BODY
       && ability != ABILITY_MAGIC_GUARD

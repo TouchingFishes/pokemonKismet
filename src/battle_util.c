@@ -2112,6 +2112,34 @@ bool32 HasNoMonsToSwitch(enum BattlerId battler, u8 partyIdBattlerOn1, u8 partyI
     }
 }
 
+// New for Kismet: anything that profits from a damaging weather is at home in
+// it, so it is not chipped by it either. 2.0 grants that to the resistant types and
+// to a partial set of abilities; these two cover the rest
+bool32 IsShelteredFromSandstorm(enum Ability ability)
+{
+    if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 0)
+        return FALSE;
+
+    return ability == ABILITY_SAND_VEIL
+        || ability == ABILITY_SAND_RUSH
+        || ability == ABILITY_SAND_FORCE
+        || ability == ABILITY_SAND_STREAM
+        || ability == ABILITY_SAND_SPIT;
+}
+
+bool32 IsShelteredFromIcyWeather(enum Ability ability)
+{
+    if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 0)
+        return FALSE;
+
+    return ability == ABILITY_SNOW_CLOAK
+        || ability == ABILITY_SLUSH_RUSH
+        || ability == ABILITY_GLACIAL_DRIFT
+        || ability == ABILITY_SNOW_WARNING
+        || ability == ABILITY_ICE_FACE
+        || ability == ABILITY_FORECAST;
+}
+
 bool32 TryChangeBattleWeather(enum BattlerId battler, u32 battleWeatherId, enum Ability ability)
 {
     if (gBattleWeather & sBattleWeatherInfo[battleWeatherId].flag)

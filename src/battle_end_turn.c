@@ -136,7 +136,8 @@ static bool32 HandleEndTurnWeatherDamage(enum BattlerId battler)
         }
         break;
     case BATTLE_WEATHER_SANDSTORM:
-        if (ability != ABILITY_SAND_VEIL
+        if (!IsShelteredFromSandstorm(ability)
+         && ability != ABILITY_SAND_VEIL
          && ability != ABILITY_SAND_FORCE
          && ability != ABILITY_SAND_RUSH
          && ability != ABILITY_OVERCOAT
@@ -161,7 +162,8 @@ static bool32 HandleEndTurnWeatherDamage(enum BattlerId battler)
         }
         else if (currBattleWeather == BATTLE_WEATHER_HAIL)
         {
-            if (ability != ABILITY_SNOW_CLOAK
+            if (!IsShelteredFromIcyWeather(ability)
+             && ability != ABILITY_SNOW_CLOAK
              && ability != ABILITY_OVERCOAT
              && !IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
              && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERGROUND
