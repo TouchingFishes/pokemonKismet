@@ -456,7 +456,7 @@
 #define OBJ_EVENT_GFX_OLD_WOMAN_HNS              437
 #define OBJ_EVENT_GFX_PICNICKER_HNS              438
 #define OBJ_EVENT_GFX_PSYCHIC_M_HNS              439
-#define OBJ_EVENT_GFX_ROCKER_HNS                 440
+// 440 was OBJ_EVENT_GFX_ROCKER_HNS - replaced by GUITARIST_M_HNS, see MIGRATION_DECISIONS.md
 #define OBJ_EVENT_GFX_SAGE_HNS                   441
 #define OBJ_EVENT_GFX_SAGE_ELDER_HNS             442
 #define OBJ_EVENT_GFX_SAILOR_HNS                 443
@@ -782,7 +782,6 @@
 #define OBJ_EVENT_PAL_TAG_NPC_2_HNS               0x1171
 #define OBJ_EVENT_PAL_TAG_NPC_3_HNS               0x1172
 #define OBJ_EVENT_PAL_TAG_NPC_4_HNS               0x1173
-#define OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE_HNS  0x1174
 #define OBJ_EVENT_PAL_TAG_BUGSY_HNS               0x1175
 #define OBJ_EVENT_PAL_TAG_CHUCK_HNS               0x1176
 #define OBJ_EVENT_PAL_TAG_CLAIR_HNS               0x1177
@@ -795,13 +794,11 @@
 #define OBJ_EVENT_PAL_TAG_KIMONO_HNS              0x117E
 #define OBJ_EVENT_PAL_TAG_LANCE_HNS               0x117F
 #define OBJ_EVENT_PAL_TAG_LAPRAS_HNS              0x1180
-#define OBJ_EVENT_PAL_TAG_LEGENDARY_SHADOW_HNS    0x1181
 #define OBJ_EVENT_PAL_TAG_LIGHT_HNS               0x1182
 #define OBJ_EVENT_PAL_TAG_LIGHT_2_HNS             0x1183
 #define OBJ_EVENT_PAL_TAG_MORTY_HNS               0x1184
 #define OBJ_EVENT_PAL_TAG_PRYCE_HNS               0x1185
 #define OBJ_EVENT_PAL_TAG_RED_HNS                 0x1186
-#define OBJ_EVENT_PAL_TAG_ROCKET_1_HNS            0x1187
 #define OBJ_EVENT_PAL_TAG_ROCKET_2_HNS            0x1188
 #define OBJ_EVENT_PAL_TAG_ROCKET_3_HNS            0x1189
 #define OBJ_EVENT_PAL_TAG_ROCKET_4_HNS            0x118A
@@ -811,7 +808,6 @@
 #define OBJ_EVENT_PAL_TAG_SILVER_HNS              0x118E
 #define OBJ_EVENT_PAL_TAG_SLOWPOKE_HNS            0x118F
 #define OBJ_EVENT_PAL_TAG_SNORLAX_HNS             0x1190
-#define OBJ_EVENT_PAL_TAG_SSAQUA_HNS              0x1191
 #define OBJ_EVENT_PAL_TAG_STEVEN_HNS              0x1192
 #define OBJ_EVENT_PAL_TAG_TOWER_BEAM_HNS          0x1193
 #define OBJ_EVENT_PAL_TAG_TRAIN_HNS               0x1194
@@ -840,9 +836,7 @@
 #define OBJ_EVENT_PAL_TAG_SCIENTIST_TRAINER_HNS     0x11A9
 #define OBJ_EVENT_PAL_TAG_ACE_TRAINER_M_HNS         0x11AA
 #define OBJ_EVENT_PAL_TAG_ACE_TRAINER_F_HNS         0x11AB
-#define OBJ_EVENT_PAL_TAG_ROCKER_HNS                0x11AC
 #define OBJ_EVENT_PAL_TAG_BIRD_CATCHER_HNS          0x11AD
-#define OBJ_EVENT_PAL_TAG_FARMER_HNS                0x11AE
 #define OBJ_EVENT_PAL_TAG_GUITARIST_M_HNS           0x11AF
 #define OBJ_EVENT_PAL_TAG_BRAWLY_HNS                0x11B0
 #define OBJ_EVENT_PAL_TAG_DRAKE_HNS                 0x11B1

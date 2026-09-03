@@ -52,6 +52,12 @@ Pokefan M (pokefan_m_hns)             UNATTRIBUTED
   other credits file here. Left blank rather than assumed to share Pokefan_F's
   artist.
 
+Bug Catcher (bug_catcher_hns)         UNATTRIBUTED
+
+  Taken from pokemonHnS, which names no artist for it - Source A's 21 lines
+  cover 30-odd overworld sprites and Bug Catcher is not among them. The sheet it
+  replaced was 2.0's, itself a byte-for-byte copy of bug_catcher_frlg.
+
 
 Aroma Lady (aroma_lady_hns)           Kalarie                        [source B]
 Breeder M / F (breeder_m_hns,         Kalarie                        [source B]
@@ -79,7 +85,6 @@ Ace Trainer M / F                     Aveontrainer
 Bird Catcher (bird_catcher_hns)       Spherical Ice
 Farmer (farmer_hns)                   Spherical Ice
 Guitarist M (guitarist_m_hns)         Aveontrainer                   [source A]
-Rocker (rocker_hns)                   Kalarie                        [source B]
 
   ⚠ The Ace Trainer / Bird Catcher pairing is inferred, not stated. Moritz gave
   the two names without pairing them to the two sprites. Source A assigns

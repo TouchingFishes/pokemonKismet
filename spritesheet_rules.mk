@@ -203,9 +203,6 @@ $(OBJEVENTGFXDIR)/people/picnicker_hns.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/psychic_m_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/rocker_hns.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 4
-
 $(OBJEVENTGFXDIR)/people/sage_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

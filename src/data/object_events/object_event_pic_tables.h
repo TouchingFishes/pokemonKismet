@@ -3532,18 +3532,6 @@ static const struct SpriteFrameImage sPicTable_PsychicM_hns[] = {
     overworld_frame(gObjectEventPic_PsychicM_hns, 2, 4, 8),
 };
 
-static const struct SpriteFrameImage sPicTable_Rocker_hns[] = {
-    overworld_frame(gObjectEventPic_Rocker_hns, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Rocker_hns, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Rocker_hns, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Rocker_hns, 2, 4, 3),
-    overworld_frame(gObjectEventPic_Rocker_hns, 2, 4, 4),
-    overworld_frame(gObjectEventPic_Rocker_hns, 2, 4, 5),
-    overworld_frame(gObjectEventPic_Rocker_hns, 2, 4, 6),
-    overworld_frame(gObjectEventPic_Rocker_hns, 2, 4, 7),
-    overworld_frame(gObjectEventPic_Rocker_hns, 2, 4, 8),
-};
-
 static const struct SpriteFrameImage sPicTable_Sage_hns[] = {
     overworld_frame(gObjectEventPic_Sage_hns, 2, 4, 0),
     overworld_frame(gObjectEventPic_Sage_hns, 2, 4, 1),

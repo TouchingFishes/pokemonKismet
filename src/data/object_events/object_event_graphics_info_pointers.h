@@ -491,7 +491,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pryce_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicM_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PushableBoulder_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedNormal_hns;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rocker_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketF_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketM_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sabrina_hns;
@@ -1027,7 +1026,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OLD_WOMAN_HNS] = &gObjectEventGraphicsInfo_OldWoman_hns,
     [OBJ_EVENT_GFX_PICNICKER_HNS] = &gObjectEventGraphicsInfo_Picnicker_hns,
     [OBJ_EVENT_GFX_PSYCHIC_M_HNS] = &gObjectEventGraphicsInfo_PsychicM_hns,
-    [OBJ_EVENT_GFX_ROCKER_HNS] = &gObjectEventGraphicsInfo_Rocker_hns,
     [OBJ_EVENT_GFX_SAGE_HNS] = &gObjectEventGraphicsInfo_Sage_hns,
     [OBJ_EVENT_GFX_SAGE_ELDER_HNS] = &gObjectEventGraphicsInfo_SageElder_hns,
     [OBJ_EVENT_GFX_SAILOR_HNS] = &gObjectEventGraphicsInfo_Sailor_hns,
