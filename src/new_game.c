@@ -151,6 +151,7 @@ void SetDefaultChallengeSettings(void)
     gSaveblock3.challengeSettings.tx_Mode_Natures            = 0;
     gSaveblock3.challengeSettings.tx_Mode_IgnoreEVCap        = 1;
     gSaveblock3.challengeSettings.tx_Mode_TypeEffectiveness  = 0;
+    gSaveblock3.challengeSettings.tx_Mode_Weather            = WEATHER_MODE_PERMANENT_BUFF;
 
     // Randomizer defaults (shown when Randomizer is ON)
     gSaveblock3.challengeSettings.tx_Random_Similar          = 1;

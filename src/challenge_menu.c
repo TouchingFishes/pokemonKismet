@@ -62,6 +62,7 @@ enum {
     ITEM_MODE_NATURES,
     ITEM_MODE_IGNORE_EV_CAP,
     ITEM_MODE_NEW_EFFECTIVENESS,
+    ITEM_MODE_WEATHER,
     ITEM_MODE_NEXT,
     ITEM_MODE_COUNT,
 };
@@ -397,6 +398,18 @@ static const u8 *const sDesc_FairyTypes[] = {
     COMPOUND_STRING("FAIRY TYPE is added to certain\n{PKMN}, as in GEN VI."),
     COMPOUND_STRING("FAIRY TYPE is added and this\ngame's TYPE changes apply too."),
 };
+static const u8 *const sChoices_WeatherMode[] = {
+    COMPOUND_STRING("PERM"),
+    COMPOUND_STRING("PERM+"),
+    COMPOUND_STRING("TIMED"),
+    COMPOUND_STRING("TIMED+"),
+};
+static const u8 *const sDesc_WeatherMode[] = {
+    COMPOUND_STRING("ABILITY WEATHER lasts all battle.\nNo stat buffs. Same as GEN III."),
+    COMPOUND_STRING("ABILITY WEATHER lasts all battle\nand buffs stats. Recommended."),
+    COMPOUND_STRING("ABILITY WEATHER fades after 5\nturns. No stat buffs."),
+    COMPOUND_STRING("ABILITY WEATHER fades after 5\nturns and buffs stats. GEN IX."),
+};
 static const u8 *const sDesc_LegAbilities[] = {
     COMPOUND_STRING("PRESSURE stays as the main\nability of some legendaries."),
     COMPOUND_STRING("Legendaries have PRESSURE changed\nfor a better ability."),
@@ -539,6 +552,12 @@ static const struct ChallengeMenuItem sTabItems_Mode[] = {
         .descriptions = sDesc_GenOneRecharge,
         .numChoices   = 2,
         .choiceNames  = sChoices_Gen3Gen1,
+    },
+    [ITEM_MODE_WEATHER] = {
+        .name         = COMPOUND_STRING("WEATHER"),
+        .descriptions = sDesc_WeatherMode,
+        .numChoices   = 4,
+        .choiceNames  = sChoices_WeatherMode,
     },
     [ITEM_MODE_NEXT] = {
         .name         = COMPOUND_STRING("NEXT"),
@@ -1411,6 +1430,7 @@ static void ApplyRecommendedPresets(void)
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = 0; // OFF
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = 0; // GEN 3
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_WEATHER)            = WEATHER_MODE_PERMANENT_BUFF;
 }
 
 // =============================================================================
@@ -2025,6 +2045,7 @@ static void Task_ConfirmSaveYes(u8 taskId)
     cs->tx_Mode_Natures            = *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES);
     cs->tx_Mode_IgnoreEVCap        = *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP);
     cs->tx_Mode_TypeEffectiveness  = *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS);
+    cs->tx_Mode_Weather            = *GetSelectionPtr(TAB_MODE, ITEM_MODE_WEATHER);
     cs->optionStyle                = !*GetSelectionPtr(TAB_MODE, ITEM_MODE_SPLIT);
     cs->genOneRecharge             = *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE);
 
@@ -2252,6 +2273,7 @@ void CB2_InitChallengeMenu(void)
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = cs->tx_Mode_Natures;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = cs->tx_Mode_IgnoreEVCap;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = cs->tx_Mode_TypeEffectiveness;
+            *GetSelectionPtr(TAB_MODE, ITEM_MODE_WEATHER)            = cs->tx_Mode_Weather;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_SPLIT)              = !cs->optionStyle;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE)   = cs->genOneRecharge;
 
@@ -2267,6 +2289,7 @@ void CB2_InitChallengeMenu(void)
              && cs->tx_Mode_Natures == 0
              && cs->tx_Mode_IgnoreEVCap == 1
              && cs->tx_Mode_TypeEffectiveness == 0
+             && cs->tx_Mode_Weather == WEATHER_MODE_PERMANENT_BUFF
              && cs->optionStyle == 0
              && cs->genOneRecharge == 0)
                 *GetSelectionPtr(TAB_MODE, ITEM_MODE_GAMEMODE) = 0; // RECOMMENDED

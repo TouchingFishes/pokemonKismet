@@ -2125,7 +2125,11 @@ bool32 TryChangeBattleWeather(enum BattlerId battler, u32 battleWeatherId, enum 
         return FALSE;
     }
 
-    if (GetConfig(B_ABILITY_WEATHER) < GEN_6 && ability != ABILITY_NONE)
+    // Ability-set weather lasts the whole battle when the config predates Gen 6, or
+    // when the player's WEATHER mode asks for it. See WEATHER_MODE_* in constants/pokemon.h.
+    if (ability != ABILITY_NONE
+     && (GetConfig(B_ABILITY_WEATHER) < GEN_6
+      || !(gSaveBlock3Ptr->challengeSettings.tx_Mode_Weather & WEATHER_MODE_FLAG_TIMED)))
     {
         gBattleWeather = sBattleWeatherInfo[battleWeatherId].flag;
     }
@@ -7430,11 +7434,15 @@ static inline u32 CalcDefenseStat(struct BattleContext *ctx)
         break;
     }
 
+    // Both weather stat buffs are gated on the player's WEATHER mode, so turning it
+    // off gives the Gen 3 behaviour of weather that only chips and blocks accuracy.
+    u32 weatherBuffs = gSaveBlock3Ptr->challengeSettings.tx_Mode_Weather & WEATHER_MODE_FLAG_BUFFS;
+
     // sandstorm sp.def boost for rock types
-    if (GetConfig(B_SANDSTORM_SPDEF_BOOST) >= GEN_4 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SANDSTORM) && !usesDefStat)
+    if (weatherBuffs && GetConfig(B_SANDSTORM_SPDEF_BOOST) >= GEN_4 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SANDSTORM) && !usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
     // snow def boost for ice types
-    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW) && usesDefStat)
+    if (weatherBuffs && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW) && usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
 
     modifier = ApplyDefensiveBadgeBoost(modifier, battlerDef, move);

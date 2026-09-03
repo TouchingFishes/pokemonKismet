@@ -413,4 +413,17 @@ enum ShinyMode {
 #define TYPE_MODE_ALTERED_FAIRY  3  // this hack's retypings AND its own Fairy picks
 #define TYPE_MODE_COUNT          4
 
+// tx_Mode_Weather is a 4-way battle weather switch, built the same way: two
+// independent axes packed into one value. Bit 0 turns the defensive stat buffs
+// on (Sandstorm -> Rock Sp. Def, Snow -> Ice Def), bit 1 makes ability-set
+// weather expire after 5 turns instead of lasting the whole battle.
+#define WEATHER_MODE_FLAG_BUFFS      (1 << 0)
+#define WEATHER_MODE_FLAG_TIMED      (1 << 1)
+
+#define WEATHER_MODE_PERMANENT       0  // ability weather never ends, no stat buffs
+#define WEATHER_MODE_PERMANENT_BUFF  1  // ability weather never ends, buffs on (default)
+#define WEATHER_MODE_TIMED           2  // ability weather lasts 5 turns, no stat buffs
+#define WEATHER_MODE_TIMED_BUFF      3  // ability weather lasts 5 turns, buffs on
+#define WEATHER_MODE_COUNT           4
+
 #endif // GUARD_CONSTANTS_POKEMON_H
