@@ -26,7 +26,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_AROMA_LADY_HNS",
       "x": 10,
       "y": 38,
       "elevation": 0,
@@ -39,7 +39,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GUITARIST_M_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_BIRD_CATCHER_HNS",
       "x": 18,
       "y": 41,
       "elevation": 0,
@@ -78,7 +78,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_POKERANGER_M_HNS",
       "x": 14,
       "y": 23,
       "elevation": 0,

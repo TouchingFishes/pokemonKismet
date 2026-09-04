@@ -52,7 +52,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GUITARIST_M_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_BIRD_CATCHER_HNS",
       "x": 43,
       "y": 23,
       "elevation": 0,
@@ -65,7 +65,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M_HNS",
       "x": 61,
       "y": 22,
       "elevation": 0,

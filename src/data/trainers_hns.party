@@ -169,8 +169,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_IAN_HNS ===
 Name: IAN
-Class: Gambler Hns
-Pic: Gamer Frlg
+Class: Collector Hns
+Pic: Collector
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No

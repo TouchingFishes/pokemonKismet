@@ -111,18 +111,33 @@ Collector (collector_hns)             Aveontrainer                   [source A]
 Hoenn overworld sprites
 -----------------------
 
-Brawly, Drake, Flannery, Glacia, Greta, Liza, Lucy, Norman, Phoebe, Roxanne,
-Sidney, Spenser, Tasso, Tate, Wallace, Wally, Wattson, Winona
-                                      UNATTRIBUTED - artist not found
+Gym Leaders   Brawly, Flannery, Liza, Norman, Roxanne, Tate, Wallace,
+              Wattson, Winona
+Elite Four    Drake, Glacia, Phoebe, Sidney          Poffin_Case
+Frontier      Greta, Lucy, Spenser, Tasso
 
-  These 18 came from a loose Assets folder with no credits file, and no
-  attribution for them exists in any source here. Both Crystal decomps' credits
-  and both sprite-resource credits files were searched.
+Wally                                 Poffin_Case (inferred - see below)
 
-  One near miss worth recording so it is not re-checked: source A credits a
-  Wallace OW sprite to RavePossum / PoffinCase. That is a DIFFERENT sheet - the
-  two were compared pixel by pixel and share no colour mapping, so the credit
-  does not transfer to the one shipped here.
+  Attribution from Moritz, who sourced the sheets: Poffin_Case made the Hoenn
+  Gym Leader, Elite Four and Frontier Brain overworld sprites. Source A spells
+  the name "PoffinCase"; treat the two as the same artist.
+
+  ⚠ Wally is credited by inference, not by that statement. He arrived in the
+  same batch from the same folder, but he is not a Gym Leader, Elite Four member
+  or Frontier Brain, so the statement does not cover him. Confirm before relying
+  on it.
+
+  These sheets came from a loose Assets folder with no credits file, which is why
+  this section previously read UNATTRIBUTED - both Crystal decomps' credits and
+  both sprite-resource credits files had been searched without result.
+
+  ⚠ A pixel comparison had argued AGAINST this credit and was wrong. Source A
+  credits a Wallace OW sprite to RavePossum / PoffinCase; that sheet and the one
+  shipped here share no colour mapping, and the difference was read as evidence
+  the credit did not transfer. It only ever showed the two sheets are different
+  versions - an artist making two versions of the same character defeats that
+  test entirely. Direct testimony from whoever sourced an asset outranks
+  inference from the asset itself.
 
   Phoebe and Roxanne were 17- and 18-colour images and had to be reduced to fit
   4bpp. The merges are recorded here for honesty:
