@@ -14615,7 +14615,7 @@
     {
       "id": "LAYOUT_ROUTE25_HNS",
       "name": "Route25_hns_Layout",
-      "width": 112,
+      "width": 77,
       "height": 35,
       "primary_tileset": "gTileset_Kanto_General_Hns",
       "secondary_tileset": "gTileset_CeruleanCity_Hns",
@@ -16333,6 +16333,18 @@
       "secondary_tileset": "gTileset_House_Lab_Hns",
       "border_filepath": "data/layouts/KameHouse_hns/border.bin",
       "blockdata_filepath": "data/layouts/KameHouse_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAPE_HNS",
+      "name": "CeruleanCape_hns_Layout",
+      "width": 60,
+      "height": 54,
+      "primary_tileset": "gTileset_Kanto_General_Hns",
+      "secondary_tileset": "gTileset_CeruleanCity_Hns",
+      "border_filepath": "data/layouts/CeruleanCape_hns/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCape_hns/map.bin",
       "game_version": "hns",
       "layout_version": "hns"
     }

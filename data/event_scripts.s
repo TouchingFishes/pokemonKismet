@@ -1941,6 +1941,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/IndigoPlateau_hns/scripts.inc"
 	.include "data/maps/Route24_hns/scripts.inc"
 	.include "data/maps/Route25_hns/scripts.inc"
+	.include "data/maps/CeruleanCape_hns/scripts.inc"
 	.include "data/maps/Route26_hns/scripts.inc"
 	.include "data/maps/Route26North_hns/scripts.inc"
 	.include "data/maps/Route27_hns/scripts.inc"

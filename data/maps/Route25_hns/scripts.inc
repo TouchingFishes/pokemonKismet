@@ -5,11 +5,6 @@ Route25_hns_MapScripts::
 
 Route25_MapScript_OnTransition::
 	callnative SetTimeBasedEncounters
-	goto_if_eq VAR_SUICUNE_ENCOUNTERS, 7, Route25_EventScript_SetSuicuneSceneMid
-	end
-
-Route25_EventScript_SetSuicuneSceneMid::
-	setobjectxyperm LOCALID_ROUTE25_EUSINE, 98, 14
 	end
 
 Route25_EventScript_MistyRematch::
@@ -92,41 +87,41 @@ Route25_EventScript_BillsHouseSign::
 
 Route25_Trigger_MistyRight::
 	lock
-	turnobject LOCALID_ROUTE25_MISTY, DIR_SOUTH
+	turnobject LOCALID_CERULEAN_CAPE_MISTY, DIR_SOUTH
 	delay 40
-	turnobject LOCALID_ROUTE25_MAN, DIR_SOUTH
+	turnobject LOCALID_CERULEAN_CAPE_MAN, DIR_SOUTH
 	playse SE_PIN
-	applymovement2 LOCALID_ROUTE25_MAN, Common_Movement_ExclamationMark
+	applymovement2 LOCALID_CERULEAN_CAPE_MAN, Common_Movement_ExclamationMark
 	delay 55
-	waitmovement LOCALID_ROUTE25_MAN
-	applymovement2 LOCALID_ROUTE25_MAN, Route25_Movement_ManLeaveRight
+	waitmovement LOCALID_CERULEAN_CAPE_MAN
+	applymovement2 LOCALID_CERULEAN_CAPE_MAN, Route25_Movement_ManLeaveRight
 	waitmovement 0
-	applymovement2 LOCALID_ROUTE25_MISTY, Route25_Movement_MistyWalkToPlayerRight
+	applymovement2 LOCALID_CERULEAN_CAPE_MISTY, Route25_Movement_MistyWalkToPlayerRight
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	goto Route25_EventScript_Misty
 Route25_Trigger_MistyLeft::
 	lock
-	turnobject LOCALID_ROUTE25_MISTY, DIR_SOUTH
+	turnobject LOCALID_CERULEAN_CAPE_MISTY, DIR_SOUTH
 	delay 40
-	turnobject LOCALID_ROUTE25_MAN, DIR_SOUTH
+	turnobject LOCALID_CERULEAN_CAPE_MAN, DIR_SOUTH
 	playse SE_PIN
-	applymovement2 LOCALID_ROUTE25_MAN, Common_Movement_ExclamationMark
+	applymovement2 LOCALID_CERULEAN_CAPE_MAN, Common_Movement_ExclamationMark
 	delay 55
-	waitmovement LOCALID_ROUTE25_MAN
-	applymovement2 LOCALID_ROUTE25_MAN, Route25_Movement_ManLeaveLeft
+	waitmovement LOCALID_CERULEAN_CAPE_MAN
+	applymovement2 LOCALID_CERULEAN_CAPE_MAN, Route25_Movement_ManLeaveLeft
 	waitmovement 0
-	applymovement2 LOCALID_ROUTE25_MISTY, Route25_Movement_MistyWalkToPlayerLeft
+	applymovement2 LOCALID_CERULEAN_CAPE_MISTY, Route25_Movement_MistyWalkToPlayerLeft
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	goto Route25_EventScript_Misty
 Route25_EventScript_Misty::
 	msgbox Route25_Text_MistyDate, MSGBOX_DEFAULT
 	closemessage
-	applymovement2 LOCALID_ROUTE25_MISTY, Route25_Movement_MistyLeave
+	applymovement2 LOCALID_CERULEAN_CAPE_MISTY, Route25_Movement_MistyLeave
 	waitmovement 0
-	removeobject LOCALID_ROUTE25_MISTY
-	removeobject LOCALID_ROUTE25_MAN
+	removeobject LOCALID_CERULEAN_CAPE_MISTY
+	removeobject LOCALID_CERULEAN_CAPE_MAN
 	setflag FLAG_HIDE_ROUTE25_MISTY
 	clearflag FLAG_HIDE_CERULEAN_GYM_TRAINERS
 	setflag FLAG_HIDE_CERULEAN_GYM_POKEMON
@@ -140,7 +135,7 @@ Route25_Trigger_SuicuneLeft::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement OBJ_EVENT_ID_PLAYER
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
-	applymovement LOCALID_ROUTE25_SUICUNE, Route25_Movement_Suicune1
+	applymovement LOCALID_CERULEAN_CAPE_SUICUNE, Route25_Movement_Suicune1
 	playse SE_LEDGE
 	waitse
 	waitmovement 0
@@ -155,7 +150,7 @@ Route25_Trigger_SuicuneRight::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement OBJ_EVENT_ID_PLAYER
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
-	applymovement LOCALID_ROUTE25_SUICUNE, Route25_Movement_Suicune1
+	applymovement LOCALID_CERULEAN_CAPE_SUICUNE, Route25_Movement_Suicune1
 	playse SE_LEDGE
 	waitse
 	waitmovement 0
@@ -164,13 +159,13 @@ Route25_Trigger_SuicuneRight::
 	goto Route25_EventScript_SuicuneMerge
 Route25_EventScript_SuicuneMerge::
 	clearflag FLAG_HIDE_ROUTE25_EUSINE
-	addobject LOCALID_ROUTE25_EUSINE
-	applymovement LOCALID_ROUTE25_EUSINE, Route25_Movement_EusineEnter
+	addobject LOCALID_CERULEAN_CAPE_EUSINE
+	applymovement LOCALID_CERULEAN_CAPE_EUSINE, Route25_Movement_EusineEnter
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	msgbox Route25_Text_Eusine1, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROUTE25_EUSINE, Route25_Movement_EusineSide
+	applymovement LOCALID_CERULEAN_CAPE_EUSINE, Route25_Movement_EusineSide
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	msgbox Route25_Text_Eusine2, MSGBOX_DEFAULT
@@ -225,7 +220,7 @@ Route25_EventScript_Suicune::
 	lock
 	faceplayer
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
-	applymovement LOCALID_ROUTE25_SUICUNE, Route25_Movement_Suicune1
+	applymovement LOCALID_CERULEAN_CAPE_SUICUNE, Route25_Movement_Suicune1
 	playse SE_LEDGE
 	waitse
 	waitmovement 0
@@ -238,7 +233,7 @@ Route25_EventScript_Suicune::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route25_EventScript_SuicuneRan
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_ROUTE25_SUICUNE
+	removeobject LOCALID_CERULEAN_CAPE_SUICUNE
 	setflag FLAG_HIDE_ROUTE25_SUICUNE
 	fadescreenswapbuffers FADE_FROM_BLACK
 	goto_if_ge VAR_SUICUNE_ENCOUNTERS, 8, Route25_EventScript_SuicunePostGame
@@ -246,12 +241,12 @@ Route25_EventScript_Suicune::
 	call_if_eq VAR_TEMP_0, 99, Route25_AdjustPlayer
 	call_if_eq VAR_TEMP_0, 100, Route25_AdjustPlayerTwice
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
-	turnobject LOCALID_ROUTE25_EUSINE, DIR_NORTH
+	turnobject LOCALID_CERULEAN_CAPE_EUSINE, DIR_NORTH
 	msgbox Route25_Text_Eusine3, MSGBOX_DEFAULT
 	closemessage
-	applymovement2 LOCALID_ROUTE25_EUSINE, Route25_Movement_EusineLeave
+	applymovement2 LOCALID_CERULEAN_CAPE_EUSINE, Route25_Movement_EusineLeave
 	waitmovement 0
-	removeobject LOCALID_ROUTE25_EUSINE
+	removeobject LOCALID_CERULEAN_CAPE_EUSINE
 	setflag FLAG_HIDE_ROUTE25_EUSINE
 	clearflag FLAG_HIDE_CELADON_EUSINE
 	setvar VAR_SUICUNE_ENCOUNTERS, 8

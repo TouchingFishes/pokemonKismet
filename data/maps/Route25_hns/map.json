@@ -17,6 +17,11 @@
       "map": "MAP_ROUTE24_HNS",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_CERULEAN_CAPE_HNS",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -138,34 +143,6 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_ROUTE25_MISTY",
-      "graphics_id": "OBJ_EVENT_GFX_MISTY_HNS",
-      "x": 100,
-      "y": 17,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_ROUTE25_MISTY"
-    },
-    {
-      "local_id": "LOCALID_ROUTE25_MAN",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2_HNS",
-      "x": 100,
-      "y": 18,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_ROUTE25_MISTY"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SWABLU",
       "x": 18,
       "y": 12,
@@ -177,19 +154,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_NIGHT_POKEMON"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SPEAROW",
-      "x": 85,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -205,60 +169,6 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_ROUTE25_EUSINE",
-      "graphics_id": "OBJ_EVENT_GFX_EUSINE_HNS",
-      "x": 99,
-      "y": 23,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route25_EventScript_Eusine",
-      "flag": "FLAG_HIDE_ROUTE25_EUSINE"
-    },
-    {
-      "local_id": "LOCALID_ROUTE25_SUICUNE",
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SUICUNE",
-      "x": 99,
-      "y": 12,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route25_EventScript_Suicune",
-      "flag": "FLAG_HIDE_ROUTE25_SUICUNE"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_LUVDISC",
-      "x": 107,
-      "y": 27,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_RIGHT_UP_DOWN",
-      "movement_range_x": 10,
-      "movement_range_y": 3,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_LUVDISC",
-      "x": 108,
-      "y": 28,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_RIGHT_UP_DOWN",
-      "movement_range_x": 12,
-      "movement_range_y": 3,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_BUTTERFREE",
       "x": 53,
       "y": 28,
@@ -270,96 +180,11 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_CAPE_MISTY",
-      "graphics_id": "OBJ_EVENT_GFX_MISTY_HNS",
-      "x": 81,
-      "y": 17,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route25_EventScript_MistyRematch",
-      "flag": "FLAG_HIDE_CAPE_MISTY"
     }
   ],
-  "warp_events": [
-    {
-      "x": 85,
-      "y": 13,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE25_BILLS_HOUSE_HNS",
-      "dest_warp_id": "0"
-    }
-  ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 98,
-      "y": 21,
-      "elevation": 0,
-      "var": "VAR_CERULEAN_CITY_STATE",
-      "var_value": "2",
-      "script": "Route25_Trigger_MistyLeft"
-    },
-    {
-      "type": "trigger",
-      "x": 99,
-      "y": 21,
-      "elevation": 0,
-      "var": "VAR_CERULEAN_CITY_STATE",
-      "var_value": "2",
-      "script": "Route25_Trigger_MistyRight"
-    },
-    {
-      "type": "trigger",
-      "x": 99,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_SUICUNE_ENCOUNTERS",
-      "var_value": "6",
-      "script": "Route25_Trigger_SuicuneRight"
-    },
-    {
-      "type": "trigger",
-      "x": 98,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_SUICUNE_ENCOUNTERS",
-      "var_value": "6",
-      "script": "Route25_Trigger_SuicuneLeft"
-    },
-    {
-      "type": "trigger",
-      "x": 97,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_SUICUNE_ENCOUNTERS",
-      "var_value": "6",
-      "script": "Route25_Trigger_SuicuneLeftLeft"
-    },
-    {
-      "type": "trigger",
-      "x": 100,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_SUICUNE_ENCOUNTERS",
-      "var_value": "6",
-      "script": "Route25_Trigger_SuicuneRightRight"
-    }
-  ],
+  "warp_events": [],
+  "coord_events": [],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 82,
-      "y": 13,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route25_EventScript_BillsHouseSign"
-    },
     {
       "type": "hidden_item",
       "x": 50,
