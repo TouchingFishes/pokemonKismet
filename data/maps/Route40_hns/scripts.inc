@@ -195,3 +195,18 @@ Rotue40_EventScript_MonicaCompleted::
 	closemessage
 	release
 	end
+
+@ Referenced by OlivineBay_hns; the fork also places it on Route40 itself,
+@ whose own port is still pending - do not add a second copy there.
+Route40_EventScript_Shellder::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SHELLDER, CRY_MODE_NORMAL
+	msgbox Route40_Text_Shellder, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route40_Text_Shellder:
+	.string "SHELLDER: SHAAAR!$"

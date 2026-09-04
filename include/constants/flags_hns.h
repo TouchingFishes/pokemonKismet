@@ -859,8 +859,8 @@
 
 #define HNS_CONTENT_FLAGS_END                       0x308
 
-// Extended content flags (0x36A – 0x495)
-// 300 slots for new content; 0x496–0x4FF reserved for future expansion.
+// Extended content flags (0x36A – 0x49C)
+// 307 slots for new content; 0x49D–0x4FF reserved for future expansion.
 //
 // WARNING: this block butts directly against the trainer registered (match call)
 // flags below it, with NO gap. Those start at 0x310 and use one flag per rematch
@@ -1186,9 +1186,26 @@
 #define FLAG_PONI_CAVE_HIDDEN_ITEM_2                (HNS_EXTENDED_CONTENT_START + 297)
 #define FLAG_PONI_CAVE_HIDDEN_ITEM_1                (HNS_EXTENDED_CONTENT_START + 298)
 #define FLAG_MELEMELE_HIDDEN_ITEM                   (HNS_EXTENDED_CONTENT_START + 299)
-#define HNS_EXTENDED_CONTENT_COUNT                  300
+
+// The 11 maps ported in MIGRATION_DECISIONS.md section 22. Two NPC TM gifts and
+// five item balls. The fork spelled the TM flags FLAG_RECEIVED_TM_MUD_SLAP /
+// _MIMIC; both carry an _HNS suffix here because the unsuffixed names are
+// Hoenn's own TM-gift flags in flags.h and mean different TMs.
+// These are the first seven of the 0x496-0x4FF window (106 slots), which the
+// block below was reserved to grow into.
+#define FLAG_RECEIVED_TM_MUD_SLAP_HNS               (HNS_EXTENDED_CONTENT_START + 300)
+#define FLAG_RECEIVED_TM_MIMIC_HNS                  (HNS_EXTENDED_CONTENT_START + 301)
+#define FLAG_ITEM_CHERRYGROVE_BAY_SHOAL_SHELL       (HNS_EXTENDED_CONTENT_START + 302)
+#define FLAG_ITEM_ROUTE_32_SOUTH_SHOAL_SHELL_1      (HNS_EXTENDED_CONTENT_START + 303)
+#define FLAG_ITEM_ROUTE_32_SOUTH_SHOAL_SHELL_2      (HNS_EXTENDED_CONTENT_START + 304)
+#define FLAG_ITEM_OLIVINE_BAY_SHOAL_SALT            (HNS_EXTENDED_CONTENT_START + 305)
+#define FLAG_ITEM_STORMY_BEACH_TM_BEAT_UP           (HNS_EXTENDED_CONTENT_START + 306)
+
+
+//just fyi HNS_EXTENDED_CONTENT_START is 0x36A
+#define HNS_EXTENDED_CONTENT_COUNT                  307
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)
-// 0x496–0x4FF remaining reserved for future expansion
+// 0x49D–0x4FF remaining reserved for future expansion
 
 // Trainer registered (match call) flags — one per rematchable trainer
 #define TRAINER_REGISTERED_FLAGS_START               0x310

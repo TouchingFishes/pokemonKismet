@@ -343,3 +343,10 @@ Route35NationalParkGate_Text_ContestExplanation:
 	.string "for participating,\p"
 	.string "you also get to keep the bug POKéMON\n"
 	.string "you may have at the end of the contest.$"
+
+Route35NationalParkGate_Text_TMsAreOneTimeUse:
+	.string "A word of advice!\p"
+	.string "A TM, TECHNICAL MACHINE, is good only\n"
+	.string "for one-time use.\p"
+	.string "Once you use it, it's gone.\n"
+	.string "Think twice before using it!$"

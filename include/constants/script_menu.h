@@ -187,6 +187,7 @@
 #define MULTI_FOSSIL_HNS                   176
 #define MULTI_GAME_CORNER_DOLLS2           177
 #define MULTI_STARTER_REGION_CHOICE        178
+#define MULTI_ULTIMATE_MOVE_CHOICE         179
 
 #define MULTI_NONE 255
 

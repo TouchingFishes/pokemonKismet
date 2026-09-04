@@ -273,6 +273,17 @@ static const struct MenuAction MultichoiceList_GameCornerDolls2[] =
     {gText_Exit},
 };
 
+// Kiwame House's "ultimate move" tutor, ported with the map (section 19). The fork
+// held these four in strings.c as gText_*MoveChoice; this tree inlines
+// multichoice options instead.
+static const struct MenuAction MultichoiceList_UltimateMoveChoice[] =
+{
+    {COMPOUND_STRING("ULTIMATE GRASS MOVE")},
+    {COMPOUND_STRING("ULTIMATE FIRE MOVE")},
+    {COMPOUND_STRING("ULTIMATE WATER MOVE")},
+    {COMPOUND_STRING("NO MOVE")},
+};
+
 static const struct MenuAction MultichoiceList_StarterRegionChoice[] =
 {
     {COMPOUND_STRING("JOHTO POKéMON")},
@@ -1452,6 +1463,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FOSSIL_HNS]                = MULTICHOICE(MultichoiceList_FossilHns),
     [MULTI_GAME_CORNER_DOLLS2]         = MULTICHOICE(MultichoiceList_GameCornerDolls2),
     [MULTI_STARTER_REGION_CHOICE]      = MULTICHOICE(MultichoiceList_StarterRegionChoice),
+    [MULTI_ULTIMATE_MOVE_CHOICE]       = MULTICHOICE(MultichoiceList_UltimateMoveChoice),
 };
 
 const u8 *const gStdStrings[] =

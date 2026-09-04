@@ -748,6 +748,15 @@
 #define TRAINER_TAMMY_3_HNS                      724
 #define TRAINER_ZANDER_2_HNS                     725
 #define TRAINER_ZANDER_3_HNS                     726
+#define TRAINER_COLTON_HNS                       735
+#define TRAINER_KEIRA_HNS                        736
+#define TRAINER_LEAH_HNS                         737
+#define TRAINER_MARCEL_HNS                       738
+#define TRAINER_MATT_HNS                         739
+#define TRAINER_MATTHEW_HNS                      740
+#define TRAINER_TAMMY_HNS                        741
+#define TRAINER_VITO_HNS                         742
+#define TRAINER_ZANDER_HNS                       743
 // <<< ported from the 1.x fork
 
 // Cameo characters ported from the 1.x fork (sprites only - see the
@@ -764,7 +773,7 @@
 #define TRAINER_YAMA_HNS                         734
 
 // 618 is TRAINER_TANYA_HNS, relocated out of the TRAINER_FRONTIER_BRAIN slot (330).
-#define TRAINERS_COUNT_HNS                       735
+#define TRAINERS_COUNT_HNS                       744
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

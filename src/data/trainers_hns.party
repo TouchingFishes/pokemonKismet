@@ -178,11 +178,11 @@ AI: Check Bad Move
 
 SPECIES_MAREEP
 Level: 13
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
 
 SPECIES_MANKEY
 Level: 13
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
 
 === TRAINER_WARREN_HNS ===
 Name: WARREN
@@ -19086,5 +19086,161 @@ IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 SPECIES_SALAMENCE
 Level: Badge+9
+IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+
+=== TRAINER_COLTON_HNS ===
+Name: COLTON
+Class: Swimmer M Hns
+Pic: Swimmer M
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_TENTACOOL
+Level: Badge-2
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_TENTACOOL
+Level: Badge-2
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_TENTACOOL
+Level: Badge-2
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_KEIRA_HNS ===
+Name: KEIRA
+Class: Swimmer F Hns
+Pic: Swimmer F
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MARILL
+Level: Badge
+IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_CHINCHOU
+Level: Badge
+IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_LEAH_HNS ===
+Name: LEAH
+Class: Swimmer F Hns
+Pic: Swimmer F
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_CORSOLA
+Level: Badge+4
+IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_CORSOLA
+Level: Badge+4
+IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_MARCEL_HNS ===
+Name: MARCEL
+Class: Pkmn Ranger Hns
+Pic: Pokemon Ranger M Hns
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_FORRETRESS
+Level: Badge+3
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
+
+SPECIES_SUDOWOODO
+Level: Badge+1
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
+
+SPECIES_KINGLER
+Level: Badge+3
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
+
+=== TRAINER_MATT_HNS ===
+Name: MATT
+Class: Swimmer M Hns
+Pic: Swimmer M
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MANTINE
+Level: Badge+4
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_MATTHEW_HNS ===
+Name: MATTHEW
+Class: Fisherman Hns
+Pic: Fisherman
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_SHELLDER
+Level: Badge+4
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_REMORAID
+Level: Badge-1
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_REMORAID
+Level: Badge-1
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_CLOYSTER
+Level: Badge+7
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_TAMMY_HNS ===
+Name: TAMMY
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Music: Hg Sage
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_NOCTOWL
+Level: Badge+3
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_BANETTE
+Level: Badge+5
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_VITO_HNS ===
+Name: VITO
+Class: Pokemaniac Hns
+Pic: Pokemaniac
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_SLOWPOKE
+Level: Badge
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SLOWPOKE
+Level: Badge+2
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_ZANDER_HNS ===
+Name: ZANDER
+Class: Dragon Tamer Hns
+Pic: Dragon Tamer
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_ALTARIA
+Level: Badge+6
+IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+
+SPECIES_ARBOK
+Level: Badge+4
 IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
