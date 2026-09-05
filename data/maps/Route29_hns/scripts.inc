@@ -81,22 +81,11 @@ Route29_EventScript_Tuscany::
 	lock
 	faceplayer
 	goto_if_set FLAG_GOT_SILK_SCARF, Route29_EventScript_TuscanyCompleted
+	specialvar VAR_RESULT, ScriptGetWeekDay
+	goto_if_ne VAR_RESULT, WEEKDAY_TUE, Route29_EventScript_TuscanyNope
 	msgbox Route29_Text_MeetTuscany, MSGBOX_DEFAULT
 	closemessage
-	multichoice 20, 0, MULTI_DAYS_OF_WEEK, FALSE
-	switch VAR_RESULT
-	case 0, Route29_EventScript_TuscanyNope
-	case 1, Route29_EventScript_TuscanyNope
-	case 2, Route29_EventScript_TuscanyYes
-	case 3, Route29_EventScript_TuscanyNope
-	case 4, Route29_EventScript_TuscanyNope
-	case 5, Route29_EventScript_TuscanyNope
-	case 6, Route29_EventScript_TuscanyNope
-	case 7 Route29_EventScript_TuscanyCancel
-	case MULTI_B_PRESSED, Route29_EventScript_TuscanyCancel
-	closemessage
-	release
-	end
+	goto Route29_EventScript_TuscanyYes
 Route29_EventScript_TuscanyYes::
 	msgbox Route29_Text_TuscanyGivesGift, MSGBOX_DEFAULT
 	giveitem ITEM_SILK_SCARF

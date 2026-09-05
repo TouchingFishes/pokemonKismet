@@ -364,22 +364,11 @@ LakeOfRage_EventScript_Wesley::
 	lock
 	faceplayer
 	goto_if_set FLAG_GOT_BLACK_BELT, LakeOfRage_EventScript_WesleyCompleted
+	specialvar VAR_RESULT, ScriptGetWeekDay
+	goto_if_ne VAR_RESULT, WEEKDAY_WED, LakeOfRage_EventScript_WesleyNope
 	msgbox LakeOfRage_Text_MeetWesley, MSGBOX_DEFAULT
 	closemessage
-	multichoice 20, 0, MULTI_DAYS_OF_WEEK, FALSE
-	switch VAR_RESULT
-	case 0, LakeOfRage_EventScript_WesleyNope
-	case 1, LakeOfRage_EventScript_WesleyNope
-	case 2, LakeOfRage_EventScript_WesleyNope
-	case 3, LakeOfRage_EventScript_WesleyYes
-	case 4, LakeOfRage_EventScript_WesleyNope
-	case 5, LakeOfRage_EventScript_WesleyNope
-	case 6, LakeOfRage_EventScript_WesleyNope
-	case 7 LakeOfRage_EventScript_WesleyCancel
-	case MULTI_B_PRESSED, LakeOfRage_EventScript_WesleyCancel
-	closemessage
-	release
-	end
+	goto LakeOfRage_EventScript_WesleyYes
 LakeOfRage_EventScript_WesleyYes::
 	msgbox LakeOfRage_Text_WesleyGivesGift, MSGBOX_DEFAULT
 	giveitem ITEM_BLACK_BELT

@@ -33,22 +33,11 @@ Route37_EventScript_Sunny::
 	lock
 	faceplayer
 	goto_if_set FLAG_GOT_MAGNET, Route37_EventScript_SunnyCompleted
+	specialvar VAR_RESULT, ScriptGetWeekDay
+	goto_if_ne VAR_RESULT, WEEKDAY_SUN, Route37_EventScript_SunnyNope
 	msgbox Route37_Text_Sunny_Meet, MSGBOX_DEFAULT
 	closemessage
-	multichoice 20, 0, MULTI_DAYS_OF_WEEK, FALSE
-	switch VAR_RESULT
-	case 0, Route37_EventScript_SunnyYes
-	case 1, Route37_EventScript_SunnyNope
-	case 2, Route37_EventScript_SunnyNope
-	case 3, Route37_EventScript_SunnyNope
-	case 4, Route37_EventScript_SunnyNope
-	case 5, Route37_EventScript_SunnyNope
-	case 6, Route37_EventScript_SunnyNope
-	case 7 Route37_EventScript_SunnyCancel
-	case MULTI_B_PRESSED, Route37_EventScript_SunnyCancel
-	closemessage
-	release
-	end
+	goto Route37_EventScript_SunnyYes
 Route37_EventScript_SunnyYes::
 	msgbox Route37_Text_Sunny_GiveGift2, MSGBOX_DEFAULT
 	giveitem ITEM_MAGNET

@@ -137,22 +137,11 @@ BlackthornCity_EventScript_Santos::
 	lock
 	faceplayer
 	goto_if_set FLAG_GOT_SPELL_TAG, BlackthornCity_EventScript_SantosCompleted
+	specialvar VAR_RESULT, ScriptGetWeekDay
+	goto_if_ne VAR_RESULT, WEEKDAY_SAT, BlackthornCity_EventScript_SantosNope
 	msgbox BlackthornCity_MeetSantosText, MSGBOX_DEFAULT
 	closemessage
-	multichoice 20, 0, MULTI_DAYS_OF_WEEK, FALSE
-	switch VAR_RESULT
-	case 0, BlackthornCity_EventScript_SantosNope
-	case 1, BlackthornCity_EventScript_SantosNope
-	case 2, BlackthornCity_EventScript_SantosNope
-	case 3, BlackthornCity_EventScript_SantosNope
-	case 4, BlackthornCity_EventScript_SantosNope
-	case 5, BlackthornCity_EventScript_SantosNope
-	case 6, BlackthornCity_EventScript_SantosYes
-	case 7 BlackthornCity_EventScript_SantosCancel
-	case MULTI_B_PRESSED, BlackthornCity_EventScript_SantosCancel
-	closemessage
-	release
-	end
+	goto BlackthornCity_EventScript_SantosYes
 BlackthornCity_EventScript_SantosYes::
 	msgbox BlackthornCity_SantosGivesGiftText, MSGBOX_DEFAULT
 	giveitem ITEM_SPELL_TAG

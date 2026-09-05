@@ -44,22 +44,11 @@ Route36_EventScript_Arthur::
 	lock
 	faceplayer
 	goto_if_set FLAG_GOT_HARD_STONE, Route36_EventScript_ArthurCompleted
+	specialvar VAR_RESULT, ScriptGetWeekDay
+	goto_if_ne VAR_RESULT, WEEKDAY_THU, Route36_EventScript_ArthurNope
 	msgbox Route36_Text_MeetArthur, MSGBOX_DEFAULT
 	closemessage
-	multichoice 20, 0, MULTI_DAYS_OF_WEEK, FALSE
-	switch VAR_RESULT
-	case 0, Route36_EventScript_ArthurNope
-	case 1, Route36_EventScript_ArthurNope
-	case 2, Route36_EventScript_ArthurNope
-	case 3, Route36_EventScript_ArthurNope
-	case 4, Route36_EventScript_ArthurYes
-	case 5, Route36_EventScript_ArthurNope
-	case 6, Route36_EventScript_ArthurNope
-	case 7, Route36_EventScript_ArthurCancel
-	case MULTI_B_PRESSED, Route36_EventScript_ArthurCancel
-	closemessage
-	release
-	end
+	goto Route36_EventScript_ArthurYes
 Route36_EventScript_ArthurYes::
 	msgbox Route36_Text_ArthurGivesGift, MSGBOX_DEFAULT
 	giveitem ITEM_HARD_STONE

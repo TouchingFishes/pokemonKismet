@@ -182,22 +182,11 @@ Route32_EventScript_Frieda::
 	lock
 	faceplayer
 	goto_if_set FLAG_GOT_POISON_BARB, Route32_EventScript_FriedaCompleted
+	specialvar VAR_RESULT, ScriptGetWeekDay
+	goto_if_ne VAR_RESULT, WEEKDAY_FRI, Route32_EventScript_FriedaNope
 	msgbox Route32_Text_MeetFrieda, MSGBOX_DEFAULT
 	closemessage
-	multichoice 20, 0, MULTI_DAYS_OF_WEEK, FALSE
-	switch VAR_RESULT
-	case 0, Route32_EventScript_FriedaNope
-	case 1, Route32_EventScript_FriedaNope
-	case 2, Route32_EventScript_FriedaNope
-	case 3, Route32_EventScript_FriedaNope
-	case 4, Route32_EventScript_FriedaNope
-	case 5, Route32_EventScript_FriedaYes
-	case 6, Route32_EventScript_FriedaNope
-	case 7, Route32_EventScript_FriedaCancel
-	case MULTI_B_PRESSED, Route32_EventScript_FriedaCancel
-	closemessage
-	release
-	end
+	goto Route32_EventScript_FriedaYes
 Route32_EventScript_FriedaYes::
 	msgbox Route32_Text_FriedaGivesGift, MSGBOX_DEFAULT
 	giveitem ITEM_POISON_BARB

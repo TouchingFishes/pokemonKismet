@@ -44,4 +44,12 @@ enum TimeOfDay GenConfigTimeOfDay(enum TimeOfDay timeOfDay);
 enum TimeOfDay TryIncrementTimeOfDay(enum TimeOfDay timeOfDay);
 enum TimeOfDay TryDecrementTimeOfDay(enum TimeOfDay timeOfDay);
 
+// Day-of-week object visibility. A rule's dayMask is a set of these bits
+#define WEEKDAY_BIT(day)        (1 << (day))
+#define WEEKDAYS_ALL            ((1 << WEEKDAY_COUNT) - 1)
+#define WEEKDAYS_WEEKEND        (WEEKDAY_BIT(WEEKDAY_SAT) | WEEKDAY_BIT(WEEKDAY_SUN))
+#define WEEKDAYS_WEEKDAYS       (WEEKDAYS_ALL & ~WEEKDAYS_WEEKEND)
+
+void UpdateWeekDayObjectFlags(void);
+
 #endif // GUARD_RTC_UTIL_H

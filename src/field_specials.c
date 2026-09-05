@@ -4697,6 +4697,71 @@ void SetChosenWeekDay(void)
     SetWeekDay((enum Weekday)gSpecialVar_0x8004);
 }
 
+// Day-of-week object visibility.
+//
+// pokeemerald hides an object event when the flag in its `flag` field is SET, so
+// rather than the appear/disappear map callbacks pokecrystal uses (polishedcrystal's
+// MAPCALLBACK_OBJECTS, CustomShireCrystal's Route29TuscanyCallback), the flags
+// are simply rewritten on every map load and the maps stay declarative.
+//
+// requiresSet / requiresClear are the equivalent of polishedcrystal gating the
+// siblings behind EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST: a rule can demand
+// a story flag before its objects ever show up. Nothing uses them yet.
+struct WeekDayVisibility
+{
+    u8 dayMask;         // bit N set = may appear on weekday N
+    u16 hideFlag;       // rewritten on every map load; SET = hidden
+    u16 requiresSet;    // 0 = ignore; else must be SET to appear
+    u16 requiresClear;  // 0 = ignore; else must be CLEAR to appear
+};
+
+static const struct WeekDayVisibility sWeekDayVisibility[] =
+{
+    // Shared day flags - any number of objects may point at these.
+    { .dayMask = WEEKDAY_BIT(WEEKDAY_SUN), .hideFlag = FLAG_SUNDAY_OBJECTS    },
+    { .dayMask = WEEKDAY_BIT(WEEKDAY_MON), .hideFlag = FLAG_MONDAY_OBJECTS    },
+    { .dayMask = WEEKDAY_BIT(WEEKDAY_TUE), .hideFlag = FLAG_TUESDAY_OBJECTS   },
+    { .dayMask = WEEKDAY_BIT(WEEKDAY_WED), .hideFlag = FLAG_WEDNESDAY_OBJECTS },
+    { .dayMask = WEEKDAY_BIT(WEEKDAY_THU), .hideFlag = FLAG_THURSDAY_OBJECTS  },
+    { .dayMask = WEEKDAY_BIT(WEEKDAY_FRI), .hideFlag = FLAG_FRIDAY_OBJECTS    },
+    { .dayMask = WEEKDAY_BIT(WEEKDAY_SAT), .hideFlag = FLAG_SATURDAY_OBJECTS  },
+    { .dayMask = WEEKDAYS_WEEKEND,         .hideFlag = FLAG_WEEKEND_OBJECTS   },
+
+    // Union Cave's Lapras. Its own rule rather than FLAG_FRIDAY_OBJECTS, because
+    // it must also stop appearing for good once taken - requiresClear is what
+    // makes that expressible. The record is permanent, so unlike polishedcrystal
+    // (whose flag sits in wWeeklyFlags and is wiped daily) this does not respawn.
+    { .dayMask       = WEEKDAY_BIT(WEEKDAY_FRI),
+      .hideFlag      = FLAG_HIDE_UNION_CAVE_LAPRAS_TODAY,
+      .requiresClear = FLAG_HIDE_UNION_CAVE_LAPRAS },
+};
+
+void UpdateWeekDayObjectFlags(void)
+{
+    u32 i;
+    u8 todayBit;
+
+    // Before the wall clock is set there is no meaningful weekday, so hide
+    // everything rather than leak a sibling on an arbitrary day.
+    todayBit = FlagGet(FLAG_SYS_CLOCK_SET) ? WEEKDAY_BIT(GetWeekDay()) : 0;
+
+    for (i = 0; i < ARRAY_COUNT(sWeekDayVisibility); i++)
+    {
+        const struct WeekDayVisibility *rule = &sWeekDayVisibility[i];
+        bool32 visible = (rule->dayMask & todayBit) != 0;
+
+        if (visible && rule->requiresSet != 0 && !FlagGet(rule->requiresSet))
+            visible = FALSE;
+        if (visible && rule->requiresClear != 0 && FlagGet(rule->requiresClear))
+            visible = FALSE;
+
+        if (visible)
+            FlagClear(rule->hideFlag);
+        else
+            FlagSet(rule->hideFlag);
+    }
+}
+
 u8 GetLeadMonFriendship(void)
 {
     struct Pokemon * pokemon = &gPlayerParty[GetLeadMonIndex()];

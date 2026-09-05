@@ -859,8 +859,8 @@
 
 #define HNS_CONTENT_FLAGS_END                       0x308
 
-// Extended content flags (0x36A – 0x49C)
-// 307 slots for new content; 0x49D–0x4FF reserved for future expansion.
+// Extended content flags (0x36A – 0x4A5)
+// 316 slots for new content; 0x4A6–0x4FF reserved for future expansion.
 //
 // WARNING: this block butts directly against the trainer registered (match call)
 // flags below it, with NO gap. Those start at 0x310 and use one flag per rematch
@@ -1201,11 +1201,43 @@
 #define FLAG_ITEM_OLIVINE_BAY_SHOAL_SALT            (HNS_EXTENDED_CONTENT_START + 305)
 #define FLAG_ITEM_STORMY_BEACH_TM_BEAT_UP           (HNS_EXTENDED_CONTENT_START + 306)
 
+// Day-of-week object visibility. Rewritten on every map load by
+// UpdateWeekDayObjectFlags() in field_specials.c - SET means hidden, so an
+// object event points its `flag` field at the day it should appear on. Shared,
+// so any number of objects may sit behind one of these.
+#define FLAG_SUNDAY_OBJECTS                         (HNS_EXTENDED_CONTENT_START + 307)
+#define FLAG_MONDAY_OBJECTS                         (HNS_EXTENDED_CONTENT_START + 308)
+#define FLAG_TUESDAY_OBJECTS                        (HNS_EXTENDED_CONTENT_START + 309)
+#define FLAG_WEDNESDAY_OBJECTS                      (HNS_EXTENDED_CONTENT_START + 310)
+#define FLAG_THURSDAY_OBJECTS                       (HNS_EXTENDED_CONTENT_START + 311)
+#define FLAG_FRIDAY_OBJECTS                         (HNS_EXTENDED_CONTENT_START + 312)
+#define FLAG_SATURDAY_OBJECTS                       (HNS_EXTENDED_CONTENT_START + 313)
+#define FLAG_WEEKEND_OBJECTS                        (HNS_EXTENDED_CONTENT_START + 314)
+
+// Union Cave's Lapras: appears every Friday until caught or defeated, then never
+// again (Moritz).
+//
+// Two bits are unavoidable, because object spawning reads exactly ONE flag per
+// object and that flag has to mean "(not Friday) OR already taken". It is
+// recomputed on every map load, so nothing can be *stored* in it - on a
+// non-Friday it is set for the wrong-day reason, which is indistinguishable from
+// taken. (Leaving it alone on non-Fridays fails the other way: it would keep
+// Friday's cleared value and Lapras would stand there on Saturday.)
+//
+// So this derived flag is what the object points at and what
+// UpdateWeekDayObjectFlags() owns, while the permanent record stays in
+// FLAG_HIDE_UNION_CAVE_LAPRAS - which keeps the meaning its name already
+// implies, so the encounter script and the two clearflag sites are untouched.
+//
+// polishedcrystal keeps its record in wWeeklyFlags, which despite the name is
+// wiped by CheckDailyResetTimer - so theirs respawns every week. Ours does not.
+#define FLAG_HIDE_UNION_CAVE_LAPRAS_TODAY           (HNS_EXTENDED_CONTENT_START + 315)
+
 
 //just fyi HNS_EXTENDED_CONTENT_START is 0x36A
-#define HNS_EXTENDED_CONTENT_COUNT                  307
+#define HNS_EXTENDED_CONTENT_COUNT                  316
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)
-// 0x49D–0x4FF remaining reserved for future expansion
+// 0x4A6–0x4FF remaining reserved for future expansion
 
 // Trainer registered (match call) flags — one per rematchable trainer
 #define TRAINER_REGISTERED_FLAGS_START               0x310

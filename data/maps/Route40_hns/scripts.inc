@@ -156,22 +156,11 @@ Rotue40_EventScript_Monica::
 	lock
 	faceplayer
 	goto_if_set FLAG_GOT_SHARP_BEAK, Rotue40_EventScript_MonicaCompleted
+	specialvar VAR_RESULT, ScriptGetWeekDay
+	goto_if_ne VAR_RESULT, WEEKDAY_MON, Rotue40_EventScript_MonicaNope
 	msgbox Route40_Text_Monica, MSGBOX_DEFAULT
 	closemessage
-	multichoice 20, 0, MULTI_DAYS_OF_WEEK, FALSE
-	switch VAR_RESULT
-	case 0, Rotue40_EventScript_MonicaNope
-	case 1, Rotue40_EventScript_MonicaYes
-	case 2, Rotue40_EventScript_MonicaNope
-	case 3, Rotue40_EventScript_MonicaNope
-	case 4, Rotue40_EventScript_MonicaNope
-	case 5, Rotue40_EventScript_MonicaNope
-	case 6, Rotue40_EventScript_MonicaNope
-	case 7 Rotue40_EventScript_MonicaCancel
-	case MULTI_B_PRESSED, Rotue40_EventScript_MonicaCancel
-	closemessage
-	release
-	end
+	goto Rotue40_EventScript_MonicaYes
 Rotue40_EventScript_MonicaYes::
 	msgbox Route40_Text_MonicaGivesGift, MSGBOX_DEFAULT
 	giveitem ITEM_SHARP_BEAK

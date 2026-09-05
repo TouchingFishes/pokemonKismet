@@ -981,16 +981,6 @@ GoldenrodCity_GameCorner_Text_VFAttendant2:
 	.string "Try the other side of\n"
 	.string "the table, pal.$"
 
-@ Coin-cost move tutor. Lava Plume is deliberately not a TM, so this old man
-@ is the only source for it. tools/learnset_helpers/make_tutors.py registers
-@ it by finding BOTH the VAR_0x8005 setvar and the chooseboxmon in this file.
-@
-@ TODO: he is present every day. He is meant to appear only on certain
-@ weekdays, like the HGSS day-of-week NPCs. That is not a flag check away -
-@ the tree has WEEKDAY_* in constants/siirtc.h and a dayOfWeek field in
-@ src/datetime.c, but NO script-side accessor: data/specials.inc has no
-@ weekday special, and the only script command is fwdweekday, which advances
-@ time rather than reading it. Gating him needs that accessor built first.
 GoldenrodCity_GameCorner_EventScript_LavaPlumeTutor::
 	lock
 	faceplayer
