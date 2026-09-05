@@ -21,7 +21,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_QWILFISH_HISUI",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SPHEAL",
       "x": 55,
       "y": 56,
       "elevation": 3,
@@ -100,7 +100,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SNEASEL_HISUI",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STARAPTOR",
       "x": 71,
       "y": 12,
       "elevation": 0,
@@ -113,7 +113,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SNEASEL_HISUI",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STARAVIA",
       "x": 19,
       "y": 58,
       "elevation": 0,
@@ -153,7 +153,7 @@
     },
     {
       "local_id": "LOCALID_ROUTE49_NOBLE_OVERQWIL",
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_OVERQWIL",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MILOTIC",
       "x": 48,
       "y": 44,
       "elevation": 0,
@@ -321,6 +321,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route49_EventScript_Item_TMRockClimb",
       "flag": "FLAG_HIDE_ROUTE49_TM_ROCK_CLIMB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SEALEO",
+      "x": 39,
+      "y": 41,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_range_x": 5,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [

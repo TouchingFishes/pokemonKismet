@@ -329,12 +329,12 @@ NewSinjoh_HotSprings_EventScript_ActivateArcanine::
     applymovement2 LOCALID_HOTSPRINGS_NOBLE_ARCANINE, NewSinjoh_HotSprings_Movement_ArcanineEntrance1
     delay 10
 	playse SE_LEDGE
-    playmoncry SPECIES_ARCANINE_HISUI, CRY_MODE_NORMAL
+    playmoncry SPECIES_DARMANITAN, CRY_MODE_NORMAL
     waitmoncry
     waitmovement 0
     applymovement2 LOCALID_HOTSPRINGS_NOBLE_ARCANINE, NewSinjoh_HotSprings_Movement_ArcanineEntrance2
     delay 10
-	playmoncry SPECIES_ARCANINE_HISUI, CRY_MODE_NORMAL
+	playmoncry SPECIES_DARMANITAN, CRY_MODE_NORMAL
     waitmoncry
     playse SE_LEDGE
     delay 20
@@ -366,9 +366,9 @@ NewSinjoh_HotSprings_Movement_ArcanineEntrance2:
 NewSinjoh_HotSprings_EventScript_Arcanine::
 	lock
 	faceplayer
-	playmoncry SPECIES_ARCANINE_HISUI, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_DARMANITAN, CRY_MODE_ENCOUNTER
 	waitmoncry
-    setwildbossbattle species=SPECIES_ARCANINE_HISUI, level=80, item=ITEM_LOADED_DICE, move1_1=MOVE_ROCK_BLAST, move1_2=MOVE_WILD_CHARGE, move1_3=MOVE_RAGING_FURY move1_4=MOVE_PROTECT
+    setwildbossbattle species=SPECIES_DARMANITAN, level=80, item=ITEM_CHARCOAL, move1_1=MOVE_FLARE_BLITZ, move1_2=MOVE_EARTHQUAKE, move1_3=MOVE_ROCK_SLIDE move1_4=MOVE_SUPERPOWER
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 0, 2, 0, 0, 0
 	setflag FLAG_NO_WILD_CATCHING
 	setflag FLAG_NO_WILD_RUNNING
@@ -377,7 +377,7 @@ NewSinjoh_HotSprings_EventScript_Arcanine::
     dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewSinjoh_HotSprings_EventScript_ArcanineRan
-    bufferspeciesname STR_VAR_1, SPECIES_ARCANINE_HISUI
+    bufferspeciesname STR_VAR_1, SPECIES_DARMANITAN
     msgbox SinjohRuins_Lab_Text_DropedItem, MSGBOX_DEFAULT
     giveitem ITEM_FLAME_PLATE
     addvar VAR_PLATECOUNTER, 1

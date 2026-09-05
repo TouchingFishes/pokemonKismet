@@ -499,7 +499,7 @@
     },
     {
       "local_id": "LOCALID_SNOWSWEPT_CAVERN_SNEASLER",
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MIENSHAO",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_NOIVERN",
       "x": 5,
       "y": 26,
       "elevation": 0,

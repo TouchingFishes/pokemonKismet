@@ -160,9 +160,9 @@ Route49_EventScript_ActivateOverqwil::
     clearflag FLAG_HIDE_ROUTE49_NOBLE_OVERQWIL
     applymovement2 LOCALID_ROUTE49_NOBLE_OVERQWIL, Route49_Movement_OverqwilEntrance1
     delay 10
-    playmoncry SPECIES_OVERQWIL, CRY_MODE_NORMAL
+    playmoncry SPECIES_MILOTIC, CRY_MODE_NORMAL
     waitmoncry
-    playmoncry SPECIES_OVERQWIL, CRY_MODE_NORMAL
+    playmoncry SPECIES_MILOTIC, CRY_MODE_NORMAL
     waitmoncry
     waitmovement 0
     applymovement2 LOCALID_ROUTE49_NOBLE_OVERQWIL, Route49_Movement_OverqwilEntrance2
@@ -200,9 +200,9 @@ Route49_Movement_OverqwilEntrance2:
 Route49_EventScript_Overqwil::
 	lock
 	faceplayer
-	playmoncry SPECIES_OVERQWIL, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_MILOTIC, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbossbattle species=SPECIES_OVERQWIL, level=80, item=ITEM_BLACK_SLUDGE, move1_1=MOVE_BARB_BARRAGE, move1_2=MOVE_LIQUIDATION, move1_3=MOVE_TOXIC_SPIKES move1_4=MOVE_CURSE
+	setwildbossbattle species=SPECIES_MILOTIC, level=80, item=ITEM_LEFTOVERS, move1_1=MOVE_SCALD, move1_2=MOVE_ICE_BEAM, move1_3=MOVE_RECOVER move1_4=MOVE_DRAGON_TAIL
 	settotemboost B_POSITION_OPPONENT_LEFT, 0, 2, 0, 0, 3, 0
 	setflag FLAG_NO_WILD_CATCHING
 	setflag FLAG_NO_WILD_RUNNING
@@ -211,7 +211,7 @@ Route49_EventScript_Overqwil::
     dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route49_EventScript_OverqwilRan
-    bufferspeciesname STR_VAR_1, SPECIES_OVERQWIL
+    bufferspeciesname STR_VAR_1, SPECIES_MILOTIC
     msgbox SinjohRuins_Lab_Text_DropedItem, MSGBOX_DEFAULT
     giveitem ITEM_DREAD_PLATE
     addvar VAR_PLATECOUNTER, 1
