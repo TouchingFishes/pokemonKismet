@@ -71867,12 +71867,22 @@
               {
                 "min_level": 45,
                 "max_level": 60,
+                "species": "SPECIES_STARAVIA"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
                 "species": "SPECIES_PILOSWINE"
               },
               {
                 "min_level": 45,
                 "max_level": 60,
-                "species": "SPECIES_MR_MIME"
+                "species": "SPECIES_URSARING"
               },
               {
                 "min_level": 45,
@@ -71882,17 +71892,7 @@
               {
                 "min_level": 45,
                 "max_level": 60,
-                "species": "SPECIES_SNEASEL_HISUI"
-              },
-              {
-                "min_level": 45,
-                "max_level": 60,
-                "species": "SPECIES_SNEASEL_HISUI"
-              },
-              {
-                "min_level": 45,
-                "max_level": 60,
-                "species": "SPECIES_SNEASEL_HISUI"
+                "species": "SPECIES_STARAPTOR"
               },
               {
                 "min_level": 45,
@@ -71902,7 +71902,7 @@
               {
                 "min_level": 45,
                 "max_level": 70,
-                "species": "SPECIES_SNEASLER"
+                "species": "SPECIES_STARAPTOR"
               },
               {
                 "min_level": 45,
