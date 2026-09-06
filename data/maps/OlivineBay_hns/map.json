@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_OLIVINE_CITY_HNS",
-      "offset": -41,
+      "offset": -28,
       "direction": "left"
     },
     {

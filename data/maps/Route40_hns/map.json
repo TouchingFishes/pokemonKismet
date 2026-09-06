@@ -293,6 +293,69 @@
   ],
   "warp_events": [
     {
+      "x": 46,
+      "y": 60,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE41_HNS",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 47,
+      "y": 60,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE41_HNS",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 48,
+      "y": 60,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE41_HNS",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 49,
+      "y": 60,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE41_HNS",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 50,
+      "y": 60,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE41_HNS",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 51,
+      "y": 60,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE41_HNS",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 52,
+      "y": 60,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE41_HNS",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 53,
+      "y": 60,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE41_HNS",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 54,
+      "y": 60,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE41_HNS",
+      "dest_warp_id": "12"
+    },
+    {
       "x": 45,
       "y": 13,
       "elevation": 0,

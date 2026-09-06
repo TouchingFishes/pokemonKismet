@@ -101,13 +101,6 @@
       "elevation": 0,
       "dest_map": "MAP_NEW_SINJOH_HNS",
       "dest_warp_id": "4"
-    },
-    {
-      "x": -16,
-      "y": 3,
-      "elevation": 0,
-      "dest_map": "MAP_NEW_SINJOH_HOUSE1_HNS",
-      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],
