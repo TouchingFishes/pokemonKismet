@@ -27,6 +27,11 @@
       "map": "MAP_ROUTE39_HNS",
       "offset": -6,
       "direction": "up"
+    },
+    {
+      "map": "MAP_OLIVINE_BAY_HNS",
+      "offset": 41,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -543,6 +548,20 @@
       "elevation": 0,
       "dest_map": "MAP_OLIVINE_CITY_POKEMON_CENTER_HNS",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_GATE_ROUTE39_OLIVINE_CITY_HNS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_GATE_ROUTE39_OLIVINE_CITY_HNS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -572,6 +591,42 @@
       "var": "VAR_OLIVINE_CITY_STATE",
       "var_value": "1",
       "script": "OlivineCity_EventScript_SilverTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_OLIVINE_CITY_STATE",
+      "var_value": "0",
+      "script": "OlivineCity_EventScript_CityTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_OLIVINE_CITY_STATE",
+      "var_value": "0",
+      "script": "OlivineCity_EventScript_CityTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_OLIVINE_CITY_STATE",
+      "var_value": "0",
+      "script": "OlivineCity_EventScript_CityTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_OLIVINE_CITY_STATE",
+      "var_value": "0",
+      "script": "OlivineCity_EventScript_CityTrigger"
     }
   ],
   "bg_events": [

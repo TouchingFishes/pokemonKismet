@@ -154,6 +154,13 @@
       "elevation": 0,
       "dest_map": "MAP_NATIONAL_PARK_BUG_CONTEST_HNS",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_OLIVINE_BAY_HNS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

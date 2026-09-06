@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE30_HNS",
       "offset": 9,
       "direction": "up"
+    },
+    {
+      "map": "MAP_CHERRYGROVE_BAY_HNS",
+      "offset": -34,
+      "direction": "left"
     }
   ],
   "object_events": [

@@ -17,6 +17,11 @@
       "map": "MAP_ROUTE34_HNS",
       "offset": -39,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ILEX_FOREST_WEST_HNS",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [

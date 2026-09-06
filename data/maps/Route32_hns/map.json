@@ -27,6 +27,11 @@
       "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
       "offset": -24,
       "direction": "left"
+    },
+    {
+      "map": "MAP_CHERRYGROVE_BAY_HNS",
+      "offset": 1,
+      "direction": "right"
     }
   ],
   "object_events": [

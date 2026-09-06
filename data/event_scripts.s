@@ -2159,7 +2159,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route32_PokemonCenter_hns/scripts.inc"
 	.include "data/maps/RuinsOfAlph_Lab_hns/scripts.inc"
 	.include "data/maps/Route34_DayCare_hns/scripts.inc"
-	.include "data/maps/Route28_House_hns/scripts.inc"
+	.include "data/maps/Route32South_House_hns/scripts.inc"
 	.include "data/maps/Kiwame_House_hns/scripts.inc"
 	.include "data/maps/SafariZoneGate_PokemonCenter_hns/scripts.inc"
 	.include "data/maps/SafariZoneGate_SafariZoneEntrance_hns/scripts.inc"

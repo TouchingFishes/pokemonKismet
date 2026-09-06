@@ -119,7 +119,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN_HNS",
       "x": 35,
-      "y": 4,
+      "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 7,

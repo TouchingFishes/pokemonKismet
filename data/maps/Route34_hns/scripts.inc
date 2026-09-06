@@ -10,7 +10,7 @@ Route34_OnTransition:
 	end	
 
 Route34_MapScript_EggReady::
-	setobjectxyperm LOCALID_ROUTE34_DAYCAREMAN, 30, 34
+	setobjectxyperm LOCALID_ROUTE34_DAYCAREMAN, 50, 34
 	return
 
 Route34_EventScript_YoungsterSamuel::

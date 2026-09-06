@@ -184,6 +184,13 @@
       "elevation": 0,
       "dest_map": "MAP_MAHOGANY_TOWN_POKEMON_CENTER_HNS",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_MAHOGANY_TOWN_HOUSE2_HNS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
