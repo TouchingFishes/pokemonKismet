@@ -5991,6 +5991,14 @@ static const struct {
     { SPECIES_MIME_JR,     { TYPE_PSYCHIC, TYPE_PSYCHIC } },
     { SPECIES_MR_MIME,     { TYPE_PSYCHIC, TYPE_PSYCHIC } },
     { SPECIES_MAWILE,      { TYPE_STEEL,   TYPE_STEEL   } },
+    // Species introduced as Fairy, which therefore have no historical
+    // pre-Fairy typing
+    { SPECIES_IMPIDIMP,    { TYPE_DARK,    TYPE_DARK     } },
+    { SPECIES_MORGREM,     { TYPE_DARK,    TYPE_DARK     } },
+    { SPECIES_GRIMMSNARL,  { TYPE_DARK,    TYPE_FIGHTING } },
+    { SPECIES_TINKATINK,   { TYPE_STEEL,   TYPE_STEEL    } },
+    { SPECIES_TINKATUFF,   { TYPE_STEEL,   TYPE_STEEL    } },
+    { SPECIES_TINKATON,    { TYPE_STEEL,   TYPE_STEEL    } },
 };
 
 // The two tables below are the second axis of tx_Mode_Fairy_Types.
@@ -6007,6 +6015,7 @@ static const struct {
     { SPECIES_GREAVARD,    { TYPE_GHOST,    TYPE_NORMAL   } },
     { SPECIES_HOUNDSTONE,  { TYPE_GHOST,    TYPE_NORMAL   } },
     { SPECIES_SABLEYE,     { TYPE_GHOST,    TYPE_ROCK     } },
+    { SPECIES_BANETTE,     { TYPE_DARK,     TYPE_GHOST    } },
 };
 
 // The hack's own Fairy assignments, which are NOT the official Gen 6 set.
@@ -6202,6 +6211,22 @@ const u8 *GetAbilityDescription(enum Ability ability)
     return gAbilitiesInfo[ability].description;
 }
 
+// Kismet's own stats
+struct KismetBaseStats
+{
+    u16 species;
+    u8 stats[NUM_STATS];        // indexed by STAT_HP..STAT_SPDEF, in that order
+};
+
+struct KismetAbilities
+{
+    u16 species;
+    enum Ability abilities[NUM_NORMAL_ABILITY_SLOTS];
+};
+
+#include "data/pokemon/kismet_base_stats.h"
+#include "data/pokemon/kismet_abilities.h"
+
 enum Ability GetSpeciesAbility(u16 species, u8 slot)
 {
     species = SanitizeSpeciesId(species);
@@ -6216,38 +6241,68 @@ enum Ability GetSpeciesAbility(u16 species, u8 slot)
                 return sOfficialAbilityOverrides[i].abilities[slot];
         }
     }
+    // Hidden ability not overwritten
+    else if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1
+             && slot < NUM_NORMAL_ABILITY_SLOTS)
+    {
+        for (u32 i = 0; i < ARRAY_COUNT(sKismetAbilities); i++)
+        {
+            if (sKismetAbilities[i].species == species)
+                return sKismetAbilities[i].abilities[slot];
+        }
+    }
 
     return gSpeciesInfo[species].abilities[slot];
 }
 
+static u32 KismetBaseStat(u16 species, enum Stat stat, u32 official)
+{
+    if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Stats == 0)
+        return official;
+
+    for (u32 i = 0; i < ARRAY_COUNT(sKismetBaseStats); i++)
+    {
+        if (sKismetBaseStats[i].species == species)
+            return sKismetBaseStats[i].stats[stat];
+    }
+
+    return official;
+}
+
 u32 GetSpeciesBaseHP(u16 species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseHP;
+    species = SanitizeSpeciesId(species);
+    return KismetBaseStat(species, STAT_HP, gSpeciesInfo[species].baseHP);
 }
 
 u32 GetSpeciesBaseAttack(u16 species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseAttack;
+    species = SanitizeSpeciesId(species);
+    return KismetBaseStat(species, STAT_ATK, gSpeciesInfo[species].baseAttack);
 }
 
 u32 GetSpeciesBaseDefense(u16 species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseDefense;
+    species = SanitizeSpeciesId(species);
+    return KismetBaseStat(species, STAT_DEF, gSpeciesInfo[species].baseDefense);
 }
 
 u32 GetSpeciesBaseSpAttack(u16 species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseSpAttack;
+    species = SanitizeSpeciesId(species);
+    return KismetBaseStat(species, STAT_SPATK, gSpeciesInfo[species].baseSpAttack);
 }
 
 u32 GetSpeciesBaseSpDefense(u16 species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseSpDefense;
+    species = SanitizeSpeciesId(species);
+    return KismetBaseStat(species, STAT_SPDEF, gSpeciesInfo[species].baseSpDefense);
 }
 
 u32 GetSpeciesBaseSpeed(u16 species)
 {
-    return gSpeciesInfo[SanitizeSpeciesId(species)].baseSpeed;
+    species = SanitizeSpeciesId(species);
+    return KismetBaseStat(species, STAT_SPEED, gSpeciesInfo[species].baseSpeed);
 }
 
 u32 GetSpeciesBaseStat(u16 species, u32 statIndex)
