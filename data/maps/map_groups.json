@@ -596,7 +596,10 @@
     "Route49_hns",
     "Route50_hns",
     "NewSinjoh_hns",
-    "SinjohRuins_hns"
+    "SinjohRuins_hns",
+    "SinjohForest_hns",
+    "SinjohCanyon_hns",
+    "SinjohLake_hns"
   ],
   "gMapGroup_IndoorSinjoh_Hns": [
     "NewSinjoh_PokemonCenter_hns",
