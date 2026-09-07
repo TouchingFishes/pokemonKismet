@@ -2207,6 +2207,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/SlowpokeWell_B1F_hns/scripts.inc"
 	.include "data/maps/SlowpokeWell_B2F_hns/scripts.inc"
 	.include "data/maps/IlexForest_hns/scripts.inc"
+	.include "data/maps/Tanglebrush_hns/scripts.inc"
 	.include "data/maps/IlexForest_West_hns/scripts.inc"
 	.include "data/maps/IlexCave_hns/scripts.inc"
 	.include "data/maps/NationalPark_Normal_hns/scripts.inc"

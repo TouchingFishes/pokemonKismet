@@ -15,12 +15,17 @@
   "connections": [
     {
       "map": "MAP_ROUTE19_HNS",
-      "offset": -41,
+      "offset": -10,
       "direction": "right"
     },
     {
       "map": "MAP_CINNABAR_ISLAND_HNS",
-      "offset": 1,
+      "offset": 31,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE21_HNS",
+      "offset": -69,
       "direction": "left"
     }
   ],
@@ -53,8 +58,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SEEL",
-      "x": 48,
-      "y": 17,
+      "x": 39,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -66,8 +71,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SEEL",
-      "x": 71,
-      "y": 12,
+      "x": 66,
+      "y": 47,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -79,8 +84,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_DEWGONG",
-      "x": 72,
-      "y": 9,
+      "x": 39,
+      "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -131,8 +136,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_DEWGONG",
-      "x": 34,
-      "y": 5,
+      "x": 29,
+      "y": 1,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -144,8 +149,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_DEWGONG",
-      "x": 12,
-      "y": 14,
+      "x": 15,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -183,8 +188,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_HNS",
-      "x": 85,
-      "y": 6,
+      "x": 79,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 6,
@@ -224,7 +229,7 @@
       "local_id": "LOCALID_ROUTE20_HEADLOCKER",
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN_HNS",
       "x": 23,
-      "y": 8,
+      "y": 38,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -238,7 +243,7 @@
       "local_id": "LOCALID_ROUTE20_DENNIS",
       "graphics_id": "OBJ_EVENT_MON+SPECIES_MAGIKARP+OBJ_EVENT_MON_SHINY",
       "x": 24,
-      "y": 8,
+      "y": 38,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -251,50 +256,57 @@
   ],
   "warp_events": [
     {
-      "x": 60,
-      "y": 8,
+      "x": 42,
+      "y": 38,
       "elevation": 0,
       "dest_map": "MAP_SEAFOAM_ISLANDS_1F_HNS",
       "dest_warp_id": "0"
     },
     {
-      "x": 72,
-      "y": 14,
+      "x": 54,
+      "y": 44,
       "elevation": 0,
       "dest_map": "MAP_SEAFOAM_ISLANDS_1F_HNS",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 25,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE19_CAVE_HNS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 25,
-      "y": 6,
+      "x": 24,
+      "y": 36,
       "elevation": 0,
       "item": "ITEM_DEEP_SEA_TOOTH",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE20_DEEP_SEA_TOOTH"
     },
     {
       "type": "hidden_item",
-      "x": 23,
-      "y": 6,
+      "x": 22,
+      "y": 36,
       "elevation": 0,
       "item": "ITEM_DEEP_SEA_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE20_DEEP_SEA_SCALE"
     },
     {
       "type": "sign",
-      "x": 68,
-      "y": 14,
+      "x": 50,
+      "y": 44,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route20_EventScript_GymSign"
     },
     {
       "type": "sign",
-      "x": 64,
-      "y": 8,
+      "x": 46,
+      "y": 38,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route20_EventScript_SeafoamSign"

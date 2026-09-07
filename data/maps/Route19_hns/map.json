@@ -15,19 +15,19 @@
   "connections": [
     {
       "map": "MAP_ROUTE20_HNS",
-      "offset": 41,
+      "offset": 10,
       "direction": "left"
     },
     {
       "map": "MAP_FUCHSIA_CITY_HNS",
-      "offset": -12,
+      "offset": 5,
       "direction": "up"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN_HNS",
-      "x": 11,
+      "x": 45,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -40,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN_HNS",
-      "x": 9,
+      "x": 43,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -53,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_HNS",
-      "x": 15,
+      "x": 49,
       "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -66,7 +66,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_HNS",
-      "x": 4,
+      "x": 38,
       "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -79,7 +79,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_HNS",
-      "x": 5,
+      "x": 39,
       "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -92,7 +92,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_HNS",
-      "x": 16,
+      "x": 50,
       "y": 45,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -105,7 +105,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 7,
+      "x": 41,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -118,7 +118,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 8,
+      "x": 42,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -131,7 +131,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 9,
+      "x": 43,
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -144,7 +144,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 10,
+      "x": 44,
       "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -157,7 +157,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 12,
+      "x": 46,
       "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -170,7 +170,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 14,
+      "x": 48,
       "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -183,7 +183,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 15,
+      "x": 49,
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -196,7 +196,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 15,
+      "x": 49,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -209,7 +209,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_WINGULL",
-      "x": 17,
+      "x": 51,
       "y": 59,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_UP_DOWN_LEFT",
@@ -222,7 +222,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 11,
+      "x": 45,
       "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -235,7 +235,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 16,
+      "x": 50,
       "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -248,7 +248,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KINGLER",
-      "x": 11,
+      "x": 45,
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -261,7 +261,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAGE_HNS",
-      "x": 15,
+      "x": 49,
       "y": 55,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -274,7 +274,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 8,
+      "x": 42,
       "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -288,10 +288,10 @@
   ],
   "warp_events": [
     {
-      "x": 15,
-      "y": 54,
+      "x": 43,
+      "y": 52,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE19_CAVE_HNS",
+      "dest_map": "MAP_KAME_HOUSE_HNS",
       "dest_warp_id": "0"
     }
   ],
@@ -299,7 +299,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 13,
+      "x": 47,
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

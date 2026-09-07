@@ -26,7 +26,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route19Cave_EventScript_Kyogre",
       "flag": "FLAG_HIDE_KYOGRE",
-      "localid":"LOCALID_ROUTE19CAVEKYOGRE"
+      "localid": "LOCALID_ROUTE19CAVEKYOGRE"
     }
   ],
   "warp_events": [
@@ -34,8 +34,8 @@
       "x": 11,
       "y": 18,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE19_HNS",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ROUTE20_HNS",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

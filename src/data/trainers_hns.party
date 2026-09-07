@@ -19244,3 +19244,276 @@ SPECIES_ARBOK
 Level: Badge+4
 IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
+
+=== TRAINER_DEVON_AND_MAY_HNS ===
+Name: DEV & MAY
+Class: Young Couple Hns
+Pic: Young Couple
+Gender: Male
+Music: Hg Boy 1
+Double Battle: Yes
+AI: Check Bad Move
+
+SPECIES_GARDEVOIR
+Level: 61
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_GALLADE
+Level: 61
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_SILAS_HNS ===
+Name: SILAS
+Class: Pkmn Ranger Hns
+Pic: Pokemon Ranger M Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_WHISCASH
+Level: 58
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_BRELOOM
+Level: 58
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_PIDGEOT
+Level: 62
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_GARRET_HNS ===
+Name: GARRET
+Class: Bug Maniac Hns
+Pic: Bug Maniac Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_WORMADAM_PLANT
+Level: 57
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_WORMADAM_SANDY
+Level: 57
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_WORMADAM_TRASH
+Level: 57
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_ORRIN_HNS ===
+Name: ORRIN
+Class: Bug Maniac Hns
+Pic: Bug Maniac Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_ARIADOS
+Level: 59
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_LEDIAN
+Level: 59
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_MASQUERAIN
+Level: 59
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_FORRETRESS
+Level: 59
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_KESTER_HNS ===
+Name: KESTER
+Class: Bug Maniac Hns
+Pic: Bug Maniac Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_PENDRAGON
+Level: 61
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_PENDRAGON
+Level: 61
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_PINSIR
+Level: 61
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_YANMEGA
+Level: 60
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_NASH_HNS ===
+Name: NASH
+Class: Pkmn Breeder Hns
+Pic: Pokemon Breeder M Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MAGBY
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_ELEKID
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_TYROGUE
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_BELLSPROUT
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_PSYDUCK
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_MACHOP
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_CORDELIA_HNS ===
+Name: CORDELIA
+Class: Pkmn Breeder Hns
+Pic: Pokemon Breeder F Hns
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_CLEFFA
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_IGGLYBUFF
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_PICHU
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_SMOOCHUM
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_HAPPINY
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_EEVEE
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_DALIA_HNS ===
+Name: DALIA
+Class: Aroma Lady Hns
+Pic: Aroma Lady Hns
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_VILEPLUME
+Level: 59
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_JUMPLUFF
+Level: 60
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_BUTTERFREE
+Level: 61
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_JOANA_HNS ===
+Name: JOANA
+Class: Lass Hns
+Pic: Lass
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_GRANBULL
+Level: 60
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_WIGGLYTUFF
+Level: 59
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_BARNABY_HNS ===
+Name: BARNABY
+Class: Camper Hns
+Pic: Camper
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_SCYTHER
+Level: 60
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_EXEGGUTOR
+Level: 61
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_MARCY_HNS ===
+Name: MARCY
+Class: Picnicker Hns
+Pic: Picnicker
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_PARASECT
+Level: 58
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_TANGELA
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_TANGELA
+Level: 56
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+=== TRAINER_LAYTON_HNS ===
+Name: LAYTON
+Class: Ruin Maniac Hns
+Pic: Ruin Maniac Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_SUDOWOODO
+Level: 59
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_CLAYDOL
+Level: 60
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_STEELIX
+Level: 61
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+

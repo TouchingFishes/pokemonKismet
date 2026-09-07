@@ -22,6 +22,16 @@
       "map": "MAP_PALLET_TOWN_HNS",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE20_HNS",
+      "offset": 69,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE18_HNS",
+      "offset": 21,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -117,7 +127,22 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 44,
+      "y": 29,
+      "elevation": 3,
+      "dest_map": "MAP_TANGLEBRUSH_HNS",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 45,
+      "y": 29,
+      "elevation": 3,
+      "dest_map": "MAP_TANGLEBRUSH_HNS",
+      "dest_warp_id": "1"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

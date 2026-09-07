@@ -772,8 +772,21 @@
 // The secret end boss - see the party note in trainers_hns.party.
 #define TRAINER_YAMA_HNS                         734
 
+#define TRAINER_ORRIN_HNS                                755
+#define TRAINER_KESTER_HNS                               753
+#define TRAINER_BARNABY_HNS                              754
+#define TRAINER_DEVON_AND_MAY_HNS                        744
+#define TRAINER_SILAS_HNS                                745
+#define TRAINER_GARRET_HNS                               746
+#define TRAINER_NASH_HNS                                 747
+#define TRAINER_CORDELIA_HNS                             748
+#define TRAINER_DALIA_HNS                                749
+#define TRAINER_JOANA_HNS                                750
+#define TRAINER_MARCY_HNS                                751
+#define TRAINER_LAYTON_HNS                               752
+
 // 618 is TRAINER_TANYA_HNS, relocated out of the TRAINER_FRONTIER_BRAIN slot (330).
-#define TRAINERS_COUNT_HNS                       744
+#define TRAINERS_COUNT_HNS                       756
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
