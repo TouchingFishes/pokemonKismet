@@ -19517,3 +19517,82 @@ SPECIES_STEELIX
 Level: 61
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 
+=== TRAINER_OTTO_HNS ===
+Name: OTTO
+Class: Engineer Hns
+Pic: Engineer Hns
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_LUXIO
+Level: 47
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+SPECIES_ELECTRODE
+Level: 53
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+SPECIES_MAGNETON
+Level: 52
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+SPECIES_MAGNETON
+Level: 52
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+=== TRAINER_BOBBY_HNS ===
+Name: BOBBY
+Class: Engineer Hns
+Pic: Engineer Hns
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MAGNETON
+Level: 39
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+SPECIES_TINKATUFF
+Level: 37
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+SPECIES_DUGTRIO
+Level: 37
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+SPECIES_DUGTRIO
+Level: 39
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+=== TRAINER_DWIGHT_HNS ===
+Name: DWIGHT
+Class: Engineer Hns
+Pic: Engineer Hns
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MAGNEMITE
+Level: 21
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+SPECIES_MAGNEMITE
+Level: 21
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+=== TRAINER_GABOR_HNS ===
+Name: GABOR
+Class: Engineer Hns
+Pic: Engineer Hns
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_VOLTORB
+Level: 25
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
