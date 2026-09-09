@@ -242,3 +242,26 @@ Route31_Text_WadeNoRoom:
 
 Route31_Text_DarkCaveSign:
 	.string "DARK CAVE$"
+
+Route31_EventScript_Lady_Priscilla::
+	trainerbattle_single TRAINER_PRISCILLA_HNS, Route31_Text_PriscillaSeen, Route31_Text_PriscillaBeaten
+	msgbox Route31_Text_PriscillaAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route31_Text_PriscillaSeen:
+	.string "My HOPPIP is drifting along\n"
+	.string "so gracefully today.\p"
+	.string "Would you care for a battle\n"
+	.string "while we enjoy the breeze?$"
+
+Route31_Text_PriscillaBeaten:
+	.string "Oh my…\n"
+	.string "How delightfully strong!$"
+
+Route31_Text_PriscillaAfter:
+	.string "Watching HOPPIP float on the\n"
+	.string "wind is simply enchanting.\p"
+	.string "It goes wherever the breeze\n"
+	.string "takes it, without a worry.\p"
+	.string "Perhaps battling should feel\n"
+	.string "just as light and carefree.$"

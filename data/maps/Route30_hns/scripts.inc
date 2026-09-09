@@ -254,3 +254,7 @@ Route30_Text_Elm_Disaster:
 
 Route30_Text_Poliwag:
 	.string "POLIWAG: Wag waag!$"
+
+Route30_EventScript_Item_TM_DrainPunch::
+	finditem ITEM_TM_DRAIN_PUNCH
+	end

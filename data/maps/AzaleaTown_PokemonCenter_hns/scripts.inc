@@ -52,3 +52,36 @@ AzaleaPokecenter_Text_PokefanF:
 	.string "Then you can catch POKéMON with it.\p"
 	.string "Before POKé BALLS were invented,\n"
 	.string "everyone used BERRIES.$"
+
+AzaleaPokeCenter_EventScript_FuryCutterTutor::
+	lock
+	faceplayer
+	goto_if_unset FLAG_BADGE02_GET, AzaleaPokeCenter_EventScript_FuryCutterTutorNotYet
+	move_tutor MOVE_FURY_CUTTER, AzaleaPokeCenter_Text_FuryCutterTeach, MoveTutor_Text_FuryCutterWhichMon, MoveTutor_EventScript_FuryCutterDeclined, MoveTutor_EventScript_FuryCutterTaught, 3500
+	end
+
+AzaleaPokeCenter_EventScript_FuryCutterTutorNotYet::
+	msgbox AzaleaPokeCenter_Text_FuryCutterTutorNotYet, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+AzaleaPokeCenter_Text_FuryCutterTeach:
+	.string "I came out of ILEX FOREST to rest\n"
+	.string "my legs a while.\p"
+	.string "The bug POKéMON in there never\n"
+	.string "stop moving, you know.\p"
+	.string "There's a move like that. Weak at\n"
+	.string "first-then stronger every time\l"
+	.string "it lands.\p"
+	.string "It's called FURY CUTTER.\p"
+	.string "I'll teach it to a POKéMON of\n"
+	.string "yours for just ¥3500.$"
+
+AzaleaPokeCenter_Text_FuryCutterTutorNotYet:
+	.string "FURY CUTTER! Every swing that\n"
+	.string "lands hits harder than the last.\p"
+	.string "I only teach it to trainers who\n"
+	.string "have beaten BUGSY, though.\p"
+	.string "His GYM is right here in town.\n"
+	.string "Come find me after!$"

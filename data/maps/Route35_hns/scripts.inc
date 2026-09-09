@@ -241,3 +241,41 @@ Route35_Text_Sign:
 
 Route35_Text_Sign2:
 	.string "NATIONAL PARK GATE$"
+
+Route35_EventScript_GuitaristSu::
+	trainerbattle_single TRAINER_SU_HNS, Route35_Text_GuitaristSuSeen, Route35_Text_GuitaristSuBeaten
+	msgbox Route35_Text_GuitaristSuAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route35_Text_GuitaristSuSeen:
+	.string "Ah... I just want to relax\n"
+	.string "by the BERRY trees...$"
+
+Route35_Text_GuitaristSuBeaten:
+	.string "Hmm... even music can't save me now.$"
+
+Route35_Text_GuitaristSuAfter:
+	.string "Sometimes, escaping the city\n"
+	.string "is the best way to find your rhythm.$"
+
+Route35_EventScript_BreederM_Cory::
+	trainerbattle_single TRAINER_CORY_HNS, Route35_Text_CoryIntro, Route35_Text_CoryDefeat
+	msgbox Route35_Text_CoryPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route35_Text_CoryIntro::
+	.string "I just picked up my POKéMON from\n"
+	.string "the DAY-CARE!\p"
+	.string "They're still little, but they've\n"
+	.string "got a lot of energy!$"
+
+Route35_Text_CoryDefeat::
+	.string "Whoa, you're way ahead of me!\n"
+	.string "My POKéMON are still babies…$"
+
+Route35_Text_CoryPostBattle::
+	.string "Raising baby POKéMON takes time,\n"
+	.string "but it's worth every moment.\p"
+	.string "The DAY-CARE helps them grow,\n"
+	.string "even when I'm not around!$"
+

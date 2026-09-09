@@ -118,11 +118,6 @@ Route34_EventScript_Item_RareCandy::
 	finditem ITEM_RARE_CANDY
 	end
 	
-Route34_EventScript_Item_Embargo::
-    finditem ITEM_TM_HONE_CLAWS
-    end
-
-
 Route34_Text_YoungsterSamuel_Seen:
 	.string "Hey! I'm looking for MANKEY!$"
 
@@ -281,3 +276,47 @@ Route34_Text_CooltrainerKate_After:
 Route34_Text_Sign_DayCare:
 	.string "DAY-CARE\p"
 	.string "LET US RAISE YOUR POKéMON FOR YOU!$"
+
+Route34_EventScript_Item_SuperPotion::
+	finditem ITEM_SUPER_POTION
+	end
+
+Route34_EventScript_BreederF_Amber::
+	trainerbattle_single TRAINER_AMBER_HNS, Route34_Text_AmberIntro, Route34_Text_AmberDefeat
+	msgbox Route34_Text_AmberPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route34_Text_AmberIntro::
+	.string "Oh! I just came back from the\n"
+	.string "DAY-CARE with my little ones!\p"
+	.string "They were so excited… I hope\n"
+	.string "they don't hold me back!$"
+
+Route34_Text_AmberDefeat::
+	.string "Oh no… I guess I still have\n"
+	.string "a lot to learn as a breeder!$"
+
+Route34_Text_AmberPostBattle::
+	.string "I leave my POKéMON at the DAY-CARE\n"
+	.string "so they can grow strong and happy.\p"
+	.string "Baby POKéMON are just the cutest…\n"
+	.string "I could watch them all day!$"
+
+Route34_EventScript_SuperNerd::
+	lock
+	faceplayer
+	msgbox Route34_Text_SuperNerd, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route34_Text_SuperNerd:
+	.string "I've been counting POKéMON in this\n"
+	.string "grass for three days straight.\p"
+	.string "DITTO lives out here, you know.\p"
+	.string "But you'll almost never meet one!\n"
+	.string "It transforms the moment it's\l"
+	.string "startled, so it just looks like\l"
+	.string "every other POKéMON in the grass.\p"
+	.string "For all I know, I've counted a\n"
+	.string "hundred of them already.$"
