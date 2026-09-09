@@ -449,6 +449,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_GUITARIST_HNS] =        { _("GUITARIST"), 8 },
     [TRAINER_CLASS_HEX_MANIAC_HNS] =       { _("HEX MANIAC"), 6 },
     [TRAINER_CLASS_HIKER_HNS] =            { _("HIKER"), 10 },
+    [TRAINER_CLASS_ENGINEER_HNS] =         { _("ENGINEER"), 10 },
     [TRAINER_CLASS_JUGGLER_HNS] =          { _("JUGGLER") },
     [TRAINER_CLASS_KIMONO_GIRL_HNS] =      { _("KIMONO GIRL") },
     [TRAINER_CLASS_LASS_HNS] =             { _("LASS"), 4 },
