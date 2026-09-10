@@ -3038,9 +3038,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
                             #if P_ALOLAN_FORMS
                                 ,{EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_RAICHU_ALOLA, CONDITIONS({IF_REGION, REGION_ALOLA})}
                             #endif
-                                #if P_KISMET_FAKEMON
-                                    ,{EVO_ITEM, ITEM_SUN_STONE, SPECIES_PSYCHU} // Kismet: evolves into a custom species
-                                #endif //P_KISMET_FAKEMON
                               ),
     },
 
@@ -10193,9 +10190,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sGravelerFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_GOLEM},
                                 {EVO_LEVEL, 38, SPECIES_GOLEM}
-                            #if P_KISMET_FAKEMON
-                               ,{EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_GEOWATT} // evolves into a custom species
-                            #endif //P_KISMET_FAKEMON
                               ),
     },
 
