@@ -109,7 +109,7 @@ enum __attribute__((__packed__)) Flavor
 #define BERRY_TREE_ROUTE_121_SOIL_2   54
 #define BERRY_TREE_ROUTE_115_BLUK_1   55
 #define BERRY_TREE_ROUTE_115_BLUK_2   56
-#define BERRY_TREE_UNUSED             57
+#define BERRY_TREE_TAMATO_3           57
 #define BERRY_TREE_ROUTE_123_POMEG_3  58
 #define BERRY_TREE_ROUTE_123_POMEG_4  59
 #define BERRY_TREE_ROUTE_123_GREPA_1  60
@@ -182,7 +182,7 @@ enum __attribute__((__packed__)) Flavor
 #define BERRY_TREE_GREPA_3      124
 #define BERRY_TREE_TAMATO_1     125
 #define BERRY_TREE_TAMATO_2     126
-#define BERRY_TREE_TAMATO_3     127
+#define BERRY_TREE_ROUTE33_COBA 127
 
 #define BERRY_TREES_COUNT 128
 

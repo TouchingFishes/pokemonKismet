@@ -45,3 +45,24 @@ DarkCave2_Text_Nerd:
 DarkCave2_Text_Nerd2:
     .string "BLACK-GLASSES ups the power of\n"
     .string "DARK-type moves.$"
+
+DarkCave2_EventScript_Bobby::
+	trainerbattle_single TRAINER_BOBBY_HNS, DarkCave2_Text_BobbySeen, DarkCave2_Text_BobbyBeaten
+	msgbox DarkCave2_Text_BobbyAfter, MSGBOX_AUTOCLOSE
+	end
+
+DarkCave2_Text_BobbySeen:
+	.string "Tell you what, the wall\n"
+	.string "before me has the perfect\l"
+	.string "condition for drilling a\l"
+	.string "tunnel.\p"
+	.string "Oh, you wanna battle?!$"
+
+DarkCave2_Text_BobbyBeaten:
+	.string "Uff. You're good.$"
+
+DarkCave2_Text_BobbyAfter:
+	.string "I tell you…\p"
+	.string "If people wanted to, me and\n"
+	.string "my pals could build a\l"
+	.string "tunnel here…$"

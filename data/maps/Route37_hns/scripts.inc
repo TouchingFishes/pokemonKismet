@@ -143,3 +143,108 @@ Route37_Text_Sunny_NotSunday:
 Route37_Text_Sign:
 	.string "ROUTE 37\n"
 	.string "ECRUTEAK CITY AHEAD$"
+
+Route37_EventScript_BreederFAmala::  @ rematch branch dropped - no REMATCH row for this trainer
+	msgbox Route37_Text_BreederFAmala_After, MSGBOX_AUTOCLOSE
+	end
+
+Route37_EventScript_ChannelerMercy::
+	trainerbattle_single TRAINER_MERCY_HNS, Route37_Text_ChannelerMercy_Seen, Route37_Text_ChannelerMercy_Beaten
+	msgbox Route37_Text_ChannelerMercy_After, MSGBOX_AUTOCLOSE
+	end
+
+Route37_EventScript_BugManiacDale::
+	trainerbattle_single TRAINER_DALE_HNS, Route37_Text_BugManiacDale_Seen, Route37_Text_BugManiacDale_Beaten
+	msgbox Route37_Text_BugManiacDale_After, MSGBOX_AUTOCLOSE
+	end
+
+Route37_EventScript_BugCatcherMicky::
+	trainerbattle_single TRAINER_MICKY_HNS, Route37_Text_BugCatcherMicky_Seen, Route37_Text_BugCatcherMicky_Beaten
+	msgbox Route37_Text_BugCatcherMicky_After, MSGBOX_AUTOCLOSE
+	end
+
+Route37_EventScript_CamperJordan::
+	trainerbattle_single TRAINER_JORDAN_HNS, Route37_Text_CamperJordan_Seen, Route37_Text_CamperJordan_Beaten
+	msgbox Route37_Text_CamperJordan_After, MSGBOX_AUTOCLOSE
+	end
+
+Route37_EventScript_Item_GrassKnot::
+	finditem ITEM_TM_GRASS_KNOT
+	end
+
+Route37_Text_BreederFAmala_After::
+	.string "Raising POKéMON isn't just about\n"
+	.string "making them stronger.\p"
+	.string "The trust you build together is\n"
+	.string "what wins the toughest battles.$"
+
+Route37_Text_ChannelerMercy_Seen::
+	.string "Can you feel it?\p"
+	.string "The forest whispers to believers.\n"
+	.string "Even SHUPPET is listening.\p"
+	.string "Come. Let the spirits judge\n"
+	.string "our battle.$"
+
+Route37_Text_ChannelerMercy_Beaten::
+	.string "The forest has spoken...\n"
+	.string "Today, it favored you.$"
+
+Route37_Text_ChannelerMercy_After::
+	.string "When the wind stirs the leaves,\n"
+	.string "SHUPPET always looks up.\p"
+	.string "Perhaps it hears voices that\n"
+	.string "we've long forgotten.$"
+
+Route37_Text_BugManiacDale_Seen::
+	.string "Shh! Keep your voice down!\p"
+	.string "I'm waiting for a rare BUG\n"
+	.string "POKéMON to fall out of a tree.\p"
+	.string "Since you're here anyway,\n"
+	.string "let's battle while we wait!$"
+
+Route37_Text_BugManiacDale_Beaten::
+	.string "Aw, now I've scared them all\n"
+	.string "away...$"
+
+Route37_Text_BugManiacDale_After::
+	.string "Headbutting trees is an art.\p"
+	.string "You never know whether a common\n"
+	.string "BUG or something truly rare will\l"
+	.string "come tumbling down.$"
+
+Route37_Text_BugCatcherMicky_Seen::
+	.string "BUG POKéMON are the best!\p"
+	.string "They're always hiding somewhere,\n"
+	.string "just waiting to surprise you!\p"
+	.string "Let's see if mine surprise you!$"
+
+Route37_Text_BugCatcherMicky_Beaten::
+	.string "Aw... I guess my bugs weren't\n"
+	.string "sneaky enough.$"
+
+Route37_Text_BugCatcherMicky_After::
+	.string "People walk right past BUG\n"
+	.string "POKéMON all the time.\p"
+	.string "If you slow down and really look,\n"
+	.string "they're everywhere!$"
+
+Route37_Text_CamperJordan_Seen::
+	.string "Isn't this forest awesome?\p"
+	.string "I could spend all day looking\n"
+	.string "at these colorful trees!\p"
+	.string "A battle's even more fun with\n"
+	.string "a view like this!$"
+
+Route37_Text_CamperJordan_Beaten::
+	.string "Whoa! That was as bright as\n"
+	.string "the leaves overhead!$"
+
+Route37_Text_CamperJordan_After::
+	.string "Every season gives these trees\n"
+	.string "new colors.\p"
+	.string "No wonder so many POKéMON\n"
+	.string "choose to live here.$"
+
+Route37_EventScript_Item_HoneClaws::
+	finditem ITEM_TM_HONE_CLAWS
+	end

@@ -8,7 +8,7 @@ Route39_OnTransition:
 	end
 
 Route39_EventScript_Item_TM::
-	finditem ITEM_TM_DRAIN_PUNCH
+	finditem ITEM_TM_BUG_BITE
 	end
 
 Route39_EventScript_Item_Nugget::
@@ -416,3 +416,94 @@ Route39_Text_DerekGaveItem:
 Route39_Text_DerekNoRoom:
 	.string "Hmm, your BAG is full.\p"
 	.string "Come back when you have room.$"
+
+Route39_EventScript_Tauros::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_ROUTE39_TAUROS, Route39_EventScript_TaurosCalm
+	waitse
+	playmoncry SPECIES_TAUROS, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox Route39_Text_TaurosIdle, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route39_EventScript_TaurosAttack
+	checkitem ITEM_ORAN_BERRY
+	goto_if_eq VAR_RESULT, FALSE, Route39_EventScript_TaurosNoBerry
+	removeitem ITEM_ORAN_BERRY
+	msgbox Route39_Text_TaurosCalmed, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_ROUTE39_TAUROS
+	release
+	end
+
+Route39_EventScript_TaurosNoBerry::
+	msgbox Route39_Text_TaurosNoBerry, MSGBOX_DEFAULT
+Route39_EventScript_TaurosAttack::
+	msgbox Route39_Text_TaurosAngry, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_LAST_TALKED, LOCALID_ROUTE39_TAUROS
+	setwildbattle SPECIES_TAUROS, 25, ITEM_MUSCLE_BAND
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route39_EventScript_TaurosBeaten
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route39_EventScript_TaurosCaught
+	release
+	end
+
+Route39_EventScript_TaurosBeaten::
+	setflag FLAG_DEFEATED_ROUTE39_TAUROS
+	release
+	end
+
+Route39_EventScript_TaurosCaught::
+	setflag FLAG_DEFEATED_ROUTE39_TAUROS
+	removeobject LOCALID_ROUTE39_TAUROS
+	release
+	end
+
+Route39_EventScript_TaurosCalm::
+	msgbox Route39_Text_TaurosCalm, MSGBOX_DEFAULT
+	release
+	end
+
+Route39_EventScript_TaurosGirl::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_ROUTE39_TAUROS, Route39_EventScript_TaurosGirlAfter
+	msgbox Route39_Text_TaurosGirlWarning, MSGBOX_DEFAULT
+	release
+	end
+
+Route39_EventScript_TaurosGirlAfter::
+	msgbox Route39_Text_TaurosGirlAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Route39_Text_TaurosIdle:
+	.string "This TAUROS is pawing at the\n"
+	.string "ground, watching you closely.\p"
+	.string "Offer it a BERRY?$"
+
+Route39_Text_TaurosCalmed:
+	.string "The TAUROS takes the BERRY and\n"
+	.string "snorts, satisfied.\p"
+	.string "It ambles back toward the herd.$"
+
+Route39_Text_TaurosNoBerry:
+	.string "You don't have anything it wants.$"
+
+Route39_Text_TaurosAngry:
+	.string "The TAUROS lowers its head and\n"
+	.string "charges!$"
+
+Route39_Text_TaurosCalm:
+	.string "The TAUROS grazes quietly now.$"
+
+Route39_Text_TaurosGirlWarning:
+	.string "Careful!\p"
+	.string "One of the TAUROS got out and\n"
+	.string "it's in a terrible mood.\p"
+	.string "They love ORAN BERRIES, though.$"
+
+Route39_Text_TaurosGirlAfter:
+	.string "You settled it down!\p"
+	.string "Thank you - the herd gets restless\n"
+	.string "when one of them is upset.$"

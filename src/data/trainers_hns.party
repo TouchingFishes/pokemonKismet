@@ -1443,7 +1443,7 @@ Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_GEKOPON
+SPECIES_AMPHAROS
 Level: 39
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
@@ -1530,7 +1530,7 @@ SPECIES_NIDOQUEEN
 Level: 43
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
-SPECIES_MANECTRIC
+SPECIES_LUXRAY
 Level: 41
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
@@ -1547,11 +1547,11 @@ Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_ABOMASNOW
+SPECIES_ROSELIA
 Level: 45
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
-SPECIES_GEKOPON
+SPECIES_ROSELIA
 Level: 45
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
@@ -1744,7 +1744,7 @@ SPECIES_EXEGGCUTE
 Level: Badge+3
 IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
-SPECIES_FOMANTIS
+SPECIES_BUIZEL
 Level: Badge+3
 IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 
@@ -2060,11 +2060,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Slowbro
-Level: 26
+Level: Badge+6
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Wartortle
-Level: 26
+Level: Badge+6
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_BRENT_HNS ===
@@ -3699,7 +3699,7 @@ SPECIES_TENTACOOL
 Level: Badge+1
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_CARVANHA
+SPECIES_QWILFISH
 Level: Badge+1
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -3762,7 +3762,7 @@ SPECIES_MANTINE
 Level: Badge+3
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_CARVANHA
+SPECIES_LANTURN
 Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -4951,15 +4951,15 @@ Music: Hg Suspicious 2
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_MACHOKE
+SPECIES_HARIYAMA
 Level: 39
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_SANDSLASH
+SPECIES_MACHOKE
 Level: 37
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_SANDSLASH
+SPECIES_MACHOKE
 Level: 37
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -5048,23 +5048,23 @@ Double Battle: No
 AI: Check Bad Move
 
 Golem
-Level: 40
+Level: Badge+5
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Golem
-Level: 40
+Level: Badge+5
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Golem
-Level: 40
+Level: Badge+5
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Golem
-Level: 40
+Level: Badge+5
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Golem
-Level: 40
+Level: Badge+5
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_TIM_HNS ===
@@ -5789,7 +5789,7 @@ Music: Hg Suspicious 2
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_MEDICHAM
+SPECIES_HARIYAMA
 Level: 56
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -6163,19 +6163,19 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_RAPIDASH
-Level: 40
+Level: Badge+5
 IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 
 SPECIES_STANTLER
-Level: 38
+Level: Badge+3
 IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 
 SPECIES_RAICHU
-Level: 38
+Level: Badge+3
 IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 
-SPECIES_CHANSEY
-Level: 40
+SPECIES_FLOATZEL
+Level: Badge+5
 IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 
 === TRAINER_HEIDI_HNS ===
@@ -6403,8 +6403,20 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
 
-Nidorino
-Level: 15
+SPECIES_SANDSLASH
+Level: 35
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SANDSLASH
+Level: 35
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SUDOWOODO
+Level: 37
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_GOLDUCK
+Level: 39
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_DALE_HNS ===
@@ -6416,7 +6428,7 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_FOMANTIS
+SPECIES_BURMY
 Level: 19
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 - MOVE_RAZOR_LEAF
@@ -6432,7 +6444,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 - MOVE_DOUBLE_TEAM
 - MOVE_MIMIC
 
-SPECIES_FOMANTIS
+SPECIES_BURMY
 Level: 19
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 - MOVE_RAZOR_LEAF
@@ -6450,15 +6462,15 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_URSARING
-Level: 40
+Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_CAMERUPT
-Level: 40
+SPECIES_EMOLGA
+Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_PRIMEAPE
-Level: 40
+Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_THOMAS_HNS ===
@@ -6641,7 +6653,7 @@ SPECIES_TAUROS
 Level: 38
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_MANECTRIC
+SPECIES_LUXRAY
 Level: 38
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -6866,14 +6878,14 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_KOJI_HNS ===
 Name: KOJI
-Class: Hex Maniac Hns
-Pic: Hex Maniac
+Class: Bug Maniac Hns
+Pic: Bug Maniac Hns
 Gender: Male
-Music: Hg Sage
+Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_FOMANTIS
+SPECIES_WORMADAM
 Level: Badge+2
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - MOVE_RAZOR_LEAF
@@ -7061,7 +7073,7 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_CUBCHOO
+SPECIES_VANILLITE
 Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -7069,7 +7081,7 @@ SPECIES_CLOYSTER
 Level: Badge+6
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_CUBCHOO
+SPECIES_VANILLITE
 Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -8162,7 +8174,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_SURF
 - MOVE_HAIL
 
-SPECIES_BEARTIC
+SPECIES_CRYOGONAL
 Level: 38
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_ICICLE_CRASH
@@ -8213,7 +8225,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SURF
 - MOVE_HAIL
 
-SPECIES_BEARTIC
+SPECIES_CRYOGONAL
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_ICICLE_CRASH
@@ -9308,17 +9320,17 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 SPECIES_SLOWKING @ ITEM_QUICK_CLAW
 Level: Badge+11
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- MOVE_ICE_BEAM
 - MOVE_FLAMETHROWER
+- MOVE_SHADOW_BALL
 - MOVE_SURF
 - MOVE_PSYCHIC
 
-SPECIES_PSYCHU
+SPECIES_JYNX
 Level: Badge+9
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- MOVE_BATON_PASS
+- MOVE_LOVELY_KISS
 - MOVE_CALM_MIND
-- MOVE_THUNDERBOLT
+- MOVE_ICE_BEAM
 - MOVE_PSYCHIC
 
 SPECIES_EXEGGUTOR
@@ -9407,13 +9419,13 @@ AI: Basic Trainer
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
-SPECIES_BRAVIARY
+SPECIES_HERACROSS
 Level: Badge+15
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_ACROBATICS
 - MOVE_ROCK_TOMB
 - MOVE_BRICK_BREAK
-- MOVE_SUPERPOWER
+- MOVE_BLAZE_KICK
 
 SPECIES_HITMONCHAN @ ITEM_BLACK_BELT
 Level: Badge+13
@@ -15406,39 +15418,8 @@ Level: 5
  * IV row. Sprite is Touching_Fishes' master_yama.png; the 1.x fork carries the
  * pic constant but no MASTER class and no trainer using it.
  *
- * Gen 2 item translation: MINT_BERRY -> Lum Berry (cures status),
- * BERRY -> Oran Berry (restores 10 HP, the same effect). MAGICAL_FIRE is the
- * fork's name for Mystical Fire; PSYCHIC_M is Gen 2's constant for Psychic.
- * Krolucard, Fusang and Drain Life are Kismet content and all already exist.
- *
- * TWO DELIBERATE CHANGES from Crystal's set:
- *   - Misdreavus -> MISMAGIUS. Crystal fielded the unevolved form on its final
- *     boss; the evolution is +60 BST (435 -> 495) with SpA/SpD/Spe 85 -> 105,
- *     and every move carries over unchanged.
- *   - Krolucard's MOVES, not its species. At 85/70/80/93/80/123 it is already
- *     the fastest thing on the team; the weakness was Razor Wind (two-turn, so
- *     the player gets a free turn) and Ominous Wind (60, not even STAB). Now
- *     Nasty Plot + Psychic + Dark Pulse, keeping Drain Life for identity and
- *     for the recovery its EFFECT_ABSORB provides.
- *
- * ITEMS UPGRADED from the faithful Gen 2 translation: Oran Berry restores only
- * 10 HP, which is meaningless on a level 95+ boss. Chesto pairs with Snorlax's
- * Rest, Lum protects Gyarados' Dragon Dance sweep from status, Life Orb suits
- * coverage. Fusang keeps Leftovers behind its 160 base Sp. Def.
- *
- * The two special attackers take DIFFERENT items rather than doubling up on
- * Life Orb. Krolucard runs Nasty Plot, so it cannot be Choice-locked and wants
- * the immediate power.
- *
- * Mismagius deliberately does NOT hold Choice Specs, despite its four-attack
- * set being the textbook user. This tree's AI scores Choice items well when
- * PICKING a move - it applies the 1.5x in its damage maths and refuses to lock
- * into status moves (battle_ai_main.c, "Choice items") - but it has no notion
- * of being ALREADY locked: `choicedMove` appears nowhere in battle_ai_main.c,
- * battle_ai_util.c or battle_ai_switch_items.c. So a player who switches a
- * Normal type into a locked Shadow Ball gets free turns the AI cannot escape.
- * Wise Glasses gives a flat +10% special with no such exploit.
  */
+
 === TRAINER_YAMA_HNS ===
 Name: YAMA
 Class: Master Hns
@@ -19596,3 +19577,190 @@ AI: Check Bad Move
 SPECIES_VOLTORB
 Level: 25
 IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
+
+=== TRAINER_PATRICIA_HNS ===
+Name: PATRICIA
+Class: Lady Hns
+Pic: Lady Hns
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_FLAAFFY @ ITEM_NUGGET
+Level: Badge+4
+IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
+
+SPECIES_SKITTY @ ITEM_NUGGET
+Level: Badge+4
+IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
+
+=== TRAINER_DARREN_HNS ===
+Name: DARREN
+Class: Rich Boy Hns
+Pic: Rich Boy Hns
+Gender: Male
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_DUNSPARCE @ ITEM_NUGGET
+Level: 36
+IVs: 20 HP / 28 Atk / 28 Def / 20 SpA / 20 SpD / 20 Spe
+
+SPECIES_DUNSPARCE @ ITEM_NUGGET
+Level: 38
+IVs: 20 HP / 28 Atk / 28 Def / 20 SpA / 20 SpD / 20 Spe
+
+SPECIES_DEWGONG @ ITEM_NUGGET
+Level: 38
+IVs: 20 HP / 28 Atk / 28 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_ANDERS_HNS ===
+Name: ANDERS
+Class: Bird Keeper Hns
+Pic: Bird Keeper
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_FLETCHINDER
+Level: 36
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SWABLU
+Level: 34
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_FLETCHINDER
+Level: 36
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_FEAROW
+Level: 40
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_NOLAN_HNS ===
+Name: NOLAN
+Class: Fisherman Hns
+Pic: Fisherman
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_TENTACRUEL
+Level: 40
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_DOUBLE_EDGE
+- MOVE_SLUDGE_BOMB
+- MOVE_WATERFALL
+- MOVE_AURORA_BEAM
+
+SPECIES_KINGLER
+Level: 41
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_SCORCHING_SANDS
+- MOVE_CUT
+- MOVE_GUILLOTINE
+- MOVE_STRENGTH
+
+SPECIES_CLOYSTER
+Level: 42
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_SPIKE_CANNON
+- MOVE_SURF
+- MOVE_HEADBUTT
+- MOVE_AURORA_BEAM
+
+=== TRAINER_SARAH_HNS ===
+Name: SARAH
+Class: Lady Hns
+Pic: Lady Hns
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_SKIPLOOM @ ITEM_NUGGET
+Level: 42
+IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
+
+SPECIES_BUTTERFREE @ ITEM_NUGGET
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
+
+SPECIES_DELCATTY @ ITEM_NUGGET
+Level: 41
+IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
+
+=== TRAINER_CATHY_HNS ===
+Name: CATHY
+Class: Pkmn Ranger Hns
+Pic: Pokemon Ranger F Hns
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_VIGOROTH
+Level: 37
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
+
+SPECIES_TANGELA
+Level: 37
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
+
+SPECIES_LUXRAY
+Level: 41
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
+
+SPECIES_GLIGAR
+Level: 41
+IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
+
+=== TRAINER_RAYNOR_HNS ===
+Name: RAYNOR
+Class: Expert Hns
+Pic: Expert M
+Gender: Male
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_VANILLUXE
+Level: 47
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
+- MOVE_ICE_BEAM
+- MOVE_REFLECT
+- MOVE_MILK_DRINK
+- MOVE_LIGHT_SCREEN
+
+SPECIES_EXEGGUTOR
+Level: 45
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
+- MOVE_EGG_BOMB
+- MOVE_CURSE
+- MOVE_ANCIENT_POWER
+
+SPECIES_KILOWATTREL
+Level: 43
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
+- MOVE_QUICK_ATTACK
+- MOVE_MIRROR_MOVE
+- MOVE_AERIAL_ACE
+- MOVE_THUNDER
+
+SPECIES_WHISCASH
+Level: 43
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
+- MOVE_SPARK
+- MOVE_EARTHQUAKE
+- MOVE_MUDDY_WATER
+- MOVE_ICY_WIND
+
+SPECIES_ARCANINE
+Level: 47
+IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
+- MOVE_IRON_TAIL
+- MOVE_SLEEP_TALK
+- MOVE_FLAMETHROWER
+- MOVE_REST

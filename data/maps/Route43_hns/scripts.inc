@@ -8,9 +8,10 @@ Route43_MapScript_OnTransition::
 	callnative SetTimeBasedEncounters
 	end
 
-Route43_EventScript_Ben::
-	trainerbattle_single TRAINER_BEN_HNS, Route43_Text_PokemaniacBenSeen, Route43_Text_PokemaniacBenBeaten
-	msgbox Route43_Text_PokemaniacBenAfter, MSGBOX_AUTOCLOSE
+
+Route43_EventScript_Koji::
+	trainerbattle_single TRAINER_KOJI_HNS, Route43_Text_BugManiacKojiSeen, Route43_Text_BugManiacKojiBeaten
+	msgbox Route43_Text_BugManiacKojiAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route43_EventScript_Brent::
@@ -48,24 +49,10 @@ Route43_EventScript_Spencer::
 	msgbox Route43_Text_CamperSpencerAfter, MSGBOX_AUTOCLOSE
 	end
 
-Route43_EventScript_Tiffany::
-	trainerbattle_single TRAINER_TIFFANY_HNS, Route43_Text_PicnickerTiffanySeen, Route43_Text_PicnickerTiffanyBeaten, Route43_EventScript_RegisterTiffany
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route43_EventScript_RematchTiffany
-	msgbox Route43_Text_PicnickerTiffanyWantsPicnic, MSGBOX_AUTOCLOSE
-	end
 
-Route43_EventScript_RegisterTiffany::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route43_Text_TiffanyRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_TIFFANY_HNS
-	release
-	end
-
-Route43_EventScript_RematchTiffany::
-	trainerbattle_rematch TRAINER_TIFFANY_HNS, Route43_Text_TiffanyRematchIntro, Route43_Text_TiffanyRematchDefeat
-	msgbox Route43_Text_TiffanyPostRematch, MSGBOX_AUTOCLOSE
+Route43_EventScript_Julie::
+	trainerbattle_single TRAINER_JULIE_HNS, Route43_Text_PokeRangerFJulieSeen, Route43_Text_PokeRangerFJulieBeaten
+	msgbox Route43_Text_PokeRangerFJulieAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route43_EventScript_Sign1::
@@ -80,19 +67,21 @@ Route43_EventScript_Item_Max_Ether::
 	finditem ITEM_MAX_ETHER
 	end
 
-Route43_Text_PokemaniacBenSeen:
-    .string "I love POKéMON!\p"
-    .string "That's why I started--and why I'll\n"
-    .string "keep on collecting POKéMON!$"
+Route43_Text_BugManiacKojiSeen:
+    .string "Amazing!\p"
+    .string "Have you ever seen bug POKéMON\n"
+    .string "with such beautiful colors?$"
 
-Route43_Text_PokemaniacBenBeaten:
-    .string "How could you do this to me?$"
+Route43_Text_BugManiacKojiBeaten:
+    .string "Incredible!\p"
+    .string "Your POKéMON shine brighter than\n"
+    .string "the rarest bug POKéMON!$"
 
-Route43_Text_PokemaniacBenAfter:
-    .string "What else do I like besides\n"
-    .string "POKéMON?\p"
-    .string "MARY on the radio. I bet she's\n"
-    .string "cute!$"
+Route43_Text_BugManiacKojiAfter:
+    .string "Every bug POKéMON has its own\n"
+    .string "unique colors and patterns.\p"
+    .string "That's what makes studying them\n"
+    .string "so fascinating!$"
 
 Route43_Text_PokemaniacBrentSeen:
     .string "Hey! Do you have any rare\n"
@@ -160,31 +149,22 @@ Route43_Text_CamperSpencerAfter:
     .string "What is going on at LAKE OF RAGE?\p"
     .string "We were planning to camp there.$"
 
-Route43_Text_PicnickerTiffanySeen:
-    .string "Are you going to LAKE OF RAGE too?\p"
-    .string "Let's play for a little while!$"
 
-Route43_Text_PicnickerTiffanyBeaten:
-    .string "I played too much!$"
+Route43_Text_PokeRangerFJulieSeen:
+    .string "Are you heading toward the\n"
+    .string "LAKE OF RAGE too?\p"
+    .string "I'm surveying the area.\n"
+    .string "Let me test your strength!$"
 
-Route43_Text_PicnickerTiffanyWantsPicnic:
-    .string "I'm having a picnic with POKéMON.\p"
-    .string "Won't you join us?$"
+Route43_Text_PokeRangerFJulieBeaten:
+    .string "Hmm… I misjudged you.$"
 
-Route43_Text_TiffanyRegister:
-    .string "I'm having a picnic with POKéMON.\p"
-    .string "Won't you join us?$"
-
-Route43_Text_TiffanyRematchIntro:
-    .string "Are you going to LAKE OF RAGE too?\p"
-    .string "Let's play for a little while!$"
-
-Route43_Text_TiffanyRematchDefeat:
-    .string "I played too much!$"
-
-Route43_Text_TiffanyPostRematch:
-    .string "I'm having a picnic with POKéMON.\p"
-    .string "Won't you join us?$"
+Route43_Text_PokeRangerFJulieAfter:
+    .string "I'm observing the POKéMON\n"
+    .string "in this region.\p"
+    .string "Battling helps me understand\n"
+    .string "how they and their trainers\l"
+    .string "work together.$"
 
 Route43_Sign1:
     .string "ROUTE 43\p"

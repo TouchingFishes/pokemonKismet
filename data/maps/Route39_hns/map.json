@@ -53,7 +53,7 @@
       "flag": "FLAG_ENABLE_BAOBA_MATCH_CALL"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F_HNS",
       "x": 22,
       "y": 38,
       "elevation": 0,
@@ -93,7 +93,20 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MILTANK",
-      "x": 16,
+      "x": 19,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route39_EventScript_Miltank",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MILTANK",
+      "x": 22,
       "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -106,34 +119,21 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MILTANK",
-      "x": 17,
-      "y": 27,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route39_EventScript_Miltank",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MILTANK",
-      "x": 23,
-      "y": 23,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route39_EventScript_Miltank",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MILTANK",
       "x": 24,
-      "y": 27,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route39_EventScript_Miltank",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MILTANK",
+      "x": 25,
+      "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -154,7 +154,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route39_EventScript_Item_TM",
-      "flag": "FLAG_ITEM_ROUTE39_TM_DRAIN_PUNCH"
+      "flag": "FLAG_ITEM_ROUTE39_TM_BUG_BITE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_PONYTA",
@@ -249,7 +249,7 @@
       "flag": "FLAG_HIDE_ROUTE39_SHADOW"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F_HNS",
       "x": 16,
       "y": 45,
       "elevation": 0,
@@ -286,6 +286,33 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route39_EventScript_Woman",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL_HNS",
+      "x": 13,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route39_EventScript_TaurosGirl",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ROUTE39_TAUROS",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_TAUROS",
+      "x": 14,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route39_EventScript_Tauros",
+      "flag": "FLAG_DEFEATED_ROUTE39_TAUROS"
     }
   ],
   "warp_events": [

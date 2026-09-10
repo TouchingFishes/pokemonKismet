@@ -258,3 +258,95 @@ Route44_Text_Sign2:
     .string "ROUTE 44\p"
     .string "MAHOGANY TOWN - BLACKTHORN CITY$"
 
+Route44_EventScript_Harvey::
+	trainerbattle_single TRAINER_HARVEY_HNS, Route44_Text_CamperHarveySeen, Route44_Text_CamperHarveyBeaten
+	msgbox Route44_Text_CamperHarveyAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route44_EventScript_Darren::
+	trainerbattle_single TRAINER_DARREN_HNS, Route44_Text_RichBoyDarrenSeen, Route44_Text_RichBoyDarrenBeaten
+	msgbox Route44_Text_RichBoyDarrenAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route44_EventScript_Anders::
+	trainerbattle_single TRAINER_ANDERS_HNS, Route44_Text_BirdKeeperAndersSeen, Route44_Text_BirdKeeperAndersBeaten
+	msgbox Route44_Text_BirdKeeperAndersAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route44_EventScript_Nolan::
+	trainerbattle_single TRAINER_NOLAN_HNS, Route44_Text_FisherNolanSeen, Route44_Text_FisherNolanBeaten
+	msgbox Route44_Text_FisherNolanAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route44_EventScript_Sarah::
+	trainerbattle_single TRAINER_SARAH_HNS, Route44_Text_LadySarahSeen, Route44_Text_LadySarahBeaten
+	msgbox Route44_Text_LadySarahAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route44_Text_CamperHarveySeen:
+	.string "Hiking all the way up here has\n"
+	.string "been a blast.\p"
+	.string "Let's battle!$"
+
+Route44_Text_CamperHarveyBeaten:
+	.string "That was tough!$"
+
+Route44_Text_CamperHarveyAfter:
+	.string "I'm so exhausted.$"
+
+Route44_Text_RichBoyDarrenSeen:
+	.string "I spent ages looking for my\n"
+	.string "team.\p"
+	.string "Let's find out if it was worth\n"
+	.string "it.$"
+
+Route44_Text_RichBoyDarrenBeaten:
+	.string "Seems like the time I spent\n"
+	.string "was not worth it.$"
+
+Route44_Text_RichBoyDarrenAfter:
+	.string "Someone told me that my POKéMON\n"
+	.string "are on the cusp of realizing\l"
+	.string "their full potential.$"
+
+Route44_Text_BirdKeeperAndersSeen:
+	.string "I love the way my birds can\n"
+	.string "tame the wind.\p"
+	.string "Let me show you!$"
+
+Route44_Text_BirdKeeperAndersBeaten:
+	.string "What a show!$"
+
+Route44_Text_BirdKeeperAndersAfter:
+	.string "Bird POKéMON are the strongest.\p"
+	.string "Trust me.$"
+
+Route44_Text_FisherNolanSeen:
+	.string "I like travelling around and\n"
+	.string "enjoying nature.\p"
+	.string "How about a battle?$"
+
+Route44_Text_FisherNolanBeaten:
+	.string "Darn!$"
+
+Route44_Text_FisherNolanAfter:
+	.string "These mountain lakes are so\n"
+	.string "pristine.$"
+
+Route44_Text_LadySarahSeen:
+	.string "Oh… a challenger?\p"
+	.string "How delightful.\p"
+	.string "Do be gentle, won't you?\n"
+	.string "I so dislike unpleasant battles.$"
+
+Route44_Text_LadySarahBeaten:
+	.string "Ah… how gracefully you fight.\p"
+	.string "I concede with no regrets.$"
+
+Route44_Text_LadySarahAfter:
+	.string "Battles need not be harsh to be\n"
+	.string "meaningful.\p"
+	.string "A calm heart and steady hand…\n"
+	.string "that is true elegance.\p"
+	.string "I do hope our encounter brought\n"
+	.string "you a measure of peace.$"

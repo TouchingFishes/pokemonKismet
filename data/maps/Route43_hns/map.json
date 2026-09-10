@@ -44,7 +44,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_POKERANGER_F_HNS",
       "x": 10,
       "y": 24,
       "elevation": 0,
@@ -53,11 +53,11 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route43_EventScript_Tiffany",
+      "script": "Route43_EventScript_Julie",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMANIAC_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_BUG_MANIAC_HNS",
       "x": 16,
       "y": 16,
       "elevation": 0,
@@ -66,7 +66,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route43_EventScript_Ben",
+      "script": "Route43_EventScript_Koji",
       "flag": "0"
     },
     {
@@ -135,7 +135,7 @@
       "flag": "FLAG_DAY_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SKARMORY",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MASQUERAIN",
       "x": 29,
       "y": 22,
       "elevation": 0,
@@ -145,10 +145,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_DAY_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_GIRAFARIG",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_TANGELA",
       "x": 27,
       "y": 43,
       "elevation": 0,
@@ -161,7 +161,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_GIRAFARIG",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_TANGELA",
       "x": 28,
       "y": 44,
       "elevation": 0,
@@ -187,7 +187,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_FLAAFFY",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_BUIZEL",
       "x": 6,
       "y": 5,
       "elevation": 0,
@@ -200,7 +200,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_FLAAFFY",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_BUIZEL",
       "x": 7,
       "y": 6,
       "elevation": 0,
@@ -263,6 +263,19 @@
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route43_EventScript_Brent",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SHUPPET",
+      "x": 14,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_COPY_PLAYER",
+      "movement_range_x": 9,
+      "movement_range_y": 9,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_NIGHT_POKEMON"
     }
   ],
   "warp_events": [

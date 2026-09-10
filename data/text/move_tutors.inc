@@ -422,3 +422,36 @@ MoveTutor_Text_NotEnoughMoney:
 	.string "Oh? You don't have enough\n"
 	.string "money for that.\p"
 	.string "Come back when you do!$"
+
+MoveTutor_Text_MetalClawTeach:
+	.string "Hah!\p"
+	.string "You've got spirit, kid, but spirit\n"
+	.string "alone won't win battles.\p"
+	.string "Power needs precision.\n"
+	.string "Strength needs discipline.\p"
+	.string "…\p"
+	.string "I train with my KINGLER.\p"
+	.string "Those claws can crush boulders…\n"
+	.string "but only because they're controlled.\p"
+	.string "For just ¥2500, I'll teach your\n"
+	.string "POKéMON METAL CLAW.\p"
+	.string "Strike clean. Strike sharp.$"
+
+MoveTutor_Text_MetalClawWhichMon:
+	.string "Good!\p"
+	.string "Now pick one.\n"
+	.string "Which POKéMON will I train?$"
+
+MoveTutor_Text_MetalClawDeclined:
+	.string "Heh!\p"
+	.string "Then keep flailing until you\n"
+	.string "understand what control means.$"
+
+MoveTutor_Text_MetalClawTaught:
+	.string "That's it!\p"
+	.string "Feel the weight behind every\n"
+	.string "clean strike.\p"
+	.string "…\p"
+	.string "METAL CLAW is brute discipline\n"
+	.string "made manifest.\p"
+	.string "Just like my KINGLER's grip.$"

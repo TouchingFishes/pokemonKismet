@@ -434,3 +434,21 @@ VermilionCity_Gym_Text_OnlyTrashLocksWereReset::
     .string "Hey!\n"
     .string "The electric locks were reset!$"
 
+VermilionCity_Gym_EventScript_Otto::
+	trainerbattle_single TRAINER_OTTO_HNS, VermilionCity_Gym_Text_OttoSeen, VermilionCity_Gym_Text_OttoBeaten
+	msgbox VermilionCity_Gym_Text_OttoAfter, MSGBOX_AUTOCLOSE
+	end
+
+VermilionCity_Gym_Text_OttoSeen:
+	.string "LT.SURGE recognized my\n"
+	.string "potential with electric\l"
+	.string "POKéMON.\p"
+	.string "Think you can beat me?$"
+
+VermilionCity_Gym_Text_OttoBeaten:
+	.string "Ooh, how shocking!$"
+
+VermilionCity_Gym_Text_OttoAfter:
+	.string "If the GYM's traps were\n"
+	.string "working, you would have\l"
+	.string "been toast…$"

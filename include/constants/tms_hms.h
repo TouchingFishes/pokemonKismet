@@ -12,7 +12,7 @@
     F(TOXIC)         /* TM06 - Fuchsia City Gym, Route17 done */ \
     F(HAIL)          /* TM07 - Mahogany Town Gym done */ \
     F(BULK_UP)       /* TM08 - Dewford Town Gym, Olivine City Lighthouse, Route17 done */ \
-    F(BULLET_SEED)   /* TM09 - Route104, Route32 done */ \
+    F(BULLET_SEED)   /* TM09 - Route104, National Park gate gift (was Route32) */ \
     F(HIDDEN_POWER)  /* TM10 - Fortree City House2, Lake Of Rage House1, Safari Zone Gate, Slateport City done */ \
     F(SUNNY_DAY)     /* TM11 - Goldenrod City Radio Tower 3F done */ \
     F(TAUNT)         /* TM12 - Burned Tower B1F, Route110 Trick House End, Route110 Trick House Entrance done */ \
@@ -81,7 +81,7 @@
     F(NIGHTMARE)     /* TM75 - Route 31 (fork; not placed yet) */ \
     F(BRINE)         /* TM76 - Route19 done */ \
     F(FLING)         /* TM77 - Rock Tunnel B1F done */ \
-    F(DRAIN_PUNCH)   /* TM78 - Route39 done */ \
+    F(DRAIN_PUNCH)   /* TM78 - Route30 done, behind the lake (needs Surf) */ \
     F(ROOST)         /* TM79 - Violet City Gym done */ \
     F(WILL_O_WISP)   /* TM80 - Route14 done */ \
     F(PAYBACK)       /* TM81 - Route35 done */ \
@@ -97,9 +97,9 @@
     F(FLASH_CANNON)  /* TM91 - Route9 done */ \
     F(PSYSHOCK)      /* TM92 - Victory Road Kanto 1F done */ \
     F(SEED_BOMB)     /* TM93 - Goldenrod City Game Corner done */ \
-    F(HONE_CLAWS)    /* TM94 - Route34 done */ \
+    F(HONE_CLAWS)    /* TM94 - Route37 done */ \
     F(AQUA_RING)     /* TM95 - unplaced */ \
-    F(BUG_BITE)      /* TM96 - unplaced */ \
+    F(BUG_BITE)      /* TM96 - Route39 done */ \
     F(EARTH_POWER)   /* TM97 - unplaced */ \
     F(METEOR_BEAM)   /* TM98 - Mt Silver Mountain Side done */ \
     F(TRICK_ROOM)    /* TM99 - Viridian City Gym done */ \

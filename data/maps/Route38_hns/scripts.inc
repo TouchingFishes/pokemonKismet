@@ -253,3 +253,22 @@ Route38_Text_DanaGaveItem:
 Route38_Text_DanaNoRoom:
 	.string "Hmm, your BAG is full.\p"
 	.string "Come back when you have room.$"
+
+Route38_EventScript_Dwight::
+	trainerbattle_single TRAINER_DWIGHT_HNS, Route38_Text_DwightSeen, Route38_Text_DwightBeaten
+	msgbox Route38_Text_DwightAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route38_Text_DwightSeen:
+	.string "Hey there! Wow\n"
+	.string "Such a spark in your eyes!\p"
+	.string "Mind showing me your\n"
+	.string "POKéMON?$"
+
+Route38_Text_DwightBeaten:
+	.string "Thanks! Our battle really\n"
+	.string "made my day!$"
+
+Route38_Text_DwightAfter:
+	.string "Seeing POKéMON is like\n"
+	.string "checking a steady circuit.$"

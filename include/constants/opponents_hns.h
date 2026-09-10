@@ -788,9 +788,16 @@
 #define TRAINER_BOBBY_HNS                                757
 #define TRAINER_DWIGHT_HNS                               758
 #define TRAINER_GABOR_HNS                                759
+#define TRAINER_PATRICIA_HNS                             760
+#define TRAINER_DARREN_HNS                               761
+#define TRAINER_ANDERS_HNS                               762
+#define TRAINER_NOLAN_HNS                                763
+#define TRAINER_SARAH_HNS                                764
+#define TRAINER_CATHY_HNS                                765
+#define TRAINER_RAYNOR_HNS                               766
 
 // 618 is TRAINER_TANYA_HNS, relocated out of the TRAINER_FRONTIER_BRAIN slot (330).
-#define TRAINERS_COUNT_HNS                       760
+#define TRAINERS_COUNT_HNS                       767
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

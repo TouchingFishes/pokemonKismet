@@ -270,3 +270,47 @@ Route45_Text_CamperQuentinAfter:
 Route45_Text_Sign:
     .string "ROUTE 45\n"
     .string "MOUNTAIN RD. AHEAD$"
+
+Route45_EventScript_Cathy::
+	trainerbattle_single TRAINER_CATHY_HNS, Route45_Text_PokerangerFCathySeen, Route45_Text_PokerangerFCathyBeaten
+	msgbox Route45_Text_PokerangerFCathyAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route45_EventScript_Raynor::
+	trainerbattle_single TRAINER_RAYNOR_HNS, Route45_Text_ExpertRaynorSeen, Route45_Text_ExpertRaynorBeaten
+	msgbox Route45_Text_ExpertRaynorAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route45_Text_PokerangerFCathySeen:
+	.string "Why do I climb mountains?\p"
+	.string "Because they're there.\p"
+	.string "Why do I train POKéMON?\p"
+	.string "Because they're there!$"
+
+Route45_Text_PokerangerFCathyBeaten:
+	.string "Losses…\n"
+	.string "They're there too!$"
+
+Route45_Text_PokerangerFCathyAfter:
+	.string "The best thing to ever happen\n"
+	.string "to me was discovering POKéMON.$"
+
+Route45_Text_ExpertRaynorSeen:
+	.string "The more I stare into it, the\n"
+	.string "more I feel that there is a\l"
+	.string "great treasure below its\l"
+	.string "surface.\p"
+	.string "Oh. I was just talking to\n"
+	.string "myself…\p"
+	.string "You seem talented…\p"
+	.string "Let's see if my first\n"
+	.string "impression is correct.$"
+
+Route45_Text_ExpertRaynorBeaten:
+	.string "I was… You are a prodigy.$"
+
+Route45_Text_ExpertRaynorAfter:
+	.string "I mean it.\p"
+	.string "…………………\p"
+	.string "There is something special at\n"
+	.string "the bottom of this pond.$"

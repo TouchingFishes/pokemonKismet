@@ -420,4 +420,21 @@ OlivineLighthouse_Text_AmphyBreathingLabored:
 OlivineLighthouse_Text_AmphyPaluPalulu:
 	.string "AMPHY: Palu! Palulu!$"
 
+OlivineLighthouse_EventScript_Gabor::
+	trainerbattle_single TRAINER_GABOR_HNS, OlivineLighthouse_Text_GaborSeen, OlivineLighthouse_Text_GaborBeaten
+	msgbox OlivineLighthouse_Text_GaborAfter, MSGBOX_AUTOCLOSE
+	end
 
+OlivineLighthouse_Text_GaborSeen:
+	.string "Engineers are both skilled\n"
+	.string "and precise.\p"
+	.string "Let's see what you got!$"
+
+OlivineLighthouse_Text_GaborBeaten:
+	.string "You show both skill and\n"
+	.string "heart…$"
+
+OlivineLighthouse_Text_GaborAfter:
+	.string "Engineering is not easy,\n"
+	.string "but I think\p"
+	.string "you could be good at it.$"
