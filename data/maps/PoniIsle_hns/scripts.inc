@@ -38,10 +38,10 @@ Alola_Poni_BattleExeggutor::
 	lock
 	faceplayer
 	setflag FLAG_BATTLED_EXEGGUTOR
-	playmoncry SPECIES_EXEGGUTOR_ALOLA, 0
+	playmoncry SPECIES_TSAREENA, 0
 	msgbox Alola_Poni_BattleExeggutor_Text_0, MSGBOX_AUTOCLOSE
 	waitmoncry
-	setwildbattle SPECIES_EXEGGUTOR_ALOLA, 60
+	setwildbattle SPECIES_TSAREENA, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT

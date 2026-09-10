@@ -13,7 +13,7 @@ MelemeleIsle_hns_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	goto_if_eq MelemeleIsle_hns_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	compare VAR_0x8000, TIME_EVENING
 	goto_if_eq MelemeleIsle_hns_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPECIES ( RATICATE_ALOLA )
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPECIES ( BEWEAR )
 	clearflag FLAG_MELEMELE_TOTEM_DAY
 	call MelemeleIsle_hns_SetTotemSignWarpFacing
 	return
@@ -253,8 +253,8 @@ Alola_Melemele_TotemBattle_Trigger_4:
 	goto_if_eq Alola_Melemele_TotemBattle_Trigger_14
 	compare VAR_0x8000, TIME_EVENING
 	goto_if_eq Alola_Melemele_TotemBattle_Trigger_14
-	playmoncry SPECIES_RATICATE_ALOLA, 0
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPECIES ( RATICATE_ALOLA )
+	playmoncry SPECIES_BEWEAR, 0
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPECIES ( BEWEAR )
 	clearflag FLAG_MELEMELE_TOTEM_DAY
 	addobject Melemele_Totem
 	waitmoncry
@@ -270,7 +270,7 @@ Alola_Melemele_TotemBattle_Trigger_13:
 	goto_if_eq Alola_Melemele_TotemBattle_Trigger_20
 	compare VAR_0x8000, TIME_EVENING
 	goto_if_eq Alola_Melemele_TotemBattle_Trigger_20
-	playmoncry SPECIES_RATICATE_ALOLA, 0
+	playmoncry SPECIES_BEWEAR, 0
 	applymovement Melemele_Totem, Alola_Melemele_SamsonOak_Trigger_Beginning_Movement_2
 	waitmovement 0
 	waitmoncry
@@ -311,10 +311,10 @@ Alola_Melemele_TotemBattle::
 	lock
 	faceplayer
 	goto_if_set FLAG_MELEMELE_TOTEM_DAY, Alola_Melemele_TotemBattle_1
-	playmoncry SPECIES_RATICATE_ALOLA, 0
+	playmoncry SPECIES_BEWEAR, 0
 	msgbox Alola_Melemele_TotemBattle_Text_2, MSGBOX_AUTOCLOSE
 	waitmoncry
-	setwildbattle SPECIES_RATTATA_ALOLA, 60, ITEM_NONE, SPECIES_RATICATE_ALOLA_TOTEM, 60, ITEM_PECHA_BERRY
+	setwildbattle SPECIES_STUFFUL, 60, ITEM_NONE, SPECIES_BEWEAR, 60, ITEM_PECHA_BERRY
 	settotemboost B_POSITION_OPPONENT_RIGHT, 0, 1, 0
 	setflag FLAG_NO_WILD_CATCHING
 	setflag FLAG_NO_WILD_RUNNING

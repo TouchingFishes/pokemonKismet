@@ -29,7 +29,7 @@
     },
     {
       "local_id": "Alola_Ulaula_Muk",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUK_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DRAPION)",
       "x": 17,
       "y": 6,
       "elevation": 0,
@@ -42,7 +42,7 @@
       "flag": "FLAG_HIDE_MUK_ALOLA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GRIMER_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKORUPI)",
       "x": 23,
       "y": 10,
       "elevation": 0,
@@ -55,7 +55,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GRIMER_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKORUPI)",
       "x": 11,
       "y": 12,
       "elevation": 0,

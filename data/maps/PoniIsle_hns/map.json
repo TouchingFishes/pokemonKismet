@@ -27,7 +27,7 @@
   "object_events": [
     {
       "local_id": "Alola_Poni_Exeggutor",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(EXEGGUTOR_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TSAREENA)",
       "x": 10,
       "y": 21,
       "elevation": 0,

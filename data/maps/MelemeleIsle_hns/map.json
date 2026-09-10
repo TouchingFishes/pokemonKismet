@@ -232,7 +232,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEOWTH_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(STUFFUL)",
       "x": 45,
       "y": 12,
       "elevation": 0,
@@ -245,7 +245,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RATTATA_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VULLABY)",
       "x": 35,
       "y": 8,
       "elevation": 0,
@@ -271,7 +271,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PERSIAN_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BEWEAR)",
       "x": 26,
       "y": 11,
       "elevation": 0,
@@ -284,7 +284,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RATICATE_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MANDIBUZZ)",
       "x": 15,
       "y": 3,
       "elevation": 0,
@@ -297,7 +297,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEOWTH_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(STUFFUL)",
       "x": 28,
       "y": 24,
       "elevation": 0,

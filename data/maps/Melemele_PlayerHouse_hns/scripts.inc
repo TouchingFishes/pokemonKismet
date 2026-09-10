@@ -120,7 +120,7 @@ Alola_Melemele_SamsonOakVilla_Dialogue_28:
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_23
 
 Alola_Melemele_SamsonOakVilla_Dialogue_31:
-	getcaughtmon SPECIES_MEOWTH_ALOLA
+	getcaughtmon SPECIES_STUFFUL
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_44
 Alola_Melemele_SamsonOakVilla_Dialogue_43:
@@ -129,7 +129,7 @@ Alola_Melemele_SamsonOakVilla_Dialogue_43:
 	end
 
 Alola_Melemele_SamsonOakVilla_Dialogue_32:
-	getcaughtmon SPECIES_MAROWAK_ALOLA
+	getcaughtmon SPECIES_KROOKODILE
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_47
 Alola_Melemele_SamsonOakVilla_Dialogue_46:
@@ -138,7 +138,7 @@ Alola_Melemele_SamsonOakVilla_Dialogue_46:
 	end
 
 Alola_Melemele_SamsonOakVilla_Dialogue_33:
-	getcaughtmon SPECIES_VULPIX_ALOLA
+	getcaughtmon SPECIES_DRIFLOON
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_50
 Alola_Melemele_SamsonOakVilla_Dialogue_49:
@@ -147,7 +147,7 @@ Alola_Melemele_SamsonOakVilla_Dialogue_49:
 	end
 
 Alola_Melemele_SamsonOakVilla_Dialogue_34:
-	getcaughtmon SPECIES_RAICHU_ALOLA
+	getcaughtmon SPECIES_TOXICROAK
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_68
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_46
@@ -164,25 +164,25 @@ Alola_Melemele_SamsonOakVilla_Dialogue_40:
 	end
 
 Alola_Melemele_SamsonOakVilla_Dialogue_44:
-	getcaughtmon SPECIES_PERSIAN_ALOLA
+	getcaughtmon SPECIES_BEWEAR
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_58
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_43
 
 Alola_Melemele_SamsonOakVilla_Dialogue_47:
-	getcaughtmon SPECIES_DIGLETT_ALOLA
+	getcaughtmon SPECIES_FLYGON
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_60
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_46
 
 Alola_Melemele_SamsonOakVilla_Dialogue_50:
-	getcaughtmon SPECIES_NINETALES_ALOLA
+	getcaughtmon SPECIES_DRIFBLIM
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_62
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_49
 
 Alola_Melemele_SamsonOakVilla_Dialogue_53:
-	getcaughtmon SPECIES_GEODUDE_ALOLA
+	getcaughtmon SPECIES_NOSEPASS
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_64
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_52
@@ -206,31 +206,31 @@ Alola_Melemele_SamsonOakVilla_Dialogue_55:
 	end
 
 Alola_Melemele_SamsonOakVilla_Dialogue_58:
-	getcaughtmon SPECIES_RATTATA_ALOLA
+	getcaughtmon SPECIES_VULLABY
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_66
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_43
 
 Alola_Melemele_SamsonOakVilla_Dialogue_60:
-	getcaughtmon SPECIES_DUGTRIO_ALOLA
+	getcaughtmon SPECIES_CAMERUPT
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_34
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_46
 
 Alola_Melemele_SamsonOakVilla_Dialogue_62:
-	getcaughtmon SPECIES_SANDSHREW_ALOLA
+	getcaughtmon SPECIES_KLAWF
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_70
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_49
 
 Alola_Melemele_SamsonOakVilla_Dialogue_64:
-	getcaughtmon SPECIES_GRAVELER_ALOLA
+	getcaughtmon SPECIES_CRADILY
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_72
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_52
 
 Alola_Melemele_SamsonOakVilla_Dialogue_66:
-	getcaughtmon SPECIES_RATICATE_ALOLA
+	getcaughtmon SPECIES_MANDIBUZZ
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_74
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_43
@@ -242,13 +242,13 @@ Alola_Melemele_SamsonOakVilla_Dialogue_68:
 	end
 
 Alola_Melemele_SamsonOakVilla_Dialogue_70:
-	getcaughtmon SPECIES_SANDSLASH_ALOLA
+	getcaughtmon SPECIES_MIMIKYU
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_79
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_49
 
 Alola_Melemele_SamsonOakVilla_Dialogue_72:
-	getcaughtmon SPECIES_GOLEM_ALOLA
+	getcaughtmon SPECIES_PROBOPASS
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_81
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_52
@@ -277,13 +277,13 @@ Alola_Melemele_SamsonOakVilla_Dialogue_76:
 	end
 
 Alola_Melemele_SamsonOakVilla_Dialogue_79:
-	getcaughtmon SPECIES_GRIMER_ALOLA
+	getcaughtmon SPECIES_SKORUPI
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_93
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_49
 
 Alola_Melemele_SamsonOakVilla_Dialogue_81:
-	getcaughtmon SPECIES_EXEGGUTOR_ALOLA
+	getcaughtmon SPECIES_TSAREENA
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_95
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_52
@@ -322,7 +322,7 @@ Alola_Melemele_SamsonOakVilla_Dialogue_105:
 	end
 
 Alola_Melemele_SamsonOakVilla_Dialogue_93:
-	getcaughtmon SPECIES_MUK_ALOLA
+	getcaughtmon SPECIES_DRAPION
 	compare VAR_RESULT, 1
 	goto_if_eq Alola_Melemele_SamsonOakVilla_Dialogue_113
 	goto Alola_Melemele_SamsonOakVilla_Dialogue_49
@@ -550,15 +550,16 @@ Alola_Melemele_SamsonOakVillaIntro_Trigger_Text_1:
 	.string "ALOLA ISLES for their similarity to\l"
 	.string "the ALOLA region.\p"
 	.string "I'm particularly interested in the\n"
-	.string "phenomenon of “Regional Variants”.$"
+	.string "POKéMON that have made these ISLES\l"
+	.string "their home.$"
 
 Alola_Melemele_SamsonOakVillaIntro_Trigger_Text_2:
 	.string "You seem quite capable.\p"
 	.string "You'd be perfect to help with my survey\n"
 	.string "of the ALOLA ISLES!\p"
 	.string "Explore all the ISLES have to offer,\n"
-	.string "and if you find any familiar POKéMON\l"
-	.string "that resemble those from KANTO…\l"
+	.string "and each time you catch a POKéMON\l"
+	.string "that makes its home out here…\l"
 	.string "come back and show me your POKéDEX!\p"
 	.string "I'll be here patiently waiting to hear\n"
 	.string "about your progress!$"
@@ -626,7 +627,7 @@ Alola_Melemele_SamsonOakVilla_Dialogue_Text_8:
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_9:
 	.string "Alola {PLAYER}!\p"
-	.string "So you've found all the Alolan variants\n"
+	.string "So you've recorded every POKéMON\n"
 	.string "on the ISLES, but have you defeated all\l"
 	.string "the Totem POKéMON yet?\p"
 	.string "You should look for a strange pillar on\n"
@@ -662,18 +663,18 @@ Alola_Melemele_SamsonOakVilla_Dialogue_Text_17:
 	.string "Wow, {PLAYER}!$"
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_18:
-	.string "You found all the Alolan variants living\n"
+	.string "You found every POKéMON living\n"
 	.string "on MELEMELE ISLE!$"
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_19:
 	.string "And it looks like you've found all the\n"
-	.string "Alolan variants on the other ISLES too!\p"
+	.string "POKéMON on the other ISLES too!\p"
 	.string "That's amazing, {PLAYER}!\p"
 	.string "You should be very proud of yourself!$"
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_20:
 	.string "You've helped me validate that all\n"
-	.string "of the Alolan variants are present on\l"
+	.string "of the POKéMON here are present on\l"
 	.string "the ALOLA ISLES!\p"
 	.string "I'd like you to help me with one more\n"
 	.string "thing…\p"
@@ -692,7 +693,7 @@ Alola_Melemele_SamsonOakVilla_Dialogue_Text_21:
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_22:
 	.string "It seems you've already found all the\n"
-	.string "Alolan variants on MELEMELE ISLE!\p"
+	.string "POKéMON on MELEMELE ISLE!\p"
 	.string "Great job!\p"
 	.string "Keep exploring the other ISLES and\n"
 	.string "report your progress to me!$"
@@ -700,22 +701,22 @@ Alola_Melemele_SamsonOakVilla_Dialogue_Text_22:
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_23:
 	.string "Let me take a look at your POKéDEX{PAUSE 15}.{PAUSE 15}.{PAUSE 15}.\p"
 	.string "It seems you haven't quite found all of\n"
-	.string "the Alolan variants on MELEMELE ISLE\l"
+	.string "the POKéMON living on MELEMELE ISLE\l"
 	.string "just yet.\p"
-	.string "I've heard MELEMELE ISLE has {COLOR RED}4 {COLOR DARK_GRAY}Alolan\n"
-	.string "variants for you to find…\p"
-	.string "{COLOR RED}RATTATA{COLOR DARK_GRAY}, {COLOR RED}RATICATE{COLOR DARK_GRAY}, {COLOR RED}MEOWTH{COLOR DARK_GRAY}, and\n"
-	.string "{COLOR RED}PERSIAN{COLOR DARK_GRAY}.\p"
+	.string "I've heard MELEMELE ISLE is home to\n"
+	.string "{COLOR RED}4 {COLOR DARK_GRAY}POKéMON I've yet to record…\p"
+	.string "{COLOR RED}VULLABY{COLOR DARK_GRAY}, {COLOR RED}MANDIBUZZ{COLOR DARK_GRAY}, {COLOR RED}STUFFUL{COLOR DARK_GRAY},\n"
+	.string "and {COLOR RED}BEWEAR{COLOR DARK_GRAY}.\p"
 	.string "Keep on searching and come back when\n"
 	.string "you've caught them all!$"
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_24:
-	.string "You found all the Alolan variants living\n"
+	.string "You found every POKéMON living\n"
 	.string "on AKALA ISLE!$"
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_25:
 	.string "Now that you've helped me validate that\n"
-	.string "all of the Alolan variants are present\l"
+	.string "all of the POKéMON here are present\l"
 	.string "on the ALOLA ISLES.\p"
 	.string "I'd like you to help me with one more\n"
 	.string "thing…\p"
@@ -730,7 +731,7 @@ Alola_Melemele_SamsonOakVilla_Dialogue_Text_25:
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_26:
 	.string "It seems you've already found all the\n"
-	.string "Alolan variants on AKALA ISLE!\p"
+	.string "POKéMON on AKALA ISLE!\p"
 	.string "Great job!\p"
 	.string "Keep exploring the other ISLES and\n"
 	.string "report your progress to me!$"
@@ -738,21 +739,22 @@ Alola_Melemele_SamsonOakVilla_Dialogue_Text_26:
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_27:
 	.string "Let me take a look at your POKéDEX{PAUSE 15}.{PAUSE 15}.{PAUSE 15}.\p"
 	.string "It seems you haven't quite found all of\n"
-	.string "the Alolan variants on AKALA ISLE\l"
+	.string "the POKéMON living on AKALA ISLE\l"
 	.string "just yet.\p"
-	.string "I've heard AKALA ISLE has {COLOR RED}4 {COLOR DARK_GRAY}Alolan\n"
-	.string "variants for you to find…\p"
-	.string "{COLOR RED}RAICHU{COLOR DARK_GRAY}, {COLOR RED}MAROWAK{COLOR DARK_GRAY}, {COLOR RED}DIGLETT{COLOR DARK_GRAY}, and {COLOR RED}DUGTRIO{COLOR DARK_GRAY}.\p"
+	.string "I've heard AKALA ISLE is home to\n"
+	.string "{COLOR RED}4 {COLOR DARK_GRAY}POKéMON I've yet to record…\p"
+	.string "{COLOR RED}FLYGON{COLOR DARK_GRAY}, {COLOR RED}CAMERUPT{COLOR DARK_GRAY}, {COLOR RED}KROOKODILE{COLOR DARK_GRAY},\n"
+	.string "and {COLOR RED}TOXICROAK{COLOR DARK_GRAY}.\p"
 	.string "Keep on searching and come back when\n"
 	.string "you've caught them all!$"
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_28:
-	.string "You found all the Alolan variants living\n"
+	.string "You found every POKéMON living\n"
 	.string "on ULA'ULA ISLE!$"
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_29:
 	.string "It seems you've already found all the\n"
-	.string "Alolan variants on ULA'ULA ISLE!\p"
+	.string "POKéMON on ULA'ULA ISLE!\p"
 	.string "Great job!\p"
 	.string "Keep exploring the other ISLES and\n"
 	.string "report your progress to me!$"
@@ -760,22 +762,22 @@ Alola_Melemele_SamsonOakVilla_Dialogue_Text_29:
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_30:
 	.string "Let me take a look at your POKéDEX{PAUSE 15}.{PAUSE 15}.{PAUSE 15}.\p"
 	.string "It seems you haven't quite found all of\n"
-	.string "the Alolan variants on ULA'ULA ISLE\l"
+	.string "the POKéMON living on ULA'ULA ISLE\l"
 	.string "just yet.\p"
-	.string "I've heard ULA'ULA ISLE has {COLOR RED}6 {COLOR DARK_GRAY}Alolan\n"
-	.string "variants for you to find…\p"
-	.string "{COLOR RED}VULPIX{COLOR DARK_GRAY}, {COLOR RED}NINETALES{COLOR DARK_GRAY}, {COLOR RED}SANDSHREW{COLOR DARK_GRAY}, {COLOR RED}SANDSLASH{COLOR DARK_GRAY},\n"
-	.string "{COLOR RED}GRIMER{COLOR DARK_GRAY}, and {COLOR RED}MUK{COLOR DARK_GRAY}.\p"
+	.string "I've heard ULA'ULA ISLE is home to\n"
+	.string "{COLOR RED}6 {COLOR DARK_GRAY}POKéMON I've yet to record…\p"
+	.string "{COLOR RED}DRIFLOON{COLOR DARK_GRAY}, {COLOR RED}DRIFBLIM{COLOR DARK_GRAY}, {COLOR RED}KLAWF{COLOR DARK_GRAY}, {COLOR RED}MIMIKYU{COLOR DARK_GRAY},\n"
+	.string "{COLOR RED}SKORUPI{COLOR DARK_GRAY}, and {COLOR RED}DRAPION{COLOR DARK_GRAY}.\p"
 	.string "Keep on searching and come back when\n"
 	.string "you've caught them all!$"
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_31:
-	.string "You found all the Alolan variants living\n"
+	.string "You found every POKéMON living\n"
 	.string "on PONI ISLE!$"
 
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_32:
 	.string "It seems you've already found all the\n"
-	.string "Alolan variants on PONI ISLE!\p"
+	.string "POKéMON on PONI ISLE!\p"
 	.string "Great job!\p"
 	.string "Keep exploring the other ISLES and\n"
 	.string "report your progress to me!$"
@@ -783,12 +785,12 @@ Alola_Melemele_SamsonOakVilla_Dialogue_Text_32:
 Alola_Melemele_SamsonOakVilla_Dialogue_Text_33:
 	.string "Let me take a look at your POKéDEX{PAUSE 15}.{PAUSE 15}.{PAUSE 15}.\p"
 	.string "It seems you haven't quite found all of\n"
-	.string "the Alolan variants on PONI ISLE\l"
+	.string "the POKéMON living on PONI ISLE\l"
 	.string "just yet.\p"
-	.string "I've heard PONI ISLE has {COLOR RED}4 {COLOR DARK_GRAY}Alolan\n"
-	.string "variants for you to find…\p"
-	.string "{COLOR RED}GEODUDE{COLOR DARK_GRAY}, {COLOR RED}GRAVELER{COLOR DARK_GRAY}, {COLOR RED}GOLEM{COLOR DARK_GRAY}, and\n"
-	.string "{COLOR RED}EXEGGUTOR{COLOR DARK_GRAY}.\p"
+	.string "I've heard PONI ISLE is home to\n"
+	.string "{COLOR RED}4 {COLOR DARK_GRAY}POKéMON I've yet to record…\p"
+	.string "{COLOR RED}NOSEPASS{COLOR DARK_GRAY}, {COLOR RED}CRADILY{COLOR DARK_GRAY}, {COLOR RED}PROBOPASS{COLOR DARK_GRAY},\n"
+	.string "and {COLOR RED}TSAREENA{COLOR DARK_GRAY}.\p"
 	.string "Keep on searching and come back when\n"
 	.string "you've caught them all!$"
 

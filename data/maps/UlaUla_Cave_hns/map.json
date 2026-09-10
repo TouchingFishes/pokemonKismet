@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "Alola_Ulaula_Sandslash",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SANDSLASH_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KLAWF)",
       "x": 15,
       "y": 26,
       "elevation": 0,
@@ -56,7 +56,7 @@
     },
     {
       "local_id": "Alola_Ulaula_Ninetales",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NINETALES_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIMIKYU)",
       "x": 17,
       "y": 6,
       "elevation": 0,
@@ -69,7 +69,7 @@
       "flag": "FLAG_HIDE_NINETALES_ALOLA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SANDSHREW_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KLAWF)",
       "x": 24,
       "y": 9,
       "elevation": 0,
@@ -82,7 +82,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VULPIX_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIMIKYU)",
       "x": 11,
       "y": 11,
       "elevation": 0,
@@ -95,7 +95,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VULPIX_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIMIKYU)",
       "x": 4,
       "y": 25,
       "elevation": 0,
@@ -108,7 +108,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SANDSHREW_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KLAWF)",
       "x": 29,
       "y": 26,
       "elevation": 0,

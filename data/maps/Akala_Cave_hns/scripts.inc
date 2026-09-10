@@ -6,10 +6,10 @@ Alola_Melemele_BattleMarowak::
 	lock
 	faceplayer
 	setflag FLAG_BATTLED_MAROWAK
-	playmoncry SPECIES_MAROWAK_ALOLA, 0
+	playmoncry SPECIES_KROOKODILE, 0
 	msgbox Alola_Melemele_BattleMarowak_Text_0, MSGBOX_AUTOCLOSE
 	waitmoncry
-	setwildbattle SPECIES_MAROWAK_ALOLA, 60
+	setwildbattle SPECIES_KROOKODILE, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
@@ -39,10 +39,10 @@ Alola_Melemele_BattleDugtrio::
 	lock
 	faceplayer
 	setflag FLAG_BATTLED_DUGTRIO
-	playmoncry SPECIES_DUGTRIO_ALOLA, 0
+	playmoncry SPECIES_CAMERUPT, 0
 	msgbox Alola_Melemele_BattleDugtrio_Text_0, MSGBOX_AUTOCLOSE
 	waitmoncry
-	setwildbattle SPECIES_DUGTRIO_ALOLA, 60
+	setwildbattle SPECIES_CAMERUPT, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
