@@ -89,7 +89,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JOEY_HNS ===
 Name: JOEY
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -102,7 +102,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MIKEY_HNS ===
 Name: MIKEY
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -119,7 +119,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ALBERT_HNS ===
 Name: ALBERT
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -136,7 +136,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_GORDON_HNS ===
 Name: GORDON
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -149,7 +149,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_SAMUEL_HNS ===
 Name: SAMUEL
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -187,7 +187,7 @@ IVs: 24 HP / 20 Atk / 16 Def / 20 SpA / 16 SpD / 18 Spe
 === TRAINER_WARREN_HNS ===
 Name: WARREN
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -200,7 +200,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JIMMY_HNS ===
 Name: JIMMY
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -221,7 +221,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_OWEN_HNS ===
 Name: OWEN
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -234,7 +234,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JASON_HNS ===
 Name: JASON
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -607,7 +607,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ROY_HNS ===
 Name: ROY
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -705,7 +705,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_BRET_HNS ===
 Name: BRET
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -722,7 +722,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_CARRIE_HNS ===
 Name: CARRIE
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -1209,7 +1209,7 @@ IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_TYLER_HNS ===
 Name: TYLER
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Suspicious 2
 Double Battle: No
@@ -1717,7 +1717,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
 === TRAINER_SAMANTHA_HNS ===
 Name: SAMANTHA
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1734,7 +1734,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_JULIE_HNS ===
 Name: JULIE
 Class: Pkmn Ranger Hns
-Pic: Pokemon Ranger F Hns
+Pic: Pokemon Ranger F
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1755,7 +1755,7 @@ IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 === TRAINER_JACLYN_HNS ===
 Name: JACLYN
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1768,7 +1768,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_BRENDA_HNS ===
 Name: BRENDA
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1781,7 +1781,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_CASSIE_HNS ===
 Name: CASSIE
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1802,7 +1802,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_CAROLINE_HNS ===
 Name: CAROLINE
 Class: Painter Hns
-Pic: Painter Hns
+Pic: Painter Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1827,7 +1827,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_CARLENE_HNS ===
 Name: CARLENE
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1840,7 +1840,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_JESSICA_HNS ===
 Name: JESSICA
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1853,7 +1853,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_RACHAEL_HNS ===
 Name: RACHAEL
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1866,7 +1866,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_ANGELICA_HNS ===
 Name: ANGELICA
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1879,7 +1879,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_KENDRA_HNS ===
 Name: KENDRA
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1892,7 +1892,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_VERONICA_HNS ===
 Name: VERONICA
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1913,7 +1913,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_JULIA_HNS ===
 Name: JULIA
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1934,7 +1934,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_THERESA_HNS ===
 Name: THERESA
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1963,7 +1963,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_VALERIE_HNS ===
 Name: VALERIE
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1980,7 +1980,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_OLIVIA_HNS ===
 Name: OLIVIA
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -1993,7 +1993,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_LARRY_HNS ===
 Name: LARRY
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2006,7 +2006,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ANDREW_HNS ===
 Name: ANDREW
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2023,7 +2023,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_CALVIN_HNS ===
 Name: CALVIN
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2036,7 +2036,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_SHANE_HNS ===
 Name: SHANE
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2053,7 +2053,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_BEN_HNS ===
 Name: BEN
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2070,7 +2070,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_BRENT_HNS ===
 Name: BRENT
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2091,7 +2091,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_RON_HNS ===
 Name: RON
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2104,7 +2104,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ETHAN_HNS ===
 Name: ETHAN
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2121,7 +2121,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ISSAC_HNS ===
 Name: ISSAC
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2134,7 +2134,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DONALD_HNS ===
 Name: DONALD
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2151,7 +2151,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ZACH_HNS ===
 Name: ZACH
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2172,7 +2172,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MILLER_HNS ===
 Name: MILLER
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2189,7 +2189,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_GRUNT_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2246,7 +2246,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_2_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2267,7 +2267,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_3_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2288,7 +2288,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_4_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2317,7 +2317,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_5_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2342,7 +2342,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_6_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2363,7 +2363,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_7_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2376,7 +2376,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_8_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2393,7 +2393,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_9_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2414,7 +2414,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_10_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2431,7 +2431,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_11_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2444,7 +2444,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_12_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2465,7 +2465,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_13_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2478,7 +2478,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_14_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2495,7 +2495,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_15_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2516,7 +2516,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_16_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2533,7 +2533,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_17_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2550,7 +2550,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_18_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2571,7 +2571,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_19_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2584,7 +2584,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_20_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2605,7 +2605,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_21_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2626,7 +2626,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_22_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt F Hns
+Pic: Rocket Grunt F Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2643,7 +2643,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_23_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2664,7 +2664,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_24_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2693,7 +2693,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_25_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2710,7 +2710,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_26_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt F Hns
+Pic: Rocket Grunt F Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2723,7 +2723,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_27_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2740,7 +2740,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_28_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt F Hns
+Pic: Rocket Grunt F Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2765,7 +2765,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_29_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt F Hns
+Pic: Rocket Grunt F Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2782,7 +2782,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_30_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2796,7 +2796,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_31_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2810,7 +2810,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_32_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2824,7 +2824,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GRUNT_33_HNS ===
 Name: GRUNT
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2838,7 +2838,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_ETO_HNS ===
 Name: ETO
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2855,7 +2855,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_ETO_2_HNS ===
 Name: ETO
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2880,7 +2880,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_ETO_3_HNS ===
 Name: ETO
 Class: Team Rocket Hns
-Pic: Rocket Grunt M Hns
+Pic: Rocket Grunt M Frlg
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -2909,7 +2909,7 @@ IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_PRESTON_HNS ===
 Name: PRESTON
 Class: Gentleman Hns
-Pic: Gentleman
+Pic: Gentleman Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2922,7 +2922,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_EDWARD_HNS ===
 Name: EDWARD
 Class: Gentleman Hns
-Pic: Gentleman
+Pic: Gentleman Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2935,7 +2935,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_GREGORY_HNS ===
 Name: GREGORY
 Class: Gentleman Hns
-Pic: Gentleman
+Pic: Gentleman Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2952,7 +2952,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_VIRGIL_HNS ===
 Name: VIRGIL
 Class: Gentleman Hns
-Pic: Gentleman
+Pic: Gentleman Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -2965,7 +2965,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ALFRED_HNS ===
 Name: ALFRED
 Class: Gentleman Hns
-Pic: Gentleman
+Pic: Gentleman Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3067,7 +3067,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 === TRAINER_DON_HNS ===
 Name: DON
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3084,7 +3084,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ROB_HNS ===
 Name: ROB
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3109,7 +3109,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ED_HNS ===
 Name: ED
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3130,7 +3130,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_WADE_HNS ===
 Name: WADE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3151,7 +3151,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_BENNY_HNS ===
 Name: BENNY
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3168,7 +3168,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_AL_HNS ===
 Name: AL
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3185,7 +3185,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JOSH_HNS ===
 Name: JOSH
 Class: Bug Maniac Hns
-Pic: Bug Maniac Hns
+Pic: Bug Maniac
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3202,7 +3202,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_ARNIE_HNS ===
 Name: ARNIE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3215,7 +3215,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_KEN_HNS ===
 Name: KEN
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3240,7 +3240,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DOUG_HNS ===
 Name: DOUG
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3257,7 +3257,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_WAYNE_HNS ===
 Name: WAYNE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -3622,7 +3622,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_HAROLD_HNS ===
 Name: HAROLD
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3647,7 +3647,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_SIMON_HNS ===
 Name: SIMON
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3664,7 +3664,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_RANDALL_HNS ===
 Name: RANDALL
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3685,7 +3685,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_CHARLIE_HNS ===
 Name: CHARLIE
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3706,7 +3706,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_GEORGE_HNS ===
 Name: GEORGE
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3739,7 +3739,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_BERKE_HNS ===
 Name: BERKE
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3752,7 +3752,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_KIRK_HNS ===
 Name: KIRK
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3769,7 +3769,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MATHEW_HNS ===
 Name: MATHEW
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3782,7 +3782,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_HAL_HNS ===
 Name: HAL
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3803,7 +3803,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_PATON_HNS ===
 Name: PATON
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3828,7 +3828,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DARYL_HNS ===
 Name: DARYL
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3841,7 +3841,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_WALTER_HNS ===
 Name: WALTER
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3862,7 +3862,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_TONY_HNS ===
 Name: TONY
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3883,7 +3883,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JEROME_HNS ===
 Name: JEROME
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3904,7 +3904,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_TUCKER_HNS ===
 Name: TUCKER
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3921,7 +3921,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_RICK_HNS ===
 Name: RICK
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3942,7 +3942,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_CAMERON_HNS ===
 Name: CAMERON
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3955,7 +3955,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_SETH_HNS ===
 Name: SETH
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3980,7 +3980,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JAMES_HNS ===
 Name: JAMES
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -4001,7 +4001,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_LEWIS_HNS ===
 Name: LEWIS
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -4022,7 +4022,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_PARKER_HNS ===
 Name: PARKER
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -4051,7 +4051,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ELAINE_HNS ===
 Name: ELAINE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4064,7 +4064,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_PAULA_HNS ===
 Name: PAULA
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4081,7 +4081,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_KAYLEE_HNS ===
 Name: KAYLEE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4098,7 +4098,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_SUSIE_HNS ===
 Name: SUSIE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4111,7 +4111,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DENISE_HNS ===
 Name: DENISE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4124,7 +4124,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_KARA_HNS ===
 Name: KARA
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4141,7 +4141,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_WENDY_HNS ===
 Name: WENDY
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4162,7 +4162,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_LISA_HNS ===
 Name: LISA
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4175,7 +4175,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JILL_HNS ===
 Name: JILL
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4192,7 +4192,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MARY_HNS ===
 Name: MARY
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4209,7 +4209,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_KATIE_HNS ===
 Name: KATIE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4222,7 +4222,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DAWN_HNS ===
 Name: DAWN
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4235,7 +4235,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_TARA_HNS ===
 Name: TARA
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4248,7 +4248,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_NICOLE_HNS ===
 Name: NICOLE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4273,7 +4273,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_LORI_HNS ===
 Name: LORI
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4290,7 +4290,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JODY_HNS ===
 Name: JODY
 Class: Beauty Hns
-Pic: Beauty
+Pic: Beauty Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4303,7 +4303,7 @@ IVs: 17 HP / 12 Atk / 18 Def / 16 SpA / 16 SpD / 24 Spe
 === TRAINER_NIKKI_HNS ===
 Name: NIKKI
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4328,7 +4328,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DIANA_HNS ===
 Name: DIANA
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4349,7 +4349,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_BRIANA_HNS ===
 Name: BRIANA
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4556,7 +4556,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_STAN_HNS ===
 Name: STAN
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4569,7 +4569,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ERIC_HNS ===
 Name: ERIC
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4582,7 +4582,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_GREGG_HNS ===
 Name: GREGG
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4611,7 +4611,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JAY_HNS ===
 Name: JAY
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4640,7 +4640,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DAVE_HNS ===
 Name: DAVE
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4653,7 +4653,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_SAM_HNS ===
 Name: SAM
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4678,7 +4678,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_TOM_HNS ===
 Name: TOM
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4703,7 +4703,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_PAT_HNS ===
 Name: PAT
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4724,7 +4724,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_SHAWN_HNS ===
 Name: SHAWN
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4745,7 +4745,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_TERU_HNS ===
 Name: TERU
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4766,7 +4766,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_RUSS_HNS ===
 Name: RUSS
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4779,7 +4779,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_NORTON_HNS ===
 Name: NORTON
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4792,7 +4792,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_HUGH_HNS ===
 Name: HUGH
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -4805,7 +4805,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MARKUS_HNS ===
 Name: MARKUS
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -5201,7 +5201,7 @@ IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_KAZU_HNS ===
 Name: KAZU
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -5222,7 +5222,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DWAYNE_HNS ===
 Name: DWAYNE
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -5247,7 +5247,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_HARRIS_HNS ===
 Name: HARRIS
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -5260,7 +5260,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ZEKE_HNS ===
 Name: ZEKE
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -5281,7 +5281,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_CHARLES_HNS ===
 Name: CHARLES
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -5302,7 +5302,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_RILEY_HNS ===
 Name: RILEY
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -5315,7 +5315,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JOEL_HNS ===
 Name: JOEL
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -5332,7 +5332,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_GLENN_HNS ===
 Name: GLENN
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5353,7 +5353,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DUNCAN_HNS ===
 Name: DUNCAN
 Class: Burglar Hns
-Pic: Burglar Hns
+Pic: Burglar Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5374,7 +5374,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_EDDIE_HNS ===
 Name: EDDIE
 Class: Burglar Hns
-Pic: Burglar Hns
+Pic: Burglar Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5391,7 +5391,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_RICHARDO_HNS ===
 Name: RICHARDO
 Class: Burglar Hns
-Pic: Burglar Hns
+Pic: Burglar Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5598,7 +5598,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_IRWIN_HNS ===
 Name: IRWIN
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -5623,7 +5623,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_FRITZ_HNS ===
 Name: FRITZ
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -5644,7 +5644,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_HORTON_HNS ===
 Name: HORTON
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -5804,7 +5804,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_NATHAN_HNS ===
 Name: NATHAN
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5821,7 +5821,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_FRANKLIN_HNS ===
 Name: FRANKLIN
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5838,7 +5838,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_HERMAN_HNS ===
 Name: HERMAN
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5863,7 +5863,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_FIDEL_HNS ===
 Name: FIDEL
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5880,7 +5880,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_GREG_HNS ===
 Name: GREG
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5893,7 +5893,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_NORMAN_HNS ===
 Name: NORMAN
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5910,7 +5910,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MARK_HNS ===
 Name: MARK
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5931,7 +5931,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_PHIL_HNS ===
 Name: PHIL
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5952,7 +5952,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_RICHARD_HNS ===
 Name: RICHARD
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5965,7 +5965,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_GILBERT_HNS ===
 Name: GILBERT
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5986,7 +5986,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JARED_HNS ===
 Name: JARED
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6007,7 +6007,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_RODNEY_HNS ===
 Name: RODNEY
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6024,7 +6024,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_LIZ_HNS ===
 Name: LIZ
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6037,7 +6037,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GINA_HNS ===
 Name: GINA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6058,7 +6058,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_BROOKE_HNS ===
 Name: BROOKE
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6075,7 +6075,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_KIM_HNS ===
 Name: KIM
 Class: Aroma Lady Hns
-Pic: Aroma Lady Hns
+Pic: Aroma Lady Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6092,7 +6092,7 @@ IVs: 16 HP / 12 Atk / 18 Def / 22 SpA / 18 SpD / 22 Spe
 === TRAINER_CINDY_HNS ===
 Name: CINDY
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6105,7 +6105,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_HOPE_HNS ===
 Name: HOPE
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6118,7 +6118,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_SHARON_HNS ===
 Name: SHARON
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6143,7 +6143,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_DEBRA_HNS ===
 Name: DEBRA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6156,7 +6156,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_ERIN_HNS ===
 Name: ERIN
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6181,7 +6181,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_HEIDI_HNS ===
 Name: HEIDI
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6206,7 +6206,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_EDNA_HNS ===
 Name: EDNA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6227,7 +6227,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_TIFFANY_HNS ===
 Name: TIFFANY
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6244,7 +6244,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_TANYA_HNS ===
 Name: TANYA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -6261,7 +6261,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_ROLAND_HNS ===
 Name: ROLAND
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6274,7 +6274,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_TODD_HNS ===
 Name: TODD
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6287,7 +6287,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_IVAN_HNS ===
 Name: IVAN
 Class: Pkmn Ranger Hns
-Pic: Pokemon Ranger M Hns
+Pic: Pokemon Ranger M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6304,7 +6304,7 @@ IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 === TRAINER_ELLIOT_HNS ===
 Name: ELLIOT
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6321,7 +6321,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_BARRY_HNS ===
 Name: BARRY
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6334,7 +6334,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_LLOYD_HNS ===
 Name: LLOYD
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6351,7 +6351,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DEAN_HNS ===
 Name: DEAN
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6376,7 +6376,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_SID_HNS ===
 Name: SID
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6397,7 +6397,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_HARVEY_HNS ===
 Name: HARVEY
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6422,7 +6422,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DALE_HNS ===
 Name: DALE
 Class: Bug Maniac Hns
-Pic: Bug Maniac Hns
+Pic: Bug Maniac
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6455,7 +6455,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_TED_HNS ===
 Name: TED
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6476,7 +6476,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_THOMAS_HNS ===
 Name: THOMAS
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6497,7 +6497,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_LEROY_HNS ===
 Name: LEROY
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6518,7 +6518,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DAVID_HNS ===
 Name: DAVID
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6543,7 +6543,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JOHN_HNS ===
 Name: JOHN
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6568,7 +6568,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JERRY_HNS ===
 Name: JERRY
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6589,7 +6589,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_GRANT_HNS ===
 Name: GRANT
 Class: Pkmn Ranger Hns
-Pic: Pokemon Ranger M Hns
+Pic: Pokemon Ranger M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6614,7 +6614,7 @@ IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 === TRAINER_SPENCER_HNS ===
 Name: SPENCER
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6635,7 +6635,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_QUENTIN_HNS ===
 Name: QUENTIN
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6879,7 +6879,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_KOJI_HNS ===
 Name: KOJI
 Class: Bug Maniac Hns
-Pic: Bug Maniac Hns
+Pic: Bug Maniac
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6904,7 +6904,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MARTHA_HNS ===
 Name: MARTHA
 Class: Channeler Hns
-Pic: Channeler Hns
+Pic: Channeler Frlg
 Gender: Male
 Music: Hg Sage
 Double Battle: No
@@ -6925,7 +6925,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_GRACE_HNS ===
 Name: GRACE
 Class: Channeler Hns
-Pic: Channeler Hns
+Pic: Channeler Frlg
 Gender: Male
 Music: Hg Sage
 Double Battle: No
@@ -7046,7 +7046,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_DORIS_HNS ===
 Name: DORIS
 Class: Psychic Hns
-Pic: Psychic F
+Pic: Psychic F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -7219,7 +7219,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_TREVOR_HNS ===
 Name: TREVOR
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -7432,7 +7432,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
 === TRAINER_AMY_AND_MAY_HNS ===
 Name: AMY&MAY
 Class: Twins Hns
-Pic: Twins Hns
+Pic: Twins
 Gender: Male
 Music: Hg Girl 1
 Double Battle: Yes
@@ -7449,7 +7449,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_ANN_AND_ANNE_HNS ===
 Name: ANN&ANNE
 Class: Twins Hns
-Pic: Twins Hns
+Pic: Twins
 Gender: Male
 Music: Hg Girl 1
 Double Battle: Yes
@@ -7466,7 +7466,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_JO_AND_ZOE_HNS ===
 Name: JO&ZOE
 Class: Twins Hns
-Pic: Twins Hns
+Pic: Twins
 Gender: Male
 Music: Hg Girl 1
 Double Battle: Yes
@@ -7483,7 +7483,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_MEG_AND_PEG_HNS ===
 Name: MEG&PEG
 Class: Twins Hns
-Pic: Twins Hns
+Pic: Twins
 Gender: Male
 Music: Hg Girl 1
 Double Battle: Yes
@@ -7500,7 +7500,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_LEA_AND_PIA_HNS ===
 Name: LEA&PIA
 Class: Twins Hns
-Pic: Twins Hns
+Pic: Twins
 Gender: Male
 Music: Hg Girl 1
 Double Battle: Yes
@@ -7623,7 +7623,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_THOM_AND_KAE_HNS ===
 Name: THOM & KAE
 Class: Young Couple Hns
-Pic: Young Couple
+Pic: Young Couple Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: Yes
@@ -7640,7 +7640,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_DUFF_AND_EDA_HNS ===
 Name: DUFF & EDA
 Class: Young Couple Hns
-Pic: Young Couple
+Pic: Young Couple Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: Yes
@@ -8770,7 +8770,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_BROCK_HNS ===
 Name: BROCK
 Class: Leader Kanto Hns
-Pic: Leader Brock Hns
+Pic: Leader Brock Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -8947,7 +8947,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 === TRAINER_ERIKA_HNS ===
 Name: ERIKA
 Class: Leader Kanto Hns
-Pic: Leader Erika Hns
+Pic: Leader Erika Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -9411,7 +9411,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 === TRAINER_BRUNO_1_HNS ===
 Name: BRUNO
 Class: Elite Four Hns
-Pic: Elite Four Bruno Hns
+Pic: Elite Four Bruno Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
@@ -9462,7 +9462,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 === TRAINER_BRUNO_2_HNS ===
 Name: BRUNO
 Class: Elite Four Hns
-Pic: Elite Four Bruno Hns
+Pic: Elite Four Bruno Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
@@ -9631,7 +9631,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 === TRAINER_KOGA_1_HNS ===
 Name: KOGA
 Class: Elite Four Hns
-Pic: Elite Four Koga Hns
+Pic: Leader Koga Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
@@ -9682,7 +9682,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 === TRAINER_KOGA_2_HNS ===
 Name: KOGA
 Class: Elite Four Hns
-Pic: Elite Four Koga Hns
+Pic: Leader Koga Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
@@ -11547,7 +11547,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_JOEY_2_HNS ===
 Name: JOEY
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -11560,7 +11560,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JOEY_3_HNS ===
 Name: JOEY
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -11593,7 +11593,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_JOEY_4_HNS ===
 Name: JOEY
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -11609,7 +11609,7 @@ Level: 40
 === TRAINER_JOEY_5_HNS ===
 Name: JOEY
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -11625,7 +11625,7 @@ Level: 65
 === TRAINER_WADE_2_HNS ===
 Name: WADE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -11650,7 +11650,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_WADE_3_HNS ===
 Name: WADE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -11679,7 +11679,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_WADE_4_HNS ===
 Name: WADE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -11700,7 +11700,7 @@ Level: 36
 === TRAINER_WADE_5_HNS ===
 Name: WADE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -11834,7 +11834,7 @@ Level: 55
 === TRAINER_LIZ_2_HNS ===
 Name: LIZ
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -11851,7 +11851,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_LIZ_3_HNS ===
 Name: LIZ
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -11876,7 +11876,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_LIZ_4_HNS ===
 Name: LIZ
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -11894,7 +11894,7 @@ Level: 36
 === TRAINER_LIZ_5_HNS ===
 Name: LIZ
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12014,7 +12014,7 @@ Level: 56
 === TRAINER_TODD_2_HNS ===
 Name: TODD
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12035,7 +12035,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_TODD_3_HNS ===
 Name: TODD
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12064,7 +12064,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_TODD_4_HNS ===
 Name: TODD
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12085,7 +12085,7 @@ Level: 45
 === TRAINER_TODD_5_HNS ===
 Name: TODD
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12106,7 +12106,7 @@ Level: 55
 === TRAINER_GINA_2_HNS ===
 Name: GINA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12131,7 +12131,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GINA_3_HNS ===
 Name: GINA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12160,7 +12160,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_GINA_4_HNS ===
 Name: GINA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12178,7 +12178,7 @@ Level: 48
 === TRAINER_GINA_5_HNS ===
 Name: GINA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12208,7 +12208,7 @@ Level: 55
 === TRAINER_IRWIN_2_HNS ===
 Name: IRWIN
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -12227,7 +12227,7 @@ Level: 27
 === TRAINER_IRWIN_3_HNS ===
 Name: IRWIN
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -12246,7 +12246,7 @@ Level: 35
 === TRAINER_IRWIN_4_HNS ===
 Name: IRWIN
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -12265,7 +12265,7 @@ Level: 45
 === TRAINER_IRWIN_5_HNS ===
 Name: IRWIN
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -12296,7 +12296,7 @@ Level: 55
 === TRAINER_ARNIE_2_HNS ===
 Name: ARNIE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12313,7 +12313,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ARNIE_3_HNS ===
 Name: ARNIE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12334,7 +12334,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ARNIE_4_HNS ===
 Name: ARNIE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12355,7 +12355,7 @@ Level: 48
 === TRAINER_ARNIE_5_HNS ===
 Name: ARNIE
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12775,7 +12775,7 @@ Level: 52
 === TRAINER_BRENT_2_HNS ===
 Name: BRENT
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12792,7 +12792,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_BRENT_3_HNS ===
 Name: BRENT
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12821,7 +12821,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_BRENT_4_HNS ===
 Name: BRENT
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12837,7 +12837,7 @@ Level: 53
 === TRAINER_TIFFANY_2_HNS ===
 Name: TIFFANY
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12854,7 +12854,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_TIFFANY_3_HNS ===
 Name: TIFFANY
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12871,7 +12871,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_TIFFANY_4_HNS ===
 Name: TIFFANY
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -13089,7 +13089,7 @@ IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ERIN_2_HNS ===
 Name: ERIN
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -13114,7 +13114,7 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 === TRAINER_ERIN_3_HNS ===
 Name: ERIN
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -13627,7 +13627,7 @@ Level: 57
 === TRAINER_RILEY_2_HNS ===
 Name: RILEY
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -13642,7 +13642,7 @@ Level: 60
 === TRAINER_RILEY_3_HNS ===
 Name: RILEY
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -13660,7 +13660,7 @@ Level: 60
 === TRAINER_RILEY_4_HNS ===
 Name: RILEY
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -13678,7 +13678,7 @@ Level: 65
 === TRAINER_TREVOR_2_HNS ===
 Name: TREVOR
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -13693,7 +13693,7 @@ Level: 40
 === TRAINER_TREVOR_3_HNS ===
 Name: TREVOR
 Class: Juggler Hns
-Pic: Juggler Hns
+Pic: Juggler Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -13822,7 +13822,7 @@ Level: 62
 === TRAINER_ROB_2_HNS ===
 Name: ROB
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13840,7 +13840,7 @@ Level: 63
 === TRAINER_ROB_3_HNS ===
 Name: ROB
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13861,7 +13861,7 @@ Level: 64
 === TRAINER_NICOLE_2_HNS ===
 Name: NICOLE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -13879,7 +13879,7 @@ Level: 66
 === TRAINER_NICOLE_3_HNS ===
 Name: NICOLE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -13984,7 +13984,7 @@ Level: 63
 === TRAINER_JOEL_2_HNS ===
 Name: JOEL
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -14008,7 +14008,7 @@ Level: 60
 === TRAINER_JOEL_3_HNS ===
 Name: JOEL
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -14032,7 +14032,7 @@ Level: 62
 === TRAINER_CHARLES_2_HNS ===
 Name: CHARLES
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -14053,7 +14053,7 @@ Level: 58
 === TRAINER_CHARLES_3_HNS ===
 Name: CHARLES
 Class: Biker Hns
-Pic: Biker Hns
+Pic: Biker Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -14181,7 +14181,7 @@ Shiny: Yes
 === TRAINER_MELEMELE_SWIMMER_1_HNS ===
 Name: MIA
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Female
 Music: Hg Girl 2
 Double Battle: No
@@ -14223,7 +14223,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MELEMELE_SWIMMER_2_HNS ===
 Name: JIMMY
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -14258,7 +14258,7 @@ Level: 68
 === TRAINER_AKALA_SWIMMER_1_HNS ===
 Name: KELSIE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Female
 Music: Hg Girl 2
 Double Battle: No
@@ -14296,7 +14296,7 @@ Jolly Nature
 === TRAINER_AKALA_SWIMMER_2_HNS ===
 Name: PORTIA
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Female
 Music: Hg Girl 2
 Double Battle: No
@@ -14332,7 +14332,7 @@ Careful Nature
 === TRAINER_AKALA_SWIMMER_3_HNS ===
 Name: GEOFF
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -14368,7 +14368,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_PONI_SWIMMER_1_HNS ===
 Name: JADE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: Female
 Music: Hg Girl 2
 Double Battle: No
@@ -14486,7 +14486,7 @@ Level: 65
 === TRAINER_AKALA_PICNICKER_HNS ===
 Name: TATIANA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Female
 Music: Hg Girl 1
 Double Battle: No
@@ -14522,7 +14522,7 @@ Level: 63
 === TRAINER_AKALA_CAMPER_HNS ===
 Name: OLIVER
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -14558,7 +14558,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_AKALA_FOREST_BUGCATCHER_1_HNS ===
 Name: STANLEY
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -14585,7 +14585,7 @@ Level: 63
 === TRAINER_AKALA_FOREST_BUGCATCHER_2_HNS ===
 Name: SCOTTY
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -14613,7 +14613,7 @@ Level: 61
 === TRAINER_AKALA_CAVE_PICNICKER_HNS ===
 Name: MELISSA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Female
 Music: Hg Girl 1
 Double Battle: No
@@ -14648,7 +14648,7 @@ Level: 62
 === TRAINER_AKALA_CAVE_CAMPER_HNS ===
 Name: RONNY
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -14716,7 +14716,7 @@ Level: 64
 === TRAINER_ULAULA_PICNICKER_HNS ===
 Name: MELISSA
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Female
 Music: Hg Girl 1
 Double Battle: No
@@ -14753,7 +14753,7 @@ Level: 61
 === TRAINER_ULAULA_YOUNGSTER_HNS ===
 Name: JOEY
 Class: Youngster Hns
-Pic: Youngster Hns
+Pic: Youngster Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -15115,7 +15115,7 @@ Level: 70
 === TRAINER_MUALANI_HNS ===
 Name: MUALANI
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Gender: female
 Music: Hg Girl 2
 Double Battle: Yes
@@ -15188,7 +15188,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_WESSEL_HNS ===
 Name: WESSEL
 Class: Super Nerd Hns
-Pic: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -18280,7 +18280,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_AMALA_HNS ===
 Name: AMALA
 Class: Pkmn Breeder Hns
-Pic: Pokemon Breeder F Hns
+Pic: Pokemon Breeder F
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18312,7 +18312,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_AMALA_2_HNS ===
 Name: AMALA
 Class: Pkmn Breeder Hns
-Pic: Pokemon Breeder F Hns
+Pic: Pokemon Breeder F
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18344,7 +18344,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_AMALA_3_HNS ===
 Name: AMALA
 Class: Pkmn Breeder Hns
-Pic: Pokemon Breeder F Hns
+Pic: Pokemon Breeder F
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18376,7 +18376,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_AMBER_HNS ===
 Name: AMBER
 Class: Pkmn Breeder Hns
-Pic: Pokemon Breeder F Hns
+Pic: Pokemon Breeder F
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18432,7 +18432,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_AUBREE_HNS ===
 Name: AUBREE
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -18448,7 +18448,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_CORBYN_HNS ===
 Name: CORBYN
 Class: Bug Maniac Hns
-Pic: Bug Maniac Hns
+Pic: Bug Maniac
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
@@ -18488,7 +18488,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_CORY_HNS ===
 Name: CORY
 Class: Pkmn Breeder Hns
-Pic: Pokemon Breeder M Hns
+Pic: Pokemon Breeder M
 Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move
@@ -18672,7 +18672,7 @@ IVs: 18 HP / 22 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 === TRAINER_JORDAN_HNS ===
 Name: JORDAN
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
@@ -18744,7 +18744,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 === TRAINER_MARK_2_HNS ===
 Name: MARK
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
@@ -18764,7 +18764,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MARK_3_HNS ===
 Name: MARK
 Class: Psychic M Hns
-Pic: Psychic M Hns
+Pic: Psychic M Frlg
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
@@ -18792,7 +18792,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MERCY_HNS ===
 Name: MERCY
 Class: Channeler Hns
-Pic: Channeler Hns
+Pic: Channeler Frlg
 Music: Hg Sage
 Double Battle: No
 AI: Check Bad Move
@@ -18808,7 +18808,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MICKY_HNS ===
 Name: MICKY
 Class: Bug Catcher Hns
-Pic: Bug Catcher
+Pic: Bug Catcher Frlg
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
@@ -18900,7 +18900,7 @@ IVs: 20 HP / 28 Atk / 28 Def / 20 SpA / 20 SpD / 20 Spe
 === TRAINER_ROSE_HNS ===
 Name: ROSE
 Class: Aroma Lady Hns
-Pic: Aroma Lady Hns
+Pic: Aroma Lady Frlg
 Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
@@ -19072,7 +19072,7 @@ IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 === TRAINER_COLTON_HNS ===
 Name: COLTON
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move
@@ -19092,7 +19092,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_KEIRA_HNS ===
 Name: KEIRA
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -19108,7 +19108,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_LEAH_HNS ===
 Name: LEAH
 Class: Swimmer F Hns
-Pic: Swimmer F
+Pic: Swimmer F Frlg
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -19124,7 +19124,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_MARCEL_HNS ===
 Name: MARCEL
 Class: Pkmn Ranger Hns
-Pic: Pokemon Ranger M Hns
+Pic: Pokemon Ranger M
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
@@ -19144,7 +19144,7 @@ IVs: 20 HP / 22 Atk / 18 Def / 18 SpA / 22 SpD / 18 Spe
 === TRAINER_MATT_HNS ===
 Name: MATT
 Class: Swimmer M Hns
-Pic: Swimmer M
+Pic: Swimmer M Frlg
 Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move
@@ -19196,7 +19196,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_VITO_HNS ===
 Name: VITO
 Class: Pokemaniac Hns
-Pic: Pokemaniac
+Pic: Pokemaniac Frlg
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
@@ -19229,7 +19229,7 @@ IVs: 28 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 === TRAINER_DEVON_AND_MAY_HNS ===
 Name: DEV & MAY
 Class: Young Couple Hns
-Pic: Young Couple
+Pic: Young Couple Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: Yes
@@ -19246,7 +19246,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_SILAS_HNS ===
 Name: SILAS
 Class: Pkmn Ranger Hns
-Pic: Pokemon Ranger M Hns
+Pic: Pokemon Ranger M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -19267,7 +19267,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_GARRET_HNS ===
 Name: GARRET
 Class: Bug Maniac Hns
-Pic: Bug Maniac Hns
+Pic: Bug Maniac
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -19288,7 +19288,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_ORRIN_HNS ===
 Name: ORRIN
 Class: Bug Maniac Hns
-Pic: Bug Maniac Hns
+Pic: Bug Maniac
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -19313,7 +19313,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_KESTER_HNS ===
 Name: KESTER
 Class: Bug Maniac Hns
-Pic: Bug Maniac Hns
+Pic: Bug Maniac
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -19338,7 +19338,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_NASH_HNS ===
 Name: NASH
 Class: Pkmn Breeder Hns
-Pic: Pokemon Breeder M Hns
+Pic: Pokemon Breeder M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -19371,7 +19371,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_CORDELIA_HNS ===
 Name: CORDELIA
 Class: Pkmn Breeder Hns
-Pic: Pokemon Breeder F Hns
+Pic: Pokemon Breeder F
 Gender: Female
 Music: Hg Girl 2
 Double Battle: No
@@ -19404,7 +19404,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_DALIA_HNS ===
 Name: DALIA
 Class: Aroma Lady Hns
-Pic: Aroma Lady Hns
+Pic: Aroma Lady Frlg
 Gender: Female
 Music: Hg Girl 2
 Double Battle: No
@@ -19442,7 +19442,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_BARNABY_HNS ===
 Name: BARNABY
 Class: Camper Hns
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -19459,7 +19459,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 === TRAINER_MARCY_HNS ===
 Name: MARCY
 Class: Picnicker Hns
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Female
 Music: Hg Girl 2
 Double Battle: No
@@ -19696,7 +19696,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
 === TRAINER_CATHY_HNS ===
 Name: CATHY
 Class: Pkmn Ranger Hns
-Pic: Pokemon Ranger F Hns
+Pic: Pokemon Ranger F
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
