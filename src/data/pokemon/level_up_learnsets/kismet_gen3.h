@@ -3333,23 +3333,6 @@ static const struct LevelUpMove sGekoponLevelUpLearnset_KismetGen3[] = {
     LEVEL_UP_END
 };
 
-static const struct LevelUpMove sGeowattLevelUpLearnset_KismetGen3[] = {
-    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
-    LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
-    LEVEL_UP_MOVE( 1, MOVE_CHARGE),
-    LEVEL_UP_MOVE( 1, MOVE_ROCK_THROW),
-    LEVEL_UP_MOVE( 6, MOVE_CHARGE),
-    LEVEL_UP_MOVE(11, MOVE_ROCK_THROW),
-    LEVEL_UP_MOVE(16, MOVE_SPARK),
-    LEVEL_UP_MOVE(21, MOVE_SELF_DESTRUCT),
-    LEVEL_UP_MOVE(29, MOVE_CHARGE_BEAM),
-    LEVEL_UP_MOVE(37, MOVE_ROCK_BLAST),
-    LEVEL_UP_MOVE(45, MOVE_ZAP_CANNON),
-    LEVEL_UP_MOVE(53, MOVE_EXPLOSION),
-    LEVEL_UP_MOVE(62, MOVE_DOUBLE_EDGE),
-    LEVEL_UP_END
-};
-
 static const struct LevelUpMove sKrolucadaLevelUpLearnset_KismetGen3[] = {
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
     LEVEL_UP_MOVE( 1, MOVE_STRING_SHOT),
@@ -3449,14 +3432,6 @@ static const struct LevelUpMove sPendragonLevelUpLearnset_KismetGen3[] = {
     LEVEL_UP_MOVE(40, MOVE_SPIT_UP),
     LEVEL_UP_MOVE(40, MOVE_SWALLOW),
     LEVEL_UP_MOVE(48, MOVE_SLUDGE_BOMB),
-    LEVEL_UP_END
-};
-
-static const struct LevelUpMove sPsychuLevelUpLearnset_KismetGen3[] = {
-    LEVEL_UP_MOVE( 1, MOVE_PSYBEAM),
-    LEVEL_UP_MOVE( 1, MOVE_AGILITY),
-    LEVEL_UP_MOVE( 1, MOVE_QUICK_ATTACK),
-    LEVEL_UP_MOVE( 1, MOVE_THUNDERBOLT),
     LEVEL_UP_END
 };
 

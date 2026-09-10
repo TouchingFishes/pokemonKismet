@@ -2557,8 +2557,6 @@ gCryTable::
 @ unrelated official family - the CRY_* enum is gated the same way,
 @ so the table and the enum can never disagree.
 .if P_KISMET_FAKEMON == TRUE
-	cry Cry_Psychu
-	cry Cry_Geowatt
 	cry Cry_Raelic
 	cry Cry_Romushu
 	cry Cry_Fusang
@@ -5136,8 +5134,6 @@ gCryTable_Reverse::
 @ unrelated official family - the CRY_* enum is gated the same way,
 @ so the table and the enum can never disagree.
 .if P_KISMET_FAKEMON == TRUE
-	cry_reverse Cry_Psychu
-	cry_reverse Cry_Geowatt
 	cry_reverse Cry_Raelic
 	cry_reverse Cry_Romushu
 	cry_reverse Cry_Fusang

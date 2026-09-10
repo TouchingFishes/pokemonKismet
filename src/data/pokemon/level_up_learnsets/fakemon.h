@@ -7,26 +7,6 @@
 // generation, so this file is included alongside whichever
 // level_up_learnsets/gen_N.h the P_LVL_UP_LEARNSETS config selects.
 
-static const struct LevelUpMove sPsychuLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_QUICK_ATTACK),
-    LEVEL_UP_MOVE( 1, MOVE_AGILITY),
-    LEVEL_UP_MOVE( 1, MOVE_THUNDERBOLT),
-    LEVEL_UP_MOVE( 1, MOVE_PSYBEAM),
-    LEVEL_UP_MOVE(50, MOVE_PLAY_ROUGH),
-    LEVEL_UP_MOVE(60, MOVE_PSYCHO_CUT),
-    LEVEL_UP_END
-};
-
-static const struct LevelUpMove sGeowattLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_ZAP_CANNON),
-    LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
-    LEVEL_UP_MOVE( 1, MOVE_ROCK_SLIDE),
-    LEVEL_UP_MOVE( 1, MOVE_MAGNITUDE),
-    LEVEL_UP_MOVE(53, MOVE_EXPLOSION),
-    LEVEL_UP_MOVE(62, MOVE_STONE_EDGE),
-    LEVEL_UP_END
-};
-
 static const struct LevelUpMove sRaelicLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_HARDEN),
     LEVEL_UP_MOVE( 5, MOVE_BIDE),

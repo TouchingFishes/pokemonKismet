@@ -2560,8 +2560,6 @@ enum PokemonCry
 #if P_KISMET_FAKEMON
     // Kismet custom species. The two ALT_ starters reuse their original
     // species' cry, so they get no entry of their own.
-    CRY_PSYCHU,
-    CRY_GEOWATT,
     CRY_RAELIC,
     CRY_ROMUSHU,
     CRY_FUSANG,

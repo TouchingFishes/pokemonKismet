@@ -1691,26 +1691,24 @@
 
 // Kismet custom species, ported from pokemonHnS. Appended after every
 // official entry so no official species is renumbered.
-#define SPECIES_PSYCHU                                  1573
-#define SPECIES_GEOWATT                                 1574
-#define SPECIES_RAELIC                                  1575
-#define SPECIES_ROMUSHU                                 1576
-#define SPECIES_FUSANG                                  1577
-#define SPECIES_LARVICID                                1578
-#define SPECIES_PENDRAGON                               1579
-#define SPECIES_KROLUCADA                               1580
-#define SPECIES_KROLUCARD                               1581
-#define SPECIES_DUNDRAG                                 1582
-#define SPECIES_DUNLONG                                 1583
-#define SPECIES_MLLOY                                   1584
-#define SPECIES_PURGISLUG                               1585
-#define SPECIES_DECIBELLE                               1586
-#define SPECIES_GEKOPON                                 1587
-#define SPECIES_CORSOREEF                               1588
-#define SPECIES_KUJINOUGHT                              1589
-#define SPECIES_ALT_MEGANIUM                            1590
-#define SPECIES_ALT_TYPHLOSION                          1591
-#define SPECIES_ALT_FERALIGATR                          1592
+#define SPECIES_RAELIC                                  1573
+#define SPECIES_ROMUSHU                                 1574
+#define SPECIES_FUSANG                                  1575
+#define SPECIES_LARVICID                                1576
+#define SPECIES_PENDRAGON                               1577
+#define SPECIES_KROLUCADA                               1578
+#define SPECIES_KROLUCARD                               1579
+#define SPECIES_DUNDRAG                                 1580
+#define SPECIES_DUNLONG                                 1581
+#define SPECIES_MLLOY                                   1582
+#define SPECIES_PURGISLUG                               1583
+#define SPECIES_DECIBELLE                               1584
+#define SPECIES_GEKOPON                                 1585
+#define SPECIES_CORSOREEF                               1586
+#define SPECIES_KUJINOUGHT                              1587
+#define SPECIES_ALT_MEGANIUM                            1588
+#define SPECIES_ALT_TYPHLOSION                          1589
+#define SPECIES_ALT_FERALIGATR                          1590
 
 #define SPECIES_EGG                                     (SPECIES_ALT_FERALIGATR + 1)
 

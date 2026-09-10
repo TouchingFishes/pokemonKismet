@@ -27558,46 +27558,6 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 // The fork ships GBA-style art, so the same source fills both the plain and
 // _gba slots; flipping P_GBA_STYLE_SPECIES_GFX cannot break the build.
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Psychu[] = INCBIN_U32("graphics/pokemon/psychu/anim_front.4bpp.smol");
-    const u16 gMonPalette_Psychu[] = INCBIN_U16("graphics/pokemon/psychu/normal.gbapal");
-    const u32 gMonBackPic_Psychu[] = INCBIN_U32("graphics/pokemon/psychu/back.4bpp.smol");
-    const u16 gMonShinyPalette_Psychu[] = INCBIN_U16("graphics/pokemon/psychu/shiny.gbapal");
-#else
-    const u32 gMonFrontPic_Psychu[] = INCBIN_U32("graphics/pokemon/psychu/anim_front_gba.4bpp.smol");
-    const u16 gMonPalette_Psychu[] = INCBIN_U16("graphics/pokemon/psychu/normal_gba.gbapal");
-    const u32 gMonBackPic_Psychu[] = INCBIN_U32("graphics/pokemon/psychu/back_gba.4bpp.smol");
-    const u16 gMonShinyPalette_Psychu[] = INCBIN_U16("graphics/pokemon/psychu/shiny_gba.gbapal");
-#endif
-#if !P_GBA_STYLE_SPECIES_ICONS
-    const u8 gMonIcon_Psychu[] = INCBIN_U8("graphics/pokemon/psychu/icon.4bpp");
-#else
-    const u8 gMonIcon_Psychu[] = INCBIN_U8("graphics/pokemon/psychu/icon_gba.4bpp");
-#endif
-#if P_FOOTPRINTS
-    const u8 gMonFootprint_Psychu[] = INCBIN_U8("graphics/pokemon/psychu/footprint.1bpp");
-#endif
-
-#if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Geowatt[] = INCBIN_U32("graphics/pokemon/geowatt/anim_front.4bpp.smol");
-    const u16 gMonPalette_Geowatt[] = INCBIN_U16("graphics/pokemon/geowatt/normal.gbapal");
-    const u32 gMonBackPic_Geowatt[] = INCBIN_U32("graphics/pokemon/geowatt/back.4bpp.smol");
-    const u16 gMonShinyPalette_Geowatt[] = INCBIN_U16("graphics/pokemon/geowatt/shiny.gbapal");
-#else
-    const u32 gMonFrontPic_Geowatt[] = INCBIN_U32("graphics/pokemon/geowatt/anim_front_gba.4bpp.smol");
-    const u16 gMonPalette_Geowatt[] = INCBIN_U16("graphics/pokemon/geowatt/normal_gba.gbapal");
-    const u32 gMonBackPic_Geowatt[] = INCBIN_U32("graphics/pokemon/geowatt/back_gba.4bpp.smol");
-    const u16 gMonShinyPalette_Geowatt[] = INCBIN_U16("graphics/pokemon/geowatt/shiny_gba.gbapal");
-#endif
-#if !P_GBA_STYLE_SPECIES_ICONS
-    const u8 gMonIcon_Geowatt[] = INCBIN_U8("graphics/pokemon/geowatt/icon.4bpp");
-#else
-    const u8 gMonIcon_Geowatt[] = INCBIN_U8("graphics/pokemon/geowatt/icon_gba.4bpp");
-#endif
-#if P_FOOTPRINTS
-    const u8 gMonFootprint_Geowatt[] = INCBIN_U8("graphics/pokemon/geowatt/footprint.1bpp");
-#endif
-
-#if !P_GBA_STYLE_SPECIES_GFX
     const u32 gMonFrontPic_Raelic[] = INCBIN_U32("graphics/pokemon/raelic/anim_front.4bpp.smol");
     const u16 gMonPalette_Raelic[] = INCBIN_U16("graphics/pokemon/raelic/normal.gbapal");
     const u32 gMonBackPic_Raelic[] = INCBIN_U32("graphics/pokemon/raelic/back.4bpp.smol");

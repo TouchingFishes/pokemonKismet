@@ -1113,8 +1113,6 @@ enum NationalDexOrder
 #if P_KISMET_FAKEMON
     // Kismet custom species. Last in the enum so the official numbering
     // is untouched no matter which form gates are enabled.
-    NATIONAL_DEX_PSYCHU,
-    NATIONAL_DEX_GEOWATT,
     NATIONAL_DEX_RAELIC,
     NATIONAL_DEX_ROMUSHU,
     NATIONAL_DEX_FUSANG,

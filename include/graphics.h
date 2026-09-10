@@ -3641,18 +3641,6 @@ extern const u16 gGhostPalette[];
 
 #if P_KISMET_FAKEMON
 // ---- Kismet custom species ----
-extern const u32 gMonFrontPic_Psychu[];
-extern const u32 gMonBackPic_Psychu[];
-extern const u16 gMonPalette_Psychu[];
-extern const u16 gMonShinyPalette_Psychu[];
-extern const u8 gMonIcon_Psychu[];
-extern const u8 gMonFootprint_Psychu[];
-extern const u32 gMonFrontPic_Geowatt[];
-extern const u32 gMonBackPic_Geowatt[];
-extern const u16 gMonPalette_Geowatt[];
-extern const u16 gMonShinyPalette_Geowatt[];
-extern const u8 gMonIcon_Geowatt[];
-extern const u8 gMonFootprint_Geowatt[];
 extern const u32 gMonFrontPic_Raelic[];
 extern const u32 gMonBackPic_Raelic[];
 extern const u16 gMonPalette_Raelic[];

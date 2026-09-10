@@ -9697,18 +9697,6 @@ DirectSoundWaveData_pl_musicbox79::
 @ ---- Kismet custom species ----
 .if P_KISMET_FAKEMON == TRUE
 	.align 2
-Cry_Psychu::
-.if TESTING == FALSE
-	.incbin "sound/direct_sound_samples/cries/psychu.bin"
-.endif
-
-	.align 2
-Cry_Geowatt::
-.if TESTING == FALSE
-	.incbin "sound/direct_sound_samples/cries/geowatt.bin"
-.endif
-
-	.align 2
 Cry_Raelic::
 .if TESTING == FALSE
 	.incbin "sound/direct_sound_samples/cries/raelic.bin"
