@@ -6280,7 +6280,7 @@ struct KismetBaseStats
 struct KismetAbilities
 {
     u16 species;
-    enum Ability abilities[NUM_NORMAL_ABILITY_SLOTS];
+    enum Ability abilities[NUM_ABILITY_SLOTS];   // slot 2 is the hidden ability
 };
 
 #include "data/pokemon/kismet_base_stats.h"
@@ -6300,9 +6300,8 @@ enum Ability GetSpeciesAbility(u16 species, u8 slot)
                 return sOfficialAbilityOverrides[i].abilities[slot];
         }
     }
-    // Hidden ability not overwritten
     else if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1
-             && slot < NUM_NORMAL_ABILITY_SLOTS)
+             && slot < NUM_ABILITY_SLOTS)
     {
         for (u32 i = 0; i < ARRAY_COUNT(sKismetAbilities); i++)
         {
