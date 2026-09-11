@@ -5,6 +5,7 @@ UlaUla_Cave_2_hns_MapScripts::
 Alola_Ulaula_BattleDrapion::
 	lock
 	faceplayer
+	setflag FLAG_BATTLED_DRAPION
 	playmoncry SPECIES_DRAPION, 0
 	msgbox Alola_Ulaula_BattleDrapion_Text_0, MSGBOX_AUTOCLOSE
 	waitmoncry
