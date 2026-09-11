@@ -14084,57 +14084,59 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Green
 
-Raichu Alola
+Bewear
 Level: 70
+Ability: Fluffy
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Nasty Plot
-- Thunderbolt
-- Psychic
+- Swords Dance
+- Double-Edge
+- Drain Punch
 - Substitute
 
-Exeggutor Alola @ Choice Specs
+Tsareena @ Choice Band
 Level: 70
+Ability: Queenly Majesty
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
-Modest Nature
-- Draco Meteor
-- Leaf Storm
-- Flamethrower
-- Giga Drain
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Adamant Nature
+- Trop Kick
+- Hi Jump Kick
+- Play Rough
+- Bounce
 
 
-Ninetales Alola @ Light Clay
+Drifblim @ Flying Gem
 Level: 70
-Ability: Snow Warning
+Ability: Unburden
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 EVs: 252 HP / 0 Atk / 0 Def / 4 SpA / 0 SpD / 252 Spe
 Timid Nature
-- Freeze Dry
-- Hypnosis
-- Hail
-- Aurora Veil
+- Charge Beam
+- Ominous Wind
+- Hurricane
+- Substitute
 
-Golem Alola @ Choice Band
+Probopass @ Light Clay
 Level: 70
-Ability: Magnet Pull
+Ability: Sturdy
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 4 SpA / 0 SpD / 252 Spe
-Adamant Nature
-- Stone Edge
-- Fire Punch
-- Earthquake
-- Volt Switch
+EVs: 252 HP / 0 Atk / 252 Def / 4 SpA / 0 SpD / 0 Spe
+Bold Nature
+- Light Screen
+- Reflect
+- Stealth Rock
+- Power Gem
 
-Muk Alola @ Assault Vest
+Drapion @ Assault Vest
 Level: 70
-Ability: Poison Touch
+Ability: Battle Armor
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 252 SpD / 0 Spe
 Adamant Nature
-- Pursuit
-- Gunk Shot
+- Cross Poison
 - Knock Off
-- Fire Punch
+- Aqua Tail
+- Fire Fang
 
 
 Tropius @ Sitrus Berry
@@ -14160,7 +14162,7 @@ AI: Smart Trainer
 Flygon @ Assault Vest
 Level: 70
 
-Typhlosion Hisui @ Focus Sash
+SPECIES_ALT_TYPHLOSION @ Focus Sash
 Level: 70
 
 Arbok
@@ -14759,13 +14761,13 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
 
-Raticate-Alola  
-Ability: Hustle  
-Level: 61 
-- Crunch  
-- Bulk Up  
-- Last Resort  
-- Quick Attack  
+Mimikyu
+Ability: Disguise
+Level: 61
+- Swords Dance
+- Play Rough
+- Shadow Claw
+- Shadow Sneak
 
 Scizor  
 Ability: Technician  
@@ -15104,13 +15106,13 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Whirlpool  
 - Agility  
 
-Exeggutor-Alola @ White Herb  
-Ability: Frisk  
-Level: 70 
-- Light Screen  
-- Draco Meteor  
-- Outrage  
-- Seed Bomb  
+Altaria @ White Herb
+Ability: Natural Cure
+Level: 70
+- Light Screen
+- Draco Meteor
+- Hurricane
+- Roost
 
 === TRAINER_MUALANI_HNS ===
 Name: MUALANI
@@ -15194,14 +15196,16 @@ Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move
 
-Dugtrio-Alola @ Focus Sash  
-Ability: Sand Force  
-Level: 70  
-EVs: 252 Atk / 252 Spe  
-- Earthquake  
-- Iron Head  
-- Stealth Rock  
-- Swords Dance  
+Forretress @ Leftovers
+Ability: Sturdy
+Level: 70
+EVs: 252 HP / 252 Def
+Relaxed Nature
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Stealth Rock
+- Spikes
+- Gyro Ball
+- Rapid Spin
 
 Steelix @ Assault Vest  
 Ability: Rock Head  
@@ -15234,15 +15238,16 @@ Relaxed Nature
 - Iron Defense  
 - Rock Blast  
 
-Perrserker @ Iron Plate  
-Ability: Steely Spirit  
-Level: 70 
-EVs: 248 HP / 252 Atk / 8 SpD  
-Adamant Nature  
-- Iron Tail  
-- Hone Claws  
-- Play Rough  
-- Trailblaze  
+Magnezone @ Air Balloon
+Ability: Magnet Pull
+Level: 70
+EVs: 248 HP / 252 SpA / 8 SpD
+Modest Nature
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Body Press
 
 === TRAINER_SKYLAR_HNS ===
 Name: SKYLAR

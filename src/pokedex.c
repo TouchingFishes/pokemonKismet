@@ -4515,6 +4515,11 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
     u32 index, bit, mask;
     s8 retVal = 0;
 
+    // The decrement below underflows on 0, indexing ~0x1FFFFFFF into a 0xBF-byte
+    // array. NationalToJohtoOrder guards zero the same way
+    if (nationalDexNo == NATIONAL_DEX_NONE)
+        return 0;
+
     nationalDexNo--;
     index = nationalDexNo / 8;
     bit = nationalDexNo % 8;

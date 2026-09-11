@@ -2733,6 +2733,7 @@ enum ObtainableDexOrder {
     OBTAINABLE_DEX_RAYQUAZA,
     OBTAINABLE_DEX_JIRACHI,
     OBTAINABLE_DEX_DEOXYS,
+#if P_ALOLAN_FORMS
     // Alolan Regional Forms
     OBTAINABLE_DEX_RATTATA_ALOLA,
     OBTAINABLE_DEX_RATICATE_ALOLA,
@@ -2752,6 +2753,8 @@ enum ObtainableDexOrder {
     OBTAINABLE_DEX_MUK_ALOLA,
     OBTAINABLE_DEX_EXEGGUTOR_ALOLA,
     OBTAINABLE_DEX_MAROWAK_ALOLA,
+#endif
+#if P_GALARIAN_FORMS
     // Galarian Regional Forms
     OBTAINABLE_DEX_MEOWTH_GALAR,
     OBTAINABLE_DEX_PERRSERKER,
@@ -2773,6 +2776,8 @@ enum ObtainableDexOrder {
     OBTAINABLE_DEX_ZIGZAGOON_GALAR,
     OBTAINABLE_DEX_LINOONE_GALAR,
     OBTAINABLE_DEX_OBSTAGOON,
+#endif
+#if P_HISUIAN_FORMS
     // Hisuian Regional Forms
     OBTAINABLE_DEX_GROWLITHE_HISUI,
     OBTAINABLE_DEX_ARCANINE_HISUI,
@@ -2783,10 +2788,13 @@ enum ObtainableDexOrder {
     OBTAINABLE_DEX_OVERQWIL,
     OBTAINABLE_DEX_SNEASEL_HISUI,
     OBTAINABLE_DEX_SNEASLER,
+#endif
+#if P_PALDEAN_FORMS
     // Paldean Regional Forms
     OBTAINABLE_DEX_TAUROS_PALDEA,
     OBTAINABLE_DEX_WOOPER_PALDEA,
     OBTAINABLE_DEX_CLODSIRE,
+#endif
     // Other
     OBTAINABLE_DEX_REGIROCK,
     OBTAINABLE_DEX_REGICE,
@@ -2847,5 +2855,9 @@ enum
     FLAG_SET_SEEN,
     FLAG_SET_CAUGHT
 };
+
+// Null definitions for the regional-form names upstream references without
+// guarding them. Inert unless a P_*_FORMS gate is off
+#include "constants/regional_form_fallbacks.h"
 
 #endif // GUARD_CONSTANTS_POKEDEX_H

@@ -1142,29 +1142,29 @@
 #define FLAG_DEFEATED_PONI_TOTEM                        (HNS_EXTENDED_CONTENT_START + 253) // if the player defeated the poni totem
 #define FLAG_DEFEATED_AKALA_TOTEM                       (HNS_EXTENDED_CONTENT_START + 254) // if the player defeated the akala totem
 #define FLAG_DEFEATED_MELEMELE_TOTEM                    (HNS_EXTENDED_CONTENT_START + 255) // if the player defeated the melemele totem
-#define FLAG_CAUGHT_ALL_ULAULA                          (HNS_EXTENDED_CONTENT_START + 256) // caught all of ulaulas regional variants
-#define FLAG_CAUGHT_ALL_PONI                            (HNS_EXTENDED_CONTENT_START + 257) // caught all of ponis regional variants
-#define FLAG_CAUGHT_ALL_AKALA                           (HNS_EXTENDED_CONTENT_START + 258) // caught all of akalas regional variants
-#define FLAG_CAUGHT_ALL_MELEMELE                        (HNS_EXTENDED_CONTENT_START + 259) // caught all of melemeles regional variants
-#define FLAG_BATTLED_GOLEM                              (HNS_EXTENDED_CONTENT_START + 260) // used for progression if battled golem at all
-#define FLAG_BATTLED_SANDSLASH                          (HNS_EXTENDED_CONTENT_START + 261) // used for progression if battled sandslash at all
-#define FLAG_BATTLED_NINETALES                          (HNS_EXTENDED_CONTENT_START + 262) // used for progression if battled ninetales at all
-#define FLAG_BATTLED_MUK                                (HNS_EXTENDED_CONTENT_START + 263) // used for progression if battled muk at all
-#define FLAG_BATTLED_DUGTRIO                            (HNS_EXTENDED_CONTENT_START + 264) // used for progression if battled dugtrio at all
-#define FLAG_BATTLED_MAROWAK                            (HNS_EXTENDED_CONTENT_START + 265) // used for progression if battled marowak at all
-#define FLAG_BATTLED_RAICHU                             (HNS_EXTENDED_CONTENT_START + 266) // used for progression if battled raichu at all
-#define FLAG_BATTLED_EXEGGUTOR                          (HNS_EXTENDED_CONTENT_START + 267) // used for progression if battled exeggutor at all
+#define FLAG_CAUGHT_ALL_ULAULA                          (HNS_EXTENDED_CONTENT_START + 256) // caught every checklist mon on ula'ula
+#define FLAG_CAUGHT_ALL_PONI                            (HNS_EXTENDED_CONTENT_START + 257) // caught every checklist mon on poni
+#define FLAG_CAUGHT_ALL_AKALA                           (HNS_EXTENDED_CONTENT_START + 258) // caught every checklist mon on akala
+#define FLAG_CAUGHT_ALL_MELEMELE                        (HNS_EXTENDED_CONTENT_START + 259) // caught every checklist mon on melemele
+#define FLAG_BATTLED_PROBOPASS                          (HNS_EXTENDED_CONTENT_START + 260) // used for progression if battled probopass at all
+#define FLAG_BATTLED_KLAWF                              (HNS_EXTENDED_CONTENT_START + 261) // used for progression if battled klawf at all
+#define FLAG_BATTLED_MIMIKYU                            (HNS_EXTENDED_CONTENT_START + 262) // used for progression if battled mimikyu at all
+#define FLAG_BATTLED_DRAPION                            (HNS_EXTENDED_CONTENT_START + 263) // used for progression if battled drapion at all
+#define FLAG_BATTLED_CAMERUPT                           (HNS_EXTENDED_CONTENT_START + 264) // used for progression if battled camerupt at all
+#define FLAG_BATTLED_KROOKODILE                         (HNS_EXTENDED_CONTENT_START + 265) // used for progression if battled krookodile at all
+#define FLAG_BATTLED_TOXICROAK                          (HNS_EXTENDED_CONTENT_START + 266) // used for progression if battled toxicroak at all
+#define FLAG_BATTLED_TSAREENA                           (HNS_EXTENDED_CONTENT_START + 267) // used for progression if battled tsareena at all
 #define FLAG_HIDE_SAMSONOAK_INTRO                       (HNS_EXTENDED_CONTENT_START + 268) // hides the samson oak intro object
 #define FLAG_CAUGHT_PALOSSAND                           (HNS_EXTENDED_CONTENT_START + 269) // hide palossand if caught or defeated
 #define FLAG_EXTENDED_CONTENT_270                          (HNS_EXTENDED_CONTENT_START + 270)
-#define FLAG_HIDE_SANDSLASH_ALOLA                     (HNS_EXTENDED_CONTENT_START + 271) // hide alolan sandslash if caught or defeated
-#define FLAG_HIDE_NINETALES_ALOLA                     (HNS_EXTENDED_CONTENT_START + 272) // hide alolan ninetales if caught or defeated
-#define FLAG_HIDE_MUK_ALOLA                           (HNS_EXTENDED_CONTENT_START + 273) // hide alolan muk if caught or defeated
-#define FLAG_HIDE_DUGTRIO_ALOLA                       (HNS_EXTENDED_CONTENT_START + 274) // hide alolan dugtrio if caught or defeated
-#define FLAG_HIDE_MAROWAK_ALOLA                       (HNS_EXTENDED_CONTENT_START + 275) // hide alolan marowak if caught or defeated
-#define FLAG_HIDE_RAICHU_ALOLA                        (HNS_EXTENDED_CONTENT_START + 276) // hide alolan raichu if caught or defeated
-#define FLAG_HIDE_GOLEM_ALOLA                         (HNS_EXTENDED_CONTENT_START + 277) // hide alolan golem if caught or defeated
-#define FLAG_HIDE_EXEGGUTOR_ALOLA                     (HNS_EXTENDED_CONTENT_START + 278) // hide alolan exceggutor if caught or defeated
+#define FLAG_HIDE_KLAWF                               (HNS_EXTENDED_CONTENT_START + 271) // hide klawf if caught or defeated
+#define FLAG_HIDE_MIMIKYU                             (HNS_EXTENDED_CONTENT_START + 272) // hide mimikyu if caught or defeated
+#define FLAG_HIDE_DRAPION                             (HNS_EXTENDED_CONTENT_START + 273) // hide drapion if caught or defeated
+#define FLAG_HIDE_CAMERUPT                            (HNS_EXTENDED_CONTENT_START + 274) // hide camerupt if caught or defeated
+#define FLAG_HIDE_KROOKODILE                          (HNS_EXTENDED_CONTENT_START + 275) // hide krookodile if caught or defeated
+#define FLAG_HIDE_TOXICROAK                           (HNS_EXTENDED_CONTENT_START + 276) // hide toxicroak if caught or defeated
+#define FLAG_HIDE_PROBOPASS                           (HNS_EXTENDED_CONTENT_START + 277) // hide probopass if caught or defeated
+#define FLAG_HIDE_TSAREENA                            (HNS_EXTENDED_CONTENT_START + 278) // hide tsareena if caught or defeated
 #define FLAG_HIDE_PONI_TOTEM                            (HNS_EXTENDED_CONTENT_START + 279) // hide the poni totem mon
 #define FLAG_HIDE_ULAULA_TOTEM                          (HNS_EXTENDED_CONTENT_START + 280) // hide the ula'ula totem mon
 #define FLAG_HIDE_AKALA_TOTEM                           (HNS_EXTENDED_CONTENT_START + 281) // hide the akala totem mon
