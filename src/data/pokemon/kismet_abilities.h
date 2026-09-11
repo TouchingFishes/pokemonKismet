@@ -148,9 +148,8 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_SEAKING,                   { ABILITY_LIGHTNING_ROD,       ABILITY_NONE,                ABILITY_SERENE_GRACE         } }, //  119 seaking   2.0: SWIFT_SWIM,WATER_VEIL,LIGHTNING_ROD
     { SPECIES_STARYU,                    { ABILITY_NATURAL_CURE,        ABILITY_SAND_VEIL,           ABILITY_ANALYTIC             } }, //  120 staryu   2.0: ILLUMINATE,NATURAL_CURE,ANALYTIC
     { SPECIES_STARMIE,                   { ABILITY_NATURAL_CURE,        ABILITY_SAND_VEIL,           ABILITY_ANALYTIC             } }, //  121 starmie   2.0: ILLUMINATE,NATURAL_CURE,ANALYTIC
-    { SPECIES_MIME_JR,                   { ABILITY_COLOR_CHANGE,        ABILITY_NONE,                ABILITY_FILTER               } }, //  439 mime_jr
-    { SPECIES_MR_MIME,                   { ABILITY_COLOR_CHANGE,        ABILITY_NONE,                ABILITY_FILTER               } }, //  122 mr_mime   2.0: SOUNDPROOF,FILTER,TECHNICIAN
-    { SPECIES_MR_RIME,                   { ABILITY_TANGLED_FEET,        ABILITY_SCREEN_CLEANER,      ABILITY_ICE_BODY             } }, //  866 mr_rime   [disabled by the regional-form gate]
+    { SPECIES_MIME_JR,                   { ABILITY_COLOR_CHANGE,        ABILITY_NONE,                ABILITY_SCREEN_CLEANER       } }, //  439 mime_jr
+    { SPECIES_MR_MIME,                   { ABILITY_COLOR_CHANGE,        ABILITY_NONE,                ABILITY_SCREEN_CLEANER       } }, //  122 mr_mime   2.0: SOUNDPROOF,FILTER,TECHNICIAN
     { SPECIES_SCYTHER,                   { ABILITY_SHARPNESS,           ABILITY_NONE,                ABILITY_STEADFAST            } }, //  123 scyther   2.0: SWARM,TECHNICIAN,STEADFAST
     { SPECIES_SCIZOR,                    { ABILITY_TECHNICIAN,          ABILITY_NONE,                ABILITY_LIGHT_METAL          } }, //  212 scizor   2.0: SWARM,TECHNICIAN,LIGHT_METAL
     { SPECIES_KLEAVOR,                   { ABILITY_SHARPNESS,           ABILITY_NONE,                ABILITY_SHEER_FORCE          } }, //  900 kleavor
@@ -250,6 +249,7 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_PINECO,                    { ABILITY_STURDY,              ABILITY_NONE,                ABILITY_NONE                 } }, //  204 pineco
     { SPECIES_FORRETRESS,                { ABILITY_OVERCOAT,            ABILITY_NONE,                ABILITY_NONE                 } }, //  205 forretress   2.0: STURDY,NONE,OVERCOAT
     { SPECIES_DUNSPARCE,                 { ABILITY_SERENE_GRACE,        ABILITY_NONE,                ABILITY_RATTLED              } }, //  206 dunsparce
+    { SPECIES_DUDUNSPARCE,               { ABILITY_SERENE_GRACE,        ABILITY_RUN_AWAY,            ABILITY_RATTLED              } }, //  982 dudunsparce
     { SPECIES_DUNDRAG,                   { ABILITY_LEVITATE,            ABILITY_NONE,                ABILITY_NONE                 } }, // 1033 dundrag
     { SPECIES_DUNLONG,                   { ABILITY_CLOUD_NINE,          ABILITY_NONE,                ABILITY_NONE                 } }, // 1034 dunlong
     { SPECIES_GLIGAR,                    { ABILITY_HYPER_CUTTER,        ABILITY_SAND_VEIL,           ABILITY_IMMUNITY             } }, //  207 gligar
@@ -884,11 +884,6 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_IMPIDIMP,                  { ABILITY_PICKUP,              ABILITY_NONE,                ABILITY_PICKPOCKET           } }, //  859 impidimp   2.0: PRANKSTER,FRISK,PICKPOCKET
     { SPECIES_MORGREM,                   { ABILITY_PICKUP,              ABILITY_NONE,                ABILITY_PICKPOCKET           } }, //  860 morgrem   2.0: PRANKSTER,FRISK,PICKPOCKET
     { SPECIES_GRIMMSNARL,                { ABILITY_GUTS,                ABILITY_NONE,                ABILITY_PICKPOCKET           } }, //  861 grimmsnarl   2.0: PRANKSTER,FRISK,PICKPOCKET
-    { SPECIES_OBSTAGOON,                 { ABILITY_RECKLESS,            ABILITY_GUTS,                ABILITY_DEFIANT              } }, //  862 obstagoon   [disabled by the regional-form gate]
-    { SPECIES_PERRSERKER,                { ABILITY_BATTLE_ARMOR,        ABILITY_TOUGH_CLAWS,         ABILITY_STEELY_SPIRIT        } }, //  863 perrserker   [disabled by the regional-form gate]
-    { SPECIES_CURSOLA,                   { ABILITY_WEAK_ARMOR,          ABILITY_NONE,                ABILITY_PERISH_BODY          } }, //  864 cursola   [disabled by the regional-form gate]
-    { SPECIES_SIRFETCHD,                 { ABILITY_STEADFAST,           ABILITY_NONE,                ABILITY_SCRAPPY              } }, //  865 sirfetchd   [disabled by the regional-form gate]
-    { SPECIES_RUNERIGUS,                 { ABILITY_WANDERING_SPIRIT,    ABILITY_NONE,                ABILITY_NONE                 } }, //  867 runerigus   [disabled by the regional-form gate]
     { SPECIES_MILCERY,                   { ABILITY_SWEET_VEIL,          ABILITY_NONE,                ABILITY_AROMA_VEIL           } }, //  868 milcery
     { SPECIES_ALCREMIE,                  { ABILITY_SWEET_VEIL,          ABILITY_NONE,                ABILITY_AROMA_VEIL           } }, //  869 alcremie
     { SPECIES_FALINKS,                   { ABILITY_BATTLE_ARMOR,        ABILITY_NONE,                ABILITY_DEFIANT              } }, //  870 falinks
@@ -922,8 +917,6 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_SPECTRIER,                 { ABILITY_GRIM_NEIGH,          ABILITY_NONE,                ABILITY_NONE                 } }, //  897 spectrier
     { SPECIES_CALYREX,                   { ABILITY_UNNERVE,             ABILITY_NONE,                ABILITY_NONE                 } }, //  898 calyrex
     { SPECIES_BASCULEGION,               { ABILITY_SWIFT_SWIM,          ABILITY_ADAPTABILITY,        ABILITY_MOLD_BREAKER         } }, //  902 basculegion   [disabled by the regional-form gate]
-    { SPECIES_SNEASLER,                  { ABILITY_PRESSURE,            ABILITY_UNBURDEN,            ABILITY_POISON_TOUCH         } }, //  903 sneasler   [disabled by the regional-form gate]
-    { SPECIES_OVERQWIL,                  { ABILITY_POISON_POINT,        ABILITY_SWIFT_SWIM,          ABILITY_INTIMIDATE           } }, //  904 overqwil   [disabled by the regional-form gate]
     { SPECIES_ENAMORUS,                  { ABILITY_CUTE_CHARM,          ABILITY_NONE,                ABILITY_CONTRARY             } }, //  905 enamorus
     { SPECIES_SPRIGATITO,                { ABILITY_OVERGROW,            ABILITY_NONE,                ABILITY_PROTEAN              } }, //  906 sprigatito
     { SPECIES_FLORAGATO,                 { ABILITY_OVERGROW,            ABILITY_NONE,                ABILITY_PROTEAN              } }, //  907 floragato
@@ -998,8 +991,6 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_VELUZA,                    { ABILITY_MOLD_BREAKER,        ABILITY_NONE,                ABILITY_SHARPNESS            } }, //  976 veluza
     { SPECIES_DONDOZO,                   { ABILITY_UNAWARE,             ABILITY_OBLIVIOUS,           ABILITY_WATER_VEIL           } }, //  977 dondozo
     { SPECIES_TATSUGIRI,                 { ABILITY_COMMANDER,           ABILITY_NONE,                ABILITY_STORM_DRAIN          } }, //  978 tatsugiri
-    { SPECIES_CLODSIRE,                  { ABILITY_POISON_POINT,        ABILITY_WATER_ABSORB,        ABILITY_UNAWARE              } }, //  980 clodsire   [disabled by the regional-form gate]
-    { SPECIES_DUDUNSPARCE,               { ABILITY_SERENE_GRACE,        ABILITY_RUN_AWAY,            ABILITY_RATTLED              } }, //  982 dudunsparce
     { SPECIES_GREAT_TUSK,                { ABILITY_PROTOSYNTHESIS,      ABILITY_NONE,                ABILITY_NONE                 } }, //  984 great_tusk
     { SPECIES_SCREAM_TAIL,               { ABILITY_PROTOSYNTHESIS,      ABILITY_NONE,                ABILITY_NONE                 } }, //  985 scream_tail
     { SPECIES_BRUTE_BONNET,              { ABILITY_PROTOSYNTHESIS,      ABILITY_NONE,                ABILITY_NONE                 } }, //  986 brute_bonnet

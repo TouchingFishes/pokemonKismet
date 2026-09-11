@@ -685,6 +685,13 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_DUNSPARCE
     [SPECIES_DUNSPARCE] = sDunsparceTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_DUNSPARCE
+#if P_GEN_9_CROSS_EVOS
+    [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceThreeSegmentTeachableLearnset_Kismet,
+    [SPECIES_DUDUNSPARCE_TWO_SEGMENT] = sDudunsparceThreeSegmentTeachableLearnset_Kismet,
+    [SPECIES_DUDUNSPARCE] = sDudunsparceThreeSegmentTeachableLearnset_Kismet,
+#endif
+#endif
 #if P_KISMET_FAKEMON
     [SPECIES_DUNDRAG] = sDundragTeachableLearnset_Kismet,
     [SPECIES_DUNLONG] = sDundragTeachableLearnset_Kismet,
@@ -1466,13 +1473,6 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_GREAVARD
     [SPECIES_GREAVARD] = sGreavardTeachableLearnset_Kismet,
     [SPECIES_HOUNDSTONE] = sHoundstoneTeachableLearnset_Kismet,
-#endif
-#if P_FAMILY_DUNSPARCE
-#if P_GEN_9_CROSS_EVOS
-    [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceThreeSegmentTeachableLearnset_Kismet,
-    [SPECIES_DUDUNSPARCE_TWO_SEGMENT] = sDudunsparceThreeSegmentTeachableLearnset_Kismet,
-    [SPECIES_DUDUNSPARCE] = sDudunsparceThreeSegmentTeachableLearnset_Kismet,
-#endif
 #endif
 #if P_KISMET_FAKEMON
     [SPECIES_RAELIC] = sRaelicTeachableLearnset_Kismet,

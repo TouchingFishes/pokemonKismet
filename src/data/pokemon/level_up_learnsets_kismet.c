@@ -648,6 +648,12 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_DUNSPARCE
     [SPECIES_DUNSPARCE] = sDunsparceLevelUpLearnset_Kismet,
 #endif
+#if P_FAMILY_DUNSPARCE
+#if P_GEN_9_CROSS_EVOS
+    [SPECIES_DUDUNSPARCE] = sDudunsparceLevelUpLearnset_Kismet,
+    [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceLevelUpLearnset_Kismet,
+#endif
+#endif
 #if P_FAMILY_GLIGAR
     [SPECIES_GLIGAR] = sGligarLevelUpLearnset_Kismet,
 #endif
@@ -1375,12 +1381,6 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_GREAVARD
     [SPECIES_GREAVARD] = sGreavardLevelUpLearnset_Kismet,
     [SPECIES_HOUNDSTONE] = sHoundstoneLevelUpLearnset_Kismet,
-#endif
-#if P_FAMILY_DUNSPARCE
-#if P_GEN_9_CROSS_EVOS
-    [SPECIES_DUDUNSPARCE] = sDudunsparceLevelUpLearnset_Kismet,
-    [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceLevelUpLearnset_Kismet,
-#endif
 #endif
 #if P_FAMILY_CHIKORITA
     [SPECIES_ALT_MEGANIUM] = sMeganiumLevelUpLearnset_Kismet,
