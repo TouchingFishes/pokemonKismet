@@ -189,9 +189,9 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_ARTICUNO,                  { ABILITY_COMPETITIVE,         ABILITY_NONE,                ABILITY_SNOW_WARNING         } }, //  144 articuno
     { SPECIES_ZAPDOS,                    { ABILITY_DEFIANT,             ABILITY_NONE,                ABILITY_FILTER               } }, //  145 zapdos
     { SPECIES_MOLTRES,                   { ABILITY_BERSERK,             ABILITY_NONE,                ABILITY_DROUGHT              } }, //  146 moltres
-    { SPECIES_DRATINI,                   { ABILITY_SHED_SKIN,           ABILITY_NONE,                ABILITY_MARVEL_SCALE         } }, //  147 dratini
-    { SPECIES_DRAGONAIR,                 { ABILITY_SHED_SKIN,           ABILITY_NONE,                ABILITY_MARVEL_SCALE         } }, //  148 dragonair
-    { SPECIES_DRAGONITE,                 { ABILITY_MULTISCALE,          ABILITY_NONE,                ABILITY_MARVEL_SCALE         } }, //  149 dragonite   2.0: INNER_FOCUS,NONE,MULTISCALE
+    { SPECIES_DRATINI,                   { ABILITY_SHED_SKIN,           ABILITY_NONE,                ABILITY_COMPETITIVE          } }, //  147 dratini
+    { SPECIES_DRAGONAIR,                 { ABILITY_SHED_SKIN,           ABILITY_NONE,                ABILITY_COMPETITIVE          } }, //  148 dragonair
+    { SPECIES_DRAGONITE,                 { ABILITY_MULTISCALE,          ABILITY_NONE,                ABILITY_COMPETITIVE          } }, //  149 dragonite   2.0: INNER_FOCUS,NONE,MULTISCALE
     { SPECIES_MEWTWO,                    { ABILITY_UNNERVE,             ABILITY_NONE,                ABILITY_NONE                 } }, //  150 mewtwo
     { SPECIES_MEW,                       { ABILITY_ADAPTABILITY,        ABILITY_NONE,                ABILITY_NONE                 } }, //  151 mew
     { SPECIES_CHIKORITA,                 { ABILITY_OVERGROW,            ABILITY_NONE,                ABILITY_LEAF_GUARD           } }, //  152 chikorita
@@ -248,10 +248,10 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_FARIGIRAF,                 { ABILITY_ARMOR_TAIL,          ABILITY_ARMOR_TAIL,          ABILITY_NONE                 } }, //  981 farigiraf
     { SPECIES_PINECO,                    { ABILITY_STURDY,              ABILITY_NONE,                ABILITY_NONE                 } }, //  204 pineco
     { SPECIES_FORRETRESS,                { ABILITY_OVERCOAT,            ABILITY_NONE,                ABILITY_NONE                 } }, //  205 forretress   2.0: STURDY,NONE,OVERCOAT
-    { SPECIES_DUNSPARCE,                 { ABILITY_SERENE_GRACE,        ABILITY_NONE,                ABILITY_RATTLED              } }, //  206 dunsparce
-    { SPECIES_DUDUNSPARCE,               { ABILITY_SERENE_GRACE,        ABILITY_RUN_AWAY,            ABILITY_RATTLED              } }, //  982 dudunsparce
+    { SPECIES_DUNSPARCE,                 { ABILITY_RATTLED,             ABILITY_NONE,                ABILITY_NONE                 } }, //  206 dunsparce
+    { SPECIES_DUDUNSPARCE,               { ABILITY_THICK_FAT,           ABILITY_NONE,                ABILITY_NONE                 } }, //  982 dudunsparce
     { SPECIES_DUNDRAG,                   { ABILITY_LEVITATE,            ABILITY_NONE,                ABILITY_NONE                 } }, // 1033 dundrag
-    { SPECIES_DUNLONG,                   { ABILITY_CLOUD_NINE,          ABILITY_NONE,                ABILITY_NONE                 } }, // 1034 dunlong
+    { SPECIES_DUNLONG,                   { ABILITY_LEVITATE,            ABILITY_NONE,                ABILITY_NONE                 } }, // 1034 dunlong
     { SPECIES_GLIGAR,                    { ABILITY_HYPER_CUTTER,        ABILITY_SAND_VEIL,           ABILITY_IMMUNITY             } }, //  207 gligar
     { SPECIES_GLISCOR,                   { ABILITY_HYPER_CUTTER,        ABILITY_SAND_VEIL,           ABILITY_POISON_HEAL          } }, //  472 gliscor
     { SPECIES_SNUBBULL,                  { ABILITY_CUTE_CHARM,          ABILITY_NONE,                ABILITY_RATTLED              } }, //  209 snubbull   2.0: INTIMIDATE,RUN_AWAY,RATTLED
