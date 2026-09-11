@@ -69830,7 +69830,7 @@
               {
                 "min_level": 17,
                 "max_level": 30,
-                "species": "SPECIES_CASTFORM"
+                "species": "SPECIES_ABSOL"
               }
             ]
           }
@@ -72098,9 +72098,9 @@
                 "species": "SPECIES_LINOONE"
               },
               {
-                "min_level": 10,
-                "max_level": 35,
-                "species": "SPECIES_CASTFORM"
+                "min_level": 5,
+                "max_level": 15,
+                "species": "SPECIES_SHUPPET"
               },
               {
                 "min_level": 5,
