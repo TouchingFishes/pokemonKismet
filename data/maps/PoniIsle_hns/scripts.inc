@@ -34,35 +34,35 @@ PoniIsle_hns_EventScript_FacePlayerUpAfterTotemWarp::
 	return
 
 
-Alola_Poni_BattleExeggutor::
+Alola_Poni_BattleTsareena::
 	lock
 	faceplayer
-	setflag FLAG_BATTLED_EXEGGUTOR
+	setflag FLAG_BATTLED_TSAREENA
 	playmoncry SPECIES_TSAREENA, 0
-	msgbox Alola_Poni_BattleExeggutor_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Alola_Poni_BattleTsareena_Text_0, MSGBOX_AUTOCLOSE
 	waitmoncry
 	setwildbattle SPECIES_TSAREENA, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq Alola_Poni_BattleExeggutor_2
+	goto_if_eq Alola_Poni_BattleTsareena_2
 	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq Alola_Poni_BattleExeggutor_3
+	goto_if_eq Alola_Poni_BattleTsareena_3
 	release
 	end
 
 	release
 	end
 
-Alola_Poni_BattleExeggutor_2:
-	setflag FLAG_HIDE_EXEGGUTOR_ALOLA
-	removeobject Alola_Poni_Exeggutor
+Alola_Poni_BattleTsareena_2:
+	setflag FLAG_HIDE_TSAREENA
+	removeobject Alola_Poni_Tsareena
 	release
 	end
 
-Alola_Poni_BattleExeggutor_3:
-	setflag FLAG_HIDE_EXEGGUTOR_ALOLA
-	removeobject Alola_Poni_Exeggutor
+Alola_Poni_BattleTsareena_3:
+	setflag FLAG_HIDE_TSAREENA
+	removeobject Alola_Poni_Tsareena
 	release
 	end
 
@@ -384,7 +384,7 @@ Alola_Poni_Bench_Heal_Movement_0:
 	face_down
 	step_end
 
-Alola_Poni_BattleExeggutor_Text_0:
+Alola_Poni_BattleTsareena_Text_0:
 	.string "Gaah-aah!$"
 
 Alola_Poni_Island_Sign_Text_0:

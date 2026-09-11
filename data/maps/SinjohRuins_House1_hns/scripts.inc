@@ -479,7 +479,7 @@ SinjohRuins_Lab_Text_ArchaeologistAfter:
 	.string "{PLAYER}.\p"
 	.string "Truly, thank you.$"
 
-SinjohRuins_Lab_EventScript_Growlithe_Hisui::
+SinjohRuins_Lab_EventScript_Growlithe::
     lock
 	faceplayer
 	playmoncry SPECIES_GROWLITHE, 0

@@ -2,68 +2,68 @@ Akala_Cave_hns_MapScripts::
 	.byte 0
 
 
-Alola_Melemele_BattleMarowak::
+Alola_Akala_BattleKrookodile::
 	lock
 	faceplayer
-	setflag FLAG_BATTLED_MAROWAK
+	setflag FLAG_BATTLED_KROOKODILE
 	playmoncry SPECIES_KROOKODILE, 0
-	msgbox Alola_Melemele_BattleMarowak_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Alola_Akala_BattleKrookodile_Text_0, MSGBOX_AUTOCLOSE
 	waitmoncry
 	setwildbattle SPECIES_KROOKODILE, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq Alola_Melemele_BattleMarowak_2
+	goto_if_eq Alola_Akala_BattleKrookodile_2
 	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq Alola_Melemele_BattleMarowak_3
+	goto_if_eq Alola_Akala_BattleKrookodile_3
 	release
 	end
 
 	release
 	end
 
-Alola_Melemele_BattleMarowak_2:
-	setflag FLAG_HIDE_MAROWAK_ALOLA
-	removeobject Alola_Melemele_Marowak
+Alola_Akala_BattleKrookodile_2:
+	setflag FLAG_HIDE_KROOKODILE
+	removeobject Alola_Akala_Krookodile
 	release
 	end
 
-Alola_Melemele_BattleMarowak_3:
-	setflag FLAG_HIDE_MAROWAK_ALOLA
-	removeobject Alola_Melemele_Marowak
+Alola_Akala_BattleKrookodile_3:
+	setflag FLAG_HIDE_KROOKODILE
+	removeobject Alola_Akala_Krookodile
 	release
 	end
 
 
-Alola_Melemele_BattleDugtrio::
+Alola_Akala_BattleCamerupt::
 	lock
 	faceplayer
-	setflag FLAG_BATTLED_DUGTRIO
+	setflag FLAG_BATTLED_CAMERUPT
 	playmoncry SPECIES_CAMERUPT, 0
-	msgbox Alola_Melemele_BattleDugtrio_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Alola_Akala_BattleCamerupt_Text_0, MSGBOX_AUTOCLOSE
 	waitmoncry
 	setwildbattle SPECIES_CAMERUPT, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq Alola_Melemele_BattleDugtrio_2
+	goto_if_eq Alola_Akala_BattleCamerupt_2
 	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq Alola_Melemele_BattleDugtrio_3
+	goto_if_eq Alola_Akala_BattleCamerupt_3
 	release
 	end
 
 	release
 	end
 
-Alola_Melemele_BattleDugtrio_2:
-	setflag FLAG_HIDE_DUGTRIO_ALOLA
-	removeobject Alola_Melemele_Dugtrio
+Alola_Akala_BattleCamerupt_2:
+	setflag FLAG_HIDE_CAMERUPT
+	removeobject Alola_Akala_Camerupt
 	release
 	end
 
-Alola_Melemele_BattleDugtrio_3:
-	setflag FLAG_HIDE_DUGTRIO_ALOLA
-	removeobject Alola_Melemele_Dugtrio
+Alola_Akala_BattleCamerupt_3:
+	setflag FLAG_HIDE_CAMERUPT
+	removeobject Alola_Akala_Camerupt
 	release
 	end
 
@@ -99,10 +99,10 @@ Alola_AkalaCave_TrainerBattleCamper::
 	end
 
 
-Alola_Melemele_BattleMarowak_Text_0:
+Alola_Akala_BattleKrookodile_Text_0:
 	.string "Raah!$"
 
-Alola_Melemele_BattleDugtrio_Text_0:
+Alola_Akala_BattleCamerupt_Text_0:
 	.string "Cha-Cha!$"
 
 Alola_AkalaCave_TrainerBattleHiker_Text_0:

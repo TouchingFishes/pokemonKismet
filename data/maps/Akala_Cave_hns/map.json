@@ -41,7 +41,7 @@
       "flag": "FLAG_AKALA_CAVE_HIDDEN_ITEM_2"
     },
     {
-      "local_id": "Alola_Melemele_Marowak",
+      "local_id": "Alola_Akala_Krookodile",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KROOKODILE)",
       "x": 45,
       "y": 30,
@@ -51,11 +51,11 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Melemele_BattleMarowak",
-      "flag": "FLAG_HIDE_MAROWAK_ALOLA"
+      "script": "Alola_Akala_BattleKrookodile",
+      "flag": "FLAG_HIDE_KROOKODILE"
     },
     {
-      "local_id": "Alola_Melemele_Dugtrio",
+      "local_id": "Alola_Akala_Camerupt",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CAMERUPT)",
       "x": 16,
       "y": 12,
@@ -65,8 +65,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Melemele_BattleDugtrio",
-      "flag": "FLAG_HIDE_DUGTRIO_ALOLA"
+      "script": "Alola_Akala_BattleCamerupt",
+      "flag": "FLAG_HIDE_CAMERUPT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER_HNS",

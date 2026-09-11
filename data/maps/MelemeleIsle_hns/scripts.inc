@@ -764,7 +764,7 @@ Alola_Melemele_TotemBattle_Text_2:
 	.string "Thhhh!$"
 
 Alola_Melemele_TotemBattle_Text_3:
-	.string "Totem RATICATE was defeated!\n"
+	.string "Totem BEWEAR was defeated!\n"
 	.string "It scampered off somewhere…$"
 
 MelemeleIsle_hns_Movement_FacePlayerUpAfterTotemWarp:

@@ -2,68 +2,68 @@ UlaUla_Cave_hns_MapScripts::
 	.byte 0
 
 
-Alola_Ulaula_BattleSandslash::
+Alola_Ulaula_BattleKlawf::
 	lock
 	faceplayer
-	setflag FLAG_BATTLED_SANDSLASH
+	setflag FLAG_BATTLED_KLAWF
 	playmoncry SPECIES_KLAWF, 0
-	msgbox Alola_Ulaula_BattleSandslash_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Alola_Ulaula_BattleKlawf_Text_0, MSGBOX_AUTOCLOSE
 	waitmoncry
 	setwildbattle SPECIES_KLAWF, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq Alola_Ulaula_BattleSandslash_2
+	goto_if_eq Alola_Ulaula_BattleKlawf_2
 	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq Alola_Ulaula_BattleSandslash_3
+	goto_if_eq Alola_Ulaula_BattleKlawf_3
 	release
 	end
 
 	release
 	end
 
-Alola_Ulaula_BattleSandslash_2:
-	setflag FLAG_HIDE_SANDSLASH_ALOLA
-	removeobject Alola_Ulaula_Sandslash
+Alola_Ulaula_BattleKlawf_2:
+	setflag FLAG_HIDE_KLAWF
+	removeobject Alola_Ulaula_Klawf
 	release
 	end
 
-Alola_Ulaula_BattleSandslash_3:
-	setflag FLAG_HIDE_SANDSLASH_ALOLA
-	removeobject Alola_Ulaula_Sandslash
+Alola_Ulaula_BattleKlawf_3:
+	setflag FLAG_HIDE_KLAWF
+	removeobject Alola_Ulaula_Klawf
 	release
 	end
 
 
-Alola_Ulaula_BattleNinetales::
+Alola_Ulaula_BattleMimikyu::
 	lock
 	faceplayer
-	setflag FLAG_BATTLED_NINETALES
+	setflag FLAG_BATTLED_MIMIKYU
 	playmoncry SPECIES_MIMIKYU, 0
-	msgbox Alola_Ulaula_BattleSandslash_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Alola_Ulaula_BattleKlawf_Text_0, MSGBOX_AUTOCLOSE
 	waitmoncry
 	setwildbattle SPECIES_MIMIKYU, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq Alola_Ulaula_BattleNinetales_2
+	goto_if_eq Alola_Ulaula_BattleMimikyu_2
 	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq Alola_Ulaula_BattleNinetales_3
+	goto_if_eq Alola_Ulaula_BattleMimikyu_3
 	release
 	end
 
 	release
 	end
 
-Alola_Ulaula_BattleNinetales_2:
-	setflag FLAG_HIDE_NINETALES_ALOLA
-	removeobject Alola_Ulaula_Ninetales
+Alola_Ulaula_BattleMimikyu_2:
+	setflag FLAG_HIDE_MIMIKYU
+	removeobject Alola_Ulaula_Mimikyu
 	release
 	end
 
-Alola_Ulaula_BattleNinetales_3:
-	setflag FLAG_HIDE_NINETALES_ALOLA
-	removeobject Alola_Ulaula_Ninetales
+Alola_Ulaula_BattleMimikyu_3:
+	setflag FLAG_HIDE_MIMIKYU
+	removeobject Alola_Ulaula_Mimikyu
 	release
 	end
 
@@ -78,5 +78,5 @@ Alola_Ulaula_Cave_FindItem2::
 	end
 
 
-Alola_Ulaula_BattleSandslash_Text_0:
+Alola_Ulaula_BattleKlawf_Text_0:
 	.string "Graah!$"

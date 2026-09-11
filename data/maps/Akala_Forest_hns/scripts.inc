@@ -26,35 +26,35 @@ Alola_AkalaForest_TrainerBattleBugCatcher2::
 	end
 
 
-Alola_Akala_BattleRaichu::
+Alola_Akala_BattleToxicroak::
 	lock
 	faceplayer
-	setflag FLAG_BATTLED_RAICHU
+	setflag FLAG_BATTLED_TOXICROAK
 	playmoncry SPECIES_TOXICROAK, 0
-	msgbox Alola_Akala_BattleRaichu_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Alola_Akala_BattleToxicroak_Text_0, MSGBOX_AUTOCLOSE
 	waitmoncry
 	setwildbattle SPECIES_TOXICROAK, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq Alola_Akala_BattleRaichu_2
+	goto_if_eq Alola_Akala_BattleToxicroak_2
 	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq Alola_Akala_BattleRaichu_3
+	goto_if_eq Alola_Akala_BattleToxicroak_3
 	release
 	end
 
 	release
 	end
 
-Alola_Akala_BattleRaichu_2:
-	setflag FLAG_HIDE_RAICHU_ALOLA
-	removeobject LOCALID_AKALA_RAICHU
+Alola_Akala_BattleToxicroak_2:
+	setflag FLAG_HIDE_TOXICROAK
+	removeobject LOCALID_AKALA_TOXICROAK
 	release
 	end
 
-Alola_Akala_BattleRaichu_3:
-	setflag FLAG_HIDE_RAICHU_ALOLA
-	removeobject LOCALID_AKALA_RAICHU
+Alola_Akala_BattleToxicroak_3:
+	setflag FLAG_HIDE_TOXICROAK
+	removeobject LOCALID_AKALA_TOXICROAK
 	release
 	end
 
@@ -83,6 +83,6 @@ Alola_AkalaForest_TrainerBattleBugCatcher2_Text_2:
 	.string "unique Bug-type POKéMON here.$"
 
 
-Alola_Akala_BattleRaichu_Text_0:
+Alola_Akala_BattleToxicroak_Text_0:
 	.string "Gaaah!$"
 

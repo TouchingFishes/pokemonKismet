@@ -110,14 +110,14 @@ PokemonLeague_HallOfFame_EventScript_SpawnAlolaMons::
 	clearflag FLAG_HIDE_TAPU_FINI
 	clearflag FLAG_HIDE_TAPU_KOKO
 	clearflag FLAG_HIDE_TAPU_LELE
-	clearflag FLAG_HIDE_DUGTRIO_ALOLA
-	clearflag FLAG_HIDE_MAROWAK_ALOLA
-	clearflag FLAG_HIDE_EXEGGUTOR_ALOLA
-	clearflag FLAG_HIDE_SANDSLASH_ALOLA
-	clearflag FLAG_HIDE_NINETALES_ALOLA
-	clearflag FLAG_HIDE_MUK_ALOLA
-	clearflag FLAG_HIDE_RAICHU_ALOLA
-	clearflag FLAG_HIDE_GOLEM_ALOLA
+	clearflag FLAG_HIDE_CAMERUPT
+	clearflag FLAG_HIDE_KROOKODILE
+	clearflag FLAG_HIDE_TSAREENA
+	clearflag FLAG_HIDE_KLAWF
+	clearflag FLAG_HIDE_MIMIKYU
+	clearflag FLAG_HIDE_DRAPION
+	clearflag FLAG_HIDE_TOXICROAK
+	clearflag FLAG_HIDE_PROBOPASS
 	return
 
 PokemonLeague_HallOfFame_EventScript_SpawnSinjohMons::

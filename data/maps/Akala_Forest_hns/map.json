@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_AKALA_RAICHU",
+      "local_id": "LOCALID_AKALA_TOXICROAK",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TOXICROAK)",
       "x": 9,
       "y": 2,
@@ -90,8 +90,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Akala_BattleRaichu",
-      "flag": "FLAG_HIDE_RAICHU_ALOLA"
+      "script": "Alola_Akala_BattleToxicroak",
+      "flag": "FLAG_HIDE_TOXICROAK"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PICHU)",
