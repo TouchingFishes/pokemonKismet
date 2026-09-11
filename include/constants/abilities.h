@@ -334,9 +334,7 @@ enum __attribute__((packed)) Ability
     ABILITY_POISON_PUPPETEER = 310,
     ABILITIES_COUNT_GEN9,
 
-    // Add any custom abilities here, not further up - the entries above are
-    // official and their numbering is shared with upstream data.
-    // Kismet custom abilities
+    // Kismet custom abilities - add any custom abilities starting here
     ABILITY_CACOPHONY = ABILITIES_COUNT_GEN9,
     ABILITY_CHITINIZE,
     ABILITY_IMMOLATE,
@@ -345,6 +343,7 @@ enum __attribute__((packed)) Ability
     ABILITY_PUGILIST,
     ABILITY_GLACIAL_DRIFT,
     ABILITY_SUNBLOOM,
+    ABILITY_SHORT_FUSE,
 
     ABILITIES_COUNT,
 };

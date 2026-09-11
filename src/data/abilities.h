@@ -2470,8 +2470,6 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SKITTISH] =
     {
         .name = _("SKITTISH"),
-        // Run Away and Early Bird in one: always escapes, and burns sleep
-        // turns twice as fast.
         .description = COMPOUND_STRING("Wakes easily and flees."),
         .aiRating = 4,
     },
@@ -2479,9 +2477,6 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_PUGILIST] =
     {
         .name = _("PUGILIST"),
-        // Iron Fist's mechanic at 1.6x instead of 1.2x. Uses IsPunchingMove, so
-        // it picks up every punching move automatically. Intended as
-        // Hitmonchan's sole ability - not yet assigned in species_info.
         .description = COMPOUND_STRING("Greatly ups punching moves."),
         .aiRating = 8,
     },
@@ -2489,8 +2484,6 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_GLACIAL_DRIFT] =
     {
         .name = _("GLACIAL DRIFT"),
-        // Slush Rush and Levitate, both gated on hail or snow. Cryogonal's
-        // signature ability
         .description = COMPOUND_STRING("Floats and speeds up in hail."),
         .aiRating = 7,
     },
@@ -2498,9 +2491,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SUNBLOOM] =
     {
         .name = _("SUNBLOOM"),
-        // Quarters incoming Fire damage at all times, and adds 20% to the
-        // holder's own moves while the sun is up. Sunflora's ability.
         .description = COMPOUND_STRING("Shrugs off fire, thrives in sun."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_SHORT_FUSE] =
+    {
+        .name = _("SHORT FUSE"),
+        .description = COMPOUND_STRING("Fury raises a stat when hit."),
         .aiRating = 6,
     },
 };

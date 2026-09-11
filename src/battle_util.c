@@ -3991,6 +3991,24 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 effect++;
             }
             break;
+        case ABILITY_SHORT_FUSE:
+            if (IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
+             && IsBattlerAlive(battler)
+             && IsBattleMovePhysical(gCurrentMove)
+             && (CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility)
+               || CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility)))
+            {
+                u32 stat = RandomPercentage(RNG_SHORT_FUSE, 50) ? STAT_ATK : STAT_SPEED;
+
+                if (!CompareStat(battler, stat, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+                    stat = (stat == STAT_ATK) ? STAT_SPEED : STAT_ATK;
+
+                gEffectBattler = gBattlerAbility = battler;
+                SET_STATCHANGER(stat, 1, FALSE);
+                BattleScriptCall(BattleScript_TargetAbilityStatRaiseRet);
+                effect++;
+            }
+            break;
         case ABILITY_CURSED_BODY:
             if (IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
              && gBattleMons[gBattlerAttacker].volatiles.disabledMove == MOVE_NONE
