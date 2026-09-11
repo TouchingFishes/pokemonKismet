@@ -1366,31 +1366,6 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceLevelUpLearnset_Kismet,
 #endif
 #endif
-#if P_FAMILY_PIKACHU
-#if P_ALOLAN_FORMS
-    [SPECIES_RAICHU_ALOLA] = sRaichuAlolaLevelUpLearnset_Kismet,
-#endif
-#endif
-#if P_FAMILY_EXEGGCUTE
-#if P_ALOLAN_FORMS
-    [SPECIES_EXEGGUTOR_ALOLA] = sExeggutorAlolaLevelUpLearnset_Kismet,
-#endif
-#endif
-#if P_FAMILY_CUBONE
-#if P_ALOLAN_FORMS
-    [SPECIES_MAROWAK_ALOLA] = sMarowakAlolaLevelUpLearnset_Kismet,
-#endif
-#endif
-#if P_FAMILY_KOFFING
-#if P_GALARIAN_FORMS
-    [SPECIES_WEEZING_GALAR] = sWeezingGalarLevelUpLearnset_Kismet,
-#endif
-#endif
-#if P_FAMILY_CYNDAQUIL
-#if P_HISUIAN_FORMS
-    [SPECIES_TYPHLOSION_HISUI] = sTyphlosionHisuiLevelUpLearnset_Kismet,
-#endif
-#endif
 #if P_FAMILY_CHIKORITA
     [SPECIES_ALT_MEGANIUM] = sMeganiumLevelUpLearnset_Kismet,
 #endif

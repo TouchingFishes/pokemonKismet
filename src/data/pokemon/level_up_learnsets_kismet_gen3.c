@@ -1351,31 +1351,6 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
     [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceLevelUpLearnset_KismetGen3,
 #endif
 #endif
-#if P_FAMILY_PIKACHU
-#if P_ALOLAN_FORMS
-    [SPECIES_RAICHU_ALOLA] = sRaichuAlolaLevelUpLearnset_KismetGen3,
-#endif
-#endif
-#if P_FAMILY_EXEGGCUTE
-#if P_ALOLAN_FORMS
-    [SPECIES_EXEGGUTOR_ALOLA] = sExeggutorAlolaLevelUpLearnset_KismetGen3,
-#endif
-#endif
-#if P_FAMILY_CUBONE
-#if P_ALOLAN_FORMS
-    [SPECIES_MAROWAK_ALOLA] = sMarowakAlolaLevelUpLearnset_KismetGen3,
-#endif
-#endif
-#if P_FAMILY_KOFFING
-#if P_GALARIAN_FORMS
-    [SPECIES_WEEZING_GALAR] = sWeezingGalarLevelUpLearnset_KismetGen3,
-#endif
-#endif
-#if P_FAMILY_CYNDAQUIL
-#if P_HISUIAN_FORMS
-    [SPECIES_TYPHLOSION_HISUI] = sTyphlosionHisuiLevelUpLearnset_KismetGen3,
-#endif
-#endif
 #if P_FAMILY_BURMY
     [SPECIES_WORMADAM_SANDY] = sWormadamSandyLevelUpLearnset_KismetGen3,
     [SPECIES_WORMADAM_TRASH] = sWormadamTrashLevelUpLearnset_KismetGen3,
