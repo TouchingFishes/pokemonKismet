@@ -309,8 +309,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MAGMA_ARMOR] =
     {
         .name = _("MAGMA ARMOR"),
-        .description = COMPOUND_STRING("Prevents freezing."),
-        .aiRating = 1,
+        .description = COMPOUND_STRING("Water hardens it. No freezing."),
+        .aiRating = 5,
         .breakable = TRUE,
     },
 

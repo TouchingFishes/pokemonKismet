@@ -3589,6 +3589,13 @@ static s32 AI_DoubleBattle(enum BattlerId battlerAtk, enum BattlerId battlerDef,
                     isMoveAffectedByPartnerAbility = FALSE;
                 }
                 break;  // handled in AI_HPAware
+            case ABILITY_MAGMA_ARMOR:
+                if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities != 1)
+                {
+                    isMoveAffectedByPartnerAbility = FALSE;
+                    break;
+                }
+                // fallthrough
             case ABILITY_DRY_SKIN:
             case ABILITY_WATER_ABSORB:
             case ABILITY_STORM_DRAIN:

@@ -5929,6 +5929,10 @@ bool32 ShouldTriggerAbility(enum BattlerId battlerAtk, enum BattlerId battlerDef
         case ABILITY_WELL_BAKED_BODY:
             return (BattlerStatCanRise(battlerDef, ability, STAT_DEF));
 
+        case ABILITY_MAGMA_ARMOR:
+            return (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1
+                 && BattlerStatCanRise(battlerDef, ability, STAT_DEF));
+
         default:
             return FALSE;
         }
