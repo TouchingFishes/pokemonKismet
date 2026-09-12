@@ -6007,13 +6007,79 @@ void GetRegionalFormSpecies(void)
 
     for (i = 0; i < ARRAY_COUNT(sRegionalFormTable); i++)
     {
-        if (sRegionalFormTable[i].src == species)
+        // The table is keyed by the BASE species, which is always enabled, so
+        // without this check it always matches and always hands back a form that
+        // P_REGIONAL_FORMS = FALSE compiled out - a Pokemon with a zero-filled
+        // gSpeciesInfo entry, which trips assertf on the next SanitizeSpeciesId.
+        // Bill's teleporter no longer calls this, but the guard belongs here so
+        // no future caller can be handed a disabled species either.
+        if (sRegionalFormTable[i].src == species
+         && IsSpeciesEnabled(sRegionalFormTable[i].dst))
         {
             gSpecialVar_Result = sRegionalFormTable[i].dst;
             return;
         }
     }
     gSpecialVar_Result = species;
+}
+
+// ---------------------------------------------------------------- Bill's teleporter
+//
+// Reworked for Kismet: the machine wakes a Pokemon's HIDDEN ability instead of
+// converting it to a regional form, which P_REGIONAL_FORMS = FALSE made both
+// impossible and crash-prone. Hidden abilities are otherwise unreachable in this
+// game - the only other source is the Battle Frontier exchange corner at 64 BP -
+// so this is what gives the hidden slot of kismet_abilities.h a reason to exist.
+//
+// Split into a check and an apply so the script can refuse politely BEFORE
+// playing the thirty-second cutscene. Both read the party index the preceding
+// `special ChoosePartyMon` left in VAR_0x8004.
+
+void CheckPartyMonForHiddenAbility(void)
+{
+    struct Pokemon *mon;
+    u16 species;
+
+    gSpecialVar_Result = FALSE;
+    if (gSpecialVar_0x8004 >= gPlayerPartyCount)
+        return;
+
+    mon = &gPlayerParty[gSpecialVar_0x8004];
+    species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    if (species == SPECIES_NONE || GetMonData(mon, MON_DATA_IS_EGG, NULL))
+        return;
+    // Slot NUM_NORMAL_ABILITY_SLOTS is the hidden one. Plenty of species have
+    // ABILITY_NONE there, so "nothing to wake" is a normal answer, not an error.
+    if (GetSpeciesAbility(species, NUM_NORMAL_ABILITY_SLOTS) == ABILITY_NONE)
+        return;
+    if (GetMonData(mon, MON_DATA_ABILITY_NUM, NULL) == NUM_NORMAL_ABILITY_SLOTS)
+        return;
+
+    // The cutscene builds both overworld sprites from this, and the same mon
+    // walks back out, so VAR_TEMP_1 is set to the same species by the script.
+    VarSet(VAR_TEMP_0, species);
+
+    // ⚠️ The cutscene clobbers VAR_0x8004 - AnimateTeleporterHousing is driven by
+    // `setvar VAR_0x8004, 0` then `, 1` partway through - so the party index that
+    // ChoosePartyMon left there is gone by the time WakeHiddenAbility runs at the
+    // end. Stash it somewhere the scene does not touch. VAR_TEMP_2 is free in this
+    // script; FLAG_TEMP_2, which it does use, is a different namespace.
+    VarSet(VAR_TEMP_2, gSpecialVar_0x8004);
+    gSpecialVar_Result = TRUE;
+}
+
+void WakeHiddenAbility(void)
+{
+    u8 abilityNum = NUM_NORMAL_ABILITY_SLOTS;
+    u16 partyIndex = VarGet(VAR_TEMP_2);
+
+    if (partyIndex >= gPlayerPartyCount)
+    {
+        gSpecialVar_Result = FALSE;
+        return;
+    }
+    SetMonData(&gPlayerParty[partyIndex], MON_DATA_ABILITY_NUM, &abilityNum);
+    gSpecialVar_Result = TRUE;
 }
 
 void ConvertToRegionalForm(void)

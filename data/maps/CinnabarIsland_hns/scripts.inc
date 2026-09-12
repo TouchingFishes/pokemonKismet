@@ -44,6 +44,8 @@ CinnabarIsland_EventScript_BlueActive::
 	setflag FLAG_HIDE_CINNABAR_BLUE
 	removeobject LOCALID_CINNABAR_BLUE
 	clearflag FLAG_HIDE_VIRIDIAN_BLUE
+	@ BILL turns up at MR. POKéMON's house at the same moment BLUE reaches his gym.
+	clearflag FLAG_HIDE_MRPOKEMON_BILL
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end

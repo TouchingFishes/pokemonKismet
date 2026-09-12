@@ -262,3 +262,57 @@ MrPokemonHouse_Text_StrangeCoins:
 
 MrPokemonHouse_Text_GotExpShare:
 	.string "{PLAYER} received EXP. SHARE!$"
+
+MrPokemonHouse_EventScript_Bill::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_BILL_SCIENTIST, MrPokemonHouse_EventScript_Bill_Defeated
+	msgbox MrPokemonHouse_Text_BillIntro, MSGBOX_DEFAULT
+	getcaughtmon SPECIES_RAIKOU
+	goto_if_ne VAR_RESULT, 1, MrPokemonHouse_EventScript_Bill_NotYet
+	getcaughtmon SPECIES_ENTEI
+	goto_if_ne VAR_RESULT, 1, MrPokemonHouse_EventScript_Bill_NotYet
+	getcaughtmon SPECIES_SUICUNE
+	goto_if_ne VAR_RESULT, 1, MrPokemonHouse_EventScript_Bill_NotYet
+	msgbox MrPokemonHouse_Text_BillSeenBeasts, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BILL_SCIENTIST_HNS, MrPokemonHouse_Text_BillBeaten
+	setflag FLAG_DEFEATED_BILL_SCIENTIST
+	msgbox MrPokemonHouse_Text_BillAfter, MSGBOX_DEFAULT
+	release
+	end
+
+MrPokemonHouse_EventScript_Bill_NotYet::
+	release
+	end
+
+MrPokemonHouse_EventScript_Bill_Defeated::
+	msgbox MrPokemonHouse_Text_BillAfter, MSGBOX_DEFAULT
+	release
+	end
+
+MrPokemonHouse_Text_BillIntro:
+	.string "BILL: EEVEE is such a\n"
+	.string "fascinating POKéMON.\p"
+	.string "Some say the three legendary\n"
+	.string "beasts of JOHTO were once\l"
+	.string "POKéMON that evolved from it.\p"
+	.string "Probably just a rumour.\p"
+	.string "Still, I would love to see them.$"
+
+MrPokemonHouse_Text_BillSeenBeasts:
+	.string "Wait. You have caught all\n"
+	.string "three of them?\p"
+	.string "That is incredible, {PLAYER}!\p"
+	.string "Do you think they really were\n"
+	.string "related to EEVEE?\p"
+	.string "Now I have to show you my team.\n"
+	.string "Compare them to the legends\l"
+	.string "you battled!$"
+
+MrPokemonHouse_Text_BillBeaten:
+	.string "Yeehah!$"
+
+MrPokemonHouse_Text_BillAfter:
+	.string "That was one rad battle!\p"
+	.string "Any collector would be thrilled\n"
+	.string "to see what you have caught.$"

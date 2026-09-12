@@ -797,7 +797,11 @@
 #define TRAINER_RAYNOR_HNS                               766
 
 // 618 is TRAINER_TANYA_HNS, relocated out of the TRAINER_FRONTIER_BRAIN slot (330).
-#define TRAINERS_COUNT_HNS                       767
+
+// This is BILL the character.
+#define TRAINER_BILL_SCIENTIST_HNS                    767
+
+#define TRAINERS_COUNT_HNS                       768
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

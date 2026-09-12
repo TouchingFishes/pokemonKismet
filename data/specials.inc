@@ -681,6 +681,8 @@ gSpecials::
 	def_special CheckPartyForSpecies
 	def_special GetRegionalFormSpecies
 	def_special ConvertToRegionalForm
+	def_special CheckPartyMonForHiddenAbility
+	def_special WakeHiddenAbility
 	def_special Special_ViewVoltorbFlip
 	def_special Special_MomEnableSaving
 	def_special Special_MomDisableSaving
