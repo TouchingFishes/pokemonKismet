@@ -19,19 +19,19 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_BLASTOISE,                 { ABILITY_TORRENT,             ABILITY_NONE,                ABILITY_MEGA_LAUNCHER        } }, //    9 blastoise
     { SPECIES_CATERPIE,                  { ABILITY_SHIELD_DUST,         ABILITY_NONE,                ABILITY_RUN_AWAY             } }, //   10 caterpie
     { SPECIES_METAPOD,                   { ABILITY_SHED_SKIN,           ABILITY_NONE,                ABILITY_NONE                 } }, //   11 metapod
-    { SPECIES_BUTTERFREE,                { ABILITY_COMPOUND_EYES,       ABILITY_NONE,                ABILITY_TINTED_LENS          } }, //   12 butterfree
+    { SPECIES_BUTTERFREE,                { ABILITY_COMPOUND_EYES,       ABILITY_NONE,                ABILITY_WONDER_SKIN          } }, //   12 butterfree
     { SPECIES_WEEDLE,                    { ABILITY_SHIELD_DUST,         ABILITY_NONE,                ABILITY_RUN_AWAY             } }, //   13 weedle
     { SPECIES_KAKUNA,                    { ABILITY_SHED_SKIN,           ABILITY_NONE,                ABILITY_NONE                 } }, //   14 kakuna
-    { SPECIES_BEEDRILL,                  { ABILITY_SWARM,               ABILITY_NONE,                ABILITY_SNIPER               } }, //   15 beedrill
+    { SPECIES_BEEDRILL,                  { ABILITY_SWARM,               ABILITY_NONE,                ABILITY_ADAPTABILITY         } }, //   15 beedrill
     { SPECIES_PIDGEY,                    { ABILITY_KEEN_EYE,            ABILITY_NONE,                ABILITY_BIG_PECKS            } }, //   16 pidgey   2.0: KEEN_EYE,TANGLED_FEET,BIG_PECKS
     { SPECIES_PIDGEOTTO,                 { ABILITY_KEEN_EYE,            ABILITY_NONE,                ABILITY_BIG_PECKS            } }, //   17 pidgeotto   2.0: KEEN_EYE,TANGLED_FEET,BIG_PECKS
     { SPECIES_PIDGEOT,                   { ABILITY_NO_GUARD,            ABILITY_NONE,                ABILITY_BIG_PECKS            } }, //   18 pidgeot   2.0: KEEN_EYE,TANGLED_FEET,BIG_PECKS
     { SPECIES_RATTATA,                   { ABILITY_SKITTISH,            ABILITY_GUTS,                ABILITY_HUSTLE               } }, //   19 rattata
     { SPECIES_RATICATE,                  { ABILITY_SKITTISH,            ABILITY_GUTS,                ABILITY_HUSTLE               } }, //   20 raticate
-    { SPECIES_SPEAROW,                   { ABILITY_GUTS,                ABILITY_SNIPER,              ABILITY_NONE                 } }, //   21 spearow   2.0: KEEN_EYE,NONE,SNIPER
-    { SPECIES_FEAROW,                    { ABILITY_GUTS,                ABILITY_SNIPER,              ABILITY_NONE                 } }, //   22 fearow   2.0: KEEN_EYE,NONE,SNIPER
-    { SPECIES_EKANS,                     { ABILITY_SHED_SKIN,           ABILITY_NONE,                ABILITY_NONE                 } }, //   23 ekans   2.0: INTIMIDATE,SHED_SKIN,UNNERVE
-    { SPECIES_ARBOK,                     { ABILITY_INTIMIDATE,          ABILITY_NONE,                ABILITY_NONE                 } }, //   24 arbok   2.0: INTIMIDATE,SHED_SKIN,UNNERVE
+    { SPECIES_SPEAROW,                   { ABILITY_GUTS,                ABILITY_SNIPER,              ABILITY_SHEER_FORCE          } }, //   21 spearow   2.0: KEEN_EYE,NONE,SNIPER
+    { SPECIES_FEAROW,                    { ABILITY_GUTS,                ABILITY_SNIPER,              ABILITY_SHEER_FORCE          } }, //   22 fearow   2.0: KEEN_EYE,NONE,SNIPER
+    { SPECIES_EKANS,                     { ABILITY_SHED_SKIN,           ABILITY_NONE,                ABILITY_CONTRARY             } }, //   23 ekans   2.0: INTIMIDATE,SHED_SKIN,UNNERVE
+    { SPECIES_ARBOK,                     { ABILITY_INTIMIDATE,          ABILITY_NONE,                ABILITY_CONTRARY             } }, //   24 arbok   2.0: INTIMIDATE,SHED_SKIN,UNNERVE
     { SPECIES_PICHU,                     { ABILITY_CUTE_CHARM,          ABILITY_STATIC,              ABILITY_ADAPTABILITY         } }, //  172 pichu   2.0: STATIC,NONE,LIGHTNING_ROD
     { SPECIES_PIKACHU,                   { ABILITY_CUTE_CHARM,          ABILITY_STATIC,              ABILITY_ADAPTABILITY         } }, //   25 pikachu   2.0: STATIC,NONE,LIGHTNING_ROD
     { SPECIES_RAICHU,                    { ABILITY_THICK_FAT,           ABILITY_STATIC,              ABILITY_ADAPTABILITY         } }, //   26 raichu   2.0: STATIC,NONE,LIGHTNING_ROD
@@ -56,13 +56,13 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_CROBAT,                    { ABILITY_TECHNICIAN,          ABILITY_NONE,                ABILITY_INFILTRATOR          } }, //  169 crobat   2.0: INNER_FOCUS,NONE,INFILTRATOR
     { SPECIES_ODDISH,                    { ABILITY_CHLOROPHYLL,         ABILITY_NONE,                ABILITY_RUN_AWAY             } }, //   43 oddish
     { SPECIES_GLOOM,                     { ABILITY_EFFECT_SPORE,        ABILITY_NONE,                ABILITY_STENCH               } }, //   44 gloom   2.0: CHLOROPHYLL,NONE,STENCH
-    { SPECIES_VILEPLUME,                 { ABILITY_EFFECT_SPORE,        ABILITY_NONE,                ABILITY_NONE                 } }, //   45 vileplume   2.0: CHLOROPHYLL,NONE,EFFECT_SPORE
+    { SPECIES_VILEPLUME,                 { ABILITY_EFFECT_SPORE,        ABILITY_NONE,                ABILITY_POISON_TOUCH         } }, //   45 vileplume   2.0: CHLOROPHYLL,NONE,EFFECT_SPORE
     { SPECIES_BELLOSSOM,                 { ABILITY_NATURAL_CURE,        ABILITY_NONE,                ABILITY_HEALER               } }, //  182 bellossom   2.0: CHLOROPHYLL,NONE,HEALER
-    { SPECIES_PARAS,                     { ABILITY_EFFECT_SPORE,        ABILITY_NONE,                ABILITY_DAMP                 } }, //   46 paras   2.0: EFFECT_SPORE,DRY_SKIN,DAMP
-    { SPECIES_PARASECT,                  { ABILITY_EFFECT_SPORE,        ABILITY_NONE,                ABILITY_DAMP                 } }, //   47 parasect   2.0: EFFECT_SPORE,DRY_SKIN,DAMP
-    { SPECIES_VENONAT,                   { ABILITY_COMPOUND_EYES,       ABILITY_NONE,                ABILITY_RUN_AWAY             } }, //   48 venonat   2.0: COMPOUND_EYES,TINTED_LENS,RUN_AWAY
-    { SPECIES_VENOMOTH,                  { ABILITY_TINTED_LENS,         ABILITY_NONE,                ABILITY_WONDER_SKIN          } }, //   49 venomoth
-    { SPECIES_DIGLETT,                   { ABILITY_SAND_VEIL,           ABILITY_SKITTISH,            ABILITY_ARENA_TRAP           } }, //   50 diglett
+    { SPECIES_PARAS,                     { ABILITY_EFFECT_SPORE,        ABILITY_NONE,                ABILITY_DRY_SKIN             } }, //   46 paras   2.0: EFFECT_SPORE,DRY_SKIN,DAMP
+    { SPECIES_PARASECT,                  { ABILITY_EFFECT_SPORE,        ABILITY_NONE,                ABILITY_DRY_SKIN             } }, //   47 parasect   2.0: EFFECT_SPORE,DRY_SKIN,DAMP
+    { SPECIES_VENONAT,                   { ABILITY_COMPOUND_EYES,       ABILITY_NONE,                ABILITY_PSI_CONDUIT          } }, //   48 venonat   2.0: COMPOUND_EYES,TINTED_LENS,RUN_AWAY
+    { SPECIES_VENOMOTH,                  { ABILITY_TINTED_LENS,         ABILITY_NONE,                ABILITY_PSI_CONDUIT          } }, //   49 venomoth
+    { SPECIES_DIGLETT,                   { ABILITY_SAND_VEIL,           ABILITY_SKITTISH,            ABILITY_SAND_FORCE           } }, //   50 diglett
     { SPECIES_DUGTRIO,                   { ABILITY_SAND_VEIL,           ABILITY_ARENA_TRAP,          ABILITY_SAND_FORCE           } }, //   51 dugtrio
     { SPECIES_MEOWTH,                    { ABILITY_PICKUP,              ABILITY_NONE,                ABILITY_UNNERVE              } }, //   52 meowth
     { SPECIES_PERSIAN,                   { ABILITY_TECHNICIAN,          ABILITY_NONE,                ABILITY_UNNERVE              } }, //   53 persian   2.0: LIMBER,TECHNICIAN,UNNERVE
@@ -70,7 +70,7 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_GOLDUCK,                   { ABILITY_PSI_CONDUIT,         ABILITY_NONE,                ABILITY_SWIFT_SWIM           } }, //   55 golduck
     { SPECIES_MANKEY,                    { ABILITY_VITAL_SPIRIT,        ABILITY_NONE,                ABILITY_DEFIANT              } }, //   56 mankey   2.0: VITAL_SPIRIT,ANGER_POINT,DEFIANT
     { SPECIES_PRIMEAPE,                  { ABILITY_SHORT_FUSE,          ABILITY_NONE,                ABILITY_DEFIANT              } }, //   57 primeape   2.0: VITAL_SPIRIT,ANGER_POINT,DEFIANT
-    { SPECIES_ANNIHILAPE,                { ABILITY_VITAL_SPIRIT,        ABILITY_NONE,                ABILITY_DEFIANT              } }, //  979 annihilape
+    { SPECIES_ANNIHILAPE,                { ABILITY_ANGER_POINT,         ABILITY_NONE,                ABILITY_DEFIANT              } }, //  979 annihilape
     { SPECIES_GROWLITHE,                 { ABILITY_INTIMIDATE,          ABILITY_NONE,                ABILITY_JUSTIFIED            } }, //   58 growlithe   2.0: INTIMIDATE,FLASH_FIRE,JUSTIFIED
     { SPECIES_ARCANINE,                  { ABILITY_INTIMIDATE,          ABILITY_NONE,                ABILITY_JUSTIFIED            } }, //   59 arcanine   2.0: INTIMIDATE,FLASH_FIRE,JUSTIFIED
     { SPECIES_POLIWAG,                   { ABILITY_WATER_ABSORB,        ABILITY_DAMP,                ABILITY_SWIFT_SWIM           } }, //   60 poliwag
@@ -103,19 +103,19 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_MLLOY,                     { ABILITY_SCRAPPY,             ABILITY_NONE,                ABILITY_DEFIANT              } }, // 1035 mlloy
     { SPECIES_DODUO,                     { ABILITY_SKITTISH,            ABILITY_HUSTLE,              ABILITY_TANGLED_FEET         } }, //   84 doduo
     { SPECIES_DODRIO,                    { ABILITY_VITAL_SPIRIT,        ABILITY_SCRAPPY,             ABILITY_TANGLED_FEET         } }, //   85 dodrio   2.0: RUN_AWAY,EARLY_BIRD,TANGLED_FEET
-    { SPECIES_SEEL,                      { ABILITY_THICK_FAT,           ABILITY_NONE,                ABILITY_ICE_BODY             } }, //   86 seel   2.0: THICK_FAT,HYDRATION,ICE_BODY
-    { SPECIES_DEWGONG,                   { ABILITY_THICK_FAT,           ABILITY_NONE,                ABILITY_ICE_BODY             } }, //   87 dewgong   2.0: THICK_FAT,HYDRATION,ICE_BODY
+    { SPECIES_SEEL,                      { ABILITY_THICK_FAT,           ABILITY_NONE,                ABILITY_HYDRATION            } }, //   86 seel   2.0: THICK_FAT,HYDRATION,ICE_BODY
+    { SPECIES_DEWGONG,                   { ABILITY_THICK_FAT,           ABILITY_NONE,                ABILITY_HYDRATION            } }, //   87 dewgong   2.0: THICK_FAT,HYDRATION,ICE_BODY
     { SPECIES_GRIMER,                    { ABILITY_STENCH,              ABILITY_STICKY_HOLD,         ABILITY_POISON_TOUCH         } }, //   88 grimer
     { SPECIES_MUK,                       { ABILITY_STENCH,              ABILITY_STICKY_HOLD,         ABILITY_POISON_TOUCH         } }, //   89 muk
-    { SPECIES_SHELLDER,                  { ABILITY_SHELL_ARMOR,         ABILITY_SKILL_LINK,          ABILITY_OVERCOAT             } }, //   90 shellder
-    { SPECIES_CLOYSTER,                  { ABILITY_SHELL_ARMOR,         ABILITY_SKILL_LINK,          ABILITY_OVERCOAT             } }, //   91 cloyster
+    { SPECIES_SHELLDER,                  { ABILITY_SHELL_ARMOR,         ABILITY_NONE,                ABILITY_OVERCOAT             } }, //   90 shellder
+    { SPECIES_CLOYSTER,                  { ABILITY_SKILL_LINK,          ABILITY_NONE,                ABILITY_OVERCOAT             } }, //   91 cloyster
     { SPECIES_GASTLY,                    { ABILITY_LEVITATE,            ABILITY_NONE,                ABILITY_CURSED_BODY          } }, //   92 gastly
     { SPECIES_HAUNTER,                   { ABILITY_LEVITATE,            ABILITY_NONE,                ABILITY_CURSED_BODY          } }, //   93 haunter
     { SPECIES_GENGAR,                    { ABILITY_LEVITATE,            ABILITY_NONE,                ABILITY_CURSED_BODY          } }, //   94 gengar
     { SPECIES_ONIX,                      { ABILITY_EARTH_EATER,         ABILITY_NONE,                ABILITY_WEAK_ARMOR           } }, //   95 onix   2.0: ROCK_HEAD,STURDY,WEAK_ARMOR
     { SPECIES_STEELIX,                   { ABILITY_EARTH_EATER,         ABILITY_NONE,                ABILITY_SHEER_FORCE          } }, //  208 steelix   2.0: ROCK_HEAD,STURDY,SHEER_FORCE
-    { SPECIES_DROWZEE,                   { ABILITY_FILTER,              ABILITY_NONE,                ABILITY_BAD_DREAMS           } }, //   96 drowzee   2.0: INSOMNIA,FOREWARN,INNER_FOCUS
-    { SPECIES_HYPNO,                     { ABILITY_FILTER,              ABILITY_NONE,                ABILITY_BAD_DREAMS           } }, //   97 hypno   2.0: INSOMNIA,FOREWARN,INNER_FOCUS
+    { SPECIES_DROWZEE,                   { ABILITY_BAD_DREAMS,          ABILITY_NONE,                ABILITY_FILTER               } }, //   96 drowzee   2.0: INSOMNIA,FOREWARN,INNER_FOCUS
+    { SPECIES_HYPNO,                     { ABILITY_BAD_DREAMS,          ABILITY_NONE,                ABILITY_FILTER               } }, //   97 hypno   2.0: INSOMNIA,FOREWARN,INNER_FOCUS
     { SPECIES_KRABBY,                    { ABILITY_HYPER_CUTTER,        ABILITY_NONE,                ABILITY_SHEER_FORCE          } }, //   98 krabby
     { SPECIES_KINGLER,                   { ABILITY_TOUGH_CLAWS,         ABILITY_NONE,                ABILITY_SHEER_FORCE          } }, //   99 kingler
     { SPECIES_VOLTORB,                   { ABILITY_AFTERMATH,           ABILITY_NONE,                ABILITY_INFILTRATOR          } }, //  100 voltorb   2.0: SOUNDPROOF,STATIC,AFTERMATH
@@ -128,8 +128,8 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_HITMONLEE,                 { ABILITY_RECKLESS,            ABILITY_NONE,                ABILITY_UNBURDEN             } }, //  106 hitmonlee   2.0: LIMBER,RECKLESS,UNBURDEN
     { SPECIES_HITMONCHAN,                { ABILITY_PUGILIST,            ABILITY_NONE,                ABILITY_NONE                 } }, //  107 hitmonchan
     { SPECIES_HITMONTOP,                 { ABILITY_INTIMIDATE,          ABILITY_NONE,                ABILITY_STEADFAST            } }, //  237 hitmontop   2.0: INTIMIDATE,TECHNICIAN,STEADFAST
-    { SPECIES_LICKITUNG,                 { ABILITY_CLOUD_NINE,          ABILITY_ANALYTIC,            ABILITY_UNAWARE              } }, //  108 lickitung   2.0: OWN_TEMPO,OBLIVIOUS,CLOUD_NINE
-    { SPECIES_LICKILICKY,                { ABILITY_CLOUD_NINE,          ABILITY_ANALYTIC,            ABILITY_UNAWARE              } }, //  463 lickilicky
+    { SPECIES_LICKITUNG,                 { ABILITY_CLOUD_NINE,          ABILITY_NONE,                ABILITY_UNAWARE              } }, //  108 lickitung   2.0: OWN_TEMPO,OBLIVIOUS,CLOUD_NINE
+    { SPECIES_LICKILICKY,                { ABILITY_CLOUD_NINE,          ABILITY_NONE,                ABILITY_UNAWARE              } }, //  463 lickilicky
     { SPECIES_KOFFING,                   { ABILITY_LEVITATE,            ABILITY_NONE,                ABILITY_NEUTRALIZING_GAS     } }, //  109 koffing   2.0: LEVITATE,NEUTRALIZING_GAS,STENCH
     { SPECIES_WEEZING,                   { ABILITY_LEVITATE,            ABILITY_NONE,                ABILITY_NEUTRALIZING_GAS     } }, //  110 weezing   2.0: LEVITATE,NEUTRALIZING_GAS,STENCH
     { SPECIES_RHYHORN,                   { ABILITY_LIGHTNING_ROD,       ABILITY_ROCK_HEAD,           ABILITY_SHEER_FORCE          } }, //  111 rhyhorn
