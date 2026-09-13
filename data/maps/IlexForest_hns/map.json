@@ -474,8 +474,8 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_ILEX_FOREST_KIMONO",
-      "graphics_id": "OBJ_EVENT_GFX_KIMONO_HNS",
+      "local_id": "LOCALID_ILEX_FOREST_ALDER",
+      "graphics_id": "OBJ_EVENT_GFX_ALDER_HNS",
       "x": 54,
       "y": 9,
       "elevation": 0,
@@ -485,7 +485,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_ILEX_FOREST_KIMONO"
+      "flag": "FLAG_HIDE_ILEX_FOREST_ALDER"
     },
     {
       "local_id": "LOCALID_ILEX_FOREST_SECOND_CELEBI",
@@ -564,7 +564,7 @@
       "elevation": 0,
       "var": "VAR_ILEX_FOREST_FARFETCHD",
       "var_value": "3",
-      "script": "IlexForest_EventScript_Kimono"
+      "script": "IlexForest_EventScript_Alder"
     }
   ],
   "bg_events": [

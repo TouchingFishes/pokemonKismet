@@ -82,7 +82,7 @@
 #define FLAG_HIDE_AZALEA_TOWN_WELL_ROCKET           0x05D
 #define FLAG_HIDE_SLOWPOKE_WELL_KURT                0x05E
 #define FLAG_HIDE_ILEX_FOREST_APPRENTICE            0x05F
-#define FLAG_HIDE_ILEX_FOREST_KIMONO                0x060
+#define FLAG_HIDE_ILEX_FOREST_ALDER                 0x060
 #define FLAG_HIDE_ILEX_FOREST_KURT                  0x061
 #define FLAG_HIDE_ILEX_FOREST_MASTER                0x062
 #define FLAG_HIDE_ILEX_FOREST_SECOND_CELEBI         0x063

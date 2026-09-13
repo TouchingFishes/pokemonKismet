@@ -163,7 +163,7 @@ IlexForest_EventScript_Farfetchd_Leave::
 	waitmovement 0
 	setobjectxyperm LOCALID_ILEX_FOREST_FARFETCHD_1, 28, 42
 	setvar VAR_ILEX_FOREST_FARFETCHD, 2
-	clearflag FLAG_HIDE_ILEX_FOREST_KIMONO
+	clearflag FLAG_HIDE_ILEX_FOREST_ALDER
 	clearflag FLAG_HIDE_ILEX_FOREST_MASTER
 	setflag FLAG_HIDE_AZALEA_TOWN_CUT_MASTER
 	addobject 1
@@ -312,47 +312,47 @@ IlexForest_EventScript_Sign::
 	release
 	end
 
-IlexForest_EventScript_Kimono::
+IlexForest_EventScript_Alder::
 	lock
-	playbgm MUS_HG_KIMONO_GIRL, FALSE
+	playbgm MUS_HG_ENCOUNTER_SAGE, FALSE
 	playse SE_PIN
 	turnobject OBJ_EVENT_ID_FOLLOWER, DIR_NORTH
-	applymovement2 LOCALID_ILEX_FOREST_KIMONO, Common_Movement_ExclamationMark
+	applymovement2 LOCALID_ILEX_FOREST_ALDER, Common_Movement_ExclamationMark
 	delay 55
-	waitmovement LOCALID_ILEX_FOREST_KIMONO
-	applymovement2 LOCALID_ILEX_FOREST_KIMONO, IlexForest_Movement_Kimono_Girl1
+	waitmovement LOCALID_ILEX_FOREST_ALDER
+	applymovement2 LOCALID_ILEX_FOREST_ALDER, IlexForest_Movement_Alder1
 	waitmovement 0
-	msgbox IlexForest_Text_Kimono_Girl1, MSGBOX_DEFAULT
+	msgbox IlexForest_Text_Alder1, MSGBOX_DEFAULT
 	closemessage
-	playse SE_M_PETAL_DANCE
-	applymovement2 LOCALID_ILEX_FOREST_KIMONO, IlexForest_Movement_Kimono_Girl_Spin
+	playse SE_M_GUST
+	applymovement2 LOCALID_ILEX_FOREST_ALDER, IlexForest_Movement_Alder_LookAround
 	waitmovement 0
-	turnobject LOCALID_ILEX_FOREST_KIMONO, DIR_SOUTH
-	msgbox IlexForest_Text_Kimono_Girl2, MSGBOX_YESNO
+	turnobject LOCALID_ILEX_FOREST_ALDER, DIR_SOUTH
+	msgbox IlexForest_Text_Alder2, MSGBOX_YESNO
 	closemessage
-	msgbox IlexForest_Text_Kimono_Girl3, MSGBOX_DEFAULT
+	msgbox IlexForest_Text_Alder3, MSGBOX_DEFAULT
 	closemessage
 	playfirstmoncry
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, IlexForest_Movement_Follower1
 	waitmovement 0
 	playfirstmoncry
-	turnobject LOCALID_ILEX_FOREST_KIMONO, DIR_WEST
-	msgbox IlexForest_Text_Kimono_Girl4, MSGBOX_DEFAULT
-	closemessage 
-	turnobject LOCALID_ILEX_FOREST_KIMONO, DIR_SOUTH
+	turnobject LOCALID_ILEX_FOREST_ALDER, DIR_WEST
+	msgbox IlexForest_Text_Alder4, MSGBOX_DEFAULT
+	closemessage
+	turnobject LOCALID_ILEX_FOREST_ALDER, DIR_SOUTH
 	delay 16
-	msgbox IlexForest_Text_Kimono_Girl5, MSGBOX_DEFAULT
+	msgbox IlexForest_Text_Alder5, MSGBOX_DEFAULT
 	closemessage
 	delay 16
 	playfirstmoncry
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, IlexForest_Movement_Follower2
-	applymovement2 LOCALID_ILEX_FOREST_KIMONO, IlexForest_Movement_Kimono_Girl2
+	applymovement2 LOCALID_ILEX_FOREST_ALDER, IlexForest_Movement_Alder2
 	waitmovement 0
 	waitmovement 0
 	fadedefaultbgm
 	setvar VAR_ILEX_FOREST_FARFETCHD, 4
-	setflag FLAG_HIDE_ILEX_FOREST_KIMONO
-	removeobject LOCALID_ILEX_FOREST_KIMONO
+	setflag FLAG_HIDE_ILEX_FOREST_ALDER
+	removeobject LOCALID_ILEX_FOREST_ALDER
 	playfirstmoncry
 	applymovement OBJ_EVENT_ID_FOLLOWER, IlexForest_Movement_Follower3
 	waitmovement 0
@@ -376,12 +376,14 @@ IlexForest_EventScript_Item_FalseSwipe::
 	finditem ITEM_TM_FALSE_SWIPE
 	end
 
-IlexForest_Movement_Kimono_Girl1:
+IlexForest_Movement_Alder1:
 	walk_right
 	face_down
 	step_end
 
-IlexForest_Movement_Kimono_Girl_Spin:
+@ Was the dancing Kimono Girls movements. Alder does the same turn on the spot, but it
+@ reads as him looking the forest over while he talks about it. This should maybe get replaced
+IlexForest_Movement_Alder_LookAround:
 	face_left
 	delay_8
 	face_up
@@ -424,7 +426,7 @@ IlexForest_Movement_Follower2:
 	walk_left
 	step_end
 
-IlexForest_Movement_Kimono_Girl2:
+IlexForest_Movement_Alder2:
 	face_left
 	delay_16
 	walk_left
@@ -742,25 +744,46 @@ IlexForest_Text_BugCatcherWayneAfter:
 	.string "I ought to use HEADBUTT in other\n"
 	.string "places too.$"
 
-IlexForest_Text_Kimono_Girl1:
-	.string "KIMONO GIRL, KIMONO GIRL, lost and\n"
-	.string "all alone. Poor girl lost in the\l"
-	.string "dark ILEX FOREST.$"
+IlexForest_Text_Alder1:
+	.string "Well now! Another traveller.\p"
+	.string "And here I had convinced myself I\n"
+	.string "was the only fool in these woods.$"
 
-IlexForest_Text_Kimono_Girl2:
-	.string "You remember me from VIOLET CITY?\n"
-	.string "You must be imagining.\p"
-	.string "Anyway, will you show me how to\n"
-	.string "get out of this forest?$"
+IlexForest_Text_Alder2:
+	.string "I'm walking JOHTO end to end this\n"
+	.string "year. They told me ILEX FOREST was\l"
+	.string "worth the detour.\p"
+	.string "They were right! Smell that air.\n"
+	.string "Ancient timber, wet moss, something\l"
+	.string "sweet hidden underneath it all.\p"
+	.string "Unfortunately I got lost while\n"
+	.string "marvelling at this pristine wonder\l"
+	.string "of a forest.\p"
+	.string "Now then. Could you show an old\n"
+	.string "man the way out?$"
 
-IlexForest_Text_Kimono_Girl3:
-	.string "Me oh my... You are lost yourself,\n"
-	.string "aren't you?$"
+IlexForest_Text_Alder3:
+	.string "…Ah.\p"
+	.string "That look. You've no more notion\n"
+	.string "than I have, have you?\p"
+	.string "Hahaha! Splendid. Two of us lost\n"
+	.string "instead of the one.$"
 
-IlexForest_Text_Kimono_Girl4:
-	.string "Wow! Are you going to show me how\n"
-	.string "to get out?\p"
-	.string "You are such a smart POKéMON!$"
+IlexForest_Text_Alder4:
+	.string "Hm? Now hold on.\p"
+	.string "Your POKéMON is telling me to\n"
+	.string "follow it. Look at it go!\p"
+	.string "It heard every word we said and\n"
+	.string "decided that was that. You never\l"
+	.string "asked it to.\p"
+	.string "That isn't training, youngster.\n"
+	.string "That's trust.\p"
+	.string "You two have done right by each\n"
+	.string "other.$"
 
-IlexForest_Text_Kimono_Girl5:
-	.string "See you.$"
+IlexForest_Text_Alder5:
+	.string "Lead on, then. I'll follow your\n"
+	.string "POKéMON.\p"
+	.string "When our paths cross again, show\n"
+	.string "me what the pair of you have\l"
+	.string "become. I'll be waiting on it.$"
