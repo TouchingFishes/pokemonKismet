@@ -72111,6 +72111,75 @@
           }
         },
         {
+          "map": "MAP_MIRAGE_FOREST_HNS",
+          "base_label": "gMirageForest_hns",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 42,
+                "max_level": 46,
+                "species": "SPECIES_ZORUA"
+              },
+              {
+                "min_level": 42,
+                "max_level": 46,
+                "species": "SPECIES_SINISTEA"
+              },
+              {
+                "min_level": 42,
+                "max_level": 46,
+                "species": "SPECIES_ZORUA"
+              },
+              {
+                "min_level": 42,
+                "max_level": 46,
+                "species": "SPECIES_NOIBAT"
+              },
+              {
+                "min_level": 42,
+                "max_level": 46,
+                "species": "SPECIES_SINISTEA"
+              },
+              {
+                "min_level": 42,
+                "max_level": 46,
+                "species": "SPECIES_MIENFOO"
+              },
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_ZORUA"
+              },
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_GOLETT"
+              },
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_BRONZOR"
+              },
+              {
+                "min_level": 46,
+                "max_level": 50,
+                "species": "SPECIES_POLTEAGEIST"
+              },
+              {
+                "min_level": 48,
+                "max_level": 50,
+                "species": "SPECIES_ZOROARK"
+              },
+              {
+                "min_level": 48,
+                "max_level": 50,
+                "species": "SPECIES_SPIRITOMB"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_SINJOH_RUINS_TEMPLE_HNS",
           "base_label": "gSinjohRuins_Temple_hns",
           "land_mons": {

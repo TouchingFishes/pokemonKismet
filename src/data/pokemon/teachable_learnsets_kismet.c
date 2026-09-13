@@ -1299,6 +1299,10 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_DARMANITAN] = sDarmanitanStandardTeachableLearnset_Kismet,
     [SPECIES_DARMANITAN_ZEN] = sDarmanitanZenTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_ZORUA
+    [SPECIES_ZORUA] = sZoruaTeachableLearnset_Kismet,
+    [SPECIES_ZOROARK] = sZoroarkTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_VANILLITE
     [SPECIES_VANILLITE] = sVanilliteTeachableLearnset_Kismet,
     [SPECIES_VANILLISH] = sVanilliteTeachableLearnset_Kismet,
@@ -1424,6 +1428,14 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_TAPU_FINI
     [SPECIES_TAPU_FINI] = sTapuFiniTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_SINISTEA
+    [SPECIES_SINISTEA] = sSinisteaTeachableLearnset_Kismet,
+    [SPECIES_SINISTEA_PHONY] = sSinisteaTeachableLearnset_Kismet,
+    [SPECIES_SINISTEA_ANTIQUE] = sSinisteaTeachableLearnset_Kismet,
+    [SPECIES_POLTEAGEIST] = sPolteageistTeachableLearnset_Kismet,
+    [SPECIES_POLTEAGEIST_PHONY] = sPolteageistTeachableLearnset_Kismet,
+    [SPECIES_POLTEAGEIST_ANTIQUE] = sPolteageistTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_IMPIDIMP
     [SPECIES_IMPIDIMP] = sImpidimpTeachableLearnset_Kismet,
