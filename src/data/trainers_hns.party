@@ -19832,3 +19832,179 @@ EVs: 252 HP / 100 SpA
 - MOVE_THUNDERBOLT
 - MOVE_ICE_BEAM
 - MOVE_RECOVER
+
+=== TRAINER_ROSALIND_HNS ===
+Name: ROSALIND
+Class: Expert Hns
+Pic: Expert F
+Music: Hg Girl 2
+Gender: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Darmanitan @ Life Orb
+Ability: Sheer Force
+Level: 70
+EVs: 252 Atk / 252 Spe
+Adamant Nature
+- Fire Punch
+- Mega Punch
+- Hammer Arm
+- Rock Tomb
+
+Muk @ Black Sludge
+Ability: Stench
+Level: 70
+EVs: 252 Atk / 252 SpD
+Adamant Nature
+- Sludge Bomb
+- Brick Break
+- Curse
+- Shadow Punch
+
+Noivern @ Dragon Gem
+Ability: Infiltrator
+Level: 70
+EVs: 252 SpA / 252 Spe
+Timid Nature
+- Dragon Pulse
+- Boomburst
+- Hurricane
+- Hyper Beam
+
+Weavile @ Focus Sash
+Ability: Sharpness
+Level: 70
+EVs: 252 Atk / 252 Spe
+Jolly Nature
+- Night Slash
+- X Scissor
+- Aerial Ace
+- Icicle Crash
+
+Claydol @ Colbur Berry
+Ability: Levitate
+Level: 70
+EVs: 252 Def / 252 SpD
+Modest Nature
+- Ancient Power
+- Cosmic Power
+- Stored Power
+- Earth Power
+
+=== TRAINER_TABITHA_HNS ===
+Name: TABITHA
+Class: Channeler Hns
+Pic: Channeler Frlg
+Music: Hg Sage
+Gender: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Gengar @ Spell Tag
+Ability: Cursed Body
+Level: 70
+EVs: 252 SpA / 252 Spe
+Timid Nature
+- Shadow Ball
+- Sludge Wave
+- Dazzling Gleam
+- Thunderbolt
+
+Banette @ Sitrus Berry
+Ability: Insomnia
+Level: 70
+EVs: 252 Atk / 248 Spe
+Adamant Nature
+- Shadow Claw
+- Will-O-Wisp
+- Sucker Punch
+- Trick
+
+Drifblim @ Ghost Gem
+Ability: Unburden
+Level: 70
+EVs: 252 HP / 252 SpA
+Modest Nature
+- Shadow Ball
+- Destiny Bond
+- Minimize
+- Hurricane
+
+=== TRAINER_ISOLDE_HNS ===
+Name: ISOLDE
+Class: Channeler Hns
+Pic: Channeler Frlg
+Music: Hg Sage
+Gender: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Sableye @ Leftovers
+Ability: Prankster
+Level: 70
+EVs: 252 HP / 252 Def
+Bold Nature
+- Will-O-Wisp
+- Recover
+- Foul Play
+- Taunt
+
+Sableye @ Leftovers
+Ability: Prankster
+Level: 70
+EVs: 252 HP / 252 SpD
+Bold Nature
+- Will-O-Wisp
+- Recover
+- Foul Play
+- Taunt
+
+Mismagius @ Spell Tag
+Ability: Levitate
+Level: 70
+EVs: 252 SpA / 252 Spe
+Timid Nature
+- Shadow Ball
+- Mystical Fire
+- Power Gem
+- Nasty Plot
+
+=== TRAINER_MERRICK_HNS ===
+Name: MERRICK
+Class: Sage Hns
+Pic: Sage Hns
+Music: Hg Sage
+Gender: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Bronzong @ Light Clay
+Ability: Levitate
+Level: 70
+EVs: 252 HP / 252 Def
+Relaxed Nature
+- Gyro Ball
+- Psychic
+- Reflect
+- Light Screen
+
+Noctowl @ Sitrus Berry
+Ability: Tinted Lens
+Level: 70
+EVs: 252 HP / 252 SpA
+Modest Nature
+- Air Slash
+- Hypnosis
+- Night Shade
+- Roost
+
+Dusknoir @ Leftovers
+Ability: Iron Fist
+Level: 70
+EVs: 252 HP / 252 SpD
+Adamant Nature
+- Shadow Punch
+- Ice Punch
+- Fire Punch
+- Thunder Punch

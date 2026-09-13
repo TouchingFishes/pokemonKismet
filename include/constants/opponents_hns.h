@@ -800,8 +800,12 @@
 
 // This is BILL the character.
 #define TRAINER_BILL_SCIENTIST_HNS                    767
+#define TRAINER_ROSALIND_HNS                          768
+#define TRAINER_TABITHA_HNS                           769
+#define TRAINER_ISOLDE_HNS                            770
+#define TRAINER_MERRICK_HNS                           771
 
-#define TRAINERS_COUNT_HNS                       768
+#define TRAINERS_COUNT_HNS                       772
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

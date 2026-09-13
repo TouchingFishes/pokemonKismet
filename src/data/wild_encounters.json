@@ -72117,64 +72117,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 42,
-                "max_level": 46,
+                "min_level": 45,
+                "max_level": 60,
+                "species": "SPECIES_STANTLER"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
+                "species": "SPECIES_STARAVIA"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
+                "species": "SPECIES_SNOM"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
+                "species": "SPECIES_STANTLER"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
+                "species": "SPECIES_WYRDEER"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
+                "species": "SPECIES_FROSMOTH"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 45,
+                "max_level": 60,
                 "species": "SPECIES_ZORUA"
               },
               {
-                "min_level": 42,
-                "max_level": 46,
-                "species": "SPECIES_SINISTEA"
+                "min_level": 45,
+                "max_level": 70,
+                "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 42,
-                "max_level": 46,
+                "min_level": 45,
+                "max_level": 55,
                 "species": "SPECIES_ZORUA"
-              },
-              {
-                "min_level": 42,
-                "max_level": 46,
-                "species": "SPECIES_NOIBAT"
-              },
-              {
-                "min_level": 42,
-                "max_level": 46,
-                "species": "SPECIES_SINISTEA"
-              },
-              {
-                "min_level": 42,
-                "max_level": 46,
-                "species": "SPECIES_MIENFOO"
-              },
-              {
-                "min_level": 44,
-                "max_level": 48,
-                "species": "SPECIES_ZORUA"
-              },
-              {
-                "min_level": 44,
-                "max_level": 48,
-                "species": "SPECIES_GOLETT"
-              },
-              {
-                "min_level": 44,
-                "max_level": 48,
-                "species": "SPECIES_BRONZOR"
-              },
-              {
-                "min_level": 46,
-                "max_level": 50,
-                "species": "SPECIES_POLTEAGEIST"
-              },
-              {
-                "min_level": 48,
-                "max_level": 50,
-                "species": "SPECIES_ZOROARK"
-              },
-              {
-                "min_level": 48,
-                "max_level": 50,
-                "species": "SPECIES_SPIRITOMB"
               }
             ]
           }

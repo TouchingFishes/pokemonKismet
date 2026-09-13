@@ -2376,6 +2376,8 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/SinjohLake_hns/scripts.inc"
 	.include "data/maps/SinjohCanyon_hns/scripts.inc"
 	.include "data/maps/MirageForest_hns/scripts.inc"
+
+	.include "data/maps/MirageForest_House_hns/scripts.inc"
 	.include "data/maps/SinjohRuins_Temple_hns/scripts.inc"
 	.include "data/maps/SinjohRuins_RegiceRoom_hns/scripts.inc"
 	.include "data/maps/SinjohRuins_RegirockRoom_hns/scripts.inc"
