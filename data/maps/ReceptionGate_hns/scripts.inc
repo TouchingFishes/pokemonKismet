@@ -34,7 +34,7 @@ ReceptionGate_Trigger::
     applymovement LOCALID_INDIGOJUNCTION_POLICEMAN, Common_Movement_ExclamationMark
     delay 55
     waitmovement LOCALID_INDIGOJUNCTION_POLICEMAN
-    goto_if_lt VAR_ECRUTEAK_CITY_THEATER, 8, ReceptionGate_EventScript_Kimono
+    @ The legendary is optional now. Badges are the only requirement.
     msgbox VictoryRoadGate_Text_Officer, MSGBOX_DEFAULT
     goto_if_unset FLAG_BADGE08_GET, ReceptionGate_EventScript_NotEnough
     msgbox VictoryRoadGate_Text_EightBadges, MSGBOX_DEFAULT
@@ -42,14 +42,6 @@ ReceptionGate_Trigger::
     setvar VAR_ROUTE27_STATE, 2
     release
     end
-
-ReceptionGate_EventScript_Kimono::
-    msgbox VictoryRoadGate_Text_Kimono, MSGBOX_DEFAULT
-    closemessage
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
-    waitmovement 0
-    release
-    end 
 
 ReceptionGate_EventScript_NotEnough::
     msgbox VictoryRoadGate_Text_NotEnoughBadges, MSGBOX_DEFAULT
@@ -69,11 +61,6 @@ ReceptionGate_EventScript_KantoGuard::
 VictoryRoadGate_Text_Officer:
     .string "Only trainers who have proven\n"
     .string "themselves may pass.$"
-
-VictoryRoadGate_Text_Kimono:
-    .string "Sorry kid, this way is closed until\n"
-    .string "someone deals with that LEGENDARY\l"
-    .string "POKéMON...$"
 
 VictoryRoadGate_Text_NotEnoughBadges:
     .string "You don't have all the GYM BADGES\n"
