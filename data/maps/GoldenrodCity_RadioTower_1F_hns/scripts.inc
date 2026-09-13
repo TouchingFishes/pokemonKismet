@@ -36,30 +36,6 @@ RadioTower1F_EventScript_Youngster::
 	release
 	end
 
-RadioTower1F_EventScript_Whitney::
-	lock
-	faceplayer
-	msgbox RadioTower1F_Text_Whitney1, MSGBOX_DEFAULT
-	closemessage
-	turnobject LOCALID_GOLDENROD_RADIOTOWER_WHITNEY, DIR_SOUTH
-	release
-	end
-
-RadioTower1F_Text_Whitney1::
-	.string "WHITNEY: Hi!\p"
-	.string "My name is WHITNEY!\p"
-	.string "I heard about the QUIZ to win a\n"
-	.string "RADIO CARD, so I came here to get\l"
-	.string "one...\p"
-	.string "But this QUIZ is so hard!$"
-
-RadioTower1F_Text_Whitney2::
-	.string "WHITNEY: Wow, you did it!\p"
-	.string "I thought the answer to the third\n"
-	.string "question was surely apricorns!\l"
-	.string "Oops!\p"
-	.string "It's time to go back to the GYM!$"
-
 RadioTower1F_EventScript_Reception::
 	lock
 	faceplayer
@@ -126,35 +102,9 @@ RadioTower1F_EventScript_ReceptionGiveRadio::
 	waitfanfare
 	msgbox RadioTower1F_Text_TuneIn, MSGBOX_DEFAULT
 	closemessage
-	playse SE_PIN
-	applymovement LOCALID_GOLDENROD_RADIOTOWER_WHITNEY, Common_Movement_ExclamationMark
-	delay 55
-	waitmovement LOCALID_GOLDENROD_RADIOTOWER_WHITNEY
-	turnobject LOCALID_GOLDENROD_RADIOTOWER_WHITNEY, DIR_EAST
-	delay 20
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
-	msgbox RadioTower1F_Text_Whitney2, MSGBOX_DEFAULT
-	closemessage
-	applymovement2 LOCALID_GOLDENROD_RADIOTOWER_WHITNEY, GoldenrodCity_RadioTower_4F_Movement_WhitneyLeave
-	waitmovement 0
-	playse SE_EXIT
-	removeobject LOCALID_GOLDENROD_RADIOTOWER_WHITNEY
 	setflag FLAG_ENABLE_RADIO
-	setflag FLAG_HIDE_GOLDENROD_BEAUTY
-	setvar VAR_GOLDENROD_CITY_STATE, 2
 	release
 	end
-
-GoldenrodCity_RadioTower_4F_Movement_WhitneyLeave:
-	face_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_in_place_down
-	step_end
 
 GoldenrodCity_RadioTower_1F_EventScript_Sign::
 	lock
@@ -259,10 +209,6 @@ RadioTower1F_Text_Directory:
     .string "3F PERSONNEL\n"
     .string "4F PRODUCTION\p"
     .string "5F DIRECTOR'S OFFICE$"
-
-RadioTower1F_Text_GotRadio:
-	.string "{PLAYER} got the RADIO CARD\n"
-	.string "for the POKéGEAR!$"
 
 GoldenrodCity_RadioTower_1F_EventScript_LotteryClerk::
 	lock

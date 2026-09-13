@@ -14,7 +14,7 @@ NewSinjoh_EventScript_Artist::
 	goto_if_eq VAR_RESULT, FALSE, NewSinjoh_EventScript_ZoomLens_No
 	msgbox Text_ItemGiveaway, MSGBOX_DEFAULT
 	giveitem ITEM_ZOOM_LENS
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_NEWSINJOH_POKEMONCENTER_ARTIST_GIFT
 	release
 	end

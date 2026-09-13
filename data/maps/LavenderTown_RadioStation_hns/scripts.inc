@@ -22,6 +22,8 @@ LavenderTown_RadioStation_EventScript_Director::
 	end
 LavenderTown_RadioStation_EventScript_DirectorReturnedMachinePart::
 	msgbox LavenderTown_RadioStation_Text_Gentleman_ReturnedMachinePart, MSGBOX_DEFAULT
+	goto_if_unset FLAG_ENABLE_RADIO, LavenderTown_RadioStation_EventScript_FixMissingRadioCard
+LavenderTown_RadioStation_EventScript_GiveExpnCard::
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox LavendertownRadioStation_Text_Upgraded_Radio, MSGBOX_DEFAULT
 	waitfanfare
@@ -29,6 +31,18 @@ LavenderTown_RadioStation_EventScript_DirectorReturnedMachinePart::
 	closemessage
 	setflag FLAG_KANTO_RADIO_GOT
 	release
+	end
+
+@ Fallback plan in case the player never cleared the GOLDENROD quiz
+LavenderTown_RadioStation_EventScript_FixMissingRadioCard::
+	msgbox LavenderTown_RadioStation_Text_NoRadioCard, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox LavenderTown_RadioStation_Text_GotRadioCard, MSGBOX_AUTOCLOSE
+	waitfanfare
+	setflag FLAG_ENABLE_RADIO
+	msgbox LavenderTown_RadioStation_Text_NowTheUpgrade, MSGBOX_DEFAULT
+	goto LavenderTown_RadioStation_EventScript_GiveExpnCard
 	end
 LavenderTown_RadioStation_EventScript_DirectorGotRadio::	
 	msgbox LavenderTown_RadioStation_Text_Gentleman_GotExpnCard, MSGBOX_NPC
@@ -91,6 +105,24 @@ LavenderTown_RadioStation_Text_Gentleman_ReturnedMachinePart:
 LavendertownRadioStation_Text_Upgraded_Radio:
 	.string "{PLAYER} obtained the\n"
 	.string "RADIO UPGRADE!$"
+
+LavenderTown_RadioStation_Text_NoRadioCard:
+	.string "Hm? Hold on. Let me see that\n"
+	.string "POKéGEAR of yours.\p"
+	.string "Gahahaha! There's no RADIO CARD\n"
+	.string "in here at all!\p"
+	.string "What have they been doing over in\n"
+	.string "GOLDENROD? Never mind, never mind.\p"
+	.string "I ran that tower for thirty years.\n"
+	.string "I can still sign one of these.$"
+
+LavenderTown_RadioStation_Text_GotRadioCard:
+	.string "{PLAYER}'s POKéGEAR can now double as\n"
+	.string "a RADIO!$"
+
+LavenderTown_RadioStation_Text_NowTheUpgrade:
+	.string "Now then. Where were we?\p"
+	.string "Ah, yes. Your reward.$"
 
 LavenderTown_RadioStation_Text_Gentleman_GotExpnCard:
 	.string "With that thing, you can tune into\n"

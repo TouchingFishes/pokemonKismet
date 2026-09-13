@@ -13,7 +13,36 @@
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_OLIVINE_GATE_WOMAN",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F_HNS",
+      "x": 5,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OlivineGate_EventScript_Woman",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_OLIVINE_GATE_ROCKET",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_M_HNS",
+      "x": 6,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OlivineGate_EventScript_Rocket",
+      "flag": "FLAG_HIDE_OLIVINE_GATE_ROCKET"
+    }
+  ],
   "warp_events": [
     {
       "x": 7,
@@ -30,7 +59,62 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_OLIVINE_GATE_ROCKET",
+      "var_value": "0",
+      "script": "OlivineGate_Trigger_FromRoute39"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_OLIVINE_GATE_ROCKET",
+      "var_value": "0",
+      "script": "OlivineGate_Trigger_FromRoute39"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_OLIVINE_GATE_ROCKET",
+      "var_value": "0",
+      "script": "OlivineGate_Trigger_FromRoute39"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_OLIVINE_GATE_ROCKET",
+      "var_value": "0",
+      "script": "OlivineGate_Trigger_FromOlivine"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_OLIVINE_GATE_ROCKET",
+      "var_value": "0",
+      "script": "OlivineGate_Trigger_FromOlivine"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_OLIVINE_GATE_ROCKET",
+      "var_value": "0",
+      "script": "OlivineGate_Trigger_FromOlivine"
+    }
+  ],
   "bg_events": [],
   "game_version": "hns",
   "region": "REGION_JOHTO"

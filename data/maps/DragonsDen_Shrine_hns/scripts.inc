@@ -1,6 +1,56 @@
 DragonsDen_Shrine_hns_MapScripts::
 	@map_script MAP_SCRIPT_ON_FRAME_TABLE, DragonsDen_Shrine_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, DragonsDen_Shrine_OnTransition
 	.byte 0
+
+DragonsDen_Shrine_OnTransition::
+	goto_if_set FLAG_IS_KANTO_CHAMPION, DragonsDen_Shrine_EventScript_ShowIris
+	setflag FLAG_HIDE_DRAGON_SHRINE_IRIS
+	return
+
+DragonsDen_Shrine_EventScript_ShowIris::
+	clearflag FLAG_HIDE_DRAGON_SHRINE_IRIS
+	return
+
+DragonsDen_Shrine_EventScript_Iris::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_IRIS_HNS, DragonsDen_Shrine_EventScript_IrisAfter
+	msgbox DragonsDen_Shrine_Text_IrisSeen, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_IRIS_HNS, DragonsDen_Shrine_Text_IrisDefeat
+	msgbox DragonsDen_Shrine_Text_IrisAfter, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Shrine_EventScript_IrisAfter::
+	msgbox DragonsDen_Shrine_Text_IrisAfter, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Shrine_Text_IrisSeen:
+	.string "Hey! You're the one who beat the\n"
+	.string "CHAMPION twice, aren't you!\p"
+	.string "My father sent me here. He says I\n"
+	.string "have talent and no patience.\p"
+	.string "So the elders make me sit still\n"
+	.string "and breathe. For hours!\p"
+	.string "You battle me. Right now, before\n"
+	.string "they force me to meditate again!$"
+
+DragonsDen_Shrine_Text_IrisDefeat:
+	.string "Aaah! I lost!$"
+
+DragonsDen_Shrine_Text_IrisAfter:
+	.string "Okay. Okay!\p"
+	.string "Maybe the sitting still is the\n"
+	.string "hard part after all.\p"
+	.string "I'm staying. I'm going to learn\n"
+	.string "it properly, the slow way.\p"
+	.string "So come back some day. Next time\n"
+	.string "I won't be a kid you can beat easily.$"
 
 DragonsDen_Shrine_OnFrame::
 	map_script_2 VAR_BLACKTHORN_CITY_STATE, 2, DragonsDen_Shrine_Trigger_ElderQuizTop

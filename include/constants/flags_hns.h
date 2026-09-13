@@ -88,7 +88,7 @@
 #define FLAG_HIDE_ILEX_FOREST_SECOND_CELEBI         0x063
 #define FLAG_HIDE_KURT_1                            0x064
 #define FLAG_HIDE_KURT_2                            0x065
-#define FLAG_HIDE_GOLDENROD_BEAUTY                  0x066
+#define FLAG_HIDE_UNUSED_0x066                      0x066
 #define FLAG_HIDE_GOLDENROD_BILL                    0x067
 #define FLAG_HIDE_GOLDENROD_NPCS                    0x068
 #define FLAG_HIDE_GOLDENROD_RADIOTOWER_DIRECTOR     0x069
@@ -107,7 +107,7 @@
 #define FLAG_HIDE_ECRUTEAK_CITY_THEATER_KIMONOS     0x076
 #define FLAG_HIDE_ECRUTEAK_CITY_THEATER_NPCS        0x077
 #define FLAG_HIDE_ECRUTEAK_CITY_THEATER_ZUKI        0x078
-#define FLAG_HIDE_ECRUTEAK_ROCKET                   0x079
+#define FLAG_HIDE_OLIVINE_GATE_ROCKET               0x079
 #define FLAG_HIDE_ECRUTEAK_SILVER                   0x07A
 #define FLAG_HIDE_BURNED_TOWER_B1F_EUSINE           0x07B
 #define FLAG_HIDE_BURNED_TOWER_NPCS                 0x07C
@@ -852,8 +852,11 @@
 #define FLAG_OLIVINE_GYM_NPC_TRADE_COMPLETED         0x302
 #define FLAG_ENABLE_CONDITION                       0x303
 #define FLAG_UNUSED_36                              0x304
-#define FLAG_UNUSED_37                              0x305
-#define FLAG_UNUSED_38                              0x306
+#define FLAG_HIDE_ECRUTEAK_THEATER_ALDER            0x305
+// IRIS trains at the DRAGON SHRINE once the CHAMPION has been beaten a second
+// time. Hide flags default to CLEAR, so the shrine's ON_TRANSITION computes
+// this from FLAG_IS_KANTO_CHAMPION rather than leaving her there on a new file.
+#define FLAG_HIDE_DRAGON_SHRINE_IRIS                0x306
 #define FLAG_UNUSED_39                              0x307
 #define HNS_UNUSED_COUNT                            40
 

@@ -148,7 +148,9 @@
 #define VAR_UNUSED_HNS_0x40F7                            0x40F7
 #define VAR_UNUSED_HNS_0x40F8                            0x40F8
 #define VAR_UNUSED_HNS_0x40F9                            0x40F9
-#define VAR_UNUSED_HNS_0x40FA                            0x40FA
+// 0 = robbery still happening, 1 = player intervened but has not taken the band,
+// 2 = window closed unseen (she was robbed), 3 = intervened and has the band
+#define VAR_OLIVINE_GATE_ROCKET                          0x40FA
 #define VAR_UNUSED_HNS_0x40FB                            0x40FB
 #define VAR_UNUSED_HNS_0x40FC                            0x40FC
 #define VAR_UNUSED_HNS_0x40FD                            0x40FD

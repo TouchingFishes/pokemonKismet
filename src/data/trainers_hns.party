@@ -7347,14 +7347,14 @@ Gender: Male
 Music: Hg Girl 2
 Double Battle: No
 AI: Basic Trainer
-Mugshot: Pink
+Mugshot: Dark Red
 
-SPECIES_ESPEON
-Level: 48
+SPECIES_FLAREON
+Level: Badge+9
 IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
-- MOVE_PSYCHIC
-- MOVE_PSYCH_UP
-- MOVE_SWIFT
+- MOVE_FIRE_BLAST
+- MOVE_QUICK_ATTACK
+- MOVE_WILL_O_WISP
 - MOVE_ENDEAVOR
 
 === TRAINER_SAYO_HNS ===
@@ -7365,14 +7365,14 @@ Gender: Male
 Music: Hg Girl 2
 Double Battle: No
 AI: Basic Trainer
-Mugshot: Yellow
+Mugshot: Light Blue
 
-SPECIES_JOLTEON
-Level: 48
+SPECIES_GLACEON
+Level: Badge+9
 IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
-- MOVE_THUNDERBOLT
+- MOVE_ICE_BEAM
 - MOVE_DOUBLE_TEAM
-- MOVE_THUNDER_WAVE
+- MOVE_SHADOW_BALL
 - MOVE_ENDEAVOR
 
 === TRAINER_ZUKI_HNS ===
@@ -7383,14 +7383,14 @@ Gender: Male
 Music: Hg Girl 2
 Double Battle: No
 AI: Basic Trainer
-Mugshot: Purple
+Mugshot: Green
 
-SPECIES_UMBREON
-Level: 48
+SPECIES_LEAFEON
+Level: Badge+9
 IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
-- MOVE_DARK_PULSE
-- MOVE_CONFUSE_RAY
-- MOVE_SHADOW_BALL
+- MOVE_LEAF_BLADE
+- MOVE_SWORDS_DANCE
+- MOVE_QUICK_ATTACK
 - MOVE_ENDEAVOR
 
 === TRAINER_KUNI_HNS ===
@@ -7401,10 +7401,10 @@ Gender: Male
 Music: Hg Girl 2
 Double Battle: No
 AI: Basic Trainer
-Mugshot: Light Blue
+Mugshot: Blue
 
 SPECIES_VAPOREON
-Level: 48
+Level: Badge+9
 IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
 - MOVE_SURF
 - MOVE_QUICK_ATTACK
@@ -7419,15 +7419,100 @@ Gender: Male
 Music: Hg Girl 2
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Yellow
+
+SPECIES_JOLTEON
+Level: Badge+9
+IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
+- MOVE_THUNDERBOLT
+- MOVE_DOUBLE_TEAM
+- MOVE_THUNDER_WAVE
+- MOVE_ENDEAVOR
+
+=== TRAINER_NAOKO_2_HNS ===
+Name: NAOKO
+Class: Kimono Girl Hns
+Pic: Kimono Girl Hns
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Basic Trainer
 Mugshot: Dark Red
 
 SPECIES_FLAREON
-Level: 48
-IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
-- MOVE_FIRE_BLAST
+Level: 22
+- MOVE_EMBER
 - MOVE_QUICK_ATTACK
-- MOVE_WILL_O_WISP
-- MOVE_ENDEAVOR
+- MOVE_BITE
+- MOVE_SAND_ATTACK
+
+=== TRAINER_SAYO_2_HNS ===
+Name: SAYO
+Class: Kimono Girl Hns
+Pic: Kimono Girl Hns
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Light Blue
+
+SPECIES_GLACEON
+Level: 22
+- MOVE_ICY_WIND
+- MOVE_QUICK_ATTACK
+- MOVE_BITE
+- MOVE_SAND_ATTACK
+
+=== TRAINER_ZUKI_2_HNS ===
+Name: ZUKI
+Class: Kimono Girl Hns
+Pic: Kimono Girl Hns
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+
+SPECIES_LEAFEON
+Level: 22
+- MOVE_RAZOR_LEAF
+- MOVE_QUICK_ATTACK
+- MOVE_SYNTHESIS
+- MOVE_SAND_ATTACK
+
+=== TRAINER_KUNI_2_HNS ===
+Name: KUNI
+Class: Kimono Girl Hns
+Pic: Kimono Girl Hns
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+
+SPECIES_VAPOREON
+Level: 22
+- MOVE_WATER_PULSE
+- MOVE_QUICK_ATTACK
+- MOVE_AURORA_BEAM
+- MOVE_SAND_ATTACK
+
+=== TRAINER_MIKI_2_HNS ===
+Name: MIKI
+Class: Kimono Girl Hns
+Pic: Kimono Girl Hns
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Yellow
+
+SPECIES_JOLTEON
+Level: 22
+- MOVE_THUNDER_SHOCK
+- MOVE_QUICK_ATTACK
+- MOVE_DOUBLE_KICK
+- MOVE_SAND_ATTACK
 
 === TRAINER_AMY_AND_MAY_HNS ===
 Name: AMY&MAY
@@ -14938,17 +15023,17 @@ Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
-Mugshot: Green
+Mugshot: Purple
 
-Leafeon @ Meadow Plate  
-Ability: Chlorophyll  
+Espeon @ Mind Plate
+Ability: Synchronize
 Level: 70
-EVs: 4 HP / 252 Atk / 252 Def  
-Adamant Nature  
-- Leaf Blade  
-- Synthesis  
-- Iron Tail  
-- Yawn  
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Psychic
+- Calm Mind
+- Dazzling Gleam
+- Morning Sun
 
 === TRAINER_YOUKO_HNS ===
 Name: YOUKO
@@ -14958,18 +15043,18 @@ Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
-Mugshot: Light Blue
+Mugshot: Orange
 
-Glaceon @ Icicle Plate  
-Ability: Ice Body  
+Umbreon @ Dread Plate
+Ability: Synchronize
 Level: 70
-EVs: 252 HP / 252 SpA / 4 SpD  
-Modest Nature  
+EVs: 252 HP / 4 SpA / 252 SpD
+Calm Nature
 IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
-- Synchronoise
-- Blizzard  
-- Chilling Water  
-- Shadow Ball 
+- Dark Pulse
+- Confuse Ray
+- Moonlight
+- Toxic
 
 === TRAINER_SHIZUKO_HNS ===
 Name: SHIZUKO
@@ -15317,19 +15402,6 @@ Naive Nature
  * They share TRAINER_CLASS_PKMN_TRAINER_1_HNS, the tree's existing cameo class
  * (Red and Steven already use it), so the intro reads "{PKMN} TRAINER CYNTHIA".
  * A class per character would render as "CYNTHIA CYNTHIA".
- *
- * NOTE: that class currently has no money multiplier, so these battles pay 0.
- *
- * Alder and Bato reuse `Pic: Red Hns` as an explicit placeholder - their fork
- * sprites were deliberately not ported.
- *
- * GENDER IS NOT COSMETIC. CreateNPCTrainerPartyFromTrainer picks the party's
- * personality seed from it (battle_main.c: TRAINER_GENDER_FEMALE -> 0x78, else
- * 0x88), which biases the gender of every Pokemon the trainer fields. These
- * headers were written from one template and all said Male; Cynthia, Iris and
- * both Soras are female and now say so, before the real parties land and
- * inherit the wrong bias. Buck, Alder, Yama and Bato are male - Bato confirmed
- * by Moritz, 2026-08-29, since there is no art or source to check it against.
  */
 
 === TRAINER_CYNTHIA_HNS ===
@@ -15351,10 +15423,67 @@ Pic: Iris Hns
 Gender: Female
 Music: Hg Champion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 
-SPECIES_MAGIKARP
-Level: 5
+Hydreigon @ Lum Berry
+Ability: Levitate
+Level: 76
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Dragon Pulse
+- Surf
+- Dark Pulse
+- Flamethrower
+
+Mienshao @ Flying Gem
+Ability: Inner Focus
+Level: 76
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Rock Slide
+- Acrobatics
+- High Jump Kick
+- Fake Out
+
+Charizard @ Sitrus Berry
+Ability: Blaze
+Level: 74
+EVs: 252 HP / 4 SpA / 252 SpD
+Adamant Nature
+- Dragon Claw
+- Dragon Dance
+- Fire Punch
+- Shadow Claw
+
+Aggron @ Hard Stone
+Ability: Sturdy
+Level: 74
+EVs: 4 HP / 252 SpD / 252 Def
+Adamant Nature
+- Iron Head
+- Rock Slide
+- Ice Punch
+- Metal Burst
+
+Lapras @ Chesto Berry
+Ability: Water Absorb
+Level: 74
+EVs: 252 HP / 4 Def / 252 SpA
+Bold Nature
+- Ice Beam
+- Surf
+- Thunderbolt
+- Rest
+
+Haxorus @ Dragon Fang
+Ability: Mold Breaker
+Level: 78
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Dragon Dance
+- Outrage
+- Earthquake
+- Brick Break
 
 === TRAINER_SORA_HNS ===
 Name: SORA
@@ -15380,24 +15509,82 @@ AI: Check Bad Move / Try To Faint / Check Viability
 SPECIES_MAGIKARP
 Level: 5
 
+=== TRAINER_ALDER_HNS ===
+Name: ALDER
+Class: Expert Hns
+Pic: Expert M
+Gender: Male
+Music: Hg Champion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+Mugshot: Orange
+
+Scizor @ Metal Coat
+Ability: Swarm
+Level: 77
+EVs: 248 HP / 252 Atk / 8 SpD
+Adamant Nature
+- Bullet Punch
+- X Scissor
+- Swords Dance
+- Roost
+
+Drapion @ Black Sludge
+Ability: Sniper
+Level: 77
+EVs: 252 HP / 4 Spe / 252 SpD
+Jolly Nature
+- Cross Poison
+- Crunch
+- Rock Slide
+- Bulk Up
+
+Flygon @ Dragon Gem
+Ability: Levitate
+Level: 75
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Claw
+- Lunge
+- Earthquake
+- Fire Punch
+
+Vanilluxe @ Wise Glasses
+Ability: Ice Body
+Level: 77
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Blizzard
+- Flash Cannon
+- Milk Drink
+- Water Pulse
+
+Tauros @ Silk Scarf
+Ability: Intimidate
+Level: 75
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Double Edge
+- Zen Headbutt
+- Rock Slide
+- Earthquake
+
+Volcarona @ Charcoal
+Ability: Flame Body
+Level: 79
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Fiery Dance
+- Bug Buzz
+- Quiver Dance
+- Giga Drain
+
 === TRAINER_BUCK_HNS ===
 Name: BUCK
 Class: Pkmn Trainer 1 Hns
 Pic: Buck Hns
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-SPECIES_MAGIKARP
-Level: 5
-
-=== TRAINER_ALDER_HNS ===
-Name: ALDER
-Class: Pkmn Trainer 1 Hns
-Pic: Red Hns
-Gender: Male
-Music: Hg Champion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 

@@ -12,7 +12,6 @@ GoldenrodCity_EventScript_Trigger:: @flagheap
 	setflag FLAG_HIDE_GOLDENROD_RADIOTOWER_PETREL
 	setflag FLAG_HIDE_GOLDENROD_RADIOTOWER_DIRECTOR_2
 	
-	clearflag FLAG_HIDE_GOLDENROD_BEAUTY
 	clearflag FLAG_HIDE_GOLDENROD_ROCKET_SCOUT
 	clearflag FLAG_HIDE_GOLDENROD_NPCS
 	clearflag FLAG_GOT_RETURN
@@ -280,20 +279,6 @@ GoldenrodCity_EventScript_SignGameCorner::
 	release
 	end
 
-GoldenrodCity_EventScript_Beauty::
-	lock
-	faceplayer
-	msgbox GoldenrodCity_Text_Beauty, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-GoldenrodCity_Text_Beauty:
-	.string "This is the GOLDENROD GYM!\p"
-	.string "Our leader WHITNEY is not here\n"
-	.string "right now. She might be at the\l"
-	.string "RADIO TOWER.$"
-
 GoldenrodCity_Text_Woman:
 	.string "I used to train in WHITNEY's GYM,\n"
 	.string "but all her crying gave me a\l"
@@ -327,7 +312,12 @@ GoldenrodCity_Text_ElmCall:
 
 GoldenrodCity_Text_PokefanM:
 	.string "They built the new RADIO TOWER\n"
-	.string "to replace the old creaky one.$"
+	.string "to replace the old creaky one.\p"
+	.string "As part of an ongoing promotion the\n"
+	.string "RADIO TOWER is running a quiz.\p"
+	.string "Win it and they'll fit your\n"
+	.string "POKéGEAR with a RADIO CARD.\p"
+	.string "You'll want one. Trust me.$"
 
 GoldenrodCity_Text_Youngster1:
 	.string "I know there's a new BIKE SHOP,\n"
