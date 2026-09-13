@@ -1043,5 +1043,5 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_GEKOPON,                   { ABILITY_DAMP,                ABILITY_NONE,                ABILITY_NONE                 } }, // 1038 gekopon
     { SPECIES_ALT_MEGANIUM,              { ABILITY_SOLID_ROCK,          ABILITY_NONE,                ABILITY_NONE                 } }, // 1041 alt_meganium
     { SPECIES_ALT_TYPHLOSION,            { ABILITY_CURSED_BODY,         ABILITY_NONE,                ABILITY_NONE                 } }, // 1042 alt_typhlosion
-    { SPECIES_ALT_FERALIGATR,            { ABILITY_PRANKSTER,           ABILITY_NONE,                ABILITY_NONE                 } }, // 1043 alt_feraligatr
+    { SPECIES_ALT_FERALIGATR,            { ABILITY_STRONG_JAW,          ABILITY_NONE,                ABILITY_NONE                 } }, // 1043 alt_feraligatr
 };
