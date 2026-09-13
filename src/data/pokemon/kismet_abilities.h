@@ -85,7 +85,7 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_MACHAMP,                   { ABILITY_NO_GUARD,            ABILITY_NONE,                ABILITY_STEADFAST            } }, //   68 machamp   2.0: GUTS,NO_GUARD,STEADFAST
     { SPECIES_BELLSPROUT,                { ABILITY_GLUTTONY,            ABILITY_NONE,                ABILITY_CHLOROPHYLL          } }, //   69 bellsprout
     { SPECIES_WEEPINBELL,                { ABILITY_GLUTTONY,            ABILITY_NONE,                ABILITY_CHLOROPHYLL          } }, //   70 weepinbell
-    { SPECIES_VICTREEBEL,                { ABILITY_GLUTTONY,            ABILITY_NONE,                ABILITY_CHLOROPHYLL          } }, //   71 victreebel
+    { SPECIES_VICTREEBEL,                { ABILITY_CORROSION,           ABILITY_NONE,                ABILITY_CHLOROPHYLL          } }, //   71 victreebel
     { SPECIES_TENTACOOL,                 { ABILITY_CLEAR_BODY,          ABILITY_LIQUID_OOZE,         ABILITY_RAIN_DISH            } }, //   72 tentacool
     { SPECIES_TENTACRUEL,                { ABILITY_CLEAR_BODY,          ABILITY_LIQUID_OOZE,         ABILITY_RAIN_DISH            } }, //   73 tentacruel
     { SPECIES_GEODUDE,                   { ABILITY_ROCK_HEAD,           ABILITY_STURDY,              ABILITY_SAND_STREAM          } }, //   74 geodude
@@ -150,9 +150,9 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_STARMIE,                   { ABILITY_NATURAL_CURE,        ABILITY_SAND_VEIL,           ABILITY_ANALYTIC             } }, //  121 starmie   2.0: ILLUMINATE,NATURAL_CURE,ANALYTIC
     { SPECIES_MIME_JR,                   { ABILITY_COLOR_CHANGE,        ABILITY_NONE,                ABILITY_SCREEN_CLEANER       } }, //  439 mime_jr
     { SPECIES_MR_MIME,                   { ABILITY_COLOR_CHANGE,        ABILITY_NONE,                ABILITY_SCREEN_CLEANER       } }, //  122 mr_mime   2.0: SOUNDPROOF,FILTER,TECHNICIAN
-    { SPECIES_SCYTHER,                   { ABILITY_SHARPNESS,           ABILITY_NONE,                ABILITY_STEADFAST            } }, //  123 scyther   2.0: SWARM,TECHNICIAN,STEADFAST
-    { SPECIES_SCIZOR,                    { ABILITY_TECHNICIAN,          ABILITY_NONE,                ABILITY_LIGHT_METAL          } }, //  212 scizor   2.0: SWARM,TECHNICIAN,LIGHT_METAL
-    { SPECIES_KLEAVOR,                   { ABILITY_SHARPNESS,           ABILITY_NONE,                ABILITY_SHEER_FORCE          } }, //  900 kleavor
+    { SPECIES_SCYTHER,                   { ABILITY_TECHNICIAN,          ABILITY_NONE,                ABILITY_SHARPNESS            } }, //  123 scyther   2.0: SWARM,TECHNICIAN,STEADFAST
+    { SPECIES_SCIZOR,                    { ABILITY_TECHNICIAN,          ABILITY_NONE,                ABILITY_SHARPNESS            } }, //  212 scizor   2.0: SWARM,TECHNICIAN,LIGHT_METAL
+    { SPECIES_KLEAVOR,                   { ABILITY_TECHNICIAN,          ABILITY_NONE,                ABILITY_SHARPNESS            } }, //  900 kleavor
     { SPECIES_SMOOCHUM,                  { ABILITY_OBLIVIOUS,           ABILITY_NONE,                ABILITY_HYDRATION            } }, //  238 smoochum   2.0: OBLIVIOUS,FOREWARN,HYDRATION
     { SPECIES_JYNX,                      { ABILITY_OBLIVIOUS,           ABILITY_NONE,                ABILITY_DRY_SKIN             } }, //  124 jynx   2.0: OBLIVIOUS,FOREWARN,DRY_SKIN
     { SPECIES_ELEKID,                    { ABILITY_STATIC,              ABILITY_NONE,                ABILITY_VITAL_SPIRIT         } }, //  239 elekid
