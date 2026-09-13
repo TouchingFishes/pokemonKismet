@@ -569,7 +569,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LoverM_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugManiac_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistTrainer_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirdCatcher_hns;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Farmer_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GuitaristM_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brawly_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Drake_hns;
@@ -592,6 +591,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokerangerF
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokerangerM_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Collector_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Alder_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Iris_hns;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -1133,7 +1134,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BUG_MANIAC_HNS] = &gObjectEventGraphicsInfo_BugManiac_hns,
     [OBJ_EVENT_GFX_SCIENTIST_TRAINER_HNS] = &gObjectEventGraphicsInfo_ScientistTrainer_hns,
     [OBJ_EVENT_GFX_BIRD_CATCHER_HNS] = &gObjectEventGraphicsInfo_BirdCatcher_hns,
-    [OBJ_EVENT_GFX_FARMER_HNS] = &gObjectEventGraphicsInfo_Farmer_hns,
     [OBJ_EVENT_GFX_GUITARIST_M_HNS] = &gObjectEventGraphicsInfo_GuitaristM_hns,
     [OBJ_EVENT_GFX_BRAWLY_HNS] = &gObjectEventGraphicsInfo_Brawly_hns,
     [OBJ_EVENT_GFX_DRAKE_HNS] = &gObjectEventGraphicsInfo_Drake_hns,
@@ -1156,6 +1156,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKERANGER_M_HNS] = &gObjectEventGraphicsInfo_PokerangerM_hns,
     [OBJ_EVENT_GFX_HEX_MANIAC_HNS] = &gObjectEventGraphicsInfo_HexManiac_hns,
     [OBJ_EVENT_GFX_COLLECTOR_HNS] = &gObjectEventGraphicsInfo_Collector_hns,
+    [OBJ_EVENT_GFX_ALDER_HNS] = &gObjectEventGraphicsInfo_Alder_hns,
+    [OBJ_EVENT_GFX_IRIS_HNS] = &gObjectEventGraphicsInfo_Iris_hns,
     // HnS protagonists
     [OBJ_EVENT_GFX_GOLD_NORMAL_HNS] =       &gObjectEventGraphicsInfo_GoldNormal_hns,
     [OBJ_EVENT_GFX_GOLD_MACH_BIKE_HNS] =    &gObjectEventGraphicsInfo_GoldMachBike_hns,

@@ -6782,6 +6782,9 @@ $(OBJEVENTGFXDIR)/pokemon/surfable/regional_clodsire_shiny.4bpp: %.4bpp: %.png
 # Frame specs for the _hns sprites added by the graphics pass. Without these the
 # generic %.4bpp: %.png rule converts each sheet as one flat image and the tile
 # order comes out scrambled - see MIGRATION_DECISIONS.md 16.5.
+$(OBJEVENTGFXDIR)/people/alder_hns.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/aroma_lady_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
@@ -6818,9 +6821,6 @@ $(OBJEVENTGFXDIR)/people/expert_f_hns.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/expert_m_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/farmer_hns.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 4
-
 $(OBJEVENTGFXDIR)/people/flannery_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
@@ -6831,6 +6831,9 @@ $(OBJEVENTGFXDIR)/people/guitarist_m_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/hex_maniac_hns.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/iris_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/lady_hns.4bpp: %.4bpp: %.png

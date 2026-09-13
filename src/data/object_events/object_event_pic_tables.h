@@ -4558,18 +4558,6 @@ static const struct SpriteFrameImage sPicTable_BirdCatcher_hns[] = {
     overworld_frame(gObjectEventPic_BirdCatcher_hns, 2, 4, 8),
 };
 
-static const struct SpriteFrameImage sPicTable_Farmer_hns[] = {
-    overworld_frame(gObjectEventPic_Farmer_hns, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Farmer_hns, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Farmer_hns, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Farmer_hns, 2, 4, 3),
-    overworld_frame(gObjectEventPic_Farmer_hns, 2, 4, 4),
-    overworld_frame(gObjectEventPic_Farmer_hns, 2, 4, 5),
-    overworld_frame(gObjectEventPic_Farmer_hns, 2, 4, 6),
-    overworld_frame(gObjectEventPic_Farmer_hns, 2, 4, 7),
-    overworld_frame(gObjectEventPic_Farmer_hns, 2, 4, 8),
-};
-
 static const struct SpriteFrameImage sPicTable_GuitaristM_hns[] = {
     overworld_frame(gObjectEventPic_GuitaristM_hns, 2, 4, 0),
     overworld_frame(gObjectEventPic_GuitaristM_hns, 2, 4, 1),
@@ -5086,6 +5074,30 @@ static const struct SpriteFrameImage sPicTable_KrisWatering_hns[] = {
 
 static const struct SpriteFrameImage sPicTable_KrisDecorating_hns[] = {
     obj_frame_tiles(gObjectEventPic_KrisDecorating_hns),
+};
+
+static const struct SpriteFrameImage sPicTable_Alder_hns[] = {
+    overworld_frame(gObjectEventPic_Alder_hns, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Alder_hns, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Alder_hns, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Alder_hns, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Alder_hns, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Alder_hns, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Alder_hns, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Alder_hns, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Alder_hns, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_Iris_hns[] = {
+    overworld_frame(gObjectEventPic_Iris_hns, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Iris_hns, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Iris_hns, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Iris_hns, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Iris_hns, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Iris_hns, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Iris_hns, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Iris_hns, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Iris_hns, 2, 4, 8),
 };
 
 #endif // IS_HNS

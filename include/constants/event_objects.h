@@ -604,7 +604,6 @@
 #define OBJ_EVENT_GFX_BUG_MANIAC_HNS            563
 #define OBJ_EVENT_GFX_SCIENTIST_TRAINER_HNS     564
 #define OBJ_EVENT_GFX_BIRD_CATCHER_HNS          565
-#define OBJ_EVENT_GFX_FARMER_HNS                566
 #define OBJ_EVENT_GFX_GUITARIST_M_HNS           567
 #define OBJ_EVENT_GFX_BRAWLY_HNS                568
 #define OBJ_EVENT_GFX_DRAKE_HNS                 569
@@ -627,7 +626,9 @@
 #define OBJ_EVENT_GFX_POKERANGER_M_HNS          586
 #define OBJ_EVENT_GFX_HEX_MANIAC_HNS            587
 #define OBJ_EVENT_GFX_COLLECTOR_HNS             588
-#define NUM_OBJ_EVENT_GFX                        589
+#define OBJ_EVENT_GFX_ALDER_HNS                 589
+#define OBJ_EVENT_GFX_IRIS_HNS                  590
+#define NUM_OBJ_EVENT_GFX                        591
 
 
 // These are dynamic object gfx ids.
@@ -861,6 +862,8 @@
 #define OBJ_EVENT_PAL_TAG_POKERANGER_HNS            0x11C4
 #define OBJ_EVENT_PAL_TAG_HEX_MANIAC_HNS            0x11C5
 #define OBJ_EVENT_PAL_TAG_COLLECTOR_HNS             0x11C6
+#define OBJ_EVENT_PAL_TAG_ALDER_HNS                 0x11C7
+#define OBJ_EVENT_PAL_TAG_IRIS_HNS                  0x11C8
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
