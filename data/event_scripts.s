@@ -2005,6 +2005,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/EcruteakCity_SageOffice2_hns/scripts.inc"
 	.include "data/maps/BellchimeTrail_hns/scripts.inc"
 	.include "data/maps/EcruteakCity_Gym_hns/scripts.inc"
+	.include "data/maps/EcruteakCity_CatClub_hns/scripts.inc"
 	.include "data/maps/OlivineCity_PokemonCenter_hns/scripts.inc"
 	.include "data/maps/OlivineCity_Gym_hns/scripts.inc"
 	.include "data/maps/OlivineCity_Cafe_hns/scripts.inc"

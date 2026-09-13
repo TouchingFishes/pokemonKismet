@@ -20195,3 +20195,150 @@ Adamant Nature
 - Ice Punch
 - Fire Punch
 - Thunder Punch
+
+=== TRAINER_NATSUMI_HNS ===
+Name: NATSUMI
+Class: Lady Hns
+Pic: Sora With Cat Hns
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: Pink
+
+Persian @ Silk Scarf
+Ability: Unnerve
+Level: Badge+4
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Fake Out
+- Bite
+- Swift
+- Taunt
+
+Purugly @ Sitrus Berry
+Ability: Thick Fat
+Level: Badge+4
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Fake Out
+- Body Slam
+- Shadow Claw
+- Aerial Ace
+
+Delcatty @ Leftovers
+Ability: Cute Charm
+Level: Badge+4
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Sing
+- Thunderbolt
+- Ice Beam
+- Heal Bell
+
+Luxray @ Magnet
+Ability: Rivalry
+Level: Badge+5
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Wild Charge
+- Crunch
+- Ice Fang
+- Fire Fang
+
+Umbreon @ Leftovers
+Ability: Synchronize
+Level: Badge+5
+EVs: 252 HP / 4 Def / 252 SpD
+Careful Nature
+- Foul Play
+- Moonlight
+- Toxic
+- Confuse Ray
+
+Espeon @ Twisted Spoon
+Ability: Synchronize
+Level: Badge+6
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Calm Mind
+
+=== TRAINER_NATSUMI_2_HNS ===
+Name: NATSUMI
+Class: Lady Hns
+Pic: Sora Hns
+Gender: Female
+Music: Hg Champion
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Ace Pokemon
+Mugshot: Pink
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+
+Heracross @ Life Orb
+Ability: Moxie
+Level: Badge+15
+EVs: 4 HP / 252 Atk / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Adamant Nature
+- Swords Dance
+- Megahorn
+- Close Combat
+- Rock Slide
+
+Altaria @ Leftovers
+Ability: Natural Cure
+Level: Badge+15
+EVs: 252 HP / 252 Atk / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Adamant Nature
+- Dragon Dance
+- Dragon Claw
+- Earthquake
+- Roost
+
+Drapion @ Black Glasses
+Ability: Battle Armor
+Level: Badge+16
+EVs: 4 HP / 252 Atk / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Jolly Nature
+- Swords Dance
+- Night Slash
+- Cross Poison
+- Earthquake
+
+Milotic @ Leftovers
+Ability: Marvel Scale
+Level: Badge+16
+EVs: 252 HP / 252 Def / 4 SpA
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Bold Nature
+- Scald
+- Ice Beam
+- Recover
+- Toxic
+
+Eelektross @ Life Orb
+Ability: Levitate
+Level: Badge+17
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Modest Nature
+- Acid Spray
+- Thunderbolt
+- Flamethrower
+- Giga Drain
+
+Togekiss @ Life Orb
+Ability: Hustle
+Level: Badge+19
+EVs: 4 HP / 252 SpA / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Nasty Plot
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere

@@ -804,14 +804,15 @@
 #define TRAINER_TABITHA_HNS                           769
 #define TRAINER_ISOLDE_HNS                            770
 #define TRAINER_MERRICK_HNS                           771
-
 #define TRAINER_NAOKO_2_HNS                           772
 #define TRAINER_SAYO_2_HNS                            773
 #define TRAINER_ZUKI_2_HNS                            774
 #define TRAINER_KUNI_2_HNS                            775
 #define TRAINER_MIKI_2_HNS                            776
+#define TRAINER_NATSUMI_HNS                           777
+#define TRAINER_NATSUMI_2_HNS                         778
 
-#define TRAINERS_COUNT_HNS                       778
+#define TRAINERS_COUNT_HNS                       779
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

@@ -10485,6 +10485,18 @@
       "layout_version": "hns"
     },
     {
+      "id": "LAYOUT_ECRUTEAK_CITY_CAT_CLUB_HNS",
+      "name": "EcruteakCity_CatClub_hns_Layout",
+      "width": 13,
+      "height": 10,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_House_Lab_Hns",
+      "border_filepath": "data/layouts/EcruteakCity_CatClub_hns/border.bin",
+      "blockdata_filepath": "data/layouts/EcruteakCity_CatClub_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
       "id": "LAYOUT_MIRAGE_FOREST_HOUSE_HNS",
       "name": "MirageForest_House_hns_Layout",
       "width": 13,

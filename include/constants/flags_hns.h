@@ -851,14 +851,16 @@
 #define FLAG_PEWTER_GYM_NPC_TRADE_COMPLETED          0x301
 #define FLAG_OLIVINE_GYM_NPC_TRADE_COMPLETED         0x302
 #define FLAG_ENABLE_CONDITION                       0x303
-#define FLAG_UNUSED_36                              0x304
+#define FLAG_RECEIVED_STARLIT_SHARD                 0x304
 #define FLAG_HIDE_ECRUTEAK_THEATER_ALDER            0x305
 // IRIS trains at the DRAGON SHRINE once the CHAMPION has been beaten a second
 // time. Hide flags default to CLEAR, so the shrine's ON_TRANSITION computes
 // this from FLAG_IS_KANTO_CHAMPION rather than leaving her there on a new file.
 #define FLAG_HIDE_DRAGON_SHRINE_IRIS                0x306
 #define FLAG_UNUSED_39                              0x307
-#define HNS_UNUSED_COUNT                            40
+// Last free slot in this block is 0x307. Grow into the 0x4A6-0x4FF window that
+// HNS_EXTENDED_CONTENT_COUNT was reserved to reach, not downward past 0x308.
+#define HNS_UNUSED_COUNT                            39
 
 #define HNS_CONTENT_FLAGS_END                       0x308
 
