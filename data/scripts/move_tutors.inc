@@ -327,3 +327,94 @@ MoveTutor_AfterChooseBoxMon::
 	special CanTeachMoveBoxMon
 	waitstate
 	return
+
+MoveTutor_EventScript_ThunderWaveTutor_hns::
+	lock
+	faceplayer
+	move_tutor MOVE_THUNDER_WAVE, MoveTutor_Text_ThunderWaveTeach, MoveTutor_Text_ThunderWaveWhichMon, MoveTutor_EventScript_ThunderWaveDeclined_hns, MoveTutor_EventScript_ThunderWaveTaught_hns, 7500
+	release
+	end
+
+MoveTutor_EventScript_ThunderWaveDeclined_hns::
+	msgbox MoveTutor_Text_ThunderWaveDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_ThunderWaveTaught_hns::
+	msgbox MoveTutor_Text_ThunderWaveTaught, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_SoftboiledTutor_hns::
+	lock
+	faceplayer
+	move_tutor MOVE_SOFT_BOILED, MoveTutor_Text_SoftboiledTeach, MoveTutor_Text_SoftboiledWhichMon, MoveTutor_EventScript_SoftboiledDeclined_hns, MoveTutor_EventScript_SoftboiledTaught_hns, 1000
+	release
+	end
+
+MoveTutor_EventScript_SoftboiledDeclined_hns::
+	msgbox MoveTutor_Text_SoftboiledDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_SoftboiledTaught_hns::
+	msgbox MoveTutor_Text_SoftboiledTaught, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_HeatWaveTutor_hns::
+	lock
+	faceplayer
+	move_tutor MOVE_HEAT_WAVE, MoveTutor_Text_HeatWaveTeach, MoveTutor_Text_HeatWaveWhichMon, MoveTutor_EventScript_HeatWaveDeclined_hns, MoveTutor_EventScript_HeatWaveTaught_hns, 10000
+	release
+	end
+
+MoveTutor_EventScript_HeatWaveDeclined_hns::
+	msgbox MoveTutor_Text_HeatWaveDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_HeatWaveTaught_hns::
+	msgbox MoveTutor_Text_HeatWaveTaught, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_BideTutor_hns::
+	lock
+	faceplayer
+	move_tutor MOVE_BIDE, MoveTutor_Text_BideTeach, MoveTutor_Text_BideWhichMon, MoveTutor_EventScript_BideDeclined_hns, MoveTutor_EventScript_BideTaught_hns, 2500
+	release
+	end
+
+MoveTutor_EventScript_BideDeclined_hns::
+	msgbox MoveTutor_Text_BideDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_BideTaught_hns::
+	msgbox MoveTutor_Text_BideTaught, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_AncientPowerTutor_hns::
+	lock
+	faceplayer
+	goto_if_unset FLAG_DEFEATED_PEWTER_GYM, MoveTutor_EventScript_AncientPowerNotReady_hns
+	move_tutor MOVE_ANCIENT_POWER, MoveTutor_Text_AncientPowerTeach, MoveTutor_Text_AncientPowerWhichMon, MoveTutor_EventScript_AncientPowerDeclined_hns, MoveTutor_EventScript_AncientPowerTaught_hns, 0
+	release
+	end
+
+MoveTutor_EventScript_AncientPowerDeclined_hns::
+	msgbox MoveTutor_Text_AncientPowerDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_AncientPowerTaught_hns::
+	msgbox MoveTutor_Text_AncientPowerTaught, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_AncientPowerNotReady_hns::
+	msgbox MoveTutor_Text_AncientPowerNotReady_hns, MSGBOX_DEFAULT
+	release
+	end

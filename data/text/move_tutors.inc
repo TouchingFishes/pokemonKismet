@@ -455,3 +455,169 @@ MoveTutor_Text_MetalClawTaught:
 	.string "METAL CLAW is brute discipline\n"
 	.string "made manifest.\p"
 	.string "Just like my KINGLER's grip.$"
+
+MoveTutor_Text_ThunderWaveTeach:
+	.string "…Come closer, young one.\p"
+	.string "In battle, haste is the first\n"
+	.string "path to defeat.\p"
+	.string "To slow one's opponent is to\n"
+	.string "command the flow of time itself.\p"
+	.string "...\p"
+	.string "I am a sought after strategist.\n"
+	.string "I teach control above strength.\p"
+	.string "For 7500¥, I will guide your\n"
+	.string "POKéMON in THUNDER WAVE.\p"
+	.string "A technique of restraint and\n"
+	.string "control.\p"
+	.string "...\p"
+	.string "I accept these donations only to\n"
+	.string "maintain my life of training.$"
+
+MoveTutor_Text_ThunderWaveWhichMon:
+	.string "Good.\p"
+	.string "Now choose carefully.\n"
+	.string "Which POKéMON will learn patience?$"
+
+MoveTutor_Text_ThunderWaveDeclined:
+	.string "I see…\p"
+	.string "Then your path is still one of\n"
+	.string "urgency and noise.$"
+
+MoveTutor_Text_ThunderWaveTaught:
+	.string "Understand this well.\p"
+	.string "To paralyze is not to harm…\n"
+	.string "it is to control the rhythm of battle.\p"
+	.string "...\p"
+	.string "Walk slowly, and victory will\n"
+	.string "arrive before you do.$"
+
+MoveTutor_Text_SoftboiledTeach:
+	.string "Hello, there!\p"
+	.string "I've seen you about, but I never\n"
+	.string "had a chance to chat.\p"
+	.string "It must be good luck that brought\n"
+	.string "us together finally.\p"
+	.string "...\p"
+	.string "To celebrate, I could teach your\n"
+	.string "POKéMON SOFTBOILED.\p"
+	.string "For just ¥1000, of course.\n"
+	.string "What do you say?$"
+
+MoveTutor_Text_SoftboiledWhichMon:
+	.string "How lovely!\p"
+	.string "Which POKéMON shall receive\n"
+	.string "a little care?$"
+
+MoveTutor_Text_SoftboiledDeclined:
+	.string "Oh, I see…\p"
+	.string "I'll always be keeping an eye out\n"
+	.string "for you.\p"
+	.string "I hope we can chat again.$"
+
+MoveTutor_Text_SoftboiledTaught:
+	.string "There we are… all better.\p"
+	.string "SOFTBOILED is a gentle move,\n"
+	.string "but a very dependable one.\p"
+	.string "...\p"
+	.string "I wish you and your POKéMON\n"
+	.string "the very best.$"
+
+MoveTutor_Text_HeatWaveTeach:
+	.string "Ah, a visitor to the museum…\p"
+	.string "I have been studying ancient\n"
+	.string "climate records for years now.\p"
+	.string "There are patterns… disturbing ones.\p"
+	.string "Heat waves of immense intensity\n"
+	.string "once swept across this region.\p"
+	.string "Some believe they contributed to\n"
+	.string "the extinction of certain POKéMON.\p"
+	.string "...\p"
+	.string "For 10000¥, I can teach your\n"
+	.string "POKéMON HEAT WAVE.\p"
+	.string "A force of overwhelming thermal\n"
+	.string "energy.$"
+
+MoveTutor_Text_HeatWaveWhichMon:
+	.string "Very well.\p"
+	.string "Which POKéMON shall I subject\n"
+	.string "to this phenomenon?$"
+
+MoveTutor_Text_HeatWaveDeclined:
+	.string "I see…\p"
+	.string "Some truths are easier to ignore\n"
+	.string "than to study.$"
+
+MoveTutor_Text_HeatWaveTaught:
+	.string "A fascinating result…\p"
+	.string "HEAT WAVE is not merely an attack.\n"
+	.string "It is a remnant of ancient climate.\p"
+	.string "...\p"
+	.string "I hope you will consider what it\n"
+	.string "represents.$"
+
+MoveTutor_Text_BideTeach:
+	.string "The waters around SPROUT TOWER…\n"
+	.string "they are never truly still.\p"
+	.string "Even when calm, they gather\n"
+	.string "strength beneath the surface.\p"
+	.string "A POKéMON must learn the same.\p"
+	.string "To endure… to wait… and then\n"
+	.string "return all it has received.\p"
+	.string "This is the way of BIDE.\p"
+	.string "For a humble donation of ¥2500,\n"
+	.string "shall I teach it to your POKéMON?$"
+
+MoveTutor_Text_BideWhichMon:
+	.string "Very well…\p"
+	.string "Which POKéMON will learn\n"
+	.string "to endure in silence?$"
+
+MoveTutor_Text_BideDeclined:
+	.string "Patience cannot be rushed.\p"
+	.string "Return when you are ready\n"
+	.string "to wait.$"
+
+MoveTutor_Text_BideTaught:
+	.string "Remember…\p"
+	.string "Power is not always shown\n"
+	.string "in the moment.\p"
+	.string "Those who wait… strike\n"
+	.string "with greater force.$"
+
+MoveTutor_Text_AncientPowerNotReady_hns:
+	.string "Ah… a curious visitor.\p"
+	.string "Our MUSEUM's exhibits hold great power,\n"
+	.string "but not all are ready to wield it.\p"
+	.string "Prove your strength against BROCK,\n"
+	.string "then return.$"
+
+MoveTutor_Text_AncientPowerTeach:
+	.string "Ah… a discerning visitor.\p"
+	.string "These fossils you see in our MUSEUM\n"
+	.string "are relics of a far older world.\p"
+	.string "Though ages have passed,\n"
+	.string "their power has not faded.\p"
+	.string "The PEWTER GYM LEADER, BROCK,\n"
+	.string "is a dear friend of mine,\l"
+	.string "a gentleman of admirable taste\l"
+	.string "in such ancient matters.\p"
+	.string "You have proven yourself against\n"
+	.string "him…\p"
+	.string "Perhaps you are ready to inherit\n"
+	.string "the power I seek to remember.\p"
+	.string "Shall I teach your POKéMON\n"
+	.string "ANCIENT POWER?$"
+
+MoveTutor_Text_AncientPowerWhichMon:
+	.string "Very good.\p"
+	.string "Which POKéMON shall be entrusted\n"
+	.string "with this ancient force?$"
+
+MoveTutor_Text_AncientPowerDeclined:
+	.string "I see…\p"
+	.string "Not all are inclined to heed\n"
+	.string "the call of antiquity.$"
+
+MoveTutor_Text_AncientPowerTaught:
+	.string "Power from another age…\p"
+	.string "May it guide you forward.$"
