@@ -4734,6 +4734,15 @@ static const struct WeekDayVisibility sWeekDayVisibility[] =
     { .dayMask       = WEEKDAY_BIT(WEEKDAY_FRI),
       .hideFlag      = FLAG_HIDE_UNION_CAVE_LAPRAS_TODAY,
       .requiresClear = FLAG_HIDE_UNION_CAVE_LAPRAS },
+
+    // MORI and SARI visit their grandfather in CHERRYGROVE at weekends, but only
+    // once the player has beaten the CHAMPION a second time. This is the first
+    // use of requiresSet, and the reason it exists: an object event reads exactly
+    // one flag, so "weekend AND story progress" has to be folded into one bit
+    // somewhere, and folding it here keeps both objects declarative.
+    { .dayMask     = WEEKDAYS_WEEKEND,
+      .hideFlag    = FLAG_HIDE_CHERRYGROVE_GRANDKIDS,
+      .requiresSet = FLAG_IS_KANTO_CHAMPION },
 };
 
 void UpdateWeekDayObjectFlags(void)

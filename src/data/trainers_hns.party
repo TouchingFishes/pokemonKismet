@@ -20342,3 +20342,155 @@ Timid Nature
 - Air Slash
 - Dazzling Gleam
 - Aura Sphere
+
+=== TRAINER_MORI_HNS ===
+Name: MORI
+Class: School Kid Hns
+Pic: School Kid M
+Gender: Male
+Music: Hg Champion
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Ace Pokemon
+Items: Full Restore / Full Restore
+
+Alakazam @ Life Orb
+Ability: Magic Guard
+Level: Badge+14
+EVs: 4 HP / 252 SpA / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Calm Mind
+
+Gengar @ Black Sludge
+Ability: Levitate
+Level: Badge+14
+EVs: 4 HP / 252 SpA / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Shadow Ball
+- Sludge Bomb
+- Thunderbolt
+- Destiny Bond
+
+Scizor @ Metal Coat
+Ability: Swarm
+Level: Badge+15
+EVs: 252 HP / 252 Atk / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Adamant Nature
+- Swords Dance
+- Bullet Punch
+- X Scissor
+- Roost
+
+Snorlax @ Leftovers
+Ability: Immunity
+Level: Badge+15
+EVs: 252 HP / 252 Atk / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Adamant Nature
+- Curse
+- Body Slam
+- Earthquake
+- Rest
+
+Tyranitar @ Chople Berry
+Ability: Unnerve
+Level: Badge+16
+EVs: 252 HP / 252 Atk / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Adamant Nature
+- Dragon Dance
+- Crunch
+- Stone Edge
+- Earthquake
+
+Dragonite @ Sitrus Berry
+Ability: Inner Focus
+Level: Badge+18
+EVs: 4 HP / 252 Atk / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Adamant Nature
+- Dragon Dance
+- Outrage
+- Earthquake
+- Extreme Speed
+
+=== TRAINER_SARI_HNS ===
+Name: SARI
+Class: School Kid Hns
+Pic: School Kid F
+Gender: Female
+Music: Hg Champion
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Ace Pokemon
+Items: Full Restore / Full Restore
+
+Claydol @ Leftovers
+Ability: Levitate
+Level: Badge+14
+EVs: 252 HP / 4 Atk / 252 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Careful Nature
+- Stealth Rock
+- Earthquake
+- Psychic
+- Rapid Spin
+
+Xatu @ Colbur Berry
+Ability: Magic Bounce
+Level: Badge+14
+EVs: 252 HP / 4 SpA / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Psychic
+- Air Slash
+- Thunder Wave
+- Roost
+
+Starmie @ Life Orb
+Ability: Analytic
+Level: Badge+15
+EVs: 4 HP / 252 SpA / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Hydro Pump
+- Ice Beam
+- Thunderbolt
+- Recover
+
+Lapras @ Chesto Berry
+Ability: Water Absorb
+Level: Badge+15
+EVs: 252 HP / 252 SpA / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Modest Nature
+- Ice Beam
+- Surf
+- Thunderbolt
+- Rest
+
+Machamp @ Expert Belt
+Ability: Guts
+Level: Badge+16
+EVs: 252 HP / 252 Atk / 4 SpD
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Adamant Nature
+- Dynamic Punch
+- Stone Edge
+- Ice Punch
+- Bullet Punch
+
+Togekiss @ Life Orb
+Ability: Hustle
+Level: Badge+18
+EVs: 4 HP / 252 SpA / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Timid Nature
+- Nasty Plot
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere

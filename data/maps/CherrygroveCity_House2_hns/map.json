@@ -15,7 +15,7 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M_HNS",
       "x": 5,
       "y": 4,
       "elevation": 0,
@@ -26,6 +26,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CherrygroveCity_House2_EventScript_GuideGent",
       "flag": "FLAG_HIDE_CHERRYGROVE_GUIDE_GENT_HOUSE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CLAYDOL)",
+      "x": 9,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherrygroveCity_House2_EventScript_Claydol",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_HNS",
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherrygroveCity_House2_EventScript_Mori",
+      "flag": "FLAG_HIDE_CHERRYGROVE_GRANDKIDS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL_HNS",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherrygroveCity_House2_EventScript_Sari",
+      "flag": "FLAG_HIDE_CHERRYGROVE_GRANDKIDS"
     }
   ],
   "warp_events": [

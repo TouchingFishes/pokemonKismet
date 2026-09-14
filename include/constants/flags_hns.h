@@ -1239,8 +1239,18 @@
 #define FLAG_HIDE_UNION_CAVE_LAPRAS_TODAY           (HNS_EXTENDED_CONTENT_START + 315)
 
 
+// MORI and SARI, the CHERRYGROVE guide's grandchildren. One flag for both: the
+// day-of-week table recomputes it on every map load, and its requiresSet field
+// adds "and only once the player is CHAMPION a second time" - so "weekend AND
+// story flag" is expressible in the single flag an object event can read. See
+// sWeekDayVisibility in field_specials.c.
+//
+// First flag taken from the 0x4A6-0x4FF window the block below was reserved to
+// grow into; the content block (ends 0x307) is full.
+#define FLAG_HIDE_CHERRYGROVE_GRANDKIDS             (HNS_EXTENDED_CONTENT_START + 316)
+
 //just fyi HNS_EXTENDED_CONTENT_START is 0x36A
-#define HNS_EXTENDED_CONTENT_COUNT                  316
+#define HNS_EXTENDED_CONTENT_COUNT                  317
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)
 // 0x4A6–0x4FF remaining reserved for future expansion
 
