@@ -397,3 +397,83 @@ OlivineCity_Text_SuperNerdFossils:
     .string "but also deeply reckless.\n"
     .string "Those species went extinct\l"
     .string "for a reason, you know.$"
+
+OlivineCity_EventScript_RetiredCaptain::
+    lock
+    faceplayer
+    goto_if_set FLAG_GOT_CAPTAIN_TROPIUS, OlivineCity_EventScript_RetiredCaptainAfter
+    msgbox OlivineCity_Text_RetiredCaptainIntro, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, OlivineCity_EventScript_RetiredCaptainDeclined
+    closemessage
+    getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OlivineCity_EventScript_RetiredCaptainPartyFull
+    msgbox OlivineCity_Text_RetiredCaptainGift, MSGBOX_DEFAULT
+    givemon SPECIES_TROPIUS, 18, ITEM_NONE
+    msgbox OlivineCity_Text_RetiredCaptainGiftDone, MSGBOX_DEFAULT
+    setflag FLAG_GOT_CAPTAIN_TROPIUS
+    closemessage
+    release
+    end
+
+OlivineCity_EventScript_RetiredCaptainAfter::
+    msgbox OlivineCity_Text_RetiredCaptainAfter, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
+OlivineCity_Text_RetiredCaptainIntro:
+	.string "Heh… you've got the look\n"
+	.string "of a traveler about you.\p"
+	.string "I used to be the same.\n"
+	.string "Sailed every sea there is…\n"
+	.string "JOHTO, HOENN… everywhere.\p"
+	.string "But these old legs?\n"
+	.string "They're done with adventure.\p"
+	.string "My old partner still isn't, though.\p"
+	.string "See that TROPIUS next to me?\n"
+	.string "She's not alone anymore.\p"
+	.string "Her younger sibling hatched\n"
+	.string "not long ago.\p"
+	.string "Full of energy. Always tugging\n"
+	.string "at the sails, wanting to fly.\p"
+	.string "I can't take them anymore…\n"
+	.string "but maybe you can.\p"
+	.string "What do you say, kid?\n"
+	.string "Take the little one with you.$"
+
+OlivineCity_EventScript_RetiredCaptainDeclined::
+    msgbox OlivineCity_Text_RetiredCaptainDeclined, MSGBOX_DEFAULT
+    release
+    end
+
+OlivineCity_EventScript_RetiredCaptainPartyFull::
+    msgbox OlivineCity_Text_RetiredCaptainPartyFull, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
+OlivineCity_Text_RetiredCaptainGift:
+	.string "Heh… careful now.\n"
+	.string "It's still learning the winds.$"
+
+OlivineCity_Text_RetiredCaptainGiftDone:
+	.string "Good… good.\p"
+	.string "Let it see the world properly.\n"
+	.string "That's all an old sailor can ask.$"
+
+OlivineCity_Text_RetiredCaptainAfter:
+	.string "That young TROPIUS doing alright?\p"
+	.string "Good.\n"
+	.string "It was born to move forward.$"
+
+OlivineCity_Text_RetiredCaptainDeclined:
+    .string "Heh… I get it.\p"
+    .string "Not every sailor is ready to\n"
+    .string "carry another soul aboard.$"
+
+OlivineCity_Text_RetiredCaptainPartyFull:
+	.string "Hah! A full crew already?\p"
+	.string "Come back when you've got\n"
+	.string "room for one more.\p"
+	.string "That little one's got nowhere\n"
+	.string "else to be… for now.$"

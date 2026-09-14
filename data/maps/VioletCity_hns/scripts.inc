@@ -539,3 +539,21 @@ VioletCity_EventScript_Lotad::
 
 VioletCity_Text_Lotad:
 	.string "LOTAD: Lod tae-tae!$"
+
+VioletCity_EventScript_Schoolboy::
+	lock
+	faceplayer
+	msgbox VioletCity_Text_Schoolboy, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+VioletCity_Text_Schoolboy:
+	.string "CLEFAIRY is an evolved POKéMON.\p"
+	.string "I was amazed by PROF.ELM's\n"
+	.string "findings.\p" 
+	.string "He's so famous for his research\n"
+	.string "on POKéMON evolution.\p"
+	.string "…sigh…\p"
+	.string "I wish I could be a researcher\n"
+	.string "like him…$"
