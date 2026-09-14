@@ -34,3 +34,16 @@ NewBarkTown_House1_Text_Neighbor:
 	.string "She really loves POKéMON!\p"
 	.string "But then, so do I!$"
 
+
+NewBarkTown_House1_EventScript_Butterfree::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_BUTTERFREE, CRY_MODE_NORMAL
+	msgbox NewBarkTown_House1_Text_Butterfree, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+NewBarkTown_House1_Text_Butterfree:
+	.string "BUTTERFREE: Freeh!$"

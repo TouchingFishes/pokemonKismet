@@ -513,3 +513,29 @@ VioletCity_Text_GrampsExtra:
 	.string "thirty years.\p"
 	.string "Looks like the boy's finally\l"
 	.string "struck out on his own.$"
+
+VioletCity_EventScript_Clefairy::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_CLEFAIRY, CRY_MODE_NORMAL
+	msgbox VioletCity_Text_Clefairy, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+VioletCity_Text_Clefairy:
+	.string "CLEFAIRY: Pyuuu-Paaaah.$"
+
+VioletCity_EventScript_Lotad::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_LOTAD, CRY_MODE_NORMAL
+	msgbox VioletCity_Text_Lotad, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+VioletCity_Text_Lotad:
+	.string "LOTAD: Lod tae-tae!$"

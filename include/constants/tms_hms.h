@@ -70,7 +70,7 @@
     F(BEAT_UP)       /* TM64 - Stormy Beach (fork; not placed yet) */ \
     F(COSMIC_POWER)  /* TM65 - Ruins of Alph (fork; not placed yet) */ \
     F(SIGNAL_BEAM)   /* TM66 - New Bark Town (fork; not placed yet) */ \
-    F(SWEET_SCENT)   /* TM67 - Ilex Forest / Route 34 Gate (fork; not placed yet) */ \
+    F(SWEET_SCENT)   /* TM67 - Ilex Forest / Route 34 Gate done */ \
     F(FIRE_PUNCH)    /* TM68 - Goldenrod City Department Store 5F done */ \
     F(ZAP_CANNON)    /* TM69 - Power Plant (fork; not placed yet) */ \
     F(FALSE_SWIPE)   /* TM70 - Goldenrod City Department Store 5F, Ilex Forest done */ \

@@ -184,3 +184,48 @@ CeladonCity_Text_YoungsterExtra:
 	.string "Was she even awake for it?\p"
 	.string "Anyway, that back door is still a\n"
 	.string "secret. Don't tell anyone.$"
+
+CeladonCity_EventScript_Meganium::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_MEGANIUM, CRY_MODE_NORMAL
+	msgbox CeladonCity_Text_Meganium, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+CeladonCity_Text_Meganium::
+	.string "MEGANIUM: GYAAAAA…$"
+
+CeladonCity_EventScript_GrimerRanger::
+	msgbox CeladonCity_Text_RangerF, MSGBOX_NPC
+	end
+
+CeladonCity_Text_RangerF:
+	.string "GRIMER have been appearing lately.\p"
+	.string "See that pond out in front of the\n"
+	.string "house? GRIMER live there now.\p"
+	.string "Where did they come from? This is\n"
+	.string "a serious problem…$"
+
+CeladonCity_EventScript_OldWoman::
+	msgbox CeladonCity_Text_OldWomanIntro, MSGBOX_NPC
+	end
+
+CeladonCity_Text_OldWomanIntro::
+	.string "Oh, hello, dear…\p"
+	.string "I don't have much interest in the busy\n"
+	.string "shops or the loud city streets.\p"
+	.string "I prefer sitting right here…\n"
+	.string "just watching my MEGANIUM wander.\p"
+	.string "It moves so gently through the flowers…\p"
+	.string "Sometimes it stops and just looks at me.\p"
+	.string "Other times it just keeps walking,\n"
+	.string "like it's thinking about something far away.\p"
+	.string "...\p"
+	.string "People say strong POKéMON should be\n"
+	.string "out battling all the time.\p"
+	.string "But MEGANIUM… it just feels calm.\p"
+	.string "Like the world slows down a little\n"
+	.string "when it's nearby.$"

@@ -350,3 +350,50 @@ OlivineCity_Text_Sailor2Extra:
 	.string "One of the strongest, they said.\p"
 	.string "Whoever writes those rankings has\n"
 	.string "probably never met you.$"
+
+OlivineCity_EventScript_Tropius::
+    lock
+    faceplayer
+    waitse
+    playmoncry SPECIES_TROPIUS, CRY_MODE_NORMAL
+    msgbox OlivineCity_Text_Tropius, MSGBOX_DEFAULT
+    waitmoncry
+    release
+    end
+
+OlivineCity_Text_Tropius:
+	.string "A large dinosaur-like\n"
+	.string "POKéMON stands by the apartments,\n"
+	.string "gazing out at the sea.\p"
+	.string "The ocean breeze passes through\n"
+	.string "the leaves on its neck.\p"
+	.string "It closes its eyes for a moment…\p"
+	.string "Then turns to you slowly.\p"
+	.string "Its gaze is bright, but calm.\p"
+	.string "It lets out a soft, steady rumble.\p"
+	.string "It gently lowers its wings\n"
+	.string "and settles into place.\p"
+	.string "It seems to say:\p"
+	.string "…I've seen enough of the world.\n"
+	.string "This is a good place to rest.$"
+
+OlivineCity_EventScript_SuperNerd::
+    lock
+    faceplayer
+    msgbox OlivineCity_Text_SuperNerdFossils, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
+OlivineCity_Text_SuperNerdFossils:
+    .string "Have you heard the rumors\n"
+    .string "about the Whirl Islands?\l"
+    .string "Some madman has been\n"
+    .string "releasing FOSSIL POKéMON\l"
+    .string "into the caves there!\l"
+    .string "OMANYTE... KABUTO...\l"
+    .string "As a scientist, I find it\n"
+    .string "utterly fascinating--\l"
+    .string "but also deeply reckless.\n"
+    .string "Those species went extinct\l"
+    .string "for a reason, you know.$"

@@ -570,3 +570,7 @@ CherryGroveCity_Movement_Silver_Leave2:
 	walk_fast_left
 	walk_fast_left
 	step_end
+
+CherrygroveCity_EventScript_ShoalShell::
+	finditem ITEM_SHOAL_SHELL
+	end
