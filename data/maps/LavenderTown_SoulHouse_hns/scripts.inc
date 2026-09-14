@@ -41,3 +41,29 @@ SoulHouse_Text_Granny:
 	.string "The POKéMON that lived with me…\p"
 	.string "I loved them like my\n"
 	.string "grandchildren…$"
+
+LavenderTownSoulHouse_EventScript_Agatha::
+	trainerbattle_single TRAINER_AGATHA_HNS, LavenderTownSoulHouse_Text_AgathaSeen, LavenderTownSoulHouse_Text_AgathaBeaten
+	msgbox LavenderTownSoulHouse_Text_AgathaAfter, MSGBOX_AUTOCLOSE
+	end
+
+LavenderTownSoulHouse_Text_AgathaSeen:
+	.string "AGATHA: Hello, child.\p"
+	.string "My name is AGATHA.\p"
+	.string "I fought for years as a member of the\nELITE FOUR.\p"
+	.string "…………\p"
+	.string "Have you come to mourn a POKéMON?\p"
+	.string "It might not be here any longer.\p"
+	.string "MR.FUJI kept many of the graves\nelsewhere after the radio company\ltook over.\p"
+	.string "…………\p"
+	.string "He could have fought to preserve the\ntower! But he wouldn't get involved.\lToo scared of abusing his influence.\p"
+	.string "That old fool…\p"
+	.string "Power is meant to be used!\p"
+	.string "You clearly understand me.\p"
+	.string "I'll show you what a powerful trainer\ncan do!$"
+
+LavenderTownSoulHouse_Text_AgathaBeaten:
+	.string "Oh, my!$"
+
+LavenderTownSoulHouse_Text_AgathaAfter:
+	.string "I expect great things from you, if\nyou will them.$"

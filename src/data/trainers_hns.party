@@ -20638,3 +20638,117 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 SPECIES_KABUTO
 Level: 25
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_LORELEI_HNS ===
+Name: LORELEI
+Class: Ex Elite Hns
+Pic: Elite Four Lorelei Frlg
+Gender: Female
+Music: Elite Four
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_CLOYSTER
+Level: Badge+3
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_TOXIC
+- MOVE_ICE_BEAM
+- MOVE_DIVE
+- MOVE_SPIKES
+
+SPECIES_SLOWBRO
+Level: Badge+4
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_PSYCHIC
+- MOVE_FLAMETHROWER
+- MOVE_SURF
+- MOVE_ICE_BEAM
+
+SPECIES_EMPOLEON
+Level: Badge+4
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_ROCK_TOMB
+- MOVE_DRILL_PECK
+- MOVE_SURF
+- MOVE_ICE_BEAM
+
+SPECIES_GLACEON
+Level: Badge+2
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_SHADOW_BALL
+- MOVE_BLIZZARD
+- MOVE_ICE_BEAM
+- MOVE_TOXIC
+
+SPECIES_JYNX
+Level: Badge+5
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_PSYCHIC
+- MOVE_LOVELY_KISS
+- MOVE_SHADOW_BALL
+- MOVE_BLIZZARD
+
+SPECIES_LAPRAS
+Level: Badge+5
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_HYDRO_PUMP
+- MOVE_PSYCHIC
+- MOVE_BLIZZARD
+- MOVE_THUNDER
+
+=== TRAINER_AGATHA_HNS ===
+Name: AGATHA
+Class: Ex Elite Hns
+Pic: Elite Four Agatha Frlg
+Gender: Female
+Music: Elite Four
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_GENGAR
+Level: Badge+5
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_SHADOW_BALL
+- MOVE_THUNDERBOLT
+- MOVE_HYPNOSIS
+- MOVE_ICE_PUNCH
+
+SPECIES_CHANDELURE
+Level: Badge+4
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_FLAMETHROWER
+- MOVE_SHADOW_BALL
+- MOVE_WILL_O_WISP
+- MOVE_CONFUSE_RAY
+
+SPECIES_DUSCLOPS
+Level: Badge+4
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_SHADOW_PUNCH
+- MOVE_FIRE_PUNCH
+- MOVE_ICE_PUNCH
+- MOVE_THUNDER_PUNCH
+
+SPECIES_CROBAT
+Level: Badge+5
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_RAZOR_WIND
+- MOVE_SLUDGE_BOMB
+- MOVE_FAINT_ATTACK
+- MOVE_QUICK_ATTACK
+
+SPECIES_ARBOK
+Level: Badge+7
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_FLAMETHROWER
+- MOVE_POISON_TAIL
+- MOVE_EARTHQUAKE
+- MOVE_CRUNCH
+
+SPECIES_GENGAR
+Level: Badge+9
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- MOVE_DREAM_EATER
+- MOVE_SUBSTITUTE
+- MOVE_HYPNOSIS
+- MOVE_GIGA_DRAIN

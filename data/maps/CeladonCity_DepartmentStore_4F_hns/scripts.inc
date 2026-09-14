@@ -26,3 +26,25 @@ CeladonDeptStore4F_Text_Youngster:
 CeladonDeptStore4F_Text_Directory:
 	.string "Express Yourself With Gifts!\p"
 	.string "4F: WISEMAN GIFTS$"
+
+CeladonDept_EventScript_Lorelei::
+	trainerbattle_single TRAINER_LORELEI_HNS, CeladonDept_Text_LoreleiSeen, CeladonDept_Text_LoreleiBeaten
+	msgbox CeladonDept_Text_LoreleiAfter, MSGBOX_AUTOCLOSE
+	end
+
+CeladonDept_Text_LoreleiSeen:
+	.string "LORELEI: Hello there, trainer. I am\nLORELEI.\p"
+	.string "I am just buying some essentials.\p"
+	.string "And what are you doing here?\p"
+	.string "…………\p"
+	.string "So you battled the ELITE FOUR?\p"
+	.string "I hope you took KAREN down a peg.\p"
+	.string "…………You're the new CHAMPION. I'm\nimpressed.\p"
+	.string "Fascinating, allow me to test you and\nyour POKéMON.\p"
+	.string "Let's battle! I won't hold back!$"
+
+CeladonDept_Text_LoreleiBeaten:
+	.string "As expected of the CHAMPION!$"
+
+CeladonDept_Text_LoreleiAfter:
+	.string "You're as good as I thought!$"
