@@ -45,7 +45,7 @@
       "flag": "FLAG_HIDE_GUIDE_GENT_CHERRYGROVE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN_HNS",
       "x": 18,
       "y": 19,
       "elevation": 0,
@@ -71,7 +71,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER_HNS",
       "x": 39,
       "y": 11,
       "elevation": 0,
@@ -85,8 +85,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_CORSOLA",
-      "x": 25,
-      "y": 9,
+      "x": 19,
+      "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -98,8 +98,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STARYU",
-      "x": 25,
-      "y": 16,
+      "x": 13,
+      "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -112,7 +112,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KRABBY",
       "x": 27,
-      "y": 20,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,

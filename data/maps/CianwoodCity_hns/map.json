@@ -49,7 +49,7 @@
       "flag": "FLAG_HIDE_CIANWOOD_EUSINE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M_HNS",
       "x": 20,
       "y": 36,
       "elevation": 0,
@@ -89,7 +89,7 @@
     },
     {
       "local_id": "LOCALID_CIANWOOD_CHUCKSWIFE",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F_HNS",
       "x": 18,
       "y": 47,
       "elevation": 0,
