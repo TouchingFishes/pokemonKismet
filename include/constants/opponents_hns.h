@@ -813,8 +813,10 @@
 #define TRAINER_NATSUMI_2_HNS                         778
 #define TRAINER_MORI_HNS                              779
 #define TRAINER_SARI_HNS                              780
+#define TRAINER_MELISSA_HNS                           781
+#define TRAINER_VIOLET_HNS                            782
 
-#define TRAINERS_COUNT_HNS                       781
+#define TRAINERS_COUNT_HNS                       783
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

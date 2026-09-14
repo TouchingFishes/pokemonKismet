@@ -20494,3 +20494,42 @@ Timid Nature
 - Air Slash
 - Dazzling Gleam
 - Aura Sphere
+
+=== TRAINER_MELISSA_HNS ===
+Name: MELISSA
+Class: Aroma Lady Hns
+Pic: Aroma Lady Hns
+Gender: Female
+Music: Hg Girl 1
+Double Battle: No
+AI: Check Bad Move
+
+Breloom
+Level: 59
+
+Vileplume
+Level: 57
+
+Sunflora
+Level: 60
+
+=== TRAINER_VIOLET_HNS ===
+Name: VIOLET
+Class: Aroma Lady Hns
+Pic: Aroma Lady Hns
+Gender: Female
+Music: Hg Girl 1
+Double Battle: No
+AI: Check Bad Move
+
+Tropius
+Level: 58
+
+Tangela
+Level: 56
+
+Tangela
+Level: 56
+
+SPECIES_WORMADAM_PLANT
+Level: 59
