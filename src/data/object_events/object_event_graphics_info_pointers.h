@@ -593,6 +593,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac_h
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Collector_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Alder_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Iris_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meara_hns;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -1158,6 +1159,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_COLLECTOR_HNS] = &gObjectEventGraphicsInfo_Collector_hns,
     [OBJ_EVENT_GFX_ALDER_HNS] = &gObjectEventGraphicsInfo_Alder_hns,
     [OBJ_EVENT_GFX_IRIS_HNS] = &gObjectEventGraphicsInfo_Iris_hns,
+    [OBJ_EVENT_GFX_MEARA_HNS] = &gObjectEventGraphicsInfo_Meara_hns,
     // HnS protagonists
     [OBJ_EVENT_GFX_GOLD_NORMAL_HNS] =       &gObjectEventGraphicsInfo_GoldNormal_hns,
     [OBJ_EVENT_GFX_GOLD_MACH_BIKE_HNS] =    &gObjectEventGraphicsInfo_GoldMachBike_hns,

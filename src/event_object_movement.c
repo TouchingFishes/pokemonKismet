@@ -622,6 +622,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Collector_hns, OBJ_EVENT_PAL_TAG_COLLECTOR_HNS},
     {gObjectEventPal_Alder_hns, OBJ_EVENT_PAL_TAG_ALDER_HNS},
     {gObjectEventPal_Iris_hns, OBJ_EVENT_PAL_TAG_IRIS_HNS},
+    {gObjectEventPal_Meara_hns, OBJ_EVENT_PAL_TAG_MEARA_HNS},
+    {gObjectEventPal_SuperNerd_hns, OBJ_EVENT_PAL_TAG_SUPER_NERD_HNS},
+    {gObjectEventPal_BugCatcher_hns, OBJ_EVENT_PAL_TAG_BUG_CATCHER_HNS},
 #endif // IS_HNS
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},

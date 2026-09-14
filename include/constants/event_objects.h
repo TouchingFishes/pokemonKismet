@@ -628,7 +628,8 @@
 #define OBJ_EVENT_GFX_COLLECTOR_HNS             588
 #define OBJ_EVENT_GFX_ALDER_HNS                 589
 #define OBJ_EVENT_GFX_IRIS_HNS                  590
-#define NUM_OBJ_EVENT_GFX                        591
+#define OBJ_EVENT_GFX_MEARA_HNS                 591
+#define NUM_OBJ_EVENT_GFX                        592
 
 
 // These are dynamic object gfx ids.
@@ -864,6 +865,9 @@
 #define OBJ_EVENT_PAL_TAG_COLLECTOR_HNS             0x11C6
 #define OBJ_EVENT_PAL_TAG_ALDER_HNS                 0x11C7
 #define OBJ_EVENT_PAL_TAG_IRIS_HNS                  0x11C8
+#define OBJ_EVENT_PAL_TAG_MEARA_HNS                 0x11C9
+#define OBJ_EVENT_PAL_TAG_SUPER_NERD_HNS               0x11CA
+#define OBJ_EVENT_PAL_TAG_BUG_CATCHER_HNS              0x11CB
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
