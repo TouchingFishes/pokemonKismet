@@ -866,8 +866,6 @@
 #define OBJ_EVENT_PAL_TAG_ALDER_HNS                 0x11C7
 #define OBJ_EVENT_PAL_TAG_IRIS_HNS                  0x11C8
 #define OBJ_EVENT_PAL_TAG_MEARA_HNS                 0x11C9
-#define OBJ_EVENT_PAL_TAG_SUPER_NERD_HNS               0x11CA
-#define OBJ_EVENT_PAL_TAG_BUG_CATCHER_HNS              0x11CB
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
