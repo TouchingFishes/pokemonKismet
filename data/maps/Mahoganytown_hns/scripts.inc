@@ -213,6 +213,7 @@ MahoganyTown_EventScript_Lass::
 	lock
 	faceplayer
 	msgbox MahoganyTown_Text_Lass, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE07_GET, MahoganyTown_EventScript_LassExtra
 	closemessage
 	release
 	end
@@ -317,3 +318,15 @@ ElmPhoneRadioTowerRocketTakeoverText:
 	.string "Sorry to bug you.\n"
 	.string "Take care!$"
 
+
+MahoganyTown_EventScript_LassExtra::
+	msgbox MahoganyTown_Text_LassExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahoganyTown_Text_LassExtra:
+	.string "So you beat PRYCE?\p"
+	.string "That's very impressive!\p"
+	.string "He's run this GYM since my\n"
+	.string "mother was a little girl.$"

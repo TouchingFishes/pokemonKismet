@@ -154,6 +154,7 @@ EcruteakCity_EventScript_Lass::
 	lock
 	faceplayer
 	msgbox EcruteakCity_Text_Lass1, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE04_GET, EcruteakCity_EventScript_LassExtra
 	closemessage
 	release
 	end
@@ -381,3 +382,14 @@ EcruteakCity_Text_BurnedTowerSign:
 	.string "It was destroyed by a mysterious\n"
 	.string "fire.\p"
 	.string "Please stay away, as it is unsafe.$"
+
+EcruteakCity_EventScript_LassExtra::
+	msgbox EcruteakCity_Text_LassExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+EcruteakCity_Text_LassExtra:
+	.string "You've got the FOGBADGE!\p"
+	.string "MORTY probably saw that coming.\n"
+	.string "He sees most things.$"

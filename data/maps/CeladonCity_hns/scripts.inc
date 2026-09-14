@@ -51,7 +51,12 @@ CeladonCity_EventScript_CreepGramps::
 	end
 
 CeladonCity_EventScript_Youngster::
-	msgbox CeladonCity_Text_Youngster1, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox CeladonCity_Text_Youngster1, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE12_GET, CeladonCity_EventScript_YoungsterExtra
+	closemessage
+	release
 	end
 
 CeladonCity_EventScript_Youngster2::
@@ -167,3 +172,15 @@ CeladonCity_Text_TrainerTips:
 	.string "fire and water.\p"
 	.string "Get your items at CELADON DEPT.\n"
 	.string "STORE!$"
+
+CeladonCity_EventScript_YoungsterExtra::
+	msgbox CeladonCity_Text_YoungsterExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CeladonCity_Text_YoungsterExtra:
+	.string "You beat ERIKA?\p"
+	.string "Was she even awake for it?\p"
+	.string "Anyway, that back door is still a\n"
+	.string "secret. Don't tell anyone.$"

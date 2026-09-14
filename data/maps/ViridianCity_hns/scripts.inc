@@ -67,7 +67,12 @@ ViridianCity_EventScript_FisherAfter::
 	end
 
 ViridianCity_EventScript_Youngster::
-	msgbox ViridianCity_Text_Youngster, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox ViridianCity_Text_Youngster, MSGBOX_DEFAULT
+	goto_if_set FLAG_IS_CHAMPION, ViridianCity_EventScript_YoungsterExtra
+	closemessage
+	release
 	end
 
 ViridianCity_EventScript_CitySign::
@@ -157,3 +162,15 @@ ViridianCity_Text_WelcomeSign:
 ViridianCity_Text_TrainerHouseSign:
 	.string "TRAINER HOUSE\p"
 	.string "The Club for Top Trainer Battles$"
+
+ViridianCity_EventScript_YoungsterExtra::
+	msgbox ViridianCity_Text_YoungsterExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+ViridianCity_Text_YoungsterExtra:
+	.string "You're the CHAMPION!\p"
+	.string "And you still went poking around\n"
+	.string "VIRIDIAN FOREST for loose items.\p"
+	.string "So did I. Found a POTION once.$"

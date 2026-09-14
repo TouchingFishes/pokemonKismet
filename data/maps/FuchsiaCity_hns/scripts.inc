@@ -77,7 +77,12 @@ FuchsiaCity_EventScript_Youngster::
 	end
 
 FuchsiaCity_EventScript_PokefanM::
-	msgbox FuchsiaCity_Text_PokefanM, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox FuchsiaCity_Text_PokefanM, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE14_GET, FuchsiaCity_EventScript_PokefanMExtra
+	closemessage
+	release
 	end
 
 FuchsiaCity_EventScript_Teacher::
@@ -138,3 +143,14 @@ FuchsiaCity_Text_NoLitteringSign:
 	.string "No littering.\p"
 	.string "Please take your waste with you.$"
 
+
+FuchsiaCity_EventScript_PokefanMExtra::
+	msgbox FuchsiaCity_Text_PokefanMExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_Text_PokefanMExtra:
+	.string "JANINE lost to you?\p"
+	.string "KOGA'll hear about it at the LEAGUE.\p"
+	.string "Fathers always hear.$"

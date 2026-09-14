@@ -45,7 +45,12 @@ SaffronCity_EventScript_Lass1B::
 	end
 
 SaffronCity_EventScript_Lass2::
-	msgbox SaffronCity_Text_Lass2, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox SaffronCity_Text_Lass2, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE13_GET, SaffronCity_EventScript_Lass2Extra
+	closemessage
+	release
 	end
 
 SaffronCity_EventScript_PokefanM::
@@ -54,7 +59,12 @@ SaffronCity_EventScript_PokefanM::
 	end
 
 SaffronCity_EventScript_PokefanM2::
-	msgbox SaffronCity_Text_PokefanM_ReturnedPart, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox SaffronCity_Text_PokefanM_ReturnedPart, MSGBOX_DEFAULT
+	goto_if_set FLAG_IS_CHAMPION, SaffronCity_EventScript_PokefanM2Extra
+	closemessage
+	release
 	end
 
 SaffronCity_EventScript_CooltrainerM::
@@ -199,3 +209,28 @@ SaffronCity_Text_MrPsychicHouseSign:
 SaffronCity_Text_MagnetTrainStationSign:
 	.string "SAFFRON CITY\n"
 	.string "MAGNET TRAIN STATION$"
+
+SaffronCity_EventScript_Lass2Extra::
+	msgbox SaffronCity_Text_Lass2Extra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+SaffronCity_Text_Lass2Extra:
+	.string "You beat SABRINA!\p"
+	.string "It was on the radio.\p"
+	.string "Saffron's been making headlines\n"
+	.string "a lot lately, hasn't it?$"
+
+SaffronCity_EventScript_PokefanM2Extra::
+	msgbox SaffronCity_Text_PokefanM2Extra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+SaffronCity_Text_PokefanM2Extra:
+	.string "You're the CHAMPION? And you came\n"
+	.string "out from JOHTO?\p"
+	.string "And you still ride the MAGNET TRAIN\n"
+	.string "with the rest of us.\p"
+	.string "I like that.$"

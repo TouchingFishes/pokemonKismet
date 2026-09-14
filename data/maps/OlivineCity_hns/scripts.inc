@@ -186,6 +186,7 @@ OlivineCity_EventScript_Sailor2::
 	lock
 	faceplayer
 	msgbox OlivineCity_Text_Sailor2, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE06_GET, OlivineCity_EventScript_Sailor2Extra
 	closemessage
 	release
 	end
@@ -337,3 +338,15 @@ OlivineCity_Text_BattleTowerSign:
 
 OlivineCity_Text_Machoke:
 	.string "MACHOKE: CHO!$"
+
+OlivineCity_EventScript_Sailor2Extra::
+	msgbox OlivineCity_Text_Sailor2Extra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+OlivineCity_Text_Sailor2Extra:
+	.string "Hah! You went and beat JASMINE!\p"
+	.string "One of the strongest, they said.\p"
+	.string "Whoever writes those rankings has\n"
+	.string "probably never met you.$"

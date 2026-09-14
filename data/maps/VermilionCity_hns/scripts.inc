@@ -173,7 +173,12 @@ VermilionCity_EventScript_Machop::
 	end
 
 VermilionCity_EventScript_Nerd::
-	msgbox VermilionCity_Text_SuperNerd, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox VermilionCity_Text_SuperNerd, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE11_GET, VermilionCity_EventScript_NerdExtra
+	closemessage
+	release
 	end
 
 VermilionCity_EventScript_Snorlax::
@@ -528,3 +533,16 @@ VermilionCity_Text_StevenOutro:
 	.string "Ah, that's right.\p"
 	.string "I must go.\n"
 	.string "May our journeys cross again.$"
+
+VermilionCity_EventScript_NerdExtra::
+	msgbox VermilionCity_Text_NerdExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+VermilionCity_Text_NerdExtra:
+	.string "You beat LT.SURGE?\p"
+	.string "They don't call him the Lightning\n"
+	.string "Commander for nothing.\p"
+	.string "How are the other GYMS treating\n"
+	.string "you?$"

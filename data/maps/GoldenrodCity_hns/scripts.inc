@@ -116,6 +116,7 @@ GoldenrodCity_EventScript_Gramps::
 	lock
 	faceplayer
 	msgbox GoldenrodCity_Text_Gramps, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE03_GET, GoldenrodCity_EventScript_GrampsExtra
 	closemessage
 	release
 	end
@@ -461,3 +462,15 @@ GoldenrodCity_Text_MoveTutorBut:
 
 GoldenrodCity_Text_MoveTutorNotEnoughCoins:
 	.string "…You don't have enough coins…$"
+
+GoldenrodCity_EventScript_GrampsExtra::
+	msgbox GoldenrodCity_Text_GrampsExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_Text_GrampsExtra:
+	.string "You beat WHITNEY?\p"
+	.string "Did she cry? She always cries.\p"
+	.string "I still can't find the BIKE SHOP,\n"
+	.string "mind you.$"

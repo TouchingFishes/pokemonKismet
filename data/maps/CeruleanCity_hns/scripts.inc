@@ -16,7 +16,12 @@ CeruleanCity_EventScript_CooltrainerMReturnedPart::
 	end
 
 CeruleanCity_EventScript_Boy::
-	msgbox CeruleanCity_Text_SuperNerd, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox CeruleanCity_Text_SuperNerd, MSGBOX_DEFAULT
+	goto_if_set FLAG_IS_CHAMPION, CeruleanCity_EventScript_BoyExtra
+	closemessage
+	release
 	end
 
 CeruleanCity_EventScript_Guard::
@@ -170,3 +175,15 @@ CeruleanCity_Text_CapeSign:
 CeruleanCity_Text_LockedDoor:
 	.string "It's locked…$"
 
+
+CeruleanCity_EventScript_BoyExtra::
+	msgbox CeruleanCity_Text_BoyExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CeruleanCity_Text_BoyExtra:
+	.string "Wait, you're the CHAMPION?\p"
+	.string "Then you should take someone up to\n"
+	.string "the CAPE.\p"
+	.string "Nobody says no to a CHAMPION.$"

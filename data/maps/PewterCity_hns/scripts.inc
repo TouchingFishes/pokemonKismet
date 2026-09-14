@@ -7,11 +7,21 @@ PewterCity_EventScript_CityEnter::
 	end
 
 PewterCity_EventScript_CooltrainerF::
-	msgbox PewterCity_Text_CooltrainerF, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox PewterCity_Text_CooltrainerF, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE09_GET, PewterCity_EventScript_CooltrainerFExtra
+	closemessage
+	release
 	end
 
 PewterCity_EventScript_BugCatcher::
-	msgbox PewterCity_Text_BugCatcher, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox PewterCity_Text_BugCatcher, MSGBOX_DEFAULT
+	goto_if_set FLAG_IS_CHAMPION, PewterCity_EventScript_BugCatcherExtra
+	closemessage
+	release
 	end
 
 PewterCity_EventScript_Gramps::
@@ -122,3 +132,27 @@ PewterCity_Text_MtMoonGiftShopSign:
 PewterCity_Text_WelcomeSign:
 	.string "WELCOME TO PEWTER CITY!$"
 
+
+PewterCity_EventScript_CooltrainerFExtra::
+	msgbox PewterCity_Text_CooltrainerFExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PewterCity_Text_CooltrainerFExtra:
+	.string "That's the BOULDERBADGE!\p"
+	.string "So you did go to the GYM.\p"
+	.string "And there I was explaining it to\n"
+	.string "you like you'd never heard of it.$"
+
+PewterCity_EventScript_BugCatcherExtra::
+	msgbox PewterCity_Text_BugCatcherExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PewterCity_Text_BugCatcherExtra:
+	.string "You're the CHAMPION, aren't you?\p"
+	.string "Then you can afford a night off.\p"
+	.string "The CLEFAIRY come out at MT.MOON.\n"
+	.string "Go and watch them sometime.$"

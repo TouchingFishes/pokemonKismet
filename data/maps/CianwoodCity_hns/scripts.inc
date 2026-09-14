@@ -147,6 +147,7 @@ CianwoodCity_EventScript_Lass::
 	lock
 	faceplayer
 	msgbox CianwoodCity_Text_Lass, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE05_GET, CianwoodCity_EventScript_LassExtra
 	closemessage
 	release
 	end
@@ -356,3 +357,14 @@ CianwoodCity_Text_Engineer:
 	.string "This path is under construction.\n"
 	.string "We're getting the new SAFARI ZONE\l"
 	.string "up and running!$"
+
+CianwoodCity_EventScript_LassExtra::
+	msgbox CianwoodCity_Text_LassExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CianwoodCity_Text_LassExtra:
+	.string "CHUCK lost? To you?\p"
+	.string "He'll be out on that cliff all night\n"
+	.string "punching the bare rock because of it.$"

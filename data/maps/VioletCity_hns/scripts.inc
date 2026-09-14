@@ -133,6 +133,7 @@ VioletCity_EventScript_Gramps::
 	lock
 	faceplayer
 	msgbox VioletCity_Text_Gramps, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE01_GET, VioletCity_EventScript_GrampsExtra
 	closemessage
 	release
 	end
@@ -499,3 +500,16 @@ VioletCity_Text_Kimono_Girl4:
 .string "I am counting on you.$"
 
 
+
+VioletCity_EventScript_GrampsExtra::
+	msgbox VioletCity_Text_GrampsExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+VioletCity_Text_GrampsExtra:
+	.string "Hold on, that's the ZEPHYRBADGE!\p"
+	.string "FALKNER's father ran this GYM for\n"
+	.string "thirty years.\p"
+	.string "Looks like the boy's finally\l"
+	.string "struck out on his own.$"

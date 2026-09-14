@@ -84,6 +84,7 @@ AzaleaTown_EventScript_Lass::
 	lock
 	faceplayer
 	msgbox AzaleaTown_Text_Teacher, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE02_GET, AzaleaTown_EventScript_LassExtra
 	closemessage
 	release
 	end
@@ -92,6 +93,7 @@ AzaleaTown_EventScript_Youngster::
 	lock
 	faceplayer
 	msgbox AzaleaTown_Text_Youngster, MSGBOX_DEFAULT
+	goto_if_set FLAG_IS_CHAMPION, AzaleaTown_EventScript_YoungsterExtra
 	closemessage
 	release
 	end
@@ -449,3 +451,26 @@ AzaleaTown_Text_CharcoalKilnSign:
 AzaleaTown_Text_IlexForestSign:
 	.string "ILEX FOREST\p"
 	.string "Enter through the gate.$"
+
+AzaleaTown_EventScript_LassExtra::
+	msgbox AzaleaTown_Text_LassExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+AzaleaTown_Text_LassExtra:
+	.string "Oh! You've got the HIVEBADGE.\p"
+	.string "BUGSY's younger than me, you know.\p"
+	.string "I try not to think about it.$"
+
+AzaleaTown_EventScript_YoungsterExtra::
+	msgbox AzaleaTown_Text_YoungsterExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+AzaleaTown_Text_YoungsterExtra:
+	.string "Hold on, you're the CHAMPION?\p"
+	.string "And you still had to squeeze through\n"
+	.string "ILEX FOREST like the rest of us.\p"
+	.string "That makes me feel a bit better.$"

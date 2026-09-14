@@ -110,7 +110,12 @@ BlackthornCity_EventScript_CoolTrainerF::
 	end
 
 BlackthornCity_EventScript_Youngster::
-	msgbox BlackthornYoungsterText, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox BlackthornYoungsterText, MSGBOX_DEFAULT
+	goto_if_set FLAG_BADGE08_GET, BlackthornCity_EventScript_YoungsterExtra
+	closemessage
+	release
 	end
 
 BlackthornCity_EventScript_CoolTrainerF2::
@@ -248,3 +253,17 @@ BlackthornCity_Text_MoveDeletersHouseSign:
 BlackthornCity_Text_DragonDenSign:
 	.string "DRAGON'S DEN AHEAD$"
 
+
+BlackthornCity_EventScript_YoungsterExtra::
+	msgbox BlackthornCity_Text_YoungsterExtra, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BlackthornCity_Text_YoungsterExtra:
+	.string "You got the RISINGBADGE out of\n"
+	.string "CLAIR?\p"
+	.string "They say dragon masters all come\n"
+	.string "from BLACKTHORN.\p"
+	.string "Looks like they come through it,\n"
+	.string "too.$"
