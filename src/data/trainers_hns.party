@@ -20533,3 +20533,74 @@ Level: 56
 
 SPECIES_WORMADAM_PLANT
 Level: 59
+
+=== TRAINER_ALYSSA_HNS ===
+Name: ALYSSA
+Class: Ace Trainer Hns
+Pic: Cooltrainer F
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_SKARMORY
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+SPECIES_EXPLOUD
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+SPECIES_ELECTABUZZ
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+SPECIES_WAILORD
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_SHEILA_HNS ===
+Name: SHEILA
+Class: Swimmer F Hns
+Pic: Swimmer F Frlg
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_LUVDISC
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+SPECIES_LUVDISC
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+SPECIES_LUVDISC
+Level: 55
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+SPECIES_MILOTIC
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_DILLON_HNS ===
+Name: DILLON
+Class: Swimmer M Hns
+Pic: Swimmer M Frlg
+Gender: Male
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_TENTACRUEL
+Level: 60
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_TENTACRUEL
+Level: 60
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SWAMPERT
+Level: 63
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe

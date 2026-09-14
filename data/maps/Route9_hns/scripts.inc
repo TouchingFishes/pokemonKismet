@@ -116,3 +116,19 @@ Route9_Text_HikerSidneyAfter:
 Route9_Text_Sign:
 	.string "ROUTE 9\p"
 	.string "CERULEAN CITY - ROCK TUNNEL$"
+
+Route9_EventScript_Dallas::
+	trainerbattle_single TRAINER_DALLAS_HNS Route9_Text_HikerDallasSeen, Route9_Text_HikerDallasBeaten
+	msgbox Route9_Text_HikerDallasAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route9_Text_HikerDallasSeen:
+	.string "I'll tell you a secret.\p"
+	.string "But first, we battle!$"
+
+Route9_Text_HikerDallasBeaten:
+	.string "Oh, dang! I lost that…$"
+
+Route9_Text_HikerDallasAfter:
+	.string "The POWER PLANT is across a small\n"
+	.string "river.$"

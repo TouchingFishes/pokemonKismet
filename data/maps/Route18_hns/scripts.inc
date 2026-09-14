@@ -59,3 +59,31 @@ Route18_Text_BirdKeeperBobAfterBattle:
 Route18_Text_Sign:
 	.string "ROUTE 18\p"
 	.string "CELADON CITY - FUCHSIA CITY$"
+
+Route18_EventScript_AceTrainerF_Alyssa::
+	trainerbattle_single TRAINER_ALYSSA_HNS Route18_Text_AlyssaSeen, Route18_Text_AlyssaBeaten
+	msgbox Route18_Text_AlyssaAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route18_Text_AlyssaSeen:
+	.string "Hold it right there.\p"
+	.string "You've got a certain look\n"
+	.string "about you.\p"
+	.string "...\p"
+	.string "Confidence.\n"
+	.string "Style.\p"
+	.string "Let's see if your battling\n"
+	.string "matches it.$"
+
+Route18_Text_AlyssaBeaten:
+	.string "Oh…?\p"
+	.string "Now that was impressive.$"
+
+Route18_Text_AlyssaAfter:
+	.string "Strength isn't just power.\p"
+	.string "It's how you carry yourself.\n"
+	.string "How you adapt.\p"
+	.string "...\p"
+	.string "You've got both.\p"
+	.string "Keep refining that style.\n"
+	.string "You'll stand out anywhere.$"

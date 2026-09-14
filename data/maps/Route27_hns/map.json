@@ -67,8 +67,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BIRD_CATCHER_HNS",
-      "x": 77,
-      "y": 27,
+      "x": 93,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
       "movement_range_x": 7,
@@ -93,8 +93,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
-      "x": 76,
-      "y": 26,
+      "x": 51,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -209,7 +209,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MURKROW",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_ARBOK",
       "x": 30,
       "y": 17,
       "elevation": 0,
@@ -223,8 +223,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_PONYTA",
-      "x": 72,
-      "y": 15,
+      "x": 76,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "movement_range_x": 6,
@@ -236,7 +236,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_DODRIO",
-      "x": 110,
+      "x": 109,
       "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
@@ -249,8 +249,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_RAPIDASH",
-      "x": 109,
-      "y": 9,
+      "x": 74,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
       "movement_range_x": 15,
@@ -285,6 +285,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route27_EventScript_Item_Destiny_Knot",
       "flag": "FLAG_ITEM_ROUTE27_DESTINY_KNOT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F_HNS",
+      "x": 76,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 7,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "7",
+      "script": "Route27_EventScript_Monika",
+      "flag": "0"
     }
   ],
   "warp_events": [

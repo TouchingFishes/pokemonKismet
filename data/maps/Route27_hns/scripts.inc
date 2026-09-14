@@ -311,3 +311,26 @@ Route27_Text_FisherScottBeaten:
 Route27_Text_FisherScottAfter:
     .string "Just like in fishing, it's all over\n"
     .string "in POKéMON if you give up.$"
+
+Route27_EventScript_Monika::
+	trainerbattle_single TRAINER_MONIKA_HNS Route27_Text_MonikaSeen, Route27_Text_MonikaBeaten
+	msgbox Route27_Text_MonikaAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route27_Text_MonikaSeen:
+	.string "You there.\p"
+	.string "I've been searching for someone\n"
+	.string "worth my time.\p"
+	.string "Show me your strength.$"
+
+Route27_Text_MonikaBeaten:
+	.string "Good...\p"
+	.string "You didn't disappoint.$"
+
+Route27_Text_MonikaAfter:
+	.string "Most trainers crumble under\n"
+	.string "pressure.\p"
+	.string "You stood your ground.\p"
+	.string "If you keep training like that,\n"
+	.string "you might go far.\p"
+	.string "Don't get complacent.$"
