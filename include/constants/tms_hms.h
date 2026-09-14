@@ -54,7 +54,7 @@
     F(SKILL_SWAP)    /* TM48 - Saffron City Gym done */ \
     F(SNATCH)        /* TM49 - Route39 Farm House, SSTidal Rooms done */ \
     F(OVERHEAT)      /* TM50 - Lavaridge Town Gym 1F, Seafoam Islands Gym done */ \
-    F(MIRROR_SHOT)   /* TM51 - Violet City (fork; not placed yet) */ \
+    F(MIRROR_SHOT)   /* TM51 - Violet City done */ \
     F(FLAME_CHARGE)  /* TM52 - Route 20 (fork; not placed yet) */ \
     F(ICE_PUNCH)     /* TM53 - Goldenrod City Department Store 5F done */ \
     F(MIMIC)         /* TM54 - Mahogany City (fork; not placed yet) */ \

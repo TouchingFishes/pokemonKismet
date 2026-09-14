@@ -233,6 +233,10 @@ VioletCity_EventScript_ItemHyperPotion::
 	finditem ITEM_HYPER_POTION
 	end
 
+VioletCity_EventScript_TM_MirrorShot::
+	finditem ITEM_TM_MIRROR_SHOT
+	end
+
 VioletCity_Movement_Earl_Spin:
 	face_down
 	face_right
