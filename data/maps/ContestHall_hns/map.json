@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CONTEST_MC",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2_HNS",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F_HNS",
       "x": 6,
       "y": 4,
       "elevation": 3,

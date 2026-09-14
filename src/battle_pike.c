@@ -359,7 +359,7 @@ static const struct PikeRoomNPC sNPCTable[] =
     },
     {
 #if IS_HNS
-        .graphicsId = OBJ_EVENT_GFX_WOMAN_2_HNS,
+        .graphicsId = OBJ_EVENT_GFX_POKEFAN_F_HNS,
 #else
         .graphicsId = OBJ_EVENT_GFX_WOMAN_2,
 #endif
@@ -409,7 +409,7 @@ static const struct PikeRoomNPC sNPCTable[] =
     },
     {
 #if IS_HNS
-        .graphicsId = OBJ_EVENT_GFX_LASS_HNS,
+        .graphicsId = OBJ_EVENT_GFX_WOMAN_2_HNS,
 #else
         .graphicsId = OBJ_EVENT_GFX_LASS,
 #endif

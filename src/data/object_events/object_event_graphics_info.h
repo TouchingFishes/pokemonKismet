@@ -7282,8 +7282,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymGuy_hns = {TAG_
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hiker_hns = {TAG_NONE, OBJ_EVENT_PAL_TAG_HIKER_HNS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Hiker_hns, gDummySpriteAffineAnimTable};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Juggler_hns = {TAG_NONE, OBJ_EVENT_PAL_TAG_NPC_4_HNS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 5, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Juggler_hns, gDummySpriteAffineAnimTable};
-
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass_hns = {TAG_NONE, OBJ_EVENT_PAL_TAG_NPC_3_HNS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Lass_hns, gDummySpriteAffineAnimTable};
+ 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass_hns = {TAG_NONE, OBJ_EVENT_PAL_TAG_NPC_2_HNS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Lass_hns, gDummySpriteAffineAnimTable};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkReceptionist_hns = {TAG_NONE, OBJ_EVENT_PAL_TAG_NPC_1_HNS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 4, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_LinkReceptionist_hns, gDummySpriteAffineAnimTable};
 
@@ -7344,7 +7344,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Twin_hns = {TAG_NO
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman1_hns = {TAG_NONE, OBJ_EVENT_PAL_TAG_NPC_4_HNS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Woman1_hns, gDummySpriteAffineAnimTable};
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman2_hns = {TAG_NONE, OBJ_EVENT_PAL_TAG_NPC_1_HNS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 4, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Woman2_hns, gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman2_hns = {TAG_NONE, OBJ_EVENT_PAL_TAG_NPC_3_HNS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 4, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Woman2_hns, gDummySpriteAffineAnimTable};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman3_hns = {TAG_NONE, OBJ_EVENT_PAL_TAG_NPC_1_HNS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Woman3_hns, gDummySpriteAffineAnimTable};
 
