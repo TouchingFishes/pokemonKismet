@@ -418,3 +418,54 @@ MoveTutor_EventScript_AncientPowerNotReady_hns::
 	msgbox MoveTutor_Text_AncientPowerNotReady_hns, MSGBOX_DEFAULT
 	release
 	end
+
+MoveTutor_EventScript_IcyWindTutor_hns::
+	lock
+	faceplayer
+	move_tutor MOVE_ICY_WIND, MoveTutor_Text_IcyWindTeach, MoveTutor_Text_IcyWindWhichMon, MoveTutor_EventScript_IcyWindDeclined_hns, MoveTutor_EventScript_IcyWindTaught_hns, 5000
+	release
+	end
+
+MoveTutor_EventScript_IcyWindDeclined_hns::
+	msgbox MoveTutor_Text_IcyWindDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_IcyWindTaught_hns::
+	msgbox MoveTutor_Text_IcyWindTaught, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_RockSlideTutor_hns::
+	lock
+	faceplayer
+	move_tutor MOVE_ROCK_SLIDE, MoveTutor_Text_RockSlideTeach, MoveTutor_Text_RockSlideWhichMon, MoveTutor_EventScript_RockSlideDeclined_hns, MoveTutor_EventScript_RockSlideTaught_hns, 7500
+	release
+	end
+
+MoveTutor_EventScript_RockSlideDeclined_hns::
+	msgbox MoveTutor_Text_RockSlideDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_RockSlideTaught_hns::
+	msgbox MoveTutor_Text_RockSlideTaught, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_FissureTutor_hns::
+	lock
+	faceplayer
+	move_tutor MOVE_FISSURE, MoveTutor_Text_FissureTeach, MoveTutor_Text_FissureWhichMon, MoveTutor_EventScript_FissureDeclined_hns, MoveTutor_EventScript_FissureTaught_hns, 25000
+	release
+	end
+
+MoveTutor_EventScript_FissureDeclined_hns::
+	msgbox MoveTutor_Text_FissureDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_FissureTaught_hns::
+	msgbox MoveTutor_Text_FissureTaught, MSGBOX_DEFAULT
+	release
+	end

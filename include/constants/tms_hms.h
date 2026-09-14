@@ -55,7 +55,7 @@
     F(SNATCH)        /* TM49 - Route39 Farm House, SSTidal Rooms done */ \
     F(OVERHEAT)      /* TM50 - Lavaridge Town Gym 1F, Seafoam Islands Gym done */ \
     F(MIRROR_SHOT)   /* TM51 - Violet City done */ \
-    F(FLAME_CHARGE)  /* TM52 - Route 20 (fork; not placed yet) */ \
+    F(FLAME_CHARGE)  /* TM52 - Route 20 done */ \
     F(ICE_PUNCH)     /* TM53 - Goldenrod City Department Store 5F done */ \
     F(MIMIC)         /* TM54 - Mahogany City (fork; not placed yet) */ \
     F(GRASS_KNOT)    /* TM55 - Route11 done */ \
@@ -63,12 +63,12 @@
     F(VENOSHOCK)     /* TM57 - Route 11 (fork; not placed yet) */ \
     F(ROCK_BLAST)    /* TM58 - Route10 done */ \
     F(ENERGY_BALL)   /* TM59 - Route15 done */ \
-    F(SWIFT)         /* TM60 - Union Cave (fork; not placed yet) */ \
+    F(SWIFT)         /* TM60 - Union Cave B1F done */ \
     F(MUD_SLAP)      /* TM61 - Cherrygrove Bay (fork; not placed yet) */ \
     F(SLEEP_TALK)    /* TM62 - Celadon City Apartments Roof House done */ \
     F(AVALANCHE)     /* TM63 - Ice Path B3F done */ \
     F(BEAT_UP)       /* TM64 - Stormy Beach (fork; not placed yet) */ \
-    F(COSMIC_POWER)  /* TM65 - Ruins of Alph (fork; not placed yet) */ \
+    F(COSMIC_POWER)  /* TM65 - Ruins of Alph Outside done */ \
     F(SIGNAL_BEAM)   /* TM66 - New Bark Town (fork; not placed yet) */ \
     F(SWEET_SCENT)   /* TM67 - Ilex Forest / Route 34 Gate done */ \
     F(FIRE_PUNCH)    /* TM68 - Goldenrod City Department Store 5F done */ \

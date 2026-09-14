@@ -818,8 +818,10 @@
 #define TRAINER_ALYSSA_HNS                            783
 #define TRAINER_SHEILA_HNS                            784
 #define TRAINER_DILLON_HNS                            785
+#define TRAINER_KELVIN_HNS                            786
+#define TRAINER_FOSTER_HNS                            787
 
-#define TRAINERS_COUNT_HNS                       786
+#define TRAINERS_COUNT_HNS                       788
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

@@ -78,3 +78,7 @@ UnionCave_B1F_Text_PokemaniacCalvinAfter:
 	.string "study findings.\p"
 	.string "I might even become famous like\n"
 	.string "PROF.ELM.$"
+
+UnionCave_B1F_EventScript_Item_TM_Swift::
+	finditem ITEM_TM_SWIFT
+	end

@@ -621,3 +621,92 @@ MoveTutor_Text_AncientPowerDeclined:
 MoveTutor_Text_AncientPowerTaught:
 	.string "Power from another age…\p"
 	.string "May it guide you forward.$"
+
+MoveTutor_Text_IcyWindTeach:
+	.string "Ah… the lake still rages, even now.\p"
+	.string "But do you feel it?\n"
+	.string "A wind drifts here from the east.\p"
+	.string "Cold… steady…\n"
+	.string "It calms even the restless water.\p"
+	.string "I have studied that wind for many years.\p"
+	.string "It slows battles… softens movement…\n"
+	.string "yet never truly harms.\p"
+	.string "For ¥5000, I can teach your POKéMON\n"
+	.string "the move ICY WIND.\p"
+	.string "Will you listen to the wind?$"
+
+MoveTutor_Text_IcyWindWhichMon:
+	.string "Good…\n"
+	.string "Which POKéMON will learn to feel\n"
+	.string "the eastern wind?$"
+
+MoveTutor_Text_IcyWindDeclined:
+	.string "Hm…\n"
+	.string "Then you do not yet hear the wind.$"
+
+MoveTutor_Text_IcyWindTaught:
+	.string "The wind will follow it now.\p"
+	.string "Slow the world… and you will see\n"
+	.string "its shape more clearly.$"
+
+MoveTutor_Text_RockSlideTeach:
+	.string "Whoa… careful where you step.\n"
+	.string "These tunnels aren't exactly stable.\p"
+	.string "You ever think about it?\n"
+	.string "All this rock above your head…\p"
+	.string "One rumble and then…\n"
+	.string "WAAAAAAAAAH!\p"
+	.string "Boulders crashing down from the\n"
+	.string "dark!\p"
+	.string "…Heh. You don't seem scared at all.\p"
+	.string "Tell you what…\n"
+	.string "for ¥7500, I can teach your POKéMON\l"
+	.string "ROCK SLIDE.\p"
+	.string "Want to try it?$"
+
+MoveTutor_Text_RockSlideWhichMon:
+	.string "Heh! Which POKéMON should I teach\n"
+	.string "ROCK SLIDE?$"
+
+MoveTutor_Text_RockSlideDeclined:
+	.string "Oh… so you are scared after all.$"
+
+MoveTutor_Text_RockSlideTaught:
+	.string "Just imagine those rocks crashing\n"
+	.string "down on your opponent!\p"
+	.string "…Might be a little scary to use it\n"
+	.string "in this tunnel, though…$"
+
+MoveTutor_Text_FissureTeach:
+	.string "…So you've come here.\p"
+	.string "I once stood among the strongest\n"
+	.string "TRAINERS in the world.\p"
+	.string "Battles were not contests to me…\n"
+	.string "they were conclusions.\p"
+	.string "There is a moment in combat where\n"
+	.string "everything becomes decided.\p"
+	.string "One strike. One opening.\n"
+	.string "No hesitation.\p"
+	.string "...\p"
+	.string "For 25000¥, I will teach your\n"
+	.string "POKéMON FISSURE.\p"
+	.string "A move that ends battles in a\n"
+	.string "single, decisive instant.$"
+
+MoveTutor_Text_FissureWhichMon:
+	.string "Good.\p"
+	.string "Now choose.\n"
+	.string "Which POKéMON will learn it?$"
+
+MoveTutor_Text_FissureDeclined:
+	.string "Hmph…\p"
+	.string "Then you are not yet ready to\n"
+	.string "understand decisive victory.$"
+
+MoveTutor_Text_FissureTaught:
+	.string "Remember this well.\p"
+	.string "Power without certainty is wasted.\n"
+	.string "FISSURE is certainty made form.\p"
+	.string "...\p"
+	.string "Do not rely on it blindly.\n"
+	.string "Only when the moment is absolute.$"

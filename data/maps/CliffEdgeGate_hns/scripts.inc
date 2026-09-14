@@ -46,3 +46,11 @@ CliffEdgeGate_Text_SignOpen:
 	.string "Warden BAOBA's SAFARI ZONE\l"
 	.string "Up and Running!$"
 
+
+CliffEdgeGate_EventScript_Engineer::
+	lock
+	faceplayer
+	msgbox CliffEdgeGate_Text_Expectations, MSGBOX_DEFAULT
+	closemessage
+	release
+	end

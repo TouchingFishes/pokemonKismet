@@ -3868,15 +3868,15 @@ Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_SHARPEDO
+SPECIES_QWILFISH
 Level: 57
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_SHARPEDO
+SPECIES_QWILFISH
 Level: 57
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_HUNTAIL
+SPECIES_WAILORD
 Level: 59
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -18605,7 +18605,7 @@ Music: Hg Suspicious 2
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_CRAWDAUNT
+SPECIES_OCTILLERY
 Level: 53
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -18613,7 +18613,7 @@ SPECIES_KINGLER
 Level: 50
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_CRAWDAUNT
+SPECIES_GYARADOS
 Level: 53
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -18825,7 +18825,7 @@ SPECIES_SHELLDER
 Level: 54
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_CRAWDAUNT
+SPECIES_OCTILLERY
 Level: 63
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -20604,3 +20604,37 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 SPECIES_SWAMPERT
 Level: 63
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_KELVIN_HNS ===
+Name: KELVIN
+Class: Burglar Hns
+Pic: Burglar Frlg
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MEOWTH
+Level: 13
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+SPECIES_CYNDAQUIL
+Level: 16
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== TRAINER_FOSTER_HNS ===
+Name: FOSTER
+Class: Ruin Maniac Hns
+Pic: Ruin Maniac Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_OMANYTE
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+SPECIES_KABUTO
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
