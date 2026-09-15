@@ -415,7 +415,7 @@ enum __attribute__((packed)) Move
     MOVE_GASTRO_ACID = 380, //do not use
     MOVE_LUCKY_CHANT = 381, //do not use
     MOVE_ME_FIRST = 382, //do not use
-    MOVE_COPYCAT = 383, //do not use
+    MOVE_COPYCAT = 383,
     MOVE_POWER_SWAP = 384, //do not use
     MOVE_GUARD_SWAP = 385, //do not use
     MOVE_PUNISHMENT = 386,
@@ -481,7 +481,7 @@ enum __attribute__((packed)) Move
     MOVE_STEALTH_ROCK = 446, //do not use
     MOVE_GRASS_KNOT = 447,
     MOVE_CHATTER = 448, //do not use
-    MOVE_JUDGMENT = 449, //do not use
+    MOVE_JUDGMENT = 449, //do not use unless Arceus is in
     MOVE_BUG_BITE = 450,
     MOVE_CHARGE_BEAM = 451,
     MOVE_WOOD_HAMMER = 452,
