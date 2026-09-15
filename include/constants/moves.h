@@ -814,7 +814,7 @@ enum __attribute__((packed)) Move
     MOVE_RAGING_FURY = 761,
     MOVE_WAVE_CRASH = 762, //should be in
     MOVE_CHLOROBLAST = 763,
-    MOVE_MOUNTAIN_GALE = 764, //should be in (Hot Springs tutor + Battle Frontier lounge)
+    MOVE_MOUNTAIN_GALE = 764, //should be in
     MOVE_VICTORY_DANCE = 765,
     MOVE_HEADLONG_RUSH = 766, //should be in if Ursaluna is in
     MOVE_BARB_BARRAGE = 767, //should be in if Qwilfish is in

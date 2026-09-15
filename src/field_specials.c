@@ -2476,9 +2476,20 @@ void ShowScrollableMultichoice(void)
         task->tTaskId = taskId;
         break;
     case SCROLL_MULTI_BF_MOVE_TUTOR_1:
-    case SCROLL_MULTI_BF_MOVE_TUTOR_2:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 11;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BF_MOVE_TUTOR_2:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        // HnS dropped MOUNTAIN GALE from this tutor, so its list is one row
+        // shorter. Split from tutor 1 above, which is still 11 in both builds.
+        task->tNumItems = IS_HNS ? 10 : 11;
         task->tLeft = 15;
         task->tTop = 1;
         task->tWidth = 14;
@@ -2653,6 +2664,39 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_ExchangeService,
         gText_Exit
     },
+
+#if IS_HNS
+    [SCROLL_MULTI_BF_MOVE_TUTOR_1] =
+    {
+        COMPOUND_STRING("SOFTBOILED{CLEAR_TO 0x4E}16BP"),
+        COMPOUND_STRING("SEISMIC TOSS{CLEAR_TO 0x4E}24BP"),
+        COMPOUND_STRING("HYPNOSIS{CLEAR_TO 0x4E}24BP"),
+        COMPOUND_STRING("MEGA PUNCH{CLEAR_TO 0x4E}24BP"),
+        COMPOUND_STRING("MEGA KICK{CLEAR_TO 0x4E}48BP"),
+        COMPOUND_STRING("BODY SLAM{CLEAR_TO 0x4E}48BP"),
+        COMPOUND_STRING("ROCK SLIDE{CLEAR_TO 0x4E}48BP"),
+        COMPOUND_STRING("COUNTER{CLEAR_TO 0x4E}48BP"),
+        COMPOUND_STRING("THUNDER WAVE{CLEAR_TO 0x4E}48BP"),
+        COMPOUND_STRING("SWORDS DANCE{CLEAR_TO 0x4E}48BP"),
+        gText_Exit
+    },
+    // Ten rows, not eleven: MOUNTAIN GALE was removed from this tutor, so
+    // tNumItems below is 10 for HnS. Mew keeps the move through its teachable
+    // list, which is where "Mew learns everything" is expressed.
+    [SCROLL_MULTI_BF_MOVE_TUTOR_2] =
+    {
+        COMPOUND_STRING("DEFENSE CURL{CLEAR_TO 0x4E}16BP"),
+        COMPOUND_STRING("SNORE{CLEAR_TO 0x4E}24BP"),
+        COMPOUND_STRING("HEADLONG RUSH{CLEAR_TO 0x4E}24BP"),
+        COMPOUND_STRING("BELLY DRUM{CLEAR_TO 0x4E}24BP"),
+        COMPOUND_STRING("ICY WIND{CLEAR_TO 0x4E}24BP"),
+        COMPOUND_STRING("ENDURE{CLEAR_TO 0x4E}48BP"),
+        COMPOUND_STRING("PSYCH UP{CLEAR_TO 0x4E}48BP"),
+        COMPOUND_STRING("ELECTRO BALL{CLEAR_TO 0x4E}48BP"),
+        COMPOUND_STRING("FLARE BLITZ{CLEAR_TO 0x4E}48BP"),
+        gText_Exit
+    },
+#else
     [SCROLL_MULTI_BF_MOVE_TUTOR_1] =
     {
         COMPOUND_STRING("SOFTBOILED{CLEAR_TO 0x4E}16BP"),
@@ -2681,6 +2725,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("FIRE PUNCH{CLEAR_TO 0x4E}48BP"),
         gText_Exit
     },
+#endif
 #if IS_HNS
         [SCROLL_MULTI_BF_MOVE_TUTOR_3] =
     {
@@ -3269,6 +3314,20 @@ static void ShowBattleFrontierTutorMoveDescription(enum ScrollMulti menu, u16 se
 {
     static const u8 *const sBattleFrontier_TutorMoveDescriptions1[] =
     {
+#if IS_HNS
+        // HnS teaches HYPNOSIS where vanilla teaches DREAM EATER; the rest match.
+        BattleFrontier_Lounge7_Text_SoftboiledDesc_hns,
+        BattleFrontier_Lounge7_Text_SeismicTossDesc_hns,
+        BattleFrontier_Lounge7_Text_HypnosisDesc_hns,
+        BattleFrontier_Lounge7_Text_MegaPunchDesc_hns,
+        BattleFrontier_Lounge7_Text_MegaKickDesc_hns,
+        BattleFrontier_Lounge7_Text_BodySlamDesc_hns,
+        BattleFrontier_Lounge7_Text_RockSlideDesc_hns,
+        BattleFrontier_Lounge7_Text_CounterDesc_hns,
+        BattleFrontier_Lounge7_Text_ThunderWaveDesc_hns,
+        BattleFrontier_Lounge7_Text_SwordsDanceDesc_hns,
+        gText_Exit,
+#else
         BattleFrontier_Lounge7_Text_SoftboiledDesc,
         BattleFrontier_Lounge7_Text_SeismicTossDesc,
         BattleFrontier_Lounge7_Text_DreamEaterDesc,
@@ -3280,10 +3339,25 @@ static void ShowBattleFrontierTutorMoveDescription(enum ScrollMulti menu, u16 se
         BattleFrontier_Lounge7_Text_ThunderWaveDesc,
         BattleFrontier_Lounge7_Text_SwordsDanceDesc,
         gText_Exit,
+#endif
     };
 
     static const u8 *const sBattleFrontier_TutorMoveDescriptions2[] =
     {
+#if IS_HNS
+        // Must stay in step with sScrollableMultichoiceOptions above and with
+        // the map script's case block - all three are matched by POSITION.
+        BattleFrontier_Lounge7_Text_DefenseCurlDesc_hns,
+        BattleFrontier_Lounge7_Text_SnoreDesc_hns,
+        BattleFrontier_Lounge7_Text_HeadlongRushDesc_hns,
+        BattleFrontier_Lounge7_Text_BellyDrumDesc_hns,
+        BattleFrontier_Lounge7_Text_IcyWindDesc_hns,
+        BattleFrontier_Lounge7_Text_EndureDesc_hns,
+        BattleFrontier_Lounge7_Text_PsychUpDesc_hns,
+        BattleFrontier_Lounge7_Text_ElectroBallDesc_hns,
+        BattleFrontier_Lounge7_Text_FlareBlitzDesc_hns,
+        gText_Exit,
+#else
         BattleFrontier_Lounge7_Text_DefenseCurlDesc,
         BattleFrontier_Lounge7_Text_SnoreDesc,
         BattleFrontier_Lounge7_Text_MudSlapDesc,
@@ -3295,6 +3369,7 @@ static void ShowBattleFrontierTutorMoveDescription(enum ScrollMulti menu, u16 se
         BattleFrontier_Lounge7_Text_ThunderPunchDesc,
         BattleFrontier_Lounge7_Text_FirePunchDesc,
         gText_Exit,
+#endif
     };
 
 

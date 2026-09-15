@@ -171,10 +171,9 @@ BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove_hns::
 	case 4, BattleFrontier_Lounge7_EventScript_IcyWind_hns
 	case 5, BattleFrontier_Lounge7_EventScript_Endure_hns
 	case 6, BattleFrontier_Lounge7_EventScript_PsychUp_hns
-	case 7, BattleFrontier_Lounge7_EventScript_MountainGale_hns
-	case 8, BattleFrontier_Lounge7_EventScript_ElectroBall_hns
-	case 9, BattleFrontier_Lounge7_EventScript_FlareBlitz_hns
-	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect_hns_hns
+	case 7, BattleFrontier_Lounge7_EventScript_ElectroBall_hns
+	case 8, BattleFrontier_Lounge7_EventScript_FlareBlitz_hns
+	case 9, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect_hns_hns
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect_hns_hns
 	end
 
@@ -195,10 +194,9 @@ BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove_hns::
 	case 4, BattleFrontier_Lounge7_EventScript_IcyWind_hns
 	case 5, BattleFrontier_Lounge7_EventScript_Endure_hns
 	case 6, BattleFrontier_Lounge7_EventScript_PsychUp_hns
-	case 7, BattleFrontier_Lounge7_EventScript_MountainGale_hns
-	case 8, BattleFrontier_Lounge7_EventScript_ElectroBall_hns
-	case 9, BattleFrontier_Lounge7_EventScript_FlareBlitz_hns
-	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect_hns_hns
+	case 7, BattleFrontier_Lounge7_EventScript_ElectroBall_hns
+	case 8, BattleFrontier_Lounge7_EventScript_FlareBlitz_hns
+	case 9, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect_hns_hns
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect_hns_hns
 	end
 
@@ -244,11 +242,6 @@ BattleFrontier_Lounge7_EventScript_PsychUp_hns::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
 	end
 
-BattleFrontier_Lounge7_EventScript_MountainGale_hns::
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_MOUNTAIN_GALE
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection_hns
-	end
 
 BattleFrontier_Lounge7_EventScript_ElectroBall_hns::
 	setvar VAR_0x8008, 48
@@ -575,10 +568,6 @@ BattleFrontier_Lounge7_Text_PsychUpDesc_hns::
 	.string "effect(s) and\n"
 	.string "gives to the user.$"
 
-BattleFrontier_Lounge7_Text_MountainGaleDesc_hns::
-	.string "Hurls huge chunks\n"
-	.string "of ice that may\n"
-	.string "make the foe flinch.$"
 
 BattleFrontier_Lounge7_Text_ElectroBallDesc_hns::
 	.string "Hits harder the\n"

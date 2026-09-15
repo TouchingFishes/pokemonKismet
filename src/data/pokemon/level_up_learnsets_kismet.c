@@ -655,6 +655,7 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_GEN_9_CROSS_EVOS
     [SPECIES_DUDUNSPARCE] = sDudunsparceLevelUpLearnset_Kismet,
     [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceLevelUpLearnset_Kismet,
+    [SPECIES_DUDUNSPARCE_TWO_SEGMENT] = sDudunsparceLevelUpLearnset_Kismet,
 #endif
 #endif
 #if P_KISMET_FAKEMON

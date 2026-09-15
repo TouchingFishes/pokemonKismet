@@ -169,6 +169,11 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_MANKEY] = sMankeyTeachableLearnset_Kismet,
     [SPECIES_PRIMEAPE] = sPrimeapeTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_MANKEY
+#if P_GEN_9_CROSS_EVOS
+    [SPECIES_ANNIHILAPE] = sAnnihilapeTeachableLearnset_Kismet,
+#endif
+#endif
 #if P_FAMILY_GROWLITHE
     [SPECIES_GROWLITHE] = sGrowlitheTeachableLearnset_Kismet,
     [SPECIES_ARCANINE] = sArcanineTeachableLearnset_Kismet,
@@ -678,6 +683,11 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_GIRAFARIG
     [SPECIES_GIRAFARIG] = sGirafarigTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_GIRAFARIG
+#if P_GEN_9_CROSS_EVOS
+    [SPECIES_FARIGIRAF] = sFarigirafTeachableLearnset_Kismet,
+#endif
+#endif
 #if P_FAMILY_PINECO
     [SPECIES_PINECO] = sPinecoTeachableLearnset_Kismet,
     [SPECIES_FORRETRESS] = sForretressTeachableLearnset_Kismet,
@@ -743,6 +753,11 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_SWINUB
     [SPECIES_SWINUB] = sSwinubTeachableLearnset_Kismet,
     [SPECIES_PILOSWINE] = sPiloswineTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_SWINUB
+#if P_GEN_4_CROSS_EVOS
+    [SPECIES_MAMOSWINE] = sMamoswineTeachableLearnset_Kismet,
+#endif
 #endif
 #if P_FAMILY_CORSOLA
     [SPECIES_CORSOLA] = sCorsolaTeachableLearnset_Kismet,
