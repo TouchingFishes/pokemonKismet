@@ -2133,10 +2133,10 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_DONALD_HNS ===
 Name: DONALD
-Class: Pokemaniac Hns
-Pic: Pokemaniac Frlg
+Class: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
-Music: Hg Boy 1
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -4744,24 +4744,24 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_TERU_HNS ===
 Name: TERU
-Class: Super Nerd Hns
-Pic: Super Nerd Frlg
+Class: Engineer Hns
+Pic: Engineer Hns
 Gender: Male
-Music: Hg Suspicious 1
+Music: Hg Suspicious 2
 Double Battle: No
 AI: Check Bad Move
 
 SPECIES_VOLTORB
 Level: 11
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
 
 SPECIES_MAGNEMITE
 Level: 14
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
 
 SPECIES_VOLTORB
 Level: 11
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 20 HP / 18 Atk / 20 Def / 16 SpA / 20 SpD / 16 Spe
 
 === TRAINER_RUSS_HNS ===
 Name: RUSS
@@ -5384,7 +5384,7 @@ SPECIES_NINETALES
 Level: 33
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_MAGMAR
+SPECIES_LUXRAY
 Level: 35
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
