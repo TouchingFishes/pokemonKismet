@@ -207,6 +207,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
 #if P_FAMILY_FARFETCHD
     [SPECIES_FARFETCHD] = sFarfetchdLevelUpLearnset_KismetGen3,
 #endif
+#if P_KISMET_FAKEMON
+    [SPECIES_MLLOY] = sMlloyLevelUpLearnset_KismetGen3,
+#endif
 #if P_FAMILY_DODUO
     [SPECIES_DODUO] = sDoduoLevelUpLearnset_KismetGen3,
     [SPECIES_DODRIO] = sDodrioLevelUpLearnset_KismetGen3,
@@ -649,6 +652,10 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
     [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceLevelUpLearnset_KismetGen3,
 #endif
 #endif
+#if P_KISMET_FAKEMON
+    [SPECIES_DUNDRAG] = sDundragLevelUpLearnset_KismetGen3,
+    [SPECIES_DUNLONG] = sDunlongLevelUpLearnset_KismetGen3,
+#endif
 #if P_FAMILY_GLIGAR
     [SPECIES_GLIGAR] = sGligarLevelUpLearnset_KismetGen3,
 #endif
@@ -704,6 +711,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
 #if P_FAMILY_CORSOLA
     [SPECIES_CORSOLA] = sCorsolaLevelUpLearnset_KismetGen3,
 #endif
+#if P_KISMET_FAKEMON
+    [SPECIES_CORSOREEF] = sCorsoreefLevelUpLearnset_KismetGen3,
+#endif
 #if P_FAMILY_MANTINE
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_MANTYKE] = sMantykeLevelUpLearnset_KismetGen3,
@@ -717,6 +727,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
 #endif
 #if P_FAMILY_REMORAID
     [SPECIES_OCTILLERY] = sOctilleryLevelUpLearnset_KismetGen3,
+#endif
+#if P_KISMET_FAKEMON
+    [SPECIES_KUJINOUGHT] = sKujinoughtLevelUpLearnset_KismetGen3,
 #endif
 #if P_FAMILY_DELIBIRD
     [SPECIES_DELIBIRD] = sDelibirdLevelUpLearnset_KismetGen3,
@@ -1013,6 +1026,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
 #endif
 #if P_FAMILY_CHIMECHO
     [SPECIES_CHIMECHO] = sChimechoLevelUpLearnset_KismetGen3,
+#endif
+#if P_KISMET_FAKEMON
+    [SPECIES_DECIBELLE] = sDecibelleLevelUpLearnset_KismetGen3,
 #endif
 #if P_FAMILY_ABSOL
     [SPECIES_ABSOL] = sAbsolLevelUpLearnset_KismetGen3,
@@ -1363,5 +1379,16 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
 #if P_FAMILY_GREAVARD
     [SPECIES_GREAVARD] = sGreavardLevelUpLearnset_KismetGen3,
     [SPECIES_HOUNDSTONE] = sHoundstoneLevelUpLearnset_KismetGen3,
+#endif
+#if P_KISMET_FAKEMON
+    [SPECIES_RAELIC] = sRaelicLevelUpLearnset_KismetGen3,
+    [SPECIES_ROMUSHU] = sRomushuLevelUpLearnset_KismetGen3,
+    [SPECIES_FUSANG] = sFusangLevelUpLearnset_KismetGen3,
+    [SPECIES_LARVICID] = sLarvicidLevelUpLearnset_KismetGen3,
+    [SPECIES_PENDRAGON] = sPendragonLevelUpLearnset_KismetGen3,
+    [SPECIES_KROLUCADA] = sKrolucadaLevelUpLearnset_KismetGen3,
+    [SPECIES_KROLUCARD] = sKrolucardLevelUpLearnset_KismetGen3,
+    [SPECIES_PURGISLUG] = sPurgislugLevelUpLearnset_KismetGen3,
+    [SPECIES_GEKOPON] = sGekoponLevelUpLearnset_KismetGen3,
 #endif
 };

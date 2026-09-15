@@ -422,7 +422,7 @@ enum __attribute__((packed)) Move
     MOVE_LAST_RESORT = 387, //do not use
     MOVE_WORRY_SEED = 388, //do not use
     MOVE_SUCKER_PUNCH = 389, //do not use
-    MOVE_TOXIC_SPIKES = 390, //do not use
+    MOVE_TOXIC_SPIKES = 390,
     MOVE_HEART_SWAP = 391,
     MOVE_AQUA_RING = 392,
     MOVE_MAGNET_RISE = 393,
@@ -452,7 +452,7 @@ enum __attribute__((packed)) Move
     MOVE_NASTY_PLOT = 417,
     MOVE_BULLET_PUNCH = 418, //do not use
     MOVE_AVALANCHE = 419,
-    MOVE_ICE_SHARD = 420,
+    MOVE_ICE_SHARD = 420, //do not use
     MOVE_SHADOW_CLAW = 421,
     MOVE_THUNDER_FANG = 422,
     MOVE_ICE_FANG = 423,
@@ -475,7 +475,7 @@ enum __attribute__((packed)) Move
     MOVE_CROSS_POISON = 440,
     MOVE_GUNK_SHOT = 441,
     MOVE_IRON_HEAD = 442,
-    MOVE_MAGNET_BOMB = 443, //do not use
+    MOVE_MAGNET_BOMB = 443,
     MOVE_STONE_EDGE = 444,
     MOVE_CAPTIVATE = 445, //do not use
     MOVE_STEALTH_ROCK = 446, //do not use
@@ -545,7 +545,7 @@ enum __attribute__((packed)) Move
     MOVE_SKY_DROP = 507,
     MOVE_SHIFT_GEAR = 508, //should be in if kinklang is in
     MOVE_CIRCLE_THROW = 509,
-    MOVE_INCINERATE = 510,
+    MOVE_INCINERATE = 510, //should be in
     MOVE_QUASH = 511,
     MOVE_ACROBATICS = 512, //should be in
     MOVE_REFLECT_TYPE = 513,
@@ -557,7 +557,7 @@ enum __attribute__((packed)) Move
     MOVE_FIRE_PLEDGE = 519,
     MOVE_GRASS_PLEDGE = 520,
     MOVE_VOLT_SWITCH = 521,
-    MOVE_STRUGGLE_BUG = 522,
+    MOVE_STRUGGLE_BUG = 522, // should be in
     MOVE_BULLDOZE = 523,
     MOVE_FROST_BREATH = 524, //should be in
     MOVE_DRAGON_TAIL = 525, //should be in
@@ -575,11 +575,11 @@ enum __attribute__((packed)) Move
     MOVE_STEAMROLLER = 537, //should be in
     MOVE_COTTON_GUARD = 538, //should be in
     MOVE_NIGHT_DAZE = 539, //should be in if zoroark is in
-    MOVE_PSYSTRIKE = 540,
+    MOVE_PSYSTRIKE = 540, //should be in
     MOVE_TAIL_SLAP = 541,
     MOVE_HURRICANE = 542, //should be in
     MOVE_HEAD_CHARGE = 543,
-    MOVE_GEAR_GRIND = 544,
+    MOVE_GEAR_GRIND = 544, //should be in if klinklang is in
     MOVE_SEARING_SHOT = 545,
     MOVE_TECHNO_BLAST = 546, //should be in if genesect is in
     MOVE_RELIC_SONG = 547,
@@ -590,7 +590,7 @@ enum __attribute__((packed)) Move
     MOVE_FIERY_DANCE = 552, //should be in
     MOVE_FREEZE_SHOCK = 553,
     MOVE_ICE_BURN = 554,
-    MOVE_SNARL = 555,
+    MOVE_SNARL = 555, //should be in
     MOVE_ICICLE_CRASH = 556, //should be in
     MOVE_V_CREATE = 557, //should be in of victini is in
     MOVE_FUSION_FLARE = 558,
@@ -670,7 +670,7 @@ enum __attribute__((packed)) Move
     MOVE_SPIRIT_SHACKLE = 625,
     MOVE_DARKEST_LARIAT = 626,
     MOVE_SPARKLING_ARIA = 627,
-    MOVE_ICE_HAMMER = 628,
+    MOVE_ICE_HAMMER = 628, //should be in (only for abomasnow, beartic, baxcalibur (if its in) and the Tinkaton Line (only as an Egg Move))
     MOVE_FLORAL_HEALING = 629,
     MOVE_HIGH_HORSEPOWER = 630,
     MOVE_STRENGTH_SAP = 631, //should be in
@@ -906,7 +906,7 @@ enum __attribute__((packed)) Move
     MOVES_COUNT_GEN9,
 
     // Add any custom moves here, not further down!
-    // Kismet custom moves, ported from pokemonHnS.
+    // Kismet custom moves, these moves should ALL be in ofc.
     MOVE_DRAIN_LIFE = MOVES_COUNT_GEN9,
     MOVE_BRAIN_FREEZE,
     MOVE_METAMORPH,

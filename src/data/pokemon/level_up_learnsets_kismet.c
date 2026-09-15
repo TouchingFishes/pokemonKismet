@@ -207,6 +207,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_FARFETCHD
     [SPECIES_FARFETCHD] = sFarfetchdLevelUpLearnset_Kismet,
 #endif
+#if P_KISMET_FAKEMON
+    [SPECIES_MLLOY] = sMlloyLevelUpLearnset_Kismet,
+#endif
 #if P_FAMILY_DODUO
     [SPECIES_DODUO] = sDoduoLevelUpLearnset_Kismet,
     [SPECIES_DODRIO] = sDodrioLevelUpLearnset_Kismet,
@@ -654,6 +657,10 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_DUDUNSPARCE_THREE_SEGMENT] = sDudunsparceLevelUpLearnset_Kismet,
 #endif
 #endif
+#if P_KISMET_FAKEMON
+    [SPECIES_DUNDRAG] = sDundragLevelUpLearnset_Kismet,
+    [SPECIES_DUNLONG] = sDunlongLevelUpLearnset_Kismet,
+#endif
 #if P_FAMILY_GLIGAR
     [SPECIES_GLIGAR] = sGligarLevelUpLearnset_Kismet,
 #endif
@@ -709,6 +716,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_CORSOLA
     [SPECIES_CORSOLA] = sCorsolaLevelUpLearnset_Kismet,
 #endif
+#if P_KISMET_FAKEMON
+    [SPECIES_CORSOREEF] = sCorsoreefLevelUpLearnset_Kismet,
+#endif
 #if P_FAMILY_MANTINE
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_MANTYKE] = sMantykeLevelUpLearnset_Kismet,
@@ -722,6 +732,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_REMORAID
     [SPECIES_OCTILLERY] = sOctilleryLevelUpLearnset_Kismet,
+#endif
+#if P_KISMET_FAKEMON
+    [SPECIES_KUJINOUGHT] = sKujinoughtLevelUpLearnset_Kismet,
 #endif
 #if P_FAMILY_DELIBIRD
     [SPECIES_DELIBIRD] = sDelibirdLevelUpLearnset_Kismet,
@@ -1018,6 +1031,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_CHIMECHO
     [SPECIES_CHIMECHO] = sChimechoLevelUpLearnset_Kismet,
+#endif
+#if P_KISMET_FAKEMON
+    [SPECIES_DECIBELLE] = sDecibelleLevelUpLearnset_Kismet,
 #endif
 #if P_FAMILY_ABSOL
     [SPECIES_ABSOL] = sAbsolLevelUpLearnset_Kismet,
@@ -1381,6 +1397,17 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_GREAVARD
     [SPECIES_GREAVARD] = sGreavardLevelUpLearnset_Kismet,
     [SPECIES_HOUNDSTONE] = sHoundstoneLevelUpLearnset_Kismet,
+#endif
+#if P_KISMET_FAKEMON
+    [SPECIES_RAELIC] = sRaelicLevelUpLearnset_Kismet,
+    [SPECIES_ROMUSHU] = sRomushuLevelUpLearnset_Kismet,
+    [SPECIES_FUSANG] = sFusangLevelUpLearnset_Kismet,
+    [SPECIES_LARVICID] = sLarvicidLevelUpLearnset_Kismet,
+    [SPECIES_PENDRAGON] = sPendragonLevelUpLearnset_Kismet,
+    [SPECIES_KROLUCADA] = sKrolucadaLevelUpLearnset_Kismet,
+    [SPECIES_KROLUCARD] = sKrolucardLevelUpLearnset_Kismet,
+    [SPECIES_PURGISLUG] = sPurgislugLevelUpLearnset_Kismet,
+    [SPECIES_GEKOPON] = sGekoponLevelUpLearnset_Kismet,
 #endif
 #if P_FAMILY_CHIKORITA
     [SPECIES_ALT_MEGANIUM] = sMeganiumLevelUpLearnset_Kismet,
