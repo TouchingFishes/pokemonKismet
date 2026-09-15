@@ -34,7 +34,7 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_CATERPIE
     [SPECIES_CATERPIE] = sCaterpieTeachableLearnset_Kismet,
-    [SPECIES_METAPOD] = sMetapodTeachableLearnset_Kismet,
+    [SPECIES_METAPOD] = sCaterpieTeachableLearnset_Kismet,
     [SPECIES_BUTTERFREE] = sButterfreeTeachableLearnset_Kismet,
     [SPECIES_BUTTERFREE_GMAX] = sButterfreeTeachableLearnset_Kismet,
 #endif
@@ -865,8 +865,8 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_WURMPLE
     [SPECIES_WURMPLE] = sWurmpleTeachableLearnset_Kismet,
-    [SPECIES_SILCOON] = sSilcoonTeachableLearnset_Kismet,
-    [SPECIES_CASCOON] = sSilcoonTeachableLearnset_Kismet,
+    [SPECIES_SILCOON] = sWurmpleTeachableLearnset_Kismet,
+    [SPECIES_CASCOON] = sWurmpleTeachableLearnset_Kismet,
     [SPECIES_BEAUTIFLY] = sBeautiflyTeachableLearnset_Kismet,
     [SPECIES_DUSTOX] = sDustoxTeachableLearnset_Kismet,
 #endif
@@ -1383,7 +1383,7 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_FLETCHLING
     [SPECIES_FLETCHLING] = sFletchlingTeachableLearnset_Kismet,
-    [SPECIES_FLETCHINDER] = sFletchlingTeachableLearnset_Kismet,
+    [SPECIES_FLETCHINDER] = sFletchinderTeachableLearnset_Kismet,
     [SPECIES_TALONFLAME] = sTalonflameTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_FLABEBE
