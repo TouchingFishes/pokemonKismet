@@ -610,7 +610,7 @@ enum __attribute__((packed)) Move
     MOVE_ION_DELUGE = 569,
     MOVE_PARABOLIC_CHARGE = 570,
     MOVE_FORESTS_CURSE = 571,
-    MOVE_PETAL_BLIZZARD = 572,
+    MOVE_PETAL_BLIZZARD = 572, //should be in (Flabebe line and Lurantis)
     MOVE_FREEZE_DRY = 573, //should be in
     MOVE_DISARMING_VOICE = 574, //should be in
     MOVE_PARTING_SHOT = 575,
@@ -618,8 +618,8 @@ enum __attribute__((packed)) Move
     MOVE_DRAINING_KISS = 577, //should be in
     MOVE_CRAFTY_SHIELD = 578,
     MOVE_FLOWER_SHIELD = 579,
-    MOVE_GRASSY_TERRAIN = 580,
-    MOVE_MISTY_TERRAIN = 581,
+    MOVE_GRASSY_TERRAIN = 580, //should be in if tapu_bulu is in
+    MOVE_MISTY_TERRAIN = 581, //should be in if tapu_fini is in
     MOVE_ELECTRIFY = 582,
     MOVE_PLAY_ROUGH = 583, //should be in
     MOVE_FAIRY_WIND = 584, //should be in
@@ -634,7 +634,7 @@ enum __attribute__((packed)) Move
     MOVE_HYPERSPACE_HOLE = 593,
     MOVE_WATER_SHURIKEN = 594,
     MOVE_MYSTICAL_FIRE = 595, //should be in
-    MOVE_SPIKY_SHIELD = 596,
+    MOVE_SPIKY_SHIELD = 596, //should be in if glimmora is in
     MOVE_AROMATIC_MIST = 597,
     MOVE_EERIE_IMPULSE = 598, //should be in
     MOVE_VENOM_DRENCH = 599,
@@ -642,7 +642,7 @@ enum __attribute__((packed)) Move
     MOVE_GEOMANCY = 601,
     MOVE_MAGNETIC_FLUX = 602,
     MOVE_HAPPY_HOUR = 603,
-    MOVE_ELECTRIC_TERRAIN = 604,
+    MOVE_ELECTRIC_TERRAIN = 604, //should be in if tapu_koko is in
     MOVE_DAZZLING_GLEAM = 605, //should be in
     MOVE_CELEBRATE = 606,
     MOVE_HOLD_HANDS = 607,
@@ -683,7 +683,7 @@ enum __attribute__((packed)) Move
     MOVE_THROAT_CHOP = 638,
     MOVE_POLLEN_PUFF = 639,
     MOVE_ANCHOR_SHOT = 640,
-    MOVE_PSYCHIC_TERRAIN = 641,
+    MOVE_PSYCHIC_TERRAIN = 641, //should be in if tapu_lele is in
     MOVE_LUNGE = 642, //should be in
     MOVE_FIRE_LASH = 643,
     MOVE_POWER_TRIP = 644,
@@ -698,8 +698,8 @@ enum __attribute__((packed)) Move
     MOVE_BEAK_BLAST = 653,
     MOVE_CLANGING_SCALES = 654,
     MOVE_DRAGON_HAMMER = 655,
-    MOVE_BRUTAL_SWING = 656,
-    MOVE_AURORA_VEIL = 657,
+    MOVE_BRUTAL_SWING = 656, //should be in (Bewear and Tinkaton lines)
+    MOVE_AURORA_VEIL = 657, //should be in if frosmoth is in
     MOVE_SHELL_TRAP = 658,
     MOVE_FLEUR_CANNON = 659,
     MOVE_PSYCHIC_FANGS = 660,
@@ -713,7 +713,7 @@ enum __attribute__((packed)) Move
     MOVE_MOONGEIST_BEAM = 668,
     MOVE_TEARFUL_LOOK = 669,
     MOVE_ZING_ZAP = 670,
-    MOVE_NATURES_MADNESS = 671,
+    MOVE_NATURES_MADNESS = 671, //should be in (shared by all four Tapus)
     MOVE_MULTI_ATTACK = 672,
     // USUM Moves
     MOVE_MIND_BLOWN = 673,
@@ -745,14 +745,14 @@ enum __attribute__((packed)) Move
     MOVE_TAR_SHOT = 695,
     MOVE_MAGIC_POWDER = 696,
     MOVE_DRAGON_DARTS = 697,
-    MOVE_TEATIME = 698,
+    MOVE_TEATIME = 698, //should be in if polteageist is in
     MOVE_OCTOLOCK = 699,
     MOVE_BOLT_BEAK = 700,
     MOVE_FISHIOUS_REND = 701,
     MOVE_COURT_CHANGE = 702,
     MOVE_CLANGOROUS_SOUL = 703,
     MOVE_BODY_PRESS = 704, //should be in
-    MOVE_DECORATE = 705,
+    MOVE_DECORATE = 705, //should be in if alcremie is in
     MOVE_DRUM_BEATING = 706,
     MOVE_SNAP_TRAP = 707,
     MOVE_PYRO_BALL = 708,
@@ -768,7 +768,7 @@ enum __attribute__((packed)) Move
     MOVE_STRANGE_STEAM = 718, //should be in (weezings signature move)
     MOVE_LIFE_DEW = 719,
     MOVE_OBSTRUCT = 720,
-    MOVE_FALSE_SURRENDER = 721,
+    MOVE_FALSE_SURRENDER = 721, //should be in if grimmsnarl is in
     MOVE_METEOR_ASSAULT = 722,
     MOVE_ETERNABEAM = 723,
     MOVE_STEEL_BEAM = 724,
@@ -791,13 +791,13 @@ enum __attribute__((packed)) Move
     MOVE_FLIP_TURN = 740,
     MOVE_TRIPLE_AXEL = 741,
     MOVE_DUAL_WINGBEAT = 742,
-    MOVE_SCORCHING_SANDS = 743,
+    MOVE_SCORCHING_SANDS = 743, //should be in (the fork's BURNING_SAND, reskinned)
     MOVE_JUNGLE_HEALING = 744,
     MOVE_WICKED_BLOW = 745,
     MOVE_SURGING_STRIKES = 746,
     // Crown Tundra Moves
-    MOVE_THUNDER_CAGE = 747,
-    MOVE_DRAGON_ENERGY = 748,
+    MOVE_THUNDER_CAGE = 747, //should be in if regieleki is in
+    MOVE_DRAGON_ENERGY = 748, //should be in if regidrago is in
     MOVE_FREEZING_GLARE = 749,
     MOVE_FIERY_WRATH = 750,
     MOVE_THUNDEROUS_KICK = 751,
@@ -817,7 +817,7 @@ enum __attribute__((packed)) Move
     MOVE_MOUNTAIN_GALE = 764,
     MOVE_VICTORY_DANCE = 765,
     MOVE_HEADLONG_RUSH = 766, //should be in if ursaluna is in
-    MOVE_BARB_BARRAGE = 767,
+    MOVE_BARB_BARRAGE = 767, //should be in if qwilfish is in
     MOVE_ESPER_WING = 768,
     MOVE_BITTER_MALICE = 769,
     MOVE_SHELTER = 770,
@@ -835,11 +835,11 @@ enum __attribute__((packed)) Move
     MOVE_TERA_BLAST = MOVES_COUNT_GEN8,
     MOVE_SILK_TRAP = 780,
     MOVE_AXE_KICK = 781,
-    MOVE_LAST_RESPECTS = 782,
-    MOVE_LUMINA_CRASH = 783,
+    MOVE_LAST_RESPECTS = 782, //should be in if houndstone is in
+    MOVE_LUMINA_CRASH = 783, //should be in if espathra is in
     MOVE_ORDER_UP = 784,
     MOVE_JET_PUNCH = 785,
-    MOVE_SPICY_EXTRACT = 786,
+    MOVE_SPICY_EXTRACT = 786, //should be in if scovillain is in
     MOVE_SPIN_OUT = 787,
     MOVE_POPULATION_BOMB = 788,
     MOVE_ICE_SPINNER = 789,
@@ -847,7 +847,7 @@ enum __attribute__((packed)) Move
     MOVE_REVIVAL_BLESSING = 791,
     MOVE_SALT_CURE = 792,
     MOVE_TRIPLE_DIVE = 793,
-    MOVE_MORTAL_SPIN = 794,
+    MOVE_MORTAL_SPIN = 794, //should be in if glimmora is in
     MOVE_DOODLE = 795,
     MOVE_FILLET_AWAY = 796,
     MOVE_KOWTOW_CLEAVE = 797,
@@ -866,9 +866,9 @@ enum __attribute__((packed)) Move
     MOVE_POUNCE = 810, //should be in
     MOVE_TRAILBLAZE = 811,
     MOVE_CHILLING_WATER = 812,
-    MOVE_HYPER_DRILL = 813,
+    MOVE_HYPER_DRILL = 813, //should be in if dunsparce is in
     MOVE_TWIN_BEAM = 814, //should be in
-    MOVE_RAGE_FIST = 815,
+    MOVE_RAGE_FIST = 815, //should be in if primeape is in
     MOVE_ARMOR_CANNON = 816,
     MOVE_BITTER_BLADE = 817,
     MOVE_DOUBLE_SHOCK = 818,
