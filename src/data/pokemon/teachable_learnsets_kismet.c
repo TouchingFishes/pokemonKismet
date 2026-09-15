@@ -46,7 +46,7 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_PIDGEY
     [SPECIES_PIDGEY] = sPidgeyTeachableLearnset_Kismet,
-    [SPECIES_PIDGEOTTO] = sPidgeottoTeachableLearnset_Kismet,
+    [SPECIES_PIDGEOTTO] = sPidgeyTeachableLearnset_Kismet,
     [SPECIES_PIDGEOT] = sPidgeotTeachableLearnset_Kismet,
     [SPECIES_PIDGEOT_MEGA] = sPidgeotTeachableLearnset_Kismet,
 #endif
@@ -1374,7 +1374,7 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_DEINO
     [SPECIES_DEINO] = sDeinoTeachableLearnset_Kismet,
-    [SPECIES_ZWEILOUS] = sZweilousTeachableLearnset_Kismet,
+    [SPECIES_ZWEILOUS] = sDeinoTeachableLearnset_Kismet,
     [SPECIES_HYDREIGON] = sHydreigonTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_LARVESTA
