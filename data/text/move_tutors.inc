@@ -710,3 +710,59 @@ MoveTutor_Text_FissureTaught:
 	.string "...\p"
 	.string "Do not rely on it blindly.\n"
 	.string "Only when the moment is absolute.$"
+
+MoveTutor_Text_LunarBlessingTeach:
+	.string "The moon watches over us all.\p"
+	.string "Its light can mend what battle\n"
+	.string "has broken.\p"
+	.string "Shall I teach your POKéMON\n"
+	.string "LUNAR BLESSING?$"
+
+MoveTutor_Text_LunarBlessingWhichMon:
+	.string "Which POKéMON should receive\n"
+	.string "the moon's blessing?$"
+
+MoveTutor_Text_LunarBlessingDeclined:
+	.string "The moon will wait.\n"
+	.string "It always does.$"
+
+MoveTutor_Text_LunarBlessingTaught:
+	.string "It is done.\p"
+	.string "When the night is darkest, that\n"
+	.string "blessing will answer.$"
+
+MoveTutor_Text_StormTutorIntro:
+	.string "Feel that? The air is changing.\p"
+	.string "The old storms still answer to\n"
+	.string "those who know their names.\p"
+	.string "Shall I teach one to your\n"
+	.string "POKéMON?$"
+
+MoveTutor_Text_StormTutorChoose:
+	.string "Which storm will you call?$"
+
+MoveTutor_Text_StormTutorConfirm:
+	.string "{STR_VAR_1}, then?$"
+
+MoveTutor_Text_StormTutorWhichMon:
+	.string "And which POKéMON will carry it?$"
+
+MoveTutor_Text_StormTutorDone:
+	.string "The storm has a new home.\p"
+	.string "Use it well.$"
+
+MoveTutor_Text_StormTutorComeBack:
+	.string "The wind keeps its own time.\n"
+	.string "Come back when you are ready.$"
+
+MoveTutor_Text_StormMove_Bleakwind:
+	.string "BLEAKWIND STORM$"
+
+MoveTutor_Text_StormMove_Wildbolt:
+	.string "WILDBOLT STORM$"
+
+MoveTutor_Text_StormMove_Sandsear:
+	.string "SANDSEAR STORM$"
+
+MoveTutor_Text_StormMove_Cancel:
+	.string "CANCEL$"

@@ -1430,9 +1430,6 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_TAPU_FINI] = sTapuFiniTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_SINISTEA
-    [SPECIES_SINISTEA] = sSinisteaTeachableLearnset_Kismet,
-    [SPECIES_SINISTEA_PHONY] = sSinisteaTeachableLearnset_Kismet,
-    [SPECIES_SINISTEA_ANTIQUE] = sSinisteaTeachableLearnset_Kismet,
     [SPECIES_POLTEAGEIST] = sPolteageistTeachableLearnset_Kismet,
     [SPECIES_POLTEAGEIST_PHONY] = sPolteageistTeachableLearnset_Kismet,
     [SPECIES_POLTEAGEIST_ANTIQUE] = sPolteageistTeachableLearnset_Kismet,

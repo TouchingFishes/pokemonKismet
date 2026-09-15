@@ -469,3 +469,76 @@ MoveTutor_EventScript_FissureTaught_hns::
 	msgbox MoveTutor_Text_FissureTaught, MSGBOX_DEFAULT
 	release
 	end
+
+MoveTutor_EventScript_LunarBlessingTutor_hns::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_LunarBlessingTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_LunarBlessingDeclined_hns
+	msgbox MoveTutor_Text_LunarBlessingWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_LUNAR_BLESSING
+	fadescreen FADE_TO_BLACK
+	chooseboxmon SELECT_PC_MON_PLA_TUTOR
+	waitstate
+	goto_if_eq VAR_RESULT, FALSE, MoveTutor_EventScript_LunarBlessingDeclined_hns
+	goto MoveTutor_EventScript_LunarBlessingTaught_hns
+	end
+
+MoveTutor_EventScript_LunarBlessingDeclined_hns::
+	msgbox MoveTutor_Text_LunarBlessingDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_LunarBlessingTaught_hns::
+	msgbox MoveTutor_Text_LunarBlessingTaught, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_StormTutor_hns::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_StormTutorIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_StormTutorDecline_hns
+	message MoveTutor_Text_StormTutorChoose
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor_Text_StormMove_Bleakwind, MoveTutor_Text_StormMove_Wildbolt, MoveTutor_Text_StormMove_Sandsear, MoveTutor_Text_StormMove_Cancel
+	switch VAR_RESULT
+	case 0, MoveTutor_EventScript_StormTeach_Bleakwind_hns
+	case 1, MoveTutor_EventScript_StormTeach_Wildbolt_hns
+	case 2, MoveTutor_EventScript_StormTeach_Sandsear_hns
+	case 3, MoveTutor_EventScript_StormTutorDecline_hns
+	case MULTI_B_PRESSED, MoveTutor_EventScript_StormTutorDecline_hns
+	end
+
+MoveTutor_EventScript_StormTeach_Bleakwind_hns::
+	setvar VAR_0x8005, MOVE_BLEAKWIND_STORM
+	goto MoveTutor_EventScript_StormTeachMove_hns
+	end
+
+MoveTutor_EventScript_StormTeach_Wildbolt_hns::
+	setvar VAR_0x8005, MOVE_WILDBOLT_STORM
+	goto MoveTutor_EventScript_StormTeachMove_hns
+	end
+
+MoveTutor_EventScript_StormTeach_Sandsear_hns::
+	setvar VAR_0x8005, MOVE_SANDSEAR_STORM
+	goto MoveTutor_EventScript_StormTeachMove_hns
+	end
+
+MoveTutor_EventScript_StormTeachMove_hns::
+	buffermovename STR_VAR_1, VAR_0x8005
+	msgbox MoveTutor_Text_StormTutorConfirm, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_StormTutor_hns
+	msgbox MoveTutor_Text_StormTutorWhichMon, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	chooseboxmon SELECT_PC_MON_PLA_TUTOR
+	waitstate
+	goto_if_eq VAR_RESULT, FALSE, MoveTutor_EventScript_StormTutorDecline_hns
+	msgbox MoveTutor_Text_StormTutorDone, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_StormTutorDecline_hns::
+	msgbox MoveTutor_Text_StormTutorComeBack, MSGBOX_DEFAULT
+	release
+	end

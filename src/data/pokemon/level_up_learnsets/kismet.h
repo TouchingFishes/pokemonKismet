@@ -3711,6 +3711,7 @@ static const struct LevelUpMove sTogekissLevelUpLearnset_Kismet[] = {
     LEVEL_UP_MOVE( 1, MOVE_EXTREME_SPEED),
     LEVEL_UP_MOVE( 1, MOVE_AURA_SPHERE),
     LEVEL_UP_MOVE( 1, MOVE_AIR_SLASH),
+    LEVEL_UP_MOVE(40, MOVE_ESPER_WING),
     LEVEL_UP_END
 };
 
@@ -3735,6 +3736,7 @@ static const struct LevelUpMove sXatuLevelUpLearnset_Kismet[] = {
     LEVEL_UP_MOVE( 1, MOVE_PECK),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_MORNING_SUN),
+    LEVEL_UP_MOVE( 1, MOVE_PSYCHIC),
     LEVEL_UP_MOVE( 5, MOVE_TELEPORT),
     LEVEL_UP_MOVE(10, MOVE_CONFUSION),
     LEVEL_UP_MOVE(15, MOVE_NIGHT_SHADE),
@@ -3745,7 +3747,7 @@ static const struct LevelUpMove sXatuLevelUpLearnset_Kismet[] = {
     LEVEL_UP_MOVE(40, MOVE_FUTURE_SIGHT),
     LEVEL_UP_MOVE(45, MOVE_MYSTICAL_FIRE),
     LEVEL_UP_MOVE(50, MOVE_CONFUSE_RAY),
-    LEVEL_UP_MOVE(60, MOVE_PSYCHIC),
+    LEVEL_UP_MOVE(60, MOVE_ESPER_WING),
     LEVEL_UP_MOVE(70, MOVE_OMINOUS_WIND),
     LEVEL_UP_END
 };
@@ -4969,7 +4971,7 @@ static const struct LevelUpMove sStantlerLevelUpLearnset_Kismet[] = {
 static const struct LevelUpMove sWyrdeerLevelUpLearnset_Kismet[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
-    LEVEL_UP_MOVE( 1, MOVE_MAGIC_ROOM),
+    LEVEL_UP_MOVE( 1, MOVE_TRICK_ROOM),
     LEVEL_UP_MOVE( 7, MOVE_CONFUSE_RAY),
     LEVEL_UP_MOVE(13, MOVE_ASTONISH),
     LEVEL_UP_MOVE(19, MOVE_HYPNOSIS),
@@ -6819,7 +6821,7 @@ static const struct LevelUpMove sAltariaLevelUpLearnset_Kismet[] = {
     LEVEL_UP_MOVE(43, MOVE_PLAY_ROUGH),
     LEVEL_UP_MOVE(47, MOVE_REFRESH),
     LEVEL_UP_MOVE(56, MOVE_PERISH_SONG),
-    LEVEL_UP_MOVE(63, MOVE_ATTRACT),
+    LEVEL_UP_MOVE(63, MOVE_ESPER_WING),
     LEVEL_UP_MOVE(69, MOVE_SKY_ATTACK),
     LEVEL_UP_END
 };

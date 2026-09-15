@@ -125,28 +125,21 @@ NewSinjoh_HotSprings_EventScript_PLATutor::
 	goto_if_eq VAR_RESULT, NO, NewSinjoh_HotSprings_EventScript_PLATutorDecline
 	message NewSinjoh_HotSprings_Text_PLATutorChoose
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewSinjoh_HotSprings_Text_PLAMove_PowerShift, NewSinjoh_HotSprings_Text_PLAMove_SpringtideStorm, NewSinjoh_HotSprings_Text_PLAMove_MysticalPower, NewSinjoh_HotSprings_Text_PLAMove_WaveCrash, NewSinjoh_HotSprings_Text_PLAMove_MountainGale, NewSinjoh_HotSprings_Text_PLAMove_VictoryDance, NewSinjoh_HotSprings_Text_PLAMove_EsperWing, NewSinjoh_HotSprings_Text_PLAMove_BitterMalice, NewSinjoh_HotSprings_Text_PLAMove_Shelter, NewSinjoh_HotSprings_Text_PLAMove_BleakwindStorm, NewSinjoh_HotSprings_Text_PLAMove_WildboltStorm, NewSinjoh_HotSprings_Text_PLAMove_SandsearStorm, NewSinjoh_HotSprings_Text_PLAMove_LunarBlessing, NewSinjoh_HotSprings_Text_PLAMove_TakeHeart, NewSinjoh_HotSprings_Text_PLAMove_Cancel
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewSinjoh_HotSprings_Text_PLAMove_PowerTrick, NewSinjoh_HotSprings_Text_PLAMove_SpringtideStorm, NewSinjoh_HotSprings_Text_PLAMove_MysticalPower, NewSinjoh_HotSprings_Text_PLAMove_WaveCrash, NewSinjoh_HotSprings_Text_PLAMove_MountainGale, NewSinjoh_HotSprings_Text_PLAMove_EsperWing, NewSinjoh_HotSprings_Text_PLAMove_BitterMalice, NewSinjoh_HotSprings_Text_PLAMove_Cancel
 	switch VAR_RESULT
-	case 0, NewSinjoh_HotSprings_EventScript_PLATeach_PowerShift
+	case 0, NewSinjoh_HotSprings_EventScript_PLATeach_PowerTrick
 	case 1, NewSinjoh_HotSprings_EventScript_PLATeach_SpringtideStorm
 	case 2, NewSinjoh_HotSprings_EventScript_PLATeach_MysticalPower
 	case 3, NewSinjoh_HotSprings_EventScript_PLATeach_WaveCrash
 	case 4, NewSinjoh_HotSprings_EventScript_PLATeach_MountainGale
-	case 5, NewSinjoh_HotSprings_EventScript_PLATeach_VictoryDance
-	case 6, NewSinjoh_HotSprings_EventScript_PLATeach_EsperWing
-	case 7, NewSinjoh_HotSprings_EventScript_PLATeach_BitterMalice
-	case 8, NewSinjoh_HotSprings_EventScript_PLATeach_Shelter
-	case 9, NewSinjoh_HotSprings_EventScript_PLATeach_BleakwindStorm
-	case 10, NewSinjoh_HotSprings_EventScript_PLATeach_WildboltStorm
-	case 11, NewSinjoh_HotSprings_EventScript_PLATeach_SandsearStorm
-	case 12, NewSinjoh_HotSprings_EventScript_PLATeach_LunarBlessing
-	case 13, NewSinjoh_HotSprings_EventScript_PLATeach_TakeHeart
-	case 14, NewSinjoh_HotSprings_EventScript_PLATutorDecline
+	case 5, NewSinjoh_HotSprings_EventScript_PLATeach_EsperWing
+	case 6, NewSinjoh_HotSprings_EventScript_PLATeach_BitterMalice
+	case 7, NewSinjoh_HotSprings_EventScript_PLATutorDecline
 	case MULTI_B_PRESSED, NewSinjoh_HotSprings_EventScript_PLATutorDecline
 	end
 
-NewSinjoh_HotSprings_EventScript_PLATeach_PowerShift::
-	setvar VAR_0x8005, MOVE_POWER_SHIFT
+NewSinjoh_HotSprings_EventScript_PLATeach_PowerTrick::
+	setvar VAR_0x8005, MOVE_POWER_TRICK
 	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
 	end
 
@@ -170,11 +163,6 @@ NewSinjoh_HotSprings_EventScript_PLATeach_MountainGale::
 	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
 	end
 
-NewSinjoh_HotSprings_EventScript_PLATeach_VictoryDance::
-	setvar VAR_0x8005, MOVE_VICTORY_DANCE
-	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
-	end
-
 NewSinjoh_HotSprings_EventScript_PLATeach_EsperWing::
 	setvar VAR_0x8005, MOVE_ESPER_WING
 	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
@@ -182,36 +170,6 @@ NewSinjoh_HotSprings_EventScript_PLATeach_EsperWing::
 
 NewSinjoh_HotSprings_EventScript_PLATeach_BitterMalice::
 	setvar VAR_0x8005, MOVE_BITTER_MALICE
-	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
-	end
-
-NewSinjoh_HotSprings_EventScript_PLATeach_Shelter::
-	setvar VAR_0x8005, MOVE_SHELTER
-	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
-	end
-
-NewSinjoh_HotSprings_EventScript_PLATeach_BleakwindStorm::
-	setvar VAR_0x8005, MOVE_BLEAKWIND_STORM
-	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
-	end
-
-NewSinjoh_HotSprings_EventScript_PLATeach_WildboltStorm::
-	setvar VAR_0x8005, MOVE_WILDBOLT_STORM
-	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
-	end
-
-NewSinjoh_HotSprings_EventScript_PLATeach_SandsearStorm::
-	setvar VAR_0x8005, MOVE_SANDSEAR_STORM
-	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
-	end
-
-NewSinjoh_HotSprings_EventScript_PLATeach_LunarBlessing::
-	setvar VAR_0x8005, MOVE_LUNAR_BLESSING
-	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
-	end
-
-NewSinjoh_HotSprings_EventScript_PLATeach_TakeHeart::
-	setvar VAR_0x8005, MOVE_TAKE_HEART
 	goto NewSinjoh_HotSprings_EventScript_PLATeachMove
 	end
 
@@ -261,8 +219,6 @@ NewSinjoh_HotSprings_Text_PLATutorDone:
 NewSinjoh_HotSprings_Text_PLATutorComeBack:
 	.string "Come back anytime.$"
 
-NewSinjoh_HotSprings_Text_PLAMove_VictoryDance:
-	.string "VICTORY DANCE$"
 
 NewSinjoh_HotSprings_Text_PLAMove_MountainGale:
 	.string "MOUNTAIN GALE$"
@@ -273,26 +229,10 @@ NewSinjoh_HotSprings_Text_PLAMove_BitterMalice:
 NewSinjoh_HotSprings_Text_PLAMove_SpringtideStorm:
 	.string "SPRINGTIDE STORM$"
 
-NewSinjoh_HotSprings_Text_PLAMove_LunarBlessing:
-	.string "LUNAR BLESSING$"
-
-NewSinjoh_HotSprings_Text_PLAMove_BleakwindStorm:
-	.string "BLEAKWIND STORM$"
-
-NewSinjoh_HotSprings_Text_PLAMove_WildboltStorm:
-	.string "WILDBOLT STORM$"
-
-NewSinjoh_HotSprings_Text_PLAMove_SandsearStorm:
-	.string "SANDSEAR STORM$"
-
-NewSinjoh_HotSprings_Text_PLAMove_Shelter:
-	.string "SHELTER$"
 
 NewSinjoh_HotSprings_Text_PLAMove_EsperWing:
 	.string "ESPER WING$"
 
-NewSinjoh_HotSprings_Text_PLAMove_TakeHeart:
-	.string "TAKE HEART$"
 
 NewSinjoh_HotSprings_Text_PLAMove_MysticalPower:
 	.string "MYSTICAL POWER$"
@@ -300,8 +240,8 @@ NewSinjoh_HotSprings_Text_PLAMove_MysticalPower:
 NewSinjoh_HotSprings_Text_PLAMove_WaveCrash:
 	.string "WAVE CRASH$"
 
-NewSinjoh_HotSprings_Text_PLAMove_PowerShift:
-	.string "POWER SHIFT$"
+NewSinjoh_HotSprings_Text_PLAMove_PowerTrick:
+	.string "POWER TRICK$"
 
 NewSinjoh_HotSprings_Text_PLAMove_Cancel:
 	.string "CANCEL$"
@@ -405,10 +345,6 @@ NewSinjoh_HotSprings_EventScript_ArcanineRan::
 	clearflag FLAG_NO_SHINY
 	release
 	end
-
-
-
-
 
 
 NewSinjoh_HotSprings_EventScript_ActivateUrsaluna::
