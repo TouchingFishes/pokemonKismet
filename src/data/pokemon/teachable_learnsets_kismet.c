@@ -1116,7 +1116,7 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_SPHEAL
     [SPECIES_SPHEAL] = sSphealTeachableLearnset_Kismet,
-    [SPECIES_SEALEO] = sSphealTeachableLearnset_Kismet,
+    [SPECIES_SEALEO] = sSealeoTeachableLearnset_Kismet,
     [SPECIES_WALREIN] = sWalreinTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_CLAMPERL
