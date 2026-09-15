@@ -402,7 +402,7 @@ enum __attribute__((packed)) Move
     MOVE_ACUPRESSURE = 367,
     MOVE_METAL_BURST = 368,
     MOVE_U_TURN = 369, //do not use
-    MOVE_CLOSE_COMBAT = 370, //do not use
+    MOVE_CLOSE_COMBAT = 370, //use but nerf to 100 BP
     MOVE_PAYBACK = 371,
     MOVE_ASSURANCE = 372, //do not use
     MOVE_EMBARGO = 373, //do not use
@@ -463,7 +463,7 @@ enum __attribute__((packed)) Move
     MOVE_ZEN_HEADBUTT = 428,
     MOVE_MIRROR_SHOT = 429,
     MOVE_FLASH_CANNON = 430,
-    MOVE_ROCK_CLIMB = 431,
+    MOVE_ROCK_CLIMB = 431, //do not use
     MOVE_DEFOG = 432, //do not use
     MOVE_TRICK_ROOM = 433,
     MOVE_DRACO_METEOR = 434, //do not use
@@ -563,7 +563,7 @@ enum __attribute__((packed)) Move
     MOVE_DRAGON_TAIL = 525, //should be in
     MOVE_WORK_UP = 526,
     MOVE_ELECTROWEB = 527,
-    MOVE_WILD_CHARGE = 528,
+    MOVE_WILD_CHARGE = 528, //should be in
     MOVE_DRILL_RUN = 529, //should be in
     MOVE_DUAL_CHOP = 530,
     MOVE_HEART_STAMP = 531,
@@ -628,7 +628,7 @@ enum __attribute__((packed)) Move
     MOVE_FAIRY_LOCK = 587,
     MOVE_KINGS_SHIELD = 588, //should be in if aegislash is in
     MOVE_PLAY_NICE = 589,
-    MOVE_CONFIDE = 590,
+    MOVE_CONFIDE = 590, //should be in
     MOVE_DIAMOND_STORM = 591,
     MOVE_STEAM_ERUPTION = 592,
     MOVE_HYPERSPACE_HOLE = 593,
@@ -636,7 +636,7 @@ enum __attribute__((packed)) Move
     MOVE_MYSTICAL_FIRE = 595, //should be in
     MOVE_SPIKY_SHIELD = 596,
     MOVE_AROMATIC_MIST = 597,
-    MOVE_EERIE_IMPULSE = 598,
+    MOVE_EERIE_IMPULSE = 598, //should be in
     MOVE_VENOM_DRENCH = 599,
     MOVE_POWDER = 600,
     MOVE_GEOMANCY = 601,
