@@ -592,7 +592,7 @@ enum __attribute__((packed)) Move
     MOVE_ICE_BURN = 554,
     MOVE_SNARL = 555, //should be in
     MOVE_ICICLE_CRASH = 556, //should be in
-    MOVE_V_CREATE = 557, //should be in of victini is in
+    MOVE_V_CREATE = 557, //should be in if victini is in
     MOVE_FUSION_FLARE = 558,
     MOVE_FUSION_BOLT = 559,
     MOVES_COUNT_GEN5,
