@@ -432,6 +432,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clair_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cook_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerF_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerM_hns;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cueball_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CuttableTree_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elm_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Engineer_hns;
@@ -1003,6 +1004,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_COOK_HNS] = &gObjectEventGraphicsInfo_Cook_hns,
     [OBJ_EVENT_GFX_COOLTRAINER_F_HNS] = &gObjectEventGraphicsInfo_CooltrainerF_hns,
     [OBJ_EVENT_GFX_COOLTRAINER_M_HNS] = &gObjectEventGraphicsInfo_CooltrainerM_hns,
+    [OBJ_EVENT_GFX_CUEBALL_HNS] = &gObjectEventGraphicsInfo_Cueball_hns,
     [OBJ_EVENT_GFX_MAN_HNS] = &gObjectEventGraphicsInfo_Man_hns,
     [OBJ_EVENT_GFX_ENGINEER_HNS] = &gObjectEventGraphicsInfo_Engineer_hns,
     [OBJ_EVENT_GFX_FAT_MAN_HNS] = &gObjectEventGraphicsInfo_FatMan_hns,

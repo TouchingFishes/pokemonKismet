@@ -128,6 +128,9 @@ $(OBJEVENTGFXDIR)/people/cooltrainer_f_hns.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/cooltrainer_m_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/cueball_hns.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/man_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

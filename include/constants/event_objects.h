@@ -629,7 +629,8 @@
 #define OBJ_EVENT_GFX_ALDER_HNS                 589
 #define OBJ_EVENT_GFX_IRIS_HNS                  590
 #define OBJ_EVENT_GFX_MEARA_HNS                 591
-#define NUM_OBJ_EVENT_GFX                        592
+#define OBJ_EVENT_GFX_CUEBALL_HNS               592
+#define NUM_OBJ_EVENT_GFX                        593
 
 
 // These are dynamic object gfx ids.

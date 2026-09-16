@@ -700,6 +700,7 @@ const u32 gObjectEventPic_Channeler_hns[] = INCBIN_U32("graphics/object_events/p
 const u32 gObjectEventPic_Cook_hns[] = INCBIN_U32("graphics/object_events/pics/people/cook_hns.4bpp");
 const u32 gObjectEventPic_CooltrainerF_hns[] = INCBIN_U32("graphics/object_events/pics/people/cooltrainer_f_hns.4bpp");
 const u32 gObjectEventPic_CooltrainerM_hns[] = INCBIN_U32("graphics/object_events/pics/people/cooltrainer_m_hns.4bpp");
+const u32 gObjectEventPic_Cueball_hns[] = INCBIN_U32("graphics/object_events/pics/people/cueball_hns.4bpp");
 const u32 gObjectEventPic_Man_hns[] = INCBIN_U32("graphics/object_events/pics/people/man_hns.4bpp");
 const u32 gObjectEventPic_Engineer_hns[] = INCBIN_U32("graphics/object_events/pics/people/engineer_hns.4bpp");
 const u32 gObjectEventPic_FatMan_hns[] = INCBIN_U32("graphics/object_events/pics/people/fat_man_hns.4bpp");
