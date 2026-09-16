@@ -2332,7 +2332,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-    #if P_UPDATED_ABILITIES >= GEN_7
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SAND_FORCE, ABILITY_NONE, ABILITY_WEAK_ARMOR },
+    #elif P_UPDATED_ABILITIES >= GEN_7
         .abilities = { ABILITY_STURDY, ABILITY_WEAK_ARMOR, ABILITY_SAND_FORCE },
     #else
         .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_SAND_FORCE },
@@ -2408,7 +2410,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-    #if P_UPDATED_ABILITIES >= GEN_7
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SAND_FORCE, ABILITY_NONE, ABILITY_WEAK_ARMOR },
+    #elif P_UPDATED_ABILITIES >= GEN_7
         .abilities = { ABILITY_STURDY, ABILITY_WEAK_ARMOR, ABILITY_SAND_FORCE },
     #else
         .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_SAND_FORCE },
@@ -2493,7 +2497,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-    #if P_UPDATED_ABILITIES >= GEN_7
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SAND_STREAM, ABILITY_NONE, ABILITY_WEAK_ARMOR },
+    #elif P_UPDATED_ABILITIES >= GEN_7
         .abilities = { ABILITY_STURDY, ABILITY_SAND_STREAM, ABILITY_SAND_FORCE },
     #else
         .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_SAND_FORCE },
@@ -4885,7 +4891,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SAND_STREAM, ABILITY_NONE, ABILITY_MOXIE },
+    #else
         .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT },
+    #endif
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("SANDILE"),
         .cryId = CRY_SANDILE,
@@ -4955,7 +4965,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SAND_STREAM, ABILITY_NONE, ABILITY_MOXIE },
+    #else
         .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT },
+    #endif
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("KROKOROK"),
         .cryId = CRY_KROKOROK,
@@ -5029,7 +5043,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SAND_STREAM, ABILITY_NONE, ABILITY_MOXIE },
+    #else
         .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("KROOKODILE"),
         .cryId = CRY_KROOKODILE,
@@ -5100,7 +5118,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_HUSTLE, ABILITY_NONE, ABILITY_SHEER_FORCE },
+    #else
         .abilities = { ABILITY_HUSTLE, ABILITY_NONE, ABILITY_INNER_FOCUS },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("DARUMAKA"),
         .cryId = CRY_DARUMAKA,
@@ -5170,7 +5192,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_ZEN_MODE, ABILITY_NONE, ABILITY_SHEER_FORCE },
+    #else
         .abilities = { ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_ZEN_MODE },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("DARMANITAN"),
         .cryId = CRY_DARMANITAN,
@@ -7854,7 +7880,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-    #if P_UPDATED_ABILITIES >= GEN_7
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_OVERCOAT, ABILITY_ICE_BODY, ABILITY_WEAK_ARMOR },
+    #elif P_UPDATED_ABILITIES >= GEN_7
         .abilities = { ABILITY_ICE_BODY, ABILITY_SNOW_CLOAK, ABILITY_WEAK_ARMOR },
     #else
         .abilities = { ABILITY_ICE_BODY, ABILITY_NONE, ABILITY_WEAK_ARMOR },
@@ -7930,7 +7958,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-    #if P_UPDATED_ABILITIES >= GEN_7
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_OVERCOAT, ABILITY_ICE_BODY, ABILITY_WEAK_ARMOR },
+    #elif P_UPDATED_ABILITIES >= GEN_7
         .abilities = { ABILITY_ICE_BODY, ABILITY_SNOW_CLOAK, ABILITY_WEAK_ARMOR },
     #else
         .abilities = { ABILITY_ICE_BODY, ABILITY_NONE, ABILITY_WEAK_ARMOR },
@@ -8003,7 +8033,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-    #if P_UPDATED_ABILITIES >= GEN_7
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_OVERCOAT, ABILITY_SNOW_WARNING, ABILITY_WEAK_ARMOR },
+    #elif P_UPDATED_ABILITIES >= GEN_7
         .abilities = { ABILITY_ICE_BODY, ABILITY_SNOW_WARNING, ABILITY_WEAK_ARMOR },
     #else
         .abilities = { ABILITY_ICE_BODY, ABILITY_NONE, ABILITY_WEAK_ARMOR },
@@ -9509,7 +9541,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_CLEAR_BODY, ABILITY_OVERCOAT, ABILITY_CLEAR_BODY },
+    #else
         .abilities = { ABILITY_PLUS, ABILITY_MINUS, ABILITY_CLEAR_BODY },
+    #endif
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = TRUE,
         .speciesName = _("KLINK"),
@@ -9580,7 +9616,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_CLEAR_BODY, ABILITY_OVERCOAT, ABILITY_CLEAR_BODY },
+    #else
         .abilities = { ABILITY_PLUS, ABILITY_MINUS, ABILITY_CLEAR_BODY },
+    #endif
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = TRUE,
         .speciesName = _("KLANG"),
@@ -9651,7 +9691,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_CLEAR_BODY, ABILITY_OVERCOAT, ABILITY_CLEAR_BODY },
+    #else
         .abilities = { ABILITY_PLUS, ABILITY_MINUS, ABILITY_CLEAR_BODY },
+    #endif
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = TRUE,
         .speciesName = _("KLINKLANG"),
@@ -10442,7 +10486,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_HYPER_CUTTER, ABILITY_MOLD_BREAKER, ABILITY_TOUGH_CLAWS },
+    #else
         .abilities = { ABILITY_RIVALRY, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE },
+    #endif
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("AXEW"),
         .cryId = CRY_AXEW,
@@ -10510,7 +10558,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_HYPER_CUTTER, ABILITY_MOLD_BREAKER, ABILITY_TOUGH_CLAWS },
+    #else
         .abilities = { ABILITY_RIVALRY, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE },
+    #endif
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("FRAXURE"),
         .cryId = CRY_FRAXURE,
@@ -10577,7 +10629,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_HYPER_CUTTER, ABILITY_MOLD_BREAKER, ABILITY_TOUGH_CLAWS },
+    #else
         .abilities = { ABILITY_RIVALRY, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE },
+    #endif
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("HAXORUS"),
         .cryId = CRY_HAXORUS,
@@ -10647,7 +10703,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-    #if P_UPDATED_ABILITIES >= GEN_7
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SLUSH_RUSH, ABILITY_ICE_BODY, ABILITY_SWIFT_SWIM },
+    #elif P_UPDATED_ABILITIES >= GEN_7
         .abilities = { ABILITY_SNOW_CLOAK, ABILITY_SLUSH_RUSH, ABILITY_RATTLED },
     #else
         .abilities = { ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_RATTLED },
@@ -10720,7 +10778,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-    #if P_UPDATED_ABILITIES >= GEN_7
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SLUSH_RUSH, ABILITY_ICE_BODY, ABILITY_SWIFT_SWIM },
+    #elif P_UPDATED_ABILITIES >= GEN_7
         .abilities = { ABILITY_SNOW_CLOAK, ABILITY_SLUSH_RUSH, ABILITY_SWIFT_SWIM },
     #else
         .abilities = { ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SWIFT_SWIM },
@@ -10795,7 +10855,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
         .abilities = { ABILITY_GLACIAL_DRIFT, ABILITY_NONE, ABILITY_NONE },
+    #else
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+    #endif
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("CRYOGONAL"),
         .cryId = CRY_CRYOGONAL,
@@ -11160,7 +11224,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_REGENERATOR },
+    #else
         .abilities = { ABILITY_INNER_FOCUS, ABILITY_REGENERATOR, ABILITY_RECKLESS },
+    #endif
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("MIENFOO"),
         .cryId = CRY_MIENFOO,
@@ -11228,7 +11296,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_REGENERATOR },
+    #else
         .abilities = { ABILITY_INNER_FOCUS, ABILITY_REGENERATOR, ABILITY_RECKLESS },
+    #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("MIENSHAO"),
         .cryId = CRY_MIENSHAO,
@@ -11377,7 +11449,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_KLUTZ, ABILITY_NONE, ABILITY_NO_GUARD },
+    #else
         .abilities = { ABILITY_IRON_FIST, ABILITY_KLUTZ, ABILITY_NO_GUARD },
+    #endif
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .speciesName = _("GOLETT"),
@@ -11447,7 +11523,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_IRON_FIST, ABILITY_NONE, ABILITY_NO_GUARD },
+    #else
         .abilities = { ABILITY_IRON_FIST, ABILITY_KLUTZ, ABILITY_NO_GUARD },
+    #endif
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .speciesName = _("GOLURK"),
@@ -11579,7 +11659,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_DEFIANT, ABILITY_NONE, ABILITY_PRESSURE },
+    #else
         .abilities = { ABILITY_DEFIANT, ABILITY_INNER_FOCUS, ABILITY_PRESSURE },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("PAWNIARD"),
         .cryId = CRY_PAWNIARD,
@@ -11654,7 +11738,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_DEFIANT, ABILITY_NONE, ABILITY_PRESSURE },
+    #else
         .abilities = { ABILITY_DEFIANT, ABILITY_INNER_FOCUS, ABILITY_PRESSURE },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("BISHARP"),
         .cryId = CRY_BISHARP,
@@ -11725,7 +11813,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_DEFIANT, ABILITY_NONE, ABILITY_SUPREME_OVERLORD },
+    #else
         .abilities = { ABILITY_DEFIANT, ABILITY_SUPREME_OVERLORD, ABILITY_PRESSURE },
+    #endif
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("KINGAMBIT"),
         .cryId = CRY_KINGAMBIT,
@@ -11861,7 +11953,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_HUSTLE, ABILITY_NONE, ABILITY_SHEER_FORCE },
+    #else
         .abilities = { ABILITY_KEEN_EYE, ABILITY_SHEER_FORCE, ABILITY_HUSTLE },
+    #endif
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("RUFFLET"),
         .cryId = CRY_RUFFLET,
@@ -11936,7 +12032,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_DEFIANT, ABILITY_NONE, ABILITY_SHEER_FORCE },
+    #else
         .abilities = { ABILITY_KEEN_EYE, ABILITY_SHEER_FORCE, ABILITY_DEFIANT },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("BRAVIARY"),
         .cryId = CRY_BRAVIARY,
@@ -12087,7 +12187,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_OVERCOAT, ABILITY_ANALYTIC, ABILITY_WEAK_ARMOR },
+    #else
         .abilities = { ABILITY_BIG_PECKS, ABILITY_OVERCOAT, ABILITY_WEAK_ARMOR },
+    #endif
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("VULLABY"),
         .cryId = CRY_VULLABY,
@@ -12157,7 +12261,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_OVERCOAT, ABILITY_ANALYTIC, ABILITY_WEAK_ARMOR },
+    #else
         .abilities = { ABILITY_BIG_PECKS, ABILITY_OVERCOAT, ABILITY_WEAK_ARMOR },
+    #endif
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("MANDIBUZZ"),
         .cryId = CRY_MANDIBUZZ,
@@ -12669,7 +12777,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_SWARM },
+    #else
         .abilities = { ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_SWARM },
+    #endif
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("VOLCARONA"),
         .cryId = CRY_VOLCARONA,

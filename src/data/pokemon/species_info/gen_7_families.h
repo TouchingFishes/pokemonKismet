@@ -2997,7 +2997,11 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_CONTRARY },
+    #else
         .abilities = { ABILITY_LEAF_GUARD, ABILITY_NONE, ABILITY_CONTRARY },
+    #endif
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("FOMANTIS"),
         .cryId = CRY_FOMANTIS,
@@ -3063,7 +3067,11 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_CONTRARY },
+    #else
         .abilities = { ABILITY_LEAF_GUARD, ABILITY_NONE, ABILITY_CONTRARY },
+    #endif
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("LURANTIS"),
         .cryId = CRY_LURANTIS,
@@ -3524,7 +3532,11 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_KLUTZ, ABILITY_NONE, ABILITY_CUTE_CHARM },
+    #else
         .abilities = { ABILITY_FLUFFY, ABILITY_KLUTZ, ABILITY_CUTE_CHARM },
+    #endif
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("STUFFUL"),
         .cryId = CRY_STUFFUL,
@@ -3593,7 +3605,11 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_FLUFFY, ABILITY_NONE, ABILITY_UNNERVE },
+    #else
         .abilities = { ABILITY_FLUFFY, ABILITY_KLUTZ, ABILITY_UNNERVE },
+    #endif
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("BEWEAR"),
         .cryId = CRY_BEWEAR,
@@ -3795,7 +3811,11 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_QUEENLY_MAJESTY, ABILITY_QUEENLY_MAJESTY, ABILITY_SWEET_VEIL },
+    #else
         .abilities = { ABILITY_LEAF_GUARD, ABILITY_QUEENLY_MAJESTY, ABILITY_SWEET_VEIL },
+    #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = TRUE,
         .speciesName = _("TSAREENA"),

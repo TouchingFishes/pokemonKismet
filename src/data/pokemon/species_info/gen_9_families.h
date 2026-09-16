@@ -3604,7 +3604,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_SKITTISH, ABILITY_ANTICIPATION, ABILITY_SPEED_BOOST }, // Kismet: custom ability
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SKITTISH, ABILITY_ANTICIPATION, ABILITY_SPEED_BOOST },
+    #else
+        .abilities = { ABILITY_ANTICIPATION, ABILITY_FRISK, ABILITY_SPEED_BOOST },
+    #endif
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("FLITTLE"),
         .cryId = CRY_FLITTLE,
@@ -3669,7 +3673,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_SKITTISH, ABILITY_OPPORTUNIST, ABILITY_SPEED_BOOST }, // Kismet: custom ability
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SKITTISH, ABILITY_OPPORTUNIST, ABILITY_SPEED_BOOST },
+    #else
+        .abilities = { ABILITY_OPPORTUNIST, ABILITY_FRISK, ABILITY_SPEED_BOOST },
+    #endif
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("ESPATHRA"),
         .cryId = CRY_ESPATHRA,
@@ -3734,7 +3742,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_PICKUP, ABILITY_NONE, ABILITY_PICKPOCKET },
+    #else
         .abilities = { ABILITY_MOLD_BREAKER, ABILITY_OWN_TEMPO, ABILITY_PICKPOCKET },
+    #endif
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("TINKATINK"),
         .cryId = CRY_TINKATINK,
@@ -3799,7 +3811,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_PICKUP, ABILITY_NONE, ABILITY_PICKPOCKET },
+    #else
         .abilities = { ABILITY_MOLD_BREAKER, ABILITY_OWN_TEMPO, ABILITY_PICKPOCKET },
+    #endif
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("TINKATUFF"),
         .cryId = CRY_TINKATUFF,
@@ -3863,7 +3879,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_MOLD_BREAKER, ABILITY_NONE, ABILITY_PICKPOCKET },
+    #else
         .abilities = { ABILITY_MOLD_BREAKER, ABILITY_OWN_TEMPO, ABILITY_PICKPOCKET },
+    #endif
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("TINKATON"),
         .cryId = CRY_TINKATON,
@@ -4056,7 +4076,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_ROCKY_PAYLOAD, ABILITY_NONE, ABILITY_NONE },
+    #else
         .abilities = { ABILITY_BIG_PECKS, ABILITY_KEEN_EYE, ABILITY_ROCKY_PAYLOAD },
+    #endif
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("BOMBIRDIER"),
         .cryId = CRY_BOMBIRDIER,
@@ -4776,7 +4800,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_NONE, ABILITY_FLUFFY },
+    #else
         .abilities = { ABILITY_PICKUP, ABILITY_NONE, ABILITY_FLUFFY },
+    #endif
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("GREAVARD"),
         .cryId = CRY_GREAVARD,
@@ -4829,7 +4857,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseHP        = 72,
         .baseAttack    = 101,
         .baseDefense   = 100,
-        .baseSpeed     = 68,
+        .baseSpeed     = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 80 : (68),
         .baseSpAttack  = 50,
         .baseSpDefense = 97,
         .types = MON_TYPES(TYPE_GHOST),
@@ -4841,7 +4869,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_NONE, ABILITY_FLUFFY },
+    #else
         .abilities = { ABILITY_SAND_RUSH, ABILITY_NONE, ABILITY_FLUFFY },
+    #endif
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("HOUNDSTONE"),
         .cryId = CRY_HOUNDSTONE,

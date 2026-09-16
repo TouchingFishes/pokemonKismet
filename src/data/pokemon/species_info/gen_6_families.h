@@ -1105,7 +1105,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_SKITTISH, ABILITY_BIG_PECKS, ABILITY_GALE_WINGS }, // Kismet: custom ability
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SKITTISH, ABILITY_BIG_PECKS, ABILITY_GALE_WINGS },
+    #else
+        .abilities = { ABILITY_BIG_PECKS, ABILITY_NONE, ABILITY_GALE_WINGS },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("FLETCHLING"),
         .cryId = CRY_FLETCHLING,
@@ -1178,7 +1182,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_IMMOLATE, ABILITY_FLAME_BODY, ABILITY_GALE_WINGS }, // Kismet: custom ability
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_IMMOLATE, ABILITY_FLAME_BODY, ABILITY_GALE_WINGS },
+    #else
+        .abilities = { ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_GALE_WINGS },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("FLETCHINDER"),
         .cryId = CRY_FLETCHINDER,
@@ -1252,7 +1260,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_IMMOLATE, ABILITY_FLAME_BODY, ABILITY_GALE_WINGS }, // Kismet: custom ability
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_IMMOLATE, ABILITY_FLAME_BODY, ABILITY_GALE_WINGS },
+    #else
+        .abilities = { ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_GALE_WINGS },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("TALONFLAME"),
         .cryId = CRY_TALONFLAME,
@@ -2559,7 +2571,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_HUSTLE, ABILITY_NONE, ABILITY_IRON_FIST },
+    #else
         .abilities = { ABILITY_IRON_FIST, ABILITY_MOLD_BREAKER, ABILITY_SCRAPPY },
+    #endif
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("PANCHAM"),
         .cryId = CRY_PANCHAM,
@@ -2632,7 +2648,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_MOLD_BREAKER, ABILITY_NONE, ABILITY_IRON_FIST },
+    #else
         .abilities = { ABILITY_IRON_FIST, ABILITY_MOLD_BREAKER, ABILITY_SCRAPPY },
+    #endif
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("PANGORO"),
         .cryId = CRY_PANGORO,
@@ -6516,7 +6536,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = NOIBAT_EGG_GROUPS,
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_CACOPHONY, ABILITY_INFILTRATOR, ABILITY_TELEPATHY },
+    #else
         .abilities = { ABILITY_FRISK, ABILITY_INFILTRATOR, ABILITY_TELEPATHY },
+    #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("NOIBAT"),
         .cryId = CRY_NOIBAT,
@@ -6592,7 +6616,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = NOIBAT_EGG_GROUPS,
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_CACOPHONY, ABILITY_INFILTRATOR, ABILITY_TELEPATHY },
+    #else
         .abilities = { ABILITY_FRISK, ABILITY_INFILTRATOR, ABILITY_TELEPATHY },
+    #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("NOIVERN"),
         .cryId = CRY_NOIVERN,

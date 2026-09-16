@@ -3,8 +3,19 @@
 
 // Species data settings
 #define P_UPDATED_TYPES             GEN_LATEST  // Some Pokémon have received type updates after their introduction.
-#define P_UPDATED_STATS             GEN_LATEST  // Some Pokémon have received base stat updates after their introduction.
-#define P_UPDATED_ABILITIES         GEN_LATEST  // Since Gen 4, certain Pokémon have had their abilities changed.
+// ⚠️ CUSTOM_FOR_KISMET (config/general.h) is Kismet's own species data, and it
+// lives in species_info/*.h like every other generational value - NOT in a
+// runtime override table. It was moved there deliberately: the old
+// tx_Mode_Abilities / tx_Mode_Stats save settings could be flipped mid-run,
+// which let a player defuse a fight that depended on a spread (Pryce hinges on
+// Delibird's Snow Warning). Compile-time means the data a battle was designed
+// around cannot be switched off while standing in it.
+//
+// The sentinel sits above every real GEN_x, so `>= GEN_x` tests stay true and
+// expansion's latest official data remains the fallback for every species
+// Kismet does not override. Set either back to GEN_LATEST for stock data.
+#define P_UPDATED_STATS             CUSTOM_FOR_KISMET  // Some Pokémon have received base stat updates after their introduction.
+#define P_UPDATED_ABILITIES         CUSTOM_FOR_KISMET  // Since Gen 4, certain Pokémon have had their abilities changed.
 #define P_UPDATED_EGG_GROUPS        GEN_LATEST  // Since Gen 8, certain Pokémon have gained new egg groups.
 #define P_UPDATED_FRIENDSHIP        GEN_3  // Since Gen 8, the base friendship of certain Pokémon was changed.
 #define P_UPDATED_EVS               GEN_LATEST  // Since Gen 4, some Pokémon have received EV updates.

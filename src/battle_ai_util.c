@@ -5930,7 +5930,7 @@ bool32 ShouldTriggerAbility(enum BattlerId battlerAtk, enum BattlerId battlerDef
             return (BattlerStatCanRise(battlerDef, ability, STAT_DEF));
 
         case ABILITY_MAGMA_ARMOR:
-            return (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1
+            return (P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
                  && BattlerStatCanRise(battlerDef, ability, STAT_DEF));
 
         default:

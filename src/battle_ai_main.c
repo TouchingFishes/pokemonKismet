@@ -3590,7 +3590,7 @@ static s32 AI_DoubleBattle(enum BattlerId battlerAtk, enum BattlerId battlerDef,
                 }
                 break;  // handled in AI_HPAware
             case ABILITY_MAGMA_ARMOR:
-                if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities != 1)
+                if (P_UPDATED_ABILITIES != CUSTOM_FOR_KISMET)
                 {
                     isMoveAffectedByPartnerAbility = FALSE;
                     break;

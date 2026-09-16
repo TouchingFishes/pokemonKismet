@@ -26,7 +26,11 @@
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_DRAGON, EGG_GROUP_GRASS),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_MAGIC_GUARD },
+    #else
         .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("RAELIC"),
         .cryId = CRY_RAELIC,
@@ -79,7 +83,11 @@
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_DRAGON, EGG_GROUP_GRASS),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_MAGIC_GUARD },
+    #else
         .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("ROMUSHU"),
         .cryId = CRY_ROMUSHU,
@@ -132,7 +140,11 @@
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_DRAGON, EGG_GROUP_GRASS),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_NONE, ABILITY_MAGIC_GUARD },
+    #else
         .abilities = { ABILITY_EFFECT_SPORE, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("FUSANG"),
         .cryId = CRY_FUSANG,
@@ -184,7 +196,11 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_BATTLE_ARMOR, ABILITY_NONE, ABILITY_DEFIANT },
+    #else
         .abilities = { ABILITY_BATTLE_ARMOR, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("LARVICID"),
         .cryId = CRY_LARVICID,
@@ -237,7 +253,11 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_BATTLE_ARMOR, ABILITY_NONE, ABILITY_DEFIANT },
+    #else
         .abilities = { ABILITY_BATTLE_ARMOR, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("PENDRAGON"),
         .cryId = CRY_PENDRAGON,
@@ -289,7 +309,11 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_COMPOUND_EYES },
+    #else
         .abilities = { ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("KROLUCADA"),
         .cryId = CRY_KROLUCADA,
@@ -341,7 +365,11 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_INSOMNIA, ABILITY_NONE, ABILITY_INTIMIDATE },
+    #else
         .abilities = { ABILITY_INSOMNIA, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("KROLUCARD"),
         .cryId = CRY_KROLUCARD,
@@ -446,7 +474,11 @@
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+    #else
         .abilities = { ABILITY_CLOUD_NINE, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("DUNLONG"),
         .cryId = CRY_DUNLONG,
@@ -498,7 +530,11 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SCRAPPY, ABILITY_NONE, ABILITY_DEFIANT },
+    #else
         .abilities = { ABILITY_INNER_FOCUS, ABILITY_SCRAPPY, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("M'LLOY"),
         .cryId = CRY_MLLOY,
@@ -551,7 +587,11 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_STICKY_HOLD, ABILITY_NONE, ABILITY_GOOEY },
+    #else
         .abilities = { ABILITY_STICKY_HOLD, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .speciesName = _("PURGISLUG"),
@@ -721,7 +761,11 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_WATER_3),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_SAP_SIPPER, ABILITY_NATURAL_CURE, ABILITY_REGENERATOR },
+    #else
         .abilities = { ABILITY_SAP_SIPPER, ABILITY_NATURAL_CURE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("CORSOREEF"),
         .cryId = CRY_CORSOREEF,
@@ -783,7 +827,11 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_WATER_2),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_WATER_VEIL, ABILITY_NONE, ABILITY_MOODY },
+    #else
         .abilities = { ABILITY_WATER_VEIL, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("KUJINOUGHT"),
         .cryId = CRY_KUJINOUGHT,
@@ -953,7 +1001,11 @@
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_WATER_1),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_STRONG_JAW, ABILITY_NONE, ABILITY_NONE },
+    #else
         .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+    #endif
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("FERALIGATR"),
         .cryId = CRY_FERALIGATR,

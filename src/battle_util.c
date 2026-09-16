@@ -2117,7 +2117,7 @@ bool32 HasNoMonsToSwitch(enum BattlerId battler, u8 partyIdBattlerOn1, u8 partyI
 // to a partial set of abilities; these two cover the rest
 bool32 IsShelteredFromSandstorm(enum Ability ability)
 {
-    if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 0)
+    if (P_UPDATED_ABILITIES != CUSTOM_FOR_KISMET)
         return FALSE;
 
     return ability == ABILITY_SAND_VEIL
@@ -2129,7 +2129,7 @@ bool32 IsShelteredFromSandstorm(enum Ability ability)
 
 bool32 IsShelteredFromIcyWeather(enum Ability ability)
 {
-    if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 0)
+    if (P_UPDATED_ABILITIES != CUSTOM_FOR_KISMET)
         return FALSE;
 
     return ability == ABILITY_SNOW_CLOAK
@@ -2509,7 +2509,7 @@ bool32 CanAbilityAbsorbMove(struct BattleContext *ctx)
             battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_DEF, 2);
         break;
     case ABILITY_MAGMA_ARMOR:
-        if (ctx->moveType == TYPE_WATER && gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1)
+        if (ctx->moveType == TYPE_WATER && P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET)
             battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_DEF, 2);
         break;
     case ABILITY_WIND_RIDER:
@@ -7122,7 +7122,7 @@ static inline u32 CalcAttackStat(struct BattleContext *ctx)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_ILLUMINATE:
-        if (moveType == TYPE_ELECTRIC && gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1
+        if (moveType == TYPE_ELECTRIC && P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
          && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;

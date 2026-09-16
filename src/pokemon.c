@@ -6211,42 +6211,6 @@ enum Type GetMoveType(enum Move moveId)
     return type;
 }
 
-// Every species whose ability spread Kismet changed, paired with the spread 2.0
-// ships. species_info.h holds Kismet's version, so this table is the way back:
-// with the ABILITIES option off, these species report the official abilities.
-// Fakemon are absent by construction - they have no 2.0 counterpart to fall back to.
-static const struct
-{
-    u16 species;
-    enum Ability abilities[NUM_ABILITY_SLOTS];
-} sOfficialAbilityOverrides[] =
-{
-    { SPECIES_CRYOGONAL,   { ABILITY_LEVITATE,     ABILITY_NONE,        ABILITY_NONE         } },
-    { SPECIES_DIGLETT,     { ABILITY_SAND_VEIL,    ABILITY_ARENA_TRAP,  ABILITY_SAND_FORCE   } },
-    { SPECIES_DODUO,       { ABILITY_RUN_AWAY,     ABILITY_EARLY_BIRD,  ABILITY_TANGLED_FEET } },
-    { SPECIES_DUNSPARCE,   { ABILITY_SERENE_GRACE, ABILITY_RUN_AWAY,    ABILITY_RATTLED      } },
-    { SPECIES_ESPATHRA,    { ABILITY_OPPORTUNIST,  ABILITY_FRISK,       ABILITY_SPEED_BOOST  } },
-    { SPECIES_EXPLOUD,     { ABILITY_SOUNDPROOF,   ABILITY_NONE,        ABILITY_SCRAPPY      } },
-    { SPECIES_FLETCHINDER, { ABILITY_FLAME_BODY,   ABILITY_NONE,        ABILITY_GALE_WINGS   } },
-    { SPECIES_FLETCHLING,  { ABILITY_BIG_PECKS,    ABILITY_NONE,        ABILITY_GALE_WINGS   } },
-    { SPECIES_FLITTLE,     { ABILITY_ANTICIPATION, ABILITY_FRISK,       ABILITY_SPEED_BOOST  } },
-    { SPECIES_GOLDUCK,     { ABILITY_DAMP,         ABILITY_CLOUD_NINE,  ABILITY_SWIFT_SWIM   } },
-    { SPECIES_HITMONCHAN,  { ABILITY_KEEN_EYE,     ABILITY_IRON_FIST,   ABILITY_INNER_FOCUS  } },
-    { SPECIES_KABUTO,      { ABILITY_SWIFT_SWIM,   ABILITY_BATTLE_ARMOR, ABILITY_WEAK_ARMOR  } },
-    { SPECIES_KABUTOPS,    { ABILITY_SWIFT_SWIM,   ABILITY_BATTLE_ARMOR, ABILITY_WEAK_ARMOR  } },
-    { SPECIES_LOUDRED,     { ABILITY_SOUNDPROOF,   ABILITY_NONE,        ABILITY_SCRAPPY      } },
-    { SPECIES_NUZLEAF,     { ABILITY_CHLOROPHYLL,  ABILITY_EARLY_BIRD,  ABILITY_PICKPOCKET   } },
-    { SPECIES_PINSIR,      { ABILITY_HYPER_CUTTER, ABILITY_MOLD_BREAKER, ABILITY_MOXIE       } },
-    { SPECIES_PONYTA,      { ABILITY_RUN_AWAY,     ABILITY_FLASH_FIRE,  ABILITY_FLAME_BODY   } },
-    { SPECIES_POOCHYENA,   { ABILITY_RUN_AWAY,     ABILITY_QUICK_FEET,  ABILITY_RATTLED      } },
-    { SPECIES_RATICATE,    { ABILITY_RUN_AWAY,     ABILITY_GUTS,        ABILITY_HUSTLE       } },
-    { SPECIES_RATTATA,     { ABILITY_RUN_AWAY,     ABILITY_GUTS,        ABILITY_HUSTLE       } },
-    { SPECIES_SEEDOT,      { ABILITY_CHLOROPHYLL,  ABILITY_EARLY_BIRD,  ABILITY_PICKPOCKET   } },
-    { SPECIES_SENTRET,     { ABILITY_RUN_AWAY,     ABILITY_KEEN_EYE,    ABILITY_FRISK        } },
-    { SPECIES_SUNFLORA,    { ABILITY_CHLOROPHYLL,  ABILITY_SOLAR_POWER, ABILITY_EARLY_BIRD   } },
-    { SPECIES_TALONFLAME,  { ABILITY_FLAME_BODY,   ABILITY_NONE,        ABILITY_GALE_WINGS   } },
-    { SPECIES_WHISMUR,     { ABILITY_SOUNDPROOF,   ABILITY_NONE,        ABILITY_RATTLED      } },
-};
 
 // The two official abilities Kismet redefines. abilities.h keeps the official text,
 // so the replacement lives here and is chosen with the same option that changes the
@@ -6256,7 +6220,7 @@ static const u8 sKismetMagmaArmorDescription[] = _("No freeze; Water ups Defense
 
 const u8 *GetAbilityDescription(enum Ability ability)
 {
-    if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1)
+    if (P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET)
     {
         switch (ability)
         {
@@ -6272,97 +6236,40 @@ const u8 *GetAbilityDescription(enum Ability ability)
     return gAbilitiesInfo[ability].description;
 }
 
-// Kismet's own stats
-struct KismetBaseStats
-{
-    u16 species;
-    u8 stats[NUM_STATS];        // indexed by STAT_HP..STAT_SPDEF, in that order
-};
-
-struct KismetAbilities
-{
-    u16 species;
-    enum Ability abilities[NUM_ABILITY_SLOTS];   // slot 2 is the hidden ability
-};
-
-#include "data/pokemon/kismet_base_stats.h"
-#include "data/pokemon/kismet_abilities.h"
-
 enum Ability GetSpeciesAbility(u16 species, u8 slot)
 {
-    species = SanitizeSpeciesId(species);
-
-    // Hooked here rather than in GetAbilityBySpecies so the summary screen, the
-    // Pokedex and the AI all agree with what the mon actually has in battle.
-    if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 0 && slot < NUM_ABILITY_SLOTS)
-    {
-        for (u32 i = 0; i < ARRAY_COUNT(sOfficialAbilityOverrides); i++)
-        {
-            if (sOfficialAbilityOverrides[i].species == species)
-                return sOfficialAbilityOverrides[i].abilities[slot];
-        }
-    }
-    else if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1
-             && slot < NUM_ABILITY_SLOTS)
-    {
-        for (u32 i = 0; i < ARRAY_COUNT(sKismetAbilities); i++)
-        {
-            if (sKismetAbilities[i].species == species)
-                return sKismetAbilities[i].abilities[slot];
-        }
-    }
-
-    return gSpeciesInfo[species].abilities[slot];
+    return gSpeciesInfo[SanitizeSpeciesId(species)].abilities[slot];
 }
 
-static u32 KismetBaseStat(u16 species, enum Stat stat, u32 official)
-{
-    if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Stats == 0)
-        return official;
-
-    for (u32 i = 0; i < ARRAY_COUNT(sKismetBaseStats); i++)
-    {
-        if (sKismetBaseStats[i].species == species)
-            return sKismetBaseStats[i].stats[stat];
-    }
-
-    return official;
-}
 
 u32 GetSpeciesBaseHP(u16 species)
 {
-    species = SanitizeSpeciesId(species);
-    return KismetBaseStat(species, STAT_HP, gSpeciesInfo[species].baseHP);
+    return gSpeciesInfo[SanitizeSpeciesId(species)].baseHP;
 }
 
 u32 GetSpeciesBaseAttack(u16 species)
 {
-    species = SanitizeSpeciesId(species);
-    return KismetBaseStat(species, STAT_ATK, gSpeciesInfo[species].baseAttack);
+    return gSpeciesInfo[SanitizeSpeciesId(species)].baseAttack;
 }
 
 u32 GetSpeciesBaseDefense(u16 species)
 {
-    species = SanitizeSpeciesId(species);
-    return KismetBaseStat(species, STAT_DEF, gSpeciesInfo[species].baseDefense);
+    return gSpeciesInfo[SanitizeSpeciesId(species)].baseDefense;
 }
 
 u32 GetSpeciesBaseSpAttack(u16 species)
 {
-    species = SanitizeSpeciesId(species);
-    return KismetBaseStat(species, STAT_SPATK, gSpeciesInfo[species].baseSpAttack);
+    return gSpeciesInfo[SanitizeSpeciesId(species)].baseSpAttack;
 }
 
 u32 GetSpeciesBaseSpDefense(u16 species)
 {
-    species = SanitizeSpeciesId(species);
-    return KismetBaseStat(species, STAT_SPDEF, gSpeciesInfo[species].baseSpDefense);
+    return gSpeciesInfo[SanitizeSpeciesId(species)].baseSpDefense;
 }
 
 u32 GetSpeciesBaseSpeed(u16 species)
 {
-    species = SanitizeSpeciesId(species);
-    return KismetBaseStat(species, STAT_SPEED, gSpeciesInfo[species].baseSpeed);
+    return gSpeciesInfo[SanitizeSpeciesId(species)].baseSpeed;
 }
 
 u32 GetSpeciesBaseStat(u16 species, u32 statIndex)

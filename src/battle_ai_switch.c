@@ -626,7 +626,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(enum BattlerId battler)
             absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_STORM_DRAIN;
         // Kismet's Magma Armor absorbs Water for +2 Def. Gated the same way the
         // mechanic is, so vanilla-mode AI does not switch into a move that hits.
-        if (gSaveBlock3Ptr->challengeSettings.tx_Mode_Abilities == 1)
+        if (P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET)
             absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_MAGMA_ARMOR;
     }
     if (incomingType == TYPE_ELECTRIC)

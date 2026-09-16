@@ -1,10 +1,14 @@
-// Kismet's ability spreads sit here
+// =====================================================================
+// SUPERSEDED - THIS FILE IS NO LONGER COMPILED INTO THE GAME.
 //
-// Consulted by GetSpeciesAbility (src/pokemon.c) when tx_Mode_Abilities == 1.
-// All three slots are authoritative, slot 2 being the hidden ability
+// Kismet's ability spreads now live in src/data/pokemon/species_info/*.h,
+// gated on P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET, and this table was
+// deleted from src/pokemon.c. Editing it has NO effect.
 //
-// The 226 rows where Kismet differs from 2.0 also show 2.0's spread, so
-// a deliberate choice stays distinguishable from an inherited default.
+// Kept only as the migration's source of record - every row here was
+// verified to match what species_info now resolves to. Safe to delete.
+// =====================================================================
+
 
 static const struct KismetAbilities sKismetAbilities[] =
 {
