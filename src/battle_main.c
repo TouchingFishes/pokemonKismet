@@ -430,6 +430,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_BATTLE_GIRL_HNS] =      { _("BATTLE GIRL"), 6 },
     [TRAINER_CLASS_BEAUTY_HNS] =           { _("BEAUTY"), 20 },
     [TRAINER_CLASS_BIKER_HNS] =            { _("BIKER") },
+    [TRAINER_CLASS_CUE_BALL_HNS] =         { _("CUE BALL"), 10 },
     [TRAINER_CLASS_BIRD_KEEPER_HNS] =      { _("BIRD KEEPER"), 8 },
     [TRAINER_CLASS_BLACK_BELT_HNS] =       { _("BLACK BELT"), 8 },
     [TRAINER_CLASS_BUG_CATCHER_HNS] =      { _("BUG CATCHER"), 4 },
