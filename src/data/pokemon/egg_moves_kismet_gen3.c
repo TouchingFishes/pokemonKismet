@@ -219,6 +219,11 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
     [SPECIES_SMOOCHUM] = sSmoochumEggMoveLearnset_KismetGen3,
 #endif
 #endif
+#if P_FAMILY_ELECTABUZZ
+#if P_GEN_2_CROSS_EVOS
+    [SPECIES_ELEKID] = sElekidEggMoveLearnset_KismetGen3,
+#endif
+#endif
 #if P_FAMILY_MAGMAR
 #if P_GEN_2_CROSS_EVOS
     [SPECIES_MAGBY] = sMagbyEggMoveLearnset_KismetGen3,
@@ -309,6 +314,12 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_AIPOM
     [SPECIES_AIPOM] = sAipomEggMoveLearnset_KismetGen3,
+#endif
+#if P_FAMILY_SUNKERN
+    [SPECIES_SUNKERN] = sSunkernEggMoveLearnset_KismetGen3,
+#endif
+#if P_FAMILY_YANMA
+    [SPECIES_YANMA] = sYanmaEggMoveLearnset_KismetGen3,
 #endif
 #if P_FAMILY_WOOPER
     [SPECIES_WOOPER] = sWooperEggMoveLearnset_KismetGen3,
@@ -487,6 +498,14 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
 #if P_FAMILY_VOLBEAT_ILLUMISE
     [SPECIES_ILLUMISE] = sIllumiseEggMoveLearnset_KismetGen3,
 #endif
+#if P_FAMILY_ROSELIA
+#if P_GEN_4_CROSS_EVOS
+    [SPECIES_BUDEW] = sBudewEggMoveLearnset_KismetGen3,
+#endif
+#endif
+#if P_FAMILY_ROSELIA
+    [SPECIES_ROSELIA] = sRoseliaEggMoveLearnset_KismetGen3,
+#endif
 #if P_FAMILY_GULPIN
     [SPECIES_GULPIN] = sGulpinEggMoveLearnset_KismetGen3,
 #endif
@@ -495,6 +514,9 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_WAILMER
     [SPECIES_WAILMER] = sWailmerEggMoveLearnset_KismetGen3,
+#endif
+#if P_FAMILY_NUMEL
+    [SPECIES_NUMEL] = sNumelEggMoveLearnset_KismetGen3,
 #endif
 #if P_FAMILY_TORKOAL
     [SPECIES_TORKOAL] = sTorkoalEggMoveLearnset_KismetGen3,
@@ -616,6 +638,9 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_CARNIVINE
     [SPECIES_CARNIVINE] = sCarnivineEggMoveLearnset_KismetGen3,
+#endif
+#if P_FAMILY_SNOVER
+    [SPECIES_SNOVER] = sSnoverEggMoveLearnset_KismetGen3,
 #endif
 #if P_FAMILY_SNIVY
     [SPECIES_SNIVY] = sSnivyEggMoveLearnset_KismetGen3,
@@ -748,6 +773,9 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
 #if P_FAMILY_CUBCHOO
     [SPECIES_CUBCHOO] = sCubchooEggMoveLearnset_KismetGen3,
 #endif
+#if P_FAMILY_SHELMET
+    [SPECIES_SHELMET] = sShelmetEggMoveLearnset_KismetGen3,
+#endif
 #if P_FAMILY_STUNFISK
     [SPECIES_STUNFISK] = sStunfiskEggMoveLearnset_KismetGen3,
 #endif
@@ -868,6 +896,9 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
     [SPECIES_ROCKRUFF] = sRockruffEggMoveLearnset_KismetGen3,
     [SPECIES_ROCKRUFF_OWN_TEMPO] = sRockruffOwnTempoEggMoveLearnset_KismetGen3,
 #endif
+#if P_FAMILY_MUDBRAY
+    [SPECIES_MUDBRAY] = sMudbrayEggMoveLearnset_KismetGen3,
+#endif
 #if P_FAMILY_DEWPIDER
     [SPECIES_DEWPIDER] = sDewpiderEggMoveLearnset_KismetGen3,
 #endif
@@ -876,6 +907,9 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_STUFFUL
     [SPECIES_STUFFUL] = sStuffulEggMoveLearnset_KismetGen3,
+#endif
+#if P_FAMILY_BOUNSWEET
+    [SPECIES_BOUNSWEET] = sBounsweetEggMoveLearnset_KismetGen3,
 #endif
 #if P_FAMILY_COMFEY
     [SPECIES_COMFEY] = sComfeyEggMoveLearnset_KismetGen3,
@@ -929,6 +963,9 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
     [SPECIES_CRAMORANT] = sCramorantEggMoveLearnset_KismetGen3,
     [SPECIES_CRAMORANT_GORGING] = sCramorantGorgingEggMoveLearnset_KismetGen3,
     [SPECIES_CRAMORANT_GULPING] = sCramorantGulpingEggMoveLearnset_KismetGen3,
+#endif
+#if P_FAMILY_ARROKUDA
+    [SPECIES_ARROKUDA] = sArrokudaEggMoveLearnset_KismetGen3,
 #endif
 #if P_FAMILY_TOXEL
     [SPECIES_TOXEL] = sToxelEggMoveLearnset_KismetGen3,
