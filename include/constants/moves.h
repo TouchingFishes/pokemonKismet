@@ -423,7 +423,7 @@ enum __attribute__((packed)) Move
     MOVE_WORRY_SEED = 388, //do not use
     MOVE_SUCKER_PUNCH = 389, //do not use
     MOVE_TOXIC_SPIKES = 390,
-    MOVE_HEART_SWAP = 391,
+    MOVE_HEART_SWAP = 391,  //do not use unless Manaphy / Phione is in
     MOVE_AQUA_RING = 392,
     MOVE_MAGNET_RISE = 393,
     MOVE_FLARE_BLITZ = 394,
@@ -491,15 +491,15 @@ enum __attribute__((packed)) Move
     MOVE_HEAL_ORDER = 456, //do not use unless Vespiquen is in
     MOVE_HEAD_SMASH = 457,
     MOVE_DOUBLE_HIT = 458,
-    MOVE_ROAR_OF_TIME = 459,
-    MOVE_SPACIAL_REND = 460,
-    MOVE_LUNAR_DANCE = 461,
-    MOVE_CRUSH_GRIP = 462,
-    MOVE_MAGMA_STORM = 463,
-    MOVE_DARK_VOID = 464,
-    MOVE_SEED_FLARE = 465,
+    MOVE_ROAR_OF_TIME = 459, //do not use unless Dialga is in
+    MOVE_SPACIAL_REND = 460, //do not use unless Palkia is in
+    MOVE_LUNAR_DANCE = 461, //do not use unless Cresselia is in
+    MOVE_CRUSH_GRIP = 462, //do not use unless Regigigas is in
+    MOVE_MAGMA_STORM = 463, //do not use unless Heatran is in
+    MOVE_DARK_VOID = 464, //do not use unless Darkrai is in
+    MOVE_SEED_FLARE = 465,  //do not use unless Shaymin is in
     MOVE_OMINOUS_WIND = 466,
-    MOVE_SHADOW_FORCE = 467,
+    MOVE_SHADOW_FORCE = 467, //do not use unless Giratina is in
     MOVES_COUNT_GEN4,
 
     // Gen 5 all moves passed here shouldnt be in Kismet unless they get a comment stating so
