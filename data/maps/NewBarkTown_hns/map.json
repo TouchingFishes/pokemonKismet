@@ -220,6 +220,15 @@
     {
       "type": "trigger",
       "x": 0,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_NEWBARK_TOWN_STATE",
+      "var_value": "2",
+      "script": "NewBarkTown_EventScript_LeaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
       "y": 12,
       "elevation": 0,
       "var": "VAR_NEWBARK_TOWN_STATE",
@@ -242,6 +251,15 @@
       "elevation": 0,
       "var": "VAR_NEWBARK_TOWN_STATE",
       "var_value": "2",
+      "script": "NewBarkTown_EventScript_LeaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_NEWBARK_TOWN_STATE",
+      "var_value": "4",
       "script": "NewBarkTown_EventScript_LeaveTrigger"
     },
     {
