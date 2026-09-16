@@ -20862,8 +20862,8 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_DARIUS_HNS ===
 Name: DARIUS
-Class: Biker Hns
-Pic: Biker Frlg
+Class: Cue Ball Hns
+Pic: Cue Ball Frlg
 Gender: Male
 Music: Hg Suspicious 2
 Double Battle: No
@@ -20969,8 +20969,8 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
 === TRAINER_PAXTON_HNS ===
 Name: PAXTON
-Class: Biker Hns
-Pic: Biker Frlg
+Class: Cue Ball Hns
+Pic: Cue Ball Frlg
 Gender: Male
 Music: Rocket
 Mugshot: Dark Red
