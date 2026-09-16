@@ -8865,7 +8865,6 @@ static const struct LevelUpMove sRegigigasLevelUpLearnset_Kismet[] = {
 static const struct LevelUpMove sArceusLevelUpLearnset_Kismet[] = {
     LEVEL_UP_MOVE( 1, MOVE_SEISMIC_TOSS),
     LEVEL_UP_MOVE( 1, MOVE_COSMIC_POWER),
-    LEVEL_UP_MOVE( 1, MOVE_NATURAL_GIFT),
     LEVEL_UP_MOVE( 1, MOVE_PUNISHMENT),
     LEVEL_UP_MOVE(10, MOVE_GRAVITY),
     LEVEL_UP_MOVE(20, MOVE_EARTH_POWER),
@@ -9721,7 +9720,7 @@ static const struct LevelUpMove sFletchinderLevelUpLearnset_Kismet[] = {
 };
 
 static const struct LevelUpMove sTalonflameLevelUpLearnset_Kismet[] = {
-    LEVEL_UP_MOVE( 0, FLARE_BLITZ)
+    LEVEL_UP_MOVE( 0, MOVE_FLARE_BLITZ),
     LEVEL_UP_MOVE( 1, MOVE_FIRE_SPIN),
     LEVEL_UP_MOVE( 1, MOVE_PECK),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
@@ -9784,7 +9783,6 @@ static const struct LevelUpMove sFlorgesLevelUpLearnset_Kismet[] = {
     LEVEL_UP_MOVE( 1, MOVE_MAGICAL_LEAF),
     LEVEL_UP_MOVE( 1, MOVE_ENERGY_BALL),
     LEVEL_UP_MOVE( 1, MOVE_GRASS_KNOT),
-    LEVEL_UP_MOVE( 1, MOVE_PETAL_BLIZZARD),
     LEVEL_UP_MOVE( 1, MOVE_MOONBLAST),
     LEVEL_UP_MOVE( 1, MOVE_PETAL_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_AROMATHERAPY),
