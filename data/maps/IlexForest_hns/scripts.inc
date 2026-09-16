@@ -327,7 +327,6 @@ IlexForest_EventScript_Alder::
 	playse SE_M_GUST
 	applymovement2 LOCALID_ILEX_FOREST_ALDER, IlexForest_Movement_Alder_LookAround
 	waitmovement 0
-	turnobject LOCALID_ILEX_FOREST_ALDER, DIR_SOUTH
 	msgbox IlexForest_Text_Alder2, MSGBOX_YESNO
 	closemessage
 	msgbox IlexForest_Text_Alder3, MSGBOX_DEFAULT
@@ -381,23 +380,14 @@ IlexForest_Movement_Alder1:
 	face_down
 	step_end
 
-@ Was the dancing Kimono Girls movements. Alder does the same turn on the spot, but it
-@ reads as him looking the forest over while he talks about it. This should maybe get replaced
 IlexForest_Movement_Alder_LookAround:
 	face_left
-	delay_8
+	delay_16
 	face_up
-	delay_8
+	delay_16
+	delay_16
 	face_right
-	delay_8
-	face_down
-	delay_8
-	face_left
-	delay_8
-	face_up
-	delay_8
-	face_right
-	delay_8
+	delay_16
 	face_down
 	step_end
 
@@ -744,12 +734,12 @@ IlexForest_Text_BugCatcherWayneAfter:
 IlexForest_Text_Alder1:
 	.string "Well now! Another traveller.\p"
 	.string "And here I had convinced myself I\n"
-	.string "was the only fool in these woods.$"
-
-IlexForest_Text_Alder2:
+	.string "was the only fool in these woods.\p"
 	.string "I'm walking JOHTO end to end this\n"
 	.string "year. They told me ILEX FOREST was\l"
-	.string "worth the detour.\p"
+	.string "worth the detour.$"
+
+IlexForest_Text_Alder2:
 	.string "They were right! Smell that air.\n"
 	.string "Ancient timber, wet moss, something\l"
 	.string "sweet hidden underneath it all.\p"
