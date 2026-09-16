@@ -17,29 +17,29 @@ IcePath_1F_EventScript_Item_HM_Waterfall::
 	finditem ITEM_HM_WATERFALL
 	end
 
-IcePath_1F_EventScript_KimonoGirl::
+IcePath_1F_EventScript_Alder::
 	lock
-	playbgm MUS_HG_KIMONO_GIRL, FALSE
-	goto_if_eq VAR_FACING, DIR_SOUTH, IcePath_1F_EventScript_KimonoGirlPushPrompt
+	playbgm MUS_ENCOUNTER_HIKER, FALSE
+	goto_if_eq VAR_FACING, DIR_SOUTH, IcePath_1F_EventScript_AlderPushPrompt
 	msgbox IcePath_1F_Text_Stuck1, MSGBOX_DEFAULT
 	closemessage
 	fadedefaultbgm
 	release
 	end
 
-IcePath_1F_Trigger_KimonoGirl::
+IcePath_1F_Trigger_Alder::
 	lock
-	msgbox IcePath_1F_Text_Leave, MSGBOX_DEFAULT
+	msgbox IcePath_1F_Text_NoAnswer, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement 0
 	release
 	end
 
-IcePath_1F_EventScript_KimonoGirlPushPrompt::
+IcePath_1F_EventScript_AlderPushPrompt::
 	msgbox IcePath_1F_Text_Stuck2, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, FALSE, IcePath_1F_EventScript_KimonoGirlRefused
-IcePath_1F_EventScript_KimonoGirlPush::
+	goto_if_eq VAR_RESULT, FALSE, IcePath_1F_EventScript_AlderRefused
+IcePath_1F_EventScript_AlderPush::
 	msgbox IcePath_1F_Text_Shove, MSGBOX_AUTOCLOSE
 	closemessage
 	playse SE_LEDGE
@@ -47,30 +47,35 @@ IcePath_1F_EventScript_KimonoGirlPush::
 	waitmovement 0
 	waitse
 	playse SE_M_ICY_WIND
-	applymovement LOCALID_ICEPATH1_KIMONO, IcePath_Movement_KimonoSlide
+	applymovement LOCALID_ICEPATH1_ALDER, IcePath_Movement_AlderSlide
 	waitmovement 0
-	msgbox IcePath_1F_Text_Thanks, MSGBOX_DEFAULT
+	msgbox IcePath_1F_Text_Free, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ICEPATH1_KIMONO, IcePath_Movement_KimonoLeave
-	waitmovement LOCALID_ICEPATH1_KIMONO
-	setflag FLAG_HIDE_ICE_PATH_KIMONO
-	removeobject LOCALID_ICEPATH1_KIMONO
+	applymovement LOCALID_ICEPATH1_ALDER, Common_Movement_FaceDown
+	waitmovement 0
+	delay 24
+	msgbox IcePath_1F_Text_GirlBackHome, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ICEPATH1_ALDER, IcePath_Movement_AlderLeave
+	waitmovement LOCALID_ICEPATH1_ALDER
+	setflag FLAG_HIDE_ICE_PATH_ALDER
+	removeobject LOCALID_ICEPATH1_ALDER
 	playse SE_EXIT
 	fadedefaultbgm
 	setvar VAR_ICE_PATH_STATE, 1
 	release
 	end
 
-IcePath_1F_EventScript_KimonoGirlRefused::
-	msgbox IcePath_1F_Text_Cruel, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, TRUE, IcePath_1F_EventScript_KimonoGirlPush
-	goto_if_eq VAR_RESULT, FALSE, IcePath_1F_EventScript_KimonoGirlRefused
+IcePath_1F_EventScript_AlderRefused::
+	msgbox IcePath_1F_Text_Refused, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, TRUE, IcePath_1F_EventScript_AlderPush
+	goto_if_eq VAR_RESULT, FALSE, IcePath_1F_EventScript_AlderRefused
 
 IcePath_Movement_PlayerJump:
 	jump_in_place_down
 	step_end
 
-IcePath_Movement_KimonoSlide:
+IcePath_Movement_AlderSlide:
 	slide_down
 	slide_down
 	slide_down
@@ -81,45 +86,65 @@ IcePath_Movement_KimonoSlide:
 	walk_in_place_fast_up
 	step_end
 
-IcePath_Movement_KimonoLeave:
+IcePath_Movement_AlderLeave:
 	walk_down
 	walk_down
 	walk_down
 	step_end
 
-IcePath_1F_Text_Leave:
-	.string "KIMONO GIRL: .....................$"
+IcePath_1F_Text_NoAnswer:
+	.string "ALDER: .....................$"
 
 IcePath_1F_Text_Stuck1:
-    .string "Me oh my... Is that you, {PLAYER}?\n"
-    .string "Fancy meeting you here!\p"
-    .string "To tell the truth... my sandals are\n"
-    .string "frozen on the ice, and I am stuck.\p"
-    .string "In other words, my flip-flops are\n"
-    .string "quick-frozen to the ground.\p"
-    .string "Tee hee.\p"
-    .string "Well, it's no laughing matter.\p"
-    .string "Would you come around and push\n"
-    .string "my back?$"
+	.string "Well now! The very person.\p"
+	.string "Don't laugh.\p"
+	.string "I stopped to admire the ice.\n"
+	.string "The ice has decided to keep me.\p"
+	.string "I go barefoot, youngster. Always\n"
+	.string "have. It has cost me nothing at\l"
+	.string "all, until about ten minutes ago.\p"
+	.string "Come round behind me and put your\n"
+	.string "shoulder into my back.$"
 
 IcePath_1F_Text_Stuck2:
-    .string "Me oh my... Is that you, {PLAYER}?\n"
-    .string "Fancy meeting you here!\p"
-    .string "To tell the truth... my sandals are\n"
-    .string "frozen on the ice, and I am stuck.\p"
-    .string "In other words, my flip-flops are\n"
-    .string "quick-frozen with the ground.\p"
-    .string "Tee hee.\p"
-    .string "Well, it's no laughing matter.\n"
-    .string "Would you push my back?$"
+	.string "Well now! The very person.\p"
+	.string "Don't laugh.\p"
+	.string "I stopped to admire the ice.\n"
+	.string "The ice has decided to keep me.\p"
+	.string "I go barefoot, youngster. Always\n"
+	.string "have. It has cost me nothing at\l"
+	.string "all, until about ten minutes ago.\p"
+	.string "Now then. Could you put your\n"
+	.string "shoulder into an old man's back?$"
 
 IcePath_1F_Text_Shove:
-    .string "....SHOVE!....$"
+	.string "....SHOVE!....$"
 
-IcePath_1F_Text_Cruel:
-    .string "Don't be so cruel.\n"
-    .string "You will push my back, won't you?$"
+IcePath_1F_Text_Refused:
+	.string "Hahaha! I'd have refused me too.\p"
+	.string "But I cannot feel my toes, and\n"
+	.string "pride is a poor blanket.\p"
+	.string "Will you push?$"
 
-IcePath_1F_Text_Thanks:
-    .string "You really are kind.\n"
-    .string "Thank you so much!$"
+IcePath_1F_Text_Free:
+	.string "Hahaha! Free!\p"
+	.string "And my dignity only lightly\n"
+	.string "damaged. My thanks, youngster.\p"
+	.string "I'm heading for BLACKTHORN, and\n"
+	.string "then ROUTE 45. They say it's\l"
+	.string "quite the climb. Wish me luck.\p"
+	.string "And there is a shrine out that\n"
+	.string "way. Dragons in the water,\l"
+	.string "dragons cut into the stone.\p"
+	.string "I'll sit with them a while. At my\n"
+	.string "age that passes for climbing.$"
+
+IcePath_1F_Text_GirlBackHome:
+	.string "There's a girl back home who would\n"
+	.string "bite my hand off for a look at\l"
+	.string "that shrine.\p"
+	.string "Wild thing. Won't come down out\n"
+	.string "of the trees long enough to be\l"
+	.string "told anything.\p"
+	.string "She'll get here one day.\n"
+	.string "They always do.$"

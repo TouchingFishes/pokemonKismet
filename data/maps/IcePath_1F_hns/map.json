@@ -119,8 +119,8 @@
       "flag": "FLAG_DAY_POKEMON"
     },
     {
-      "local_id": "LOCALID_ICEPATH1_KIMONO",
-      "graphics_id": "OBJ_EVENT_GFX_KIMONO_HNS",
+      "local_id": "LOCALID_ICEPATH1_ALDER",
+      "graphics_id": "OBJ_EVENT_GFX_ALDER_HNS",
       "x": 49,
       "y": 25,
       "elevation": 0,
@@ -129,8 +129,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "IcePath_1F_EventScript_KimonoGirl",
-      "flag": "FLAG_HIDE_ICE_PATH_KIMONO"
+      "script": "IcePath_1F_EventScript_Alder",
+      "flag": "FLAG_HIDE_ICE_PATH_ALDER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SWINUB",
@@ -197,7 +197,7 @@
       "elevation": 0,
       "var": "VAR_ICE_PATH_STATE",
       "var_value": "0",
-      "script": "IcePath_1F_Trigger_KimonoGirl"
+      "script": "IcePath_1F_Trigger_Alder"
     }
   ],
   "bg_events": [

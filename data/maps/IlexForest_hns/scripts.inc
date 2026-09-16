@@ -314,7 +314,7 @@ IlexForest_EventScript_Sign::
 
 IlexForest_EventScript_Alder::
 	lock
-	playbgm MUS_HG_ENCOUNTER_SAGE, FALSE
+	playbgm MUS_ENCOUNTER_HIKER, FALSE
 	playse SE_PIN
 	turnobject OBJ_EVENT_ID_FOLLOWER, DIR_NORTH
 	applymovement2 LOCALID_ILEX_FOREST_ALDER, Common_Movement_ExclamationMark
