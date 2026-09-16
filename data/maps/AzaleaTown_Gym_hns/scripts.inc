@@ -702,7 +702,7 @@ AzaleaTown_Gym_Text_PounceSpeech:
 	.string "This move is like a tricky\n"
 	.string "hunter's ambush strike.\p"
 	.string "The user leaps in a flash,\n"
-	.string "slamming into the foe and\n"
+	.string "slamming into the foe and\l"
 	.string "lowering their SPEED!\p"
 	.string "Once you've been caught…\n"
 	.string "there's no easy escape.\p"

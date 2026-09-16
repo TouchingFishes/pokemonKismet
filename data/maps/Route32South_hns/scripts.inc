@@ -44,7 +44,7 @@ Route32South_EventScript_PokeRangerMMarcel::
 
 Route32South_Text_MarcelIntro:
 	.string "Hold on a moment.\n"
-	.string "I'm studying these trees and\n"
+	.string "I'm studying these trees and\l"
 	.string "the life around them.\p"
 	.string "Let me see how fierce you are\n"
 	.string "in battle.$"
@@ -117,7 +117,7 @@ Route32South_Text_CarolineIntro:
 	.string "The waves… the blossoms…\n"
 	.string "Such a peaceful scene.\p"
 	.string "I was just about to paint it,\n"
-	.string "but perhaps a battle will\n"
+	.string "but perhaps a battle will\l"
 	.string "inspire me first.$"
 
 Route32South_Text_CarolineDefeat:
@@ -128,7 +128,7 @@ Route32South_Text_CarolinePostBattle:
 	.string "Every move adds a new stroke\n"
 	.string "to the canvas.\p"
 	.string "This quiet beach… and those\n"
-	.string "cherry blossoms…\n"
+	.string "cherry blossoms…\l"
 	.string "they're simply perfect.$"
 
 Route32South_EventScript_DragonTamerZander::
@@ -155,7 +155,7 @@ Route32South_EventScript_ShoalShell::
 
 Route32South_DragonTamerZander_Text_Intro:
 	.string "Look up.\n"
-	.string "Someday, dragons will rule the\n"
+	.string "Someday, dragons will rule the\l"
 	.string "sky above us.\p"
 	.string "Until then… I train.$"
 

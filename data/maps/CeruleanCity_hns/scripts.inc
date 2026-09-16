@@ -152,7 +152,7 @@ CeruleanCity_Text_Sign:
 
 CeruleanCity_Text_GymSign:
 	.string "CERULEAN CITY\n"
-	.string "POKéMON GYM\n"
+	.string "POKéMON GYM\l"
 	.string "LEADER: MISTY\p"
 	.string "The Tomboyish Mermaid$"
 

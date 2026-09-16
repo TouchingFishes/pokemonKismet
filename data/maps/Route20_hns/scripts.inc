@@ -214,7 +214,7 @@ Route20_Text_SheilaAfter:
 	.string "If you fight against it,\n"
 	.string "you'll just wear yourself out.\p"
 	.string "Go with the flow-that's the\n"
-	.string "trick to both swimming and\n"
+	.string "trick to both swimming and\l"
 	.string "battling.$"
 
 Route20_EventScript_SwimmerM_Tony::

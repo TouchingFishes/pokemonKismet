@@ -38,7 +38,7 @@ Celadon_Text_Eusine1:
 Celadon_Text_EusineLeaves:
 	.string "{PLAYER}, have you heard?\p"
 	.string "There have been fresh rumors of a\n"
-	.string "rainbow-colored POKéMON\n"
+	.string "rainbow-colored POKéMON\l"
 	.string "appearing at TIN TOWER.\p"
 	.string "I've just had my party healed,\n"
 	.string "so now I'm headed to ECRUTEAK.\p"

@@ -363,7 +363,7 @@ OlivineCity_EventScript_Tropius::
 
 OlivineCity_Text_Tropius:
 	.string "A large dinosaur-like\n"
-	.string "POKéMON stands by the apartments,\n"
+	.string "POKéMON stands by the apartments,\l"
 	.string "gazing out at the sea.\p"
 	.string "The ocean breeze passes through\n"
 	.string "the leaves on its neck.\p"
@@ -388,13 +388,13 @@ OlivineCity_EventScript_SuperNerd::
 OlivineCity_Text_SuperNerdFossils:
     .string "Have you heard the rumors\n"
     .string "about the Whirl Islands?\l"
-    .string "Some madman has been\n"
+    .string "Some madman has been\l"
     .string "releasing FOSSIL POKéMON\l"
     .string "into the caves there!\l"
     .string "OMANYTE... KABUTO...\l"
-    .string "As a scientist, I find it\n"
+    .string "As a scientist, I find it\l"
     .string "utterly fascinating--\l"
-    .string "but also deeply reckless.\n"
+    .string "but also deeply reckless.\l"
     .string "Those species went extinct\l"
     .string "for a reason, you know.$"
 
@@ -425,7 +425,7 @@ OlivineCity_Text_RetiredCaptainIntro:
 	.string "Heh… you've got the look\n"
 	.string "of a traveler about you.\p"
 	.string "I used to be the same.\n"
-	.string "Sailed every sea there is…\n"
+	.string "Sailed every sea there is…\l"
 	.string "JOHTO, HOENN… everywhere.\p"
 	.string "But these old legs?\n"
 	.string "They're done with adventure.\p"

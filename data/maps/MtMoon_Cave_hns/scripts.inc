@@ -113,7 +113,7 @@ MtMoon_Cave_Text_Rival_Loss:
 	.string "..................................\p"
 	.string "I've repaid my debt to you.\p"
 	.string "With my POKéMON, I'm going to beat the\n"
-	.string "CHAMPION and become the world's greatest\n"
+	.string "CHAMPION and become the world's greatest\l"
 	.string "trainer.$"
 
 MtMoon_Cave_Text_Sign:

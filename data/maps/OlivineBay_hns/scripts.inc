@@ -214,7 +214,7 @@ OlivineBay_Text_PokefanM:
 	.string "It starts swaying the moment\n"
 	.string "the wind picks up.\p"
 	.string "Step by step…\n"
-	.string "Sometimes you've just gotta\n"
+	.string "Sometimes you've just gotta\l"
 	.string "enjoy the moment!\p"
 	.string "...\p"
 	.string "Right, partner?\p"
@@ -309,7 +309,7 @@ OlivineBay_Text_MattSeen:
 	.string "water, are you?\p"
 	.string "...\p"
 	.string "Heh, doesn't matter.\n"
-	.string "Out here, you either swim…\n"
+	.string "Out here, you either swim…\l"
 	.string "or you sink!\p"
 	.string "Let's see how you handle it!$"
 

@@ -118,7 +118,7 @@ Route8_Text_BikerHarrisAfter:
 
 Route8_Text_BikerZekeSeen:
 	.string "We're the KANTO POKéMON FEDERA-\n"
-	.string "TION!\n"
+	.string "TION!\l"
 	.string "Right on!$"
 
 Route8_Text_BikerZekeBeaten:

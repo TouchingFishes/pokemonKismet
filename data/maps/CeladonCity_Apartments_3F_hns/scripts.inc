@@ -72,10 +72,10 @@ CeladonMansion3F_Text_Drawing:
 
 CeladonMansion3F_Text_GameProgram:
 	.string "It's the game program. Messing\n"
-	.string "with it could put a bug in the\n"
+	.string "with it could put a bug in the\l"
 	.string "game!$"
 
 CeladonMansion3F_Text_ReferenceMaterial:
 	.string "It's crammed with reference\n"
-	.string "materials. There's even a\n"
+	.string "materials. There's even a\l"
 	.string "POKé DOLL.$"

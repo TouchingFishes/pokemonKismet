@@ -48,12 +48,12 @@ KiwameHouse_EventScript_UltimateDeclined::
 
 KiwameHouse_Text_UltimateTeach:
 	.string "Long before trainers walked\n"
-	.string "this world… the elements raged\n"
+	.string "this world… the elements raged\l"
 	.string "unchecked.\p"
 	.string "From that chaos were forged\n"
 	.string "three forbidden arts…\p"
 	.string "Grass. Fire. Water.\n"
-	.string "Power enough to shatter even\n"
+	.string "Power enough to shatter even\l"
 	.string "the strongest foes.\p"
 	.string "Few remain who can teach them.\n"
 	.string "Fewer still who survive them.\p"

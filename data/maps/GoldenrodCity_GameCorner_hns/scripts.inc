@@ -1019,7 +1019,7 @@ GoldenrodCity_GameCorner_EventScript_LavaPlumeTutorDecline::
 
 GoldenrodCity_GameCorner_Text_LavaPlumeTutorIntro:
 	.string "Heh… I ran the furnaces up at\n"
-	.string "the CAPE, back when they still\n"
+	.string "the CAPE, back when they still\l"
 	.string "burned.\p"
 	.string "I can still teach a POKéMON to\n"
 	.string "spit a sheet of molten rock.\p"
