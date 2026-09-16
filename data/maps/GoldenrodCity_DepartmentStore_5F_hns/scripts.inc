@@ -108,7 +108,6 @@ GoldenrodDeptStore5_EventScript_Clerk::
 GoldenrodDeptStore5_Pokemart:
 	.2byte ITEM_TM_PROTECT
 	.2byte ITEM_TM_SAFEGUARD
-	.2byte ITEM_TM_NATURAL_GIFT
 	.2byte ITEM_TM_FIRE_PUNCH
 	.2byte ITEM_TM_THUNDER_PUNCH
 	.2byte ITEM_TM_ICE_PUNCH

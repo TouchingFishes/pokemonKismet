@@ -389,17 +389,17 @@ enum __attribute__((packed)) Move
     // Gen 4 all moves before gen4 should be in
     MOVE_ROOST = MOVES_COUNT_GEN3,
     MOVE_GRAVITY = 356,
-    MOVE_MIRACLE_EYE = 357,
+    MOVE_MIRACLE_EYE = 357, //do not use
     MOVE_WAKE_UP_SLAP = 358,
     MOVE_HAMMER_ARM = 359,
     MOVE_GYRO_BALL = 360,
     MOVE_HEALING_WISH = 361, //do not use
     MOVE_BRINE = 362,
-    MOVE_NATURAL_GIFT = 363,
-    MOVE_FEINT = 364,
+    MOVE_NATURAL_GIFT = 363, //do not use
+    MOVE_FEINT = 364, //do not use
     MOVE_PLUCK = 365,
     MOVE_TAILWIND = 366,
-    MOVE_ACUPRESSURE = 367,
+    MOVE_ACUPRESSURE = 367, //do not use
     MOVE_METAL_BURST = 368,
     MOVE_U_TURN = 369, //do not use
     MOVE_CLOSE_COMBAT = 370, //use but nerf to 100 BP
@@ -458,7 +458,7 @@ enum __attribute__((packed)) Move
     MOVE_ICE_FANG = 423,
     MOVE_FIRE_FANG = 424,
     MOVE_SHADOW_SNEAK = 425,
-    MOVE_MUD_BOMB = 426,
+    MOVE_MUD_BOMB = 426, //do not use
     MOVE_PSYCHO_CUT = 427,
     MOVE_ZEN_HEADBUTT = 428,
     MOVE_MIRROR_SHOT = 429,
@@ -514,7 +514,7 @@ enum __attribute__((packed)) Move
     MOVE_RAGE_POWDER = 476,
     MOVE_TELEKINESIS = 477, //should be in
     MOVE_MAGIC_ROOM = 478,
-    MOVE_SMACK_DOWN = 479, //should be in
+    MOVE_SMACK_DOWN = 479,
     MOVE_STORM_THROW = 480, //should be in
     MOVE_FLAME_BURST = 481,
     MOVE_SLUDGE_WAVE = 482, //should be in
@@ -590,7 +590,7 @@ enum __attribute__((packed)) Move
     MOVE_FIERY_DANCE = 552, //should be in
     MOVE_FREEZE_SHOCK = 553,
     MOVE_ICE_BURN = 554,
-    MOVE_SNARL = 555, //should be in
+    MOVE_SNARL = 555,
     MOVE_ICICLE_CRASH = 556, //should be in
     MOVE_V_CREATE = 557, //should be in if victini is in
     MOVE_FUSION_FLARE = 558,
@@ -610,7 +610,7 @@ enum __attribute__((packed)) Move
     MOVE_ION_DELUGE = 569,
     MOVE_PARABOLIC_CHARGE = 570,
     MOVE_FORESTS_CURSE = 571,
-    MOVE_PETAL_BLIZZARD = 572, //should be in
+    MOVE_PETAL_BLIZZARD = 572,
     MOVE_FREEZE_DRY = 573, //should be in
     MOVE_DISARMING_VOICE = 574, //should be in
     MOVE_PARTING_SHOT = 575,
@@ -698,7 +698,7 @@ enum __attribute__((packed)) Move
     MOVE_BEAK_BLAST = 653,
     MOVE_CLANGING_SCALES = 654,
     MOVE_DRAGON_HAMMER = 655,
-    MOVE_BRUTAL_SWING = 656, //should be in
+    MOVE_BRUTAL_SWING = 656,
     MOVE_AURORA_VEIL = 657, //should be in if frosmoth is in
     MOVE_SHELL_TRAP = 658,
     MOVE_FLEUR_CANNON = 659,

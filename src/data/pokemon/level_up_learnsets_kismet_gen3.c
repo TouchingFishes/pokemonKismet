@@ -1392,4 +1392,13 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
     [SPECIES_PURGISLUG] = sPurgislugLevelUpLearnset_KismetGen3,
     [SPECIES_GEKOPON] = sGekoponLevelUpLearnset_KismetGen3,
 #endif
+#if P_FAMILY_CHIKORITA
+    [SPECIES_ALT_MEGANIUM] = sMeganiumLevelUpLearnset_KismetGen3,
+#endif
+#if P_FAMILY_CYNDAQUIL
+    [SPECIES_ALT_TYPHLOSION] = sTyphlosionLevelUpLearnset_KismetGen3,
+#endif
+#if P_FAMILY_TOTODILE
+    [SPECIES_ALT_FERALIGATR] = sFeraligatrLevelUpLearnset_KismetGen3,
+#endif
 };

@@ -13510,14 +13510,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM88] = // Natural Gift
+    [ITEM_TM88] = // Body Press
     {
         .name = ITEM_NAME("TM88"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Draws power from\n"
-            "the held Berry to\n"
-            "attack the foe."),
+            "Attacks using the\n"
+            "DEFENSE stat, not\n"
+            "the ATTACK stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

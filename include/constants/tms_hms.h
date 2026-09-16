@@ -91,7 +91,7 @@
     F(X_SCISSOR)     /* TM85 - Route2 done */ \
     F(GYRO_BALL)     /* TM86 - Route13 done */ \
     F(HEX)           /* TM87 - unplaced */ \
-    F(NATURAL_GIFT)  /* TM88 - Goldenrod City Department Store 5F done */ \
+    F(BODY_PRESS)    /* TM88 - Goldenrod City Department Store 5F done */ \
     F(PLUCK)         /* TM89 - Route40 done */ \
     F(DETECT)        /* TM90 - Goldenrod City Game Corner done */ \
     F(FLASH_CANNON)  /* TM91 - Route9 done */ \
