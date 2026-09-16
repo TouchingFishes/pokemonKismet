@@ -151,7 +151,11 @@
 // 0 = robbery still happening, 1 = player intervened but has not taken the band,
 // 2 = window closed unseen (she was robbed), 3 = intervened and has the band
 #define VAR_OLIVINE_GATE_ROCKET                          0x40FA
-#define VAR_UNUSED_HNS_0x40FB                            0x40FB
+// KANTO POKeMON FEDERATION takeover of Fuchsia. 0 = not started, 1 = armed
+// (rumours live, city still normal), 2 = lockdown, 3 = streets cleared,
+// 4 = Rocket tie surfaced, 5 = leader beaten, 6 = city restored + Janine back,
+// 7 = Steven's readiness battle won, Alola passage granted.
+#define VAR_FUCHSIA_FEDERATION_STATE                     0x40FB
 #define VAR_UNUSED_HNS_0x40FC                            0x40FC
 #define VAR_UNUSED_HNS_0x40FD                            0x40FD
 #define VAR_STARTER_REGION                               0x40FE

@@ -38,9 +38,42 @@ CeladonCity_EventScript_Poliwrath::
 	release
 	end
 
+@ CELADON sits at the top of the CYCLING ROAD, which is the western road down
+@ to FUCHSIA - so this is where the FEDERATION's traffic is visible first.
 CeladonCity_EventScript_Teacher1::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, CeladonCity_EventScript_Teacher1After
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, CeladonCity_EventScript_Teacher1During
+	goto_if_eq VAR_FUCHSIA_FEDERATION_STATE, 1, CeladonCity_EventScript_Teacher1Rumour
 	msgbox CeladonCity_Text_Teacher1, MSGBOX_NPC
 	end
+
+CeladonCity_EventScript_Teacher1Rumour::
+	msgbox CeladonCity_Text_Teacher1_Rumour, MSGBOX_NPC
+	end
+
+CeladonCity_EventScript_Teacher1During::
+	msgbox CeladonCity_Text_Teacher1_During, MSGBOX_NPC
+	end
+
+CeladonCity_EventScript_Teacher1After::
+	msgbox CeladonCity_Text_Teacher1_After, MSGBOX_NPC
+	end
+
+CeladonCity_Text_Teacher1_Rumour:
+	.string "There are more bikes on the CYCLING\n"
+	.string "ROAD than I have ever seen.\p"
+	.string "Every one of them heading south.$"
+
+CeladonCity_Text_Teacher1_During:
+	.string "Don't take the CYCLING ROAD south\n"
+	.string "right now.\p"
+	.string "The bikers on it stopped being the\n"
+	.string "ordinary nuisance kind a week ago.$"
+
+CeladonCity_Text_Teacher1_After:
+	.string "The CYCLING ROAD is quiet again.\p"
+	.string "Whatever happened down in FUCHSIA,\n"
+	.string "it emptied every biker off it.$"
 
 CeladonCity_EventScript_GrimerGramps::
 	msgbox CeladonCity_Text_Gramps1, MSGBOX_NPC

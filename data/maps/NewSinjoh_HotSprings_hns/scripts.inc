@@ -199,7 +199,7 @@ NewSinjoh_HotSprings_EventScript_PLATutorDecline::
 NewSinjoh_HotSprings_Text_PLATutorIntro:
 	.string "The ancient power flows\n"
 	.string "through these springs.\p"
-	.string "I can teach your POKeMON moves\n"
+	.string "I can teach your POKéMON moves\n"
 	.string "from a forgotten age.\p"
 	.string "Interested?$"
 
@@ -210,10 +210,10 @@ NewSinjoh_HotSprings_Text_PLATutorConfirm:
 	.string "You'd like to learn {STR_VAR_1}?$"
 
 NewSinjoh_HotSprings_Text_PLATutorWhichMon:
-	.string "Which POKeMON should learn it?$"
+	.string "Which POKéMON should learn it?$"
 
 NewSinjoh_HotSprings_Text_PLATutorDone:
-	.string "Done! Your POKeMON has mastered\n"
+	.string "Done! Your POKéMON has mastered\n"
 	.string "the ancient technique.$"
 
 NewSinjoh_HotSprings_Text_PLATutorComeBack:

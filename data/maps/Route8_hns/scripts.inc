@@ -9,18 +9,78 @@ Route8_OnTransition:
 
 Route8_EventScript_Dwayne::
 	trainerbattle_single TRAINER_DWAYNE_HNS, Route8_Text_BikerDwayneSeen, Route8_Text_BikerDwayneBeaten
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, Route8_EventScript_DwayneFallen
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, Route8_EventScript_DwayneDuring
 	msgbox Route8_Text_BikerDwayneAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route8_EventScript_DwayneDuring::
+	msgbox Route8_Text_BikerDwayneDuring, MSGBOX_AUTOCLOSE
+	end
+
+Route8_EventScript_DwayneFallen::
+	msgbox Route8_Text_BikerDwayneFallen, MSGBOX_AUTOCLOSE
 	end
 
 Route8_EventScript_Harris::
 	trainerbattle_single TRAINER_HARRIS_HNS, Route8_Text_BikerHarrisSeen, Route8_Text_BikerHarrisBeaten
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, Route8_EventScript_HarrisFallen
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, Route8_EventScript_HarrisDuring
 	msgbox Route8_Text_BikerHarrisAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route8_EventScript_HarrisDuring::
+	msgbox Route8_Text_BikerHarrisDuring, MSGBOX_AUTOCLOSE
+	end
+
+Route8_EventScript_HarrisFallen::
+	msgbox Route8_Text_BikerHarrisFallen, MSGBOX_AUTOCLOSE
 	end
 
 Route8_EventScript_Zeke::
 	trainerbattle_single TRAINER_ZEKE_HNS, Route8_Text_BikerZekeSeen, Route8_Text_BikerZekeBeaten
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, Route8_EventScript_ZekeFallen
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, Route8_EventScript_ZekeDuring
 	msgbox Route8_Text_BikerZekeAfter, MSGBOX_AUTOCLOSE
 	end
+
+Route8_EventScript_ZekeDuring::
+	msgbox Route8_Text_BikerZekeDuring, MSGBOX_AUTOCLOSE
+	end
+
+Route8_EventScript_ZekeFallen::
+	msgbox Route8_Text_BikerZekeFallen, MSGBOX_AUTOCLOSE
+	end
+
+Route8_Text_BikerDwayneDuring:
+	.string "You should see what we're doing\n"
+	.string "down in FUCHSIA right now.\p"
+	.string "The FEDERATION will never fall!$"
+
+Route8_Text_BikerDwayneFallen:
+	.string "PAXTON is finished, and the boss\n"
+	.string "won't even take a call.\p"
+	.string "So much for never falling…$"
+
+Route8_Text_BikerHarrisDuring:
+	.string "The cops shut our UNDERGROUND\n"
+	.string "PATH.\p"
+	.string "So PAXTON went and took a whole\n"
+	.string "city. That's how you answer that.$"
+
+Route8_Text_BikerHarrisFallen:
+	.string "You took FUCHSIA back off us.\p"
+	.string "…Was the SAFARI ZONE ever really\n"
+	.string "ours to take? I don't know now.$"
+
+Route8_Text_BikerZekeDuring:
+	.string "Everyone's ridden south to FUCHSIA.\p"
+	.string "Me? I like my teeth where they are.$"
+
+Route8_Text_BikerZekeFallen:
+	.string "Some guy in a suit was paying us.\p"
+	.string "Never saw his face.\n"
+	.string "Never want to.$"
 
 Route8_EventScript_Sam::
 	trainerbattle_single TRAINER_SAM_HNS, Route8_Text_SupernerdSamSeen, Route8_Text_SupernerdSamBeaten

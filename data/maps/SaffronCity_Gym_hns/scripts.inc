@@ -50,6 +50,9 @@ SaffronCity_Gym_EventScript_Sabrina::
 	call Common_EventScript_SetGymTrainers_hns
 	closemessage
 	clearflag FLAG_HIDE_OLIVINE_SABRINA
+	@ Arms the FUCHSIA takeover if this was the final gym leader and
+	@ the POWER PLANT errand is done. Check data/scripts/fuchsia_federation.inc.
+	call Common_EventScript_TryArmFederation
 	release
 	end
 

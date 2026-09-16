@@ -144,6 +144,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeruleanCity_Gym_EventScript_MachinePartItem",
       "flag": "FLAG_HIDDEN_ITEM_MACHINE_PART"
+    },
+    {
+      "local_id": "LOCALID_CERULEAN_GYM_GUIDE",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_HNS",
+      "x": 9,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CeruleanCity_Gym_EventScript_MistyAwayGuide",
+      "flag": "FLAG_HIDE_CERULEAN_GYM_GUIDE"
     }
   ],
   "warp_events": [

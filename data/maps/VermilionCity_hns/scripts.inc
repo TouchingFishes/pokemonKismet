@@ -154,8 +154,39 @@ VermilionCity_EventScript_SuicuneEpisode::
 	end
 
 VermilionCity_EventScript_Teacher::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, VermilionCity_EventScript_TeacherAfter
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, VermilionCity_EventScript_TeacherDuring
+	goto_if_eq VAR_FUCHSIA_FEDERATION_STATE, 1, VermilionCity_EventScript_TeacherRumour
 	msgbox VermilionCity_Text_Teacher, MSGBOX_NPC
 	end
+
+VermilionCity_EventScript_TeacherRumour::
+	msgbox VermilionCity_Text_Teacher_Rumour, MSGBOX_NPC
+	end
+
+VermilionCity_EventScript_TeacherDuring::
+	msgbox VermilionCity_Text_Teacher_During, MSGBOX_NPC
+	end
+
+VermilionCity_EventScript_TeacherAfter::
+	msgbox VermilionCity_Text_Teacher_After, MSGBOX_NPC
+	end
+
+VermilionCity_Text_Teacher_Rumour:
+	.string "The dockworkers say a lot of bikes\n"
+	.string "came off the boats this month.\p"
+	.string "Far too many for one club.$"
+
+VermilionCity_Text_Teacher_During:
+	.string "FUCHSIA is cut off, they're saying.\p"
+	.string "It's the far side of KANTO, so\n"
+	.string "nobody here is doing much about it.$"
+
+VermilionCity_Text_Teacher_After:
+	.string "So FUCHSIA sorted itself out after\n"
+	.string "all.\p"
+	.string "Or rather, somebody sorted it out\n"
+	.string "for them. Good for whoever it was.$"
 
 VermilionCity_EventScript_Oldman::
 	msgbox VermilionCity_Text_MachopOwner, MSGBOX_NPC

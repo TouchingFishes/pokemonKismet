@@ -1,6 +1,45 @@
 CeruleanCity_Gym_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CeruleanCity_Gym_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, CeruleanCity_Gym_OnFrame
 	.byte 0
+
+CeruleanCity_Gym_OnTransition::
+	goto_if_lt VAR_CERULEAN_CITY_STATE, 3, CeruleanCity_Gym_EventScript_MistyNotDueYet
+	goto_if_unset FLAG_ALOLA_CLEARED, CeruleanCity_Gym_EventScript_MistyStillAway
+	clearflag FLAG_HIDE_CERULEAN_GYM_TRAINERS
+	setflag FLAG_HIDE_CERULEAN_GYM_POKEMON
+	setflag FLAG_HIDE_CERULEAN_GYM_GUIDE
+	end
+
+@ She left the Cape and never came back - the room is still a flooded pool, and
+@ one of her swimmers is left minding it.
+CeruleanCity_Gym_EventScript_MistyStillAway::
+	setflag FLAG_HIDE_CERULEAN_GYM_TRAINERS
+	clearflag FLAG_HIDE_CERULEAN_GYM_POKEMON
+	clearflag FLAG_HIDE_CERULEAN_GYM_GUIDE
+	end
+
+@ Before the Cape scene the existing chain already explains her absence, so the
+@ stand-in must not be here saying something different.
+CeruleanCity_Gym_EventScript_MistyNotDueYet::
+	setflag FLAG_HIDE_CERULEAN_GYM_GUIDE
+	end
+
+CeruleanCity_Gym_EventScript_MistyAwayGuide::
+	msgbox CeruleanCity_Gym_Text_MistyAwayGuide, MSGBOX_NPC
+	end
+
+CeruleanCity_Gym_Text_MistyAwayGuide:
+	.string "MISTY? You just missed her.\p"
+	.string "Some professor wrote to her about\n"
+	.string "islands off the coast where the\l"
+	.string "WATER POKéMON come out all wrong.\p"
+	.string "Wrong colors, wrong shapes, wrong\n"
+	.string "everything. She was gone that day.\p"
+	.string "She said she'd take the GYM back\n"
+	.string "when she'd seen them herself.\p"
+	.string "Until then… it's just us and the\n"
+	.string "pool, I'm afraid.$"
 
 CeruleanCity_Gym_OnFrame::
 	map_script_2 VAR_KANTO_ROCKET_STORY_STATE, 2,  CeruleanCity_Gym_EventScript_RocketGrunt

@@ -11,8 +11,38 @@ LavenderTown_EventScript_PokefanM::
 	end
 
 LavenderTown_EventScript_Teacher::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, LavenderTown_EventScript_TeacherAfter
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, LavenderTown_EventScript_TeacherDuring
+	goto_if_eq VAR_FUCHSIA_FEDERATION_STATE, 1, LavenderTown_EventScript_TeacherRumour
 	msgbox LavenderTown_Text_Teacher, MSGBOX_NPC
 	end
+
+LavenderTown_EventScript_TeacherRumour::
+	msgbox LavenderTown_Text_Teacher_Rumour, MSGBOX_NPC
+	end
+
+LavenderTown_EventScript_TeacherDuring::
+	msgbox LavenderTown_Text_Teacher_During, MSGBOX_NPC
+	end
+
+LavenderTown_EventScript_TeacherAfter::
+	msgbox LavenderTown_Text_Teacher_After, MSGBOX_NPC
+	end
+
+LavenderTown_Text_Teacher_Rumour:
+	.string "Bikes have gone past all week,\n"
+	.string "down ROUTE 12 towards FUCHSIA.\p"
+	.string "Not one has come back up.$"
+
+LavenderTown_Text_Teacher_During:
+	.string "They've taken FUCHSIA, people say.\p"
+	.string "The whole city. Just like that.\p"
+	.string "And nobody is going to stop them.$"
+
+LavenderTown_Text_Teacher_After:
+	.string "FUCHSIA is free again, and they say\n"
+	.string "it was a kid from JOHTO.\p"
+	.string "…That's you, isn't it?$"
 
 LavenderTown_EventScript_Gramps::
 	msgbox LavenderTown_Text_Gramps, MSGBOX_NPC

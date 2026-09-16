@@ -1862,7 +1862,10 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 .if IS_HNS
 
+	
 @ HnS scripts
+
+	.include "data/scripts/fuchsia_federation.inc"
 	.include "data/maps/TestMap2_hns/scripts.inc"
 
 	.include "data/maps/TestMap1_hns/scripts.inc"

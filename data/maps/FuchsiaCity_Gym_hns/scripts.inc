@@ -255,13 +255,26 @@ FuchsiaCity_Gym_Text_CamperBarry_After:
 	.string "what, huh?$"
 
 FuchsiaCity_Gym_EventScript_GymGuy::
-	goto_if_set FLAG_DEFEATED_FUCHSIA_GYM, FuchsiaCity_Gym_EventScript_GymGuyAfter
+	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_Gym_EventScript_GymGuyNormal
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_Gym_EventScript_GymGuyNormal
+	msgbox FuchsiaCity_Gym_Text_GuideJanineAway, MSGBOX_NPC
+	end
+
+FuchsiaCity_Gym_EventScript_GymGuyNormal::
 	msgbox FuchsiaCity_Gym_Text_Guide, MSGBOX_NPC
 	end
 
 FuchsiaCity_Gym_EventScript_GymGuyAfter::
 	msgbox FuchsiaCity_Gym_Text_GuideWin, MSGBOX_NPC
 	end
+
+FuchsiaCity_Gym_Text_GuideJanineAway:
+	.string "Yo, champ in the making!\p"
+	.string "JANINE isn't here. She went after\n"
+	.string "those bikers the moment they showed\l"
+	.string "up at the SAFARI ZONE.\p"
+	.string "One of her against all of them…\p"
+	.string "If you're going that way, go fast.$"
 
 FuchsiaCity_Gym_EventScript_GymStatue::
 	lockall

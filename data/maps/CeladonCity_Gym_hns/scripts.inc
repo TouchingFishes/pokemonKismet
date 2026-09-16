@@ -21,6 +21,9 @@ CeladonCity_Gym_EventScript_Erika::
 	call Common_EventScript_SetGymTrainers_hns
 	clearflag FLAG_HIDE_FOUNTAIN_ERIKA
 	closemessage
+	@ Arms the FUCHSIA takeover if this was the final gym leader and
+	@ the POWER PLANT errand is done. Check data/scripts/fuchsia_federation.inc.
+	call Common_EventScript_TryArmFederation
 	release
 	end
 

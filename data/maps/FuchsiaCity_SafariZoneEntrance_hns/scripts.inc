@@ -74,10 +74,56 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenGiveCase:
 FuchsiaCity_SafariZoneEntrance_Steven::
 	lock
 	faceplayer
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_SafariZoneEntrance_EventScript_StevenAfterFederation
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_SafariZoneEntrance_EventScript_StevenUnderSiege
+	goto FuchsiaCity_SafariZoneEntrance_EventScript_StevenNormal
+
+FuchsiaCity_SafariZoneEntrance_EventScript_StevenNormal::
 	checkitem ITEM_EON_TICKET
 	goto_if_eq VAR_RESULT, TRUE, FuchsiaCity_SafariZoneEntrance_EventScript_Steven_Trade
 	goto_if_set FLAG_IS_KANTO_CHAMPION, FuchsiaCity_SafariZoneEntrance_StevenChamp
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_Steven, MSGBOX_NPC
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_StevenUnderSiege::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenUnderSiege, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_StevenAfterFederation::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 7, FuchsiaCity_SafariZoneEntrance_EventScript_StevenCharterDone
+	goto_if_unset FLAG_DEFEATED_VERMILION_GYM, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady
+	goto_if_unset FLAG_DEFEATED_CELADON_GYM, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady
+	goto_if_unset FLAG_DEFEATED_SAFFRON_GYM, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady
+	goto_if_unset FLAG_DEFEATED_FUCHSIA_GYM, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenChallenge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FuchsiaCity_SafariZoneEntrance_EventScript_StevenDeclineBattle
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenAccept, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_STEVEN_KANTO_HNS, FuchsiaCity_SafariZoneEntrance_Text_StevenBattleBeaten
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenBattleAfter, MSGBOX_DEFAULT
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 7
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenNotReady, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_StevenDeclineBattle::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenDecline, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_StevenCharterDone::
+	goto_if_set FLAG_VISITED_ALOLA, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNormal
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenCharterReminder, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
@@ -99,6 +145,15 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenChamp:
 
 FuchsiaCity_SafariZoneEntrance_EventScript_EntranceCounterTrigger::
 	lockall
+	@ No tickets while the FEDERATION holds the building - the attendant is
+	@ hidden by FLAG_HIDE_SAFARI_STAFF, so without this the counter would take
+	@ the player's money on behalf of nobody.
+	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_SafariZoneEntrance_EventScript_CounterOpen
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_SafariZoneEntrance_EventScript_CounterOpen
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_CounterShut, MSGBOX_DEFAULT
+	goto FuchsiaCity_SafariZoneEntrance_EventScript_MovePlayerBackFromCounter
+
+FuchsiaCity_SafariZoneEntrance_EventScript_CounterOpen::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	showmoneybox 0, 0
 	msgbox Route121_SafariZoneEntrance_Text_WouldYouLikeToPlay, MSGBOX_YESNO
@@ -379,3 +434,194 @@ FuchsiaCity_SafariZoneEntrance_Text_MaxLevel:
 	.string "Hello {PLAYER}, thank you for\n"
 	.string "continuing to be a premium member\l"
 	.string "at the FUCHSIA SAFARI ZONE.$"
+
+@ ===[ THE SHOWDOWN - STATES 3 TO 6 ]=========================================
+@ GIL and BRIX can be taken in either order; PAXTON will not fight until both
+@ are down, which forces the whole gauntlet without dictating a sequence.
+@
+@ The PAXTON battle is where the tie lands, and it lands in the AUDIO: his party
+@ entry carries `Music: Rocket`, so the TEAM ROCKET battle theme plays before any
+@ character has said the words. His team does the rest - CROBAT and WEEZING are
+@ biker mon, but RHYDON and NIDOKING are GIOVANNI's. Nobody ever says
+@ "TEAM ROCKET" out loud in this whole arc.
+@
+@ ⚠️ The party itself is Moritz's and is hand-maintained in trainers_hns.party -
+@ do not edit it from here. If the team changes, this comment is what goes stale:
+@ it already had to drop PERSIAN once when the ace became ANNIHILAPE.
+
+FuchsiaCity_SafariZoneEntrance_EventScript_Gil::
+	trainerbattle_single TRAINER_GIL_HNS, FuchsiaCity_SafariZoneEntrance_Text_GilSeen, FuchsiaCity_SafariZoneEntrance_Text_GilBeaten
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_GilAfter, MSGBOX_AUTOCLOSE
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_Brix::
+	trainerbattle_single TRAINER_BRIX_HNS, FuchsiaCity_SafariZoneEntrance_Text_BrixSeen, FuchsiaCity_SafariZoneEntrance_Text_BrixBeaten
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_BrixAfter, MSGBOX_AUTOCLOSE
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_Paxton::
+	lock
+	faceplayer
+	goto_if_not_defeated TRAINER_GIL_HNS, FuchsiaCity_SafariZoneEntrance_EventScript_PaxtonWait
+	goto_if_not_defeated TRAINER_BRIX_HNS, FuchsiaCity_SafariZoneEntrance_EventScript_PaxtonWait
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_PaxtonSeen, MSGBOX_DEFAULT
+	@ Bookmark, so a save made mid-scene resumes with the tie already surfaced.
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 4
+	trainerbattle_no_intro TRAINER_PAXTON_HNS, FuchsiaCity_SafariZoneEntrance_Text_PaxtonBeaten
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_PaxtonAfter, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 5
+	setflag FLAG_HIDE_SAFARI_FEDERATION
+	clearflag FLAG_HIDE_SAFARI_STAFF
+	removeobject LOCALID_SAFARI_PAXTON
+	removeobject LOCALID_SAFARI_GIL
+	removeobject LOCALID_SAFARI_BRIX
+	playse SE_EXIT
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto FuchsiaCity_SafariZoneEntrance_EventScript_FederationAftermath
+
+FuchsiaCity_SafariZoneEntrance_EventScript_PaxtonWait::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_PaxtonWait, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+@ State 5 -> 6. Restores FUCHSIA itself: the townsfolk come back, JANINE returns
+@ to her GYM, and the takeover BGM stops being selected the next time the city
+@ map loads. Done here rather than on the city map so the player never sees a
+@ half-restored FUCHSIA.
+FuchsiaCity_SafariZoneEntrance_EventScript_FederationAftermath::
+	applymovement LOCALID_SAFARIZONEFUCHSIA_STEVEN, Common_Movement_WalkLeft1
+	waitmovement 0
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenAftermath, MSGBOX_DEFAULT
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 6
+	clearflag FLAG_HIDE_FUCHSIA_NPCS
+	setflag FLAG_HIDE_FUCHSIA_FEDERATION
+	@ The two street holdouts clear out with him. No removeobject needed: the
+	@ player is standing in the SAFARI ZONE ENTRANCE right now, so FUCHSIA is
+	@ reloaded from scratch with this flag already set the moment they walk out.
+	setflag FLAG_HIDE_FUCHSIA_HOLDOUTS
+	clearflag FLAG_HIDE_FUCHSIA_JANINE
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_Text_CounterShut:
+	.string "The SAFARI ZONE is closed.\p"
+	.string "Nobody is taking tickets while\n"
+	.string "those people are inside.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_GilSeen:
+	.string "DEVON walks in, buys the SAFARI\n"
+	.string "ZONE, and we're supposed to smile?$"
+
+FuchsiaCity_SafariZoneEntrance_Text_GilBeaten:
+	.string "Agh! Fine, fine!$"
+
+FuchsiaCity_SafariZoneEntrance_Text_GilAfter:
+	.string "This was our ground before it had\n"
+	.string "a gate and a ticket price.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_BrixSeen:
+	.string "PAXTON said to flatten anyone who\n"
+	.string "came through that door.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_BrixBeaten:
+	.string "…Not paid enough for this.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_BrixAfter:
+	.string "We're not thieves. We're owed.\p"
+	.string "That's what the man in the suit\n"
+	.string "told us, anyway.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_PaxtonWait:
+	.string "Stay back, kid.\p"
+	.string "My people are still counting what's\n"
+	.string "in this building.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_PaxtonSeen:
+	.string "So you're the one knocking my\n"
+	.string "people down.\p"
+	.string "Look around. DEVON fenced off the\n"
+	.string "marsh, sells tickets to what used\l"
+	.string "to be ours, and calls it charity.\p"
+	.string "I got run off an island once by\n"
+	.string "people who talked like that.\p"
+	.string "Not again.\p"
+	.string "Someone finally offered to help us\n"
+	.string "take it back.\p"
+	.string "I didn't ask his name.\n"
+	.string "I didn't need to.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_PaxtonBeaten:
+	.string "…Should've asked his name.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_PaxtonAfter:
+	.string "He told us there'd be a kid.\p"
+	.string "Said if a kid from JOHTO turned up,\n"
+	.string "we were to leave and say nothing.\p"
+	.string "…He knew you'd come.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenUnderSiege:
+	.string "{PLAYER}! You shouldn't be in here.\p"
+	.string "They have my attendants in the back\n"
+	.string "room. The one standing over me is\l"
+	.string "the one giving the orders.\p"
+	.string "I can't fight him and keep everyone\n"
+	.string "in there safe.\p"
+	.string "But you can fight.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenAftermath:
+	.string "It's over…\p"
+	.string "My attendants are shaken, but they\n"
+	.string "are safe. Thank you, {PLAYER}.\p"
+	.string "Did you hear him? He kept saying\n"
+	.string "'he'. Never a name.\p"
+	.string "Someone paid for all this. Someone\n"
+	.string "who knew you were coming before\l"
+	.string "I did.\p"
+	.string "Come and find me once FUCHSIA is\n"
+	.string "back on its feet. I have a favor\l"
+	.string "to ask you.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenNotReady:
+	.string "There's something I want to ask\n"
+	.string "of you, {PLAYER}.\p"
+	.string "But finish what you came here for\n"
+	.string "first. JANINE is back at her GYM.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenChallenge:
+	.string "SURGE, ERIKA, SABRINA, JANINE.\p"
+	.string "All four, and the FEDERATION too.\p"
+	.string "The men who took my SAFARI ZONE\n"
+	.string "were paid by someone I cannot\l"
+	.string "reach from KANTO.\p"
+	.string "DEVON has a ship. I want you on it.\p"
+	.string "But not before I've seen for myself\n"
+	.string "that you're ready.\p"
+	.string "Show me. Here and now?$"
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenAccept:
+	.string "Good.\p"
+	.string "I won't go easy on you. It would\n"
+	.string "be no kindness if I did.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenDecline:
+	.string "Then come back when you are.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenBattleBeaten:
+	.string "…Yes.\n"
+	.string "You're ready.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenBattleAfter:
+	.string "That was a fine battle.\p"
+	.string "The ship is at the dock on\n"
+	.string "ROUTE 13. The captain has his\l"
+	.string "orders.\p"
+	.string "Find out who paid them, {PLAYER}.\p"
+	.string "And be careful out there.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenCharterReminder:
+	.string "The DEVON ship is waiting at the\n"
+	.string "ROUTE 13 dock whenever you are.$"

@@ -268,6 +268,9 @@ VermilionCity_Gym_EventScript_Surge::
 	call_if_eq VAR_RESULT, FALSE, VermilionCity_Gym_EventScript_GiveTM
 	clearflag FLAG_HIDE_PLANT_SURGE
 	closemessage
+	@ Arms the FUCHSIA takeover if this was the final gym leader and
+	@ the POWER PLANT errand is done. Check data/scripts/fuchsia_federation.inc.
+	call Common_EventScript_TryArmFederation
 	release
 	end
 

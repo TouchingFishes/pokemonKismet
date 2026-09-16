@@ -858,14 +858,14 @@
 // this from FLAG_IS_KANTO_CHAMPION rather than leaving her there on a new file.
 #define FLAG_HIDE_DRAGON_SHRINE_IRIS                0x306
 #define FLAG_ITEM_VIOLET_CITY_TM_MIRROR_SHOT        0x307
-// Last free slot in this block is 0x307. Grow into the 0x4A6-0x4FF window that
+// Last free slot in this block is 0x307. Grow into the 0x4B2-0x4FF window that
 // HNS_EXTENDED_CONTENT_COUNT was reserved to reach, not downward past 0x308.
 #define HNS_UNUSED_COUNT                            39
 
 #define HNS_CONTENT_FLAGS_END                       0x308
 
-// Extended content flags (0x36A – 0x4A5)
-// 316 slots for new content; 0x4A6–0x4FF reserved for future expansion.
+// Extended content flags (0x36A – 0x4B1)
+// 336 slots for new content; 0x4B2–0x4FF reserved for future expansion.
 //
 // WARNING: this block butts directly against the trainer registered (match call)
 // flags below it, with NO gap. Those start at 0x310 and use one flag per rematch
@@ -1256,10 +1256,53 @@
 #define FLAG_ITEM_UNION_CAVE_TM_SWIFT               (HNS_EXTENDED_CONTENT_START + 322)
 #define FLAG_GOT_VANILLITE_FROM_LADY                (HNS_EXTENDED_CONTENT_START + 323)
 
+// ---------------------------------------------------------------------------
+// KANTO POKeMON FEDERATION - the Fuchsia takeover arc.
+// State lives in VAR_FUCHSIA_FEDERATION_STATE; these are the object-visibility
+// flags that arc flips. Object events hide when their flag is SET, so
+// FLAG_HIDE_FUCHSIA_NPCS and FLAG_HIDE_FUCHSIA_FEDERATION are always opposites:
+// exactly one population is on screen at a time. Same arrangement as Goldenrod's
+// FLAG_HIDE_GOLDENROD_NPCS / FLAG_HIDE_GOLDENROD_ROCKETS.
+#define FLAG_HIDE_FUCHSIA_NPCS                      (HNS_EXTENDED_CONTENT_START + 324)
+#define FLAG_HIDE_FUCHSIA_FEDERATION                (HNS_EXTENDED_CONTENT_START + 325)
+#define FLAG_HIDE_FUCHSIA_JANINE                    (HNS_EXTENDED_CONTENT_START + 326)
+#define FLAG_HIDE_SAFARI_FEDERATION                 (HNS_EXTENDED_CONTENT_START + 327)
+
+// Set at the Alola story beat. Read ONLY by the five Kanto blockers below - the
+// six existing E4/Hall-of-Fame checks keep using VAR_ALOLA_STATE >= 4, which is
+// a different and much heavier bar (the full 18-mon survey plus four Tapus).
+#define FLAG_ALOLA_CLEARED                          (HNS_EXTENDED_CONTENT_START + 328)
+
+// The five areas shut while the player is away. Each is a blocker NPC standing on
+// the tile in front of an entrance, cleared when FLAG_ALOLA_CLEARED is set - the
+// Route 20 Sage pattern. Misty needs no flag of her own: she is already hidden by
+// FLAG_HIDE_CERULEAN_GYM_TRAINERS, so the arc just delays that clearflag.
+#define FLAG_HIDE_MTMOON_BLOCKER                    (HNS_EXTENDED_CONTENT_START + 329)
+#define FLAG_HIDE_DIGLETTS_CAVE_BLOCKER             (HNS_EXTENDED_CONTENT_START + 330)
+#define FLAG_HIDE_CINNABAR_BLOCKER                  (HNS_EXTENDED_CONTENT_START + 331)
+#define FLAG_HIDE_TANGLEBRUSH_BLOCKER               (HNS_EXTENDED_CONTENT_START + 332)
+#define FLAG_HIDE_CERULEAN_GYM_GUIDE                (HNS_EXTENDED_CONTENT_START + 333)
+
+// The SAFARI ZONE ENTRANCE's civilians - attendants, the upgrade clerk and the
+// berry-blender crowd - are hidden while the FEDERATION holds the building.
+// ⚠️ They have to be HIDDEN rather than given frightened dialogue: their scripts
+// (BerryBlender_EventScript_*, LilycoveCity_ContestLobby_EventScript_*) are
+// shared with the Hoenn maps, so editing them would change Hoenn too.
+#define FLAG_HIDE_SAFARI_STAFF                      (HNS_EXTENDED_CONTENT_START + 334)
+
+// Two of the four FUCHSIA loafers stay on the street after DARIUS falls, so the
+// city is not completely empty during states 3-5 while the fight moves indoors.
+// ⚠️ They need their OWN flag: FLAG_HIDE_FUCHSIA_FEDERATION is SET at state 3
+// by DARIUS's cleanup, so anything sharing it disappears with him.
+#define FLAG_HIDE_FUCHSIA_HOLDOUTS                  (HNS_EXTENDED_CONTENT_START + 335)
+
 //just fyi HNS_EXTENDED_CONTENT_START is 0x36A
-#define HNS_EXTENDED_CONTENT_COUNT                  324
+// Grown from 324 to 336 by the Fuchsia Federation arc, into the 0x4A6-0x4FF
+// window this block was always meant to reach (see the note at HNS_UNUSED_COUNT).
+// END is now 0x4B1; TRAINER_FLAGS_START is 0x500, so 0x4B2-0x4FF is still free.
+#define HNS_EXTENDED_CONTENT_COUNT                  336
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)
-// 0x4A6–0x4FF remaining reserved for future expansion
+// 0x4B2–0x4FF remaining reserved for future expansion
 
 // Trainer registered (match call) flags — one per rematchable trainer
 #define TRAINER_REGISTERED_FLAGS_START               0x310

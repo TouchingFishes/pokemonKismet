@@ -45,6 +45,9 @@ Route10_PowerPlantBackRoom_EventScript_ManagerCheckPart::
 	setvar VAR_CERULEAN_CITY_STATE, 2
 	setflag FLAG_HIDE_POWER_PLANT_ENGINEER
 	setflag FLAG_RETURNED_MACHINE_PART
+	@ Arms the FUCHSIA takeover if this was the final gym leader and
+	@ the POWER PLANT errand is done. Check data/scripts/fuchsia_federation.inc.
+	call Common_EventScript_TryArmFederation
 	release
 	end
 

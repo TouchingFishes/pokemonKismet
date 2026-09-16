@@ -89,7 +89,7 @@ ViridianCity_Gym_Text_LeaderBlue_GiveTM:
 
 ViridianCity_Gym_Text_LeaderBlue_ExplainTM:
 	.string "That's TRICK ROOM.\p"
-	.string "All POKEMON in battle will change speed.\n"
+	.string "All POKéMON in battle will change speed.\n"
 	.string "Slow goes first. Fast goes last.\p"
 	.string "Use it to turn a battle on its head.$"
 

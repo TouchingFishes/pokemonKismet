@@ -41,14 +41,14 @@ NewSinjoh_House1_Text_Looking4Celebi:
 	.string "NEW BARK TOWN?\p"
 	.string "I have a request for someone as\n"
 	.string "well traveled as you are.\l"
-	.string "You see, my favorite POKEMON in the\l"
+	.string "You see, my favorite POKéMON in the\l"
 	.string "whole world just so happens to be\l"
-	.string "the mythical POKEMON known as CELEBI.\p"
+	.string "the mythical POKéMON known as CELEBI.\p"
 	.string "If you happen to have one, would\n"
 	.string "you mind showing it to me?$"
 
 NewSinjoh_House1_Text_NicePokemonButNotCelebi:
-    .string "That's a very wonderful POKEMON\n"
+    .string "That's a very wonderful POKéMON\n"
 	.string "you have there but that's\l"
 	.string "not exactly what I was looking for..$"
 

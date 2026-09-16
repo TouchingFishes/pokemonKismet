@@ -31,7 +31,19 @@ Route13_OnTransition:
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_eq VAR_TEMP_0, 77, Route13_OnTransitionBoat
 	callnative SetTimeBasedEncounters
+	call Route13_EventScript_TryLiftKantoCordon
 	end
+
+Route13_EventScript_TryLiftKantoCordon::
+	@ STEVEN has to have sent you (state 7), and you have to have actually done
+	@ something out there.
+	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 7, Route13_EventScript_CordonStays
+	goto_if_lt VAR_ALOLA_STATE, 2, Route13_EventScript_CordonStays
+	call Common_EventScript_ClearKantoCordon
+	return
+
+Route13_EventScript_CordonStays::
+	return
 
 Route13_OnTransitionBoat::
 	@addobject LOCALID_ROUTE13_BOAT
@@ -253,6 +265,7 @@ Route13_GetOffBoat_2:
 Route13_TravelToAlola::
 	lock
 	faceplayer
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 7, Route13_TravelToAlola_1
 	checkitem ITEM_STRANGE_SOUVENIR
 	compare VAR_RESULT, 0
 	goto_if_ne Route13_TravelToAlola_1

@@ -114,6 +114,14 @@ EventScript_ResetAllBerries::
 #if IS_HNS
 	setflag FLAG_HIDE_MRPOKEMON_BILL
 
+	@ KANTO POKeMON FEDERATION. Hide flags default to CLEAR, so the occupying
+	@ bikers would otherwise be standing in FUCHSIA from a new file. The five
+	@ FLAG_HIDE_*_BLOCKER flags are deliberately NOT set here: those areas are
+	@ shut until FLAG_ALOLA_CLEARED, and CLEAR is exactly "blocker present".
+	setflag FLAG_HIDE_FUCHSIA_FEDERATION
+	setflag FLAG_HIDE_SAFARI_FEDERATION
+	setflag FLAG_HIDE_FUCHSIA_HOLDOUTS
+
 	@ Johto / Kanto berry trees
 	setberrytree BERRY_TREE_CHERI_1, ITEM_TO_BERRY(ITEM_CHERI_BERRY), BERRY_STAGE_BERRIES
 	setberrytree BERRY_TREE_CHERI_2, ITEM_TO_BERRY(ITEM_CHERI_BERRY), BERRY_STAGE_BERRIES
@@ -441,6 +449,7 @@ EventScript_ResetAllMapFlagsHnS::
 	setvar VAR_CELADON_CITY_STATE, 0
 	setvar VAR_SAFFRON_CITY_STATE, 0
 	setvar VAR_FUCHSIA_CITY_STATE, 0
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 0
 	setvar VAR_CINNABAR_ISLAND_STATE, 0
 	setvar VAR_MT_SILVER_STATE, 0
 	setvar VAR_ROUTE27_STATE, 0

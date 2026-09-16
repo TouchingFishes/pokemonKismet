@@ -1,6 +1,19 @@
 DiglettsCave_EntranceNorth_hns_MapScripts::
 	.byte 0
 
+DiglettsCave_EntranceNorth_EventScript_Hiker::
+	msgbox DiglettsCave_EntranceNorth_Text_Hiker, MSGBOX_NPC
+	end
+
+DiglettsCave_EntranceNorth_Text_Hiker:
+	.string "Don't even think about digging\n"
+	.string "through that lot.\p"
+	.string "There's a researcher on the other\n"
+	.string "side who'd have my head for it.\p"
+	.string "Rare as anything, he reckons.\p"
+	.string "Leave them be and they'll move on\n"
+	.string "in their own time.$"
+
 
 DiglettsCave_EntranceNorth_EventScript_Brock::
     lock

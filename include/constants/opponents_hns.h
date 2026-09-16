@@ -823,7 +823,29 @@
 #define TRAINER_LORELEI_HNS                           788
 #define TRAINER_AGATHA_HNS                            789
 
-#define TRAINERS_COUNT_HNS                       790
+// KANTO POKeMON FEDERATION - the Fuchsia takeover. MACK/VERN/HOYT hold the
+// streets, DARIUS plugs the SAFARI ZONE door, GIL/BRIX are inside, PAXTON leads.
+//
+// PAXTON is deliberately the same name as TRAINER_CUE_BALL_PAXTON in
+// opponents_frlg.h - the biker boss run off THREE ISLAND, whose gang called
+// itself the KANTO RIDER FEDERATION. Same man, bigger operation. An HnS player
+// can never see that scene (all Sevii maps are _Frlg-only), so nothing here
+// depends on knowing it; it just rewards anyone who does.
+#define TRAINER_MACK_HNS                              790
+#define TRAINER_VERN_HNS                              791
+#define TRAINER_HOYT_HNS                              792
+#define TRAINER_DARIUS_HNS                            793
+#define TRAINER_GIL_HNS                               794
+#define TRAINER_BRIX_HNS                              795
+#define TRAINER_PAXTON_HNS                            796
+
+// ⚠️ Steven's FIRST battle, not TRAINER_STEVEN_HNS (612). That one is the SINJOH
+// RUINS endgame Steven at L77-79 with a champion mugshot, and src/pokemon.c gives
+// it MUS_VS_CHAMPION. Reusing it here would set trainer flag 612 and silently
+// consume the Sinjoh battle. Two constants = two teams = two encounters.
+#define TRAINER_STEVEN_KANTO_HNS                      797
+
+#define TRAINERS_COUNT_HNS                       798
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
