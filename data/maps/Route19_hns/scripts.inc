@@ -27,15 +27,6 @@ Route19_EventScript_Jerome::
 	msgbox Route19_Text_SwimmermJeromeAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route19_EventScript_Fatman::
-	goto_if_unset FLAG_DEFEATED_CINNABAR_ISLAND_GYM, Route19_EventScript_FatmanBefore
-	msgbox Route19_Text_Fisher1_RocksCleared, MSGBOX_NPC
-	end
-
-Route19_EventScript_FatmanBefore::
-	msgbox Route19_Text_Fisher2, MSGBOX_NPC
-	end
-
 Route19_EventScript_Sign::
 	msgbox Route19_Text_Sign, MSGBOX_SIGN
 	end
@@ -117,18 +108,11 @@ Route19_Text_Fisher1:
 	.string "Sorry. This road is closed for\n"
 	.string "construction.\p"
 	.string "If you want to get to CINNABAR,\n"
-	.string "you'd better go south from PALLET\n"
+	.string "you'd better go south from PALLET\l"
 	.string "TOWN.$"
 
 Route19_Text_Kingler:
 	.string "KINGLER: KEEEEEEEEEEEE$"
-
-Route19_Text_Fisher1_RocksCleared:
-	.string "I'm all sweaty. Time for a swim!$"
-
-Route19_Text_Fisher2:
-	.string "Aw man, KINGLER is blocking the\n"
-	.string "beach.$"
 
 Route19_Text_FisherBefore:
 	.string "No fishing until these KINGLER\n"
@@ -158,13 +142,21 @@ Route19_EventScript_EngineerBefore::
 	end
 
 Route19_Text_Engineer_RocksCleared:
-	.string "I'm all sweaty. Time for a swim!$"
+	.string "The KINGLER cleared out overnight.\p"
+	.string "This road is mine again, and that sea\n"
+	.string "wall won't mend itself.\p"
+	.string "You can cut straight through to\n"
+	.string "CINNABAR this way now.$"
 
 Route19_Text_Engineer:
-	.string "Sorry. This road is closed for\n"
-	.string "construction.\p"
+	.string "Sorry, this road's closed.\p"
+	.string "I was meant to be shoring up the sea\n"
+	.string "wall along this stretch.\p"
+	.string "Then the KINGLER moved in. Not one\n"
+	.string "of them will budge, and I'd like to\l"
+	.string "keep all ten fingers.\p"
 	.string "If you want to get to CINNABAR,\n"
-	.string "you'd better go south from PALLET\n"
+	.string "you'd better go south from PALLET\l"
 	.string "TOWN.$"
 
 Route19_EventScript_Fisher_Evan::

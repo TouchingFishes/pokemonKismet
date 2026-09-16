@@ -498,10 +498,8 @@ FuchsiaCity_SafariZoneEntrance_EventScript_FederationAftermath::
 	setvar VAR_FUCHSIA_FEDERATION_STATE, 6
 	clearflag FLAG_HIDE_FUCHSIA_NPCS
 	setflag FLAG_HIDE_FUCHSIA_FEDERATION
-	@ The two street holdouts clear out with him. No removeobject needed: the
-	@ player is standing in the SAFARI ZONE ENTRANCE right now, so FUCHSIA is
-	@ reloaded from scratch with this flag already set the moment they walk out.
 	setflag FLAG_HIDE_FUCHSIA_HOLDOUTS
+	setflag FLAG_HIDE_FUCHSIA_JANINE_FIGHT
 	clearflag FLAG_HIDE_FUCHSIA_JANINE
 	closemessage
 	release

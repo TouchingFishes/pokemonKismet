@@ -261,6 +261,7 @@ FuchsiaCity_Gym_EventScript_GymGuy::
 	end
 
 FuchsiaCity_Gym_EventScript_GymGuyNormal::
+	goto_if_set FLAG_DEFEATED_FUCHSIA_GYM, FuchsiaCity_Gym_EventScript_GymGuyAfter
 	msgbox FuchsiaCity_Gym_Text_Guide, MSGBOX_NPC
 	end
 

@@ -19,11 +19,9 @@ FuchsiaCity_EventScript_BeginLockdown::
 	setflag FLAG_HIDE_FUCHSIA_NPCS
 	clearflag FLAG_HIDE_FUCHSIA_FEDERATION
 	setflag FLAG_HIDE_FUCHSIA_JANINE
-	@ Inside the SAFARI ZONE ENTRANCE the same swap happens
+	setflag FLAG_HIDE_FUCHSIA_STANDOFF
 	clearflag FLAG_HIDE_SAFARI_FEDERATION
 	setflag FLAG_HIDE_SAFARI_STAFF
-	@ The two holdouts come with the rest, but on their own flag so DARIUS's
-	@ cleanup at state 3 does not take them - see the LOAFERS block below.
 	clearflag FLAG_HIDE_FUCHSIA_HOLDOUTS
 	return
 
@@ -296,6 +294,11 @@ FuchsiaCity_EventScript_FederationGuard::
 	removeobject LOCALID_FUCHSIA_FED_DOOR1
 	removeobject LOCALID_FUCHSIA_FED_DOOR2
 	removeobject LOCALID_FUCHSIA_FED_DOOR3
+	clearflag FLAG_HIDE_FUCHSIA_JANINE_FIGHT
+	addobject LOCALID_FUCHSIA_JANINE_FIGHT
+	addobject LOCALID_FUCHSIA_JANINE_FIGHT_ARIADOS
+	addobject LOCALID_FUCHSIA_JANINE_FIGHT_GOLBAT
+	addobject LOCALID_FUCHSIA_JANINE_FIGHT_BIKER1
 	playse SE_EXIT
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
@@ -446,9 +449,125 @@ FuchsiaCity_Text_Doorman2:
 	.string "no, you're not fetching anybody.\p"
 	.string "Walk on.$"
 
+FuchsiaCity_EventScript_FederationDoorman4::
+	msgbox FuchsiaCity_Text_Doorman4, MSGBOX_NPC
+	end
+
+FuchsiaCity_Text_Doorman4:
+	.string "Shop's shut.\p"
+	.string "Everything on those shelves is ours\n"
+	.string "now, far as I'm concerned.\p"
+	.string "Try the CENTER if you're bleeding.$"
+
 FuchsiaCity_Text_Doorman3:
 	.string "GYM's closed, kid.\p"
 	.string "The LEADER went out hunting us\n"
 	.string "three nights back.\p"
 	.string "Still out there somewhere, far as\n"
 	.string "I know. Wasn't much of a hunt.$"
+
+FuchsiaCity_EventScript_StandoffJanine::
+	msgbox FuchsiaCity_Text_StandoffJanine, MSGBOX_NPC
+	end
+
+FuchsiaCity_EventScript_StandoffBiker1::
+	msgbox FuchsiaCity_Text_StandoffBiker1, MSGBOX_NPC
+	end
+
+FuchsiaCity_EventScript_StandoffBiker2::
+	msgbox FuchsiaCity_Text_StandoffBiker2, MSGBOX_NPC
+	end
+
+FuchsiaCity_EventScript_StandoffGymDoor::
+	msgbox FuchsiaCity_Text_StandoffGymDoor, MSGBOX_NPC
+	end
+
+FuchsiaCity_Text_StandoffJanine:
+	.string "JANINE: You have no business on\n"
+	.string "this road.\p"
+	.string "Neither does anyone you answer to.\p"
+	.string "…Sorry. Not you.\p"
+	.string "The GYM is shut until I've seen\n"
+	.string "these two off my city.$"
+
+FuchsiaCity_Text_StandoffBiker1:
+	.string "She's been out here since dawn.\p"
+	.string "One of her, telling the lot of us\n"
+	.string "where we can and can't ride.\p"
+	.string "Admire the nerve, honestly.$"
+
+FuchsiaCity_Text_StandoffBiker2:
+	.string "We're just waiting, kid.\p"
+	.string "Word came down that the SAFARI\n"
+	.string "ZONE changed hands.\p"
+	.string "Word came from somebody who wears\n"
+	.string "a suit. That's all I know.$"
+
+FuchsiaCity_Text_StandoffGymDoor:
+	.string "GYM's shut.\p"
+	.string "LEADER's business, not mine.\p"
+	.string "She's up the road if you want to\n"
+	.string "argue about it.$"
+
+FuchsiaCity_EventScript_JanineFighting::
+	lock
+	msgbox FuchsiaCity_Text_JanineFight_Command, MSGBOX_AUTOCLOSE
+	waitmessage
+	playse SE_PIN
+	applymovement LOCALID_FUCHSIA_JANINE_FIGHT, Common_Movement_QuestionMark
+	delay 55
+	waitmovement LOCALID_FUCHSIA_JANINE_FIGHT
+	faceplayer
+	msgbox FuchsiaCity_Text_JanineFight_Notice, MSGBOX_AUTOCLOSE
+	waitmessage
+	turnobject LOCALID_FUCHSIA_JANINE_FIGHT, DIR_EAST
+	release
+	end
+
+FuchsiaCity_EventScript_JanineFightBiker::
+	msgbox FuchsiaCity_Text_JanineFight_Biker, MSGBOX_NPC
+	end
+
+FuchsiaCity_EventScript_JanineFightAriados::
+	lock
+	msgbox FuchsiaCity_Text_JanineFight_Ariados, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_EventScript_JanineFightGolbat::
+	lock
+	waitse
+	playmoncry SPECIES_GOLBAT, CRY_MODE_NORMAL
+	msgbox FuchsiaCity_Text_JanineFight_Golbat, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+FuchsiaCity_Text_JanineFight_Ariados:
+	.string "ARIADOS has not taken its eyes off\n"
+	.string "the GOLBAT.\p"
+	.string "It doesn't so much as twitch when\n"
+	.string "you come close.$"
+
+FuchsiaCity_Text_JanineFight_Golbat:
+	.string "GOLBAT is flying in ragged loops.\p"
+	.string "It has been badly poisoned, and it\n"
+	.string "is losing height a little at a time.$"
+
+FuchsiaCity_Text_JanineFight_Command:
+	.string "JANINE: ARIADOS, SLUDGE BOMB!\p"
+	.string "Don't let it get airborne!$"
+
+FuchsiaCity_Text_JanineFight_Notice:
+	.string "JANINE: …You. Don't stop here.\p"
+	.string "Whoever gives them their orders is\n"
+	.string "up at the SAFARI ZONE, and I can't\l"
+	.string "get past this one to reach it yet.\p"
+	.string "I'll hold him. You go.$"
+
+FuchsiaCity_Text_JanineFight_Biker:
+	.string "Two days she's been at this.\p"
+	.string "Hasn't sat down once.\p"
+	.string "Starting to think she won't.$"

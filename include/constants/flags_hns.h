@@ -1285,24 +1285,51 @@
 
 // The SAFARI ZONE ENTRANCE's civilians - attendants, the upgrade clerk and the
 // berry-blender crowd - are hidden while the FEDERATION holds the building.
-// ⚠️ They have to be HIDDEN rather than given frightened dialogue: their scripts
+// They have to be HIDDEN rather than given frightened dialogue: their scripts
 // (BerryBlender_EventScript_*, LilycoveCity_ContestLobby_EventScript_*) are
 // shared with the Hoenn maps, so editing them would change Hoenn too.
 #define FLAG_HIDE_SAFARI_STAFF                      (HNS_EXTENDED_CONTENT_START + 334)
 
-// Two of the four FUCHSIA loafers stay on the street after DARIUS falls, so the
-// city is not completely empty during states 3-5 while the fight moves indoors.
-// ⚠️ They need their OWN flag: FLAG_HIDE_FUCHSIA_FEDERATION is SET at state 3
-// by DARIUS's cleanup, so anything sharing it disappears with him.
+// Everything that outlives DARIUS but not PAXTON: two of the four FUCHSIA
+// loafers, so the city is not completely empty during states 3-5 while the fight
+// moves indoors, plus the MART doorman, since the shop stays shut until PAXTON
+// falls.
+// They need their OWN flag: FLAG_HIDE_FUCHSIA_FEDERATION is SET at state 3
+// by DARIUS's cleanup, so anything sharing it disappears with him. This one is
+// cleared at the lockdown and set in the state 5->6 aftermath, which runs while
+// the player is inside the SAFARI ZONE ENTRANCE - so FUCHSIA reloads without
+// them rather than removing them in front of the player, and no removeobject is
+// needed for any of the three.
 #define FLAG_HIDE_FUCHSIA_HOLDOUTS                  (HNS_EXTENDED_CONTENT_START + 335)
 
+// JANINE arguing with two bikers in the middle of FUCHSIA, before any of this
+// escalates. Hide flags default to CLEAR, so the standoff is present from a new
+// file and needs no setflag in new_game.inc; BeginLockdown SETS it, which is the
+// moment the argument ends and the occupation replaces it.
+#define FLAG_HIDE_FUCHSIA_STANDOFF                  (HNS_EXTENDED_CONTENT_START + 336)
+
+// JANINE mid-battle with a biker in north FUCHSIA, states 3-5, so the player can
+// see she is engaged rather than merely absent. Staged the way ROUTE 30 stages
+// JOEY's battle - overworld mon sprites walking in place at each other - and it
+// is scenery, not a fight: talking to her costs nothing.
+// FOUR objects, and that is a ceiling, not a preference. FUCHSIA runs hot on
+// OBJECT_EVENTS_COUNT (16, minus the player, minus a follower = 14 NPCs). State
+// 3 peaks at 14 with these four; a fifth tips it to 15 and objects would start
+// silently failing to spawn. State 2 is worse still - it peaks at 14 with NOTHING
+// added, which is why this scene starts at state 3 rather than at the lockdown.
+// Unlike the STANDOFF this one IS set in new_game.inc: she must not be out
+// here before the arc, and CLEAR would put her there from a new file.
+#define FLAG_HIDE_FUCHSIA_JANINE_FIGHT              (HNS_EXTENDED_CONTENT_START + 337)
+
 //just fyi HNS_EXTENDED_CONTENT_START is 0x36A
-// Grown from 324 to 336 by the Fuchsia Federation arc, into the 0x4A6-0x4FF
+// Grown from 324 to 338 by the Fuchsia Federation arc, into the 0x4A6-0x4FF
 // window this block was always meant to reach (see the note at HNS_UNUSED_COUNT).
-// END is now 0x4B1; TRAINER_FLAGS_START is 0x500, so 0x4B2-0x4FF is still free.
-#define HNS_EXTENDED_CONTENT_COUNT                  336
+// END is now 0x4BB; TRAINER_FLAGS_START is 0x500, so 0x4BC-0x4FF is still free.
+// Figures verified through the preprocessor, not by hand: the note that stood
+// here said END was 0x4B1 when it was really 0x4B9. START 0x36A + COUNT 338 - 1.
+#define HNS_EXTENDED_CONTENT_COUNT                  338
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)
-// 0x4B2–0x4FF remaining reserved for future expansion
+// 0x4BC–0x4FF remaining reserved for future expansion
 
 // Trainer registered (match call) flags — one per rematchable trainer
 #define TRAINER_REGISTERED_FLAGS_START               0x310
