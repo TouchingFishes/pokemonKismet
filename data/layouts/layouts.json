@@ -16419,6 +16419,66 @@
       "blockdata_filepath": "data/layouts/Tanglebrush_hns/map.bin",
       "game_version": "hns",
       "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_ISLE1_HNS",
+      "name": "DaoDaoIsles_Isle1_hns_Layout",
+      "width": 51,
+      "height": 40,
+      "primary_tileset": "gTileset_AlolaIsland",
+      "secondary_tileset": "gTileset_AlolaIslandSecondary",
+      "border_filepath": "data/layouts/DaoDaoIsles_Isle1_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_Isle1_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_ISLE2_HNS",
+      "name": "DaoDaoIsles_Isle2_hns_Layout",
+      "width": 52,
+      "height": 83,
+      "primary_tileset": "gTileset_AlolaIsland",
+      "secondary_tileset": "gTileset_AlolaIslandSecondary",
+      "border_filepath": "data/layouts/DaoDaoIsles_Isle2_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_Isle2_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_ISLE3HNS",
+      "name": "DaoDaoIsles_Isle3hns_Layout",
+      "width": 57,
+      "height": 38,
+      "primary_tileset": "gTileset_AlolaIsland",
+      "secondary_tileset": "gTileset_AlolaIslandSecondary",
+      "border_filepath": "data/layouts/DaoDaoIsles_Isle3hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_Isle3hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_WATER_HNS",
+      "name": "DaoDaoIsles_Water_hns_Layout",
+      "width": 36,
+      "height": 28,
+      "primary_tileset": "gTileset_AlolaIsland",
+      "secondary_tileset": "gTileset_AlolaIslandSecondary",
+      "border_filepath": "data/layouts/DaoDaoIsles_Water_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_Water_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_ISLE4_HNS",
+      "name": "DaoDaoIsles_Isle4_hns_Layout",
+      "width": 51,
+      "height": 83,
+      "primary_tileset": "gTileset_AlolaIsland",
+      "secondary_tileset": "gTileset_AlolaIslandSecondary",
+      "border_filepath": "data/layouts/DaoDaoIsles_Isle4_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_Isle4_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
     }
   ]
 }

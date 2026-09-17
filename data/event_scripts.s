@@ -2419,3 +2419,13 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Akala_Cave_hns/scripts.inc"
 
 .endif
+
+	.include "data/maps/DaoDaoIsles_Isle1_hns/scripts.inc"
+
+	.include "data/maps/DaoDaoIsles_Isle2_hns/scripts.inc"
+
+	.include "data/maps/DaoDaoIsles_Isle3hns/scripts.inc"
+
+	.include "data/maps/DaoDaoIsles_Water_hns/scripts.inc"
+
+	.include "data/maps/DaoDaoIsles_Isle4_hns/scripts.inc"

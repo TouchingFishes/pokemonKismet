@@ -570,7 +570,12 @@
     "AkalaIsle_hns",
     "MelemeleIsle_hns",
     "AlolaWater_hns",
-    "UlaulaIsle_hns"
+    "UlaulaIsle_hns",
+    "DaoDaoIsles_Isle1_hns",
+    "DaoDaoIsles_Isle2_hns",
+    "DaoDaoIsles_Isle3hns",
+    "DaoDaoIsles_Water_hns",
+    "DaoDaoIsles_Isle4_hns"
   ],
   "gMapGroup_IndoorAlola_Hns": [
     "Melemele_PlayerHouse_hns",

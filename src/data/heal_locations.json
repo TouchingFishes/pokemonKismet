@@ -564,7 +564,7 @@
     },
     {
       "id": "HEAL_LOCATION_MELEMELE_ISLE_HNS",
-      "map": "MAP_MELEMELE_ISLE_HNS",
+      "map": "MAP_DAO_DAO_ISLES_ISLE3HNS",
       "x": 28,
       "y": 7
     },
@@ -585,6 +585,12 @@
       "map": "MAP_ROUTE4_HNS",
       "x": 12,
       "y": 6
+    },
+    {
+      "id": "HEAL_LOCATION_MELEMELE_ISLE_HNS",
+      "map": "MAP_MELEMELE_ISLE_HNS",
+      "x": 28,
+      "y": 7
     }
   ]
 }
