@@ -16485,24 +16485,24 @@
       "name": "ChallengersCave_1F_hns_Layout",
       "width": 46,
       "height": 45,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "primary_tileset": "gTileset_Johto_General_Hns",
+      "secondary_tileset": "gTileset_Cave_Sandy_Hns",
       "border_filepath": "data/layouts/ChallengersCave_1F_hns/border.bin",
       "blockdata_filepath": "data/layouts/ChallengersCave_1F_hns/map.bin",
       "game_version": "hns",
-      "layout_version": "emerald"
+      "layout_version": "hns"
     },
     {
       "id": "LAYOUT_CHALLENGERS_CAVE_B1F_HNS",
       "name": "ChallengersCave_B1F_hns_Layout",
       "width": 46,
       "height": 31,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "primary_tileset": "gTileset_Johto_General_Hns",
+      "secondary_tileset": "gTileset_Cave_Sandy_Hns",
       "border_filepath": "data/layouts/ChallengersCave_B1F_hns/border.bin",
       "blockdata_filepath": "data/layouts/ChallengersCave_B1F_hns/map.bin",
       "game_version": "hns",
-      "layout_version": "emerald"
+      "layout_version": "hns"
     }
   ]
 }

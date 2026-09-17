@@ -21082,3 +21082,397 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_PSYCHIC
 - MOVE_GIGA_IMPACT
 - MOVE_EARTHQUAKE
+
+=== TRAINER_ALEXA_HNS ===
+Name: ALEXA
+Class: Ace Trainer Hns
+Pic: Cooltrainer F
+Gender: Male
+Music: Hg Girl 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+SPECIES_CLEFAIRY
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_LIGHT_SCREEN
+- MOVE_REFLECT
+- MOVE_THUNDERBOLT
+- MOVE_ICE_BEAM
+
+SPECIES_WIGGLYTUFF
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SING
+- MOVE_HYPER_VOICE
+- MOVE_DIG
+- MOVE_ATTRACT
+
+SPECIES_GRANBULL
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_DOUBLE_EDGE
+- MOVE_CRUNCH
+- MOVE_ATTRACT
+- MOVE_BRICK_BREAK
+
+SPECIES_TAUROS
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_BLIZZARD
+- MOVE_THRASH
+- MOVE_EARTHQUAKE
+- MOVE_HEAD_SMASH
+
+SPECIES_CHANSEY
+Level: 68
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SING
+- MOVE_SEISMIC_TOSS
+- MOVE_SOFT_BOILED
+- MOVE_TOXIC
+
+=== TRAINER_TERRY_HNS ===
+Name: TERRY
+Class: Ace Trainer Hns
+Pic: Cooltrainer M
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+SPECIES_SUDOWOODO
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_YANMEGA
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_KINGDRA
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_LUXRAY
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+=== TRAINER_DAWSON_HNS ===
+Name: DAWSON
+Class: Hiker Hns
+Pic: Hiker
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+SPECIES_MAGCARGO
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_WYRDEER
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_GOLEM
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_GOLDUCK
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_KUJINOUGHT
+Level: 69
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+=== TRAINER_VINCE_HNS ===
+Name: VINCE
+Class: Pokemaniac Hns
+Pic: Pokemaniac Frlg
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+SPECIES_SLAKING
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_DONPHAN
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_SLOWBRO
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_VIGOROTH
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_SLAKING
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+=== TRAINER_NELSON_HNS ===
+Name: NELSON
+Class: Juggler Hns
+Pic: Juggler Frlg
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+SPECIES_FORRETRESS
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_ELECTRODE
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_ELECTRODE
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_XATU
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_MR_MIME
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+=== TRAINER_COLBY_HNS ===
+Name: COLBY
+Class: Ace Trainer Hns
+Pic: Cooltrainer M
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+SPECIES_KINGLER
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_GUILLOTINE
+- MOVE_STOMP
+- MOVE_CRABHAMMER
+- MOVE_ROCK_TOMB
+
+SPECIES_KANGASKHAN
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_ROCK_SLIDE
+- MOVE_DIZZY_PUNCH
+- MOVE_OUTRAGE
+- MOVE_COUNTER
+
+SPECIES_TENTACRUEL
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_SWORDS_DANCE
+- MOVE_SUBSTITUTE
+- MOVE_HYDRO_PUMP
+
+SPECIES_QUAGSIRE
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_MUDDY_WATER
+- MOVE_DIG
+- MOVE_ROCK_TOMB
+- MOVE_TOXIC
+
+SPECIES_FERALIGATR
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_CRUNCH
+- MOVE_SURF
+- MOVE_CRUSH_CLAW
+- MOVE_ROCK_SLIDE
+
+=== TRAINER_DAI_HNS ===
+Name: DAI
+Class: Black Belt Hns
+Pic: Black Belt
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+SPECIES_HARIYAMA
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SWAGGER
+- MOVE_DOUBLE_KICK
+- MOVE_HIGH_JUMP_KICK
+- MOVE_FORESIGHT
+
+SPECIES_MACHAMP
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_CROSS_CHOP
+- MOVE_ROCK_SLIDE
+- MOVE_EARTHQUAKE
+- MOVE_FORESIGHT
+
+SPECIES_HITMONCHAN
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_THUNDER_PUNCH
+- MOVE_ICE_PUNCH
+- MOVE_FIRE_PUNCH
+- MOVE_MACH_PUNCH
+
+SPECIES_PRIMEAPE
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SWAGGER
+- MOVE_DOUBLE_KICK
+- MOVE_HIGH_JUMP_KICK
+- MOVE_FORESIGHT
+
+SPECIES_HITMONTOP
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_PURSUIT
+- MOVE_QUICK_ATTACK
+- MOVE_DIG
+- MOVE_DETECT
+
+=== TRAINER_JAY_CAVE_HNS ===
+Name: JAY
+Class: Super Nerd Hns
+Pic: Super Nerd Frlg
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+SPECIES_MAGNEZONE
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_ALAKAZAM
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_YANMEGA
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_WEEZING
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_SLOWBRO
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+=== TRAINER_NAOMI_HNS ===
+Name: NAOMI
+Class: Ace Trainer Hns
+Pic: Cooltrainer F
+Gender: Male
+Music: Hg Girl 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_NINETALES
+Level: 68
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_FLAMETHROWER
+- MOVE_SHADOW_BALL
+- MOVE_CALM_MIND
+- MOVE_PSYCHIC
+
+SPECIES_BANETTE
+Level: 68
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SHADOW_BALL
+- MOVE_WILL_O_WISP
+- MOVE_FEINT_ATTACK
+- MOVE_THUNDERBOLT
+
+SPECIES_TALONFLAME
+Level: 68
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_FLY
+- MOVE_AERIAL_ACE
+- MOVE_QUICK_ATTACK
+- MOVE_OVERHEAT
+
+SPECIES_BANETTE
+Level: 68
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SHADOW_BALL
+- MOVE_WILL_O_WISP
+- MOVE_FEINT_ATTACK
+- MOVE_PSYCHIC
+
+SPECIES_MISMAGIUS
+Level: 70
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SHADOW_BALL
+- MOVE_NASTY_PLOT
+- MOVE_THUNDERBOLT
+- MOVE_SHADOW_SNEAK
+
+=== TRAINER_JULIE_CAVE_HNS ===
+Name: JULIE
+Class: Expert Hns
+Pic: Expert F
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_RAPIDASH
+Level: 64
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_FIRE_BLAST
+- MOVE_DOUBLE_KICK
+- MOVE_BOUNCE
+- MOVE_IRON_TAIL
+
+SPECIES_GLACEON
+Level: 64
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_BLIZZARD
+- MOVE_SHADOW_BALL
+- MOVE_WATER_PULSE
+- MOVE_MIRROR_COAT
+
+SPECIES_KABUTOPS
+Level: 64
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_X_SCISSOR
+- MOVE_AERIAL_ACE
+- MOVE_METAL_CLAW
+- MOVE_DIG
+
+SPECIES_OMASTAR
+Level: 64
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_RECOVER
+- MOVE_CURSE
+- MOVE_ANCIENT_POWER
+- MOVE_SLUDGE_BOMB
+
+SPECIES_LANTURN
+Level: 64
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SURF
+- MOVE_REST
+- MOVE_THUNDERBOLT
+- MOVE_SLEEP_TALK
+
+SPECIES_DECIBELLE
+Level: 64
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_PSYCHIC
+- MOVE_CALM_MIND
+- MOVE_ICY_WIND
+- MOVE_SHOCK_WAVE

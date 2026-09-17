@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_DIGSWARM_S1",
@@ -82,6 +82,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "DiglettsCave_EntranceSouth_EventScript_Scientist",
+      "flag": "FLAG_HIDE_DIGLETTS_CAVE_BLOCKER"
+    },
+    {
+      "local_id": "LOCALID_DIGSWARM_S2",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_DUGTRIO",
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Common_EventScript_DiglettSwarm",
       "flag": "FLAG_HIDE_DIGLETTS_CAVE_BLOCKER"
     }
   ],

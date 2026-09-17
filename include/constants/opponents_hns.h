@@ -844,8 +844,20 @@
 // it MUS_VS_CHAMPION. Reusing it here would set trainer flag 612 and silently
 // consume the Sinjoh battle. Two constants = two teams = two encounters.
 #define TRAINER_STEVEN_KANTO_HNS                      797
+#define TRAINER_NAOMI_HNS                             798
+#define TRAINER_ALEXA_HNS                             799
+#define TRAINER_TERRY_HNS                             800
+#define TRAINER_COLBY_HNS                             801
+#define TRAINER_DAI_HNS                               802
+#define TRAINER_NELSON_HNS                            803
+#define TRAINER_DAWSON_HNS                            804
+#define TRAINER_VINCE_HNS                             805
+#define TRAINER_JAY_CAVE_HNS                          806
+#define TRAINER_JULIE_CAVE_HNS                        807
+#define TRAINER_GREEN_HNS                             808
+#define TRAINER_GREEN_2_HNS                           809
 
-#define TRAINERS_COUNT_HNS                       798
+#define TRAINERS_COUNT_HNS                       810
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
