@@ -16447,8 +16447,8 @@
     {
       "id": "LAYOUT_DAO_DAO_ISLES_ISLE3HNS",
       "name": "DaoDaoIsles_Isle3hns_Layout",
-      "width": 57,
-      "height": 38,
+      "width": 53,
+      "height": 66,
       "primary_tileset": "gTileset_AlolaIsland",
       "secondary_tileset": "gTileset_AlolaIslandSecondary",
       "border_filepath": "data/layouts/DaoDaoIsles_Isle3hns/border.bin",
@@ -16471,7 +16471,7 @@
     {
       "id": "LAYOUT_DAO_DAO_ISLES_ISLE4_HNS",
       "name": "DaoDaoIsles_Isle4_hns_Layout",
-      "width": 51,
+      "width": 47,
       "height": 83,
       "primary_tileset": "gTileset_AlolaIsland",
       "secondary_tileset": "gTileset_AlolaIslandSecondary",
@@ -16479,6 +16479,30 @@
       "blockdata_filepath": "data/layouts/DaoDaoIsles_Isle4_hns/map.bin",
       "game_version": "hns",
       "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_CHALLENGERS_CAVE_1F_HNS",
+      "name": "ChallengersCave_1F_hns_Layout",
+      "width": 46,
+      "height": 45,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ChallengersCave_1F_hns/border.bin",
+      "blockdata_filepath": "data/layouts/ChallengersCave_1F_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_CHALLENGERS_CAVE_B1F_HNS",
+      "name": "ChallengersCave_B1F_hns_Layout",
+      "width": 46,
+      "height": 31,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ChallengersCave_B1F_hns/border.bin",
+      "blockdata_filepath": "data/layouts/ChallengersCave_B1F_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "emerald"
     }
   ]
 }
