@@ -17,6 +17,11 @@
       "map": "MAP_DAO_DAO_ISLES_ISLE3HNS",
       "offset": 27,
       "direction": "left"
+    },
+    {
+      "map": "MAP_DAO_DAO_ISLES_MAIN_ISLAND_CANYON_ENTRANCE_HNS",
+      "offset": 11,
+      "direction": "down"
     }
   ],
   "object_events": [

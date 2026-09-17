@@ -1,7 +1,7 @@
 {
-  "id": "MAP_DAO_DAO_ISLES_WATER_HNS",
-  "name": "DaoDaoIsles_Water_hns",
-  "layout": "LAYOUT_DAO_DAO_ISLES_WATER_HNS",
+  "id": "MAP_DAO_DAO_ISLES_WATER_LABYRINTH_HNS_2",
+  "name": "DaoDaoIsles_WaterLabyrinth_hns_2",
+  "layout": "LAYOUT_DAO_DAO_ISLES_WATER_LABYRINTH_HNS_2",
   "music": "MUS_OCEANIC_MUSEUM",
   "region_map_section": "MAPSEC_ALOLA_OCEAN",
   "requires_flash": false,
@@ -12,7 +12,13 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": [
+    {
+      "map": "MAP_DAO_DAO_ISLES_ISLE2_HNS",
+      "offset": -27,
+      "direction": "right"
+    }
+  ],
   "object_events": [],
   "warp_events": [],
   "coord_events": [],

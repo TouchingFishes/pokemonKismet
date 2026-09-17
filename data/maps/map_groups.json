@@ -577,7 +577,13 @@
     "DaoDaoIsles_Isle2_hns",
     "DaoDaoIsles_Isle3hns",
     "DaoDaoIsles_Water_hns",
-    "DaoDaoIsles_Isle4_hns"
+    "DaoDaoIsles_Isle4_hns",
+    "DaoDaoIsles_Ruin_Archipelago_hns_2",
+    "DaoDaoIsles_WaterLabyrinth_hns_2",
+    "DaoDaoIsles_ResortGorgeous_hns_2",
+    "DaoDaoIsles_MainIslandCanyonEntrance_hns",
+    "DaoDaoIsles_MainIslandCanyon_hns",
+    "DaoDaoIsles_MainIsland_RuinValley"
   ],
   "gMapGroup_IndoorAlola_Hns": [
     "Melemele_PlayerHouse_hns",

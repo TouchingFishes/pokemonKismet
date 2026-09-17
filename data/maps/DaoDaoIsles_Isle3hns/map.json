@@ -27,6 +27,11 @@
       "map": "MAP_DAO_DAO_ISLES_ISLE1_HNS",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_DAO_DAO_ISLES_RESORT_GORGEOUS_HNS_2",
+      "offset": 23,
+      "direction": "up"
     }
   ],
   "object_events": [

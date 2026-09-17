@@ -17,6 +17,11 @@
       "map": "MAP_DAO_DAO_ISLES_ISLE3HNS",
       "offset": 16,
       "direction": "right"
+    },
+    {
+      "map": "MAP_DAO_DAO_ISLES_WATER_LABYRINTH_HNS_2",
+      "offset": 27,
+      "direction": "left"
     }
   ],
   "object_events": [

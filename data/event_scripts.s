@@ -2431,3 +2431,15 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 
 
+
+	.include "data/maps/DaoDaoIsles_Ruin_Archipelago_hns_2/scripts.inc"
+
+	.include "data/maps/DaoDaoIsles_WaterLabyrinth_hns_2/scripts.inc"
+
+	.include "data/maps/DaoDaoIsles_ResortGorgeous_hns_2/scripts.inc"
+
+	.include "data/maps/DaoDaoIsles_MainIslandCanyonEntrance_hns/scripts.inc"
+
+	.include "data/maps/DaoDaoIsles_MainIslandCanyon_hns/scripts.inc"
+
+	.include "data/maps/DaoDaoIsles_MainIsland_RuinValley/scripts.inc"
