@@ -441,6 +441,8 @@ static const struct LevelUpMove sPichuLevelUpLearnset_Kismet[] = {
 #if P_FAMILY_PIKACHU
 static const struct LevelUpMove sPikachuLevelUpLearnset_Kismet[] = {
     LEVEL_UP_MOVE( 0, MOVE_THUNDER_SHOCK),
+    LEVEL_UP_MOVE( 1, MOVE_NUZZLE),
+    LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE( 1, MOVE_CHARM),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
     LEVEL_UP_MOVE( 6, MOVE_TAIL_WHIP),
