@@ -7751,19 +7751,19 @@ Mugshot: Light Blue
 
 SPECIES_PIDGEY
 Level: 10
-IVs: 16 HP / 18 Atk / 18 Def / 14 SpA / 14 SpD / 14 Spe
-- MOVE_TACKLE
-- MOVE_MUD_SLAP
+IVs: 10 HP / 14 Atk / 14 Def / 10 SpA / 10 SpD / 10 Spe
 - MOVE_QUICK_ATTACK
+- MOVE_MUD_SLAP
+- MOVE_ROOST
 - MOVE_DOUBLE_TEAM
 
 SPECIES_NOCTOWL @ ITEM_ORAN_BERRY
 Level: 12
-IVs: 16 HP / 18 Atk / 18 Def / 14 SpA / 14 SpD / 14 Spe
+IVs: 10 HP / 14 Atk / 14 Def / 10 SpA / 10 SpD / 10 Spe
 - MOVE_PECK
 - MOVE_BIDE
 - MOVE_NIGHT_SHADE
-- MOVE_DOUBLE_TEAM
+- MOVE_ROOST
 
 === TRAINER_FALKNER_2_HNS ===
 Name: FALKNER
@@ -7772,7 +7772,7 @@ Pic: Leader Falkner Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Light Blue
 Items: Full Restore / Full Restore
 
@@ -7874,7 +7874,7 @@ Pic: Leader Bugsy Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Green
 Items: Full Restore / Full Restore
 
@@ -7933,13 +7933,13 @@ Pic: Leader Whitney Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Pink
 Items: Super Potion / Potion
 
 SPECIES_CLEFAIRY
 Level: 20
-IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+IVs: 20 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_DOUBLE_SLAP
 - MOVE_MUD_SLAP
 - MOVE_METRONOME
@@ -7947,7 +7947,7 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 
 SPECIES_SKITTY
 Level: 20
-IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+IVs: 20 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_UPROAR
 - MOVE_ICY_WIND
 - MOVE_SING
@@ -7968,7 +7968,7 @@ Pic: Leader Whitney Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Pink
 Items: Full Restore / Full Restore
 
@@ -8070,7 +8070,7 @@ Pic: Leader Morty Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Purple
 Items: Full Restore / Full Restore
 
@@ -8172,7 +8172,7 @@ Pic: Leader Pryce Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Light Blue
 Items: Full Restore / Full Restore
 
@@ -8231,7 +8231,7 @@ Pic: Leader Pryce Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Light Blue
 Items: Full Restore / Full Restore
 
@@ -8282,7 +8282,7 @@ Pic: Leader Pryce Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Light Blue
 Items: Full Restore / Full Restore
 
@@ -8333,7 +8333,7 @@ Pic: Leader Jasmine Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Yellow
 Items: Super Potion / Super Potion
 
@@ -8384,7 +8384,7 @@ Pic: Leader Jasmine Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
@@ -8443,7 +8443,7 @@ Pic: Leader Jasmine Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
@@ -8494,7 +8494,7 @@ Pic: Leader Jasmine Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
@@ -8545,7 +8545,7 @@ Pic: Leader Chuck Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Orange
 Items: Super Potion / Super Potion
 
@@ -8588,7 +8588,7 @@ Pic: Leader Chuck Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
@@ -8647,7 +8647,7 @@ Pic: Leader Chuck Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
@@ -8698,7 +8698,7 @@ Pic: Leader Chuck Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
@@ -8749,7 +8749,7 @@ Pic: Leader Clair Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Blue
 Items: Full Restore / Full Restore
 
@@ -8800,7 +8800,7 @@ Pic: Leader Clair Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Blue
 Items: Full Restore / Full Restore
 
@@ -8859,7 +8859,7 @@ Pic: Leader Brock Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
@@ -8918,9 +8918,17 @@ Pic: Leader Misty Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Light Blue
 Items: Full Restore / Full Restore
+
+SPECIES_POLITOED @ ITEM_MYSTIC_WATER
+Level: 62
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_SURF
+- MOVE_ICE_BEAM
+- MOVE_BOUNCE
+- MOVE_HYPNOSIS
 
 SPECIES_GOLDUCK @ ITEM_TWISTED_SPOON
 Level: 63
@@ -8938,14 +8946,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_EARTHQUAKE
 - MOVE_RAIN_DANCE
 
-SPECIES_VAPOREON @ ITEM_LEFTOVERS
-Level: 62
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- MOVE_SURF
-- MOVE_ICE_BEAM
-- MOVE_WISH
-- MOVE_SHADOW_BALL
-
 SPECIES_MILOTIC @ ITEM_CHESTO_BERRY
 Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8954,7 +8954,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_REST
 - MOVE_SLEEP_TALK
 
-SPECIES_LAPRAS @ ITEM_NEVER_MELT_ICE
+SPECIES_LAPRAS @ ITEM_LEFTOVERS
 Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_THUNDER
@@ -8962,7 +8962,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_RAIN_DANCE
 - MOVE_REFLECT
 
-SPECIES_STARMIE @ ITEM_MYSTIC_WATER
+SPECIES_STARMIE @ ITEM_WISE_GLASSES
 Level: 65
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_SURF
@@ -8977,7 +8977,7 @@ Pic: Leader Surge Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Items: Full Restore / Full Restore
 Mugshot: Yellow
 
@@ -9036,7 +9036,7 @@ Pic: Leader Erika Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Green
 Items: Full Restore / Full Restore
 
@@ -9095,7 +9095,7 @@ Pic: Leader Sabrina Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Pink
 Items: Full Restore / Full Restore
 
@@ -9154,7 +9154,7 @@ Pic: Leader Janine Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Purple
 Items: Full Restore / Full Restore
 
@@ -9213,7 +9213,7 @@ Pic: Leader Blaine Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -9272,7 +9272,7 @@ Pic: Leader Blue Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Blue
 Items: Full Restore / Full Restore
 
@@ -9331,7 +9331,7 @@ Pic: Leader Blue Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Blue
 Items: Full Restore / Full Restore
 
@@ -9390,7 +9390,7 @@ Pic: Elite Four Will Hns
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Pink
 Items: Full Restore / Full Restore
 
@@ -9441,7 +9441,7 @@ Pic: Elite Four Will Hns
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Pink
 Items: Full Restore / Full Restore
 
@@ -9500,7 +9500,7 @@ Pic: Elite Four Bruno Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
@@ -9551,7 +9551,7 @@ Pic: Elite Four Bruno Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
@@ -9610,7 +9610,7 @@ Pic: Elite Four Karen Hns
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
@@ -9661,7 +9661,7 @@ Pic: Elite Four Karen Hns
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
@@ -9720,7 +9720,7 @@ Pic: Leader Koga Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Purple
 Items: Full Restore / Full Restore
 
@@ -9771,7 +9771,7 @@ Pic: Leader Koga Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Purple
 Items: Full Restore / Full Restore
 
@@ -9830,7 +9830,7 @@ Pic: Champion Lance Hns
 Gender: Male
 Music: Hg Champion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Items: Full Restore / Full Restore
 Mugshot: Blue
 
@@ -9889,7 +9889,7 @@ Pic: Champion Lance Hns
 Gender: Male
 Music: Hg Champion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Items: Full Restore / Full Restore
 Mugshot: Blue
 
@@ -10092,7 +10092,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Hyper Potion
 
@@ -10143,7 +10143,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Hyper Potion
 
@@ -10202,7 +10202,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -10261,7 +10261,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -10400,7 +10400,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Super Potion
 
@@ -10451,7 +10451,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Hyper Potion
 
@@ -10510,7 +10510,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -10569,7 +10569,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -10708,7 +10708,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Super Potion
 
@@ -10759,7 +10759,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Hyper Potion
 
@@ -10818,7 +10818,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -10877,7 +10877,7 @@ Pic: Silver Hns
 Gender: Male
 Music: Silver
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -10936,7 +10936,7 @@ Pic: Red Hns
 Gender: Male
 Music: Hg Champion
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Items: Full Restore / Full Restore
 
 SPECIES_PIKACHU @ ITEM_LIGHT_BALL
@@ -10994,7 +10994,7 @@ Pic: Eusine Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
@@ -11037,7 +11037,7 @@ Pic: Giovanni Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -11118,7 +11118,7 @@ Pic: Proton Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -11169,7 +11169,7 @@ Pic: Archer Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -11220,7 +11220,7 @@ Pic: Archer Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -11255,7 +11255,7 @@ Pic: Archer Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -11306,7 +11306,7 @@ Pic: Archer Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -11357,7 +11357,7 @@ Pic: Petrel Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -11400,7 +11400,7 @@ Pic: Petrel Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -11451,7 +11451,7 @@ Pic: Ariana Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -11486,7 +11486,7 @@ Pic: Ariana Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -15393,17 +15393,6 @@ Naive Nature
 - Drill Peck  
 - Double-Edge  
 
-/* ===== cameo characters ported from the 1.x fork =====
- *
- * PLACEHOLDER PARTIES. None of these characters is a trainer in the fork - only
- * their sprites exist there - so there is nothing to port for their teams and
- * the single mon below is a stub. Replace before placing any of them.
- *
- * They share TRAINER_CLASS_PKMN_TRAINER_1_HNS, the tree's existing cameo class
- * (Red and Steven already use it), so the intro reads "{PKMN} TRAINER CYNTHIA".
- * A class per character would render as "CYNTHIA CYNTHIA".
- */
-
 === TRAINER_CYNTHIA_HNS ===
 Name: CYNTHIA
 Class: Pkmn Trainer 1 Hns
@@ -15411,10 +15400,67 @@ Pic: Cynthia Hns
 Gender: Female
 Music: Hg Champion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Smart Trainer
 
-SPECIES_MAGIKARP
-Level: 5
+Spiritomb @ Leftovers
+Ability: Technician
+Level: 85
+EVs: 4 HP / 252 Def / 252 SpD
+Modest Nature
+- Dark Pulse
+- Ominous Wind
+- Silver Wind
+- Shock Wave
+
+Lucario @ Black Belt
+Ability: Steadfast
+Level: 87
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Aura Sphere
+- Psychic
+- Earthquake
+- Extreme Speed
+
+Togekiss @ Wise Glasses
+Ability: Serene Grace
+Level: 85
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Aura Sphere
+- Air Slash
+- Moonblast
+- Esper Wing
+
+Milotic @ Chesto Berry
+Ability: Marvel Scale
+Level: 87
+EVs: 252 HP / 16 SpA / 240 Def
+Bold Nature
+- Scald
+- Ice Beam
+- Dragon Pulse
+- Rest
+
+Lapras @ Chesto Berry
+Ability: Water Absorb
+Level: 84
+EVs: 252 HP / 4 Def / 252 SpA
+Bold Nature
+- Ice Beam
+- Surf
+- Thunderbolt
+- Rest
+
+Garchomp @ Muscle Band
+Ability: Rough Skin
+Level: 89
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Dragon Claw
+- Brick Break
+- Earthquake
+- Giga Impact
 
 === TRAINER_IRIS_HNS ===
 Name: IRIS
@@ -15423,7 +15469,7 @@ Pic: Iris Hns
 Gender: Female
 Music: Hg Champion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Smart Trainer
 
 Hydreigon @ Lum Berry
 Ability: Levitate
@@ -15492,7 +15538,7 @@ Pic: Sora Hns
 Gender: Female
 Music: Hg Champion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Smart Trainer
 
 SPECIES_MAGIKARP
 Level: 5
@@ -15504,7 +15550,7 @@ Pic: Sora With Cat Hns
 Gender: Female
 Music: Hg Champion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Smart Trainer
 
 SPECIES_MAGIKARP
 Level: 5
@@ -15516,7 +15562,7 @@ Pic: Expert M
 Gender: Male
 Music: Hg Champion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Smart Trainer
 Mugshot: Orange
 
 Scizor @ Metal Coat
@@ -15586,7 +15632,7 @@ Pic: Buck Hns
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Smart Trainer
 
 SPECIES_MAGIKARP
 Level: 5
@@ -15598,19 +15644,67 @@ Pic: Red Hns
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Smart Trainer
 
-SPECIES_MAGIKARP
-Level: 5
+Zangoose @ Muscle Band
+Ability: Immunity
+Level: 77
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Extreme Speed
+- Close Combat
+- Swords Dance
+- Shadow Claw
 
-/* ===== MASTER YAMA - secret end boss =====
- *
- * Party ported from CustomShireCrystal (data/trainers/parties.asm, MasterGroup),
- * where Yama is the MASTER class - the only class in that hack with a flat 31
- * IV row. Sprite is Touching_Fishes' master_yama.png; the 1.x fork carries the
- * pic constant but no MASTER class and no trainer using it.
- *
- */
+Leafeon @ Flame Orb
+Ability: Guts
+Level: 77
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Leaf Blade
+- Grass Whistle
+- X Scissor
+- Quick Attack
+
+Flygon @ Dragon Gem
+Ability: Levitate
+Level: 75
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Claw
+- Bug Buzz
+- Earthquake
+- Fire Punch
+
+Chandelure @ Air Balloon
+Ability: Flame Body
+Level: 77
+EVs: 88 Def / 252 SpA / 168 Spe
+Timid Nature
+- Fire Blast
+- Shadow Ball
+- Flame Charge
+- Energy Ball
+
+Zoroark @ Wise Glasses
+Ability: Illusion
+Level: 75
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Night Daze
+- Flamethrower
+- Focus Blast
+- Grass Knot
+
+Swampert @ Mystic Water
+Ability: Torrent
+Level: 79
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Muddy Water
+- Body Press
+- Avalanche
+- Earthquake
 
 === TRAINER_YAMA_HNS ===
 Name: YAMA
@@ -15619,7 +15713,7 @@ Pic: Master Yama Hns
 Gender: Male
 Music: Hg Champion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Smart Trainer
 Mugshot: Dark Red
 
 SPECIES_SNORLAX @ ITEM_CHESTO_BERRY
