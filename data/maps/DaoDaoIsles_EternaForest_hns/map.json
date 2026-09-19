@@ -68,8 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BEEDRILL)",
-      "x": 29,
-      "y": 24,
+      "x": 22,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -82,8 +82,8 @@
     {
       "local_id": "LOCALID_AKALA_TOXICROAK",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TOXICROAK)",
-      "x": 18,
-      "y": 26,
+      "x": 8,
+      "y": 35,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -121,8 +121,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DUSTOX)",
-      "x": 28,
-      "y": 25,
+      "x": 41,
+      "y": 33,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -149,15 +149,15 @@
       "dest_warp_id": "2"
     },
     {
-      "x": 38,
-      "y": 27,
+      "x": 59,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_AKALA_ISLE_HNS",
       "dest_warp_id": "4"
     },
     {
-      "x": 38,
-      "y": 28,
+      "x": 59,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_AKALA_ISLE_HNS",
       "dest_warp_id": "3"

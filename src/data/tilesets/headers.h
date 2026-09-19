@@ -2643,6 +2643,26 @@ const struct Tileset gTileset_AlolaIslandSecondary =
     .metatileAttributes = gMetatileAttributes_AlolaIslandSecondary,
     .callback = NULL,
 };
+const struct Tileset gTileset_AlolaIsland_Buildings_Hns =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AlolaIsland_Buildings_Hns,
+    .palettes = gTilesetPalettes_AlolaIsland_Buildings_Hns,
+    .metatiles = gMetatiles_AlolaIsland_Buildings_Hns,
+    .metatileAttributes = gMetatileAttributes_AlolaIsland_Buildings_Hns,
+    .callback = NULL,
+};
+const struct Tileset gTileset_AlolaIsland_Ruins_Hns =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AlolaIsland_Ruins_Hns,
+    .palettes = gTilesetPalettes_AlolaIsland_Ruins_Hns,
+    .metatiles = gMetatiles_AlolaIsland_Ruins_Hns,
+    .metatileAttributes = gMetatileAttributes_AlolaIsland_Ruins_Hns,
+    .callback = NULL,
+};
 const struct Tileset gTileset_Route40_Hns =
 {
     .isCompressed = TRUE,

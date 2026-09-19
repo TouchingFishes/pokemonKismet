@@ -5055,6 +5055,48 @@ const u16 gTilesetPalettes_AlolaIslandSecondary[][16] =
 
 const u32 gTilesetTiles_AlolaIslandSecondary[] = INCBIN_U32("data/tilesets/secondary/alola_island_secondary/tiles.4bpp.lz");
 
+// Clones of gTileset_AlolaIslandSecondary that carry ported FRLG structures in
+// tile slots no Alola metatile references and palettes 11/12, which were unused.
+// All 384 original Alola metatiles are intact in both, so the DaoDao maps that
+// use them lose nothing.
+const u16 gTilesetPalettes_AlolaIsland_Buildings_Hns[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_AlolaIsland_Buildings_Hns[] = INCBIN_U32("data/tilesets/secondary/alola_island_buildings_hns/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_AlolaIsland_Ruins_Hns[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_AlolaIsland_Ruins_Hns[] = INCBIN_U32("data/tilesets/secondary/alola_island_ruins_hns/tiles.4bpp.lz");
+
 const u16 gTilesetPalettes_Route40_Hns[][16] =
 {
     INCBIN_U16("data/tilesets/secondary/route_40_hns/palettes/00.gbapal"),
