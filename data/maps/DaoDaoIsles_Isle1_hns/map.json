@@ -22,6 +22,11 @@
       "map": "MAP_DAO_DAO_ISLES_RUIN_ARCHIPELAGO_HNS_2",
       "offset": -34,
       "direction": "down"
+    },
+    {
+      "map": "MAP_DAO_DAO_ISLES_WATER_HNS",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [

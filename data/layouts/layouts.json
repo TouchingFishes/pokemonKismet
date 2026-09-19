@@ -16424,7 +16424,7 @@
       "id": "LAYOUT_DAO_DAO_ISLES_ISLE1_HNS",
       "name": "DaoDaoIsles_Isle1_hns_Layout",
       "width": 51,
-      "height": 46,
+      "height": 58,
       "primary_tileset": "gTileset_AlolaIsland",
       "secondary_tileset": "gTileset_AlolaIslandSecondary",
       "border_filepath": "data/layouts/DaoDaoIsles_Isle1_hns/border.bin",
@@ -16556,7 +16556,7 @@
       "id": "LAYOUT_DAO_DAO_ISLES_MAIN_ISLAND_CANYON_HNS",
       "name": "DaoDaoIsles_MainIslandCanyon_hns_Layout",
       "width": 24,
-      "height": 84,
+      "height": 86,
       "primary_tileset": "gTileset_AlolaIsland",
       "secondary_tileset": "gTileset_AlolaIslandSecondary",
       "border_filepath": "data/layouts/DaoDaoIsles_MainIslandCanyon_hns/border.bin",
@@ -16585,6 +16585,18 @@
       "secondary_tileset": "gTileset_AlolaIslandSecondary",
       "border_filepath": "data/layouts/DaoDaoIsles_EternaForest_hns/border.bin",
       "blockdata_filepath": "data/layouts/DaoDaoIsles_EternaForest_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_BING_CURRENT",
+      "name": "DaoDaoIsles_BingCurrent_Layout",
+      "width": 36,
+      "height": 48,
+      "primary_tileset": "gTileset_AlolaIsland",
+      "secondary_tileset": "gTileset_AlolaIslandSecondary",
+      "border_filepath": "data/layouts/DaoDaoIsles_BingCurrent/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_BingCurrent/map.bin",
       "game_version": "hns",
       "layout_version": "hns"
     }

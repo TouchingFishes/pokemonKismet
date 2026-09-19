@@ -17,6 +17,11 @@
       "map": "MAP_DAO_DAO_ISLES_ISLE2_HNS",
       "offset": -27,
       "direction": "right"
+    },
+    {
+      "map": "MAP_DAO_DAO_ISLES_BING_CURRENT",
+      "offset": 23,
+      "direction": "up"
     }
   ],
   "object_events": [],
