@@ -16508,7 +16508,7 @@
       "id": "LAYOUT_DAO_DAO_ISLES_RUIN_ARCHIPELAGO_HNS_2",
       "name": "DaoDaoIsles_Ruin_Archipelago_hns_2_Layout",
       "width": 144,
-      "height": 25,
+      "height": 20,
       "primary_tileset": "gTileset_AlolaIsland",
       "secondary_tileset": "gTileset_AlolaIslandSecondary",
       "border_filepath": "data/layouts/DaoDaoIsles_Ruin_Archipelago_hns_2/border.bin",
@@ -16573,6 +16573,18 @@
       "secondary_tileset": "gTileset_AlolaIslandSecondary",
       "border_filepath": "data/layouts/DaoDaoIsles_MainIsland_RuinValley/border.bin",
       "blockdata_filepath": "data/layouts/DaoDaoIsles_MainIsland_RuinValley/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_ETERNA_FOREST_HNS",
+      "name": "DaoDaoIsles_EternaForest_hns_Layout",
+      "width": 64,
+      "height": 50,
+      "primary_tileset": "gTileset_AlolaIsland",
+      "secondary_tileset": "gTileset_AlolaIslandSecondary",
+      "border_filepath": "data/layouts/DaoDaoIsles_EternaForest_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_EternaForest_hns/map.bin",
       "game_version": "hns",
       "layout_version": "hns"
     }

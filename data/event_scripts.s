@@ -2443,3 +2443,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/DaoDaoIsles_MainIslandCanyon_hns/scripts.inc"
 
 	.include "data/maps/DaoDaoIsles_MainIsland_RuinValley/scripts.inc"
+
+	.include "data/maps/DaoDaoIsles_EternaForest_hns/scripts.inc"
