@@ -1587,6 +1587,7 @@ static const u16 sMareepEggMoveLearnset_Kismet[] = {
     MOVE_CHARGE,
     MOVE_FLATTER,
     MOVE_SAND_ATTACK,
+    MOVE_DRAGON_PULSE,
     MOVE_IRON_TAIL,
     MOVE_AGILITY,
     MOVE_EERIE_IMPULSE,
