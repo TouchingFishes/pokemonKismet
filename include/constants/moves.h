@@ -390,7 +390,7 @@ enum __attribute__((packed)) Move
     MOVE_ROOST = MOVES_COUNT_GEN3,
     MOVE_GRAVITY = 356,
     MOVE_MIRACLE_EYE = 357, //do not use
-    MOVE_WAKE_UP_SLAP = 358,
+    MOVE_WAKE_UP_SLAP = 358, //until here
     MOVE_HAMMER_ARM = 359,
     MOVE_GYRO_BALL = 360,
     MOVE_HEALING_WISH = 361, //do not use
