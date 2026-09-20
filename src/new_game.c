@@ -108,7 +108,7 @@ static void SetDefaultOptions(void)
 {
     gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
-    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
+    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
@@ -121,7 +121,7 @@ void SetDefaultChallengeSettings(void)
     gSaveblock3.challengeSettings.autoRun = 1;
     gSaveblock3.challengeSettings.autorunSurf = 1;
     gSaveblock3.challengeSettings.autorunDive = 1;
-    gSaveblock3.challengeSettings.fishing = 0;
+    gSaveblock3.challengeSettings.fishing = 1;
     gSaveblock3.challengeSettings.evenFasterJoy = 1;
     gSaveblock3.challengeSettings.fastIntro = 1;
     gSaveblock3.challengeSettings.fastBattle = 0;
@@ -131,9 +131,9 @@ void SetDefaultChallengeSettings(void)
     gSaveblock3.challengeSettings.disableMatchCall = 0;
     gSaveblock3.challengeSettings.bikeMusic = 0;
     gSaveblock3.challengeSettings.surfMusic = 0;
-    gSaveblock3.challengeSettings.lrToRun = 0;
-    gSaveblock3.challengeSettings.ballPrompt = 0;
-    gSaveblock3.challengeSettings.newBackgrounds = 1;
+    gSaveblock3.challengeSettings.lrToRun = 1;
+    gSaveblock3.challengeSettings.ballPrompt = 1;
+    gSaveblock3.challengeSettings.newBackgrounds = 0;
     gSaveblock3.challengeSettings.newBattleUI = 0;
     gSaveblock3.challengeSettings.musicOnOff = 0;
     gSaveblock3.challengeSettings.runType = 0;
@@ -146,10 +146,10 @@ void SetDefaultChallengeSettings(void)
     gSaveblock3.challengeSettings.tx_Mode_Fairy_Types        = TYPE_MODE_ALTERED;
     gSaveblock3.challengeSettings.tx_Mode_Legendary_Abilities = 1;
     gSaveblock3.challengeSettings.tx_Mode_InfiniteTMs        = 0;
-    gSaveblock3.challengeSettings.tx_Mode_Mints              = 1;
+    gSaveblock3.challengeSettings.tx_Mode_Mints              = 0;
     gSaveblock3.challengeSettings.tx_Mode_PoisonSurvive      = 1;
     gSaveblock3.challengeSettings.tx_Mode_Natures            = 0;
-    gSaveblock3.challengeSettings.tx_Mode_IgnoreEVCap        = 1;
+    gSaveblock3.challengeSettings.tx_Mode_IgnoreEVCap        = 0;
     gSaveblock3.challengeSettings.tx_Mode_TypeEffectiveness  = 0;
     gSaveblock3.challengeSettings.tx_Mode_Weather            = WEATHER_MODE_PERMANENT_BUFF;
 

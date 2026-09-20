@@ -52,7 +52,6 @@ enum {
     ITEM_MODE_SPLIT,
     ITEM_MODE_FAIRY_TYPES,
     ITEM_MODE_INFINITE_TMS,
-    ITEM_MODE_MINTS,
     ITEM_MODE_GEN_ONE_RECHARGE,
     ITEM_MODE_SYNCHRONIZE,
     ITEM_MODE_STURDY,
@@ -65,6 +64,13 @@ enum {
     ITEM_MODE_WEATHER,
     ITEM_MODE_NEXT,
     ITEM_MODE_COUNT,
+};
+
+enum {
+    NATURES_OFF,
+    NATURES_ON,
+    NATURES_ON_MINTS,
+    NATURES_COUNT,
 };
 
 enum {
@@ -418,21 +424,23 @@ static const u8 *const sDesc_InfiniteTMs[] = {
     COMPOUND_STRING("TMs are not reusable.\nLike in the original."),
     COMPOUND_STRING("TMs are reusable."),
 };
-static const u8 *const sDesc_Mints[] = {
-    COMPOUND_STRING("Mints are not available ingame until\nfinishing the game."),
-    COMPOUND_STRING("Mints can be bought at the\nFLOWER SHOP after the 3rd badge."),
+static const u8 *const sChoices_Natures[] = {
+    COMPOUND_STRING("OFF"),
+    COMPOUND_STRING("ON"),
+    COMPOUND_STRING("ON + MINTS"),
 };
 static const u8 *const sDesc_SurvivePoison[] = {
     COMPOUND_STRING("Your {PKMN} will faint if they are\nPOISONED."),
     COMPOUND_STRING("Your {PKMN} will survive the POISON\nstatus with 1HP."),
 };
 static const u8 *const sDesc_Natures[] = {
-    COMPOUND_STRING("NATURES are stored but do not\naffect any STATS."),
-    COMPOUND_STRING("NATURES raise one STAT and lower\nanother, as usual."),
+    COMPOUND_STRING("NATURES are stored but do not\naffect any STATS. No MINTS."),
+    COMPOUND_STRING("NATURES raise one STAT and lower\nanother, as usual. No MINTS."),
+    COMPOUND_STRING("NATURES affect STATS, and MINTS are\nsold at the FLOWER SHOP, 3rd badge."),
 };
 static const u8 *const sDesc_IgnoreEVCap[] = {
     COMPOUND_STRING("EVs are limited to 510 in total,\nas usual."),
-    COMPOUND_STRING("The 510 EV total is lifted. Each\nSTAT is still capped on its own."),
+    COMPOUND_STRING("Lifts the 510 EV total, mirroring\nGEN I/II STAT EXP. Each STAT caps."),
 };
 static const u8 *const sDesc_NewEffectiveness[] = {
     COMPOUND_STRING("GEN III chart, STEEL resists GHOST\nand DARK. FAIRY doesn't resist BUG."),
@@ -445,10 +453,6 @@ static const u8 *const sDesc_Split[] = {
 static const u8 *const sChoices_Gen3Modern[] = {
     COMPOUND_STRING("GEN 3"),
     COMPOUND_STRING("MODERN"),
-};
-static const u8 *const sChoices_Gen3Gen7[] = {
-    COMPOUND_STRING("GEN 3"),
-    COMPOUND_STRING("GEN 7"),
 };
 static const u8 *const sChoices_Gen3Gen1[] = {
     COMPOUND_STRING("GEN 3"),
@@ -473,7 +477,7 @@ static const struct ChallengeMenuItem sTabItems_Mode[] = {
         .name         = COMPOUND_STRING("{PKMN} MOVEPOOL"),
         .descriptions = sDesc_ModernMoves,
         .numChoices   = 2,
-        .choiceNames  = sChoices_Gen3Gen7,
+        .choiceNames  = sChoices_OriginalModern,
     },
     [ITEM_MODE_SYNCHRONIZE] = {
         .name         = COMPOUND_STRING("SYNCHRONIZE"),
@@ -511,12 +515,6 @@ static const struct ChallengeMenuItem sTabItems_Mode[] = {
         .numChoices   = 2,
         .choiceNames  = sChoices_OffOn,
     },
-    [ITEM_MODE_MINTS] = {
-        .name         = COMPOUND_STRING("NATURE MINTS"),
-        .descriptions = sDesc_Mints,
-        .numChoices   = 2,
-        .choiceNames  = sChoices_OffOn,
-    },
     [ITEM_MODE_SURVIVE_POISON] = {
         .name         = COMPOUND_STRING("SURVIVE POISON"),
         .descriptions = sDesc_SurvivePoison,
@@ -526,8 +524,8 @@ static const struct ChallengeMenuItem sTabItems_Mode[] = {
     [ITEM_MODE_NATURES] = {
         .name         = COMPOUND_STRING("NATURES"),
         .descriptions = sDesc_Natures,
-        .numChoices   = 2,
-        .choiceNames  = sChoices_OffOn,
+        .numChoices   = NATURES_COUNT,
+        .choiceNames  = sChoices_Natures,
     },
     [ITEM_MODE_IGNORE_EV_CAP] = {
         .name         = COMPOUND_STRING("IGNORE EV CAP"),
@@ -1423,12 +1421,11 @@ static void ApplyRecommendedPresets(void)
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES)        = 1; // V+
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_LEGENDARY_ABILITIES)= 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_INFINITE_TMS)       = 0; // OFF
-    *GetSelectionPtr(TAB_MODE, ITEM_MODE_MINTS)              = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SURVIVE_POISON)     = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SPLIT)              = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE)   = 0; // GEN 3
-    *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = 0; // OFF
-    *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = 1; // ON
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = NATURES_OFF;
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = 0; // OFF
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = 0; // GEN 3
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_WEATHER)            = WEATHER_MODE_PERMANENT_BUFF;
 }
@@ -2023,6 +2020,7 @@ static void Task_Save(u8 taskId)
 static void Task_ConfirmSaveYes(u8 taskId)
 {
     struct ChallengeSettings *cs = &gSaveBlock3Ptr->challengeSettings;
+    u32 natures;
 
 #if IS_HNS
     SeedRngAndSetTrainerId();
@@ -2036,13 +2034,14 @@ static void Task_ConfirmSaveYes(u8 taskId)
     cs->tx_Mode_Fairy_Types        = *GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES);
     cs->tx_Mode_Legendary_Abilities= *GetSelectionPtr(TAB_MODE, ITEM_MODE_LEGENDARY_ABILITIES);
     cs->tx_Mode_InfiniteTMs        = *GetSelectionPtr(TAB_MODE, ITEM_MODE_INFINITE_TMS);
-    cs->tx_Mode_Mints              = *GetSelectionPtr(TAB_MODE, ITEM_MODE_MINTS);
+    cs->tx_Mode_PoisonSurvive      = *GetSelectionPtr(TAB_MODE, ITEM_MODE_SURVIVE_POISON);
+    natures                        = *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES);
+    cs->tx_Mode_Natures            = (natures != NATURES_OFF);
+    cs->tx_Mode_Mints              = (natures == NATURES_ON_MINTS);
     if (cs->tx_Mode_Mints)
         FlagClear(FLAG_MINTS_DISABLED);
     else
         FlagSet(FLAG_MINTS_DISABLED);
-    cs->tx_Mode_PoisonSurvive      = *GetSelectionPtr(TAB_MODE, ITEM_MODE_SURVIVE_POISON);
-    cs->tx_Mode_Natures            = *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES);
     cs->tx_Mode_IgnoreEVCap        = *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP);
     cs->tx_Mode_TypeEffectiveness  = *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS);
     cs->tx_Mode_Weather            = *GetSelectionPtr(TAB_MODE, ITEM_MODE_WEATHER);
@@ -2268,9 +2267,10 @@ void CB2_InitChallengeMenu(void)
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_FAIRY_TYPES)        = cs->tx_Mode_Fairy_Types;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_LEGENDARY_ABILITIES)= cs->tx_Mode_Legendary_Abilities;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_INFINITE_TMS)       = cs->tx_Mode_InfiniteTMs;
-            *GetSelectionPtr(TAB_MODE, ITEM_MODE_MINTS)              = cs->tx_Mode_Mints;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_SURVIVE_POISON)     = cs->tx_Mode_PoisonSurvive;
-            *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = cs->tx_Mode_Natures;
+            *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = !cs->tx_Mode_Natures ? NATURES_OFF
+                                                                     : cs->tx_Mode_Mints   ? NATURES_ON_MINTS
+                                                                                           : NATURES_ON;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = cs->tx_Mode_IgnoreEVCap;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = cs->tx_Mode_TypeEffectiveness;
             *GetSelectionPtr(TAB_MODE, ITEM_MODE_WEATHER)            = cs->tx_Mode_Weather;
@@ -2284,10 +2284,10 @@ void CB2_InitChallengeMenu(void)
              && cs->tx_Mode_Fairy_Types == 1
              && cs->tx_Mode_Legendary_Abilities == 1
              && cs->tx_Mode_InfiniteTMs == 0
-             && cs->tx_Mode_Mints == 1
              && cs->tx_Mode_PoisonSurvive == 1
              && cs->tx_Mode_Natures == 0
-             && cs->tx_Mode_IgnoreEVCap == 1
+             && cs->tx_Mode_Mints == 0
+             && cs->tx_Mode_IgnoreEVCap == 0
              && cs->tx_Mode_TypeEffectiveness == 0
              && cs->tx_Mode_Weather == WEATHER_MODE_PERMANENT_BUFF
              && cs->optionStyle == 0
