@@ -562,7 +562,7 @@ enum __attribute__((packed)) Move
     MOVE_FROST_BREATH = 524, //should be in
     MOVE_DRAGON_TAIL = 525, //should be in
     MOVE_WORK_UP = 526,
-    MOVE_ELECTROWEB = 527,
+    MOVE_ELECTROWEB = 527, //should be in if galvantula is in
     MOVE_WILD_CHARGE = 528, //should be in
     MOVE_DRILL_RUN = 529, //should be in
     MOVE_DUAL_CHOP = 530,
@@ -679,13 +679,13 @@ enum __attribute__((packed)) Move
     MOVE_SPOTLIGHT = 634,
     MOVE_TOXIC_THREAD = 635,
     MOVE_LASER_FOCUS = 636,
-    MOVE_GEAR_UP = 637,
+    MOVE_GEAR_UP = 637, //should be in if klinklang is in
     MOVE_THROAT_CHOP = 638,
     MOVE_POLLEN_PUFF = 639,
     MOVE_ANCHOR_SHOT = 640,
     MOVE_PSYCHIC_TERRAIN = 641, //should be in if tapu_lele is in
     MOVE_LUNGE = 642, //should be in
-    MOVE_FIRE_LASH = 643,
+    MOVE_FIRE_LASH = 643, //should be in if salazzle is in
     MOVE_POWER_TRIP = 644,
     MOVE_BURN_UP = 645,
     MOVE_SPEED_SWAP = 646,
@@ -702,7 +702,7 @@ enum __attribute__((packed)) Move
     MOVE_AURORA_VEIL = 657, //should be in if frosmoth is in
     MOVE_SHELL_TRAP = 658,
     MOVE_FLEUR_CANNON = 659,
-    MOVE_PSYCHIC_FANGS = 660,
+    MOVE_PSYCHIC_FANGS = 660, //should be in if bruxish is in
     MOVE_STOMPING_TANTRUM = 661,
     MOVE_SHADOW_BONE = 662,
     MOVE_ACCELEROCK = 663,
