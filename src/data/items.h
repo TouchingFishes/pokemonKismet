@@ -9754,9 +9754,9 @@ const struct ItemInfo gItemsInfo[] =
         .price = 0,
         .importance = 1,
         .description = COMPOUND_STRING(
-            "This device gives\n"
-            "exp. to other\n"
-            "party members."),
+            "Party-wide exp.\n"
+            "Convenient, messes\n"
+            "with the level curve."),
         .pocket = POCKET_KEY_ITEMS,
     #else
         .price = (I_PRICE == GEN_1) ? 1 : 3000,
