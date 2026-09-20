@@ -1326,6 +1326,10 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_EMOLGA
     [SPECIES_EMOLGA] = sEmolgaTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_JOLTIK
+    [SPECIES_JOLTIK] = sJoltikTeachableLearnset_Kismet,
+    [SPECIES_GALVANTULA] = sGalvantulaTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_KLINK
     [SPECIES_KLINK] = sKlinkTeachableLearnset_Kismet,
     [SPECIES_KLANG] = sKlinkTeachableLearnset_Kismet,
@@ -1392,6 +1396,19 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_FLABEBE_YELLOW] = sFlabebeTeachableLearnset_Kismet,
     [SPECIES_FLABEBE_ORANGE] = sFlabebeTeachableLearnset_Kismet,
     [SPECIES_FLABEBE_BLUE] = sFlabebeTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLABEBE_WHITE] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE_RED] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE_YELLOW] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE_ORANGE] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE_BLUE] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE_WHITE] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLORGES] = sFlorgesTeachableLearnset_Kismet,
+    [SPECIES_FLORGES_RED] = sFlorgesTeachableLearnset_Kismet,
+    [SPECIES_FLORGES_YELLOW] = sFlorgesTeachableLearnset_Kismet,
+    [SPECIES_FLORGES_ORANGE] = sFlorgesTeachableLearnset_Kismet,
+    [SPECIES_FLORGES_BLUE] = sFlorgesTeachableLearnset_Kismet,
+    [SPECIES_FLORGES_WHITE] = sFlorgesTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_PANCHAM
     [SPECIES_PANCHAM] = sPanchamTeachableLearnset_Kismet,
@@ -1402,8 +1419,18 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_AEGISLASH_SHIELD] = sAegislashTeachableLearnset_Kismet,
     [SPECIES_AEGISLASH_BLADE] = sAegislashTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_BINACLE
+    [SPECIES_BINACLE] = sBinacleTeachableLearnset_Kismet,
+    [SPECIES_BARBARACLE] = sBarbaracleTeachableLearnset_Kismet,
+    [SPECIES_BARBARACLE_MEGA] = sBarbaracleTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_CARBINK
     [SPECIES_CARBINK] = sCarbinkTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_GOOMY
+    [SPECIES_GOOMY] = sGoomyTeachableLearnset_Kismet,
+    [SPECIES_SLIGGOO] = sSliggooTeachableLearnset_Kismet,
+    [SPECIES_GOODRA] = sGoodraTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_NOIBAT
     [SPECIES_NOIBAT] = sNoibatTeachableLearnset_Kismet,
@@ -1413,6 +1440,11 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_FOMANTIS] = sFomantisTeachableLearnset_Kismet,
     [SPECIES_LURANTIS] = sLurantisTeachableLearnset_Kismet,
     [SPECIES_LURANTIS_TOTEM] = sLurantisTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_SALANDIT
+    [SPECIES_SALANDIT] = sSalanditTeachableLearnset_Kismet,
+    [SPECIES_SALAZZLE] = sSalazzleTeachableLearnset_Kismet,
+    [SPECIES_SALAZZLE_TOTEM] = sSalazzleTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_STUFFUL
     [SPECIES_STUFFUL] = sStuffulTeachableLearnset_Kismet,
@@ -1431,6 +1463,9 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_MIMIKYU] = sMimikyuDisguisedTeachableLearnset_Kismet,
     [SPECIES_MIMIKYU_TOTEM] = sMimikyuDisguisedTeachableLearnset_Kismet,
     [SPECIES_MIMIKYU_TOTEM_BUSTED] = sMimikyuDisguisedTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_BRUXISH
+    [SPECIES_BRUXISH] = sBruxishTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_TAPU_KOKO
     [SPECIES_TAPU_KOKO] = sTapuKokoTeachableLearnset_Kismet,

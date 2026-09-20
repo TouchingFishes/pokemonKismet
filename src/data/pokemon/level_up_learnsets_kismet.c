@@ -1235,6 +1235,10 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_EMOLGA
     [SPECIES_EMOLGA] = sEmolgaLevelUpLearnset_Kismet,
 #endif
+#if P_FAMILY_JOLTIK
+    [SPECIES_JOLTIK] = sJoltikLevelUpLearnset_Kismet,
+    [SPECIES_GALVANTULA] = sGalvantulaLevelUpLearnset_Kismet,
+#endif
 #if P_FAMILY_KLINK
     [SPECIES_KLINK] = sKlinkLevelUpLearnset_Kismet,
     [SPECIES_KLANG] = sKlangLevelUpLearnset_Kismet,
@@ -1306,8 +1310,17 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_DOUBLADE] = sDoubladeLevelUpLearnset_Kismet,
     [SPECIES_AEGISLASH] = sAegislashLevelUpLearnset_Kismet,
 #endif
+#if P_FAMILY_BINACLE
+    [SPECIES_BINACLE] = sBinacleLevelUpLearnset_Kismet,
+    [SPECIES_BARBARACLE] = sBarbaracleLevelUpLearnset_Kismet,
+#endif
 #if P_FAMILY_CARBINK
     [SPECIES_CARBINK] = sCarbinkLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_GOOMY
+    [SPECIES_GOOMY] = sGoomyLevelUpLearnset_Kismet,
+    [SPECIES_SLIGGOO] = sSliggooLevelUpLearnset_Kismet,
+    [SPECIES_GOODRA] = sGoodraLevelUpLearnset_Kismet,
 #endif
 #if P_FAMILY_NOIBAT
     [SPECIES_NOIBAT] = sNoibatLevelUpLearnset_Kismet,
@@ -1319,6 +1332,10 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_FOMANTIS
     [SPECIES_FOMANTIS] = sFomantisLevelUpLearnset_Kismet,
     [SPECIES_LURANTIS] = sLurantisLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_SALANDIT
+    [SPECIES_SALANDIT] = sSalanditLevelUpLearnset_Kismet,
+    [SPECIES_SALAZZLE] = sSalazzleLevelUpLearnset_Kismet,
 #endif
 #if P_FAMILY_STUFFUL
     [SPECIES_STUFFUL] = sStuffulLevelUpLearnset_Kismet,
@@ -1332,6 +1349,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_MIMIKYU
     [SPECIES_MIMIKYU] = sMimikyuLevelUpLearnset_Kismet,
     [SPECIES_MIMIKYU_DISGUISED] = sMimikyuLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_BRUXISH
+    [SPECIES_BRUXISH] = sBruxishLevelUpLearnset_Kismet,
 #endif
 #if P_FAMILY_TAPU_KOKO
     [SPECIES_TAPU_KOKO] = sTapuKokoLevelUpLearnset_Kismet,

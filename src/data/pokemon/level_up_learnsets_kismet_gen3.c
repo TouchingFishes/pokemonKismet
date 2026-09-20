@@ -1223,6 +1223,15 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
 #if P_FAMILY_EMOLGA
     [SPECIES_EMOLGA] = sEmolgaLevelUpLearnset_KismetGen3,
 #endif
+#if P_FAMILY_JOLTIK
+    [SPECIES_JOLTIK] = sJoltikLevelUpLearnset_KismetGen3,
+    [SPECIES_GALVANTULA] = sGalvantulaLevelUpLearnset_KismetGen3,
+#endif
+#if P_FAMILY_KLINK
+    [SPECIES_KLINK] = sKlinkLevelUpLearnset_KismetGen3,
+    [SPECIES_KLANG] = sKlangLevelUpLearnset_KismetGen3,
+    [SPECIES_KLINKLANG] = sKlinklangLevelUpLearnset_KismetGen3,
+#endif
 #if P_FAMILY_TYNAMO
     [SPECIES_TYNAMO] = sTynamoLevelUpLearnset_KismetGen3,
     [SPECIES_EELEKTRIK] = sEelektrikLevelUpLearnset_KismetGen3,
@@ -1289,8 +1298,17 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
     [SPECIES_DOUBLADE] = sDoubladeLevelUpLearnset_KismetGen3,
     [SPECIES_AEGISLASH] = sAegislashLevelUpLearnset_KismetGen3,
 #endif
+#if P_FAMILY_BINACLE
+    [SPECIES_BINACLE] = sBinacleLevelUpLearnset_KismetGen3,
+    [SPECIES_BARBARACLE] = sBarbaracleLevelUpLearnset_KismetGen3,
+#endif
 #if P_FAMILY_CARBINK
     [SPECIES_CARBINK] = sCarbinkLevelUpLearnset_KismetGen3,
+#endif
+#if P_FAMILY_GOOMY
+    [SPECIES_GOOMY] = sGoomyLevelUpLearnset_KismetGen3,
+    [SPECIES_SLIGGOO] = sSliggooLevelUpLearnset_KismetGen3,
+    [SPECIES_GOODRA] = sGoodraLevelUpLearnset_KismetGen3,
 #endif
 #if P_FAMILY_NOIBAT
     [SPECIES_NOIBAT] = sNoibatLevelUpLearnset_KismetGen3,
@@ -1303,6 +1321,10 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
     [SPECIES_FOMANTIS] = sFomantisLevelUpLearnset_KismetGen3,
     [SPECIES_LURANTIS] = sLurantisLevelUpLearnset_KismetGen3,
 #endif
+#if P_FAMILY_SALANDIT
+    [SPECIES_SALANDIT] = sSalanditLevelUpLearnset_KismetGen3,
+    [SPECIES_SALAZZLE] = sSalazzleLevelUpLearnset_KismetGen3,
+#endif
 #if P_FAMILY_STUFFUL
     [SPECIES_STUFFUL] = sStuffulLevelUpLearnset_KismetGen3,
     [SPECIES_BEWEAR] = sBewearLevelUpLearnset_KismetGen3,
@@ -1314,6 +1336,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
 #endif
 #if P_FAMILY_MIMIKYU
     [SPECIES_MIMIKYU] = sMimikyuLevelUpLearnset_KismetGen3,
+#endif
+#if P_FAMILY_BRUXISH
+    [SPECIES_BRUXISH] = sBruxishLevelUpLearnset_KismetGen3,
 #endif
 #if P_FAMILY_TAPU_KOKO
     [SPECIES_TAPU_KOKO] = sTapuKokoLevelUpLearnset_KismetGen3,
