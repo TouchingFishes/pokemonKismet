@@ -856,8 +856,10 @@
 #define TRAINER_JULIE_CAVE_HNS                        807
 #define TRAINER_GREEN_HNS                             808
 #define TRAINER_GREEN_2_HNS                           809
+#define TRAINER_GIDEON_HNS                            810
+#define TRAINER_GIOVANNI_LAB_HNS                      811
 
-#define TRAINERS_COUNT_HNS                       810
+#define TRAINERS_COUNT_HNS                       812
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
