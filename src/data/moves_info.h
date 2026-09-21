@@ -19525,11 +19525,18 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_STONE_AXE] =
     {
         .name = COMPOUND_STRING("STONE AXE"),
+        // move effect shouldnt distribute stealth rock, while stealth rock is banned
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+        .description = COMPOUND_STRING(
+            "Sharp shards that may\n"
+            "lower the foe's Defense."),
+        #else
         .description = COMPOUND_STRING(
             "Sets sharp rocks that hurt\n"
             "the foe."),
-        .effect = EFFECT_STONE_AXE,
-        .power = 65,
+        #endif
+        .effect = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? EFFECT_HIT : EFFECT_STONE_AXE,
+        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 80 : 65,
         .type = TYPE_ROCK,
         .accuracy = 90,
         .pp = 15,
@@ -19538,9 +19545,18 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .slicingMove = TRUE,
+        // An #if rather than a ternary because the entries differ in kind, and
+        // .chance = 0 would mean "guaranteed" rather than "never".
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
+            .chance = 30,
+        }),
+        #else
         .additionalEffects = ADDITIONAL_EFFECTS({
             .sheerForceOverride = TRUE,
         }),
+        #endif
         .battleAnimScript = gBattleAnimMove_StoneAxe,
     },
 

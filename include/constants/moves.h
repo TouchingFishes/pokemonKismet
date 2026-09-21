@@ -478,7 +478,7 @@ enum __attribute__((packed)) Move
     MOVE_MAGNET_BOMB = 443,
     MOVE_STONE_EDGE = 444,
     MOVE_CAPTIVATE = 445, //do not use
-    MOVE_STEALTH_ROCK = 446, //do not use
+    MOVE_STEALTH_ROCK = 446, //do not use, also change stone axe movee effect if this is out
     MOVE_GRASS_KNOT = 447,
     MOVE_CHATTER = 448, //do not use
     MOVE_JUDGMENT = 449, //do not use unless Arceus is in
