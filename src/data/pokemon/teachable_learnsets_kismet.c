@@ -1385,6 +1385,13 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_LARVESTA] = sLarvestaTeachableLearnset_Kismet,
     [SPECIES_VOLCARONA] = sVolcaronaTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_GENESECT
+    [SPECIES_GENESECT] = sGenesectTeachableLearnset_Kismet,
+    [SPECIES_GENESECT_DOUSE] = sGenesectTeachableLearnset_Kismet,
+    [SPECIES_GENESECT_SHOCK] = sGenesectTeachableLearnset_Kismet,
+    [SPECIES_GENESECT_BURN] = sGenesectTeachableLearnset_Kismet,
+    [SPECIES_GENESECT_CHILL] = sGenesectTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_FLETCHLING
     [SPECIES_FLETCHLING] = sFletchlingTeachableLearnset_Kismet,
     [SPECIES_FLETCHINDER] = sFletchinderTeachableLearnset_Kismet,
@@ -1466,18 +1473,6 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_BRUXISH
     [SPECIES_BRUXISH] = sBruxishTeachableLearnset_Kismet,
-#endif
-#if P_FAMILY_TAPU_KOKO
-    [SPECIES_TAPU_KOKO] = sTapuKokoTeachableLearnset_Kismet,
-#endif
-#if P_FAMILY_TAPU_LELE
-    [SPECIES_TAPU_LELE] = sTapuLeleTeachableLearnset_Kismet,
-#endif
-#if P_FAMILY_TAPU_BULU
-    [SPECIES_TAPU_BULU] = sTapuBuluTeachableLearnset_Kismet,
-#endif
-#if P_FAMILY_TAPU_FINI
-    [SPECIES_TAPU_FINI] = sTapuFiniTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_SINISTEA
     [SPECIES_POLTEAGEIST] = sPolteageistTeachableLearnset_Kismet,
