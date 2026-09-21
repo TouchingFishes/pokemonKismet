@@ -1394,7 +1394,6 @@ bool32 IsDazzlingAbility(enum Ability ability)
 {
     switch (ability)
     {
-    case ABILITY_DAZZLING:        return TRUE;
     case ABILITY_QUEENLY_MAJESTY: return TRUE;
     case ABILITY_ARMOR_TAIL:      return TRUE;
     default: break;

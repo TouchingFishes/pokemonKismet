@@ -1677,9 +1677,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DAZZLING] =
     {
         .name = _("DAZZLING"),
-        .description = COMPOUND_STRING("Protects from priority."),
-        .aiRating = 5,
-        .breakable = TRUE,
+        .description = COMPOUND_STRING("Lowers the foe's Sp. Atk."),
+        .aiRating = 7,
     },
 
     [ABILITY_SOUL_HEART] =

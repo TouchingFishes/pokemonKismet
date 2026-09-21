@@ -3496,6 +3496,15 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 effect++;
             }
             break;
+        case ABILITY_DAZZLING:
+            if (shouldAbilityTrigger && !IsOpposingSideEmpty(battler))
+            {
+                SaveBattlerAttacker(gBattlerAttacker);
+                gBattlerAttacker = battler;
+                BattleScriptCall(BattleScript_DazzlingActivates);
+                effect++;
+            }
+            break;
         case ABILITY_SUPERSWEET_SYRUP:
             if (shouldAbilityTrigger
              && !GetBattlerPartyState(battler)->supersweetSyrup

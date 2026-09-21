@@ -13345,6 +13345,27 @@ void BS_SetSteelsurge(void)
     }
 }
 
+void BS_JumpIfDazzlingAbilityPrevented(void)
+{
+    NATIVE_ARGS();
+
+    switch (GetBattlerAbility(gBattlerTarget))
+    {
+    case ABILITY_INNER_FOCUS:
+    case ABILITY_SCRAPPY:
+    case ABILITY_OWN_TEMPO:
+    case ABILITY_OBLIVIOUS:
+        if (GetConfig(B_UPDATED_INTIMIDATE) >= GEN_8)
+            gBattlescriptCurrInstr = BattleScript_DazzlingPrevented;
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        break;
+    default:
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        break;
+    }
+}
+
 void BS_JumpIfIntimidateAbilityPrevented(void)
 {
     NATIVE_ARGS();

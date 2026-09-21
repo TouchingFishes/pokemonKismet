@@ -1239,6 +1239,10 @@
 	callnative BS_JumpIfIntimidateAbilityPrevented
 	.endm
 
+	.macro jumpifdazzlingabilityprevented
+	callnative BS_JumpIfDazzlingAbilityPrevented
+	.endm
+
 	.macro allyswitchswapbattlers
 	callnative BS_AllySwitchSwapBattler
 	.endm

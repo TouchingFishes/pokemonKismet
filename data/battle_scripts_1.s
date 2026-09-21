@@ -6327,6 +6327,49 @@ BattleScript_SupersweetSyrupWontDecrease:
 	printstring STRINGID_STATSWONTDECREASE
 	goto BattleScript_SupersweetSyrupEffect_WaitString
 
+BattleScript_DazzlingActivates::
+	savetarget
+	call BattleScript_AbilityPopUp
+	setbyte gBattlerTarget, 0
+BattleScript_DazzlingLoop:
+	jumpiftargetally BattleScript_DazzlingLoopIncrement
+	jumpifabsent BS_TARGET, BattleScript_DazzlingLoopIncrement
+	jumpifvolatile BS_TARGET, VOLATILE_SUBSTITUTE, BattleScript_DazzlingLoopIncrement
+	jumpifdazzlingabilityprevented
+BattleScript_DazzlingEffect:
+	copybyte sBATTLER, gBattlerAttacker
+	setstatchanger STAT_SPATK, 1, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_DazzlingLoopIncrement
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_DazzlingWontDecrease
+	printfromtable gStatDownStringIds
+BattleScript_DazzlingEffect_WaitString:
+	waitmessage B_WAIT_TIME_LONG
+	saveattacker
+	savetarget
+	copybyte sBATTLER, gBattlerTarget
+	call BattleScript_TryIntimidateHoldEffects
+	restoreattacker
+	restoretarget
+BattleScript_DazzlingLoopIncrement:
+	addbyte gBattlerTarget, 1
+	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_DazzlingLoop
+	copybyte sBATTLER, gBattlerAttacker
+	destroyabilitypopup
+	restoretarget
+	restoreattacker
+	pause B_WAIT_TIME_MED
+	return
+
+BattleScript_DazzlingWontDecrease:
+	printstring STRINGID_STATSWONTDECREASE
+	goto BattleScript_DazzlingEffect_WaitString
+
+BattleScript_DazzlingPrevented::
+	copybyte sBATTLER, gBattlerTarget
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNPREVENTSSTATLOSSWITH
+	goto BattleScript_DazzlingEffect_WaitString
+
 BattleScript_PrimalWeatherBlocksMove::
 	pause B_WAIT_TIME_SHORT
 	printfromtable gPrimalWeatherBlocksStringIds

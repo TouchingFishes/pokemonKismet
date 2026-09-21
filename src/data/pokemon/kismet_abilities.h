@@ -803,7 +803,7 @@ static const struct KismetAbilities sKismetAbilities[] =
     { SPECIES_TURTONATOR,                { ABILITY_SHELL_ARMOR,         ABILITY_NONE,                ABILITY_NONE                 } }, //  776 turtonator
     { SPECIES_TOGEDEMARU,                { ABILITY_IRON_BARBS,          ABILITY_LIGHTNING_ROD,       ABILITY_STURDY               } }, //  777 togedemaru
     { SPECIES_MIMIKYU,                   { ABILITY_DISGUISE,            ABILITY_NONE,                ABILITY_NONE                 } }, //  778 mimikyu
-    { SPECIES_BRUXISH,                   { ABILITY_DAZZLING,            ABILITY_STRONG_JAW,          ABILITY_WONDER_SKIN          } }, //  779 bruxish
+    { SPECIES_BRUXISH,                   { ABILITY_DAZZLING,            ABILITY_NONE,                ABILITY_STRONG_JAW           } }, //  779 bruxish
     { SPECIES_DRAMPA,                    { ABILITY_BERSERK,             ABILITY_SAP_SIPPER,          ABILITY_CLOUD_NINE           } }, //  780 drampa
     { SPECIES_DHELMISE,                  { ABILITY_STEELWORKER,         ABILITY_NONE,                ABILITY_NONE                 } }, //  781 dhelmise
     { SPECIES_JANGMO_O,                  { ABILITY_BULLETPROOF,         ABILITY_SOUNDPROOF,          ABILITY_OVERCOAT             } }, //  782 jangmo_o
