@@ -6686,7 +6686,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ALL_STATS_UP,
             .self = TRUE,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 15 : 10,
         }),
         .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -8079,11 +8079,19 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_BLAZE_KICK] =
     {
         .name = COMPOUND_STRING("BLAZE KICK"),
+        // Gated with the mechanic: the Kismet version also flinches, and a
+        // description that omits that is misleading in-game.
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+        .description = COMPOUND_STRING(
+            "A kick with a high critical-\n"
+            "hit ratio. May burn or flinch."),
+        #else
         .description = COMPOUND_STRING(
             "A kick with a high critical-\n"
             "hit ratio. May cause a burn."),
+        #endif
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 90 : 85,
+        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 100 : 85,
         .type = TYPE_FIRE,
         .accuracy = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 100 : 90,
         .criticalHitStage = B_UPDATED_MOVE_DATA >= GEN_3 ? 1 : 2,
@@ -8092,10 +8100,24 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_BURN,
-            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 20 : 10,
-        }),
+        // An #if rather than a ternary because the entry count differs, and
+        // .chance = 0 would mean "guaranteed" rather than "never".
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+            .additionalEffects = ADDITIONAL_EFFECTS(
+            {
+                .moveEffect = MOVE_EFFECT_BURN,
+                .chance = 15,
+            },
+            {
+                .moveEffect = MOVE_EFFECT_FLINCH,
+                .chance = 15,
+            }),
+        #else
+            .additionalEffects = ADDITIONAL_EFFECTS({
+                .moveEffect = MOVE_EFFECT_BURN,
+                .chance = 10,
+            }),
+        #endif
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_REPETITION_NOT_BORING : CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_COOL : CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -8594,7 +8616,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ALL_STATS_UP,
             .self = TRUE,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 15 : 10,
         }),
         .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -8885,9 +8907,17 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_MUDDY_WATER] =
     {
         .name = COMPOUND_STRING("MUDDY WATER"),
+        // Gated with the mechanic: the Kismet version also cuts Speed, and a
+        // description that omits that is misleading in-game.
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+        .description = COMPOUND_STRING(
+            "Attacks with muddy water. May\n"
+            "lower accuracy or Speed."),
+        #else
         .description = COMPOUND_STRING(
             "Attacks with muddy water.\n"
             "May lower accuracy."),
+        #endif
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 105 : (B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95),
         .type = B_UPDATED_MOVE_TYPES == CUSTOM_FOR_KISMET ? TYPE_GROUND : TYPE_WATER,
@@ -8897,10 +8927,24 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .skyBattleBanned = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
-            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 35 : 30,
-        }),
+        // An #if rather than a ternary because the entry count differs, and
+        // .chance = 0 would mean "guaranteed" rather than "never".
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+            .additionalEffects = ADDITIONAL_EFFECTS(
+            {
+                .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
+                .chance = 30,
+            },
+            {
+                .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
+                .chance = 30,
+            }),
+        #else
+            .additionalEffects = ADDITIONAL_EFFECTS({
+                .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
+                .chance = 30,
+            }),
+        #endif
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MONS : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -9366,9 +9410,17 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_LEAF_BLADE] =
     {
         .name = COMPOUND_STRING("LEAF BLADE"),
+        // Gated with the mechanic: the Kismet version also raises the user's
+        // Attack, and a description that omits that is misleading in-game.
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+        .description = COMPOUND_STRING(
+            "Slashes with a sharp leaf.\n"
+            "High crit. May raise Attack."),
+        #else
         .description = COMPOUND_STRING(
             "Slashes with a sharp leaf.\n"
             "High critical-hit ratio."),
+        #endif
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 90 : 70,
         .type = TYPE_GRASS,
@@ -9380,6 +9432,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .slicingMove = TRUE,
+        // 2.0 gives Leaf Blade no secondary at all, so this cannot be a
+        // ternary - .chance = 0 means "guaranteed", not "never".
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+            .additionalEffects = ADDITIONAL_EFFECTS({
+                .moveEffect = MOVE_EFFECT_ATK_PLUS_1,
+                .self = TRUE,
+                .chance = 30,
+            }),
+        #endif
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_REPETITION_NOT_BORING : CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -12266,7 +12327,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ALL_STATS_UP,
             .self = TRUE,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 15 : 10,
         }),
         .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_BEAUTY : CONTEST_CATEGORY_SMART,
@@ -21550,7 +21611,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ALL_STATS_UP,
             .self = TRUE,
-            .chance = 10,
+            .chance = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 15 : 10,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
