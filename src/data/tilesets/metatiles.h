@@ -734,4 +734,19 @@ const u16 gMetatileAttributes_ArceusRoom_Hns[] = INCBIN_U16("data/tilesets/secon
 const u16 gMetatiles_MtEmber_Hns[] = INCBIN_U16("data/tilesets/secondary/mt_ember_hns/metatiles.bin");
 const u16 gMetatileAttributes_MtEmber_Hns[] = INCBIN_U16("data/tilesets/secondary/mt_ember_hns/metatile_attributes.bin");
 
+
+// ---------------------------------------------------------------------------
+// FRLG Five Island Rocket Warehouse, reused as the DaoDao Isles hidden Rocket
+// lab (DaoDaoIsles_RocketLab_hns). That layout keeps FRLG metatile ids, so it
+// needs the FRLG tilesets themselves. These are declared in the #elif IS_FRLG
+// branch above; the branches are mutually exclusive, so re-declaring them here
+// gives the HnS build the same symbols off the same assets.
+// ---------------------------------------------------------------------------
+const u16 gMetatiles_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatiles.bin");
+
+const u16 gMetatileAttributes_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatile_attributes.bin");
+
+const u16 gMetatiles_SilphCo[] = INCBIN_U16("data/tilesets/secondary/silph_co_frlg/metatiles.bin");
+
+const u16 gMetatileAttributes_SilphCo[] = INCBIN_U16("data/tilesets/secondary/silph_co_frlg/metatile_attributes.bin");
 #endif // IS_FRLG || IS_HNS

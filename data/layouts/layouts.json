@@ -16599,6 +16599,20 @@
       "blockdata_filepath": "data/layouts/DaoDaoIsles_BingCurrent/map.bin",
       "game_version": "hns",
       "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_ROCKET_LAB_HNS",
+      "name": "DaoDaoIsles_RocketLab_hns_Layout",
+      "width": 29,
+      "height": 27,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_SilphCo",
+      "border_filepath": "data/layouts/DaoDaoIsles_RocketLab_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_RocketLab_hns/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "game_version": "hns",
+      "layout_version": "frlg"
     }
   ]
 }

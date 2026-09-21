@@ -858,8 +858,14 @@
 #define TRAINER_GREEN_2_HNS                           809
 #define TRAINER_GIDEON_HNS                            810
 #define TRAINER_GIOVANNI_LAB_HNS                      811
+#define TRAINER_DAODAO_LAB_BIKER_1_HNS                812
+#define TRAINER_DAODAO_LAB_CUEBALL_1_HNS              813
+#define TRAINER_DAODAO_LAB_SCIENTIST_1_HNS            814
+#define TRAINER_DAODAO_LAB_BIKER_2_HNS                815
+#define TRAINER_DAODAO_LAB_CUEBALL_2_HNS              816
+#define TRAINER_DAODAO_LAB_SCIENTIST_2_HNS            817
 
-#define TRAINERS_COUNT_HNS                       812
+#define TRAINERS_COUNT_HNS                       818
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

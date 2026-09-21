@@ -5217,4 +5217,55 @@ const u16 gTilesetPalettes_MtEmber_Hns[][16] =
     INCBIN_U16("data/tilesets/secondary/mt_ember_hns/palettes/15.gbapal"),
 };
 
+
+// ---------------------------------------------------------------------------
+// FRLG Five Island Rocket Warehouse, reused as the DaoDao Isles hidden Rocket
+// lab (DaoDaoIsles_RocketLab_hns). That layout keeps FRLG metatile ids, so it
+// needs the FRLG tilesets themselves. These are declared in the #elif IS_FRLG
+// branch above; the branches are mutually exclusive, so re-declaring them here
+// gives the HnS build the same symbols off the same assets.
+// ---------------------------------------------------------------------------
+const u32 gTilesetTiles_Building_Frlg[] = INCBIN_U32("data/tilesets/primary/building_frlg/tiles.4bpp.smol");
+
+const u16 gTilesetPalettes_Building_Frlg[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/building_frlg/palettes/15.gbapal"),
+};
+
+const u32 gTilesetTiles_Condominiums[] = INCBIN_U32("data/tilesets/secondary/condominiums_frlg/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_Condominiums[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/condominiums_frlg/palettes/15.gbapal"),
+};
 #endif // IS_FRLG || IS_HNS

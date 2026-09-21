@@ -21544,3 +21544,267 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_CALM_MIND
 - MOVE_ICY_WIND
 - MOVE_SHOCK_WAVE
+
+=== TRAINER_GIDEON_HNS ===
+Name: GIDEON
+Class: Scientist Hns
+Pic: Gideon Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+Items: Hyper Potion / Hyper Potion
+
+SPECIES_MANDIBUZZ
+Level: 72
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- MOVE_DARK_PULSE
+- MOVE_AIR_SLASH
+- MOVE_ROOST
+- MOVE_TAUNT
+
+SPECIES_SALAZZLE
+Level: 72
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- MOVE_FIRE_LASH
+- MOVE_SLUDGE_WAVE
+- MOVE_NASTY_PLOT
+- MOVE_FLAMETHROWER
+
+SPECIES_BRUXISH
+Level: 73
+IVs: 25 HP / 31 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- MOVE_PSYCHIC_FANGS
+- MOVE_LIQUIDATION
+- MOVE_CRUNCH
+- MOVE_SWORDS_DANCE
+
+SPECIES_HAXORUS
+Level: 73
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- MOVE_OUTRAGE
+- MOVE_EARTHQUAKE
+- MOVE_X_SCISSOR
+- MOVE_DRAGON_DANCE
+
+SPECIES_KLINKLANG
+Level: 73
+IVs: 25 HP / 25 Atk / 31 Def / 25 SpA / 25 SpD / 25 Spe
+- MOVE_WILD_CHARGE
+- MOVE_FLASH_CANNON
+- MOVE_LOCK_ON
+- MOVE_ZAP_CANNON
+
+SPECIES_PORYGON_Z
+Level: 74
+IVs: 27 HP / 27 Atk / 27 Def / 31 SpA / 27 SpD / 27 Spe
+- MOVE_TRI_ATTACK
+- MOVE_SIGNAL_BEAM
+- MOVE_RECOVER
+- MOVE_AGILITY
+
+=== TRAINER_GIOVANNI_LAB_HNS ===
+Name: GIOVANNI
+Class: Rocket Admin Hns
+Pic: Giovanni Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Dark Red
+Items: Full Restore / Full Restore / Full Restore
+
+SPECIES_PERSIAN
+Level: 80
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 31 Spe
+- MOVE_NIGHT_SLASH
+- MOVE_PLAY_ROUGH
+- MOVE_SLASH
+- MOVE_FAKE_OUT
+
+SPECIES_HONCHKROW
+Level: 81
+IVs: 29 HP / 31 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+- MOVE_DARK_PULSE
+- MOVE_AERIAL_ACE
+- MOVE_KNOCK_OFF
+- MOVE_ROOST
+
+SPECIES_NIDOQUEEN
+Level: 82
+IVs: 29 HP / 29 Atk / 31 Def / 29 SpA / 29 SpD / 29 Spe
+- MOVE_ICE_PUNCH
+- MOVE_SLUDGE_BOMB
+- MOVE_SURF
+- MOVE_BODY_SLAM
+
+SPECIES_NIDOKING
+Level: 82
+IVs: 29 HP / 31 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+- MOVE_MEGAHORN
+- MOVE_SLUDGE_BOMB
+- MOVE_THUNDERBOLT
+- MOVE_EARTHQUAKE
+
+SPECIES_RHYPERIOR
+Level: 84
+IVs: 31 HP / 31 Atk / 31 Def / 29 SpA / 29 SpD / 29 Spe
+- MOVE_ROCK_WRECKER
+- MOVE_EARTHQUAKE
+- MOVE_MEGAHORN
+- MOVE_HAMMER_ARM
+
+SPECIES_GENESECT
+Level: 84
+IVs: 29 HP / 31 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+- MOVE_TECHNO_BLAST
+- MOVE_X_SCISSOR
+- MOVE_FLASH_CANNON
+- MOVE_ZAP_CANNON
+
+=== TRAINER_DAODAO_LAB_BIKER_1_HNS ===
+Name: RIGGS
+Class: Biker Hns
+Pic: Biker Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+
+SPECIES_WEEZING
+Level: 69
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_HAZE
+- MOVE_THUNDERBOLT
+- MOVE_EXPLOSION
+
+SPECIES_MUK
+Level: 70
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_GUNK_SHOT
+- MOVE_DARK_PULSE
+- MOVE_DYNAMIC_PUNCH
+- MOVE_MINIMIZE
+
+=== TRAINER_DAODAO_LAB_CUEBALL_1_HNS ===
+Name: DOYLE
+Class: Cue Ball Hns
+Pic: Cue Ball Frlg
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+
+SPECIES_MACHOKE
+Level: 69
+IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_CROSS_CHOP
+- MOVE_SEISMIC_TOSS
+- MOVE_VITAL_THROW
+- MOVE_BULK_UP
+
+SPECIES_PRIMEAPE
+Level: 70
+IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_CROSS_CHOP
+- MOVE_THRASH
+- MOVE_SCREECH
+- MOVE_BULK_UP
+
+=== TRAINER_DAODAO_LAB_SCIENTIST_1_HNS ===
+Name: HALDEN
+Class: Scientist Hns
+Pic: Scientist Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+
+SPECIES_MAGNETON
+Level: 69
+IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
+- MOVE_FLASH_CANNON
+- MOVE_THUNDERBOLT
+- MOVE_LOCK_ON
+- MOVE_ZAP_CANNON
+
+SPECIES_PORYGON2
+Level: 71
+IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
+- MOVE_TRI_ATTACK
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+- MOVE_RECOVER
+
+=== TRAINER_DAODAO_LAB_BIKER_2_HNS ===
+Name: VANCE
+Class: Biker Hns
+Pic: Biker Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+
+SPECIES_ELECTRODE
+Level: 69
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 25 Spe
+- MOVE_THUNDERBOLT
+- MOVE_CHARGE_BEAM
+- MOVE_LIGHT_SCREEN
+- MOVE_EXPLOSION
+
+SPECIES_HOUNDOOM
+Level: 71
+IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
+- MOVE_FLAMETHROWER
+- MOVE_DARK_PULSE
+- MOVE_CRUNCH
+- MOVE_SOLAR_BEAM
+
+=== TRAINER_DAODAO_LAB_CUEBALL_2_HNS ===
+Name: MARLO
+Class: Cue Ball Hns
+Pic: Cue Ball Frlg
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+
+SPECIES_POLIWRATH
+Level: 70
+IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_BRICK_BREAK
+- MOVE_ICE_BEAM
+- MOVE_EARTHQUAKE
+- MOVE_BULK_UP
+
+SPECIES_HITMONLEE
+Level: 71
+IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_HI_JUMP_KICK
+- MOVE_BLAZE_KICK
+- MOVE_MEGA_KICK
+- MOVE_REVERSAL
+
+=== TRAINER_DAODAO_LAB_SCIENTIST_2_HNS ===
+Name: PRYCE
+Class: Scientist Hns
+Pic: Scientist Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+
+SPECIES_CLAYDOL
+Level: 70
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_EARTH_POWER
+- MOVE_EXTRASENSORY
+- MOVE_ICE_BEAM
+- MOVE_EXPLOSION
+
+SPECIES_DITTO
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_TRANSFORM

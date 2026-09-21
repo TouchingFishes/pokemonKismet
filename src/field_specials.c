@@ -6386,7 +6386,7 @@ STATIC_ASSERT(ITEM_FAIRY_GEM - ITEM_NORMAL_GEM + 1 == NUM_TYPE_GEMS,
 
 void RollTreasureBeachItem(void)
 {
-    if ((Random() % 100) >= 40)
+    if ((Random() % 100) >= 30)
     {
         gSpecialVar_Result = ITEM_NONE;   // the rock was hiding nothing today
         return;

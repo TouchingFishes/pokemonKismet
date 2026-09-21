@@ -1319,6 +1319,18 @@
 // added, which is why this scene starts at state 3 rather than at the lockdown.
 // Unlike the STANDOFF this one IS set in new_game.inc: she must not be out
 // here before the arc, and CLEAR would put her there from a new file.
+// DaoDao Isles hidden Rocket lab, at the west end of the Water Labyrinth.
+// Opened only once the player has beaten Giovanni in the Celebi time-travel
+// encounter (VAR_TOHJO_FALLS_GIOVANNI_STATE == 2) AND become Champion a second
+// time (FLAG_IS_KANTO_CHAMPION); the door's hide state is recomputed in the
+// Water Labyrinth's ON_TRANSITION because hide flags default to CLEAR.
+#define FLAG_DAODAO_ROCKET_LAB_FOUND                (HNS_EXTENDED_CONTENT_START + 338)
+#define FLAG_HIDE_DAODAO_LAB_GIDEON                 (HNS_EXTENDED_CONTENT_START + 339)
+#define FLAG_HIDE_DAODAO_LAB_GIOVANNI               (HNS_EXTENDED_CONTENT_START + 340)
+#define FLAG_HIDE_DAODAO_LAB_GENESECT               (HNS_EXTENDED_CONTENT_START + 341)
+#define FLAG_DEFEATED_DAODAO_LAB_GIDEON             (HNS_EXTENDED_CONTENT_START + 342)
+#define FLAG_DEFEATED_DAODAO_LAB_GIOVANNI           (HNS_EXTENDED_CONTENT_START + 343)
+
 #define FLAG_HIDE_FUCHSIA_JANINE_FIGHT              (HNS_EXTENDED_CONTENT_START + 337)
 
 //just fyi HNS_EXTENDED_CONTENT_START is 0x36A
@@ -1497,12 +1509,8 @@
 #define FLAG_DAILY_TREASURE_ROCK_6                  (DAILY_FLAGS_START +17)
 #define FLAG_DAILY_TREASURE_ROCK_7                  (DAILY_FLAGS_START +18)
 #define FLAG_DAILY_TREASURE_ROCK_8                  (DAILY_FLAGS_START +19)
-#define FLAG_DAILY_TREASURE_ROCK_9                  (DAILY_FLAGS_START +20)
-#define FLAG_DAILY_TREASURE_ROCK_10                 (DAILY_FLAGS_START +21)
-#define FLAG_DAILY_TREASURE_ROCK_11                 (DAILY_FLAGS_START +22)
-#define FLAG_DAILY_TREASURE_ROCK_12                 (DAILY_FLAGS_START +23)
 
-#define DAILY_FLAGS_END                             (DAILY_FLAGS_START +23)
+#define DAILY_FLAGS_END                             (DAILY_FLAGS_START +19)
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
 #define BUILD_FLAGS_END                             DAILY_FLAGS_END
 

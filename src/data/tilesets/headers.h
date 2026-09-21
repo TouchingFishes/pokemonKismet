@@ -2731,4 +2731,33 @@ const struct Tileset gTileset_MtEmber_Hns =
     .metatileAttributes = gMetatileAttributes_MtEmber_Hns,
     .callback = InitTilesetAnim_MtEmber_Hns,
 };
+
+// ---------------------------------------------------------------------------
+// FRLG Five Island Rocket Warehouse, reused as the DaoDao Isles hidden Rocket
+// lab (DaoDaoIsles_RocketLab_hns). That layout keeps FRLG metatile ids, so it
+// needs the FRLG tilesets themselves. These are declared in the #elif IS_FRLG
+// branch above; the branches are mutually exclusive, so re-declaring them here
+// gives the HnS build the same symbols off the same assets.
+// ---------------------------------------------------------------------------
+const struct Tileset gTileset_BuildingFrlg =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Building_Frlg,
+    .palettes = gTilesetPalettes_Building_Frlg,
+    .metatiles = gMetatiles_Building_Frlg,
+    .metatileAttributes = gMetatileAttributes_Building_Frlg,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_SilphCo =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Condominiums,
+    .palettes = gTilesetPalettes_Condominiums,
+    .metatiles = gMetatiles_SilphCo,
+    .metatileAttributes = gMetatileAttributes_SilphCo,
+    .callback = InitTilesetAnim_SilphCo,
+};
 #endif // IS_FRLG || IS_HNS
