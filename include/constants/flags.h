@@ -2498,7 +2498,7 @@
 // "Exp. Share on" bit became FLAG_LIMIT_TO_50, capping the party at level 50).
 //
 // Every build's flags must stay below this address. Current headroom below 0x960:
-// HnS ends at 0x91B (68 free), FRLG at 0x8FF (96 free), Emerald at 0x95F (0 free).
+// HnS ends at 0x927 (56 free), FRLG at 0x8FF (96 free), Emerald at 0x95F (0 free).
 // If a build ever needs to grow past it, raise the pin AND bump SAVE_VERSION with a
 // migration - do not let it float again.
 #define ENGINE_FLAGS_START                      0x960

@@ -16457,14 +16457,14 @@
       "layout_version": "hns"
     },
     {
-      "id": "LAYOUT_DAO_DAO_ISLES_WATER_HNS",
-      "name": "DaoDaoIsles_Water_hns_Layout",
+      "id": "LAYOUT_DAO_DAO_ISLES_TREASURE_BEACH_HNS",
+      "name": "DaoDaoIsles_TreasureBeach_hns_Layout",
       "width": 36,
       "height": 56,
       "primary_tileset": "gTileset_AlolaIsland",
       "secondary_tileset": "gTileset_AlolaIslandSecondary",
-      "border_filepath": "data/layouts/DaoDaoIsles_Water_hns/border.bin",
-      "blockdata_filepath": "data/layouts/DaoDaoIsles_Water_hns/map.bin",
+      "border_filepath": "data/layouts/DaoDaoIsles_TreasureBeach_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_TreasureBeach_hns/map.bin",
       "game_version": "hns",
       "layout_version": "hns"
     },

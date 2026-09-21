@@ -6379,3 +6379,27 @@ void GivePartyMonNationalRibbon(void)
             TryPutSpotTheCutiesOnAir(mon, MON_DATA_NATIONAL_RIBBON);
     }
 }
+
+#define NUM_TYPE_GEMS 18
+STATIC_ASSERT(ITEM_FAIRY_GEM - ITEM_NORMAL_GEM + 1 == NUM_TYPE_GEMS,
+              TypeGemItemIdsAreNoLongerContiguous);
+
+void RollTreasureBeachItem(void)
+{
+    if ((Random() % 100) >= 40)
+    {
+        gSpecialVar_Result = ITEM_NONE;   // the rock was hiding nothing today
+        return;
+    }
+
+    u32 roll = Random() % 100;
+
+    if (roll < 60)
+        gSpecialVar_Result = ITEM_NORMAL_GEM + (Random() % NUM_TYPE_GEMS);
+    else if (roll < 80)
+        gSpecialVar_Result = ITEM_HEART_SCALE;
+    else if (roll < 95)
+        gSpecialVar_Result = ITEM_PEARL;
+    else
+        gSpecialVar_Result = ITEM_BIG_PEARL;
+}

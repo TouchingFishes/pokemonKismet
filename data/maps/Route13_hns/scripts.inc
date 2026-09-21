@@ -336,7 +336,7 @@ Route13_TravelToAlola_13:
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_ROUTE13_BOAT
 	special RemoveCameraObject
-	warp MAP_MELEMELE_ISLE_HNS, 25, 33
+	warp MAP_DAO_DAO_ISLES_ISLE3HNS, 25, 33
 	waitstate
 	end
 
@@ -371,7 +371,7 @@ Route13_TravelToAlola_16:
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_ROUTE13_BOAT
 	special RemoveCameraObject
-	warp MAP_MELEMELE_ISLE_HNS, 25, 33
+	warp MAP_DAO_DAO_ISLES_ISLE3HNS, 25, 33
 	waitstate
 	end
 

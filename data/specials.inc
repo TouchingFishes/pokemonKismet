@@ -712,3 +712,4 @@ gSpecials::
 	def_special IsPartyLimitChallengeActive
 	def_special ScriptGetWeekDay
 	def_special SetChosenWeekDay
+	def_special RollTreasureBeachItem

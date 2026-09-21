@@ -1485,7 +1485,24 @@
 #define FLAG_DAILY_BUENAS_PASSWORD_GUESSED          (DAILY_FLAGS_START + 9)
 #define FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY_HNS   (DAILY_FLAGS_START +10)
 #define FLAG_DAILY_MOM_ITEM_GIFT                    (DAILY_FLAGS_START +11)
-#define DAILY_FLAGS_END                             (DAILY_FLAGS_START +11)
+
+// DaoDao Treasure Beach: one per searchable rock, so each rock gives one attempt
+// a day. They live in this block precisely so ClearDailyFlags() re-arms all of
+// them at the date rollover with no extra code.
+#define FLAG_DAILY_TREASURE_ROCK_1                  (DAILY_FLAGS_START +12)
+#define FLAG_DAILY_TREASURE_ROCK_2                  (DAILY_FLAGS_START +13)
+#define FLAG_DAILY_TREASURE_ROCK_3                  (DAILY_FLAGS_START +14)
+#define FLAG_DAILY_TREASURE_ROCK_4                  (DAILY_FLAGS_START +15)
+#define FLAG_DAILY_TREASURE_ROCK_5                  (DAILY_FLAGS_START +16)
+#define FLAG_DAILY_TREASURE_ROCK_6                  (DAILY_FLAGS_START +17)
+#define FLAG_DAILY_TREASURE_ROCK_7                  (DAILY_FLAGS_START +18)
+#define FLAG_DAILY_TREASURE_ROCK_8                  (DAILY_FLAGS_START +19)
+#define FLAG_DAILY_TREASURE_ROCK_9                  (DAILY_FLAGS_START +20)
+#define FLAG_DAILY_TREASURE_ROCK_10                 (DAILY_FLAGS_START +21)
+#define FLAG_DAILY_TREASURE_ROCK_11                 (DAILY_FLAGS_START +22)
+#define FLAG_DAILY_TREASURE_ROCK_12                 (DAILY_FLAGS_START +23)
+
+#define DAILY_FLAGS_END                             (DAILY_FLAGS_START +23)
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
 #define BUILD_FLAGS_END                             DAILY_FLAGS_END
 
