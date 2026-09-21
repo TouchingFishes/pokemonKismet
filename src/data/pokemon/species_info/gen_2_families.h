@@ -6871,12 +6871,15 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_CORSOLA
     [SPECIES_CORSOLA] =
     {
-        .baseHP        = P_UPDATED_STATS >= GEN_7 ? 65 : 55,
+        // Kismet keeps the GEN III line: CORSOLA now evolves into CORSOREEF, so
+        // it no longer needs the GEN VII bulk buff that propped it up as a
+        // standalone. BST 380 rather than 410.
+        .baseHP        = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 55 : (P_UPDATED_STATS >= GEN_7 ? 65 : 55),
         .baseAttack    = 55,
-        .baseDefense   = P_UPDATED_STATS >= GEN_7 ? 95 : 85,
+        .baseDefense   = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 85 : (P_UPDATED_STATS >= GEN_7 ? 95 : 85),
         .baseSpeed     = 35,
         .baseSpAttack  = 65,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_7 ? 95 : 85,
+        .baseSpDefense = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 85 : (P_UPDATED_STATS >= GEN_7 ? 95 : 85),
         .types = MON_TYPES(TYPE_WATER, TYPE_ROCK),
         .catchRate = 60,
     #if P_UPDATED_EXP_YIELDS >= GEN_7

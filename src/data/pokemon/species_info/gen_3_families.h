@@ -10422,12 +10422,15 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_CHIMECHO] =
     {
-        .baseHP        = P_UPDATED_STATS >= GEN_7 ? 75 : 65,
+        // Kismet keeps the GEN III line: CHIMECHO now evolves into DECIBELLE
+        // (Sun Stone), so it no longer needs the GEN VII buff that propped it up
+        // as a standalone. BST 425 rather than 455.
+        .baseHP        = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 65 : (P_UPDATED_STATS >= GEN_7 ? 75 : 65),
         .baseAttack    = 50,
-        .baseDefense   = P_UPDATED_STATS >= GEN_7 ? 80 : 70,
+        .baseDefense   = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 70 : (P_UPDATED_STATS >= GEN_7 ? 80 : 70),
         .baseSpeed     = 65,
         .baseSpAttack  = 95,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_7 ? 90 : 80,
+        .baseSpDefense = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 80 : (P_UPDATED_STATS >= GEN_7 ? 90 : 80),
         .types = MON_TYPES(TYPE_PSYCHIC),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_7
