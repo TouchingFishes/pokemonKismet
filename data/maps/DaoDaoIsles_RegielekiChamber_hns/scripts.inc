@@ -1,0 +1,33 @@
+DaoDaoIsles_RegielekiChamber_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DaoDaoIsles_RegielekiChamber_OnTransition
+	.byte 0
+
+DaoDaoIsles_RegielekiChamber_OnTransition:
+	setflag FLAG_HIDE_DAODAO_REGIELEKI
+	goto_if_unset FLAG_DEFEATED_DAODAO_BOSS_REGIELEKI, DaoDaoIsles_RegielekiChamber_Ret
+	clearflag FLAG_HIDE_DAODAO_REGIELEKI
+DaoDaoIsles_RegielekiChamber_Ret:
+	end
+
+DaoDaoIsles_RegielekiChamber_EventScript_Regieleki::
+	lock
+	faceplayer
+	playmoncry SPECIES_REGIELEKI, CRY_MODE_ENCOUNTER
+	waitmoncry
+	seteventmon SPECIES_REGIELEKI, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_RegielekiChamber_EventScript_Stays
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_DAODAO_REGIELEKI
+	setflag FLAG_HIDE_DAODAO_REGIELEKI
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+DaoDaoIsles_RegielekiChamber_EventScript_Stays::
+	release
+	end

@@ -1,0 +1,33 @@
+DaoDaoIsles_RegirockChamber_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DaoDaoIsles_RegirockChamber_OnTransition
+	.byte 0
+
+DaoDaoIsles_RegirockChamber_OnTransition:
+	setflag FLAG_HIDE_DAODAO_REGIROCK
+	goto_if_unset FLAG_DEFEATED_DAODAO_BOSS_REGIROCK, DaoDaoIsles_RegirockChamber_Ret
+	clearflag FLAG_HIDE_DAODAO_REGIROCK
+DaoDaoIsles_RegirockChamber_Ret:
+	end
+
+DaoDaoIsles_RegirockChamber_EventScript_Regirock::
+	lock
+	faceplayer
+	playmoncry SPECIES_REGIROCK, CRY_MODE_ENCOUNTER
+	waitmoncry
+	seteventmon SPECIES_REGIROCK, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_RegirockChamber_EventScript_Stays
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_DAODAO_REGIROCK
+	setflag FLAG_HIDE_DAODAO_REGIROCK
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+DaoDaoIsles_RegirockChamber_EventScript_Stays::
+	release
+	end

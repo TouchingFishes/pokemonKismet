@@ -3,6 +3,7 @@ DaoDaoIsles_RocketLab_hns_MapScripts::
 	.byte 0
 
 DaoDaoIsles_RocketLab_OnTransition:
+	setflag FLAG_DAODAO_ROCKET_LAB_FOUND
 	call DaoDaoIsles_RocketLab_SetGideon
 	call DaoDaoIsles_RocketLab_SetGiovanni
 	call DaoDaoIsles_RocketLab_SetGenesect
@@ -29,9 +30,6 @@ DaoDaoIsles_RocketLab_SetGenesect:
 
 DaoDaoIsles_RocketLab_Ret:
 	return
-
-@ The crew still working the warehouse. Sight-range trainers, so the room has to
-@ be fought through rather than walked past on the way to Gideon.
 
 DaoDaoIsles_RocketLab_EventScript_Biker1::
 	trainerbattle_single TRAINER_DAODAO_LAB_BIKER_1_HNS, DaoDaoIsles_RocketLab_Text_Biker1Intro, DaoDaoIsles_RocketLab_Text_Biker1Defeat
@@ -68,6 +66,7 @@ DaoDaoIsles_RocketLab_EventScript_Gideon::
 	end
 
 DaoDaoIsles_RocketLab_EventScript_GideonDefeated::
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 8
 	setflag FLAG_DEFEATED_DAODAO_LAB_GIDEON
 	msgbox DaoDaoIsles_RocketLab_Text_GideonPostBattle, MSGBOX_DEFAULT
 	closemessage
@@ -209,8 +208,11 @@ DaoDaoIsles_RocketLab_Text_Scientist2Post:
 	.string "That was the whole of the work.$"
 
 DaoDaoIsles_RocketLab_Text_GideonIntro:
-	.string "You found it.\p"
-	.string "Nobody was meant to find it.\p"
+	.string "You.\p"
+	.string "You pulled the FEDERATION apart in\n"
+	.string "FUCHSIA and you still came out\l"
+	.string "here after me.\p"
+	.string "PAXTON shouted. I packed.\p"
 	.string "Do you have any idea what we built\n"
 	.string "in this room?$"
 
@@ -218,10 +220,13 @@ DaoDaoIsles_RocketLab_Text_GideonDefeat:
 	.string "My work was sound!$"
 
 DaoDaoIsles_RocketLab_Text_GideonPostBattle:
-	.string "The boss wanted a weapon.\p"
-	.string "I gave him one, and then I spent\n"
-	.string "twenty years wishing I hadn't.\p"
-	.string "He never left either.\n"
+	.string "The FEDERATION was going to be my\n"
+	.string "second chance. Clean work.\p"
+	.string "It took about a month to turn into\n"
+	.string "the same thing again.\p"
+	.string "Tell JANINE it's finished. She has\n"
+	.string "earned hearing it.\p"
+	.string "The boss never left either.\n"
 	.string "Go on. He's waiting.$"
 
 DaoDaoIsles_RocketLab_Text_GiovanniIntro:

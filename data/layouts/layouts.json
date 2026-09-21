@@ -16613,6 +16613,78 @@
       "border_width": 2,
       "game_version": "hns",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_REGIROCK_CHAMBER_HNS",
+      "name": "DaoDaoIsles_RegirockChamber_hns_Layout",
+      "width": 17,
+      "height": 13,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/DaoDaoIsles_RegirockChamber_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_RegirockChamber_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_REGISTEEL_CHAMBER_HNS",
+      "name": "DaoDaoIsles_RegisteelChamber_hns_Layout",
+      "width": 17,
+      "height": 13,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/DaoDaoIsles_RegisteelChamber_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_RegisteelChamber_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_REGICE_CHAMBER_HNS",
+      "name": "DaoDaoIsles_RegiceChamber_hns_Layout",
+      "width": 17,
+      "height": 13,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/DaoDaoIsles_RegiceChamber_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_RegiceChamber_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_REGIELEKI_CHAMBER_HNS",
+      "name": "DaoDaoIsles_RegielekiChamber_hns_Layout",
+      "width": 17,
+      "height": 13,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/DaoDaoIsles_RegielekiChamber_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_RegielekiChamber_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_REGIDRAGO_CHAMBER_HNS",
+      "name": "DaoDaoIsles_RegidragoChamber_hns_Layout",
+      "width": 17,
+      "height": 13,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/DaoDaoIsles_RegidragoChamber_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_RegidragoChamber_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_BRAILLE_CHAMBER_HNS",
+      "name": "DaoDaoIsles_BrailleChamber_hns_Layout",
+      "width": 19,
+      "height": 11,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/DaoDaoIsles_BrailleChamber_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_BrailleChamber_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
     }
   ]
 }

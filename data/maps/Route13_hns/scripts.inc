@@ -35,8 +35,6 @@ Route13_OnTransition:
 	end
 
 Route13_EventScript_TryLiftKantoCordon::
-	@ STEVEN has to have sent you (state 7), and you have to have actually done
-	@ something out there.
 	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 7, Route13_EventScript_CordonStays
 	goto_if_lt VAR_ALOLA_STATE, 2, Route13_EventScript_CordonStays
 	call Common_EventScript_ClearKantoCordon
@@ -266,9 +264,6 @@ Route13_TravelToAlola::
 	lock
 	faceplayer
 	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 7, Route13_TravelToAlola_1
-	checkitem ITEM_STRANGE_SOUVENIR
-	compare VAR_RESULT, 0
-	goto_if_ne Route13_TravelToAlola_1
 	msgbox Route13_TravelToAlola_Text_4, MSGBOX_AUTOCLOSE
 	release
 	end
@@ -461,8 +456,8 @@ Route13_TravelToAlola_Text_3:
 
 Route13_TravelToAlola_Text_4:
 	.string "Ahoy!\n"
-	.string "This port is for residents only.\p"
-	.string "All of the residents of these ISLES\n"
-	.string "carry some… {PAUSE 30}strange souvenirs.\p"
-	.string "It makes them so easy to identify,\n"
-	.string "I don't even need to check tickets!$"
+	.string "This port is chartered, not public.\p"
+	.string "I sail when the man in the SAFARI\n"
+	.string "ZONE office says I sail.\p"
+	.string "Sort out whatever's gone wrong in\n"
+	.string "FUCHSIA and come back to me.$"

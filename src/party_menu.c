@@ -27,6 +27,7 @@
 #include "fieldmap.h"
 #include "fldeff.h"
 #include "fldeff_misc.h"
+#include "braille_puzzles.h"
 #include "follower_npc.h"
 #include "frontier_util.h"
 #include "gpu_regs.h"
@@ -4346,6 +4347,13 @@ static void FieldCallback_Waterfall(void)
 bool32 SetUpFieldMove_Waterfall(void)
 {
     s16 x, y;
+    if (ShouldDoBrailleWaterfallEffect())
+    {
+        gSpecialVar_Result = GetCursorSelectionMonId();
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = SetUpPuzzleEffectWaterfall;
+        return TRUE;
+    }
 
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_WATERFALL))
         return FALSE;

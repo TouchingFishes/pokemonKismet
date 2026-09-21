@@ -7,5 +7,7 @@ bool8 ShouldDoBrailleDigEffect(void);
 void DoBrailleDigEffect(void);
 void SetUpPuzzleEffectRegisteel(void);
 void SetUpPuzzleEffectRegirock(void);
+bool8 ShouldDoBrailleWaterfallEffect(void);
+void SetUpPuzzleEffectWaterfall(void);
 
 #endif // GUARD_BRAILLE_PUZZLES_H

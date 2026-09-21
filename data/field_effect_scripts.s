@@ -87,6 +87,7 @@ gFieldEffectScriptPointers::
 	.4byte gFldEffScript_SmileyFaceIcon    		        @ FLDEFF_SMILEY_FACE_ICON
 	.4byte gFieldEffectScript_HallOfFameRecordFrlg      @ FLDEFF_HALL_OF_FAME_RECORD_FRLG
 	.4byte gFldEffScript_PhotoFlash      		        @ FLDEFF_PHOTO_FLASH
+	.4byte gFieldEffectScript_UseWaterfallPuzzleEffect  @ FLDEFF_USE_WATERFALL_PUZZLE_EFFECT
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -328,6 +329,10 @@ gFieldEffectScript_ShowCutGrass::
 
 gFieldEffectScript_FieldMoveShowMonInit::
 	field_eff_callnative FldEff_FieldMoveShowMonInit
+	field_eff_end
+
+gFieldEffectScript_UseWaterfallPuzzleEffect::
+	field_eff_callnative FldEff_UseWaterfallPuzzleEffect
 	field_eff_end
 
 gFieldEffectScript_UsePuzzleEffect::

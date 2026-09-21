@@ -603,7 +603,13 @@
     "UlaUla_Cave_2_hns",
     "Akala_Cave_hns",
     "DaoDaoIsles_EternaForest_hns",
-    "DaoDaoIsles_RocketLab_hns"
+    "DaoDaoIsles_RocketLab_hns",
+    "DaoDaoIsles_RegirockChamber_hns",
+    "DaoDaoIsles_RegisteelChamber_hns",
+    "DaoDaoIsles_RegiceChamber_hns",
+    "DaoDaoIsles_RegielekiChamber_hns",
+    "DaoDaoIsles_RegidragoChamber_hns",
+    "DaoDaoIsles_BrailleChamber_hns"
   ],
   "gMapGroup_IndoorDynamic_Hns": [
     "UnionRoom_hns"

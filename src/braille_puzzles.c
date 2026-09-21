@@ -408,3 +408,74 @@ bool8 CheckCelebi(void)
 
     return TRUE;
 }
+
+// ---------------------------------------------------------------------------
+// DaoDao Isles: the Waterfall riddle that wakes the Regis.
+//
+// Deliberately its OWN field effect rather than a third branch of
+// FldEff_UsePuzzleEffect - that router keys off sIsRegisteelPuzzle, which is a
+// bool8 and can only ever distinguish two puzzles. A separate FLDEFF leaves the
+// two RSE puzzles untouched.
+//
+// Waterfall is gated on FLAG_BADGE08_GET (src/field_move.c), so the riddle is
+// implicitly post-badge-8 - which is the point: it is meant to read as proof
+// the trainer is strong enough to be here.
+// ---------------------------------------------------------------------------
+// The braille wall in DaoDaoIsles_BrailleChamber_hns: tablets sit along this
+// row, and the player reads them from the tile below. Keep in step with the
+// bg_events in that map's map.json.
+#define BRAILLE_CHAMBER_WALL_Y      4
+#define BRAILLE_CHAMBER_WALL_X_MIN  5
+#define BRAILLE_CHAMBER_WALL_X_MAX  13
+
+static void DoBrailleWaterfallEffect(void);
+
+bool8 ShouldDoBrailleWaterfallEffect(void)
+{
+    if (FlagGet(FLAG_DAODAO_REGIS_ENABLED))
+        return FALSE;
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_DAO_DAO_ISLES_BRAILLE_CHAMBER_HNS)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_DAO_DAO_ISLES_BRAILLE_CHAMBER_HNS))
+        return FALSE;
+
+    // The braille runs as a wall of tablets along y = 4, x = 5..13, read from
+    // the row below. Accept anywhere in front of ANY of them, and the tablet
+    // row itself, so the player never has to hunt for one exact tile - if the
+    // HM silently fails to offer itself the puzzle just reads as broken.
+    if (gSaveBlock1Ptr->pos.y >= BRAILLE_CHAMBER_WALL_Y
+     && gSaveBlock1Ptr->pos.y <= BRAILLE_CHAMBER_WALL_Y + 1
+     && gSaveBlock1Ptr->pos.x >= BRAILLE_CHAMBER_WALL_X_MIN
+     && gSaveBlock1Ptr->pos.x <= BRAILLE_CHAMBER_WALL_X_MAX)
+        return TRUE;
+    return FALSE;
+}
+
+void SetUpPuzzleEffectWaterfall(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    FieldEffectStart(FLDEFF_USE_WATERFALL_PUZZLE_EFFECT);
+}
+
+void UseWaterfallHm_Callback(void)
+{
+    FieldEffectActiveListRemove(FLDEFF_USE_WATERFALL_PUZZLE_EFFECT);
+    DoBrailleWaterfallEffect();
+}
+
+static void DoBrailleWaterfallEffect(void)
+{
+    FlagSet(FLAG_DAODAO_REGIS_ENABLED);
+    DoSealedChamberShakingEffect_Long();
+    PlaySE(SE_BANG);
+    UnlockPlayerFieldControls();
+    UnfreezeObjectEvents();
+}
+
+bool8 FldEff_UseWaterfallPuzzleEffect(void)
+{
+    u8 taskId = CreateFieldMoveTask();
+
+    gTasks[taskId].data[8] = (u32)UseWaterfallHm_Callback >> 16;
+    gTasks[taskId].data[9] = (u32)UseWaterfallHm_Callback;
+    return FALSE;
+}

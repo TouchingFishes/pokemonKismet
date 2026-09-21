@@ -93,6 +93,7 @@ FuchsiaCity_SafariZoneEntrance_EventScript_StevenUnderSiege::
 	end
 
 FuchsiaCity_SafariZoneEntrance_EventScript_StevenAfterFederation::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 8, FuchsiaCity_SafariZoneEntrance_EventScript_StevenGideonAccountedFor
 	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 7, FuchsiaCity_SafariZoneEntrance_EventScript_StevenCharterDone
 	goto_if_unset FLAG_DEFEATED_VERMILION_GYM, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady
 	goto_if_unset FLAG_DEFEATED_CELADON_GYM, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady
@@ -113,6 +114,21 @@ FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady::
 	closemessage
 	release
 	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_StevenGideonAccountedFor::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenGideonAccountedFor, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenGideonAccountedFor:
+	.string "JANINE sent word from the docks.\p"
+	.string "GIDEON. Out past the DAODAO\n"
+	.string "ISLES, of all places.\p"
+	.string "That was the last name anyone\n"
+	.string "was still carrying.\p"
+	.string "The FEDERATION is closed.\n"
+	.string "Thank you.$"
 
 FuchsiaCity_SafariZoneEntrance_EventScript_StevenDeclineBattle::
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenDecline, MSGBOX_DEFAULT
@@ -145,9 +161,6 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenChamp:
 
 FuchsiaCity_SafariZoneEntrance_EventScript_EntranceCounterTrigger::
 	lockall
-	@ No tickets while the FEDERATION holds the building - the attendant is
-	@ hidden by FLAG_HIDE_SAFARI_STAFF, so without this the counter would take
-	@ the player's money on behalf of nobody.
 	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_SafariZoneEntrance_EventScript_CounterOpen
 	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_SafariZoneEntrance_EventScript_CounterOpen
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_CounterShut, MSGBOX_DEFAULT

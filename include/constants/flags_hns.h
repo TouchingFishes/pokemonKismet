@@ -1319,11 +1319,26 @@
 // added, which is why this scene starts at state 3 rather than at the lockdown.
 // Unlike the STANDOFF this one IS set in new_game.inc: she must not be out
 // here before the arc, and CLEAR would put her there from a new file.
-// DaoDao Isles hidden Rocket lab, at the west end of the Water Labyrinth.
-// Opened only once the player has beaten Giovanni in the Celebi time-travel
-// encounter (VAR_TOHJO_FALLS_GIOVANNI_STATE == 2) AND become Champion a second
-// time (FLAG_IS_KANTO_CHAMPION); the door's hide state is recomputed in the
-// Water Labyrinth's ON_TRANSITION because hide flags default to CLEAR.
+#define FLAG_HIDE_FUCHSIA_JANINE_FIGHT              (HNS_EXTENDED_CONTENT_START + 337)
+
+// ---------------------------------------------------------------------------
+// DaoDao Isles hidden Rocket lab, at the west end of the Water Labyrinth, and
+// the tail of the KANTO POKeMON FEDERATION arc above.
+//
+// GIDEON was the FEDERATION's scientist. He slipped out of FUCHSIA while PAXTON
+// was being taken down and went to ground in the sunken warehouse - which is
+// reachable only because Steven's charter (FEDERATION state 7) opens the
+// ROUTE 13 boat in the first place. Beating him there closes the arc.
+//
+// The door is sealed until the player has beaten GIOVANNI in the Celebi
+// time-travel encounter (VAR_TOHJO_FALLS_GIOVANNI_STATE == 2) AND is Champion a
+// second time (FLAG_IS_KANTO_CHAMPION). Both are derived in the Water
+// Labyrinth's ON_LOAD rather than stored, because SSAqua_1F clears
+// FLAG_IS_KANTO_CHAMPION on the first Kanto voyage.
+//
+// ...except once the player has actually been inside. FOUND is sticky, and the
+// ON_LOAD short-circuits on it, so a later reset of FLAG_IS_KANTO_CHAMPION can
+// never wall someone out of an arc they have already started.
 #define FLAG_DAODAO_ROCKET_LAB_FOUND                (HNS_EXTENDED_CONTENT_START + 338)
 #define FLAG_HIDE_DAODAO_LAB_GIDEON                 (HNS_EXTENDED_CONTENT_START + 339)
 #define FLAG_HIDE_DAODAO_LAB_GIOVANNI               (HNS_EXTENDED_CONTENT_START + 340)
@@ -1331,7 +1346,24 @@
 #define FLAG_DEFEATED_DAODAO_LAB_GIDEON             (HNS_EXTENDED_CONTENT_START + 342)
 #define FLAG_DEFEATED_DAODAO_LAB_GIOVANNI           (HNS_EXTENDED_CONTENT_START + 343)
 
-#define FLAG_HIDE_FUCHSIA_JANINE_FIGHT              (HNS_EXTENDED_CONTENT_START + 337)
+// DaoDao Regi arc. The Waterfall braille riddle in the sixth Ruin Archipelago
+// chamber sets FLAG_DAODAO_REGIS_ENABLED, which is what lets the five overworld
+// bosses spawn; beating a boss then clears its Regi's hide flag, and the Regi
+// appears in its own chamber. Regigigas on the main isle counts Regis HELD, so
+// it needs no flag of its own beyond its spawn gate.
+#define FLAG_DAODAO_REGIS_ENABLED                   (HNS_EXTENDED_CONTENT_START + 344)
+#define FLAG_HIDE_DAODAO_REGIROCK                   (HNS_EXTENDED_CONTENT_START + 345)
+#define FLAG_HIDE_DAODAO_REGISTEEL                  (HNS_EXTENDED_CONTENT_START + 346)
+#define FLAG_HIDE_DAODAO_REGICE                     (HNS_EXTENDED_CONTENT_START + 347)
+#define FLAG_HIDE_DAODAO_REGIELEKI                  (HNS_EXTENDED_CONTENT_START + 348)
+#define FLAG_HIDE_DAODAO_REGIDRAGO                  (HNS_EXTENDED_CONTENT_START + 349)
+#define FLAG_DEFEATED_DAODAO_BOSS_REGIROCK          (HNS_EXTENDED_CONTENT_START + 350)
+#define FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL         (HNS_EXTENDED_CONTENT_START + 351)
+#define FLAG_DEFEATED_DAODAO_BOSS_REGICE            (HNS_EXTENDED_CONTENT_START + 352)
+#define FLAG_DEFEATED_DAODAO_BOSS_REGIELEKI         (HNS_EXTENDED_CONTENT_START + 353)
+#define FLAG_DEFEATED_DAODAO_BOSS_REGIDRAGO         (HNS_EXTENDED_CONTENT_START + 354)
+#define FLAG_HIDE_DAODAO_REGIGIGAS                  (HNS_EXTENDED_CONTENT_START + 355)
+
 
 //just fyi HNS_EXTENDED_CONTENT_START is 0x36A
 // Grown from 324 to 338 by the Fuchsia Federation arc, into the 0x4A6-0x4FF
