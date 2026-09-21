@@ -209,34 +209,6 @@
       "flag": "FLAG_AKALA_HIDDEN_ITEM_1"
     },
     {
-      "local_id": "Akala_Flyover_Tapu",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAPU_LELE)",
-      "x": 45,
-      "y": 19,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_FLYOVER"
-    },
-    {
-      "local_id": "Akala_Tapu",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAPU_LELE)",
-      "x": 9,
-      "y": 11,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Akala_BattleVsTapuLele",
-      "flag": "FLAG_HIDE_TAPU_LELE"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
       "x": 26,
       "y": 32,
@@ -386,24 +358,6 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "Alola_Akala_TotemBattle_Trigger"
-    },
-    {
-      "type": "trigger",
-      "x": 37,
-      "y": 23,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Alola_Akala_TapuLele_Flyover"
-    },
-    {
-      "type": "trigger",
-      "x": 36,
-      "y": 23,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Alola_Akala_TapuLele_Flyover"
     },
     {
       "type": "trigger",

@@ -85,34 +85,6 @@
       "flag": "0"
     },
     {
-      "local_id": "Poni_Flyover_Tapu",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAPU_FINI)",
-      "x": 11,
-      "y": 34,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_FLYOVER"
-    },
-    {
-      "local_id": "Poni_Tapu",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAPU_FINI)",
-      "x": 13,
-      "y": 8,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Poni_BattleVsTapuFini",
-      "flag": "FLAG_HIDE_TAPU_FINI"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1_HNS",
       "x": 34,
       "y": 16,
@@ -245,24 +217,6 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "Alola_Poni_TotemBattle_Trigger"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 28,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Alola_Poni_TapuFini_Flyover"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 28,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Alola_Poni_TapuFini_Flyover"
     },
     {
       "type": "trigger",
