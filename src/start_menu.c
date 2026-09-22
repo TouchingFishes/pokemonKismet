@@ -154,7 +154,7 @@ static bool8 FieldCB_ReturnToFieldStartMenu(void);
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .bg = 0,
     .tilemapLeft = 1,
-    .tilemapTop = 5,
+    .tilemapTop = 7,
     .width = 9,
     .height = 4,
     .paletteNum = 15,
@@ -166,7 +166,7 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
     .tilemapLeft = 1,
     .tilemapTop = 1,
     .width = 6,
-    .height = 2,
+    .height = 4,
     .paletteNum = 15,
     .baseBlock = 0x30
 };
@@ -502,9 +502,16 @@ static void ShowPyramidFloorWindow(void)
 static const u8 sText_AM[] = _("AM");
 static const u8 sText_PM[] = _("PM");
 
+static const u8 *const sStartClockDayNames[WEEKDAY_COUNT] =
+{
+    gText_Sunday, gText_Monday, gText_Tuesday, gText_Wednesday,
+    gText_Thursday, gText_Friday, gText_Saturday,
+};
+
 static void ShowTimeWindow(void)
 {
     const u8 *suffix;
+    const u8 *dayName;
     u8 *ptr;
     u8 convertedHours;
 
@@ -531,6 +538,10 @@ static void ShowTimeWindow(void)
 
     AddTextPrinterParameterized(sStartClockWindowId, FONT_NORMAL, suffix,
         GetStringWidth(FONT_NORMAL, gStringVar4, 0) + 3, 1, 0xFF, NULL);
+
+    dayName = sStartClockDayNames[GetWeekDay()];
+    AddTextPrinterParameterized(sStartClockWindowId, FONT_NARROW, dayName,
+        (CLOCK_WINDOW_WIDTH - GetStringWidth(FONT_NARROW, dayName, 0)) / 2, 17, 0xFF, NULL);
 
     CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
 }
