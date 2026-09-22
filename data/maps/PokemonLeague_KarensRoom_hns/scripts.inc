@@ -14,7 +14,7 @@ PokemonLeague_KarensRoom_EventScript_Karen::
 	faceplayer
 	goto_if_ge VAR_LEAGUE_STATE, 5, PokemonLeague_KarensRoom_EventScript_KarenDefeated
 	goto_if_unset FLAG_IS_CHAMPION, PokemonLeague_KarensRoom_EventScript_KarenFirstBattle
-	goto_if_ge VAR_ALOLA_STATE, 4, PokemonLeague_KarensRoom_EventScript_KarenRematch
+	goto_if_set FLAG_DEFEATED_DAODAO_LAB_GIDEON, PokemonLeague_KarensRoom_EventScript_KarenRematch
 
 PokemonLeague_KarensRoom_EventScript_KarenFirstBattle::
 	msgbox PokemonLeague_KarensRoom_Text_Before, MSGBOX_DEFAULT

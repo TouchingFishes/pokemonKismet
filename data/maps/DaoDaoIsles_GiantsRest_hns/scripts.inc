@@ -1,5 +1,58 @@
 DaoDaoIsles_GiantsRest_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DaoDaoIsles_GiantsRest_OnTransition
 	.byte 0
+
+DaoDaoIsles_GiantsRest_OnTransition:
+	setflag FLAG_HIDE_DAODAO_STEVEN
+	goto_if_unset FLAG_HIDE_DAODAO_REGIGIGAS, DaoDaoIsles_GiantsRest_Ret
+	goto_if_set FLAG_DEFEATED_DAODAO_STEVEN, DaoDaoIsles_GiantsRest_Ret
+	clearflag FLAG_HIDE_DAODAO_STEVEN
+DaoDaoIsles_GiantsRest_Ret:
+	end
+
+DaoDaoIsles_GiantsRest_EventScript_Steven::
+	lock
+	faceplayer
+	msgbox DaoDaoIsles_GiantsRest_Text_StevenIntro, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_STEVEN_HNS, DaoDaoIsles_GiantsRest_Text_StevenDefeat
+	setflag FLAG_DEFEATED_DAODAO_STEVEN
+	msgbox DaoDaoIsles_GiantsRest_Text_StevenAfter, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_DAODAO_STEVEN_FINAL
+	setflag FLAG_HIDE_DAODAO_STEVEN
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+DaoDaoIsles_GiantsRest_Text_StevenIntro:
+	.string "I felt it in FUCHSIA. So did the\n"
+	.string "gulls, apparently - they came off\l"
+	.string "the water all at once.\p"
+	.string "Something very old stood up out\n"
+	.string "here, and then it stopped.\p"
+	.string "That was you.\p"
+	.string "{PLAYER}, I have watched you close\n"
+	.string "one thing after another. The\l"
+	.string "FEDERATION. This place.\p"
+	.string "I don't have anything left to ask\n"
+	.string "you for. Only this.\p"
+	.string "Everything I have. Here, on the\n"
+	.string "stone, where it was sleeping.$"
+
+DaoDaoIsles_GiantsRest_Text_StevenDefeat:
+	.string "…Ah.\p"
+	.string "Of course.$"
+
+DaoDaoIsles_GiantsRest_Text_StevenAfter:
+	.string "There. That's the last of it.\p"
+	.string "I came to KANTO on company business\n"
+	.string "and I am leaving it a spectator.\p"
+	.string "I won't follow you any further,\n"
+	.string "{PLAYER}. There's nothing out here\l"
+	.string "I can teach you now.\p"
+	.string "Mind the stair on the way down.$"
 
 DaoDaoIsles_GiantsRest_EventScript_Regigigas::
 	lock

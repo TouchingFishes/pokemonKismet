@@ -56,7 +56,7 @@ PokemonLeague_WillsRoom_EventScript_Will::
 	faceplayer
 	goto_if_ge VAR_LEAGUE_STATE, 2, PokemonLeague_WillsRoom_EventScript_WillDefeated
 	goto_if_unset FLAG_IS_CHAMPION, PokemonLeague_WillsRoom_EventScript_WillFirstBattle
-	goto_if_ge VAR_ALOLA_STATE, 4, PokemonLeague_WillsRoom_EventScript_WillRematch
+	goto_if_set FLAG_DEFEATED_DAODAO_LAB_GIDEON, PokemonLeague_WillsRoom_EventScript_WillRematch
 
 PokemonLeague_WillsRoom_EventScript_WillFirstBattle::
 	msgbox PokemonLeague_WillsRoom_Text_Before, MSGBOX_DEFAULT

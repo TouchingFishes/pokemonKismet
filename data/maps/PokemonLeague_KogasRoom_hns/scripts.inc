@@ -14,7 +14,7 @@ PokemonLeague_KogasRoom_EventScript_Koga::
 	faceplayer
 	goto_if_ge VAR_LEAGUE_STATE, 3, PokemonLeague_KogasRoom_EventScript_KogaDefeated
 	goto_if_unset FLAG_IS_CHAMPION, PokemonLeague_KogasRoom_EventScript_KogaFirstBattle
-	goto_if_ge VAR_ALOLA_STATE, 4, PokemonLeague_KogasRoom_EventScript_KogaRematch
+	goto_if_set FLAG_DEFEATED_DAODAO_LAB_GIDEON, PokemonLeague_KogasRoom_EventScript_KogaRematch
 
 PokemonLeague_KogasRoom_EventScript_KogaFirstBattle::
 	msgbox PokemonLeague_KogasRoom_Text_Before, MSGBOX_DEFAULT

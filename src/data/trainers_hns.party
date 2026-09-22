@@ -22033,3 +22033,283 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - MOVE_FLAMETHROWER
 - MOVE_FAINT_ATTACK
 - MOVE_BEAT_UP
+
+=== TRAINER_ELITE_SIDNEY_HNS ===
+Name: SIDNEY
+Class: Ex Elite Hns
+Pic: Elite Four Sidney
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
+
+SPECIES_MIGHTYENA @ ITEM_BLACK_GLASSES
+Level: Badge+2
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- MOVE_ROAR
+- MOVE_DOUBLE_EDGE
+- MOVE_SAND_ATTACK
+- MOVE_CRUNCH
+
+SPECIES_SHIFTRY @ ITEM_LIFE_ORB
+Level: Badge+3
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- MOVE_TORMENT
+- MOVE_DOUBLE_TEAM
+- MOVE_SWAGGER
+- MOVE_EXTRASENSORY
+
+SPECIES_CACTURNE @ ITEM_FOCUS_SASH
+Level: Badge+3
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- MOVE_LEECH_SEED
+- MOVE_PAYBACK
+- MOVE_NEEDLE_ARM
+- MOVE_COTTON_SPORE
+
+SPECIES_CRAWDAUNT @ ITEM_LIFE_ORB
+Level: Badge+4
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- MOVE_SURF
+- MOVE_SWORDS_DANCE
+- MOVE_STRENGTH
+- MOVE_FACADE
+
+SPECIES_SHARPEDO @ ITEM_MYSTIC_WATER
+Level: Badge+4
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 SpA / 252 Spe
+Hasty Nature
+- MOVE_CRUNCH
+- MOVE_SURF
+- MOVE_ICE_BEAM
+- MOVE_SCARY_FACE
+
+SPECIES_ABSOL @ ITEM_SITRUS_BERRY
+Level: Badge+5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- MOVE_AERIAL_ACE
+- MOVE_ROCK_SLIDE
+- MOVE_SWORDS_DANCE
+- MOVE_SLASH
+
+=== TRAINER_ELITE_PHOEBE_HNS ===
+Name: PHOEBE
+Class: Ex Elite Hns
+Pic: Elite Four Phoebe
+Gender: Female
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
+
+SPECIES_SABLEYE @ ITEM_LEFTOVERS
+Level: Badge+2
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+Impish Nature
+- MOVE_SHADOW_CLAW
+- MOVE_PAYBACK
+- MOVE_DOUBLE_TEAM
+- MOVE_POWER_GEM
+
+SPECIES_BANETTE @ ITEM_LIFE_ORB
+Level: Badge+3
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- MOVE_SHADOW_BALL
+- MOVE_GRUDGE
+- MOVE_WILL_O_WISP
+- MOVE_SHADOW_CLAW
+
+SPECIES_DRIFBLIM @ ITEM_LEFTOVERS
+Level: Badge+3
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 Spe
+Modest Nature
+- MOVE_SHADOW_BALL
+- MOVE_HEX
+- MOVE_THUNDERBOLT
+- MOVE_MINIMIZE
+
+SPECIES_MIMIKYU @ ITEM_FOCUS_SASH
+Level: Badge+4
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- MOVE_SHADOW_CLAW
+- MOVE_PLAY_ROUGH
+- MOVE_SWORDS_DANCE
+- MOVE_SHADOW_SNEAK
+
+SPECIES_DUSCLOPS @ ITEM_EVIOLITE
+Level: Badge+4
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Careful Nature
+- MOVE_SHADOW_PUNCH
+- MOVE_CONFUSE_RAY
+- MOVE_CURSE
+- MOVE_PROTECT
+
+SPECIES_DUSKNOIR @ ITEM_SITRUS_BERRY
+Level: Badge+5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- MOVE_SHADOW_BALL
+- MOVE_ICE_BEAM
+- MOVE_ROCK_SLIDE
+- MOVE_EARTHQUAKE
+
+=== TRAINER_ELITE_GLACIA_HNS ===
+Name: GLACIA
+Class: Ex Elite Hns
+Pic: Elite Four Glacia
+Gender: Female
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
+
+SPECIES_SEALEO @ ITEM_LEFTOVERS
+Level: Badge+2
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 SpD
+Careful Nature
+- MOVE_ENCORE
+- MOVE_BODY_SLAM
+- MOVE_HAIL
+- MOVE_ICE_BALL
+
+SPECIES_GLALIE @ ITEM_LIFE_ORB
+Level: Badge+3
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- MOVE_LIGHT_SCREEN
+- MOVE_CRUNCH
+- MOVE_ICY_WIND
+- MOVE_ICE_BEAM
+
+SPECIES_FROSLASS @ ITEM_FOCUS_SASH
+Level: Badge+3
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- MOVE_SHADOW_BALL
+- MOVE_ICE_BEAM
+- MOVE_CONFUSE_RAY
+- MOVE_BLIZZARD
+
+SPECIES_ABOMASNOW @ ITEM_NEVER_MELT_ICE
+Level: Badge+4
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 Def
+Modest Nature
+- MOVE_BLIZZARD
+- MOVE_WOOD_HAMMER
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_PUNCH
+
+SPECIES_BEARTIC @ ITEM_CHOICE_BAND
+Level: Badge+4
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- MOVE_ICICLE_CRASH
+- MOVE_SLASH
+- MOVE_BRINE
+- MOVE_SWAGGER
+
+SPECIES_WALREIN @ ITEM_SITRUS_BERRY
+Level: Badge+5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Calm Nature
+- MOVE_SURF
+- MOVE_BODY_SLAM
+- MOVE_ICE_BEAM
+- MOVE_SHEER_COLD
+
+=== TRAINER_ELITE_DRAKE_HNS ===
+Name: DRAKE
+Class: Ex Elite Hns
+Pic: Elite Four Drake
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
+
+SPECIES_SHELGON @ ITEM_EVIOLITE
+Level: Badge+2
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+Impish Nature
+- MOVE_ROCK_TOMB
+- MOVE_DRAGON_CLAW
+- MOVE_PROTECT
+- MOVE_DOUBLE_EDGE
+
+SPECIES_ALTARIA @ ITEM_LEFTOVERS
+Level: Badge+3
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- MOVE_DOUBLE_EDGE
+- MOVE_DRAGON_BREATH
+- MOVE_DRAGON_DANCE
+- MOVE_AERIAL_ACE
+
+SPECIES_KINGDRA @ ITEM_LIFE_ORB
+Level: Badge+3
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- MOVE_SMOKESCREEN
+- MOVE_DRAGON_DANCE
+- MOVE_SURF
+- MOVE_BODY_SLAM
+
+SPECIES_FLYGON @ ITEM_EXPERT_BELT
+Level: Badge+4
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 SpA / 252 Spe
+Naive Nature
+- MOVE_FLAMETHROWER
+- MOVE_ROCK_SLIDE
+- MOVE_DRAGON_BREATH
+- MOVE_EARTHQUAKE
+
+SPECIES_DRAGONITE @ ITEM_LEFTOVERS
+Level: Badge+4
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- MOVE_DRAGON_CLAW
+- MOVE_FIRE_PUNCH
+- MOVE_THUNDER_PUNCH
+- MOVE_OUTRAGE
+
+SPECIES_SALAMENCE @ ITEM_SITRUS_BERRY
+Level: Badge+5
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 SpA / 252 Spe
+Naive Nature
+- MOVE_FLAMETHROWER
+- MOVE_DRAGON_CLAW
+- MOVE_ROCK_SLIDE
+- MOVE_CRUNCH

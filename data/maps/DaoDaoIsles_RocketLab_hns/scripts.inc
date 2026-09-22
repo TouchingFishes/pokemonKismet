@@ -3,7 +3,6 @@ DaoDaoIsles_RocketLab_hns_MapScripts::
 	.byte 0
 
 DaoDaoIsles_RocketLab_OnTransition:
-	setflag FLAG_DAODAO_ROCKET_LAB_FOUND
 	call DaoDaoIsles_RocketLab_SetGideon
 	call DaoDaoIsles_RocketLab_SetKlinklang
 	call DaoDaoIsles_RocketLab_SetGiovanni

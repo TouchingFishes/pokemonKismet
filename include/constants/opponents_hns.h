@@ -872,8 +872,11 @@
 #define TRAINER_MANSION_BRAYDON_HNS                   823
 #define TRAINER_MANSION_LEWIS_HNS                     824
 #define TRAINER_MANSION_IVAN_HNS                      825
-
-#define TRAINERS_COUNT_HNS                       826
+#define TRAINER_ELITE_SIDNEY_HNS                      826
+#define TRAINER_ELITE_PHOEBE_HNS                      827
+#define TRAINER_ELITE_GLACIA_HNS                      828
+#define TRAINER_ELITE_DRAKE_HNS                       829
+#define TRAINERS_COUNT_HNS                       830
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

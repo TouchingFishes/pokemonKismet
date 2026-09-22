@@ -14,7 +14,7 @@ PokemonLeague_BrunosRoom_EventScript_Bruno::
 	faceplayer
 	goto_if_ge VAR_LEAGUE_STATE, 4, PokemonLeague_BrunosRoom_EventScript_BrunoDefeated
 	goto_if_unset FLAG_IS_CHAMPION, PokemonLeague_BrunosRoom_EventScript_BrunoFirstBattle
-	goto_if_ge VAR_ALOLA_STATE, 4, PokemonLeague_BrunosRoom_EventScript_BrunoRematch
+	goto_if_set FLAG_DEFEATED_DAODAO_LAB_GIDEON, PokemonLeague_BrunosRoom_EventScript_BrunoRematch
 
 PokemonLeague_BrunosRoom_EventScript_BrunoFirstBattle::
 	msgbox PokemonLeague_BrunosRoom_Text_Before, MSGBOX_DEFAULT

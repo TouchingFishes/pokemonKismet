@@ -45,7 +45,7 @@ PokemonLeague_WillsRoom_EventScript_Lance::
 	call_if_eq VAR_FACING, DIR_WEST, PokemonLeague_ChampionsRoom_EventScript_AdjustPlayerFacingWest
 	faceplayer
 	goto_if_unset FLAG_IS_CHAMPION, PokemonLeague_ChampionsRoom_EventScript_LanceFirstBattle
-	goto_if_ge VAR_ALOLA_STATE, 4, PokemonLeague_WillsRoom_EventScript_LanceRematch
+	goto_if_set FLAG_DEFEATED_DAODAO_LAB_GIDEON, PokemonLeague_WillsRoom_EventScript_LanceRematch
 
 PokemonLeague_ChampionsRoom_EventScript_LanceFirstBattle::
 	msgbox PokemonLeague_ChampionsRoom_Text_BattleIntro, MSGBOX_DEFAULT

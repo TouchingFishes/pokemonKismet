@@ -86,9 +86,15 @@ PokemonLeague_HallOfFame_EventScript_SetGameClearFlags::
 	clearflag FLAG_ITEM_GS_BALL
 	setflag FLAG_HIDE_BATTLEFRONTIER_ENGINEER
 	setflag FLAG_IS_KANTO_CHAMPION
-	@ The CHERRYGROVE guide's grandchildren are re-fightable
+	@ Refightable trainers
 	cleartrainerflag TRAINER_MORI_HNS
 	cleartrainerflag TRAINER_SARI_HNS
+	cleartrainerflag TRAINER_LORELEI_HNS
+	cleartrainerflag TRAINER_AGATHA_HNS
+	cleartrainerflag TRAINER_ELITE_SIDNEY_HNS
+	cleartrainerflag TRAINER_ELITE_PHOEBE_HNS
+	cleartrainerflag TRAINER_ELITE_GLACIA_HNS
+	cleartrainerflag TRAINER_ELITE_DRAKE_HNS
 	setvar VAR_COMPLETED_LUGIA, 4
 	clearflag FLAG_HIDE_LUGIA
 	setvar VAR_COMPLETED_HO_OH, 4
@@ -97,7 +103,7 @@ PokemonLeague_HallOfFame_EventScript_SetGameClearFlags::
 	call_if_ge VAR_SUICUNE_ENCOUNTERS, 8, PokemonLeague_HallOfFame_EventScript_SpawnSuicune
 	call_if_set FLAG_CAUGHT_CELEBI, PokemonLeague_HallOfFame_EventScript_SpawnSecondCelebi
 	call_if_ge VAR_VIRIDIAN_FOREST_PICHU, 4, PokemonLeague_HallOfFame_EventScript_SpawnPichu
-	call_if_ge VAR_ALOLA_STATE, 4, PokemonLeague_HallOfFame_EventScript_SpawnAlolaMons
+	call_if_set FLAG_DEFEATED_DAODAO_LAB_GIDEON, PokemonLeague_HallOfFame_EventScript_SpawnAlolaMons
 	call PokemonLeague_HallOfFame_EventScript_SpawnSinjohMons
 	call_if_ge VAR_SINJOH_STORYLINE, 13 PokemonLeague_HallOfFame_EventScript_SpawnArceus
 	clearflag FLAG_DEFEATED_MEW

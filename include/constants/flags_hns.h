@@ -974,9 +974,17 @@
 #define FLAG_HIDE_CHALLENGERS_CAVE_GREEN    (HNS_EXTENDED_CONTENT_START + 81)
 #define FLAG_HIDE_CERULEAN_CAVE_GREEN       (HNS_EXTENDED_CONTENT_START + 82)
 #define FLAG_GOT_HONEDGE_PEWTER             (HNS_EXTENDED_CONTENT_START + 83)
-#define FLAG_UNUSED_EXTENDED_84                     (HNS_EXTENDED_CONTENT_START + 84)
-#define FLAG_UNUSED_EXTENDED_85                     (HNS_EXTENDED_CONTENT_START + 85)
-#define FLAG_UNUSED_EXTENDED_86                     (HNS_EXTENDED_CONTENT_START + 86)
+// Three DaoDao flags taken from this reusable gap rather than the tail, which has
+// only 11 slots left before TRAINER_FLAGS_START.
+//
+// The ROCKET BIKER who blocks the hideout door from outside. (11,17) is the door's
+// ONLY approach - north, west and east are all collision 1 - so one body there seals
+// it, and beating him opens the way the way a Rocket grunt should.
+#define FLAG_HIDE_DAODAO_LAB_DOORGUARD              (HNS_EXTENDED_CONTENT_START + 84)
+// STEVEN at GIANT'S REST. He is the inverse of a normal hide flag: visible only ONCE
+// FLAG_HIDE_DAODAO_REGIGIGAS is set, and hidden again once he has been beaten.
+#define FLAG_HIDE_DAODAO_STEVEN                     (HNS_EXTENDED_CONTENT_START + 85)
+#define FLAG_DEFEATED_DAODAO_STEVEN                 (HNS_EXTENDED_CONTENT_START + 86)
 #define FLAG_UNUSED_EXTENDED_87                     (HNS_EXTENDED_CONTENT_START + 87)
 #define FLAG_UNUSED_EXTENDED_88                     (HNS_EXTENDED_CONTENT_START + 88)
 #define FLAG_UNUSED_EXTENDED_89                     (HNS_EXTENDED_CONTENT_START + 89)
@@ -1330,16 +1338,17 @@
 // reachable only because Steven's charter (FEDERATION state 7) opens the
 // ROUTE 13 boat in the first place. Beating him there closes the arc.
 //
-// The door is sealed until the player has beaten GIOVANNI in the Celebi
-// time-travel encounter (VAR_TOHJO_FALLS_GIOVANNI_STATE == 2) AND is Champion a
-// second time (FLAG_IS_KANTO_CHAMPION). Both are derived in the Water
-// Labyrinth's ON_LOAD rather than stored, because SSAqua_1F clears
-// FLAG_IS_KANTO_CHAMPION on the first Kanto voyage.
-//
-// ...except once the player has actually been inside. FOUND is sticky, and the
-// ON_LOAD short-circuits on it, so a later reset of FLAG_IS_KANTO_CHAMPION can
-// never wall someone out of an arc they have already started.
-#define FLAG_DAODAO_ROCKET_LAB_FOUND                (HNS_EXTENDED_CONTENT_START + 338)
+// The door is ALWAYS open. It used to be sealed unless the player had beaten the
+// Celebi time-travel GIOVANNI and was Champion a second time, with the flag below
+// latching it open against SSAqua_1F clearing FLAG_IS_KANTO_CHAMPION - all of that
+// is gone, so nothing sets or reads FOUND any more.
+#define FLAG_DAODAO_ROCKET_LAB_FOUND                (HNS_EXTENDED_CONTENT_START + 338)  // UNUSED - reusable
+
+// Shared by GIDEON, all six of his goons and STEVEN at the Landfall landing: the
+// hideout empties and Steven's business on the isles ends the moment Gideon falls.
+// DaoDaoIsles_RocketLab_SetGideon recomputes it from FLAG_DEFEATED_DAODAO_LAB_GIDEON
+// on every lab entry, and Gideon cannot be beaten without entering the lab, so the
+// Landfall object needs no ON_TRANSITION of its own.
 #define FLAG_HIDE_DAODAO_LAB_GIDEON                 (HNS_EXTENDED_CONTENT_START + 339)
 #define FLAG_HIDE_DAODAO_LAB_GIOVANNI               (HNS_EXTENDED_CONTENT_START + 340)
 #define FLAG_HIDE_DAODAO_LAB_GENESECT               (HNS_EXTENDED_CONTENT_START + 341)

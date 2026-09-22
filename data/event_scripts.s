@@ -2457,6 +2457,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/DaoDaoIsles_LostCave_Room14_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_WakeIsle_Cave_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_KilnIsle_House_hns/scripts.inc"
+	.include "data/maps/DaoDaoIsles_GiantsStair_House_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_ScoriaCave_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_LandfallIsle_PlayerHouse_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_LandfallIsle_PokemonCenter_hns/scripts.inc"

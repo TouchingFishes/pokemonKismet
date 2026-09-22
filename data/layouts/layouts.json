@@ -16933,6 +16933,18 @@
       "layout_version": "hns"
     },
     {
+      "id": "LAYOUT_DAO_DAO_ISLES_GIANTS_STAIR_HOUSE_HNS",
+      "name": "DaoDaoIsles_GiantsStair_House_hns_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_House_Lab_Hns",
+      "border_filepath": "data/layouts/DaoDaoIsles_GiantsStair_House_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_GiantsStair_House_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
       "id": "LAYOUT_DAO_DAO_ISLES_SCORIA_CAVE_HNS",
       "name": "DaoDaoIsles_ScoriaCave_hns_Layout",
       "width": 55,
