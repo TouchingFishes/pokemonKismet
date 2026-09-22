@@ -138,29 +138,36 @@
       "x": 11,
       "y": 46,
       "elevation": 0,
-      "dest_map": "MAP_AKALA_ISLE_HNS",
+      "dest_map": "MAP_DAO_DAO_ISLES_KILN_ISLE_HNS",
       "dest_warp_id": "1"
     },
     {
       "x": 12,
       "y": 46,
       "elevation": 0,
-      "dest_map": "MAP_AKALA_ISLE_HNS",
+      "dest_map": "MAP_DAO_DAO_ISLES_KILN_ISLE_HNS",
       "dest_warp_id": "2"
     },
     {
       "x": 59,
       "y": 10,
       "elevation": 0,
-      "dest_map": "MAP_AKALA_ISLE_HNS",
+      "dest_map": "MAP_DAO_DAO_ISLES_KILN_ISLE_HNS",
       "dest_warp_id": "4"
     },
     {
       "x": 59,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_AKALA_ISLE_HNS",
+      "dest_map": "MAP_DAO_DAO_ISLES_KILN_ISLE_HNS",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 21,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_DAO_DAO_ISLES_MANSION_1F_HNS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

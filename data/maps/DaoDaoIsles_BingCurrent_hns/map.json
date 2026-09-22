@@ -1,0 +1,36 @@
+{
+  "id": "MAP_DAO_DAO_ISLES_BING_CURRENT_HNS",
+  "name": "DaoDaoIsles_BingCurrent_hns",
+  "layout": "LAYOUT_DAO_DAO_ISLES_BING_CURRENT_HNS",
+  "music": "MUS_OCEANIC_MUSEUM",
+  "region_map_section": "MAPSEC_ALOLA_OCEAN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_DAO_DAO_ISLES_WATER_LABYRINTH_HNS",
+      "offset": -23,
+      "direction": "down"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 18,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_DAO_DAO_ISLES_BING_CURRENT_CAVE_HNS",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "game_version": "hns",
+  "region": "REGION_ALOLA"
+}

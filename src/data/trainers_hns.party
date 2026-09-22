@@ -21808,3 +21808,228 @@ SPECIES_DITTO
 Level: 68
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_TRANSFORM
+
+=== TRAINER_LAWSON_HNS ===
+Name: LAWSON
+Class: Ruin Maniac Hns
+Pic: Ruin Maniac Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+Items: Hyper Potion
+
+SPECIES_CLAYDOL
+Level: 62
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_EARTH_POWER
+- MOVE_EXTRASENSORY
+- MOVE_ANCIENT_POWER
+- MOVE_COSMIC_POWER
+
+SPECIES_ARMALDO
+Level: 62
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_X_SCISSOR
+- MOVE_ROCK_BLAST
+- MOVE_CRUSH_CLAW
+- MOVE_PROTECT
+
+SPECIES_CRADILY
+Level: 62
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_ENERGY_BALL
+- MOVE_ANCIENT_POWER
+- MOVE_CONFUSE_RAY
+- MOVE_AMNESIA
+
+SPECIES_RELICANTH
+Level: 62
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_DOUBLE_EDGE
+- MOVE_ANCIENT_POWER
+- MOVE_WATER_PULSE
+- MOVE_REST
+
+=== TRAINER_MANSION_TED_HNS ===
+Name: TED
+Class: Scientist Hns
+Pic: Scientist Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MAGNETON
+Level: 60
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_FLASH_CANNON
+- MOVE_THUNDER_WAVE
+- MOVE_TRI_ATTACK
+- MOVE_SCREECH
+
+SPECIES_MUK
+Level: 60
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_GUNK_SHOT
+- MOVE_SLUDGE_BOMB
+- MOVE_FOCUS_BLAST
+- MOVE_ACID_ARMOR
+
+SPECIES_ELECTRODE
+Level: 60
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_CHARGE_BEAM
+- MOVE_FLASH_CANNON
+- MOVE_LIGHT_SCREEN
+- MOVE_EXPLOSION
+
+=== TRAINER_MANSION_JOHNSON_HNS ===
+Name: JOHNSON
+Class: Youngster Hns
+Pic: Youngster Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_RATICATE
+Level: 58
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- MOVE_CRUNCH
+- MOVE_SUPER_FANG
+- MOVE_HYPER_FANG
+- MOVE_ENDEAVOR
+
+SPECIES_LINOONE
+Level: 58
+IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- MOVE_SLASH
+- MOVE_PLAY_ROUGH
+- MOVE_BELLY_DRUM
+- MOVE_COVET
+
+=== TRAINER_MANSION_ARNIE_HNS ===
+Name: ARNIE
+Class: Burglar Hns
+Pic: Burglar Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MAGMAR
+Level: 60
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_FIRE_BLAST
+- MOVE_FIRE_PUNCH
+- MOVE_CONFUSE_RAY
+- MOVE_FLAMETHROWER
+
+SPECIES_ARCANINE
+Level: 61
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_EXTREME_SPEED
+- MOVE_FLAME_WHEEL
+- MOVE_BITE
+- MOVE_ROAR
+
+=== TRAINER_MANSION_SIMON_HNS ===
+Name: SIMON
+Class: Burglar Hns
+Pic: Burglar Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MAGCARGO
+Level: 60
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_FLAMETHROWER
+- MOVE_ROCK_SLIDE
+- MOVE_RECOVER
+- MOVE_BODY_SLAM
+
+SPECIES_NINETALES
+Level: 61
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_MYSTICAL_FIRE
+- MOVE_WILL_O_WISP
+- MOVE_CONFUSE_RAY
+- MOVE_SHADOW_CLAW
+
+=== TRAINER_MANSION_BRAYDON_HNS ===
+Name: BRAYDON
+Class: Scientist Hns
+Pic: Scientist Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_WEEZING
+Level: 60
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_HAZE
+- MOVE_DESTINY_BOND
+- MOVE_EXPLOSION
+
+SPECIES_PORYGON2
+Level: 61
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_TRI_ATTACK
+- MOVE_RECOVER
+- MOVE_CHARGE_BEAM
+- MOVE_SIGNAL_BEAM
+
+=== TRAINER_MANSION_LEWIS_HNS ===
+Name: LEWIS
+Class: Burglar Hns
+Pic: Burglar Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_TORKOAL
+Level: 60
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_ERUPTION
+- MOVE_HEAT_WAVE
+- MOVE_IRON_DEFENSE
+- MOVE_SCORCHING_SANDS
+
+SPECIES_CAMERUPT
+Level: 61
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_ERUPTION
+- MOVE_EARTHQUAKE
+- MOVE_ROCK_SLIDE
+- MOVE_EARTH_POWER
+
+=== TRAINER_MANSION_IVAN_HNS ===
+Name: IVAN
+Class: Scientist Hns
+Pic: Scientist Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_ELECTABUZZ
+Level: 60
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_THUNDERBOLT
+- MOVE_THUNDER_PUNCH
+- MOVE_BRICK_BREAK
+- MOVE_SCREECH
+
+SPECIES_HOUNDOOM
+Level: 61
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_CRUNCH
+- MOVE_FLAMETHROWER
+- MOVE_FAINT_ATTACK
+- MOVE_BEAT_UP

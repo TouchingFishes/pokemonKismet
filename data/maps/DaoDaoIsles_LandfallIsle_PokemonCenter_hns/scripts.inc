@@ -1,0 +1,3 @@
+DaoDaoIsles_LandfallIsle_PokemonCenter_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Melemele_House_hns_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	.byte 0

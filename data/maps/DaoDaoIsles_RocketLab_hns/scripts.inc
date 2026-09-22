@@ -5,6 +5,7 @@ DaoDaoIsles_RocketLab_hns_MapScripts::
 DaoDaoIsles_RocketLab_OnTransition:
 	setflag FLAG_DAODAO_ROCKET_LAB_FOUND
 	call DaoDaoIsles_RocketLab_SetGideon
+	call DaoDaoIsles_RocketLab_SetKlinklang
 	call DaoDaoIsles_RocketLab_SetGiovanni
 	call DaoDaoIsles_RocketLab_SetGenesect
 	end
@@ -15,15 +16,28 @@ DaoDaoIsles_RocketLab_SetGideon:
 	clearflag FLAG_HIDE_DAODAO_LAB_GIDEON
 	return
 
+@ KLINKLANG is the REGISTEEL boss, but it is gated on GIDEON alone - NOT on
+@ FLAG_DAODAO_REGIS_ENABLED like the other four. Gating it on the braille riddle
+@ would put a puzzle in a different chamber on a different island in front of
+@ finishing the KANTO POKeMON FEDERATION arc.
+DaoDaoIsles_RocketLab_SetKlinklang:
+	setflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
+	goto_if_set FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL, DaoDaoIsles_RocketLab_Ret
+	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_GIDEON, DaoDaoIsles_RocketLab_Ret
+	clearflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
+	return
+
 DaoDaoIsles_RocketLab_SetGiovanni:
 	setflag FLAG_HIDE_DAODAO_LAB_GIOVANNI
 	goto_if_set FLAG_DEFEATED_DAODAO_LAB_GIOVANNI, DaoDaoIsles_RocketLab_Ret
 	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_GIDEON, DaoDaoIsles_RocketLab_Ret
+	goto_if_unset FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL, DaoDaoIsles_RocketLab_Ret
 	clearflag FLAG_HIDE_DAODAO_LAB_GIOVANNI
 	return
 
 DaoDaoIsles_RocketLab_SetGenesect:
 	setflag FLAG_HIDE_DAODAO_LAB_GENESECT
+	goto_if_set FLAG_DAODAO_GENESECT_TAKEN, DaoDaoIsles_RocketLab_Ret
 	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_GIOVANNI, DaoDaoIsles_RocketLab_Ret
 	clearflag FLAG_HIDE_DAODAO_LAB_GENESECT
 	return
@@ -73,9 +87,47 @@ DaoDaoIsles_RocketLab_EventScript_GideonDefeated::
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_LAB_GIDEON
 	setflag FLAG_HIDE_DAODAO_LAB_GIDEON
+	clearflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
+	addobject LOCALID_DAODAO_BOSS_REGISTEEL
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+DaoDaoIsles_RocketLab_EventScript_BossKlinklang::
+	lock
+	faceplayer
+	playmoncry SPECIES_KLINKLANG, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox DaoDaoIsles_RocketLab_Text_KlinklangIntro, MSGBOX_AUTOCLOSE
+	setwildbossbattle species=SPECIES_KLINKLANG, level=70, item=ITEM_METAL_COAT, move1_1=MOVE_GEAR_GRIND, move1_2=MOVE_WILD_CHARGE, move1_3=MOVE_FLASH_CANNON, move1_4=MOVE_SHIFT_GEAR
+	settotemboost B_POSITION_OPPONENT_LEFT, 2, 1, 1, 0, 0, 0
+	setflag FLAG_NO_WILD_CATCHING
+	setflag FLAG_NO_WILD_RUNNING
+	setflag FLAG_SMART_WILD_AI
+	setflag FLAG_NO_SHINY
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_RocketLab_EventScript_BossStays
+	setflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_DAODAO_BOSS_REGISTEEL
+	setflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
 	clearflag FLAG_HIDE_DAODAO_LAB_GIOVANNI
 	addobject LOCALID_DAODAO_LAB_GIOVANNI
 	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox DaoDaoIsles_RocketLab_Text_KlinklangBeaten, MSGBOX_DEFAULT
+	clearflag FLAG_NO_WILD_CATCHING
+	clearflag FLAG_NO_WILD_RUNNING
+	clearflag FLAG_SMART_WILD_AI
+	clearflag FLAG_NO_SHINY
+	release
+	end
+
+DaoDaoIsles_RocketLab_EventScript_BossStays::
+	clearflag FLAG_NO_WILD_CATCHING
+	clearflag FLAG_NO_WILD_RUNNING
+	clearflag FLAG_SMART_WILD_AI
+	clearflag FLAG_NO_SHINY
 	release
 	end
 
@@ -125,6 +177,7 @@ DaoDaoIsles_RocketLab_EventScript_Genesect::
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_LAB_GENESECT
 	setflag FLAG_HIDE_DAODAO_LAB_GENESECT
+	setflag FLAG_DAODAO_GENESECT_TAKEN
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
@@ -226,8 +279,23 @@ DaoDaoIsles_RocketLab_Text_GideonPostBattle:
 	.string "the same thing again.\p"
 	.string "Tell JANINE it's finished. She has\n"
 	.string "earned hearing it.\p"
-	.string "The boss never left either.\n"
-	.string "Go on. He's waiting.$"
+	.string "The boss never left either. Far\n"
+	.string "end of the floor. Still waiting.\p"
+	.string "Mind what's between you. We took\n"
+	.string "that out of the ruins, and it has\l"
+	.string "never once powered down.$"
+
+DaoDaoIsles_RocketLab_Text_KlinklangIntro:
+	.string "It has been turning on the same\n"
+	.string "spot for twenty years.\p"
+	.string "The gears are cut with the same\n"
+	.string "marks as the ruin walls.$"
+
+DaoDaoIsles_RocketLab_Text_KlinklangBeaten:
+	.string "The gears stop.\p"
+	.string "For the first time in twenty years\n"
+	.string "the warehouse is quiet, and the\l"
+	.string "far end of it is not empty.$"
 
 DaoDaoIsles_RocketLab_Text_GiovanniIntro:
 	.string "So the warehouse still had one\n"

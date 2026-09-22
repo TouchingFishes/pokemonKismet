@@ -1,0 +1,41 @@
+{
+  "id": "MAP_DAO_DAO_ISLES_WATER_LABYRINTH_HNS",
+  "name": "DaoDaoIsles_WaterLabyrinth_hns",
+  "layout": "LAYOUT_DAO_DAO_ISLES_WATER_LABYRINTH_HNS",
+  "music": "MUS_OCEANIC_MUSEUM",
+  "region_map_section": "MAPSEC_ALOLA_OCEAN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_DAO_DAO_ISLES_KILN_ISLE_HNS",
+      "offset": -27,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_DAO_DAO_ISLES_BING_CURRENT_HNS",
+      "offset": 23,
+      "direction": "up"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 11,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_DAO_DAO_ISLES_ROCKET_LAB_HNS",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "game_version": "hns",
+  "region": "REGION_ALOLA"
+}

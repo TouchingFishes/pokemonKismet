@@ -4,6 +4,8 @@ DaoDaoIsles_RegielekiChamber_hns_MapScripts::
 
 DaoDaoIsles_RegielekiChamber_OnTransition:
 	setflag FLAG_HIDE_DAODAO_REGIELEKI
+	goto_if_set FLAG_DAODAO_REGIELEKI_TAKEN, DaoDaoIsles_RegielekiChamber_Ret
+	goto_if_unset FLAG_DAODAO_REGIS_ENABLED, DaoDaoIsles_RegielekiChamber_Ret
 	goto_if_unset FLAG_DEFEATED_DAODAO_BOSS_REGIELEKI, DaoDaoIsles_RegielekiChamber_Ret
 	clearflag FLAG_HIDE_DAODAO_REGIELEKI
 DaoDaoIsles_RegielekiChamber_Ret:
@@ -24,6 +26,7 @@ DaoDaoIsles_RegielekiChamber_EventScript_Regieleki::
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_REGIELEKI
 	setflag FLAG_HIDE_DAODAO_REGIELEKI
+	setflag FLAG_DAODAO_REGIELEKI_TAKEN
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end

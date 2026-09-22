@@ -1,0 +1,34 @@
+DaoDaoIsles_LandfallIsle_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DaoDaoIsles_LandfallIsle_hns_OnTransition
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, DaoDaoIsles_LandfallIsle_hns_OnWarpIntoMapTable
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, DaoDaoIsles_LandfallIsle_hns_OnFrameTable
+	.byte 0
+
+DaoDaoIsles_LandfallIsle_hns_OnTransition:
+	setrespawn HEAL_LOCATION_MELEMELE_ISLE_HNS
+	gettimeofday
+	compare VAR_0x8000, TIME_MORNING
+	goto_if_eq DaoDaoIsles_LandfallIsle_hns_OnTransition_Day
+	compare VAR_0x8000, TIME_DAY
+	goto_if_eq DaoDaoIsles_LandfallIsle_hns_OnTransition_Day
+	compare VAR_0x8000, TIME_EVENING
+	goto_if_eq DaoDaoIsles_LandfallIsle_hns_OnTransition_Day
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPECIES ( BEWEAR )
+	clearflag FLAG_MELEMELE_TOTEM_DAY
+	call MelemeleIsle_hns_SetTotemSignWarpFacing
+	return
+
+DaoDaoIsles_LandfallIsle_hns_OnTransition_Day:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPECIES ( LEAFEON )
+	setflag FLAG_MELEMELE_TOTEM_DAY
+	call MelemeleIsle_hns_SetTotemSignWarpFacing
+	return
+
+DaoDaoIsles_LandfallIsle_hns_OnWarpIntoMapTable:
+	map_script_2 VAR_TEMP_C, 0, MelemeleIsle_hns_EventScript_FacePlayerUpAfterTotemWarp
+	map_script_2 VAR_ALOLA_TRAVEL, 1, MelemeleIsle_hns_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
+	.2byte 0
+
+DaoDaoIsles_LandfallIsle_hns_OnFrameTable:
+	map_script_2 VAR_ALOLA_TRAVEL, 1, Alola_Melemele_GetOffBoat
+	.2byte 0

@@ -1364,16 +1364,107 @@
 #define FLAG_DEFEATED_DAODAO_BOSS_REGIDRAGO         (HNS_EXTENDED_CONTENT_START + 354)
 #define FLAG_HIDE_DAODAO_REGIGIGAS                  (HNS_EXTENDED_CONTENT_START + 355)
 
+// The five bosses themselves. Each map derives its own in ON_TRANSITION from
+// FLAG_DAODAO_REGIS_ENABLED and the matching DEFEATED flag above, so a boss can
+// never be left standing on a map the player already cleared.
+//
+// REGISTEEL is the exception: KLINKLANG is a Rocket specimen in the lab, not a
+// ruin guardian, so it spawns on GIDEON's defeat alone. Gating it on the braille
+// riddle would make the KANTO POKeMON FEDERATION arc unfinishable for anyone who
+// has not solved a puzzle in a different chamber on a different island.
+#define FLAG_HIDE_DAODAO_BOSS_REGIROCK              (HNS_EXTENDED_CONTENT_START + 356)
+#define FLAG_HIDE_DAODAO_BOSS_REGISTEEL             (HNS_EXTENDED_CONTENT_START + 357)
+#define FLAG_HIDE_DAODAO_BOSS_REGICE                (HNS_EXTENDED_CONTENT_START + 358)
+#define FLAG_HIDE_DAODAO_BOSS_REGIELEKI             (HNS_EXTENDED_CONTENT_START + 359)
+#define FLAG_HIDE_DAODAO_BOSS_REGIDRAGO             (HNS_EXTENDED_CONTENT_START + 360)
+
+// Bing Current Cave, the DaoDao clone of UlaUla Cave. Its own copies of the two
+// item balls and the two mon statics, so clearing them here does not mark them
+// cleared on the (dead) Alola original and vice versa - the same shared-flag
+// trap the DaoDao REGIGIGAS was sitting in.
+#define FLAG_HIDE_DAODAO_BINGCURRENT_CAVE_MIMIKYU   (HNS_EXTENDED_CONTENT_START + 361)
+#define FLAG_DAODAO_BINGCURRENT_CAVE_ITEM_1         (HNS_EXTENDED_CONTENT_START + 362)
+#define FLAG_DAODAO_BINGCURRENT_CAVE_ITEM_2         (HNS_EXTENDED_CONTENT_START + 363)
+#define FLAG_HIDE_DAODAO_BINGCURRENT_CAVE_KLAWF     (HNS_EXTENDED_CONTENT_START + 364)
+
+// "This one is dealt with." Needed because the HIDE flags above are RECOMPUTED
+// in ON_TRANSITION rather than trusted, and the condition that reveals a REGI -
+// riddle solved, guardian beaten - stays true forever. Without a separate
+// terminal flag the ON_TRANSITION clears the HIDE flag its own capture script
+// just set, and the REGI is standing there again on the next visit. GENESECT
+// had the same hole: its reveal condition is "GIOVANNI beaten", which also
+// never stops being true.
+#define FLAG_DAODAO_REGIROCK_TAKEN                  (HNS_EXTENDED_CONTENT_START + 365)
+#define FLAG_DAODAO_REGISTEEL_TAKEN                 (HNS_EXTENDED_CONTENT_START + 366)
+#define FLAG_DAODAO_REGICE_TAKEN                    (HNS_EXTENDED_CONTENT_START + 367)
+#define FLAG_DAODAO_REGIELEKI_TAKEN                 (HNS_EXTENDED_CONTENT_START + 368)
+#define FLAG_DAODAO_REGIDRAGO_TAKEN                 (HNS_EXTENDED_CONTENT_START + 369)
+#define FLAG_DAODAO_GENESECT_TAKEN                  (HNS_EXTENDED_CONTENT_START + 370)
+
+// Lost Cave, the FRLG maze ported in behind Resort Gorgeous. Its four dead-end
+// rooms each hold one item ball; their own flags, not the FRLG originals', so
+// the two copies of the cave cannot mark each other collected.
+#define FLAG_DAODAO_LOSTCAVE_LAX_INCENSE            (HNS_EXTENDED_CONTENT_START + 371)
+#define FLAG_DAODAO_LOSTCAVE_SEA_INCENSE            (HNS_EXTENDED_CONTENT_START + 372)
+#define FLAG_DAODAO_LOSTCAVE_MAX_REVIVE             (HNS_EXTENDED_CONTENT_START + 373)
+#define FLAG_DAODAO_LOSTCAVE_RARE_CANDY             (HNS_EXTENDED_CONTENT_START + 374)
+
+// Barb Hollow's BARBARACLE. It is the one cloned interior object that
+// could not keep the Alola original's script: dropping that map's out-of-bounds
+// item ball moved that static from object 2 to object 1, and the shared script
+// hardcodes `removeobject Alola_Ulaula_Drapion`.
+#define FLAG_HIDE_DAODAO_BARB_HOLLOW_BARBARACLE         (HNS_EXTENDED_CONTENT_START + 375)
+
+// Scoria Cave's SALAZZLE (the Alola original's KROOKODILE). This is an
+// ALIAS, not a new flag: only 11 remain in this block before
+// TRAINER_FLAGS_START, and with the Alola copy of that cave unreachable,
+// reusing its hide flag costs nothing while the name still says what it hides.
+#define FLAG_HIDE_DAODAO_SCORIA_CAVE_SALAZZLE           FLAG_HIDE_KROOKODILE
+
+// The POKeMON MANSION interior, behind the mansion drawn in Eterna Forest.
+// Every one of these exists because the FRLG original's flag resolves to 0
+// outside FireRed - sharing them would have put all 15 pickups, and the
+// statue puzzle, on the same temp flag.
+#define FLAG_DAODAO_MANSION_SWITCH_STATE            (HNS_EXTENDED_CONTENT_START + 376)
+#define FLAG_HIDE_DAODAO_MANSION_1F_CARBOS          (HNS_EXTENDED_CONTENT_START + 377)
+#define FLAG_HIDE_DAODAO_MANSION_1F_ESCAPE_ROPE     (HNS_EXTENDED_CONTENT_START + 378)
+#define FLAG_HIDE_DAODAO_MANSION_1F_PROTEIN         (HNS_EXTENDED_CONTENT_START + 379)
+#define FLAG_HIDE_DAODAO_MANSION_2F_CALCIUM         (HNS_EXTENDED_CONTENT_START + 380)
+#define FLAG_HIDE_DAODAO_MANSION_2F_ZINC            (HNS_EXTENDED_CONTENT_START + 381)
+#define FLAG_HIDE_DAODAO_MANSION_2F_HP_UP           (HNS_EXTENDED_CONTENT_START + 382)
+#define FLAG_HIDE_DAODAO_MANSION_3F_MAX_POTION      (HNS_EXTENDED_CONTENT_START + 383)
+#define FLAG_HIDE_DAODAO_MANSION_3F_IRON            (HNS_EXTENDED_CONTENT_START + 384)
+#define FLAG_HIDE_DAODAO_MANSION_B1F_TM22           (HNS_EXTENDED_CONTENT_START + 385)
+#define FLAG_HIDE_DAODAO_MANSION_B1F_TM14           (HNS_EXTENDED_CONTENT_START + 386)
+#define FLAG_HIDE_DAODAO_MANSION_B1F_FULL_RESTORE   (HNS_EXTENDED_CONTENT_START + 387)
+#define FLAG_HIDE_DAODAO_MANSION_B1F_SECRET_KEY     (HNS_EXTENDED_CONTENT_START + 388)
+#define FLAG_HIDDEN_ITEM_DAODAO_MANSION_1F_MOON_STONE (HNS_EXTENDED_CONTENT_START + 389)
+#define FLAG_HIDDEN_ITEM_DAODAO_MANSION_3F_RARE_CANDY (HNS_EXTENDED_CONTENT_START + 390)
+#define FLAG_HIDDEN_ITEM_DAODAO_MANSION_B1F_ELIXIR  (HNS_EXTENDED_CONTENT_START + 391)
+
+// Berry Forest's three item balls. Its 13 hidden-item berries became real
+// berry trees instead, which need no flags - see include/constants/berry.h.
+// Note FLAG_HIDE_THREE_ISLAND_BERRY_FOREST_* further down are the FRLG
+// originals, aliased to 0 outside FireRed; these are not those.
+#define FLAG_DAODAO_BERRY_FOREST_MAX_ETHER          (HNS_EXTENDED_CONTENT_START + 392)
+#define FLAG_DAODAO_BERRY_FOREST_FULL_HEAL          (HNS_EXTENDED_CONTENT_START + 393)
+#define FLAG_DAODAO_BERRY_FOREST_MAX_ELIXIR         (HNS_EXTENDED_CONTENT_START + 394)
+
 
 //just fyi HNS_EXTENDED_CONTENT_START is 0x36A
-// Grown from 324 to 338 by the Fuchsia Federation arc, into the 0x4A6-0x4FF
-// window this block was always meant to reach (see the note at HNS_UNUSED_COUNT).
-// END is now 0x4BB; TRAINER_FLAGS_START is 0x500, so 0x4BC-0x4FF is still free.
+// Grown from 324 to 338 by the Fuchsia Federation arc and from 338 to 395 by the
+// DaoDao lab and Regi arcs, into the 0x4A6-0x4FF window this block was always
+// meant to reach (see the note at HNS_UNUSED_COUNT).
+// END is now 0x4F4; TRAINER_FLAGS_START is 0x500, so 0x4F5-0x4FF is still free.
 // Figures verified through the preprocessor, not by hand: the note that stood
-// here said END was 0x4B1 when it was really 0x4B9. START 0x36A + COUNT 338 - 1.
-#define HNS_EXTENDED_CONTENT_COUNT                  338
+// here said END was 0x4B1 when it was really 0x4B9. START 0x36A + COUNT 395 - 1.
+//
+// COUNT is documentation - nothing reads it or END - but it fell 18 behind while
+// the two arcs above were being written, which is exactly how the next person
+// allocates on top of a live flag. Bump it with every block you add.
+#define HNS_EXTENDED_CONTENT_COUNT                  395
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)
-// 0x4BC–0x4FF remaining reserved for future expansion
+// 0x4F5–0x4FF remaining reserved for future expansion
 
 // Trainer registered (match call) flags — one per rematchable trainer
 #define TRAINER_REGISTERED_FLAGS_START               0x310

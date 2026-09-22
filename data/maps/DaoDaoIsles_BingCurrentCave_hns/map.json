@@ -1,0 +1,113 @@
+{
+  "id": "MAP_DAO_DAO_ISLES_BING_CURRENT_CAVE_HNS",
+  "name": "DaoDaoIsles_BingCurrentCave_hns",
+  "layout": "LAYOUT_DAO_DAO_ISLES_BING_CURRENT_CAVE_HNS",
+  "music": "MUS_HG_ICE_PATH",
+  "region_map_section": "MAPSEC_ALOLA_OCEAN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_DAODAO_BOSS_REGICE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WALREIN)",
+      "x": 17,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_BingCurrentCave_EventScript_BossWalrein",
+      "flag": "FLAG_HIDE_DAODAO_BOSS_REGICE"
+    },
+    {
+      "local_id": "LOCALID_DAODAO_BINGCURRENT_CAVE_KLAWF",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KLAWF)",
+      "x": 15,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_BingCurrentCave_EventScript_Klawf",
+      "flag": "FLAG_HIDE_DAODAO_BINGCURRENT_CAVE_KLAWF"
+    },
+    {
+      "local_id": "LOCALID_DAODAO_BINGCURRENT_CAVE_MIMIKYU",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIMIKYU)",
+      "x": 19,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_BingCurrentCave_EventScript_Mimikyu",
+      "flag": "FLAG_HIDE_DAODAO_BINGCURRENT_CAVE_MIMIKYU"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
+      "x": 16,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_BingCurrentCave_EventScript_FindItem2",
+      "flag": "FLAG_DAODAO_BINGCURRENT_CAVE_ITEM_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
+      "x": 25,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_BingCurrentCave_EventScript_FindItem1",
+      "flag": "FLAG_DAODAO_BINGCURRENT_CAVE_ITEM_1"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_DAO_DAO_ISLES_BING_CURRENT_CAVE_HNS",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 17,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_DAO_DAO_ISLES_BING_CURRENT_CAVE_HNS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 17,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_DAO_DAO_ISLES_BING_CURRENT_HNS",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "game_version": "hns",
+  "region": "REGION_ALOLA"
+}

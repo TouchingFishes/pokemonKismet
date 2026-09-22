@@ -29,6 +29,20 @@
       "flag": "FLAG_HIDE_DAODAO_LAB_GIDEON"
     },
     {
+      "local_id": "LOCALID_DAODAO_BOSS_REGISTEEL",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KLINKLANG)",
+      "x": 11,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_RocketLab_EventScript_BossKlinklang",
+      "flag": "FLAG_HIDE_DAODAO_BOSS_REGISTEEL"
+    },
+    {
       "local_id": "LOCALID_DAODAO_LAB_GIOVANNI",
       "graphics_id": "OBJ_EVENT_GFX_GIOVANNI_HNS",
       "x": 6,
@@ -146,7 +160,7 @@
       "x": 24,
       "y": 25,
       "elevation": 0,
-      "dest_map": "MAP_DAO_DAO_ISLES_WATER_LABYRINTH_HNS_2",
+      "dest_map": "MAP_DAO_DAO_ISLES_WATER_LABYRINTH_HNS",
       "dest_warp_id": "0"
     }
   ],

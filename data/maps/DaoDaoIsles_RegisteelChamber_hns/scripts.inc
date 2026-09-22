@@ -4,6 +4,8 @@ DaoDaoIsles_RegisteelChamber_hns_MapScripts::
 
 DaoDaoIsles_RegisteelChamber_OnTransition:
 	setflag FLAG_HIDE_DAODAO_REGISTEEL
+	goto_if_set FLAG_DAODAO_REGISTEEL_TAKEN, DaoDaoIsles_RegisteelChamber_Ret
+	goto_if_unset FLAG_DAODAO_REGIS_ENABLED, DaoDaoIsles_RegisteelChamber_Ret
 	goto_if_unset FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL, DaoDaoIsles_RegisteelChamber_Ret
 	clearflag FLAG_HIDE_DAODAO_REGISTEEL
 DaoDaoIsles_RegisteelChamber_Ret:
@@ -24,6 +26,7 @@ DaoDaoIsles_RegisteelChamber_EventScript_Registeel::
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_REGISTEEL
 	setflag FLAG_HIDE_DAODAO_REGISTEEL
+	setflag FLAG_DAODAO_REGISTEEL_TAKEN
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end

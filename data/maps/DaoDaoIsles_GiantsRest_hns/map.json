@@ -1,0 +1,43 @@
+{
+  "id": "MAP_DAO_DAO_ISLES_GIANTS_REST_HNS",
+  "name": "DaoDaoIsles_GiantsRest_hns",
+  "layout": "LAYOUT_DAO_DAO_ISLES_GIANTS_REST_HNS",
+  "music": "MUS_OCEANIC_MUSEUM",
+  "region_map_section": "MAPSEC_ALOLA_OCEAN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_DAO_DAO_ISLES_GIANTS_STAIR_HNS",
+      "offset": -68,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_DAODAO_REGIGIGAS",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_REGIGIGAS",
+      "x": 24,
+      "y": 25,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_GiantsRest_EventScript_Regigigas",
+      "flag": "FLAG_HIDE_DAODAO_REGIGIGAS"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [],
+  "game_version": "hns",
+  "region": "REGION_ALOLA"
+}

@@ -14,12 +14,27 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_DAO_DAO_ISLES_ISLE1_HNS",
+      "map": "MAP_DAO_DAO_ISLES_WAKE_ISLE_HNS",
       "offset": 0,
       "direction": "left"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_DAODAO_BOSS_REGIROCK",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KLAWF)",
+      "x": 20,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_TreasureBeach_EventScript_BossKlawf",
+      "flag": "FLAG_HIDE_DAODAO_BOSS_REGIROCK"
+    }
+  ],
   "warp_events": [],
   "coord_events": [],
   "bg_events": [

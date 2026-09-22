@@ -749,4 +749,8 @@ const u16 gMetatileAttributes_Building_Frlg[] = INCBIN_U16("data/tilesets/primar
 const u16 gMetatiles_SilphCo[] = INCBIN_U16("data/tilesets/secondary/silph_co_frlg/metatiles.bin");
 
 const u16 gMetatileAttributes_SilphCo[] = INCBIN_U16("data/tilesets/secondary/silph_co_frlg/metatile_attributes.bin");
+const u16 gMetatiles_PokemonMansion[] = INCBIN_U16("data/tilesets/secondary/pokemon_mansion_frlg/metatiles.bin");
+
+const u16 gMetatileAttributes_PokemonMansion[] = INCBIN_U16("data/tilesets/secondary/pokemon_mansion_frlg/metatile_attributes.bin");
+
 #endif // IS_FRLG || IS_HNS

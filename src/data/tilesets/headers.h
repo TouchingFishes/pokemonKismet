@@ -2760,4 +2760,15 @@ const struct Tileset gTileset_SilphCo =
     .metatileAttributes = gMetatileAttributes_SilphCo,
     .callback = InitTilesetAnim_SilphCo,
 };
+const struct Tileset gTileset_PokemonMansion =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PokemonMansion,
+    .palettes = gTilesetPalettes_PokemonMansion,
+    .metatiles = gMetatiles_PokemonMansion,
+    .metatileAttributes = gMetatileAttributes_PokemonMansion,
+    .callback = NULL,
+};
+
 #endif // IS_FRLG || IS_HNS

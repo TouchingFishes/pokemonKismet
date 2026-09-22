@@ -864,8 +864,16 @@
 #define TRAINER_DAODAO_LAB_BIKER_2_HNS                815
 #define TRAINER_DAODAO_LAB_CUEBALL_2_HNS              816
 #define TRAINER_DAODAO_LAB_SCIENTIST_2_HNS            817
+#define TRAINER_LAWSON_HNS                            818
+#define TRAINER_MANSION_TED_HNS                       819
+#define TRAINER_MANSION_JOHNSON_HNS                   820
+#define TRAINER_MANSION_ARNIE_HNS                     821
+#define TRAINER_MANSION_SIMON_HNS                     822
+#define TRAINER_MANSION_BRAYDON_HNS                   823
+#define TRAINER_MANSION_LEWIS_HNS                     824
+#define TRAINER_MANSION_IVAN_HNS                      825
 
-#define TRAINERS_COUNT_HNS                       818
+#define TRAINERS_COUNT_HNS                       826
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

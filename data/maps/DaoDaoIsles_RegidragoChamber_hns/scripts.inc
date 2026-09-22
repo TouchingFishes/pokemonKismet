@@ -4,6 +4,8 @@ DaoDaoIsles_RegidragoChamber_hns_MapScripts::
 
 DaoDaoIsles_RegidragoChamber_OnTransition:
 	setflag FLAG_HIDE_DAODAO_REGIDRAGO
+	goto_if_set FLAG_DAODAO_REGIDRAGO_TAKEN, DaoDaoIsles_RegidragoChamber_Ret
+	goto_if_unset FLAG_DAODAO_REGIS_ENABLED, DaoDaoIsles_RegidragoChamber_Ret
 	goto_if_unset FLAG_DEFEATED_DAODAO_BOSS_REGIDRAGO, DaoDaoIsles_RegidragoChamber_Ret
 	clearflag FLAG_HIDE_DAODAO_REGIDRAGO
 DaoDaoIsles_RegidragoChamber_Ret:
@@ -24,6 +26,7 @@ DaoDaoIsles_RegidragoChamber_EventScript_Regidrago::
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_REGIDRAGO
 	setflag FLAG_HIDE_DAODAO_REGIDRAGO
+	setflag FLAG_DAODAO_REGIDRAGO_TAKEN
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
