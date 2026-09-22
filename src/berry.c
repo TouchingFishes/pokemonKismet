@@ -2140,6 +2140,24 @@ static u8 CalcBerryYield(struct BerryTree *tree)
     u8 min = tree->berryYield;
     u8 max = berry->maxYield;
     u8 result;
+
+#if IS_HNS
+    // This is the single funnel for yield in HNS
+    {
+        u32 roll = Random() % 100;
+
+        if (roll < 17)
+            return 1;
+        if (roll < 57)      // 17 + 40
+            return 2;
+        if (roll < 87)      // + 30
+            return 3;
+        if (roll < 99)      // + 12
+            return 4;
+        return 5;           // the last 1%
+    }
+#endif
+
     if (OW_BERRY_MULCH_USAGE && (tree->mulch == ITEM_TO_MULCH(ITEM_RICH_MULCH) || tree->mulch == ITEM_TO_MULCH(ITEM_AMAZE_MULCH)))
         min += 2;
     if (!(OW_BERRY_MOISTURE && OW_BERRY_ALWAYS_WATERABLE))
@@ -2171,9 +2189,11 @@ static u8 GetBerryCountByBerryTreeId(u8 id)
 static u16 GetStageDurationByBerryType(u8 berry)
 {
 #if IS_HNS
+    // Minutes per growth stage. There are FOUR stage transitions between PLANTED and
+    // BERRIES
     if (berry == ITEM_TO_BERRY(ITEM_LUM_BERRY) || berry == ITEM_TO_BERRY(ITEM_SITRUS_BERRY))
-        return 12 * 2;
-    return 3 * 2;
+        return 180 * 2;     // takes one day
+    return 180;             // takes 12 hours
 #else
     return GetBerryInfo(berry)->growthDuration * 60 / (OW_BERRY_SIX_STAGES ? 6 : 4);
 #endif

@@ -192,6 +192,9 @@ static void Task_HandleShopMenuSell(u8 taskId);
 static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, struct ListMenu *list);
 static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y);
 
+//Kurt's Berry intake
+#define KURT_BERRIES_PER_BALL 3
+
 static u16 GetBerryFromBall(u16 ballItem)
 {
     u32 i;
@@ -1706,7 +1709,7 @@ static void Task_BuyMenu(u8 taskId)
             if (sMartInfo.martType == MART_TYPE_NORMAL)
                 sShopData->totalCost = (GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
             else if (sMartInfo.martType == MART_TYPE_KURT)
-                sShopData->totalCost = 1;
+                sShopData->totalCost = KURT_BERRIES_PER_BALL;
             else if (sMartInfo.martType == MART_TYPE_BP
                      || sMartInfo.martType == MART_TYPE_BP_ITEM
                      || sMartInfo.martType == MART_TYPE_BP_DECOR)
@@ -1838,7 +1841,7 @@ static void Task_BuyHowManyDialogueInit(u8 taskId)
     if (sMartInfo.martType == MART_TYPE_KURT)
     {
         u16 berryItem = GetBerryFromBall(tItemId);
-        maxQuantity = CountTotalItemQuantityInBag(berryItem);
+        maxQuantity = CountTotalItemQuantityInBag(berryItem) / KURT_BERRIES_PER_BALL;
     }
     else if (sMartInfo.martType == MART_TYPE_BP)
     {
@@ -2001,7 +2004,7 @@ static void BuyMenuSubtractMoney(u8 taskId)
     if (sMartInfo.martType == MART_TYPE_KURT)
     {
         u16 berryItem = GetBerryFromBall(tItemId);
-        RemoveBagItem(berryItem, tItemCount);
+        RemoveBagItem(berryItem, tItemCount * KURT_BERRIES_PER_BALL);
         PlaySE(SE_BANG);
         gSpecialVar_Result = TRUE;
         gTasks[taskId].func = Task_ExitKurtShopAfterPurchase;

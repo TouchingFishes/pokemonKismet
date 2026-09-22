@@ -985,7 +985,7 @@
 // FLAG_HIDE_DAODAO_REGIGIGAS is set, and hidden again once he has been beaten.
 #define FLAG_HIDE_DAODAO_STEVEN                     (HNS_EXTENDED_CONTENT_START + 85)
 #define FLAG_DEFEATED_DAODAO_STEVEN                 (HNS_EXTENDED_CONTENT_START + 86)
-#define FLAG_UNUSED_EXTENDED_87                     (HNS_EXTENDED_CONTENT_START + 87)
+#define FLAG_BERRY_MASTER_INTRO                     (HNS_EXTENDED_CONTENT_START + 87)
 #define FLAG_UNUSED_EXTENDED_88                     (HNS_EXTENDED_CONTENT_START + 88)
 #define FLAG_UNUSED_EXTENDED_89                     (HNS_EXTENDED_CONTENT_START + 89)
 #define FLAG_UNUSED_EXTENDED_90                     (HNS_EXTENDED_CONTENT_START + 90)
@@ -2651,7 +2651,14 @@
 #define FLAG_DAILY_SECRET_BASE                      0
 #define FLAG_DAILY_ROUTE_114_RECEIVED_BERRY         0
 #define FLAG_DAILY_ROUTE_111_RECEIVED_BERRY         0
-#define FLAG_DAILY_BERRY_MASTER_RECEIVED_BERRY      0
+// UN-ALIASED, unlike its neighbours. The BERRY MASTER on ROUTE 30 is live in this build,
+// and flag 0 is a temp flag wiped on every map change - he would have re-armed every time
+// the player stepped out of his door and handed out unlimited rare BERRIES.
+//
+// This is the real daily flag, which ClearDailyFlags() resets at rollover because the
+// IS_HNS path loops the whole DAILY_FLAGS window (src/event_data.c:70). Safe to claim:
+// the only other reader is Route123_BerryMastersHouse, an emerald-only map.
+#define FLAG_DAILY_BERRY_MASTER_RECEIVED_BERRY      (DAILY_FLAGS_START + 0xD)
 #define FLAG_DAILY_ROUTE_120_RECEIVED_BERRY         0
 #define FLAG_DAILY_LILYCOVE_RECEIVED_BERRY          0
 #define FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY       0
