@@ -13,8 +13,9 @@ IcePath_1F_EventScript_Item_PpUp::
 IcePath_1F_EventScript_Item_Protein::
 	finditem ITEM_PROTEIN
 	end
-IcePath_1F_EventScript_Item_HM_Waterfall::
-	finditem ITEM_HM_WATERFALL
+
+IcePath_1F_EventScript_Item_TM_Hex::
+	finditem ITEM_TM_HEX
 	end
 
 IcePath_1F_EventScript_Alder::
@@ -53,6 +54,12 @@ IcePath_1F_EventScript_AlderPush::
 	closemessage
 	applymovement LOCALID_ICEPATH1_ALDER, Common_Movement_FaceDown
 	waitmovement 0
+	delay 24
+	msgbox IcePath_1F_Text_WaterfallGift, MSGBOX_DEFAULT
+	giveitem ITEM_HM_WATERFALL
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox IcePath_1F_Text_WaterfallAfter, MSGBOX_DEFAULT
+	closemessage
 	delay 24
 	msgbox IcePath_1F_Text_GirlBackHome, MSGBOX_DEFAULT
 	closemessage
@@ -138,6 +145,23 @@ IcePath_1F_Text_Free:
 	.string "dragons cut into the stone.\p"
 	.string "I'll sit with them a while. At my\n"
 	.string "age that passes for climbing.$"
+
+IcePath_1F_Text_WaterfallGift:
+	.string "Now. A man shouldn't take a shove\n"
+	.string "for nothing.\p"
+	.string "I've carried this since before you\n"
+	.string "were born and used it twice.\p"
+	.string "Here. WATERFALL.$"
+
+IcePath_1F_Text_WaterfallAfter:
+	.string "Up, mind. Not along, not across.\n"
+	.string "Up.\p"
+	.string "Everyone wants to go round a thing\n"
+	.string "like that. The whole trick is\l"
+	.string "deciding the water is a road.\p"
+	.string "You'll want a strong one to carry\n"
+	.string "you. Don't ask a little fellow to\l"
+	.string "do it out of politeness.$"
 
 IcePath_1F_Text_GirlBackHome:
 	.string "There's a girl back home who would\n"

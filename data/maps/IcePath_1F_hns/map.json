@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "IcePath_1F_EventScript_Item_HM_Waterfall",
+      "script": "IcePath_1F_EventScript_Item_TM_Hex",
       "flag": "FLAG_ITEM_ICEPATH1_HM_WATERFALL"
     },
     {
