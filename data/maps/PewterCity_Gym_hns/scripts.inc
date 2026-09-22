@@ -23,6 +23,9 @@ PewterCity_Gym_EventScript_Brock::
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 9
 	call Common_EventScript_SetGymTrainers_hns
+	msgbox PewterCity_Gym_Text_Brock_GiveTM, MSGBOX_DEFAULT
+	giveitem ITEM_TM_ROCK_POLISH
+	msgbox PewterCity_Gym_Text_Brock_BoulderBadge, MSGBOX_DEFAULT
 	clearflag FLAG_HIDE_DIGLETT_BROCK
 	closemessage
 	release
@@ -55,12 +58,23 @@ PewterCity_Gym_Text_Brock_WinLoss:
 PewterCity_Gym_Text_ReceivedBoulderBadge:
 	.string "{PLAYER} received BOULDERBADGE.$"
 
+PewterCity_Gym_Text_Brock_GiveTM:
+	.string "Wait. One more thing.$"
+
 PewterCity_Gym_Text_Brock_BoulderBadge:
-	.string "BROCK: {PLAYER}, thanks. I enjoyed\n"
-	.string "battling you, even though I am a bit\l"
-	.string "upset.\p"
-	.string "That BOULDERBADGE will make your\n"
-	.string "POKéMON even more powerful.$"
+	.string "BROCK: That's the ROCK POLISH TM.\p"
+	.string "You saw what my POKéMON can do.\n"
+	.string "They take a hit and they hold their\l"
+	.string "ground.\p"
+	.string "But you found a way around them.\n" 
+	.string "That's the part I still need to work\l"
+	.string "on.\p"
+	.string "A rock doesn't have to stay still.\n" 
+	.string "It can move. It can change.\p"
+	.string "I've been working on that for a long\n"
+	.string "time.\p"
+	.string "Maybe you'll have better luck with it\n" 
+	.string "than I have.$"
 
 PewterCity_Gym_Text_Brock_FightDone:
 	.string "BROCK: The world is huge. There are\n"

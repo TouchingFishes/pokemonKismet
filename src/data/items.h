@@ -13608,14 +13608,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM95] = // Aqua Ring
+    [ITEM_TM95] = // Rock Polish
     {
         .name = ITEM_NAME("TM95"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Cloaks itself in\n"
-            "water to restore\n"
-            "HP every turn."),
+            "Polishes its body\n"
+            "to cut drag and\n"
+            "sharply boost SPEED."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

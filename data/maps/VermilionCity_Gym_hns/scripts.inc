@@ -311,8 +311,10 @@ VermilionGym_Text_ReceivedThunderBadge:
 	.string "{PLAYER} received THUNDERBADGE.$"
 
 VermilionGym_Text_ThunderBadgeInfo:
-	.string "SURGE: THUNDERBADGE increases\n"
-	.string "POKéMON's speed.\p"
+	.string "SURGE: That THUNDERBADGE won't\n"
+	.string "do a thing for you, kid.\p"
+	.string "No badge ever did. Gear doesn't\n"
+	.string "win fights. Soldiers do.\p"
 	.string "Consider it proof that you\n"
 	.string "defeated me.\p"
 	.string "You wear it proudly, hear?$"

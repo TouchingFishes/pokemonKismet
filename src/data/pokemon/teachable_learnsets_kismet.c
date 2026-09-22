@@ -1303,6 +1303,10 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_BOLDORE] = sBoldoreTeachableLearnset_Kismet,
     [SPECIES_GIGALITH] = sGigalithTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_WOOBAT
+    [SPECIES_WOOBAT] = sWoobatTeachableLearnset_Kismet,
+    [SPECIES_SWOOBAT] = sSwoobatTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_SANDILE
     [SPECIES_SANDILE] = sSandileTeachableLearnset_Kismet,
     [SPECIES_KROKOROK] = sKrokorokTeachableLearnset_Kismet,

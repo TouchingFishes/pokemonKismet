@@ -98,7 +98,10 @@
     F(PSYSHOCK)      /* TM92 - Victory Road Kanto 1F done */ \
     F(SEED_BOMB)     /* TM93 - Goldenrod City Game Corner done */ \
     F(HONE_CLAWS)    /* TM94 - Route37 done */ \
-    F(AQUA_RING)     /* TM95 - unplaced */ \
+    F(ROCK_POLISH)   /* TM95 - Pewter City Gym (Brock) done. Was AQUA_RING, which was
+                        unplaced; ROCK POLISH had been dropped from this list entirely
+                        when TM58 was reassigned to ROCK BLAST. The item entry is keyed
+                        by [ITEM_TM95], so swapping the name here moves no item id. */ \
     F(BUG_BITE)      /* TM96 - Route39 done */ \
     F(EARTH_POWER)   /* TM97 - unplaced */ \
     F(METEOR_BEAM)   /* TM98 - Mt Silver Mountain Side done */ \
