@@ -7751,7 +7751,7 @@ Mugshot: Light Blue
 
 SPECIES_PIDGEY
 Level: 10
-IVs: 10 HP / 14 Atk / 14 Def / 10 SpA / 10 SpD / 10 Spe
+IVs: 1 HP / 4 Atk / 4 Def / 1 SpA / 1 SpD / 1 Spe
 - MOVE_QUICK_ATTACK
 - MOVE_MUD_SLAP
 - MOVE_ROOST
@@ -7759,7 +7759,7 @@ IVs: 10 HP / 14 Atk / 14 Def / 10 SpA / 10 SpD / 10 Spe
 
 SPECIES_NOCTOWL @ ITEM_ORAN_BERRY
 Level: 12
-IVs: 10 HP / 14 Atk / 14 Def / 10 SpA / 10 SpD / 10 Spe
+IVs: 1 HP / 4 Atk / 4 Def / 1 SpA / 1 SpD / 1 Spe
 - MOVE_PECK
 - MOVE_BIDE
 - MOVE_NIGHT_SHADE

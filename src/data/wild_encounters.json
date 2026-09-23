@@ -37006,8 +37006,8 @@
                 "species": "SPECIES_LEDYBA"
               },
               {
-                "min_level": 3,
-                "max_level": 4,
+                "min_level": 2,
+                "max_level": 3,
                 "species": "SPECIES_SURSKIT"
               },
               {
@@ -37026,8 +37026,8 @@
                 "species": "SPECIES_HOPPIP"
               },
               {
-                "min_level": 3,
-                "max_level": 4,
+                "min_level": 2,
+                "max_level": 3,
                 "species": "SPECIES_POLIWAG"
               },
               {
@@ -37036,8 +37036,8 @@
                 "species": "SPECIES_HOPPIP"
               },
               {
-                "min_level": 3,
-                "max_level": 4,
+                "min_level": 2,
+                "max_level": 3,
                 "species": "SPECIES_POLIWAG"
               }
             ]
@@ -37175,8 +37175,8 @@
                 "species": "SPECIES_RATTATA"
               },
               {
-                "min_level": 3,
-                "max_level": 4,
+                "min_level": 2,
+                "max_level": 3,
                 "species": "SPECIES_POLIWAG"
               },
               {
@@ -37195,13 +37195,13 @@
                 "species": "SPECIES_ZUBAT"
               },
               {
-                "min_level": 4,
-                "max_level": 4,
+                "min_level": 2,
+                "max_level": 3,
                 "species": "SPECIES_POLIWAG"
               },
               {
-                "min_level": 4,
-                "max_level": 4,
+                "min_level": 2,
+                "max_level": 3,
                 "species": "SPECIES_POLIWAG"
               },
               {
