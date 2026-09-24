@@ -7,6 +7,7 @@ ViridianCity_Gym_EventScript_Blue::
 	goto_if_unset FLAG_HIDE_DOJO_BLUE, ViridianCity_Gym_EventScript_BlueAtDojo
 	goto_if_set FLAG_DEFEATED_VIRIDIAN_GYM, ViridianCity_Gym_EventScript_BlueGotoDojo
 	goto_if_set FLAG_DEFEATED_VIRIDIAN_GYM, ViridianCity_Gym_EventScript_Blue_Defeated
+	goto_if_unset TRAINER_FLAGS_START + TRAINER_SHAUN_HNS, ViridianCity_Gym_EventScript_BlueWantsChallengersCave
 	msgbox ViridianCity_Gym_Text_LeaderBlue_Before, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_BLUE_HNS, ViridianCity_Gym_Text_LeaderBlue_Win
 	message ViridianCity_Gym_Text_ReceivedEarthBadge
@@ -34,6 +35,24 @@ ViridianCity_Gym_EventScript_Blue_Defeated::
 	closemessage
 	release
 	end
+
+ViridianCity_Gym_EventScript_BlueWantsChallengersCave::
+	msgbox ViridianCity_Gym_Text_LeaderBlue_ChallengersCave, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+ViridianCity_Gym_Text_LeaderBlue_ChallengersCave:
+	.string "BLUE: Hold it.\p"
+	.string "Everyone who walks through that\n"
+	.string "door thinks they're ready.\l"
+	.string "Most of them aren't.\p"
+	.string "There's a cave off DIGLETT'S CAVE.\n"
+	.string "CHALLENGER'S CAVE.\p"
+	.string "Go down to the bottom of it and\n"
+	.string "beat the trainer waiting there.\p"
+	.string "Do that, and I'll believe you.\n"
+	.string "Until then, don't waste my time.$"
 
 ViridianCity_Gym_EventScript_BlueGotoDojo::
 	msgbox ViridianCity_Gym_Text_BlueGotoDojo, MSGBOX_DEFAULT

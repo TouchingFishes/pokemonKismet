@@ -26,7 +26,7 @@ ViridianCity_Text_OakName:
 
 ViridianCity_Text_OakCall:
 	.string "OAK: Ah, {PLAYER}!\p"
-	.string "Come and see my at my\n"
+	.string "Come and see me at my\n"
 	.string "LAB in PALLET TOWN\l"
 	.string "when you get the chance.$"
 
