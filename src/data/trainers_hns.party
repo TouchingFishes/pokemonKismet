@@ -21378,7 +21378,7 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_HIGH_JUMP_KICK
 - MOVE_FORESIGHT
 
-SPECIES_MACHAMP
+SPECIES_PANGORO
 Level: 62
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_CROSS_CHOP
@@ -21410,8 +21410,8 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_DIG
 - MOVE_DETECT
 
-=== TRAINER_JAY_CAVE_HNS ===
-Name: JAY
+=== TRAINER_NEWTON_HNS ===
+Name: NEWTON
 Class: Super Nerd Hns
 Pic: Super Nerd Frlg
 Gender: Male
@@ -21419,7 +21419,7 @@ Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-SPECIES_MAGNEZONE
+SPECIES_SLOWBRO
 Level: 65
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 
@@ -21435,7 +21435,7 @@ SPECIES_WEEZING
 Level: 65
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 
-SPECIES_SLOWBRO
+SPECIES_KLINKLANG
 Level: 65
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 
@@ -21488,8 +21488,8 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_THUNDERBOLT
 - MOVE_SHADOW_SNEAK
 
-=== TRAINER_JULIE_CAVE_HNS ===
-Name: JULIE
+=== TRAINER_HELENA_HNS ===
+Name: HELENA
 Class: Expert Hns
 Pic: Expert F
 Gender: Male
@@ -21537,7 +21537,7 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_THUNDERBOLT
 - MOVE_SLEEP_TALK
 
-SPECIES_DECIBELLE
+SPECIES_BRAVIARY
 Level: 64
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_PSYCHIC
@@ -21671,15 +21671,23 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Smart Trainer
 
-SPECIES_WEEZING
-Level: 69
+SPECIES_DUSTOX
+Level: 67
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_SLUDGE_BOMB
 - MOVE_HAZE
 - MOVE_THUNDERBOLT
 - MOVE_EXPLOSION
 
-SPECIES_MUK
+SPECIES_DUSTOX
+Level: 67
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_HAZE
+- MOVE_THUNDERBOLT
+- MOVE_EXPLOSION
+
+SPECIES_SWALOT
 Level: 70
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_GUNK_SHOT
@@ -21696,15 +21704,15 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Smart Trainer
 
-SPECIES_MACHOKE
-Level: 69
+SPECIES_BEWEAR
+Level: 70
 IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_CROSS_CHOP
 - MOVE_SEISMIC_TOSS
 - MOVE_VITAL_THROW
 - MOVE_BULK_UP
 
-SPECIES_PRIMEAPE
+SPECIES_BEWEAR
 Level: 70
 IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_CROSS_CHOP
@@ -21721,7 +21729,7 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Smart Trainer
 
-SPECIES_MAGNETON
+SPECIES_KLINKLANG
 Level: 69
 IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
 - MOVE_FLASH_CANNON
@@ -21729,7 +21737,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
 - MOVE_LOCK_ON
 - MOVE_ZAP_CANNON
 
-SPECIES_PORYGON2
+SPECIES_GALVANTULA
 Level: 71
 IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
 - MOVE_TRI_ATTACK
@@ -21746,7 +21754,7 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Smart Trainer
 
-SPECIES_ELECTRODE
+SPECIES_MIGHTYENA
 Level: 69
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 25 Spe
 - MOVE_THUNDERBOLT
@@ -21754,7 +21762,15 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 25 Spe
 - MOVE_LIGHT_SCREEN
 - MOVE_EXPLOSION
 
-SPECIES_HOUNDOOM
+SPECIES_MIGHTYENA
+Level: 69
+IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
+- MOVE_FLAMETHROWER
+- MOVE_DARK_PULSE
+- MOVE_CRUNCH
+- MOVE_SOLAR_BEAM
+
+SPECIES_SWALOT
 Level: 71
 IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
 - MOVE_FLAMETHROWER
@@ -21771,7 +21787,15 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Smart Trainer
 
-SPECIES_POLIWRATH
+SPECIES_TOXICROAK
+Level: 71
+IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_HI_JUMP_KICK
+- MOVE_BLAZE_KICK
+- MOVE_MEGA_KICK
+- MOVE_REVERSAL
+
+SPECIES_SHARPEDO
 Level: 70
 IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_BRICK_BREAK
@@ -21779,7 +21803,7 @@ IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_EARTHQUAKE
 - MOVE_BULK_UP
 
-SPECIES_HITMONLEE
+SPECIES_TOXICROAK
 Level: 71
 IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_HI_JUMP_KICK
@@ -21796,13 +21820,23 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Smart Trainer
 
-SPECIES_CLAYDOL
+SPECIES_GRUMPIG
 Level: 70
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_EARTH_POWER
 - MOVE_EXTRASENSORY
 - MOVE_ICE_BEAM
 - MOVE_EXPLOSION
+
+SPECIES_DITTO
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_TRANSFORM
+
+SPECIES_DITTO
+Level: 68
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_TRANSFORM
 
 SPECIES_DITTO
 Level: 68
@@ -22312,4 +22346,324 @@ Naive Nature
 - MOVE_FLAMETHROWER
 - MOVE_DRAGON_CLAW
 - MOVE_ROCK_SLIDE
+- MOVE_CRUNCH
+
+=== TRAINER_GEORGIE_HNS ===
+Name: GEORGIE
+Class: Camper Hns
+Pic: Camper Frlg
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_SUNFLORA
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_FLAMETHROWER
+- MOVE_GIGA_DRAIN
+- MOVE_SOLAR_BEAM
+- MOVE_SUNNY_DAY
+
+SPECIES_PIDGEOT
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_FLY
+- MOVE_STEEL_WING
+- MOVE_HYPER_BEAM
+- MOVE_FEATHER_DANCE
+
+SPECIES_URSARING
+Level: 60
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_STRENGTH
+- MOVE_EARTHQUAKE
+- MOVE_BULK_UP
+- MOVE_BRICK_BREAK
+
+SPECIES_CLOYSTER
+Level: 66
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SPIKE_CANNON
+- MOVE_SPIKES
+- MOVE_ICE_BEAM
+- MOVE_WATER_PULSE
+
+SPECIES_CHARIZARD
+Level: 64
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_FLAMETHROWER
+- MOVE_WING_ATTACK
+- MOVE_ANCIENT_POWER
+- MOVE_DRAGON_CLAW
+
+=== TRAINER_IVY_HNS ===
+Name: IVY
+Class: Beauty Hns
+Pic: Beauty Frlg
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_EXEGGUTOR
+Level: 68
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SOLAR_BEAM
+- MOVE_SLUDGE_BOMB
+- MOVE_SUNNY_DAY
+- MOVE_PSYCHIC
+
+SPECIES_LUDICOLO
+Level: 69
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_RAIN_DANCE
+
+SPECIES_LEAFEON
+Level: 69
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SYNTHESIS
+- MOVE_LEAF_BLADE
+- MOVE_QUICK_ATTACK
+- MOVE_BITE
+
+SPECIES_ALTARIA
+Level: 70
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_EARTHQUAKE
+- MOVE_FLAMETHROWER
+- MOVE_SKY_ATTACK
+- MOVE_DRAGON_BREATH
+
+SPECIES_MEGANIUM
+Level: 71
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SYNTHESIS
+- MOVE_MAGICAL_LEAF
+- MOVE_ANCIENT_POWER
+- MOVE_DRAGON_PULSE
+
+=== TRAINER_ZED_HNS ===
+Name: ZED
+Class: Dragon Tamer Hns
+Pic: Dragon Tamer
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_CHARIZARD
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_ALTARIA
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_AGGRON
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_GYARADOS
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_DUNDRAG
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+=== TRAINER_DAMIAN_HNS ===
+Name: DAMIAN
+Class: Gentleman Hns
+Pic: Gentleman Frlg
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_GRANBULL
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_DOUBLE_EDGE
+- MOVE_CRUNCH
+- MOVE_BRICK_BREAK
+- MOVE_EARTHQUAKE
+
+SPECIES_PURGISLUG
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_ROCK_BLAST
+- MOVE_SLUDGE_BOMB
+- MOVE_HYPER_BEAM
+- MOVE_PSYCHIC
+
+SPECIES_MISDREAVUS
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SHADOW_BALL
+- MOVE_PSYCHIC
+- MOVE_THUNDERBOLT
+- MOVE_CONFUSE_RAY
+
+SPECIES_HOUNDOOM
+Level: 69
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_FLAMETHROWER
+- MOVE_CRUNCH
+- MOVE_SHADOW_BALL
+- MOVE_ROAR
+
+SPECIES_GRIMMSNARL
+Level: 69
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_BULK_UP
+- MOVE_NIGHT_SLASH
+- MOVE_HYPER_BEAM
+- MOVE_PLAY_ROUGH
+
+=== TRAINER_ESME_HNS ===
+Name: ESME
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Gender: Female
+Music: Hg Sage
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_MISMAGIUS
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_ARBOK
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_DRIFBLIM
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_JYNX
+Level: 66
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_MAROWAK
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_DUSCLOPS
+Level: 69
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+=== TRAINER_DESMOND_HNS ===
+Name: DESMOND
+Class: Ace Trainer Hns
+Pic: Cooltrainer M
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_TORKOAL
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_BRUXISH
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_VANILLUXE
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_SCYTHER
+Level: 63
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_TYPHLOSION
+Level: 68
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+=== TRAINER_MINTY_HNS ===
+Name: MINTY
+Class: Collector Hns
+Pic: Collector
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_MANTINE
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_FARIGIRAF
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_PRIMEAPE
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_GLISCOR
+Level: 69
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+=== TRAINER_SHAUN_HNS ===
+Name: SHAUN
+Class: Expert Hns
+Pic: Expert M
+Gender: Male
+Music: Hg Champion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_STARMIE @ ITEM_CHESTO_BERRY
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_THUNDERBOLT
+- MOVE_ICE_BEAM
+
+SPECIES_RHYDON @ ITEM_CHESTO_BERRY
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_EARTHQUAKE
+- MOVE_ROCK_WRECKER
+- MOVE_BRICK_BREAK
+- MOVE_MEGAHORN
+
+SPECIES_MASQUERAIN @ ITEM_CHESTO_BERRY
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_SILVER_WIND
+- MOVE_SURF
+- MOVE_AERIAL_ACE
+- MOVE_BLIZZARD
+
+SPECIES_PENDRAGON @ ITEM_CHESTO_BERRY
+Level: 67
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_ROCK_BLAST
+- MOVE_POISON_TAIL
+- MOVE_IRON_TAIL
+- MOVE_DIG
+
+SPECIES_HAXORUS @ ITEM_CHESTO_BERRY
+Level: 65
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_DRAGON_CLAW
+- MOVE_X_SCISSOR
+- MOVE_EARTHQUAKE
+- MOVE_ROCK_SLIDE
+
+SPECIES_TORTERRA @ ITEM_LEFTOVERS
+Level: 69
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+- MOVE_EARTHQUAKE
+- MOVE_SEED_BOMB
+- MOVE_CURSE
 - MOVE_CRUNCH

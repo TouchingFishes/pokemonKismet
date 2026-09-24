@@ -852,8 +852,8 @@
 #define TRAINER_NELSON_HNS                            803
 #define TRAINER_DAWSON_HNS                            804
 #define TRAINER_VINCE_HNS                             805
-#define TRAINER_JAY_CAVE_HNS                          806
-#define TRAINER_JULIE_CAVE_HNS                        807
+#define TRAINER_NEWTON_HNS                            806
+#define TRAINER_HELENA_HNS                            807
 #define TRAINER_GREEN_HNS                             808
 #define TRAINER_GREEN_2_HNS                           809
 #define TRAINER_GIDEON_HNS                            810
@@ -876,7 +876,15 @@
 #define TRAINER_ELITE_PHOEBE_HNS                      827
 #define TRAINER_ELITE_GLACIA_HNS                      828
 #define TRAINER_ELITE_DRAKE_HNS                       829
-#define TRAINERS_COUNT_HNS                       830
+#define TRAINER_GEORGIE_HNS                           830
+#define TRAINER_IVY_HNS                               831
+#define TRAINER_ZED_HNS                               832
+#define TRAINER_DAMIAN_HNS                            833
+#define TRAINER_ESME_HNS                              834
+#define TRAINER_DESMOND_HNS                           835
+#define TRAINER_MINTY_HNS                             836
+#define TRAINER_SHAUN_HNS                             837
+#define TRAINERS_COUNT_HNS                       838
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
