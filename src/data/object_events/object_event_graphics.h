@@ -513,6 +513,11 @@ const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effe
 
 const u32 gObjectEventPic_ApricornTree[] = INCBIN_U32("graphics/object_events/pics/misc/apricorn_tree.4bpp");
 
+// Hoisted OUT of the #if IS_FRLG block below: GREEN appears as an NPC in
+// PalletTown_Lab in the HnS build
+const u16 gObjectEventPic_GreenNormal[] = INCBIN_U16("graphics/object_events/pics/people/leaf/green_normal.4bpp");
+const u16 gObjectEventPal_PlayerFrlg[] = INCBIN_U16("graphics/object_events/palettes/player_frlg.gbapal");
+
 #if IS_FRLG
 
 const u16 gObjectEventPic_RedNormal[] = INCBIN_U16("graphics/object_events/pics/people/red/red_normal.4bpp");
@@ -522,7 +527,6 @@ const u16 gObjectEventPic_RedSurfRun[] = INCBIN_U16("graphics/object_events/pics
 const u16 gObjectEventPic_RedFish[] = INCBIN_U16("graphics/object_events/pics/people/red/red_fish.4bpp");
 const u16 gObjectEventPic_RedItem[] = INCBIN_U16("graphics/object_events/pics/people/red/red_item.4bpp");
 const u16 gObjectEventPic_RedVSSeekerBike[] = INCBIN_U16("graphics/object_events/pics/people/red/red_vs_seeker_bike.4bpp");
-const u16 gObjectEventPic_GreenNormal[] = INCBIN_U16("graphics/object_events/pics/people/leaf/green_normal.4bpp");
 const u16 gObjectEventPic_GreenBike[] = INCBIN_U16("graphics/object_events/pics/people/leaf/green_bike.4bpp");
 const u16 gObjectEventPic_GreenSurf[] = INCBIN_U16("graphics/object_events/pics/people/leaf/green_surf.4bpp");
 const u16 gObjectEventPic_GreenSurfRun[] = INCBIN_U16("graphics/object_events/pics/people/leaf/green_surf_run.4bpp");
@@ -530,7 +534,6 @@ const u16 gObjectEventPic_GreenFish[] = INCBIN_U16("graphics/object_events/pics/
 const u16 gObjectEventPic_GreenItem[] = INCBIN_U16("graphics/object_events/pics/people/leaf/green_item.4bpp");
 const u16 gObjectEventPic_GreenVSSeekerBike[] = INCBIN_U16("graphics/object_events/pics/people/leaf/green_vs_seeker_bike.4bpp");
 
-const u16 gObjectEventPal_PlayerFrlg[] = INCBIN_U16("graphics/object_events/palettes/player_frlg.gbapal");
 const u16 gObjectEventPal_PlayerReflectionFrlg[] = INCBIN_U16("graphics/object_events/palettes/player_reflection_frlg.gbapal");
 const u16 gObjectEventPal_NpcBlue[] = INCBIN_U16("graphics/object_events/palettes/npc_blue.gbapal");
 const u16 gObjectEventPal_NpcPink[] = INCBIN_U16("graphics/object_events/palettes/npc_pink.gbapal");

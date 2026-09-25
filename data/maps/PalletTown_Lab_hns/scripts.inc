@@ -1,5 +1,78 @@
 PalletTown_Lab_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PalletTown_Lab_OnTransition
 	.byte 0
+
+PalletTown_Lab_OnTransition::
+	setflag FLAG_HIDE_PALLET_LAB_GREEN
+	setvar VAR_PALLET_LAB_GREEN_SCENE, 0
+	goto_if_unset FLAG_IS_KANTO_CHAMPION, PalletTown_Lab_OnTransition_Ret
+	goto_if_set FLAG_DEFEATED_PALLET_LAB_GREEN, PalletTown_Lab_OnTransition_Ret
+	clearflag FLAG_HIDE_PALLET_LAB_GREEN
+	setvar VAR_PALLET_LAB_GREEN_SCENE, 1
+PalletTown_Lab_OnTransition_Ret::
+	end
+
+PalletTown_Lab_EventScript_GreenSceneLeft::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, PalletTown_Lab_Movement_PlayerFromLeft
+	waitmovement 0
+	goto PalletTown_Lab_EventScript_GreenSceneBody
+
+PalletTown_Lab_EventScript_GreenSceneMid::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, PalletTown_Lab_Movement_PlayerFromMid
+	waitmovement 0
+	goto PalletTown_Lab_EventScript_GreenSceneBody
+
+PalletTown_Lab_EventScript_GreenSceneRight::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, PalletTown_Lab_Movement_PlayerFromRight
+	waitmovement 0
+	goto PalletTown_Lab_EventScript_GreenSceneBody
+
+PalletTown_Lab_EventScript_GreenSceneBody::
+	delay 40
+	playse SE_PIN
+	applymovement LOCALID_PALLET_LAB_OAK, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 70
+	applymovement LOCALID_PALLET_LAB_OAK, PalletTown_Lab_Movement_OakStepsForward
+	waitmovement 0
+	msgbox PalletTown_Lab_Text_OakIntroducesGreen, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PALLET_LAB_GREEN, PalletTown_Lab_Movement_GreenApproach
+	waitmovement 0
+	setvar VAR_PALLET_LAB_GREEN_SCENE, 2
+	goto PalletTown_Lab_EventScript_GreenBattle
+
+PalletTown_Lab_Movement_PlayerFromLeft:
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+PalletTown_Lab_Movement_PlayerFromMid:
+	walk_up
+	walk_up
+	step_end
+
+PalletTown_Lab_Movement_PlayerFromRight:
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
+PalletTown_Lab_Movement_OakStepsForward:
+	walk_down
+	face_down
+	step_end
+
+PalletTown_Lab_Movement_GreenApproach:
+	walk_left
+	walk_down
+	walk_down
+	face_left
+	step_end
 
 PalletTown_Lab_EventScript_Oak::
 	lock
@@ -29,12 +102,40 @@ PalletTown_Lab_EventScript_OakBadgeCheck::
 	end
 
 PalletTown_Lab_EventScript_Oak16Badges::
+	goto_if_unset FLAG_IS_KANTO_CHAMPION, PalletTown_Lab_EventScript_OakKantoLeagueFirst
+	goto PalletTown_Lab_EventScript_GreenChallenge
+
+PalletTown_Lab_EventScript_OakKantoLeagueFirst::
+	msgbox PalletTown_Lab_Text_OakBadgesButNotChampion, MSGBOX_DEFAULT
+	msgbox PalletTown_Lab_Text_OakOpenIndigoPlateau, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PalletTown_Lab_EventScript_GreenChallenge::
+	goto PalletTown_Lab_EventScript_GreenBattle
+
+PalletTown_Lab_EventScript_Green::
+	lock
+	faceplayer
+	goto PalletTown_Lab_EventScript_GreenBattle
+
+PalletTown_Lab_EventScript_GreenBattle::
+	msgbox PalletTown_Lab_Text_GreenIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_GREEN_HNS, PalletTown_Lab_Text_GreenDefeat
+	msgbox PalletTown_Lab_Text_GreenAfter, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	setflag FLAG_DEFEATED_PALLET_LAB_GREEN
+	setflag FLAG_HIDE_PALLET_LAB_GREEN
+	removeobject LOCALID_PALLET_LAB_GREEN
+	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox PalletTown_Lab_Text_OakOpenMtSilver, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_INDIGOJUNCTION_HIDE_SILVER_GUARD
 	setvar VAR_PALLETTOWN_LABSTATE, 2
-	call_if_unset FLAG_IS_KANTO_CHAMPION, PalletTown_Lab_EventScript_OakKantoLeague
-	release
+	setvar VAR_PALLET_LAB_GREEN_SCENE, 2
+	releaseall
 	end
 
 PalletTown_Lab_EventScript_OakKantoLeague::
@@ -112,6 +213,38 @@ PalletTown_Lab_Text_OakOpenIndigoPlateau:
 	.string "ELITE FOUR won't go easy on you\l"
 	.string "this time.\p"
 	.string "Good luck, {PLAYER}!$"
+
+PalletTown_Lab_Text_OakBadgesButNotChampion:
+	.string "OAK: Wow! That's excellent!\p"
+	.string "You collected the BADGES of GYMS\n"
+	.string "in KANTO. Well done!\p"
+	.string "I was right in my assessment of\n"
+	.string "you.\p"
+	.string "There is one more thing waiting\n"
+	.string "for you at the INDIGO PLATEAU.$"
+
+PalletTown_Lab_Text_OakIntroducesGreen:
+	.string "OAK: Ah - before you go.\p"
+	.string "This is GREEN.\p"
+	.string "She grew up here in PALLET, same\n"
+	.string "as RED and BLUE did.\p"
+	.string "She doesn't say much. Nothing at\n"
+	.string "all, most days.\p"
+	.string "But she has been waiting here for\n"
+	.string "you since the LEAGUE, and I don't\l"
+	.string "believe she means to let you up\l"
+	.string "that mountain unmeasured.$"
+
+PalletTown_Lab_Text_GreenIntro:
+	.string "GREEN:...................\n"
+	.string ".........................$"
+
+PalletTown_Lab_Text_GreenDefeat:
+	.string "...!$"
+
+PalletTown_Lab_Text_GreenAfter:
+	.string "GREEN:...................\n"
+	.string ".........$"
 
 PalletTown_Lab_Text_OakNoKantoBadges:
 	.string "OAK: Hmm? You're not collecting\n"

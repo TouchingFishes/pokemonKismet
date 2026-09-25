@@ -145,7 +145,7 @@
 #define VAR_UNUSED_HNS_0x40F4                            0x40F4
 #define VAR_UNUSED_HNS_0x40F5                            0x40F5
 #define VAR_UNUSED_HNS_0x40F6                            0x40F6
-#define VAR_UNUSED_HNS_0x40F7                            0x40F7
+#define VAR_PALLET_LAB_GREEN_SCENE                       0x40F7
 #define VAR_UNUSED_HNS_0x40F8                            0x40F8
 #define VAR_UNUSED_HNS_0x40F9                            0x40F9
 // 0 = robbery still happening, 1 = player intervened but has not taken the band,
