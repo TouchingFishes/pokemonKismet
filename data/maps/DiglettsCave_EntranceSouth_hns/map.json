@@ -85,7 +85,7 @@
       "flag": "FLAG_HIDE_DIGLETTS_CAVE_BLOCKER"
     },
     {
-      "local_id": "LOCALID_DIGSWARM_S2",
+      "local_id": "LOCALID_DIGSWARM_S5",
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_DUGTRIO",
       "x": 2,
       "y": 2,
