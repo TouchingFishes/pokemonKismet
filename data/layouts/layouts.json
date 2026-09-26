@@ -16412,7 +16412,7 @@
       "id": "LAYOUT_TANGLEBRUSH_HNS",
       "name": "Tanglebrush_hns_Layout",
       "width": 60,
-      "height": 32,
+      "height": 38,
       "primary_tileset": "gTileset_Johto_South_Hns",
       "secondary_tileset": "gTileset_IlexForest_Hns",
       "border_filepath": "data/layouts/Tanglebrush_hns/border.bin",
