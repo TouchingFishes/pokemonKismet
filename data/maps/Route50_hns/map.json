@@ -22,6 +22,11 @@
       "map": "MAP_SINJOH_RUINS_HNS",
       "offset": -6,
       "direction": "up"
+    },
+    {
+      "map": "MAP_SINJOH_CANYON_HNS",
+      "offset": 46,
+      "direction": "right"
     }
   ],
   "object_events": [
