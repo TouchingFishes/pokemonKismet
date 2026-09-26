@@ -1159,6 +1159,7 @@ static const u16 sEeveeEggMoveLearnset_Kismet[] = {
     MOVE_TICKLE,
     MOVE_WISH,
     MOVE_YAWN,
+    MOVE_EXTREME_SPEED,
     MOVE_FAKE_TEARS,
     MOVE_COVET,
     MOVE_DETECT,
