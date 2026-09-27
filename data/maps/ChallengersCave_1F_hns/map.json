@@ -159,6 +159,20 @@
       "elevation": 0,
       "dest_map": "MAP_CHALLENGERS_CAVE_B1F_HNS",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_CHALLENGERS_CAVE_B1F_HNS",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 40,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_CHALLENGERS_CAVE_B1F_HNS",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],
