@@ -10,6 +10,87 @@ LavenderTown_EventScript_PokefanM::
 	msgbox LavenderTown_Text_PokefanM, MSGBOX_NPC
 	end
 
+LavenderTown_EventScript_HexScholar::
+	lock
+	faceplayer
+	goto_if_unset TRAINER_FLAGS_START + TRAINER_LUNA_HNS, LavenderTown_EventScript_HexScholarNotReady
+	goto_if_set FLAG_GOT_TM_HEX_FROM_SCHOLAR, LavenderTown_EventScript_HexScholarRepeat
+	checkitemspace ITEM_TM_HEX
+	goto_if_eq VAR_RESULT, FALSE, LavenderTown_EventScript_HexScholarBagFull
+	msgbox LavenderTown_Text_HexScholarReady, MSGBOX_DEFAULT
+	giveitem ITEM_TM_HEX
+	setflag FLAG_GOT_TM_HEX_FROM_SCHOLAR
+	msgbox LavenderTown_Text_HexScholarAfterGive, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LavenderTown_EventScript_HexScholarNotReady::
+	msgbox LavenderTown_Text_HexScholarNotReady, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LavenderTown_EventScript_HexScholarRepeat::
+	msgbox LavenderTown_Text_HexScholarRepeat, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LavenderTown_EventScript_HexScholarBagFull::
+	msgbox LavenderTown_Text_HexScholarBagFull, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LavenderTown_EventScript_HexManiac::
+	msgbox LavenderTown_Text_HexManiac, MSGBOX_NPC
+	end
+
+LavenderTown_Text_HexScholarNotReady:
+	.string "…You feel it, don't you?\p"
+	.string "Something disturbs ROUTE 8 at\n"
+	.string "night.\p"
+	.string "Come back after you've witnessed\n"
+	.string "it.$"
+
+LavenderTown_Text_HexScholarReady:
+	.string "So.\p"
+	.string "You stopped their pointless\n"
+	.string "séance…\p"
+	.string "That is great!\p"
+	.string "Then this belongs with you.$"
+
+LavenderTown_Text_HexScholarAfterGive:
+	.string "TM HEX grows stronger when the\n"
+	.string "target is already suffering.\p"
+	.string "Poison.\p"
+	.string "Burn.\p"
+	.string "Sleep.\p"
+	.string "Pain calls to pain.$"
+
+LavenderTown_Text_HexScholarRepeat:
+	.string "HEX is very useful. It helped me\n"
+	.string "win many battles,\p"
+	.string "when I was still young and\n"
+	.string "traveled around the world.$"
+
+LavenderTown_Text_HexScholarBagFull:
+	.string "Your bag is too heavy.\p"
+	.string "Make space.\p"
+	.string "Some things don't like being kept\n"
+	.string "waiting.$"
+
+LavenderTown_Text_HexManiac:
+	.string "They tore down POKéMON TOWER and\p"
+	.string "built the RADIO TOWER to boost\n"
+	.string "the signal around LAVENDER TOWN.\p"
+	.string "Not everyone was happy about it.\p"
+	.string "Some folks started dressing like\n"
+	.string "witches…\p"
+	.string "A quiet way to remember what was\n"
+	.string "lost.$"
+
 LavenderTown_EventScript_Teacher::
 	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, LavenderTown_EventScript_TeacherAfter
 	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, LavenderTown_EventScript_TeacherDuring

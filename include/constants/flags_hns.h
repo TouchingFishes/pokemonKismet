@@ -1460,6 +1460,7 @@
 #define FLAG_DAODAO_BERRY_FOREST_MAX_ELIXIR         (HNS_EXTENDED_CONTENT_START + 394)
 #define FLAG_HIDE_PALLET_LAB_GREEN                  (HNS_EXTENDED_CONTENT_START + 395)
 #define FLAG_DEFEATED_PALLET_LAB_GREEN              (HNS_EXTENDED_CONTENT_START + 396)
+#define FLAG_GOT_TM_HEX_FROM_SCHOLAR                (HNS_EXTENDED_CONTENT_START + 397)
 
 
 //just fyi HNS_EXTENDED_CONTENT_START is 0x36A
@@ -1473,7 +1474,7 @@
 // COUNT is documentation - nothing reads it or END - but it fell 18 behind while
 // the two arcs above were being written, which is exactly how the next person
 // allocates on top of a live flag. Bump it with every block you add.
-#define HNS_EXTENDED_CONTENT_COUNT                  397
+#define HNS_EXTENDED_CONTENT_COUNT                  398
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)
 // 0x4F5–0x4FF remaining reserved for future expansion
 

@@ -22725,3 +22725,74 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_FRENZY_PLANT
 - MOVE_SLUDGE_BOMB
 - MOVE_LEECH_SEED
+
+=== TRAINER_TASHA_HNS ===
+Name: TASHA
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Gender: Female
+Music: Hg Sage
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_BANETTE
+Level: 58
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_NOCTOWL
+Level: 58
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_MISMAGIUS
+Level: 58
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_KINDRA_HNS ===
+Name: KINDRA
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Gender: Female
+Music: Hg Sage
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_HOUNDSTONE
+Level: 58
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_NOCTOWL
+Level: 58
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_MISMAGIUS
+Level: 58
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_LUNA_HNS ===
+Name: LUNA
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Gender: Female
+Music: Hg Sage
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+SPECIES_ARIADOS
+Level: 60
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_HYPNO
+Level: 58
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_DUSCLOPS
+Level: 60
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_PURGISLUG
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+SPECIES_MISMAGIUS
+Level: 62
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe

@@ -148,6 +148,68 @@ Route8_Text_SupernerdTomAfter:
 	.string "GYM BADGES give you advantages in\n"
 	.string "battles.$"
 
+Route8_EventScript_Tasha::
+	trainerbattle_single TRAINER_TASHA_HNS, Route8_Text_TashaSeen, Route8_Text_TashaBeaten
+	msgbox Route8_Text_TashaAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route8_EventScript_Kindra::
+	trainerbattle_single TRAINER_KINDRA_HNS, Route8_Text_KindraSeen, Route8_Text_KindraBeaten
+	msgbox Route8_Text_KindraAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route8_EventScript_Luna::
+	trainerbattle_single TRAINER_LUNA_HNS, Route8_Text_LunaSeen, Route8_Text_LunaBeaten
+	msgbox Route8_Text_LunaAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route8_Text_TashaSeen:
+	.string "You aren't part of the circle.\p"
+	.string "That won't do.$"
+
+Route8_Text_TashaBeaten:
+	.string "The spirits didn't warn me…$"
+
+Route8_Text_TashaAfter:
+	.string "The veil is thin tonight.\p"
+	.string "When the sun sets, we begin the\n"
+	.string "séance.\p"
+	.string "If you keep walking…\p"
+	.string "The others will notice you too.$"
+
+Route8_Text_KindraSeen:
+	.string "Can you feel the presence?\p"
+	.string "I won't just let someone wander\n"
+	.string "in.$"
+
+Route8_Text_KindraBeaten:
+	.string "No…\p"
+	.string "You're disturbing the séance…$"
+
+Route8_Text_KindraAfter:
+	.string "Do you hear that?\p"
+	.string "No?\p"
+	.string "Good.\p"
+	.string "It means they're watching us…\p"
+	.string "Not you.$"
+
+Route8_Text_LunaSeen:
+	.string "So.\p"
+	.string "You passed the others.\p"
+	.string "Then the spirits have already\n"
+	.string "noticed you.$"
+
+Route8_Text_LunaBeaten:
+	.string "…As foretold.$"
+
+Route8_Text_LunaAfter:
+	.string "This road is connected to spirits.\p"
+	.string "At night, they answer when we\n"
+	.string "call.\p"
+	.string "You should leave.\p"
+	.string "Before something answers you\n"
+	.string "back.$"
+
 Route8_Text_LockedDoor:
 	.string "It's locked…$"
 

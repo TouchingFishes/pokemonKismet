@@ -884,7 +884,10 @@
 #define TRAINER_DESMOND_HNS                           835
 #define TRAINER_MINTY_HNS                             836
 #define TRAINER_SHAUN_HNS                             837
-#define TRAINERS_COUNT_HNS                       838
+#define TRAINER_TASHA_HNS                             838
+#define TRAINER_KINDRA_HNS                            839
+#define TRAINER_LUNA_HNS                              840
+#define TRAINERS_COUNT_HNS                       841
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
