@@ -1274,9 +1274,27 @@ static bool16 IsRocketTakeover(struct WarpData *warp)
     return FALSE;
 }
 
+static bool16 IsFederationTakeover(struct WarpData *warp)
+{
+    u32 state = VarGet(VAR_FUCHSIA_FEDERATION_STATE);
+
+    if (state < 1 || state > 3)
+        return FALSE;
+    if (warp->mapGroup == MAP_GROUP(MAP_FUCHSIA_CITY_HNS)
+     && warp->mapNum == MAP_NUM(MAP_FUCHSIA_CITY_HNS))
+        return TRUE;
+    // Included because the siege happens inside it.
+    if (warp->mapGroup == MAP_GROUP(MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE_HNS)
+     && warp->mapNum == MAP_NUM(MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE_HNS))
+        return TRUE;
+    return FALSE;
+}
+
 u16 GetLocationMusic(struct WarpData *warp)
 {
     if (IsRocketTakeover(warp) == TRUE)
+        return MUS_HG_ROCKET_TAKEOVER;
+    else if (IsFederationTakeover(warp) == TRUE)
         return MUS_HG_ROCKET_TAKEOVER;
     else if (NoMusicInSootopolisWithLegendaries(warp) == TRUE)
         return MUS_NONE;
