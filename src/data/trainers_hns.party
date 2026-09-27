@@ -21054,13 +21054,13 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 Items: Hyper Potion / Hyper Potion
 
-SPECIES_CROBAT
+SPECIES_DODRIO
 Level: 66
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- MOVE_AERIAL_ACE
-- MOVE_SLUDGE_BOMB
-- MOVE_CONFUSE_RAY
-- MOVE_BITE
+- MOVE_TRI_ATTACK
+- MOVE_JUMP_KICK
+- MOVE_DRILL_PECK
+- MOVE_MIRROR_MOVE
 
 SPECIES_GRUMPIG
 Level: 66
