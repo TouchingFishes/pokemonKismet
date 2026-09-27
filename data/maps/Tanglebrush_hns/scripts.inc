@@ -1,16 +1,6 @@
 Tanglebrush_hns_MapScripts::
 	.byte 0
 
-Tanglebrush_EventScript_CoupleF::
-	trainerbattle_double TRAINER_DEVON_AND_MAY_HNS, Tanglebrush_Text_CoupleFIntro, Tanglebrush_Text_CoupleFDefeat, Tanglebrush_Text_CoupleFNotEnough
-	msgbox Tanglebrush_Text_CoupleFAfter, MSGBOX_AUTOCLOSE
-	end
-
-Tanglebrush_EventScript_CoupleM::
-	trainerbattle_double TRAINER_DEVON_AND_MAY_HNS, Tanglebrush_Text_CoupleMIntro, Tanglebrush_Text_CoupleMDefeat, Tanglebrush_Text_CoupleMNotEnough
-	msgbox Tanglebrush_Text_CoupleMAfter, MSGBOX_AUTOCLOSE
-	end
-
 Tanglebrush_EventScript_Silas::
 	trainerbattle_single TRAINER_SILAS_HNS, Tanglebrush_Text_SilasIntro, Tanglebrush_Text_SilasDefeat
 	msgbox Tanglebrush_Text_SilasAfter, MSGBOX_AUTOCLOSE
@@ -41,19 +31,9 @@ Tanglebrush_EventScript_Cordelia::
 	msgbox Tanglebrush_Text_CordeliaAfter, MSGBOX_AUTOCLOSE
 	end
 
-Tanglebrush_EventScript_Dalia::
-	trainerbattle_single TRAINER_DALIA_HNS, Tanglebrush_Text_DaliaIntro, Tanglebrush_Text_DaliaDefeat
-	msgbox Tanglebrush_Text_DaliaAfter, MSGBOX_AUTOCLOSE
-	end
-
 Tanglebrush_EventScript_Joana::
 	trainerbattle_single TRAINER_JOANA_HNS, Tanglebrush_Text_JoanaIntro, Tanglebrush_Text_JoanaDefeat
 	msgbox Tanglebrush_Text_JoanaAfter, MSGBOX_AUTOCLOSE
-	end
-
-Tanglebrush_EventScript_Barnaby::
-	trainerbattle_single TRAINER_BARNABY_HNS, Tanglebrush_Text_BarnabyIntro, Tanglebrush_Text_BarnabyDefeat
-	msgbox Tanglebrush_Text_BarnabyAfter, MSGBOX_AUTOCLOSE
 	end
 
 Tanglebrush_EventScript_Marcy::
@@ -65,30 +45,6 @@ Tanglebrush_EventScript_Layton::
 	trainerbattle_single TRAINER_LAYTON_HNS, Tanglebrush_Text_LaytonIntro, Tanglebrush_Text_LaytonDefeat
 	msgbox Tanglebrush_Text_LaytonAfter, MSGBOX_AUTOCLOSE
 	end
-
-Tanglebrush_Text_CoupleFIntro:
-	.string "We raise our POKéMON together!$"
-
-Tanglebrush_Text_CoupleFDefeat:
-	.string "Together we still have much to learn.$"
-
-Tanglebrush_Text_CoupleFNotEnough:
-	.string "There's no room for a third here!$"
-
-Tanglebrush_Text_CoupleFAfter:
-	.string "Two hearts, one team. That's us.$"
-
-Tanglebrush_Text_CoupleMIntro:
-	.string "My partner and I never battle apart!$"
-
-Tanglebrush_Text_CoupleMDefeat:
-	.string "We should train harder, love.$"
-
-Tanglebrush_Text_CoupleMNotEnough:
-	.string "You need more POKéMON than that!$"
-
-Tanglebrush_Text_CoupleMAfter:
-	.string "We'll be back, and stronger.$"
 
 Tanglebrush_Text_SilasIntro:
 	.string "I patrol this wood. Nothing gets\npoached on my watch.$"
@@ -144,15 +100,6 @@ Tanglebrush_Text_CordeliaDefeat:
 Tanglebrush_Text_CordeliaAfter:
 	.string "They'll grow up big one day.\nYou'll see!$"
 
-Tanglebrush_Text_DaliaIntro:
-	.string "Can you smell it? The whole wood\nis in bloom.$"
-
-Tanglebrush_Text_DaliaDefeat:
-	.string "My scent didn't slow you at all!$"
-
-Tanglebrush_Text_DaliaAfter:
-	.string "My BUTTERFREE gathers pollen from\nevery flower here.$"
-
 Tanglebrush_Text_JoanaIntro:
 	.string "I've got lost in here twice already!$"
 
@@ -161,15 +108,6 @@ Tanglebrush_Text_JoanaDefeat:
 
 Tanglebrush_Text_JoanaAfter:
 	.string "If you find the way out, come back\nand tell me!$"
-
-Tanglebrush_Text_BarnabyIntro:
-	.string "Camping in TANGLEBRUSH is a rite\nof passage!$"
-
-Tanglebrush_Text_BarnabyDefeat:
-	.string "You're tougher than the bugs here.$"
-
-Tanglebrush_Text_BarnabyAfter:
-	.string "Watch the grass after dark.\nThings move in it.$"
 
 Tanglebrush_Text_MarcyIntro:
 	.string "My TANGELA won't let go of me!$"
