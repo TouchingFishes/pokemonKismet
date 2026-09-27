@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE7_HNS",
-      "offset": 8,
+      "offset": -20,
       "direction": "right"
     },
     {

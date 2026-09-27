@@ -19701,18 +19701,26 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 
 === TRAINER_BARNABY_HNS ===
 Name: BARNABY
-Class: Camper Hns
-Pic: Camper Frlg
+Class: Rich Boy Hns
+Pic: Rich Boy Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_SCYTHER
+SPECIES_PERSIAN @ ITEM_NUGGET
 Level: 60
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 
-SPECIES_EXEGGUTOR
+SPECIES_RAPIDASH @ ITEM_NUGGET
+Level: 59
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_RAPIDASH @ ITEM_NUGGET
+Level: 59
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+
+SPECIES_PURUGLY @ ITEM_NUGGET
 Level: 61
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 
