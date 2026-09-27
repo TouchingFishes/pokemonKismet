@@ -9,8 +9,8 @@ Route8_OnTransition:
 
 Route8_EventScript_Dwayne::
 	trainerbattle_single TRAINER_DWAYNE_HNS, Route8_Text_BikerDwayneSeen, Route8_Text_BikerDwayneBeaten
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, Route8_EventScript_DwayneFallen
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, Route8_EventScript_DwayneDuring
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, Route8_EventScript_DwayneFallen
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, Route8_EventScript_DwayneDuring
 	msgbox Route8_Text_BikerDwayneAfter, MSGBOX_AUTOCLOSE
 	end
 
@@ -24,8 +24,8 @@ Route8_EventScript_DwayneFallen::
 
 Route8_EventScript_Harris::
 	trainerbattle_single TRAINER_HARRIS_HNS, Route8_Text_BikerHarrisSeen, Route8_Text_BikerHarrisBeaten
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, Route8_EventScript_HarrisFallen
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, Route8_EventScript_HarrisDuring
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, Route8_EventScript_HarrisFallen
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, Route8_EventScript_HarrisDuring
 	msgbox Route8_Text_BikerHarrisAfter, MSGBOX_AUTOCLOSE
 	end
 
@@ -39,8 +39,8 @@ Route8_EventScript_HarrisFallen::
 
 Route8_EventScript_Zeke::
 	trainerbattle_single TRAINER_ZEKE_HNS, Route8_Text_BikerZekeSeen, Route8_Text_BikerZekeBeaten
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, Route8_EventScript_ZekeFallen
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, Route8_EventScript_ZekeDuring
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, Route8_EventScript_ZekeFallen
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, Route8_EventScript_ZekeDuring
 	msgbox Route8_Text_BikerZekeAfter, MSGBOX_AUTOCLOSE
 	end
 
@@ -78,7 +78,8 @@ Route8_Text_BikerZekeDuring:
 	.string "Me? I like my teeth where they are.$"
 
 Route8_Text_BikerZekeFallen:
-	.string "Some guy in a suit was paying us.\p"
+	.string "Some lab type was paying us. Coat\n"
+	.string "and all.\p"
 	.string "Never saw his face.\n"
 	.string "Never want to.$"
 

@@ -8,8 +8,8 @@ FuchsiaCity_PokemonCenter_OnTransition::
 	end
 
 FuchsiaCity_PokemonCenter_EventScript_CooltrainerM::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_PokemonCenter_EventScript_CooltrainerMAfter
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_PokemonCenter_EventScript_CooltrainerMDuring
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, FuchsiaCity_PokemonCenter_EventScript_CooltrainerMAfter
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_PokemonCenter_EventScript_CooltrainerMDuring
 	msgbox FuchsiaCity_PokemonCenter1F_Text_CooltrainerM, MSGBOX_NPC
 	end
 
@@ -33,8 +33,8 @@ FuchsiaCity_PokemonCenter1F_Text_CooltrainerMAfter:
 	.string "know. Didn't ask which was which.$"
 
 FuchsiaCity_PokemonCenter_EventScript_CooltrainerF::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_PokemonCenter_EventScript_CooltrainerFAfter
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_PokemonCenter_EventScript_CooltrainerFDuring
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, FuchsiaCity_PokemonCenter_EventScript_CooltrainerFAfter
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_PokemonCenter_EventScript_CooltrainerFDuring
 	msgbox FuchsiaCity_PokemonCenter1F_Text_CooltrainerF, MSGBOX_NPC
 	end
 
@@ -58,8 +58,8 @@ FuchsiaCity_PokemonCenter1F_Text_CooltrainerFAfter:
 	.string "It was quite a thing to see.$"
 
 FuchsiaCity_PokemonCenter_EventScript_JanineClone::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_PokemonCenter_EventScript_JanineCloneGag
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_PokemonCenter_EventScript_JanineCloneDuring
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, FuchsiaCity_PokemonCenter_EventScript_JanineCloneGag
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_PokemonCenter_EventScript_JanineCloneDuring
 FuchsiaCity_PokemonCenter_EventScript_JanineCloneGag::
 	lock
 	faceplayer

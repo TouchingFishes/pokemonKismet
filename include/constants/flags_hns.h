@@ -1271,6 +1271,27 @@
 // FLAG_HIDE_FUCHSIA_NPCS and FLAG_HIDE_FUCHSIA_FEDERATION are always opposites:
 // exactly one population is on screen at a time. Same arrangement as Goldenrod's
 // FLAG_HIDE_GOLDENROD_NPCS / FLAG_HIDE_GOLDENROD_ROCKETS.
+//
+// This covers FUCHSIA's whole peacetime population: the three townsfolk AND the
+// nine penned zoo animals (KABUTO x2, DRATINI x2, KANGASKHAN, CUBONE x2,
+// OMANYTE x2). The zoo briefly had a flag of its own and it was pure redundancy -
+// identical lifetime, same map, set and cleared in the same two scripts eight
+// lines apart. One flag, and the block has only seven left before
+// TRAINER_FLAGS_START.
+//
+// THE ZOO IS LOAD-BEARING FOR THE OBJECT BUDGET, not just scenery. Measured
+// over reachable tiles with light sprites excluded:
+//     lockdown + JANINE's fight, pens FULL   -> peak 15 objects = 17 slots. OVER.
+//     lockdown + JANINE's fight, pens EMPTY  -> peak 12 objects = 14 slots. Fits.
+// Emptying them is what lets JANINE fight from the lockdown instead of waiting for
+// DARIUS to fall. See FLAG_HIDE_FUCHSIA_JANINE_FIGHT, and re-run
+// .claude/fuchsia_budget.py after moving anything on either FUCHSIA map.
+//
+// It is also the right picture: the FEDERATION are seizing POKeMON as specimens
+// for GIDEON, and FuchsiaCity_Text_Loafer4 says so.
+//
+// ARIADOS (22,8) and GOLBAT (23,8) are NOT zoo animals - they are JANINE's
+// fight, and belong to FLAG_HIDE_FUCHSIA_JANINE_FIGHT. Never put this flag on them.
 #define FLAG_HIDE_FUCHSIA_NPCS                      (HNS_EXTENDED_CONTENT_START + 324)
 #define FLAG_HIDE_FUCHSIA_FEDERATION                (HNS_EXTENDED_CONTENT_START + 325)
 #define FLAG_HIDE_FUCHSIA_JANINE                    (HNS_EXTENDED_CONTENT_START + 326)
@@ -1316,15 +1337,31 @@
 // moment the argument ends and the occupation replaces it.
 #define FLAG_HIDE_FUCHSIA_STANDOFF                  (HNS_EXTENDED_CONTENT_START + 336)
 
-// JANINE mid-battle with a biker in north FUCHSIA, states 3-5, so the player can
-// see she is engaged rather than merely absent. Staged the way ROUTE 30 stages
-// JOEY's battle - overworld mon sprites walking in place at each other - and it
-// is scenery, not a fight: talking to her costs nothing.
+// JANINE mid-battle with a biker in north FUCHSIA, for the whole of the lockdown
+// (state 1), so the player can see she is engaged rather than merely absent.
+// Staged the way ROUTE 30 stages JOEY's battle - overworld mon sprites walking in
+// place at each other - and it is scenery, not a fight: talking to her costs
+// nothing.
 // FOUR objects, and that is a ceiling, not a preference. FUCHSIA runs hot on
-// OBJECT_EVENTS_COUNT (16, minus the player, minus a follower = 14 NPCs). State
-// 3 peaks at 14 with these four; a fifth tips it to 15 and objects would start
-// silently failing to spawn. State 2 is worse still - it peaks at 14 with NOTHING
-// added, which is why this scene starts at state 3 rather than at the lockdown.
+// OBJECT_EVENTS_COUNT (16, minus the player, minus a follower = 14 NPCs).
+//
+// Measured over all 48x40 player positions, inflating by movement_range:
+//   lockdown + this fight, zoo visible  -> peak 16 objects = 18 slots. OVERFLOWS.
+//   lockdown + this fight, zoo HIDDEN   -> peak 12 objects = 14 slots. Fits, 2 spare.
+// Worst case is the player at (24,13), where four zoo animals, three federation
+// NPCs, three holdouts, the cut tree, a berry tree and all four fight objects
+// co-reside. So this scene can run from the lockdown only BECAUSE the nine penned
+// zoo animals go dark for the duration - they share FLAG_HIDE_FUCHSIA_NPCS with
+// the townsfolk, and that flag carries the arithmetic.
+//
+// The arithmetic that stood here was wrong, and worth recording so it is not
+// re-derived the same way: it claimed old state 2 "peaks at 14 with NOTHING
+// added" and state 3 "peaks at 14 with these four". Both actually peaked at 12
+// objects / 14 slots - the 14 came from counting the six OBJ_EVENT_GFX_
+// SMALL_LIGHT_HNS objects as object events, and they are not. They go to
+// SpawnLightSprite and consume no slot. The conclusion (split the states) was
+// right for the wrong reason, and hiding the zoo is what actually buys the room.
+//
 // Unlike the STANDOFF this one IS set in new_game.inc: she must not be out
 // here before the arc, and CLEAR would put her there from a new file.
 #define FLAG_HIDE_FUCHSIA_JANINE_FIGHT              (HNS_EXTENDED_CONTENT_START + 337)
@@ -1462,6 +1499,12 @@
 #define FLAG_DEFEATED_PALLET_LAB_GREEN              (HNS_EXTENDED_CONTENT_START + 396)
 #define FLAG_GOT_TM_HEX_FROM_SCHOLAR                (HNS_EXTENDED_CONTENT_START + 397)
 
+// STEVEN, for the one cutscene on the road outside FUCHSIA GYM where he names
+// GIDEON. He is added and removed inside that scene, so this is set from a new
+// file only in the sense that the object starts hidden - the scene clears it,
+// then sets it again on the way out.
+#define FLAG_HIDE_FUCHSIA_STEVEN                    (HNS_EXTENDED_CONTENT_START + 398)
+
 
 //just fyi HNS_EXTENDED_CONTENT_START is 0x36A
 // Grown from 324 to 338 by the Fuchsia Federation arc and from 338 to 395 by the
@@ -1474,7 +1517,7 @@
 // COUNT is documentation - nothing reads it or END - but it fell 18 behind while
 // the two arcs above were being written, which is exactly how the next person
 // allocates on top of a live flag. Bump it with every block you add.
-#define HNS_EXTENDED_CONTENT_COUNT                  398
+#define HNS_EXTENDED_CONTENT_COUNT                  399
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)
 // 0x4F5–0x4FF remaining reserved for future expansion
 

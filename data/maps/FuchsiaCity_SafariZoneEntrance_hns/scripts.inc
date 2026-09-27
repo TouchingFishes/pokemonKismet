@@ -3,15 +3,61 @@ FuchsiaCity_SafariZoneEntrance_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FuchsiaCity_SafariZoneEntrance_OnTransition
 	.byte 0
 
+@ ⚠️ The welcome is keyed on VAR_SAFARI_WELCOME, NOT on
+@ VAR_KANTO_SAFARI_ZONE_PROGRESS, and the two are no longer the same question.
+@ PROGRESS is the SAFARI LEVEL (1-4, sold by the attendant, read by the habitat
+@ gates); it was doubling as this latch, which was invisible only while the
+@ welcome was unavoidable. Now that the FEDERATION lockdown can fire without it,
+@ level 0 is reachable in a staffed lobby and the two meanings have to be apart.
+@
+@ ⚠️ And it MUST be a var, not a flag: map_script_2 can only key on a var. That
+@ also means this script can never simply bail - TryRunOnFrameMapScript re-tests
+@ the key on every input poll (src/field_control_avatar.c:192), so a script that
+@ returns without changing it re-fires forever. Suppressing the welcome is done by
+@ setting the var elsewhere, never by an early goto in here.
+@ The three entries are mutually exclusive, so their order carries no meaning:
+@ BeginLockdown sets VAR_SAFARI_WELCOME to 1 and VAR_FUCHSIA_SCENE to 1 in the same
+@ breath, so the welcome and the siege briefing can never both be armed, and
+@ VAR_SAFARI_ZONE_STATE is only 2 while the player is inside the safari itself.
 FuchsiaCity_SafariZoneEntrance_OnFrame::
-	map_script_2 VAR_KANTO_SAFARI_ZONE_PROGRESS, 0, FuchsiaCity_SafariZoneEntrance_EventScript_MeetSteven
+	map_script_2 VAR_SAFARI_WELCOME, 0, FuchsiaCity_SafariZoneEntrance_EventScript_MeetSteven
 	map_script_2 VAR_SAFARI_ZONE_STATE, 2, FuchsiaCity_SafariZoneEntrance_EventScript_ExitSafari
+	map_script_2 VAR_FUCHSIA_SCENE, 1, FuchsiaCity_SafariZoneEntrance_EventScript_StevenSiegeBriefing
 	.2byte 0
 
+@ ⚠️ ONE STEVEN OBJECT, RELOCATED - NOT two objects with complementary flags.
+@ Two were tried and produced a visible bug: the moment PAXTON's defeat did
+@ `clearflag FLAG_HIDE_SAFARI_STAFF`, TrySpawnObjectEvents spawned the peacetime
+@ STEVEN on the player's very next step (it spawns any in-window template whose
+@ flag is clear, src/event_object_movement.c:3153) while the siege STEVEN was
+@ still on the floor. Two STEVENs, and a scene that had to swap them in front of
+@ the player.
+@
+@ A hide flag only stops FUTURE spawns; it never removes what is already spawned.
+@ So "the swap happens on the next map load" is false for anything the player can
+@ still be standing on the map for.
+@
+@ With one object there is nothing to swap: he is at (12,5) in his header, moved to
+@ (11,6) for the siege, and he walks out of the fight at the aftermath.
 FuchsiaCity_SafariZoneEntrance_OnTransition::
-	call_if_eq VAR_KANTO_SAFARI_ZONE_PROGRESS, 0, FuchsiaCity_SafariZoneEntrance_FirstTime
+	goto_if_unset FLAG_HIDE_SAFARI_FEDERATION, FuchsiaCity_SafariZoneEntrance_SiegeStaging
+	call_if_eq VAR_SAFARI_WELCOME, 0, FuchsiaCity_SafariZoneEntrance_FirstTime
 	end
 
+@ Siege only, and exact: FLAG_HIDE_SAFARI_FEDERATION is clear only while the
+@ FEDERATION holds the building. His header tile stays (12,5), and because
+@ LoadObjEventTemplatesFromHeader runs BEFORE ON_TRANSITION on every map load
+@ (src/overworld.c:924 vs :942) this override is transient - nothing has to put
+@ him back afterwards.
+FuchsiaCity_SafariZoneEntrance_SiegeStaging::
+	setobjectxyperm LOCALID_SAFARIZONEFUCHSIA_STEVEN, 11, 6
+	setobjectmovementtype LOCALID_SAFARIZONEFUCHSIA_STEVEN, MOVEMENT_TYPE_FACE_LEFT
+	end
+
+@ ⚠️ This exists because objects at y<=5 are NOT spawned when the player stands on
+@ the entry warp at y=13 - the spawn window is ty in [py-7, py+9] - and
+@ applymovement on a despawned object is a silent no-op (src/script_movement.c:27).
+@ So the welcome relocates STEVEN to (4,10) to be inside the window at all.
 FuchsiaCity_SafariZoneEntrance_FirstTime::
 	setobjectxyperm LOCALID_SAFARIZONEFUCHSIA_STEVEN, 4, 10
 	setobjectmovementtype LOCALID_SAFARIZONEFUCHSIA_STEVEN, MOVEMENT_TYPE_FACE_LEFT
@@ -51,14 +97,33 @@ FuchsiaCity_SafariZoneEntrance_EventScript_MeetSteven::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement LOCALID_SAFARIZONEFUCHSIA_STEVEN
 
+	@ Two welcomes, one tail. A player who skipped this building before the
+	@ FEDERATION took it gets inducted AFTER JANINE instead, on the re-arm from
+	@ FuchsiaCity_EventScript_ReArmSafariWelcome - and "Hello again! Welcome to the
+	@ DEVON SAFARI ZONE!" cannot be said unchanged days after the place was
+	@ stormed. Only the msgbox differs; movements, the case and both setvars are
+	@ shared below.
+	@ >= 1 rather than >= 4 deliberately: states 1-3 are unreachable here, so the
+	@ wider test is the more robust one.
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_SafariZoneEntrance_EventScript_MeetStevenLate
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenWelcome, MSGBOX_DEFAULT
+	goto FuchsiaCity_SafariZoneEntrance_EventScript_MeetStevenGiveCaseAndReturn
+
+FuchsiaCity_SafariZoneEntrance_EventScript_MeetStevenLate::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenWelcomeLate, MSGBOX_DEFAULT
+
+FuchsiaCity_SafariZoneEntrance_EventScript_MeetStevenGiveCaseAndReturn::
 	closemessage
 	checkitem ITEM_POKEBLOCK_CASE
 	call_if_eq VAR_RESULT, FALSE, FuchsiaCity_SafariZoneEntrance_EventScript_StevenGiveCase
 
 	applymovement LOCALID_SAFARIZONEFUCHSIA_STEVEN, FuchsiaCity_SafariZoneEntrance_Movement_ReturnToTable
 	waitmovement 0
+	@ PROGRESS 1 is SAFARI LEVEL 1; WELCOME 1 disarms the ON_FRAME latch. Both,
+	@ every time - setting only one of them is how this scene fires twice or
+	@ strands the player at a counter that wants a case they never got.
 	setvar VAR_KANTO_SAFARI_ZONE_PROGRESS, 1
+	setvar VAR_SAFARI_WELCOME, 1
 	release
 	end
 
@@ -71,30 +136,230 @@ FuchsiaCity_SafariZoneEntrance_EventScript_StevenGiveCase::
 FuchsiaCity_SafariZoneEntrance_Text_StevenGiveCase:
 	.string "Oh and you might need this.$"
 
+@ ⚠️ The faceplayer is in the BRANCHES, not here. During the siege he must never
+@ look away from the fight; everywhere else facing the player is correct.
 FuchsiaCity_SafariZoneEntrance_Steven::
 	lock
-	faceplayer
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_SafariZoneEntrance_EventScript_StevenAfterFederation
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_SafariZoneEntrance_EventScript_StevenUnderSiege
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, FuchsiaCity_SafariZoneEntrance_EventScript_StevenAfterFederation
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_SafariZoneEntrance_EventScript_StevenUnderSiege
 	goto FuchsiaCity_SafariZoneEntrance_EventScript_StevenNormal
 
 FuchsiaCity_SafariZoneEntrance_EventScript_StevenNormal::
+	faceplayer
 	checkitem ITEM_EON_TICKET
 	goto_if_eq VAR_RESULT, TRUE, FuchsiaCity_SafariZoneEntrance_EventScript_Steven_Trade
 	goto_if_set FLAG_IS_KANTO_CHAMPION, FuchsiaCity_SafariZoneEntrance_StevenChamp
+	@ Recovery path for the case. giveitem prints its own bag-full line and leaves
+	@ the outcome in VAR_0x8007, which nothing branches on - so a full Key Items
+	@ pocket during the welcome lost the case silently, and the entrance counter
+	@ refuses entry without one. Offering it again here means the only way to be
+	@ stuck is to never talk to the man standing in the room.
+	checkitem ITEM_POKEBLOCK_CASE
+	goto_if_eq VAR_RESULT, FALSE, FuchsiaCity_SafariZoneEntrance_EventScript_StevenReplaceCase
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_Steven, MSGBOX_NPC
 	release
 	end
 
+FuchsiaCity_SafariZoneEntrance_EventScript_StevenReplaceCase::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenReplaceCase, MSGBOX_DEFAULT
+	checkitemspace ITEM_POKEBLOCK_CASE
+	goto_if_eq VAR_RESULT, FALSE, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNoRoomForCase
+	giveitem ITEM_POKEBLOCK_CASE
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_StevenNoRoomForCase::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenNoRoomForCase, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenReplaceCase:
+	.string "You came through without a\n"
+	.string "{POKEBLOCK} CASE?\p"
+	.string "That won't do. The gate won't let\n"
+	.string "you past without one.\p"
+	.string "Here. Take another.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenNoRoomForCase:
+	.string "…There's no room for it.\p"
+	.string "Make some space and ask me again.\n"
+	.string "I'm not going anywhere.$"
+
+@ ===[ THE SIEGE BRIEFING - fires on walking in, once, during the lockdown ]====
+@ Armed by BeginLockdown (VAR_FUCHSIA_SCENE 1) and disarmed here (2). This replaced
+@ a pokenavcall that fired on the player's first step into FUCHSIA CITY: in person
+@ it is a better scene, and it removes the awkwardness of a phone call from a man
+@ the player may never have met - VERMILION's introduction is skippable.
+@
+@ ⚠️ HE DOES NOT TURN HERE EITHER, for the same reason as his talk script: he
+@ cannot disengage. He speaks with his back to the player.
+@
+@ ⚠️ ONE TILE OF MARGIN ON THE SPAWN WINDOW. The player enters on the warp at
+@ (5,13), and objects only spawn for ty in [py-7, py+9] = [6,22]. STEVEN is at
+@ (11,6) during the siege, exactly on the top edge, so the applymovement below
+@ works - but anything moved in this scene must stay at y>=6. The mons at y=5 are
+@ NOT spawned yet when this runs, and applymovement on a despawned object is a
+@ silent no-op (src/script_movement.c:27).
+FuchsiaCity_SafariZoneEntrance_EventScript_StevenSiegeBriefing::
+	lock
+	playse SE_PIN
+	applymovement LOCALID_SAFARIZONEFUCHSIA_STEVEN, Common_Movement_ExclamationMark
+	delay 55
+	waitmovement LOCALID_SAFARIZONEFUCHSIA_STEVEN
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenSiegeBriefing, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_FUCHSIA_SCENE, 2
+	release
+	end
+
+@ Absorbs what the deleted PokeNav call carried - the police are all at
+@ TANGLEBRUSH and nobody is coming - together with why a former CHAMPION is stuck.
+@ Text_StevenUnderSiege stays as the shorter re-read on his talk script.
+FuchsiaCity_SafariZoneEntrance_Text_StevenSiegeBriefing:
+	.string "STEVEN: Don't come any closer.\p"
+	.string "…{PLAYER}. Of course it's you.\p"
+	.string "I called the police three days ago.\n"
+	.string "Every officer in KANTO is at\l"
+	.string "TANGLEBRUSH digging out a cache of\l"
+	.string "these people's. Nobody is coming.\p"
+	.string "They have my attendants in the back\n"
+	.string "room. The one giving the orders has\l"
+	.string "not taken his eyes off me since.\p"
+	.string "So I hold this spot, and I can do\n"
+	.string "nothing else. If I break off, or take\l"
+	.string "one step towards him, somebody in\l"
+	.string "there pays for it.\p"
+	.string "You can move. I can't.\p"
+	.string "Please.$"
+
+@ ⚠️ HE NEVER TURNS. No faceplayer and no turnobject anywhere in here: the whole
+@ point of the scene is that he cannot disengage, so talking to him must not make
+@ him break off and look at the player. The exclamation-mark beat is how he
+@ acknowledges them instead - the same device FuchsiaCity_EventScript_JanineFighting
+@ uses, minus the turn.
 FuchsiaCity_SafariZoneEntrance_EventScript_StevenUnderSiege::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenSiegeCommand, MSGBOX_AUTOCLOSE
+	waitmessage
+	playse SE_PIN
+	applymovement LOCALID_SAFARIZONEFUCHSIA_STEVEN, Common_Movement_QuestionMark
+	delay 55
+	waitmovement LOCALID_SAFARIZONEFUCHSIA_STEVEN
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenUnderSiege, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
+@ ===[ THE SIEGE TABLEAU ]=====================================================
+@ A standing scene staged like JANINE's fight in FUCHSIA, not a cutscene, so the
+@ y<=5 spawn-window hazard cannot bite it. STEVEN is WINNING and that is the
+@ point: a Champion-tier trainer stood idle through four states of his own
+@ building being held, and his own dialogue admitted it.
+@
+@   y=5   BIKER1(8,5 >)  MAGNETON(9,5 v)
+@   y=6                      (9,6)        SKARMORY(10,6 <)  STEVEN(11,6 <)
+@   y=7   BIKER2(8,7 >)  PRIMEAPE(9,7 ^)
+@
+@ Each biker stands beside his own mon and watches it. Both mons and the bird all
+@ face (9,6), which is left EMPTY on purpose: it is the contested space between
+@ them, so the three read as trading blows at range rather than nose to nose.
+@ STEVEN is directly behind SKARMORY, facing the same way.
+@
+@ (9,6) is itself UNREACHABLE - the two mons, the bird and the bikers seal it and
+@ (8,6) off - which is the wanted outcome: the player cannot stand in the middle
+@ of the battle. SKARMORY is talked to from (10,5) or (10,7) instead.
+@
+@ ⚠️ SKARMORY MUST KEEP A REACHABLE EMPTY NEIGHBOUR. An earlier arrangement put it
+@ on (9,6) with the two mons, STEVEN and a biker boxing it in on all four sides,
+@ and since column 8 reaches the rest of the map only through (8,7)/(8,8) its
+@ flavour text became unreadable. Re-check with the talkability pass after moving
+@ anything in here.
+@
+@ The bikers and the mons are locked on each other and deliberately do NOT
+@ faceplayer, so reading their flavour never breaks the composition. Nobody boasts:
+@ the winner gives one clipped order, the losers concede, and the mon text carries
+@ the score.
+FuchsiaCity_SafariZoneEntrance_EventScript_SiegeBiker1::
+	lock
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_SiegeBiker1, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_SiegeBiker2::
+	lock
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_SiegeBiker2, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_SiegeSkarmory::
+	lock
+	waitse
+	playmoncry SPECIES_SKARMORY, CRY_MODE_NORMAL
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_SiegeSkarmory, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_SiegeMagneton::
+	lock
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_SiegeMagneton, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_SiegePrimeape::
+	lock
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_SiegePrimeape, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_Text_StevenSiegeCommand:
+	.string "STEVEN: SKARMORY, hold.\p"
+	.string "Neither of them gets past you.$"
+
+@ MAGNETON is Electric and PRIMEAPE is Fighting - both of them beat a Steel/Flying
+@ bird on paper. That is deliberate: SKARMORY is winning on handling, not on a
+@ type advantage, which is what makes it read as STEVEN rather than as luck.
+FuchsiaCity_SafariZoneEntrance_Text_SiegeBiker1:
+	.string "Don't talk to me. I'm counting.\p"
+	.string "Nine minutes that bird's been up\n"
+	.string "there. Hasn't flapped twice.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_SiegeBiker2:
+	.string "We had him two on one.\p"
+	.string "Two on one, and he tells it to HOLD.\p"
+	.string "Not to win. To hold.\p"
+	.string "…Who is this guy?$"
+
+FuchsiaCity_SafariZoneEntrance_Text_SiegeSkarmory:
+	.string "SKARMORY has not left the tile it\n"
+	.string "started on.\p"
+	.string "Its wings are set, and both of the\n"
+	.string "others are watching them instead of\l"
+	.string "each other.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_SiegeMagneton:
+	.string "MAGNETON's three eyes are all on the\n"
+	.string "SKARMORY.\p"
+	.string "It has been holding a charge for a\n"
+	.string "long while and has not been given\l"
+	.string "anywhere to put it.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_SiegePrimeape:
+	.string "PRIMEAPE is shaking with temper.\p"
+	.string "Every time it commits, the steel\n"
+	.string "wing is already there, and it has to\l"
+	.string "begin again.$"
+
 FuchsiaCity_SafariZoneEntrance_EventScript_StevenAfterFederation::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 8, FuchsiaCity_SafariZoneEntrance_EventScript_StevenGideonAccountedFor
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 7, FuchsiaCity_SafariZoneEntrance_EventScript_StevenCharterDone
+	faceplayer
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_SafariZoneEntrance_EventScript_StevenGideonAccountedFor
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 5, FuchsiaCity_SafariZoneEntrance_EventScript_StevenCharterDone
 	goto_if_unset FLAG_DEFEATED_VERMILION_GYM, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady
 	goto_if_unset FLAG_DEFEATED_CELADON_GYM, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady
 	goto_if_unset FLAG_DEFEATED_SAFFRON_GYM, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNotReady
@@ -104,7 +369,7 @@ FuchsiaCity_SafariZoneEntrance_EventScript_StevenAfterFederation::
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenAccept, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_STEVEN_KANTO_HNS, FuchsiaCity_SafariZoneEntrance_Text_StevenBattleBeaten
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenBattleAfter, MSGBOX_DEFAULT
-	setvar VAR_FUCHSIA_FEDERATION_STATE, 7
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 5
 	closemessage
 	release
 	end
@@ -121,14 +386,19 @@ FuchsiaCity_SafariZoneEntrance_EventScript_StevenGideonAccountedFor::
 	release
 	end
 
+@ ⚠️ This used to ANNOUNCE the name, at the arc's close, to a player who had just
+@ beaten the man. It is a closing note now: the name was spoken back in FUCHSIA and
+@ what is new here is that it is finished.
 FuchsiaCity_SafariZoneEntrance_Text_StevenGideonAccountedFor:
-	.string "JANINE sent word from the docks.\p"
-	.string "GIDEON. Out past the DAODAO\n"
-	.string "ISLES, of all places.\p"
-	.string "That was the last name anyone\n"
-	.string "was still carrying.\p"
+	.string "You found him.\p"
+	.string "Out past the DAODAO ISLES, of all\n"
+	.string "places. JANINE said the docks had him\l"
+	.string "going west and I did not want to\l"
+	.string "believe her.\p"
+	.string "He was the last name anyone was\n"
+	.string "still carrying.\p"
 	.string "The FEDERATION is closed.\n"
-	.string "Thank you.$"
+	.string "Thank you, {PLAYER}.$"
 
 FuchsiaCity_SafariZoneEntrance_EventScript_StevenDeclineBattle::
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenDecline, MSGBOX_DEFAULT
@@ -161,8 +431,8 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenChamp:
 
 FuchsiaCity_SafariZoneEntrance_EventScript_EntranceCounterTrigger::
 	lockall
-	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_SafariZoneEntrance_EventScript_CounterOpen
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_SafariZoneEntrance_EventScript_CounterOpen
+	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_SafariZoneEntrance_EventScript_CounterOpen
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, FuchsiaCity_SafariZoneEntrance_EventScript_CounterOpen
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_CounterShut, MSGBOX_DEFAULT
 	goto FuchsiaCity_SafariZoneEntrance_EventScript_MovePlayerBackFromCounter
 
@@ -301,7 +571,38 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenWelcome:
 	.string "any time to increase your SAFARI\l"
 	.string "LEVEL.$"
 
+@ The same four facts as Text_StevenWelcome - four habitats, invasive species from
+@ HOENN, rare POKéMON, SAFARI LEVEL and who sells it - in the register of a man
+@ walking someone round a building they just helped him get back. It cannot open
+@ "Hello again!" or "Welcome to the DEVON SAFARI ZONE!": this player has been in
+@ here exactly once, during a hostage situation.
+FuchsiaCity_SafariZoneEntrance_Text_StevenWelcomeLate:
+	.string "{PLAYER}. Good.\p"
+	.string "You have been in this building once,\n"
+	.string "and it was not at its best.\p"
+	.string "Let me do this properly.\p"
+	.string "This is the DEVON SAFARI ZONE. Four\n"
+	.string "habitats, built to draw in invasive\l"
+	.string "species out of the HOENN region and\l"
+	.string "hold them somewhere they can do no\l"
+	.string "harm.\p"
+	.string "Trainers catch as many as they can\n"
+	.string "and we call it a service. It is one.\p"
+	.string "There are POKéMON in there you will\n"
+	.string "not find anywhere else, and more of\l"
+	.string "them the higher your SAFARI LEVEL.\p"
+	.string "The attendant by the door raises it,\n"
+	.string "whenever you can afford him.\p"
+	.string "The pens are being restocked. It is\n"
+	.string "the least of what they took.$"
+
+@ ⚠️ A level-0 player can now stand in a STAFFED lobby. Before the FEDERATION
+@ prerequisite came out that was impossible - walking in fired the welcome before
+@ the player could take a step, so PROGRESS was never 0 with the attendant
+@ visible. Now it can be, between the aftermath and the post-JANINE induction, and
+@ the fall-through below thanks a non-member for their membership.
 FuchsiaCity_SafariZoneEntrance_UpgradeGuy::
+	goto_if_eq VAR_KANTO_SAFARI_ZONE_PROGRESS, 0, FuchsiaCity_SafariZoneEntrance_UpgradeGuyNotYet
 	goto_if_eq VAR_KANTO_SAFARI_ZONE_PROGRESS, 1, FuchsiaCity_SafariZoneEntrance_UpgradeGuy1
 	goto_if_eq VAR_KANTO_SAFARI_ZONE_PROGRESS, 2, FuchsiaCity_SafariZoneEntrance_UpgradeGuy2
 	goto_if_eq VAR_KANTO_SAFARI_ZONE_PROGRESS, 3, FuchsiaCity_SafariZoneEntrance_UpgradeGuy3
@@ -352,6 +653,16 @@ FuchsiaCity_SafariZoneEntrance_UpgradeGuy3::
 	setvar VAR_KANTO_SAFARI_ZONE_PROGRESS, 4
 	hidemoneybox
 	end
+
+FuchsiaCity_SafariZoneEntrance_UpgradeGuyNotYet::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_UpgradeGuyNotYet, MSGBOX_NPC
+	end
+
+FuchsiaCity_SafariZoneEntrance_Text_UpgradeGuyNotYet:
+	.string "I handle SAFARI LEVELS, but you're\n"
+	.string "not on the register yet.\p"
+	.string "Have a word with STEVEN first. He'll\n"
+	.string "see you signed in.$"
 
 FuchsiaCity_SafariZoneEntrance_UpgradeGuyDecline::
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_UpgradeGuyDeclined, MSGBOX_NPC
@@ -479,17 +790,41 @@ FuchsiaCity_SafariZoneEntrance_EventScript_Paxton::
 	goto_if_not_defeated TRAINER_BRIX_HNS, FuchsiaCity_SafariZoneEntrance_EventScript_PaxtonWait
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_PaxtonSeen, MSGBOX_DEFAULT
 	@ Bookmark, so a save made mid-scene resumes with the tie already surfaced.
-	setvar VAR_FUCHSIA_FEDERATION_STATE, 4
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 2
 	trainerbattle_no_intro TRAINER_PAXTON_HNS, FuchsiaCity_SafariZoneEntrance_Text_PaxtonBeaten
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_PaxtonAfter, MSGBOX_DEFAULT
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK
-	setvar VAR_FUCHSIA_FEDERATION_STATE, 5
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 3
 	setflag FLAG_HIDE_SAFARI_FEDERATION
 	clearflag FLAG_HIDE_SAFARI_STAFF
 	removeobject LOCALID_SAFARI_PAXTON
 	removeobject LOCALID_SAFARI_GIL
 	removeobject LOCALID_SAFARI_BRIX
+	@ The fight clears in the SAME fade. These four share
+	@ FLAG_HIDE_SAFARI_FEDERATION, but the flag alone only takes effect on the next
+	@ map load - without these the player would fade back in to STEVEN giving orders
+	@ to nobody, then watch the losers blink out a step later.
+	@
+	@ STEVEN is not in this list and never needs to be: there is only one of him,
+	@ his flag is "0", and he gives the aftermath speech below.
+	removeobject LOCALID_SAFARI_SIEGE_BIKER1
+	removeobject LOCALID_SAFARI_SIEGE_BIKER2
+	removeobject LOCALID_SAFARI_SIEGE_MAGNETON
+	removeobject LOCALID_SAFARI_SIEGE_SKARMORY
+	removeobject LOCALID_SAFARI_SIEGE_PRIMEAPE
+	@ ⚠️ And the staff have to be ADDED, not merely unflagged. clearflag on its own
+	@ left the player fading in to an empty lobby, hearing "my attendants are shaken
+	@ but they are safe" addressed to nobody, and then eight NPCs popping in one
+	@ step later.
+	addobject LOCALID_SAFARI_INFO_ATTENDANT
+	addobject LOCALID_SAFARI_BLEND_MASTER
+	addobject LOCALID_SAFARI_BLENDER_TWIN
+	addobject LOCALID_SAFARI_BLENDER_MAN
+	addobject LOCALID_SAFARI_BLENDER_GIRL
+	addobject LOCALID_SAFARI_BLENDER_BOY
+	addobject LOCALID_SAFARI_BLENDER_POKEFAN
+	addobject LOCALID_SAFARI_UPGRADE_GUY
 	playse SE_EXIT
 	fadescreenswapbuffers FADE_FROM_BLACK
 	goto FuchsiaCity_SafariZoneEntrance_EventScript_FederationAftermath
@@ -500,15 +835,17 @@ FuchsiaCity_SafariZoneEntrance_EventScript_PaxtonWait::
 	release
 	end
 
-@ State 5 -> 6. Restores FUCHSIA itself: the townsfolk come back, JANINE returns
-@ to her GYM, and the takeover BGM stops being selected the next time the city
-@ map loads. Done here rather than on the city map so the player never sees a
-@ half-restored FUCHSIA.
+@ State 3 -> 4. Restores FUCHSIA itself: the townsfolk come back, JANINE returns
+@ to her GYM, the zoo is restocked, and the takeover BGM stops being selected the
+@ next time the city map loads. Done here rather than on the city map so the player
+@ never sees a half-restored FUCHSIA.
 FuchsiaCity_SafariZoneEntrance_EventScript_FederationAftermath::
+	@ STEVEN steps west from (11,6) into (10,6) - the tile SKARMORY has just
+	@ vacated - so he walks out of the fight rather than out of nowhere.
 	applymovement LOCALID_SAFARIZONEFUCHSIA_STEVEN, Common_Movement_WalkLeft1
 	waitmovement 0
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenAftermath, MSGBOX_DEFAULT
-	setvar VAR_FUCHSIA_FEDERATION_STATE, 6
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 4
 	clearflag FLAG_HIDE_FUCHSIA_NPCS
 	setflag FLAG_HIDE_FUCHSIA_FEDERATION
 	setflag FLAG_HIDE_FUCHSIA_HOLDOUTS
@@ -543,8 +880,8 @@ FuchsiaCity_SafariZoneEntrance_Text_BrixBeaten:
 
 FuchsiaCity_SafariZoneEntrance_Text_BrixAfter:
 	.string "We're not thieves. We're owed.\p"
-	.string "That's what the man in the suit\n"
-	.string "told us, anyway.$"
+	.string "That's what the man paying us said,\n"
+	.string "anyway.$"
 
 FuchsiaCity_SafariZoneEntrance_Text_PaxtonWait:
 	.string "Stay back, kid.\p"
@@ -574,15 +911,28 @@ FuchsiaCity_SafariZoneEntrance_Text_PaxtonAfter:
 	.string "we were to leave and say nothing.\p"
 	.string "…He knew you'd come.$"
 
+@ ⚠️ This used to say "I can't fight him", which was the plot hole rather than an
+@ explanation - he is a former CHAMPION and the FEDERATION are bikers. He is
+@ winning now, and still stuck, and the reason he is stuck is the reason the player
+@ is needed.
 FuchsiaCity_SafariZoneEntrance_Text_StevenUnderSiege:
 	.string "{PLAYER}! You shouldn't be in here.\p"
+	.string "…No. I am glad you are.\p"
+	.string "I can keep these two standing there\n"
+	.string "all day. That was never the problem.\p"
 	.string "They have my attendants in the back\n"
-	.string "room. The one standing over me is\l"
-	.string "the one giving the orders.\p"
-	.string "I can't fight him and keep everyone\n"
-	.string "in there safe.\p"
-	.string "But you can fight.$"
+	.string "room, and the one giving the orders\l"
+	.string "has not taken his eyes off me since.\p"
+	.string "The moment I break off, or take one\n"
+	.string "step towards him, somebody in there\l"
+	.string "pays for it.\p"
+	.string "So I hold. It is the only thing I am\n"
+	.string "any use for in here.\p"
+	.string "You can do the rest. Please.$"
 
+@ Plants the thread the post-JANINE reveal pays off: he does not have the name yet
+@ and says so, and says he intends to get it. PAXTON never knew it either, which is
+@ what makes JANINE the one who finds it.
 FuchsiaCity_SafariZoneEntrance_Text_StevenAftermath:
 	.string "It's over…\p"
 	.string "My attendants are shaken, but they\n"
@@ -592,6 +942,9 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenAftermath:
 	.string "Someone paid for all this. Someone\n"
 	.string "who knew you were coming before\l"
 	.string "I did.\p"
+	.string "I intend to find out who. DEVON keeps\n"
+	.string "records, and money leaves a trail\l"
+	.string "even when men are careful.\p"
 	.string "Come and find me once FUCHSIA is\n"
 	.string "back on its feet. I have a favor\l"
 	.string "to ask you.$"
@@ -602,12 +955,15 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenNotReady:
 	.string "But finish what you came here for\n"
 	.string "first. JANINE is back at her GYM.$"
 
+@ ⚠️ He has already named GIDEON out on the road by the time this can be read, so
+@ this no longer pretends not to know. The out-of-reach point survives - it is
+@ GIDEON's whereabouts that KANTO cannot get at, not his identity.
 FuchsiaCity_SafariZoneEntrance_Text_StevenChallenge:
 	.string "SURGE, ERIKA, SABRINA, JANINE.\p"
 	.string "All four, and the FEDERATION too.\p"
-	.string "The men who took my SAFARI ZONE\n"
-	.string "were paid by someone I cannot\l"
-	.string "reach from KANTO.\p"
+	.string "GIDEON is not in KANTO any more, and\n"
+	.string "wherever he has gone, I cannot reach\l"
+	.string "it from here.\p"
 	.string "DEVON has a ship. I want you on it.\p"
 	.string "But not before I've seen for myself\n"
 	.string "that you're ready.\p"
@@ -630,7 +986,7 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenBattleAfter:
 	.string "The ship is at the dock on\n"
 	.string "ROUTE 13. The captain has his\l"
 	.string "orders.\p"
-	.string "Find out who paid them, {PLAYER}.\p"
+	.string "Find GIDEON, {PLAYER}.\p"
 	.string "And be careful out there.$"
 
 FuchsiaCity_SafariZoneEntrance_Text_StevenCharterReminder:

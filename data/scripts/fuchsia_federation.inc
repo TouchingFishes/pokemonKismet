@@ -1,49 +1,35 @@
-@ KANTO POKeMON FEDERATION - arming the FUCHSIA takeover.
+@ KANTO POKeMON FEDERATION - shared scripts and text for the FUCHSIA takeover.
 @
-@ The arc starts once the player has beaten SURGE, ERIKA and SABRINA in ANY
-@ order AND finished the POWER PLANT machine-part errand. Testing the set rather
-@ than a sequence is what keeps that half of KANTO open-world: no gym is ever
-@ blocked on another, and FUCHSIA itself stays walkable throughout - the event
-@ simply has not armed yet.
+@ THERE IS NO LONGER AN "ARMING" STEP, AND THAT IS DELIBERATE.
+@ This file used to hold Common_EventScript_TryArmFederation, called from four
+@ endpoints (the three KANTO gyms and the POWER PLANT back room), whichever
+@ finished last. It set state 1 = "armed, rumours only", and the lockdown was the
+@ state 1 -> 2 step taken on the player's next entry to FUCHSIA.
 @
-@ ⚠️ Why this is called from four places instead of checked on a map. There is
-@ no map every player passes through after finishing the last of those four
-@ things, so there is nowhere to poll. Each of the four endpoints calls this
-@ instead, and whichever one completes last is the one that arms the arc. The
-@ call is cheap and idempotent: it returns immediately unless the state is still
-@ 0 and all four conditions hold.
+@ Two things were wrong with that:
 @
-@ Arming only sets state 1 (rumours). The lockdown is state 1 -> 2 and happens in
-@ FuchsiaCity_EventScript_BeginLockdown when the player next walks into FUCHSIA,
-@ so the city is never rearranged while the player is standing in it.
-
-Common_EventScript_TryArmFederation::
-	goto_if_ne VAR_FUCHSIA_FEDERATION_STATE, 0, Common_EventScript_TryArmFederationDone
-	goto_if_unset FLAG_DEFEATED_VERMILION_GYM, Common_EventScript_TryArmFederationDone
-	goto_if_unset FLAG_DEFEATED_CELADON_GYM, Common_EventScript_TryArmFederationDone
-	goto_if_unset FLAG_DEFEATED_SAFFRON_GYM, Common_EventScript_TryArmFederationDone
-	@ The POWER PLANT thread must land BEFORE the trip to the ISLES. State 7 is
-	@ its last beat - the MACHINE PART returned, TM THUNDER given. It also makes
-	@ the theft read as the first, small sign of the backer behind all this.
-	goto_if_lt VAR_KANTO_ROCKET_STORY_STATE, 7, Common_EventScript_TryArmFederationDone
-	@ ⚠️ The player must have met STEVEN at the SAFARI ZONE at least once.
-	@ Two reasons, one fictional and one mechanical. He phones the player below,
-	@ which only works if they have met; and his first-visit welcome is an
-	@ ON_FRAME cutscene keyed to VAR_KANTO_SAFARI_ZONE_PROGRESS == 0 that also
-	@ RELOCATES him to (4,10). Leaving that unfired would either play a cheery
-	@ "welcome to the DEVON SAFARI ZONE" over a hostage scene, or strand him
-	@ away from the spot the showdown positions him at.
-	goto_if_eq VAR_KANTO_SAFARI_ZONE_PROGRESS, 0, Common_EventScript_TryArmFederationDone
-	setvar VAR_FUCHSIA_FEDERATION_STATE, 1
-	setspeaker FuchsiaFederation_Text_StevenName
-	pokenavcall FuchsiaFederation_Text_StevenWarning
-	waitmessage
-	delay 30
-	closemessage
-	return
-
-Common_EventScript_TryArmFederationDone::
-	return
+@   1. State 1 was almost never observable. It lasted from the arming call until
+@      the player next stepped into FUCHSIA - often seconds - so the rumour
+@      dialogue keyed to `== 1` was written and then never read. The arc is live
+@      from a new file now and the rumour IS the default, which is what those
+@      lines were for.
+@
+@   2. It could brick a save. All four call sites are one-shot, each sitting
+@      inside a first-win branch, so the conditions were tested exactly once
+@      apiece and never again. A player who finished all four WITHOUT having met
+@      STEVEN at the SAFARI ZONE - optional side content - failed the last check
+@      and nothing ever re-checked. The arc never armed, and since
+@      FLAG_HIDE_FUCHSIA_JANINE is cleared in exactly one place (the aftermath,
+@      which that player can never reach), FUCHSIA GYM had no leader forever: no
+@      14th badge, no charter, no ROUTE 13 boat, no DAODAO.
+@
+@ The conditions now live in FuchsiaCity_EventScript_TryBeginLockdown, called
+@ from that map's ON_TRANSITION, so they are re-evaluated on EVERY entry to
+@ FUCHSIA and cannot be missed. The SAFARI ZONE condition is gone entirely - see
+@ VAR_SAFARI_WELCOME for where the welcome went instead.
+@
+@ STEVEN's call below moved with them: it is now an ON_FRAME scene in
+@ FuchsiaCity_hns, because pokenavcall must not run inside ON_TRANSITION.
 
 @ ===[ THE KANTO CORDON ]=====================================================
 @ MT MOON, DIGLETT'S CAVE and TANGLEBRUSH are shut by a police cordon until the
@@ -81,8 +67,8 @@ Common_Text_KantoCordon:
 @ detour. The same information is therefore carried where players actually go -
 @ STEVEN's call, and the SAFFRON ROUTE 7 gate guard.
 Common_EventScript_TanglebrushCordon::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, Common_EventScript_TanglebrushCordonAfter
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, Common_EventScript_TanglebrushCordonCrisis
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, Common_EventScript_TanglebrushCordonAfter
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, Common_EventScript_TanglebrushCordonCrisis
 	msgbox Common_Text_TanglebrushCordon, MSGBOX_NPC
 	end
 
@@ -155,19 +141,19 @@ Common_EventScript_ClearKantoCordon::
 	setflag FLAG_HIDE_CINNABAR_BLOCKER
 	return
 
-FuchsiaFederation_Text_StevenName:
-	.string "STEVEN$"
-
-FuchsiaFederation_Text_StevenWarning:
-	.string "STEVEN: {PLAYER}, it's me.\p"
-	.string "I'm at the SAFARI ZONE in FUCHSIA.\p"
-	.string "We've had bikers at the gate for\n"
-	.string "days. The KANTO POKéMON FEDERATION,\l"
-	.string "they call themselves.\p"
-	.string "I called the police. They're all at\n"
-	.string "TANGLEBRUSH, digging out some cache\l"
-	.string "of these people's, and there is\l"
-	.string "nobody left to send.\p"
-	.string "My staff are frightened.\p"
-	.string "I wouldn't ask if there were anyone\n"
-	.string "else. Please, come to FUCHSIA.$"
+@ ⚠️ STEVEN'S POKENAV CALL IS GONE, deliberately - no speaker name and no call
+@ text live here any more.
+@
+@ It used to fire when the arc armed, from anywhere in KANTO, summoning the player
+@ to FUCHSIA. Two problems: with the arc live from a new file there is no arming
+@ moment to hang it on, and it could reach a player who had never met him at all,
+@ since VERMILION's introduction is skippable (ROUTE 11 runs east to ROUTE 12, not
+@ into the cordoned DIGLETT'S CAVE, so the north exit carrying the three
+@ VAR_VERMILION_CITY_STEVEN triggers is avoidable).
+@
+@ He briefs the player IN PERSON instead, on their first step into the occupied
+@ SAFARI ZONE building:
+@   FuchsiaCity_SafariZoneEntrance_EventScript_StevenSiegeBriefing
+@ which absorbed this text's content about the police being at TANGLEBRUSH. The
+@ player is pointed up the road by JANINE's fight dialogue and by DARIUS standing
+@ on the SAFARI ZONE door, so nothing was lost by dropping the summons.

@@ -35,7 +35,7 @@ Route13_OnTransition:
 	end
 
 Route13_EventScript_TryLiftKantoCordon::
-	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 7, Route13_EventScript_CordonStays
+	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 5, Route13_EventScript_CordonStays
 	goto_if_lt VAR_ALOLA_STATE, 2, Route13_EventScript_CordonStays
 	call Common_EventScript_ClearKantoCordon
 	return
@@ -263,7 +263,7 @@ Route13_GetOffBoat_2:
 Route13_TravelToAlola::
 	lock
 	faceplayer
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 7, Route13_TravelToAlola_1
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 5, Route13_TravelToAlola_1
 	msgbox Route13_TravelToAlola_Text_4, MSGBOX_AUTOCLOSE
 	release
 	end

@@ -1,21 +1,63 @@
 FuchsiaCity_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FuchsiaCity_EventScript_CityEnter
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, FuchsiaCity_OnFrame
 	.byte 0
+
+@ Both of the FEDERATION arc's city cutscenes, sequenced by one var. They can
+@ never be pending at once, so they share it rather than taking two: each scene
+@ advances VAR_FUCHSIA_SCENE as its last act, which is what disarms it. Same latch
+@ pattern as ViridianCity_OnFrame and VioletCity_OnFrame.
+@   1 set by BeginLockdown   -> 2 by the siege briefing, in the SAFARI building
+@   3 set by JANINE's defeat -> 4 by the reveal, below
+@
+@ ⚠️ SCENE 1 IS NOT HANDLED ON THIS MAP. BeginLockdown arms it, but the scene it
+@ arms is FuchsiaCity_SafariZoneEntrance_EventScript_StevenSiegeBriefing - STEVEN
+@ briefs the player in person, from inside the fight, the moment they walk through
+@ that door. It used to be a pokenavcall on the first step into the city; in person
+@ it is the better scene, and it drops the problem that a phone call could reach a
+@ player who had never met him.
+FuchsiaCity_OnFrame::
+	map_script_2 VAR_FUCHSIA_SCENE, 3, FuchsiaCity_EventScript_StevenBackers
+	.2byte 0
 
 FuchsiaCity_EventScript_CityEnter::
 	setflag FLAG_VISITED_FUCHSIA_CITY
-	call_if_eq VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_EventScript_BeginLockdown
+	call_if_eq VAR_FUCHSIA_FEDERATION_STATE, 0, FuchsiaCity_EventScript_TryBeginLockdown
 	end
 
 @ ===[ KANTO POKeMON FEDERATION ]=============================================
 @ Same arrangement as GOLDENROD: two populations share the same tiles and also flags
+@
+@ ⚠️ THE ARC'S TRIGGER LIVES HERE, not in data/scripts/fuchsia_federation.inc.
+@ It used to be Common_EventScript_TryArmFederation, called from the three KANTO
+@ gyms and the POWER PLANT back room - four ONE-SHOT sites, each inside a
+@ first-win branch. So the conditions were tested once apiece and never again,
+@ and a player who tripped the last one with a condition unmet lost the arc
+@ permanently. See the long note in fuchsia_federation.inc for the full account.
+@
+@ ON_TRANSITION re-evaluates on EVERY entry to FUCHSIA, so nothing can be missed
+@ and no ordering of the four prerequisites can strand the player.
+FuchsiaCity_EventScript_TryBeginLockdown::
+	goto_if_unset FLAG_DEFEATED_VERMILION_GYM, FuchsiaCity_EventScript_LockdownDefer
+	goto_if_unset FLAG_DEFEATED_CELADON_GYM, FuchsiaCity_EventScript_LockdownDefer
+	goto_if_unset FLAG_DEFEATED_SAFFRON_GYM, FuchsiaCity_EventScript_LockdownDefer
+	@ The POWER PLANT thread must land BEFORE the trip to the ISLES. State 7 is
+	@ its last beat - the MACHINE PART returned, TM THUNDER given. It also makes
+	@ the theft read as the first, small sign of the backer behind all this.
+	goto_if_lt VAR_KANTO_ROCKET_STORY_STATE, 7, FuchsiaCity_EventScript_LockdownDefer
+	@ There is deliberately NO check on the SAFARI ZONE welcome here. It used to
+	@ gate the whole arc on optional side content, and it was the condition that
+	@ made the one-shot bug reachable. The welcome now relocates instead - see
+	@ VAR_SAFARI_WELCOME and FuchsiaCity_EventScript_ReArmSafariWelcome below.
+	goto FuchsiaCity_EventScript_BeginLockdown
+
 FuchsiaCity_EventScript_BeginLockdown::
 	@ Never while the player is inside the SAFARI ZONE. Exiting the safari
 	@ warps to the ENTRANCE map rather than the city, so this should be
 	@ unreachable - but a rearranged city and a live safari session at the same
 	@ time would be very hard to unpick, so it is asserted rather than assumed.
 	goto_if_eq VAR_SAFARI_ZONE_STATE, 2, FuchsiaCity_EventScript_LockdownDefer
-	setvar VAR_FUCHSIA_FEDERATION_STATE, 2
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 1
 	setflag FLAG_HIDE_FUCHSIA_NPCS
 	clearflag FLAG_HIDE_FUCHSIA_FEDERATION
 	setflag FLAG_HIDE_FUCHSIA_JANINE
@@ -23,18 +65,170 @@ FuchsiaCity_EventScript_BeginLockdown::
 	clearflag FLAG_HIDE_SAFARI_FEDERATION
 	setflag FLAG_HIDE_SAFARI_STAFF
 	clearflag FLAG_HIDE_FUCHSIA_HOLDOUTS
+	@ JANINE fights from the lockdown rather than waiting for DARIUS to fall. The
+	@ zoo empties to pay for her four objects, and it shares FLAG_HIDE_FUCHSIA_NPCS
+	@ to do it - see that flag for the budget arithmetic.
+	clearflag FLAG_HIDE_FUCHSIA_JANINE_FIGHT
+	@ Disarm STEVEN's SAFARI welcome for good. A player who never took it must not
+	@ get "Welcome to the DEVON SAFARI ZONE!" over a hostage scene, and FirstTime
+	@ must not drag him off the siege tableau to (4,10). The post-JANINE reveal
+	@ re-arms it if they still have not had it.
+	setvar VAR_SAFARI_WELCOME, 1
+	setvar VAR_FUCHSIA_SCENE, 1
 	return
 
 FuchsiaCity_EventScript_LockdownDefer::
 	return
 
-FuchsiaCity_Trigger_Music::
-	setvar VAR_TEMP_0, 1
-	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_Trigger_MusicEnd
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_Trigger_MusicEnd
-	fadenewbgm MUS_HG_ROCKET_TAKEOVER
-FuchsiaCity_Trigger_MusicEnd::
+@ ===[ THE BACKER, on the road outside the GYM ]===============================
+@ Armed by JANINE's defeat (VAR_FUCHSIA_SCENE 3) and disarmed here (4), so it
+@ fires on the player's first step out of the GYM and exactly once.
+@
+@ ⚠️ THIS IS WHERE GIDEON'S NAME IS FIRST SPOKEN. Nothing in KANTO says it before
+@ this scene - not PAXTON, who never asked, not the bikers, who only ever saw
+@ somebody paying them. Keep it that way: the breadcrumbs point at a scientist,
+@ never at a name.
+@
+@ And the name is JANINE's find, not STEVEN's alone. That is why the scene sits
+@ after her fight rather than merely near it, and the tree already assumes it -
+@ DaoDaoIsles_LandfallIsle_Text_StevenArrival and Text_StevenGideonAccountedFor
+@ both open by crediting word from her docks.
+FuchsiaCity_EventScript_StevenBackers::
+	lock
+	clearflag FLAG_HIDE_FUCHSIA_STEVEN
+	addobject LOCALID_FUCHSIA_STEVEN
+	playse SE_PIN
+	applymovement LOCALID_FUCHSIA_STEVEN, Common_Movement_ExclamationMark
+	waitmovement LOCALID_FUCHSIA_STEVEN
+	applymovement LOCALID_FUCHSIA_STEVEN, FuchsiaCity_Movement_StevenApproach
+	waitmovement LOCALID_FUCHSIA_STEVEN
+	@ FacePlayer rather than a turnobject: the player leaves the GYM onto (9,33)
+	@ but need not still be standing there, and a movement action resolves the
+	@ direction at run time.
+	applymovement LOCALID_FUCHSIA_STEVEN, Common_Movement_FacePlayer
+	waitmovement LOCALID_FUCHSIA_STEVEN
+	msgbox FuchsiaCity_Text_StevenBackers, MSGBOX_DEFAULT
+	@ ===[ THE CHARTER HAPPENS HERE, NOT BACK AT THE SAFARI ZONE ]==============
+	@ This scene used to end by sending the player to the SAFARI ZONE for a second
+	@ conversation that asked for the battle and opened the ROUTE 13 boat. That put
+	@ a round trip across town between the reveal and the boat for no reason. The
+	@ ask, the fight and the boat all land here; the SAFARI ZONE copy survives only
+	@ as the fallback below.
+	@
+	@ The four gym flags are not re-checked. This scene is armed by JANINE's defeat,
+	@ so the fourth badge is the reason it is playing, and the other three are
+	@ prerequisites of the lockdown that got us here.
+	msgbox FuchsiaCity_Text_StevenCharter, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FuchsiaCity_EventScript_StevenCharterDecline
+	msgbox FuchsiaCity_Text_StevenCharterAccept, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_STEVEN_KANTO_HNS, FuchsiaCity_Text_StevenCharterBeaten
+	msgbox FuchsiaCity_Text_StevenCharterAfter, MSGBOX_DEFAULT
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 5
+	goto FuchsiaCity_EventScript_StevenBackersLeave
+
+@ ⚠️ A decline MUST still disarm the scene. TryRunOnFrameMapScript re-tests
+@ VAR_FUCHSIA_SCENE on every input poll, so leaving it at 3 would re-fire this
+@ cutscene forever. It advances to 4 either way, and the player picks the charter
+@ up from STEVEN at the SAFARI ZONE instead - which is exactly what the branch
+@ there is still for.
+FuchsiaCity_EventScript_StevenCharterDecline::
+	msgbox FuchsiaCity_Text_StevenCharterDecline, MSGBOX_DEFAULT
+	goto FuchsiaCity_EventScript_StevenBackersLeave
+
+FuchsiaCity_EventScript_StevenBackersLeave::
+	closemessage
+	applymovement LOCALID_FUCHSIA_STEVEN, FuchsiaCity_Movement_StevenLeave
+	waitmovement LOCALID_FUCHSIA_STEVEN
+	setflag FLAG_HIDE_FUCHSIA_STEVEN
+	removeobject LOCALID_FUCHSIA_STEVEN
+	setvar VAR_FUCHSIA_SCENE, 4
+	@ A player who never took the SAFARI welcome is inducted the next time they
+	@ walk into that building. Re-arm ONLY when the SAFARI LEVEL is still 0, which
+	@ is what "never took it" means.
+	@ ⚠️ Nothing forces that visit any more, now that the charter is settled out
+	@ here - the BELDUM trade, the EON TICKET and the SAFARI ZONE itself are the
+	@ draws, and the {POKEBLOCK} CASE is only obtainable there.
+	call_if_eq VAR_KANTO_SAFARI_ZONE_PROGRESS, 0, FuchsiaCity_EventScript_ReArmSafariWelcome
+	release
 	end
+
+FuchsiaCity_EventScript_ReArmSafariWelcome::
+	setvar VAR_SAFARI_WELCOME, 0
+	return
+
+@ (14,33) to (10,33) and back. The road is clear along y=33 from x=5 to x=19, and
+@ the GYM doorman objects that stand on (9,33) during the occupation are both
+@ hidden by the time this runs.
+FuchsiaCity_Movement_StevenApproach:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+FuchsiaCity_Movement_StevenLeave:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+FuchsiaCity_Text_StevenBackers:
+	.string "{PLAYER}. I heard.\p"
+	.string "You took the SOULBADGE off the one\n"
+	.string "person in KANTO who has been hunting\l"
+	.string "these people all along.\p"
+	.string "She found what I could not.\p"
+	.string "I followed the money. JANINE followed\n"
+	.string "the people. Between us there is a\l"
+	.string "name.\p"
+	.string "GIDEON.\p"
+	.string "A scientist. TEAM ROCKET's, once,\n"
+	.string "out of GIOVANNI's own lab.\p"
+	.string "He paid PAXTON to take my SAFARI\n"
+	.string "ZONE so that he could have what was\l"
+	.string "living inside it. Specimens.\p"
+	.string "And he knew you were coming.\n"
+	.string "Before I did.\p"
+	.string "Which brings me to what I have to\n"
+	.string "ask of you.$"
+
+@ The charter, moved out of the SAFARI ZONE ENTRANCE so nothing sits between this
+@ scene and the ROUTE 13 boat. Same beats as the version there, rewritten for a
+@ street corner: he cannot gesture at his own building, and he has just named the
+@ man, so the reason he cannot follow it up himself is the point.
+FuchsiaCity_Text_StevenCharter:
+	.string "SURGE, ERIKA, SABRINA, JANINE.\p"
+	.string "All four, and the FEDERATION on top\n"
+	.string "of it.\p"
+	.string "GIDEON is not in KANTO any more, and\n"
+	.string "wherever he has gone I cannot reach\l"
+	.string "it from here. DEVON has a ship.\p"
+	.string "I want you on it.\p"
+	.string "But not before I have seen for myself\n"
+	.string "that you are ready.\p"
+	.string "Show me. Here and now?$"
+
+FuchsiaCity_Text_StevenCharterAccept:
+	.string "Good.\p"
+	.string "I won't go easy on you. It would be\n"
+	.string "no kindness if I did.$"
+
+FuchsiaCity_Text_StevenCharterBeaten:
+	.string "…Yes.\n"
+	.string "You're ready.$"
+
+FuchsiaCity_Text_StevenCharterAfter:
+	.string "That was a fine battle.\p"
+	.string "The ship is at the dock on ROUTE 13.\n"
+	.string "The captain has his orders.\p"
+	.string "Find GIDEON, {PLAYER}.\p"
+	.string "And be careful out there.$"
+
+FuchsiaCity_Text_StevenCharterDecline:
+	.string "Then come back when you are.\p"
+	.string "I'll be at the SAFARI ZONE. Ask me\n"
+	.string "again whenever you're ready to go.$"
 
 FuchsiaCity_EventScript_BaobaCall::
 	lock
@@ -102,13 +296,11 @@ FuchsiaCity_EventScript_Kabuto::
 	release
 	end
 
+@ FUCHSIA's own townsfolk need no "during" branch - FLAG_HIDE_FUCHSIA_NPCS hides
+@ all of them for the whole occupation, so states 1-3 are unreachable here. The
+@ rumour is the default and runs until the arc is solved.
 FuchsiaCity_EventScript_Youngster::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_EventScript_YoungsterAfter
-	goto_if_eq VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_EventScript_YoungsterRumour
-	msgbox FuchsiaCity_Text_Youngster, MSGBOX_NPC
-	end
-
-FuchsiaCity_EventScript_YoungsterRumour::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, FuchsiaCity_EventScript_YoungsterAfter
 	msgbox FuchsiaCity_Text_Youngster_Rumour, MSGBOX_NPC
 	end
 
@@ -119,14 +311,7 @@ FuchsiaCity_EventScript_YoungsterAfter::
 FuchsiaCity_EventScript_PokefanM::
 	lock
 	faceplayer
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_EventScript_PokefanMAfter
-	goto_if_eq VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_EventScript_PokefanMRumour
-	msgbox FuchsiaCity_Text_PokefanM, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-FuchsiaCity_EventScript_PokefanMRumour::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, FuchsiaCity_EventScript_PokefanMAfter
 	msgbox FuchsiaCity_Text_PokefanM_Rumour, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -140,12 +325,7 @@ FuchsiaCity_EventScript_PokefanMAfter::
 	end
 
 FuchsiaCity_EventScript_Teacher::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_EventScript_TeacherAfter
-	goto_if_eq VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_EventScript_TeacherRumour
-	msgbox FuchsiaCity_Text_Teacher, MSGBOX_NPC
-	end
-
-FuchsiaCity_EventScript_TeacherRumour::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, FuchsiaCity_EventScript_TeacherAfter
 	msgbox FuchsiaCity_Text_Teacher_Rumour, MSGBOX_NPC
 	end
 
@@ -202,20 +382,6 @@ FuchsiaCity_EventScript_GymSign::
 FuchsiaCity_EventScript_SafariZone::
 	msgbox FuchsiaCity_Text_SafariZone, MSGBOX_NPC
 	end
-
-FuchsiaCity_Text_Youngster:
-	.string "One of the ELITE FOUR used to be\n"
-	.string "the LEADER of FUCHSIA's GYM.$"
-
-FuchsiaCity_Text_PokefanM:
-	.string "KOGA's daughter succeeded him as\n"
-	.string "the GYM LEADER after he joined the\l"
-	.string "ELITE FOUR.$"
-
-FuchsiaCity_Text_Teacher:
-	.string "The SAFARI ZONE is under new\n"
-	.string "management.\p"
-	.string "And it has tons of new POKéMON!$"
 
 FuchsiaCity_Text_Sign:
 	.string "FUCHSIA CITY\p"
@@ -282,25 +448,22 @@ FuchsiaCity_EventScript_FederationGuard::
 	trainerbattle_no_intro TRAINER_DARIUS_HNS, FuchsiaCity_Text_DariusBeaten
 	msgbox FuchsiaCity_Text_DariusAfter, MSGBOX_DEFAULT
 	closemessage
-	fadescreenswapbuffers FADE_TO_BLACK
-	setvar VAR_FUCHSIA_FEDERATION_STATE, 3
-	setflag FLAG_HIDE_FUCHSIA_FEDERATION
-	removeobject LOCALID_FUCHSIA_FED_GRUNT1
-	removeobject LOCALID_FUCHSIA_FED_GRUNT2
-	removeobject LOCALID_FUCHSIA_FED_GRUNT3
-	removeobject LOCALID_FUCHSIA_FED_GUARD
-	removeobject LOCALID_FUCHSIA_FED_LOAFER2
-	removeobject LOCALID_FUCHSIA_FED_LOAFER3
-	removeobject LOCALID_FUCHSIA_FED_DOOR1
-	removeobject LOCALID_FUCHSIA_FED_DOOR2
-	removeobject LOCALID_FUCHSIA_FED_DOOR3
-	clearflag FLAG_HIDE_FUCHSIA_JANINE_FIGHT
-	addobject LOCALID_FUCHSIA_JANINE_FIGHT
-	addobject LOCALID_FUCHSIA_JANINE_FIGHT_ARIADOS
-	addobject LOCALID_FUCHSIA_JANINE_FIGHT_GOLBAT
-	addobject LOCALID_FUCHSIA_JANINE_FIGHT_BIKER1
-	playse SE_EXIT
-	fadescreenswapbuffers FADE_FROM_BLACK
+	@ ⚠️ HE JUST STEPS ASIDE. This used to be a fade to black that SET
+	@ FLAG_HIDE_FUCHSIA_FEDERATION and deleted all NINE city FEDERATION objects -
+	@ every grunt, both door guards and the mart guard - the moment one gate keeper
+	@ lost one battle. The occupation simply evaporated around the player.
+	@
+	@ Now the city stays held until PAXTON falls, which is what the rest of the arc
+	@ already says out loud, and DARIUS does the one thing his own line describes:
+	@ he moves off the doorway. He stands on (26,6), directly below the SAFARI ZONE
+	@ door at (26,5) - warp 0 - so his tile IS the lock. (27,6) is free and
+	@ walkable; he steps there and watches the player go in.
+	@
+	@ "DARIUS is beaten" is therefore recorded by his own trainer flag now, not by
+	@ a visibility flag. The two loafers below test goto_if_defeated.
+	applymovement LOCALID_FUCHSIA_FED_GUARD, Common_Movement_WalkRight1
+	waitmovement 0
+	turnobject LOCALID_FUCHSIA_FED_GUARD, DIR_WEST
 	release
 	end
 
@@ -364,8 +527,10 @@ FuchsiaCity_Text_DariusAfter:
 	.string "PAXTON is inside with the DEVON\n"
 	.string "people. He won't be as gentle.$"
 
+@ These two comment on DARIUS falling. "DARIUS is down" is not a state and not a
+@ visibility flag - he only steps aside - so it is his own trainer flag.
 FuchsiaCity_EventScript_FederationLoafer1::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 3, FuchsiaCity_EventScript_FederationLoafer1Held
+	goto_if_defeated TRAINER_DARIUS_HNS, FuchsiaCity_EventScript_FederationLoafer1Held
 	msgbox FuchsiaCity_Text_Loafer1, MSGBOX_NPC
 	end
 
@@ -382,7 +547,7 @@ FuchsiaCity_EventScript_FederationLoafer3::
 	end
 
 FuchsiaCity_EventScript_FederationLoafer4::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 3, FuchsiaCity_EventScript_FederationLoafer4Held
+	goto_if_defeated TRAINER_DARIUS_HNS, FuchsiaCity_EventScript_FederationLoafer4Held
 	msgbox FuchsiaCity_Text_Loafer4, MSGBOX_NPC
 	end
 
@@ -395,22 +560,36 @@ FuchsiaCity_Text_Loafer1:
 	.string "Took about an hour. Nobody came.\p"
 	.string "Nobody's coming.$"
 
+@ ⚠️ "the suit guy" used to stand here, and in three other lines. GIDEON is a
+@ SCIENTIST out of a ROCKET lab, so a man in a suit was pointing at the wrong
+@ person entirely - it set up a reveal that never arrives. The bikers call him
+@ the boss, which is also what ROCKET's grunts call GIOVANNI all over this tree,
+@ and is the same ambiguity PAXTON's party plants by carrying Music: Rocket.
+@ It does not collide with PAXTON: Route8_Text_BikerDwayneFallen already
+@ separates the two in one breath.
 FuchsiaCity_Text_Loafer2:
 	.string "Don't look at me, kid. I just watch\n"
 	.string "the street.\p"
-	.string "PAXTON's up at the SAFARI ZONE with\n"
-	.string "the suit guy's money.$"
+	.string "PAXTON's up at the SAFARI ZONE\n"
+	.string "spending the boss's money.$"
 
 FuchsiaCity_Text_Loafer3:
 	.string "The locals all locked their doors\n"
 	.string "the first night.\p"
 	.string "Haven't seen one since. Suits me.$"
 
+@ He is also the line that explains the empty pens, so the zoo going dark during
+@ the occupation reads as the FEDERATION crating specimens for GIDEON rather than
+@ as objects quietly failing to spawn. The pens share FLAG_HIDE_FUCHSIA_NPCS with
+@ the townsfolk - see that flag for the budget arithmetic.
 FuchsiaCity_Text_Loafer4:
 	.string "…I thought we were coming here to\n"
 	.string "make a point.\p"
 	.string "Nobody said anything about keeping\n"
 	.string "people in a back room.\p"
+	.string "Or about loading up everything that\n"
+	.string "was in those pens. They went out on\l"
+	.string "a truck the first night.\p"
 	.string "I want to go home.$"
 
 FuchsiaCity_Text_Loafer1Held:
@@ -466,26 +645,62 @@ FuchsiaCity_Text_Doorman3:
 	.string "Still out there somewhere, far as\n"
 	.string "I know. Wasn't much of a hunt.$"
 
+@ ===[ THE STANDOFF - THREE NPCs WHO MUST HOLD THEIR COMPOSITION ]=============
+@ JANINE at (26,13) is facing DOWN at the cueball on (26,14); the biker on (25,14)
+@ is beside him. MSGBOX_NPC gives every one of them a faceplayer and none of them
+@ a way back, so talking to all three used to leave the argument with its two
+@ participants looking away from each other.
+@
+@ ⚠️ MovementType_FaceDirection_Step0 re-seeds from the LIVE facingDirection, not
+@ from the map.json template, which is why a facing has to be restored explicitly
+@ rather than left to the movement type to reset.
+@
+@ JANINE turns, but only when her own line earns it. "…Sorry. Not you." is the
+@ beat where she registers the player mid-sentence, so the text splits there: she
+@ delivers the first half still berating the cueball, turns, finishes, and turns
+@ back south onto him.
 FuchsiaCity_EventScript_StandoffJanine::
-	msgbox FuchsiaCity_Text_StandoffJanine, MSGBOX_NPC
+	lock
+	msgbox FuchsiaCity_Text_StandoffJanine1, MSGBOX_DEFAULT
+	closemessage
+	@ FacePlayer as a movement, not turnobject: the player can stand north, east
+	@ or west of her, so the direction has to be resolved at run time.
+	applymovement LOCALID_FUCHSIA_STANDOFF_JANINE, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox FuchsiaCity_Text_StandoffJanine2, MSGBOX_DEFAULT
+	closemessage
+	turnobject LOCALID_FUCHSIA_STANDOFF_JANINE, DIR_SOUTH
+	release
 	end
 
+@ The biker SHOULD turn to the player and stay turned - he is a bystander
+@ enjoying the show, not a participant. MSGBOX_NPC already faces him and nothing
+@ turns him back, which is exactly right. Deliberately unchanged.
 FuchsiaCity_EventScript_StandoffBiker1::
 	msgbox FuchsiaCity_Text_StandoffBiker1, MSGBOX_NPC
 	end
 
+@ The cueball is the one being berated. He never looks away from JANINE, so no
+@ faceplayer at all - hence the explicit lock/release instead of MSGBOX_NPC.
 FuchsiaCity_EventScript_StandoffBiker2::
-	msgbox FuchsiaCity_Text_StandoffBiker2, MSGBOX_NPC
+	lock
+	msgbox FuchsiaCity_Text_StandoffBiker2, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 FuchsiaCity_EventScript_StandoffGymDoor::
 	msgbox FuchsiaCity_Text_StandoffGymDoor, MSGBOX_NPC
 	end
 
-FuchsiaCity_Text_StandoffJanine:
+@ Split at the beat where she notices the player. Part 1 is still aimed at the
+@ cueball; part 2 is to the player.
+FuchsiaCity_Text_StandoffJanine1:
 	.string "JANINE: You have no business on\n"
 	.string "this road.\p"
-	.string "Neither does anyone you answer to.\p"
+	.string "Neither does anyone you answer to.$"
+
+FuchsiaCity_Text_StandoffJanine2:
 	.string "…Sorry. Not you.\p"
 	.string "The GYM is shut until I've seen\n"
 	.string "these two off my city.$"
@@ -500,8 +715,8 @@ FuchsiaCity_Text_StandoffBiker2:
 	.string "We're just waiting, kid.\p"
 	.string "Word came down that the SAFARI\n"
 	.string "ZONE changed hands.\p"
-	.string "Word came from somebody who wears\n"
-	.string "a suit. That's all I know.$"
+	.string "Word came from whoever it is PAXTON\n"
+	.string "calls the boss. That's all I know.$"
 
 FuchsiaCity_Text_StandoffGymDoor:
 	.string "GYM's shut.\p"

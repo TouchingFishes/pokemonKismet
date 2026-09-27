@@ -2,8 +2,8 @@ FuchsiaCity_House2_hns_MapScripts::
 	.byte 0
 
 FuchsiaCity_House2_EventScript_Granddaughter::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_House2_EventScript_GranddaughterAfter
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_House2_EventScript_GranddaughterDuring
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, FuchsiaCity_House2_EventScript_GranddaughterAfter
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_House2_EventScript_GranddaughterDuring
 	goto_if_set FLAG_TEMP_1, FuchsiaCity_House2_EventScript_Granddaughter2
 	msgbox FuchsiaCity_House2_Text_WardensGranddaughter1, MSGBOX_NPC
 	setflag FLAG_TEMP_1

@@ -79,7 +79,7 @@ DaoDaoIsles_RocketLab_EventScript_Gideon::
 	end
 
 DaoDaoIsles_RocketLab_EventScript_GideonDefeated::
-	setvar VAR_FUCHSIA_FEDERATION_STATE, 8
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 6
 	setflag FLAG_DEFEATED_DAODAO_LAB_GIDEON
 	msgbox DaoDaoIsles_RocketLab_Text_GideonPostBattle, MSGBOX_DEFAULT
 	closemessage

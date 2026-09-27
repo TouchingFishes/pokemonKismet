@@ -75,6 +75,11 @@ FuchsiaCity_Gym_EventScript_Janine::
 	clearflag FLAG_TEMP_5
 	clearflag FLAG_TEMP_7
 	clearflag FLAG_HIDE_ROUTE22_JANINE
+	@ Arms STEVEN's reveal on the road outside. She is where GIDEON's name comes
+	@ from - she followed the people while STEVEN followed the money - so the scene
+	@ is gated on her defeat rather than merely placed after it. FuchsiaCity_OnFrame
+	@ picks this up on the player's first step out of the GYM and sets it to 4.
+	setvar VAR_FUCHSIA_SCENE, 3
 	closemessage
 	release
 	end
@@ -255,8 +260,8 @@ FuchsiaCity_Gym_Text_CamperBarry_After:
 	.string "what, huh?$"
 
 FuchsiaCity_Gym_EventScript_GymGuy::
-	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 2, FuchsiaCity_Gym_EventScript_GymGuyNormal
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_Gym_EventScript_GymGuyNormal
+	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 1, FuchsiaCity_Gym_EventScript_GymGuyNormal
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, FuchsiaCity_Gym_EventScript_GymGuyNormal
 	msgbox FuchsiaCity_Gym_Text_GuideJanineAway, MSGBOX_NPC
 	end
 
