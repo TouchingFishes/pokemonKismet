@@ -3,8 +3,8 @@ Gate_SaffronCity_Route7_hns_MapScripts::
 	.byte 0
 
 Gate_SaffronCity_Route7_EventScript_Guard::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, Gate_SaffronCity_Route7_EventScript_GuardFederationOver
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, Gate_SaffronCity_Route7_EventScript_GuardFederation
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, Gate_SaffronCity_Route7_EventScript_GuardFederationOver
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, Gate_SaffronCity_Route7_EventScript_GuardFederation
 	goto_if_set FLAG_RETURNED_MACHINE_PART, Gate_SaffronCity_Route7_EventScript_GuardReturnedPart
 	msgbox Route7_Text_SaffronGuard_PowerPlant, MSGBOX_NPC
 	end

@@ -41,13 +41,8 @@ CeladonCity_EventScript_Poliwrath::
 @ CELADON sits at the top of the CYCLING ROAD, which is the western road down
 @ to FUCHSIA - so this is where the FEDERATION's traffic is visible first.
 CeladonCity_EventScript_Teacher1::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, CeladonCity_EventScript_Teacher1After
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, CeladonCity_EventScript_Teacher1During
-	goto_if_eq VAR_FUCHSIA_FEDERATION_STATE, 1, CeladonCity_EventScript_Teacher1Rumour
-	msgbox CeladonCity_Text_Teacher1, MSGBOX_NPC
-	end
-
-CeladonCity_EventScript_Teacher1Rumour::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, CeladonCity_EventScript_Teacher1After
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, CeladonCity_EventScript_Teacher1During
 	msgbox CeladonCity_Text_Teacher1_Rumour, MSGBOX_NPC
 	end
 
@@ -116,10 +111,6 @@ CeladonCity_Text_Fisher:
 CeladonCity_Text_Poliwrath:
 	.string "POLIWRATH: Croak!$"
 
-CeladonCity_Text_Teacher1:
-	.string "I lost at the slot machines again…\p"
-	.string "We girls also play the slots now.\p"
-	.string "You should check them out too.$"
 
 CeladonCity_Text_Gramps1:
 	.string "GRIMER have been appearing lately.\p"

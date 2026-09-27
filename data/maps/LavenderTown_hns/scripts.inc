@@ -92,13 +92,8 @@ LavenderTown_Text_HexManiac:
 	.string "lost.$"
 
 LavenderTown_EventScript_Teacher::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, LavenderTown_EventScript_TeacherAfter
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, LavenderTown_EventScript_TeacherDuring
-	goto_if_eq VAR_FUCHSIA_FEDERATION_STATE, 1, LavenderTown_EventScript_TeacherRumour
-	msgbox LavenderTown_Text_Teacher, MSGBOX_NPC
-	end
-
-LavenderTown_EventScript_TeacherRumour::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, LavenderTown_EventScript_TeacherAfter
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, LavenderTown_EventScript_TeacherDuring
 	msgbox LavenderTown_Text_Teacher_Rumour, MSGBOX_NPC
 	end
 
@@ -153,8 +148,6 @@ LavenderTown_Text_PokefanM:
 	.string "That's quite some building, eh?\p"
 	.string "It's KANTO's RADIO TOWER.$"
 
-LavenderTown_Text_Teacher:
-	.string "KANTO has many good radio shows.$"
 
 LavenderTown_Text_Gramps:
 	.string "People come from all over to pay\n"

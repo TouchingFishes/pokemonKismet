@@ -154,13 +154,8 @@ VermilionCity_EventScript_SuicuneEpisode::
 	end
 
 VermilionCity_EventScript_Teacher::
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, VermilionCity_EventScript_TeacherAfter
-	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 2, VermilionCity_EventScript_TeacherDuring
-	goto_if_eq VAR_FUCHSIA_FEDERATION_STATE, 1, VermilionCity_EventScript_TeacherRumour
-	msgbox VermilionCity_Text_Teacher, MSGBOX_NPC
-	end
-
-VermilionCity_EventScript_TeacherRumour::
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, VermilionCity_EventScript_TeacherAfter
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, VermilionCity_EventScript_TeacherDuring
 	msgbox VermilionCity_Text_Teacher_Rumour, MSGBOX_NPC
 	end
 
@@ -358,11 +353,6 @@ VermilionCity_Text_Eusine:
 VermilionCity_Text_Eusine2:
 	.string "Sorry {PLAYER}, I've got to go!$"
 
-VermilionCity_Text_Teacher:
-	.string "VERMILION PORT is KANTO's seaside\n"
-	.string "gateway.\p"
-	.string "Luxury liners from around the\n"
-	.string "world dock here.$"
 
 VermilionCity_Text_MachopOwner:
 	.string "My POKéMON is preparing the land\n"
