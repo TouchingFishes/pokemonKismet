@@ -290,6 +290,8 @@ static const struct MenuAction MultichoiceList_StarterRegionChoice[] =
     {COMPOUND_STRING("KANTO POKéMON")},
     {COMPOUND_STRING("HOENN POKéMON")},
     {COMPOUND_STRING("SINNOH POKéMON")},
+    {COMPOUND_STRING("UNOVA POKéMON")},
+    {COMPOUND_STRING("KALOS POKéMON")},
 };
 
 static const struct MenuAction MultichoiceList_PrizeMons[] = 

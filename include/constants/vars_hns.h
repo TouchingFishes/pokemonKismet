@@ -172,7 +172,9 @@
 #define STARTER_REGION_KANTO     1
 #define STARTER_REGION_HOENN     2
 #define STARTER_REGION_SINNOH    3
-#define STARTER_REGION_COUNT     4
+#define STARTER_REGION_UNOVA     4
+#define STARTER_REGION_KALOS     5
+#define STARTER_REGION_COUNT     6
 
 // Alola Vars
 #define VAR_ALOLA_TRAVEL                                 0x40AD // var for setting up mapscripts when traveling to and from alola.

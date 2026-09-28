@@ -2052,7 +2052,7 @@ enum JohtoDexOrder
     JOHTO_DEX_BUIZEL,
     JOHTO_DEX_FLOATZEL,
     // Starter windows. Slots 1-9 hold whichever generation the player chose
-    // from Elm; the twenty-seven slots below hold the other three, in
+    // from Elm; the forty-five slots below hold the other five, in
     // generational order. Both are resolved at runtime by
     // GetStarterJohtoDexEntry, so the names here are only the default layout
     // (the player picked Johto). Do not reorder without updating
@@ -2084,6 +2084,24 @@ enum JohtoDexOrder
     JOHTO_DEX_PIPLUP,
     JOHTO_DEX_PRINPLUP,
     JOHTO_DEX_EMPOLEON,
+    JOHTO_DEX_SNIVY,
+    JOHTO_DEX_SERVINE,
+    JOHTO_DEX_SERPERIOR,
+    JOHTO_DEX_TEPIG,
+    JOHTO_DEX_PIGNITE,
+    JOHTO_DEX_EMBOAR,
+    JOHTO_DEX_OSHAWOTT,
+    JOHTO_DEX_DEWOTT,
+    JOHTO_DEX_SAMUROTT,
+    JOHTO_DEX_CHESPIN,
+    JOHTO_DEX_QUILLADIN,
+    JOHTO_DEX_CHESNAUGHT,
+    JOHTO_DEX_FENNEKIN,
+    JOHTO_DEX_BRAIXEN,
+    JOHTO_DEX_DELPHOX,
+    JOHTO_DEX_FROAKIE,
+    JOHTO_DEX_FROGADIER,
+    JOHTO_DEX_GRENINJA,
     // End of the starter windows.
     JOHTO_DEX_ARTICUNO,
     JOHTO_DEX_ZAPDOS,
@@ -2834,9 +2852,30 @@ enum ObtainableDexOrder {
     OBTAINABLE_DEX_GENESECT,
     OBTAINABLE_DEX_NOIBAT,
     OBTAINABLE_DEX_NOIVERN,
+    // The Unova and Kalos starter lines, selectable at Elm since the
+    // six-region starter choice. Appended rather than placed by generation
+    // so no existing entry shifts; the Sinnoh lines are still missing.
+    OBTAINABLE_DEX_SNIVY,
+    OBTAINABLE_DEX_SERVINE,
+    OBTAINABLE_DEX_SERPERIOR,
+    OBTAINABLE_DEX_TEPIG,
+    OBTAINABLE_DEX_PIGNITE,
+    OBTAINABLE_DEX_EMBOAR,
+    OBTAINABLE_DEX_OSHAWOTT,
+    OBTAINABLE_DEX_DEWOTT,
+    OBTAINABLE_DEX_SAMUROTT,
+    OBTAINABLE_DEX_CHESPIN,
+    OBTAINABLE_DEX_QUILLADIN,
+    OBTAINABLE_DEX_CHESNAUGHT,
+    OBTAINABLE_DEX_FENNEKIN,
+    OBTAINABLE_DEX_BRAIXEN,
+    OBTAINABLE_DEX_DELPHOX,
+    OBTAINABLE_DEX_FROAKIE,
+    OBTAINABLE_DEX_FROGADIER,
+    OBTAINABLE_DEX_GRENINJA,
 };
 
-#define OBTAINABLE_DEX_COUNT (OBTAINABLE_DEX_NOIVERN + 1)
+#define OBTAINABLE_DEX_COUNT (OBTAINABLE_DEX_GRENINJA + 1)
 
 #else
 

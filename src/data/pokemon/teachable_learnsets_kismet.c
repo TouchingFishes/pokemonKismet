@@ -974,6 +974,10 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_ILLUMISE] = sIllumiseTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_ROSELIA
+#if P_GEN_4_CROSS_EVOS
+#endif
+#endif
+#if P_FAMILY_ROSELIA
     [SPECIES_ROSELIA] = sRoseliaTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_ROSELIA
@@ -1298,6 +1302,22 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_ARCEUS_FAIRY] = sArceusNormalTeachableLearnset_Kismet,
     [SPECIES_ARCEUS] = sArceusNormalTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_SNIVY
+    [SPECIES_SNIVY] = sSnivyTeachableLearnset_Kismet,
+    [SPECIES_SERVINE] = sSnivyTeachableLearnset_Kismet,
+    [SPECIES_SERPERIOR] = sSerperiorTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_TEPIG
+    [SPECIES_TEPIG] = sTepigTeachableLearnset_Kismet,
+    [SPECIES_PIGNITE] = sPigniteTeachableLearnset_Kismet,
+    [SPECIES_EMBOAR] = sEmboarTeachableLearnset_Kismet,
+    [SPECIES_EMBOAR_MEGA] = sEmboarTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_OSHAWOTT
+    [SPECIES_OSHAWOTT] = sOshawottTeachableLearnset_Kismet,
+    [SPECIES_DEWOTT] = sDewottTeachableLearnset_Kismet,
+    [SPECIES_SAMUROTT] = sSamurottTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_ROGGENROLA
     [SPECIES_ROGGENROLA] = sRoggenrolaTeachableLearnset_Kismet,
     [SPECIES_BOLDORE] = sBoldoreTeachableLearnset_Kismet,
@@ -1395,6 +1415,27 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_GENESECT_SHOCK] = sGenesectTeachableLearnset_Kismet,
     [SPECIES_GENESECT_BURN] = sGenesectTeachableLearnset_Kismet,
     [SPECIES_GENESECT_CHILL] = sGenesectTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_CHESPIN
+    [SPECIES_CHESPIN] = sChespinTeachableLearnset_Kismet,
+    [SPECIES_QUILLADIN] = sQuilladinTeachableLearnset_Kismet,
+    [SPECIES_CHESNAUGHT] = sChesnaughtTeachableLearnset_Kismet,
+    [SPECIES_CHESNAUGHT_MEGA] = sChesnaughtTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_FENNEKIN
+    [SPECIES_FENNEKIN] = sFennekinTeachableLearnset_Kismet,
+    [SPECIES_BRAIXEN] = sBraixenTeachableLearnset_Kismet,
+    [SPECIES_DELPHOX] = sDelphoxTeachableLearnset_Kismet,
+    [SPECIES_DELPHOX_MEGA] = sDelphoxTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_FROAKIE
+    [SPECIES_FROAKIE] = sFroakieTeachableLearnset_Kismet,
+    [SPECIES_FROGADIER] = sFrogadierTeachableLearnset_Kismet,
+    [SPECIES_GRENINJA] = sGreninjaTeachableLearnset_Kismet,
+    [SPECIES_GRENINJA_BATTLE_BOND] = sGreninjaTeachableLearnset_Kismet,
+    [SPECIES_GRENINJA_ASH] = sGreninjaTeachableLearnset_Kismet,
+    [SPECIES_GRENINJA_MEGA] = sGreninjaTeachableLearnset_Kismet,
+    [SPECIES_GRENINJA_BOND] = sGreninjaTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_FLETCHLING
     [SPECIES_FLETCHLING] = sFletchlingTeachableLearnset_Kismet,

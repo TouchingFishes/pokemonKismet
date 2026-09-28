@@ -151,6 +151,8 @@ NewBarkTown_Lab_EventScript_RegionMenu::
 	case 1, NewBarkTown_Lab_EventScript_ConfirmKanto
 	case 2, NewBarkTown_Lab_EventScript_ConfirmHoenn
 	case 3, NewBarkTown_Lab_EventScript_ConfirmSinnoh
+	case 4, NewBarkTown_Lab_EventScript_ConfirmUnova
+	case 5, NewBarkTown_Lab_EventScript_ConfirmKalos
 	goto NewBarkTown_Lab_EventScript_RegionMenuReask
 
 NewBarkTown_Lab_EventScript_ConfirmJohto::
@@ -175,6 +177,18 @@ NewBarkTown_Lab_EventScript_ConfirmSinnoh::
 	msgbox NewBarkTown_Lab_Text_ConfirmSinnoh, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, NewBarkTown_Lab_EventScript_RegionMenuReask
 	setvar VAR_STARTER_REGION, STARTER_REGION_SINNOH
+	goto NewBarkTown_Lab_EventScript_ElmConfiguresChoice
+
+NewBarkTown_Lab_EventScript_ConfirmUnova::
+	msgbox NewBarkTown_Lab_Text_ConfirmUnova, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, NewBarkTown_Lab_EventScript_RegionMenuReask
+	setvar VAR_STARTER_REGION, STARTER_REGION_UNOVA
+	goto NewBarkTown_Lab_EventScript_ElmConfiguresChoice
+
+NewBarkTown_Lab_EventScript_ConfirmKalos::
+	msgbox NewBarkTown_Lab_Text_ConfirmKalos, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, NewBarkTown_Lab_EventScript_RegionMenuReask
+	setvar VAR_STARTER_REGION, STARTER_REGION_KALOS
 	goto NewBarkTown_Lab_EventScript_ElmConfiguresChoice
 
 NewBarkTown_Lab_EventScript_ElmConfiguresChoice::
@@ -807,6 +821,16 @@ NewBarkTown_Lab_Text_ConfirmHoenn:
 NewBarkTown_Lab_Text_ConfirmSinnoh:
 	.string "The SINNOH trio, then:\n"
 	.string "TURTWIG, CHIMCHAR and PIPLUP.\p"
+	.string "shall I set that up?$"
+
+NewBarkTown_Lab_Text_ConfirmUnova:
+	.string "The UNOVA trio, then:\n"
+	.string "SNIVY, TEPIG and OSHAWOTT.\p"
+	.string "shall I set that up?$"
+
+NewBarkTown_Lab_Text_ConfirmKalos:
+	.string "The KALOS trio, then:\n"
+	.string "CHESPIN, FENNEKIN and FROAKIE.\p"
 	.string "shall I set that up?$"
 
 NewBarkTown_Lab_Text_ElmConfigureStarterChoice:

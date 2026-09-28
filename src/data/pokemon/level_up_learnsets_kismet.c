@@ -1207,6 +1207,21 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_ARCEUS_NORMAL] = sArceusLevelUpLearnset_Kismet,
     [SPECIES_ARCEUS_STEEL] = sArceusLevelUpLearnset_Kismet,
 #endif
+#if P_FAMILY_SNIVY
+    [SPECIES_SNIVY] = sSnivyLevelUpLearnset_Kismet,
+    [SPECIES_SERVINE] = sServineLevelUpLearnset_Kismet,
+    [SPECIES_SERPERIOR] = sSerperiorLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_TEPIG
+    [SPECIES_TEPIG] = sTepigLevelUpLearnset_Kismet,
+    [SPECIES_PIGNITE] = sPigniteLevelUpLearnset_Kismet,
+    [SPECIES_EMBOAR] = sEmboarLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_OSHAWOTT
+    [SPECIES_OSHAWOTT] = sOshawottLevelUpLearnset_Kismet,
+    [SPECIES_DEWOTT] = sDewottLevelUpLearnset_Kismet,
+    [SPECIES_SAMUROTT] = sSamurottLevelUpLearnset_Kismet,
+#endif
 #if P_FAMILY_ROGGENROLA
     [SPECIES_ROGGENROLA] = sRoggenrolaLevelUpLearnset_Kismet,
     [SPECIES_BOLDORE] = sBoldoreLevelUpLearnset_Kismet,
@@ -1297,6 +1312,21 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_GENESECT
     [SPECIES_GENESECT] = sGenesectLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_CHESPIN
+    [SPECIES_CHESPIN] = sChespinLevelUpLearnset_Kismet,
+    [SPECIES_QUILLADIN] = sQuilladinLevelUpLearnset_Kismet,
+    [SPECIES_CHESNAUGHT] = sChesnaughtLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_FENNEKIN
+    [SPECIES_FENNEKIN] = sFennekinLevelUpLearnset_Kismet,
+    [SPECIES_BRAIXEN] = sBraixenLevelUpLearnset_Kismet,
+    [SPECIES_DELPHOX] = sDelphoxLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_FROAKIE
+    [SPECIES_FROAKIE] = sFroakieLevelUpLearnset_Kismet,
+    [SPECIES_FROGADIER] = sFrogadierLevelUpLearnset_Kismet,
+    [SPECIES_GRENINJA] = sGreninjaLevelUpLearnset_Kismet,
 #endif
 #if P_FAMILY_FLETCHLING
     [SPECIES_FLETCHLING] = sFletchlingLevelUpLearnset_Kismet,
