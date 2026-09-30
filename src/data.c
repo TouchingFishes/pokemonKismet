@@ -241,4 +241,15 @@ const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 };
 #endif
 
+// Silver's shared-party aces (include/constants/rival_aces.h). Defined in every
+// build, not just HnS and not just outside TESTING: starter_generation.c
+// references it unconditionally, and every constant the generated file uses
+// (TRAINER_CLASS_RIVAL_HNS, TRAINER_PIC_FRONT_SILVER_HNS, species, moves) is in
+// the shared headers. Only DIFFICULTY_NORMAL is populated; see
+// GetRivalAceOverride.
+const struct Trainer gRivalAces[DIFFICULTY_COUNT][RIVAL_ACE_COUNT] =
+{
+#include "data/rival_aces_hns.h"
+};
+
 #include "data/text/follower_messages.h"

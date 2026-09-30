@@ -10006,39 +10006,43 @@ Level: 60
 - Hyper Beam
 
 /* ============================================================================
-   SILVER - the rival's 84 parties, ordered ENCOUNTER -> TYPE SLOT -> REGION.
+   SILVER - the rival's parties, ordered ENCOUNTER -> TYPE SLOT -> FAMILY.
 
    The player picks a starter REGION at Elm's lab (VAR_STARTER_REGION); SILVER
-   takes the starter that beats theirs, so each region has three party families
-   of seven encounters. Every map script names only the JOHTO trainer IDs -
-   GetRivalTrainerIdForStarterChoice (src/starter_generation.c) rewrites the ID
-   on the way out of GetTrainerStructFromId, recovering the type slot with
-   / RIVAL_BATTLE_COUNT and the encounter with % RIVAL_BATTLE_COUNT. So JOHTO is
-   the canonical layout and every other region is a parallel array indexed
-   identically: the Nth party of a family must always be the Nth encounter.
+   takes the starter that beats theirs. Every map script names only the JOHTO
+   trainer IDs. GetRivalTrainerIdForStarterChoice (src/starter_generation.c)
+   redirects each to the FAMILY its region/slot pair uses (sRivalTrainerBase),
+   recovering the slot with / RIVAL_BATTLE_COUNT and the encounter with
+   % RIVAL_BATTLE_COUNT - so the Nth party of a family is always encounter N.
 
-   ⚠️ Keep the ace LAST in every party. Prize money reads the last mon's level
-   (src/battle_script_commands.c:6223) and the battle-transition tier sums the
-   first few (src/battle_setup.c:1094), both from this table rather than from the
-   built party. Keep the level tuple identical across the four regions of one
-   encounter for the same reason.
+   Several pairs SHARE a family. Where they do, the family's own ace (its last
+   mon) is swapped for the right one from src/data/rival_aces_hns.party, picked
+   by sRivalAceBase - CYNDAQUIL's parties serve Typhlosion, Blaziken, Infernape
+   and Emboar alike. So editing a shared family's support edits EVERY path on
+   it. Which pairs share is Moritz's call; sRivalTrainerBase is the map.
 
-   ⚠️ File order is cosmetic - gTrainers is keyed by the trainer constant - but
-   this order is load-bearing for EDITING, since "do these four teams overlap"
-   is a question about one type slot at one encounter. Re-sort with
+   ⚠️ Keep the ace LAST - prize money reads the last mon's level from this
+   table, not the built party (src/battle_script_commands.c:6223), and the ace
+   swap replaces the last mon. Keep each encounter's LEVEL CURVE the same across
+   families: same ace level, same support levels in any order. (The battle
+   transition only compares the lead's level, to pick an animation.)
+
+   ⚠️ No two of the six mons may share a type, ace included - and a shared
+   family must hold that for EVERY ace it serves. Check the parties the game
+   actually resolves with `py -3 .claude/rival_overlap.py`; trainerproc checks
+   neither this nor whether a mon can learn its moves.
+
+   ⚠️ File order is cosmetic - gTrainers is keyed by constant - but it is the
+   order that makes the overlap question answerable at a glance. Re-sort with
    _render/rival_reorder.py rather than by hand.
-
-   Party size and how much is specified are both a function of the encounter,
-   not the region:
 
        encounter   1    2    3    4    5    6    7
        mons        1    3    4    5    6    6    6
        movesets    -    -    yes  yes  yes  yes  yes
        held items  -    -    -    some yes  yes  yes
 
-   Encounters 1-2 give no moves at all, which means trainerproc fills them from
-   the level-up learnset ("If no moves are specified, the Pokemon will use the
-   last 4 moves it learns through levelup at its level" - src/data/trainers.party).
+   Encounters 1-2 give no moves; the game fills them at battle time from the
+   level-up learnset (CustomTrainerPartyAssignMoves -> GiveMonInitialMoveset).
    ============================================================================ */
 
 /* ---- ENCOUNTER 1 - CherrygroveCity_hns - the theft, before he has a name ---- */
@@ -10069,21 +10073,6 @@ Mugshot: Dark Red
 Items: ITEM_NONE
 
 SPECIES_BULBASAUR
-Level: 5
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-=== TRAINER_RIVAL_TREECKO_1_HNS ===
-Name: ???
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Dark Red
-Items: ITEM_NONE
-
-SPECIES_TREECKO
 Level: 5
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -10132,7 +10121,7 @@ SPECIES_CHARMANDER
 Level: 5
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_RIVAL_TORCHIC_1_HNS ===
+=== TRAINER_RIVAL_FENNEKIN_1_HNS ===
 Name: ???
 Class: Rival Hns
 Pic: Silver Hns
@@ -10141,24 +10130,8 @@ Music: Silver
 Double Battle: No
 AI: Basic Trainer
 Mugshot: Dark Red
-Items: ITEM_NONE
 
-SPECIES_TORCHIC
-Level: 5
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-=== TRAINER_RIVAL_CHIMCHAR_1_HNS ===
-Name: ???
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Dark Red
-Items: ITEM_NONE
-
-SPECIES_CHIMCHAR
+SPECIES_FENNEKIN
 Level: 5
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -10192,21 +10165,6 @@ SPECIES_SQUIRTLE
 Level: 5
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_RIVAL_MUDKIP_1_HNS ===
-Name: ???
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Dark Red
-Items: ITEM_NONE
-
-SPECIES_MUDKIP
-Level: 5
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
 === TRAINER_RIVAL_PIPLUP_1_HNS ===
 Name: ???
 Class: Rival Hns
@@ -10219,6 +10177,20 @@ Mugshot: Dark Red
 Items: ITEM_NONE
 
 SPECIES_PIPLUP
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== TRAINER_RIVAL_FROAKIE_1_HNS ===
+Name: ???
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Dark Red
+
+SPECIES_FROAKIE
 Level: 5
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -10268,29 +10240,6 @@ Level: 16
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 SPECIES_IVYSAUR
-Level: 18
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-=== TRAINER_RIVAL_TREECKO_2_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Dark Red
-Items: ITEM_POTION
-
-SPECIES_ZUBAT
-Level: 16
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-SPECIES_DUSKULL
-Level: 16
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-SPECIES_GROVYLE
 Level: 18
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -10364,7 +10313,7 @@ SPECIES_CHARMELEON
 Level: 18
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_RIVAL_TORCHIC_2_HNS ===
+=== TRAINER_RIVAL_FENNEKIN_2_HNS ===
 Name: {B_RIVAL_NAME}
 Class: Rival Hns
 Pic: Silver Hns
@@ -10373,40 +10322,17 @@ Music: Silver
 Double Battle: No
 AI: Basic Trainer
 Mugshot: Dark Red
-Items: ITEM_POTION
+Items: Potion
 
-SPECIES_ZUBAT
+SPECIES_GASTLY
 Level: 16
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-SPECIES_DUSKULL
+SPECIES_LUXIO
 Level: 16
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-SPECIES_COMBUSKEN
-Level: 18
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-=== TRAINER_RIVAL_CHIMCHAR_2_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Dark Red
-Items: ITEM_POTION
-
-SPECIES_ZUBAT
-Level: 16
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-SPECIES_DUSKULL
-Level: 16
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-SPECIES_MONFERNO
+SPECIES_BRAIXEN
 Level: 18
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -10445,7 +10371,7 @@ AI: Basic Trainer
 Mugshot: Dark Red
 Items: ITEM_POTION
 
-SPECIES_RATTATA
+SPECIES_LUXIO
 Level: 16
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -10454,29 +10380,6 @@ Level: 16
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 SPECIES_WARTORTLE
-Level: 18
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-=== TRAINER_RIVAL_MUDKIP_2_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Dark Red
-Items: ITEM_POTION
-
-SPECIES_ZUBAT
-Level: 16
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-SPECIES_DUSKULL
-Level: 16
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-SPECIES_MARSHTOMP
 Level: 18
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -10500,6 +10403,29 @@ Level: 16
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 SPECIES_PRINPLUP
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== TRAINER_RIVAL_FROAKIE_2_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Dark Red
+Items: Potion
+
+SPECIES_ZUBAT
+Level: 16
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+SPECIES_DUSKULL
+Level: 16
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+SPECIES_FROGADIER
 Level: 18
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -10591,49 +10517,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_LEECH_SEED
 - MOVE_SLEEP_POWDER
 - MOVE_MUD_SLAP
-
-=== TRAINER_RIVAL_TREECKO_3_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Dark Red
-Items: ITEM_SUPER_POTION
-
-SPECIES_DUSKULL
-Level: 22
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_NIGHT_SHADE
-- MOVE_DISABLE
-- MOVE_ASTONISH
-- MOVE_LEER
-
-SPECIES_KADABRA
-Level: 23
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_CONFUSION
-- MOVE_DISABLE
-- MOVE_TELEPORT
-- MOVE_THUNDER_PUNCH
-
-SPECIES_GOLBAT
-Level: 22
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_BITE
-- MOVE_CONFUSE_RAY
-- MOVE_POISON_STING
-- MOVE_GUST
-
-SPECIES_GROVYLE
-Level: 24
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_ABSORB
-- MOVE_QUICK_ATTACK
-- MOVE_FURY_CUTTER
-- MOVE_PURSUIT
 
 === TRAINER_RIVAL_TURTWIG_3_HNS ===
 Name: {B_RIVAL_NAME}
@@ -10765,7 +10648,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_SMOKESCREEN
 - MOVE_SWIFT
 
-=== TRAINER_RIVAL_TORCHIC_3_HNS ===
+=== TRAINER_RIVAL_FENNEKIN_3_HNS ===
 Name: {B_RIVAL_NAME}
 Class: Rival Hns
 Pic: Silver Hns
@@ -10774,82 +10657,39 @@ Music: Silver
 Double Battle: No
 AI: Basic Trainer
 Mugshot: Dark Red
-Items: ITEM_SUPER_POTION
+Items: Super Potion
 
-SPECIES_DUSKULL
+SPECIES_GASTLY
 Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_NIGHT_SHADE
-- MOVE_DISABLE
-- MOVE_ASTONISH
-- MOVE_LEER
+- MOVE_HYPNOSIS
+- MOVE_CURSE
+- MOVE_MEAN_LOOK
 
-SPECIES_KADABRA
+SPECIES_PORYGON
 Level: 23
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_CONFUSION
-- MOVE_DISABLE
-- MOVE_TELEPORT
-- MOVE_THUNDER_PUNCH
+- MOVE_PSYBEAM
+- MOVE_SHOCK_WAVE
+- MOVE_AGILITY
+- MOVE_RECOVER
 
-SPECIES_GOLBAT
+SPECIES_LUXIO
 Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_SPARK
 - MOVE_BITE
-- MOVE_CONFUSE_RAY
-- MOVE_POISON_STING
-- MOVE_GUST
+- MOVE_LEER
+- MOVE_CHARGE
 
-SPECIES_COMBUSKEN
+SPECIES_BRAIXEN
 Level: 24
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_EMBER
-- MOVE_DOUBLE_KICK
-- MOVE_PECK
-- MOVE_SAND_ATTACK
-
-=== TRAINER_RIVAL_CHIMCHAR_3_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Dark Red
-Items: ITEM_SUPER_POTION
-
-SPECIES_DUSKULL
-Level: 22
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_NIGHT_SHADE
-- MOVE_DISABLE
-- MOVE_ASTONISH
-- MOVE_LEER
-
-SPECIES_KADABRA
-Level: 23
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_CONFUSION
-- MOVE_DISABLE
-- MOVE_TELEPORT
-- MOVE_THUNDER_PUNCH
-
-SPECIES_GOLBAT
-Level: 22
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_BITE
-- MOVE_CONFUSE_RAY
-- MOVE_POISON_STING
-- MOVE_GUST
-
-SPECIES_MONFERNO
-Level: 24
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_FLAME_WHEEL
-- MOVE_KARATE_CHOP
-- MOVE_FURY_SWIPES
-- MOVE_MUD_SLAP
+- MOVE_PSYBEAM
+- MOVE_FLAME_CHARGE
+- MOVE_HOWL
 
 /* Water slot */
 === TRAINER_RIVAL_TOTODILE_3_HNS ===
@@ -10922,13 +10762,13 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_TELEPORT
 - MOVE_THUNDER_PUNCH
 
-SPECIES_RATICATE
+SPECIES_LUXIO
 Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_HYPER_FANG
-- MOVE_PURSUIT
-- MOVE_MUD_SLAP
-- MOVE_QUICK_ATTACK
+- MOVE_SPARK
+- MOVE_BITE
+- MOVE_LEER
+- MOVE_CHARGE
 
 SPECIES_WARTORTLE
 Level: 24
@@ -10937,49 +10777,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_BITE
 - MOVE_ICE_PUNCH
 - MOVE_MUD_SLAP
-
-=== TRAINER_RIVAL_MUDKIP_3_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Dark Red
-Items: ITEM_SUPER_POTION
-
-SPECIES_DUSKULL
-Level: 22
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_NIGHT_SHADE
-- MOVE_DISABLE
-- MOVE_ASTONISH
-- MOVE_LEER
-
-SPECIES_KADABRA
-Level: 23
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_CONFUSION
-- MOVE_DISABLE
-- MOVE_TELEPORT
-- MOVE_THUNDER_PUNCH
-
-SPECIES_GOLBAT
-Level: 22
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_BITE
-- MOVE_CONFUSE_RAY
-- MOVE_POISON_STING
-- MOVE_GUST
-
-SPECIES_MARSHTOMP
-Level: 24
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_MUD_SHOT
-- MOVE_WATER_GUN
-- MOVE_BIDE
-- MOVE_TACKLE
 
 === TRAINER_RIVAL_PIPLUP_3_HNS ===
 Name: {B_RIVAL_NAME}
@@ -11023,6 +10820,49 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_ICE_PUNCH
 - MOVE_BUBBLE_BEAM
 - MOVE_MUD_SLAP
+
+=== TRAINER_RIVAL_FROAKIE_3_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Dark Red
+Items: Super Potion
+
+SPECIES_DUSKULL
+Level: 22
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_NIGHT_SHADE
+- MOVE_DISABLE
+- MOVE_ASTONISH
+- MOVE_LEER
+
+SPECIES_KADABRA
+Level: 23
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_CONFUSION
+- MOVE_DISABLE
+- MOVE_TELEPORT
+- MOVE_THUNDER_PUNCH
+
+SPECIES_GOLBAT
+Level: 22
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_BITE
+- MOVE_CONFUSE_RAY
+- MOVE_POISON_STING
+- MOVE_GUST
+
+SPECIES_FROGADIER
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_WATER_PULSE
+- MOVE_QUICK_ATTACK
+- MOVE_LICK
+- MOVE_SMOKESCREEN
 
 
 /* ---- ENCOUNTER 4 - GoldenrodCity_UndergroundSwitches_hns ---- */
@@ -11128,57 +10968,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_SLEEP_POWDER
 - MOVE_RAZOR_LEAF
 - MOVE_FACADE
-
-=== TRAINER_RIVAL_TREECKO_4_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer
-Mugshot: Dark Red
-Items: Full Restore
-
-SPECIES_DUSCLOPS
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_PURSUIT
-- MOVE_CURSE
-- MOVE_MUD_SLAP
-
-SPECIES_PINSIR
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_LUNGE
-- MOVE_REVENGE
-- MOVE_FLAIL
-- MOVE_VICE_GRIP
-
-SPECIES_KADABRA
-Level: 38
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_PSYCHIC
-- MOVE_CALM_MIND
-- MOVE_DISABLE
-- MOVE_THUNDER_PUNCH
-
-SPECIES_GOLBAT
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
-
-SPECIES_SCEPTILE
-Level: 40
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_THUNDER_PUNCH
-- MOVE_PURSUIT
-- MOVE_AGILITY
-- MOVE_LEAF_BLADE
 
 === TRAINER_RIVAL_TURTWIG_4_HNS ===
 Name: {B_RIVAL_NAME}
@@ -11334,7 +11123,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_IRON_TAIL
 - MOVE_BRICK_BREAK
 
-=== TRAINER_RIVAL_TORCHIC_4_HNS ===
+=== TRAINER_RIVAL_FENNEKIN_4_HNS ===
 Name: {B_RIVAL_NAME}
 Class: Rival Hns
 Pic: Silver Hns
@@ -11345,13 +11134,13 @@ AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore
 
-SPECIES_DUSCLOPS
+SPECIES_HAUNTER
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_PURSUIT
+- MOVE_SHADOW_BALL
 - MOVE_CURSE
-- MOVE_MUD_SLAP
+- MOVE_CONFUSE_RAY
+- MOVE_HYPNOSIS
 
 SPECIES_SNEASEL
 Level: 39
@@ -11361,80 +11150,29 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_QUICK_ATTACK
 - MOVE_BRICK_BREAK
 
-SPECIES_KADABRA
+SPECIES_PORYGON
 Level: 38
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_PSYCHIC
-- MOVE_CALM_MIND
-- MOVE_DISABLE
-- MOVE_THUNDER_PUNCH
+- MOVE_TRI_ATTACK
+- MOVE_PSYBEAM
+- MOVE_THUNDER_WAVE
+- MOVE_RECOVER
 
-SPECIES_GOLBAT
+SPECIES_LUXRAY
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
+- MOVE_SPARK
+- MOVE_CRUNCH
+- MOVE_THUNDER_WAVE
+- MOVE_SWAGGER
 
-SPECIES_BLAZIKEN
+SPECIES_DELPHOX
 Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_BLAZE_KICK
-- MOVE_DOUBLE_KICK
-- MOVE_QUICK_ATTACK
-- MOVE_BULK_UP
-
-=== TRAINER_RIVAL_CHIMCHAR_4_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer
-Mugshot: Dark Red
-Items: Full Restore
-
-SPECIES_DUSCLOPS
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_PURSUIT
-- MOVE_CURSE
-- MOVE_MUD_SLAP
-
-SPECIES_SNEASEL
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_FAINT_ATTACK
-- MOVE_DOUBLE_TEAM
-- MOVE_QUICK_ATTACK
-- MOVE_BRICK_BREAK
-
-SPECIES_KADABRA
-Level: 38
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_PSYCHIC
+- MOVE_FLAMETHROWER
+- MOVE_PSYSHOCK
+- MOVE_SHADOW_BALL
 - MOVE_CALM_MIND
-- MOVE_DISABLE
-- MOVE_THUNDER_PUNCH
-
-SPECIES_GOLBAT
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
-
-SPECIES_INFERNAPE
-Level: 40
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_SUPERPOWER
-- MOVE_THUNDER_PUNCH
-- MOVE_FACADE
-- MOVE_FIRE_PUNCH
 
 /* Water slot */
 === TRAINER_RIVAL_TOTODILE_4_HNS ===
@@ -11523,13 +11261,13 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_QUICK_ATTACK
 - MOVE_BRICK_BREAK
 
-SPECIES_RHYHORN
+SPECIES_LUXRAY
 Level: 39
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_STONE_EDGE
-- MOVE_FURY_ATTACK
-- MOVE_FLAIL
-- MOVE_DIG
+- MOVE_SPARK
+- MOVE_CRUNCH
+- MOVE_THUNDER_WAVE
+- MOVE_SWAGGER
 
 SPECIES_BLASTOISE
 Level: 40
@@ -11538,57 +11276,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_SURF
 - MOVE_BITE
 - MOVE_IRON_TAIL
-
-=== TRAINER_RIVAL_MUDKIP_4_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer
-Mugshot: Dark Red
-Items: Full Restore
-
-SPECIES_DUSCLOPS
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_PURSUIT
-- MOVE_CURSE
-- MOVE_MUD_SLAP
-
-SPECIES_SNEASEL
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_FAINT_ATTACK
-- MOVE_DOUBLE_TEAM
-- MOVE_QUICK_ATTACK
-- MOVE_BRICK_BREAK
-
-SPECIES_KADABRA
-Level: 38
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_PSYCHIC
-- MOVE_CALM_MIND
-- MOVE_DISABLE
-- MOVE_FIRE_PUNCH
-
-SPECIES_GOLBAT
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
-
-SPECIES_SWAMPERT
-Level: 40
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_MUDDY_WATER
-- MOVE_MUD_SHOT
-- MOVE_FACADE
-- MOVE_ICE_PUNCH
 
 === TRAINER_RIVAL_PIPLUP_4_HNS ===
 Name: {B_RIVAL_NAME}
@@ -11640,6 +11327,57 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_SURF
 - MOVE_METAL_CLAW
 - MOVE_DRILL_PECK
+
+=== TRAINER_RIVAL_FROAKIE_4_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Dark Red
+Items: Full Restore
+
+SPECIES_DUSCLOPS
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_SHADOW_PUNCH
+- MOVE_PURSUIT
+- MOVE_CURSE
+- MOVE_MUD_SLAP
+
+SPECIES_MAGNETON
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_SPARK
+- MOVE_THUNDER_WAVE
+- MOVE_MIRROR_SHOT
+- MOVE_TRI_ATTACK
+
+SPECIES_KADABRA
+Level: 38
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_PSYCHIC
+- MOVE_CALM_MIND
+- MOVE_DISABLE
+- MOVE_FIRE_PUNCH
+
+SPECIES_GOLBAT
+Level: 39
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_TOXIC
+- MOVE_DOUBLE_TEAM
+- MOVE_CONFUSE_RAY
+- MOVE_WING_ATTACK
+
+SPECIES_GRENINJA
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_WATER_PULSE
+- MOVE_NIGHT_SLASH
+- MOVE_AERIAL_ACE
+- MOVE_SMOKESCREEN
 
 
 /* ---- ENCOUNTER 5 - VictoryRoadKanto_1F_hns ---- */
@@ -11761,65 +11499,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SLEEP_POWDER
 - MOVE_RAZOR_LEAF
 - MOVE_REST
-
-=== TRAINER_RIVAL_TREECKO_5_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
-Mugshot: Dark Red
-Items: Full Restore
-
-SPECIES_PINSIR @ ITEM_CHESTO_BERRY
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_LUNGE
-- MOVE_ROCK_SLIDE
-- MOVE_BRICK_BREAK
-- MOVE_REST
-
-SPECIES_GOLBAT
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
-
-SPECIES_DUSCLOPS
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_CURSE
-- MOVE_CONFUSE_RAY
-- MOVE_FUTURE_SIGHT
-
-SPECIES_ALAKAZAM
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_CALM_MIND
-- MOVE_DISABLE
-- MOVE_ICE_PUNCH
-
-SPECIES_AGGRON @ ITEM_CHARCOAL
-Level: 47
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FLAMETHROWER
-- MOVE_QUICK_ATTACK
-- MOVE_IRON_TAIL
-- MOVE_THUNDER_PUNCH
-
-SPECIES_SCEPTILE @ ITEM_MIRACLE_SEED
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_DRAGON_CLAW
-- MOVE_THUNDER_PUNCH
-- MOVE_NIGHT_SLASH
-- MOVE_LEAF_BLADE
 
 === TRAINER_RIVAL_TURTWIG_5_HNS ===
 Name: {B_RIVAL_NAME}
@@ -11999,7 +11678,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_IRON_TAIL
 - MOVE_BRICK_BREAK
 
-=== TRAINER_RIVAL_TORCHIC_5_HNS ===
+=== TRAINER_RIVAL_FENNEKIN_5_HNS ===
 Name: {B_RIVAL_NAME}
 Class: Rival Hns
 Pic: Silver Hns
@@ -12010,112 +11689,53 @@ AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Predicti
 Mugshot: Dark Red
 Items: Full Restore
 
-SPECIES_SNEASEL
+SPECIES_PORYGON2
 Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SLASH
-- MOVE_NIGHT_SLASH
-- MOVE_ROCK_SMASH
-- MOVE_AERIAL_ACE
-
-SPECIES_GOLBAT
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
-
-SPECIES_DUSCLOPS @ ITEM_SPELL_TAG
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_CURSE
-- MOVE_CONFUSE_RAY
-- MOVE_FUTURE_SIGHT
-
-SPECIES_ALAKAZAM
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_CALM_MIND
-- MOVE_DISABLE
-- MOVE_THUNDER_PUNCH
-
-SPECIES_MAGNEZONE
-Level: 47
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDERBOLT
 - MOVE_THUNDER_WAVE
-- MOVE_MIRROR_SHOT
+- MOVE_PSYBEAM
 - MOVE_TRI_ATTACK
 
-SPECIES_BLAZIKEN @ ITEM_CHARCOAL
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_BLAZE_KICK
-- MOVE_DOUBLE_KICK
-- MOVE_QUICK_ATTACK
-- MOVE_BULK_UP
-
-=== TRAINER_RIVAL_CHIMCHAR_5_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
-Mugshot: Dark Red
-Items: Full Restore
-
-SPECIES_SNEASEL
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SLASH
-- MOVE_NIGHT_SLASH
-- MOVE_ROCK_SMASH
-- MOVE_AERIAL_ACE
-
-SPECIES_GOLBAT
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
-
-SPECIES_DUSCLOPS @ ITEM_SPELL_TAG
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_CURSE
-- MOVE_CONFUSE_RAY
-- MOVE_FUTURE_SIGHT
-
-SPECIES_ALAKAZAM
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_CALM_MIND
-- MOVE_DISABLE
-- MOVE_THUNDER_PUNCH
-
-SPECIES_MAGNEZONE
+SPECIES_GENGAR
 Level: 47
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_THUNDERBOLT
-- MOVE_THUNDER_WAVE
-- MOVE_MIRROR_SHOT
-- MOVE_TRI_ATTACK
-
-SPECIES_INFERNAPE @ ITEM_CHARCOAL
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_JUMP_KICK
-- MOVE_THUNDER_PUNCH
-- MOVE_FACADE
+- MOVE_SHADOW_BALL
+- MOVE_HYPNOSIS
 - MOVE_FIRE_PUNCH
+- MOVE_DREAM_EATER
+
+SPECIES_LUXRAY
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDER_FANG
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_THUNDER_WAVE
+
+SPECIES_SNEASEL
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SLASH
+- MOVE_NIGHT_SLASH
+- MOVE_ROCK_SMASH
+- MOVE_AERIAL_ACE
+
+SPECIES_SKARMORY @ ITEM_CHESTO_BERRY
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_STEEL_WING
+- MOVE_DRILL_PECK
+- MOVE_SPIKES
+- MOVE_REST
+
+SPECIES_DELPHOX @ ITEM_CHARCOAL
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FLAMETHROWER
+- MOVE_PSYSHOCK
+- MOVE_SHADOW_BALL
+- MOVE_CALM_MIND
 
 /* Water slot */
 === TRAINER_RIVAL_TOTODILE_5_HNS ===
@@ -12191,18 +11811,18 @@ Items: Full Restore
 SPECIES_SKARMORY @ ITEM_CHESTO_BERRY
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SWIFT
-- MOVE_AIR_CUTTER
 - MOVE_STEEL_WING
+- MOVE_DRILL_PECK
+- MOVE_SPIKES
 - MOVE_REST
 
-SPECIES_RHYDON
+SPECIES_LUXRAY
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_ROCK_WRECKER
-- MOVE_STONE_EDGE
-- MOVE_EARTHQUAKE
-- MOVE_BRICK_BREAK
+- MOVE_THUNDER_FANG
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_THUNDER_WAVE
 
 SPECIES_ALAKAZAM
 Level: 46
@@ -12212,13 +11832,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_DISABLE
 - MOVE_FIRE_PUNCH
 
-SPECIES_DUSCLOPS
+SPECIES_GENGAR
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_CURSE
-- MOVE_CONFUSE_RAY
-- MOVE_FUTURE_SIGHT
+- MOVE_SHADOW_BALL
+- MOVE_HYPNOSIS
+- MOVE_FIRE_PUNCH
+- MOVE_DREAM_EATER
 
 SPECIES_SNEASEL
 Level: 47
@@ -12234,65 +11854,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SURF
 - MOVE_BRICK_BREAK
 - MOVE_IRON_TAIL
-- MOVE_ICE_PUNCH
-
-=== TRAINER_RIVAL_MUDKIP_5_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
-Mugshot: Dark Red
-Items: Full Restore
-
-SPECIES_DUSCLOPS @ ITEM_SPELL_TAG
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_CURSE
-- MOVE_CONFUSE_RAY
-- MOVE_FUTURE_SIGHT
-
-SPECIES_GOLBAT
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
-
-SPECIES_SNEASEL
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SLASH
-- MOVE_NIGHT_SLASH
-- MOVE_ROCK_SMASH
-- MOVE_AERIAL_ACE
-
-SPECIES_ALAKAZAM
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_CALM_MIND
-- MOVE_DISABLE
-- MOVE_FIRE_PUNCH
-
-SPECIES_PINSIR
-Level: 47
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_LUNGE
-- MOVE_ROCK_SLIDE
-- MOVE_BRICK_BREAK
-- MOVE_REST
-
-SPECIES_SWAMPERT @ ITEM_MYSTIC_WATER
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_MUDDY_WATER
-- MOVE_MUD_SHOT
-- MOVE_FACADE
 - MOVE_ICE_PUNCH
 
 === TRAINER_RIVAL_PIPLUP_5_HNS ===
@@ -12353,6 +11914,65 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_BLIZZARD
 - MOVE_FLASH_CANNON
 - MOVE_DRILL_PECK
+
+=== TRAINER_RIVAL_FROAKIE_5_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
+Mugshot: Dark Red
+Items: Full Restore
+
+SPECIES_DUSCLOPS @ ITEM_SPELL_TAG
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SHADOW_PUNCH
+- MOVE_CURSE
+- MOVE_CONFUSE_RAY
+- MOVE_FUTURE_SIGHT
+
+SPECIES_GOLBAT
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_TOXIC
+- MOVE_DOUBLE_TEAM
+- MOVE_CONFUSE_RAY
+- MOVE_WING_ATTACK
+
+SPECIES_PINSIR
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_LUNGE
+- MOVE_ROCK_SLIDE
+- MOVE_BRICK_BREAK
+- MOVE_REST
+
+SPECIES_ALAKAZAM
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_PSYCHIC
+- MOVE_CALM_MIND
+- MOVE_DISABLE
+- MOVE_FIRE_PUNCH
+
+SPECIES_MAGNEZONE
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDERBOLT
+- MOVE_THUNDER_WAVE
+- MOVE_MIRROR_SHOT
+- MOVE_TRI_ATTACK
+
+SPECIES_GRENINJA @ ITEM_MYSTIC_WATER
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WATER_PULSE
+- MOVE_NIGHT_SLASH
+- MOVE_AERIAL_ACE
+- MOVE_SMOKESCREEN
 
 
 /* ---- ENCOUNTER 6 - MtMoon_Cave_hns ---- */
@@ -12474,65 +12094,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_EARTHQUAKE
 - MOVE_SLUDGE_BOMB
 - MOVE_GIGA_DRAIN
-
-=== TRAINER_RIVAL_TREECKO_6_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
-Mugshot: Dark Red
-Items: Full Restore / Full Restore
-
-SPECIES_PINSIR @ ITEM_SILVER_POWDER
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_LUNGE
-- MOVE_EARTHQUAKE
-- MOVE_ROCK_SLIDE
-- MOVE_BRICK_BREAK
-
-SPECIES_CROBAT @ ITEM_LEFTOVERS
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
-
-SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_EARTHQUAKE
-- MOVE_ICE_BEAM
-- MOVE_REST
-
-SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_ICE_PUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_FIRE_PUNCH
-
-SPECIES_AGGRON @ ITEM_CHARCOAL
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FIRE_BLAST
-- MOVE_EARTHQUAKE
-- MOVE_IRON_TAIL
-- MOVE_THUNDER_PUNCH
-
-SPECIES_SCEPTILE @ ITEM_MIRACLE_SEED
-Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_CRUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_AERIAL_ACE
-- MOVE_LEAF_BLADE
 
 === TRAINER_RIVAL_TURTWIG_6_HNS ===
 Name: {B_RIVAL_NAME}
@@ -12712,7 +12273,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_FLY
 - MOVE_EARTHQUAKE
 
-=== TRAINER_RIVAL_TORCHIC_6_HNS ===
+=== TRAINER_RIVAL_FENNEKIN_6_HNS ===
 Name: {B_RIVAL_NAME}
 Class: Rival Hns
 Pic: Silver Hns
@@ -12723,64 +12284,29 @@ AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Predicti
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
-SPECIES_WEAVILE @ ITEM_BLACK_GLASSES
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_NIGHT_SLASH
-- MOVE_ICE_PUNCH
-- MOVE_AERIAL_ACE
-- MOVE_BRICK_BREAK
-
-SPECIES_CROBAT @ ITEM_LEFTOVERS
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
-
-SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_EARTHQUAKE
-- MOVE_ICE_BEAM
-- MOVE_REST
-
-SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_ICE_PUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_FIRE_PUNCH
-
-SPECIES_MAGNEZONE @ ITEM_MAGNET
+SPECIES_PORYGON_Z @ ITEM_MAGNET
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDERBOLT
-- MOVE_FLASH_CANNON
-- MOVE_THUNDER_WAVE
+- MOVE_ICE_BEAM
+- MOVE_PSYCHIC
 - MOVE_TRI_ATTACK
 
-SPECIES_BLAZIKEN @ ITEM_QUICK_CLAW
-Level: 66
+SPECIES_GENGAR @ ITEM_SPELL_TAG
+Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SKY_UPPERCUT
-- MOVE_BLAZE_KICK
-- MOVE_EARTHQUAKE
-- MOVE_AERIAL_ACE
+- MOVE_SHADOW_BALL
+- MOVE_GIGA_DRAIN
+- MOVE_WILL_O_WISP
+- MOVE_ICE_PUNCH
 
-=== TRAINER_RIVAL_CHIMCHAR_6_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
-Mugshot: Dark Red
-Items: Full Restore / Full Restore
+SPECIES_LUXRAY @ ITEM_MAGNET
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WILD_CHARGE
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_THUNDER_WAVE
 
 SPECIES_WEAVILE @ ITEM_BLACK_GLASSES
 Level: 64
@@ -12790,45 +12316,21 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_AERIAL_ACE
 - MOVE_BRICK_BREAK
 
-SPECIES_CROBAT @ ITEM_LEFTOVERS
+SPECIES_SKARMORY @ ITEM_LEFTOVERS
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
+- MOVE_STEEL_WING
+- MOVE_DRILL_PECK
+- MOVE_SPIKES
+- MOVE_WHIRLWIND
 
-SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_EARTHQUAKE
-- MOVE_ICE_BEAM
-- MOVE_REST
-
-SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_ICE_PUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_FIRE_PUNCH
-
-SPECIES_MAGNEZONE @ ITEM_MAGNET
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_THUNDERBOLT
-- MOVE_FLASH_CANNON
-- MOVE_THUNDER_WAVE
-- MOVE_TRI_ATTACK
-
-SPECIES_INFERNAPE @ ITEM_BLACK_BELT
+SPECIES_DELPHOX @ ITEM_CHARCOAL
 Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_JUMP_KICK
-- MOVE_FLAMETHROWER
+- MOVE_MYSTICAL_FIRE
+- MOVE_PSYCHIC
+- MOVE_SHADOW_BALL
 - MOVE_GRASS_KNOT
-- MOVE_CALM_MIND
 
 /* Water slot */
 === TRAINER_RIVAL_TOTODILE_6_HNS ===
@@ -12904,18 +12406,18 @@ Items: Full Restore / Full Restore
 SPECIES_SKARMORY @ ITEM_LEFTOVERS
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SPIKES
 - MOVE_STEEL_WING
-- MOVE_TOXIC
-- MOVE_FLY
+- MOVE_DRILL_PECK
+- MOVE_SPIKES
+- MOVE_WHIRLWIND
 
-SPECIES_RHYDON @ ITEM_HARD_STONE
+SPECIES_LUXRAY @ ITEM_MAGNET
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_ROCK_WRECKER
-- MOVE_CRUSH_CLAW
-- MOVE_EARTHQUAKE
-- MOVE_MEGAHORN
+- MOVE_WILD_CHARGE
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_THUNDER_WAVE
 
 SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
 Level: 64
@@ -12925,13 +12427,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDER_PUNCH
 - MOVE_FIRE_PUNCH
 
-SPECIES_DUSCLOPS @ ITEM_SPELL_TAG
+SPECIES_GENGAR @ ITEM_SPELL_TAG
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_EARTHQUAKE
-- MOVE_ICE_BEAM
-- MOVE_ROCK_SLIDE
+- MOVE_SHADOW_BALL
+- MOVE_GIGA_DRAIN
+- MOVE_WILL_O_WISP
+- MOVE_ICE_PUNCH
 
 SPECIES_WEAVILE @ ITEM_BLACK_GLASSES
 Level: 64
@@ -12948,65 +12450,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_EARTHQUAKE
 - MOVE_ICE_BEAM
 - MOVE_REST
-
-=== TRAINER_RIVAL_MUDKIP_6_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
-Mugshot: Dark Red
-Items: Full Restore / Full Restore
-
-SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_EARTHQUAKE
-- MOVE_ICE_BEAM
-- MOVE_REST
-
-SPECIES_CROBAT @ ITEM_LEFTOVERS
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_CONFUSE_RAY
-- MOVE_WING_ATTACK
-
-SPECIES_WEAVILE @ ITEM_BLACK_GLASSES
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_NIGHT_SLASH
-- MOVE_ICE_PUNCH
-- MOVE_AERIAL_ACE
-- MOVE_BRICK_BREAK
-
-SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_ICE_PUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_FIRE_PUNCH
-
-SPECIES_PINSIR @ ITEM_SILVER_POWDER
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_LUNGE
-- MOVE_ROCK_SLIDE
-- MOVE_BRICK_BREAK
-- MOVE_AERIAL_ACE
-
-SPECIES_SWAMPERT @ ITEM_SHELL_BELL
-Level: 66
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_AVALANCHE
-- MOVE_MUDDY_WATER
-- MOVE_BRICK_BREAK
-- MOVE_EARTHQUAKE
 
 === TRAINER_RIVAL_PIPLUP_6_HNS ===
 Name: {B_RIVAL_NAME}
@@ -13051,13 +12494,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDER_PUNCH
 - MOVE_FIRE_PUNCH
 
-SPECIES_GENGAR @ ITEM_SPELL_TAG
+SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_BALL
-- MOVE_THUNDERBOLT
-- MOVE_WILL_O_WISP
-- MOVE_ICE_PUNCH
+- MOVE_SHADOW_PUNCH
+- MOVE_EARTHQUAKE
+- MOVE_ICE_BEAM
+- MOVE_REST
 
 SPECIES_EMPOLEON @ ITEM_QUICK_CLAW
 Level: 66
@@ -13066,6 +12509,65 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_ICE_BEAM
 - MOVE_FLASH_CANNON
 - MOVE_DRILL_PECK
+
+=== TRAINER_RIVAL_FROAKIE_6_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
+Mugshot: Dark Red
+Items: Full Restore / Full Restore
+
+SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SHADOW_PUNCH
+- MOVE_EARTHQUAKE
+- MOVE_ICE_BEAM
+- MOVE_REST
+
+SPECIES_CROBAT @ ITEM_LEFTOVERS
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_TOXIC
+- MOVE_DOUBLE_TEAM
+- MOVE_CONFUSE_RAY
+- MOVE_WING_ATTACK
+
+SPECIES_PINSIR @ ITEM_SILVER_POWDER
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_LUNGE
+- MOVE_ROCK_SLIDE
+- MOVE_BRICK_BREAK
+- MOVE_AERIAL_ACE
+
+SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_PSYCHIC
+- MOVE_ICE_PUNCH
+- MOVE_THUNDER_PUNCH
+- MOVE_FIRE_PUNCH
+
+SPECIES_MAGNEZONE @ ITEM_MAGNET
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_THUNDER_WAVE
+- MOVE_TRI_ATTACK
+
+SPECIES_GRENINJA @ ITEM_BLACK_GLASSES
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SURF
+- MOVE_DARK_PULSE
+- MOVE_ICE_BEAM
+- MOVE_GRASS_KNOT
 
 
 /* ---- ENCOUNTER 7 - IndigoPlateau_PokemonCenter_hns - the last one ---- */
@@ -13187,65 +12689,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_EARTHQUAKE
 - MOVE_SLUDGE_BOMB
 - MOVE_GIGA_DRAIN
-
-=== TRAINER_RIVAL_TREECKO_7_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
-Mugshot: Dark Red
-Items: Full Restore / Full Restore
-
-SPECIES_PINSIR @ ITEM_SILVER_POWDER
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_LUNGE
-- MOVE_EARTHQUAKE
-- MOVE_ROCK_SLIDE
-- MOVE_BRICK_BREAK
-
-SPECIES_CROBAT @ ITEM_LEFTOVERS
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_POISON_FANG
-- MOVE_FLY
-
-SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_EARTHQUAKE
-- MOVE_ICE_BEAM
-- MOVE_REST
-
-SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_ICE_PUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_FIRE_PUNCH
-
-SPECIES_AGGRON @ ITEM_CHARCOAL
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FIRE_BLAST
-- MOVE_EARTHQUAKE
-- MOVE_IRON_TAIL
-- MOVE_THUNDER_PUNCH
-
-SPECIES_SCEPTILE @ ITEM_MIRACLE_SEED
-Level: 70
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_CRUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_AERIAL_ACE
-- MOVE_LEAF_BLADE
 
 === TRAINER_RIVAL_TURTWIG_7_HNS ===
 Name: {B_RIVAL_NAME}
@@ -13425,7 +12868,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_FLY
 - MOVE_EARTHQUAKE
 
-=== TRAINER_RIVAL_TORCHIC_7_HNS ===
+=== TRAINER_RIVAL_FENNEKIN_7_HNS ===
 Name: {B_RIVAL_NAME}
 Class: Rival Hns
 Pic: Silver Hns
@@ -13436,64 +12879,29 @@ AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Predicti
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
-SPECIES_WEAVILE @ ITEM_BLACK_GLASSES
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_NIGHT_SLASH
-- MOVE_ICE_PUNCH
-- MOVE_AERIAL_ACE
-- MOVE_BRICK_BREAK
-
-SPECIES_CROBAT @ ITEM_LEFTOVERS
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_POISON_FANG
-- MOVE_FLY
-
-SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_EARTHQUAKE
-- MOVE_ICE_BEAM
-- MOVE_REST
-
-SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_ICE_PUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_FIRE_PUNCH
-
-SPECIES_MAGNEZONE @ ITEM_MAGNET
+SPECIES_PORYGON_Z @ ITEM_MAGNET
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDERBOLT
-- MOVE_FLASH_CANNON
-- MOVE_THUNDER_WAVE
+- MOVE_ICE_BEAM
+- MOVE_PSYCHIC
 - MOVE_TRI_ATTACK
 
-SPECIES_BLAZIKEN @ ITEM_QUICK_CLAW
-Level: 70
+SPECIES_GENGAR @ ITEM_SPELL_TAG
+Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SKY_UPPERCUT
-- MOVE_BLAZE_KICK
-- MOVE_EARTHQUAKE
-- MOVE_AERIAL_ACE
+- MOVE_SHADOW_BALL
+- MOVE_GIGA_DRAIN
+- MOVE_WILL_O_WISP
+- MOVE_ICE_PUNCH
 
-=== TRAINER_RIVAL_CHIMCHAR_7_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
-Mugshot: Dark Red
-Items: Full Restore / Full Restore
+SPECIES_LUXRAY @ ITEM_MAGNET
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WILD_CHARGE
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_THUNDER_WAVE
 
 SPECIES_WEAVILE @ ITEM_BLACK_GLASSES
 Level: 68
@@ -13503,45 +12911,21 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_AERIAL_ACE
 - MOVE_BRICK_BREAK
 
-SPECIES_CROBAT @ ITEM_LEFTOVERS
+SPECIES_SKARMORY @ ITEM_LEFTOVERS
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_POISON_FANG
-- MOVE_FLY
+- MOVE_STEEL_WING
+- MOVE_DRILL_PECK
+- MOVE_SPIKES
+- MOVE_WHIRLWIND
 
-SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_EARTHQUAKE
-- MOVE_ICE_BEAM
-- MOVE_REST
-
-SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_ICE_PUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_FIRE_PUNCH
-
-SPECIES_MAGNEZONE @ ITEM_MAGNET
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_THUNDERBOLT
-- MOVE_FLASH_CANNON
-- MOVE_THUNDER_WAVE
-- MOVE_TRI_ATTACK
-
-SPECIES_INFERNAPE @ ITEM_BLACK_BELT
+SPECIES_DELPHOX @ ITEM_CHARCOAL
 Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_JUMP_KICK
-- MOVE_FLAMETHROWER
+- MOVE_MYSTICAL_FIRE
+- MOVE_PSYCHIC
+- MOVE_SHADOW_BALL
 - MOVE_GRASS_KNOT
-- MOVE_CALM_MIND
 
 /* Water slot */
 === TRAINER_RIVAL_TOTODILE_7_HNS ===
@@ -13617,18 +13001,18 @@ Items: Full Restore / Full Restore
 SPECIES_SKARMORY @ ITEM_LEFTOVERS
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_AIR_SLASH
 - MOVE_STEEL_WING
-- MOVE_TOXIC
-- MOVE_FLY
+- MOVE_DRILL_PECK
+- MOVE_SPIKES
+- MOVE_WHIRLWIND
 
-SPECIES_RHYDON @ ITEM_WHITE_HERB
+SPECIES_LUXRAY @ ITEM_MAGNET
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_STONE_EDGE
-- MOVE_SUPERPOWER
-- MOVE_EARTHQUAKE
-- MOVE_MEGAHORN
+- MOVE_WILD_CHARGE
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_THUNDER_WAVE
 
 SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
 Level: 68
@@ -13638,13 +13022,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDER_PUNCH
 - MOVE_FIRE_PUNCH
 
-SPECIES_DUSCLOPS @ ITEM_SPELL_TAG
+SPECIES_GENGAR @ ITEM_SPELL_TAG
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_EARTHQUAKE
-- MOVE_ICE_BEAM
-- MOVE_ROCK_SLIDE
+- MOVE_SHADOW_BALL
+- MOVE_GIGA_DRAIN
+- MOVE_WILL_O_WISP
+- MOVE_ICE_PUNCH
 
 SPECIES_WEAVILE @ ITEM_BLACK_GLASSES
 Level: 68
@@ -13662,65 +13046,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_ICE_BEAM
 - MOVE_REST
 
-=== TRAINER_RIVAL_MUDKIP_7_HNS ===
-Name: {B_RIVAL_NAME}
-Class: Rival Hns
-Pic: Silver Hns
-Gender: Male
-Music: Silver
-Double Battle: No
-AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
-Mugshot: Dark Red
-Items: Full Restore / Full Restore
-
-SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_EARTHQUAKE
-- MOVE_ICE_BEAM
-- MOVE_REST
-
-SPECIES_CROBAT @ ITEM_LEFTOVERS
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_TOXIC
-- MOVE_DOUBLE_TEAM
-- MOVE_POISON_FANG
-- MOVE_FLY
-
-SPECIES_WEAVILE @ ITEM_BLACK_GLASSES
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_NIGHT_SLASH
-- MOVE_ICE_PUNCH
-- MOVE_AERIAL_ACE
-- MOVE_BRICK_BREAK
-
-SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_ICE_PUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_FIRE_PUNCH
-
-SPECIES_PINSIR @ ITEM_SILVER_POWDER
-Level: 68
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_LUNGE
-- MOVE_ROCK_SLIDE
-- MOVE_BRICK_BREAK
-- MOVE_AERIAL_ACE
-
-SPECIES_SWAMPERT @ ITEM_SHELL_BELL
-Level: 70
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_AVALANCHE
-- MOVE_MUDDY_WATER
-- MOVE_BRICK_BREAK
-- MOVE_EARTHQUAKE
-
 === TRAINER_RIVAL_PIPLUP_7_HNS ===
 Name: {B_RIVAL_NAME}
 Class: Rival Hns
@@ -13732,7 +13057,7 @@ AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Predicti
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
-SPECIES_WEAVILE @ ITEM_CHESTO_BERRY
+SPECIES_WEAVILE @ ITEM_BLACK_GLASSES
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_NIGHT_SLASH
@@ -13764,13 +13089,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDER_PUNCH
 - MOVE_FIRE_PUNCH
 
-SPECIES_GENGAR @ ITEM_SPELL_TAG
+SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SHADOW_BALL
-- MOVE_THUNDERBOLT
-- MOVE_WILL_O_WISP
-- MOVE_ICE_PUNCH
+- MOVE_SHADOW_PUNCH
+- MOVE_EARTHQUAKE
+- MOVE_ICE_BEAM
+- MOVE_REST
 
 SPECIES_EMPOLEON @ ITEM_QUICK_CLAW
 Level: 70
@@ -13779,6 +13104,65 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_ICE_BEAM
 - MOVE_FLASH_CANNON
 - MOVE_DRILL_PECK
+
+=== TRAINER_RIVAL_FROAKIE_7_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
+Mugshot: Dark Red
+Items: Full Restore / Full Restore
+
+SPECIES_DUSCLOPS @ ITEM_CHESTO_BERRY
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SHADOW_PUNCH
+- MOVE_EARTHQUAKE
+- MOVE_ICE_BEAM
+- MOVE_REST
+
+SPECIES_CROBAT @ ITEM_LEFTOVERS
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_TOXIC
+- MOVE_DOUBLE_TEAM
+- MOVE_POISON_FANG
+- MOVE_FLY
+
+SPECIES_PINSIR @ ITEM_SILVER_POWDER
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_LUNGE
+- MOVE_ROCK_SLIDE
+- MOVE_BRICK_BREAK
+- MOVE_AERIAL_ACE
+
+SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_PSYCHIC
+- MOVE_ICE_PUNCH
+- MOVE_THUNDER_PUNCH
+- MOVE_FIRE_PUNCH
+
+SPECIES_MAGNEZONE @ ITEM_MAGNET
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_THUNDER_WAVE
+- MOVE_TRI_ATTACK
+
+SPECIES_GRENINJA @ ITEM_BLACK_GLASSES
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SURF
+- MOVE_DARK_PULSE
+- MOVE_ICE_BEAM
+- MOVE_GRASS_KNOT
 
 /* ---- end of SILVER ---- */
 

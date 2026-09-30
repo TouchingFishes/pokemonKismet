@@ -1,0 +1,688 @@
+/* ============================================================================
+   SILVER's ACES - the starter lines that ride on another family's party.
+
+   Several starter regions share one of Silver's party families (see
+   sRivalTrainerBase in src/starter_generation.c). Where they do, the family's
+   own ace - its LAST mon - is replaced at battle time by the matching line
+   below, chosen by sRivalAceBase. CYNDAQUIL's parties, for instance, serve
+   Typhlosion as written and Blaziken, Infernape and Emboar from here.
+
+   Each entry is a pseudo-trainer holding ONE mon, and only that mon is read
+   (GetRivalAceOverride -> CreateNPCTrainerParty, src/battle_main.c). The
+   header is there because trainerproc expects one; it is never shown. These
+   constants are an enum of their own (include/constants/rival_aces.h), NOT
+   trainer IDs, so this file costs no trainer IDs and no flags - the same
+   arrangement as battle_partners.party.
+
+   Rules, all checked by `py -3 .claude/rival_overlap.py`:
+   - _1 .. _7 are the seven encounters, and a line's constants stay contiguous.
+   - match the ace level of that encounter: 5 / 18 / 24 / 40 / 48 / 66 / 70.
+   - carry what the other aces carry: nothing at 1-2 (the game fills the moves
+     at battle time), four moves at 3-4, four moves and a held item at 5-7.
+   - the ace must share no type with the family it rides on - at EVERY stage.
+   - trainerproc does not check that a mon can learn its moves. The checker
+     does, against canon, for every line written for Unova and Kalos.
+   ============================================================================ */
+=== RIVAL_ACE_BLAZIKEN_1 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_TORCHIC
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_BLAZIKEN_2 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_COMBUSKEN
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_BLAZIKEN_3 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_COMBUSKEN
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_EMBER
+- MOVE_DOUBLE_KICK
+- MOVE_PECK
+- MOVE_SAND_ATTACK
+
+=== RIVAL_ACE_BLAZIKEN_4 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_BLAZIKEN
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_BLAZE_KICK
+- MOVE_DOUBLE_KICK
+- MOVE_QUICK_ATTACK
+- MOVE_BULK_UP
+
+=== RIVAL_ACE_BLAZIKEN_5 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_BLAZIKEN @ ITEM_CHARCOAL
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_BLAZE_KICK
+- MOVE_DOUBLE_KICK
+- MOVE_QUICK_ATTACK
+- MOVE_BULK_UP
+
+=== RIVAL_ACE_BLAZIKEN_6 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_BLAZIKEN @ ITEM_QUICK_CLAW
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SKY_UPPERCUT
+- MOVE_BLAZE_KICK
+- MOVE_EARTHQUAKE
+- MOVE_AERIAL_ACE
+
+=== RIVAL_ACE_BLAZIKEN_7 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_BLAZIKEN @ ITEM_QUICK_CLAW
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SKY_UPPERCUT
+- MOVE_BLAZE_KICK
+- MOVE_EARTHQUAKE
+- MOVE_AERIAL_ACE
+
+=== RIVAL_ACE_INFERNAPE_1 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_CHIMCHAR
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_INFERNAPE_2 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_MONFERNO
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_INFERNAPE_3 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_MONFERNO
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_FLAME_WHEEL
+- MOVE_KARATE_CHOP
+- MOVE_FURY_SWIPES
+- MOVE_MUD_SLAP
+
+=== RIVAL_ACE_INFERNAPE_4 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_INFERNAPE
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_SUPERPOWER
+- MOVE_THUNDER_PUNCH
+- MOVE_FACADE
+- MOVE_FIRE_PUNCH
+
+=== RIVAL_ACE_INFERNAPE_5 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_INFERNAPE @ ITEM_CHARCOAL
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_JUMP_KICK
+- MOVE_THUNDER_PUNCH
+- MOVE_FACADE
+- MOVE_FIRE_PUNCH
+
+=== RIVAL_ACE_INFERNAPE_6 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_INFERNAPE @ ITEM_BLACK_BELT
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_JUMP_KICK
+- MOVE_FLAMETHROWER
+- MOVE_GRASS_KNOT
+- MOVE_CALM_MIND
+
+=== RIVAL_ACE_INFERNAPE_7 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_INFERNAPE @ ITEM_BLACK_BELT
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_JUMP_KICK
+- MOVE_FLAMETHROWER
+- MOVE_GRASS_KNOT
+- MOVE_CALM_MIND
+
+=== RIVAL_ACE_SCEPTILE_1 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_TREECKO
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_SCEPTILE_2 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_GROVYLE
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_SCEPTILE_3 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_GROVYLE
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_ABSORB
+- MOVE_QUICK_ATTACK
+- MOVE_FURY_CUTTER
+- MOVE_PURSUIT
+
+=== RIVAL_ACE_SCEPTILE_4 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SCEPTILE
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_THUNDER_PUNCH
+- MOVE_PURSUIT
+- MOVE_AGILITY
+- MOVE_LEAF_BLADE
+
+=== RIVAL_ACE_SCEPTILE_5 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SCEPTILE @ ITEM_MIRACLE_SEED
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_DRAGON_CLAW
+- MOVE_THUNDER_PUNCH
+- MOVE_NIGHT_SLASH
+- MOVE_LEAF_BLADE
+
+=== RIVAL_ACE_SCEPTILE_6 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SCEPTILE @ ITEM_MIRACLE_SEED
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_CRUNCH
+- MOVE_THUNDER_PUNCH
+- MOVE_AERIAL_ACE
+- MOVE_LEAF_BLADE
+
+=== RIVAL_ACE_SCEPTILE_7 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SCEPTILE @ ITEM_MIRACLE_SEED
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_CRUNCH
+- MOVE_THUNDER_PUNCH
+- MOVE_AERIAL_ACE
+- MOVE_LEAF_BLADE
+
+=== RIVAL_ACE_SERPERIOR_1 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SNIVY
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_SERPERIOR_2 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SERVINE
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_SERPERIOR_3 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SERVINE
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_VINE_WHIP
+- MOVE_MEGA_DRAIN
+- MOVE_WRAP
+- MOVE_LEECH_SEED
+
+=== RIVAL_ACE_SERPERIOR_4 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SERPERIOR
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_LEAF_BLADE
+- MOVE_COIL
+- MOVE_DRAGON_TAIL
+- MOVE_GIGA_DRAIN
+
+=== RIVAL_ACE_SERPERIOR_5 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SERPERIOR @ ITEM_MIRACLE_SEED
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_LEAF_BLADE
+- MOVE_COIL
+- MOVE_DRAGON_TAIL
+- MOVE_GIGA_DRAIN
+
+=== RIVAL_ACE_SERPERIOR_6 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SERPERIOR @ ITEM_MIRACLE_SEED
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_LEAF_STORM
+- MOVE_DRAGON_PULSE
+- MOVE_GIGA_DRAIN
+- MOVE_GLARE
+
+=== RIVAL_ACE_SERPERIOR_7 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SERPERIOR @ ITEM_MIRACLE_SEED
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_LEAF_STORM
+- MOVE_DRAGON_PULSE
+- MOVE_GIGA_DRAIN
+- MOVE_GLARE
+
+=== RIVAL_ACE_CHESNAUGHT_1 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_CHESPIN
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_CHESNAUGHT_2 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_QUILLADIN
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_CHESNAUGHT_3 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_QUILLADIN
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_VINE_WHIP
+- MOVE_BITE
+- MOVE_ROLLOUT
+- MOVE_PIN_MISSILE
+
+=== RIVAL_ACE_CHESNAUGHT_4 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_CHESNAUGHT
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_SEED_BOMB
+- MOVE_HAMMER_ARM
+- MOVE_ROCK_SLIDE
+- MOVE_SPIKY_SHIELD
+
+=== RIVAL_ACE_CHESNAUGHT_5 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_CHESNAUGHT @ ITEM_MIRACLE_SEED
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SEED_BOMB
+- MOVE_HAMMER_ARM
+- MOVE_ROCK_SLIDE
+- MOVE_SPIKY_SHIELD
+
+=== RIVAL_ACE_CHESNAUGHT_6 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_CHESNAUGHT @ ITEM_LEFTOVERS
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WOOD_HAMMER
+- MOVE_HAMMER_ARM
+- MOVE_EARTHQUAKE
+- MOVE_SPIKY_SHIELD
+
+=== RIVAL_ACE_CHESNAUGHT_7 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_CHESNAUGHT @ ITEM_LEFTOVERS
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WOOD_HAMMER
+- MOVE_HAMMER_ARM
+- MOVE_EARTHQUAKE
+- MOVE_SPIKY_SHIELD
+
+=== RIVAL_ACE_EMBOAR_1 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_TEPIG
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_EMBOAR_2 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_PIGNITE
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_EMBOAR_3 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_PIGNITE
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_FLAME_CHARGE
+- MOVE_ARM_THRUST
+- MOVE_ROLLOUT
+- MOVE_SMOG
+
+=== RIVAL_ACE_EMBOAR_4 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_EMBOAR
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_FIRE_PUNCH
+- MOVE_HAMMER_ARM
+- MOVE_ROCK_SLIDE
+- MOVE_BULK_UP
+
+=== RIVAL_ACE_EMBOAR_5 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_EMBOAR @ ITEM_CHARCOAL
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FIRE_PUNCH
+- MOVE_HAMMER_ARM
+- MOVE_ROCK_SLIDE
+- MOVE_BULK_UP
+
+=== RIVAL_ACE_EMBOAR_6 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_EMBOAR @ ITEM_BLACK_BELT
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FLARE_BLITZ
+- MOVE_HAMMER_ARM
+- MOVE_WILD_CHARGE
+- MOVE_EARTHQUAKE
+
+=== RIVAL_ACE_EMBOAR_7 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_EMBOAR @ ITEM_BLACK_BELT
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FLARE_BLITZ
+- MOVE_HAMMER_ARM
+- MOVE_WILD_CHARGE
+- MOVE_EARTHQUAKE
+
+=== RIVAL_ACE_SAMUROTT_1 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_OSHAWOTT
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_SAMUROTT_2 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_DEWOTT
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_SAMUROTT_3 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_DEWOTT
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_RAZOR_SHELL
+- MOVE_FURY_CUTTER
+- MOVE_REVENGE
+- MOVE_FOCUS_ENERGY
+
+=== RIVAL_ACE_SAMUROTT_4 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SAMUROTT
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_RAZOR_SHELL
+- MOVE_MEGAHORN
+- MOVE_SLASH
+- MOVE_SWORDS_DANCE
+
+=== RIVAL_ACE_SAMUROTT_5 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SAMUROTT @ ITEM_MYSTIC_WATER
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_AQUA_TAIL
+- MOVE_MEGAHORN
+- MOVE_SLASH
+- MOVE_SWORDS_DANCE
+
+=== RIVAL_ACE_SAMUROTT_6 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SAMUROTT @ ITEM_SCOPE_LENS
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WATERFALL
+- MOVE_MEGAHORN
+- MOVE_NIGHT_SLASH
+- MOVE_SWORDS_DANCE
+
+=== RIVAL_ACE_SAMUROTT_7 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SAMUROTT @ ITEM_SCOPE_LENS
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WATERFALL
+- MOVE_MEGAHORN
+- MOVE_NIGHT_SLASH
+- MOVE_SWORDS_DANCE
+
+=== RIVAL_ACE_SWAMPERT_1 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_MUDKIP
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_SWAMPERT_2 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_MARSHTOMP
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_SWAMPERT_3 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_MARSHTOMP
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_MUD_SHOT
+- MOVE_WATER_GUN
+- MOVE_BIDE
+- MOVE_TACKLE
+
+=== RIVAL_ACE_SWAMPERT_4 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SWAMPERT
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_MUDDY_WATER
+- MOVE_MUD_SHOT
+- MOVE_FACADE
+- MOVE_ICE_PUNCH
+
+=== RIVAL_ACE_SWAMPERT_5 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SWAMPERT @ ITEM_MYSTIC_WATER
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_MUDDY_WATER
+- MOVE_MUD_SHOT
+- MOVE_FACADE
+- MOVE_ICE_PUNCH
+
+=== RIVAL_ACE_SWAMPERT_6 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SWAMPERT @ ITEM_SHELL_BELL
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_AVALANCHE
+- MOVE_MUDDY_WATER
+- MOVE_BRICK_BREAK
+- MOVE_EARTHQUAKE
+
+=== RIVAL_ACE_SWAMPERT_7 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_SWAMPERT @ ITEM_SHELL_BELL
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_AVALANCHE
+- MOVE_MUDDY_WATER
+- MOVE_BRICK_BREAK
+- MOVE_EARTHQUAKE

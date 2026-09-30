@@ -2852,9 +2852,19 @@ enum ObtainableDexOrder {
     OBTAINABLE_DEX_GENESECT,
     OBTAINABLE_DEX_NOIBAT,
     OBTAINABLE_DEX_NOIVERN,
-    // The Unova and Kalos starter lines, selectable at Elm since the
-    // six-region starter choice. Appended rather than placed by generation
-    // so no existing entry shifts; the Sinnoh lines are still missing.
+    // The Sinnoh, Unova and Kalos starter lines, in generational order - all
+    // three are selectable at Elm since the six-region starter choice, so the
+    // player's own starter needs a row or it renders "No. 000" and never
+    // counts as caught. Appended after "Other" so no older entry shifts.
+    OBTAINABLE_DEX_TURTWIG,
+    OBTAINABLE_DEX_GROTLE,
+    OBTAINABLE_DEX_TORTERRA,
+    OBTAINABLE_DEX_CHIMCHAR,
+    OBTAINABLE_DEX_MONFERNO,
+    OBTAINABLE_DEX_INFERNAPE,
+    OBTAINABLE_DEX_PIPLUP,
+    OBTAINABLE_DEX_PRINPLUP,
+    OBTAINABLE_DEX_EMPOLEON,
     OBTAINABLE_DEX_SNIVY,
     OBTAINABLE_DEX_SERVINE,
     OBTAINABLE_DEX_SERPERIOR,

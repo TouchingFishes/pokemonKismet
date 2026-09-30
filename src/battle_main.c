@@ -2197,8 +2197,28 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
     u8 retVal;
+    const struct TrainerMon *rivalAce;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
+
+    // Silver on a shared party family: same party, his own ace swapped in last.
+    // See GetRivalAceOverride (src/starter_generation.c). Whole-struct copies
+    // only - GeneratePartyHash CRCs every byte of the TrainerMon, padding
+    // included, to derive the mon's personality, so a field-by-field fill would
+    // leave stack garbage in it and change the ace's gender and nature between
+    // battles.
+    rivalAce = GetRivalAceOverride(trainerNum);
+    if (rivalAce != NULL)
+    {
+        struct Trainer tempTrainer;
+        struct TrainerMon tempParty[PARTY_SIZE];
+        memcpy(&tempTrainer, GetTrainerStructFromId(trainerNum), sizeof(tempTrainer));
+        memcpy(tempParty, tempTrainer.party, tempTrainer.partySize * sizeof(tempParty[0]));
+        tempParty[tempTrainer.partySize - 1] = *rivalAce;
+        tempTrainer.party = tempParty;
+        return CreateNPCTrainerPartyFromTrainer(party, &tempTrainer, firstTrainer, gBattleTypeFlags);
+    }
+
     if (GetTrainerStructFromId(trainerNum)->overrideTrainer)
     {
         struct Trainer tempTrainer;

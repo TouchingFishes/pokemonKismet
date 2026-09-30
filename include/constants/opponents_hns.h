@@ -666,20 +666,27 @@
 #define TRAINER_RIVAL_CHARMANDER_5_HNS           642
 #define TRAINER_RIVAL_CHARMANDER_6_HNS           643
 #define TRAINER_RIVAL_CHARMANDER_7_HNS           644
-#define TRAINER_RIVAL_CHIMCHAR_1_HNS             645
-#define TRAINER_RIVAL_CHIMCHAR_2_HNS             646
-#define TRAINER_RIVAL_CHIMCHAR_3_HNS             647
-#define TRAINER_RIVAL_CHIMCHAR_4_HNS             648
-#define TRAINER_RIVAL_CHIMCHAR_5_HNS             649
-#define TRAINER_RIVAL_CHIMCHAR_6_HNS             650
-#define TRAINER_RIVAL_CHIMCHAR_7_HNS             651
-#define TRAINER_RIVAL_MUDKIP_1_HNS               652
-#define TRAINER_RIVAL_MUDKIP_2_HNS               653
-#define TRAINER_RIVAL_MUDKIP_3_HNS               654
-#define TRAINER_RIVAL_MUDKIP_4_HNS               655
-#define TRAINER_RIVAL_MUDKIP_5_HNS               656
-#define TRAINER_RIVAL_MUDKIP_6_HNS               657
-#define TRAINER_RIVAL_MUDKIP_7_HNS               658
+// Kalos Fire (Delphox). These IDs were TRAINER_RIVAL_CHIMCHAR_1..7, renamed in
+// place when Infernape moved onto CYNDAQUIL's party - no number moved, and
+// rival IDs' own flags are never set, so the reuse is clean.
+#define TRAINER_RIVAL_FENNEKIN_1_HNS             645
+#define TRAINER_RIVAL_FENNEKIN_2_HNS             646
+#define TRAINER_RIVAL_FENNEKIN_3_HNS             647
+#define TRAINER_RIVAL_FENNEKIN_4_HNS             648
+#define TRAINER_RIVAL_FENNEKIN_5_HNS             649
+#define TRAINER_RIVAL_FENNEKIN_6_HNS             650
+#define TRAINER_RIVAL_FENNEKIN_7_HNS             651
+// ⚠️ SPARE, and safe to reuse in place. These were TRAINER_RIVAL_MUDKIP_1..7,
+// retired when Hoenn Water moved onto SQUIRTLE's party (Swampert now comes from
+// src/data/rival_aces_hns.party). Rival IDs' own flags are never set - see the
+// note on TRAINER_RESERVED_1_HNS below. Rename one here to use it.
+#define TRAINER_RESERVED_8_HNS                   652
+#define TRAINER_RESERVED_9_HNS                   653
+#define TRAINER_RESERVED_10_HNS                  654
+#define TRAINER_RESERVED_11_HNS                  655
+#define TRAINER_RESERVED_12_HNS                  656
+#define TRAINER_RESERVED_13_HNS                  657
+#define TRAINER_RESERVED_14_HNS                  658
 #define TRAINER_RIVAL_PIPLUP_1_HNS               659
 #define TRAINER_RIVAL_PIPLUP_2_HNS               660
 #define TRAINER_RIVAL_PIPLUP_3_HNS               661
@@ -694,20 +701,28 @@
 #define TRAINER_RIVAL_SQUIRTLE_5_HNS             670
 #define TRAINER_RIVAL_SQUIRTLE_6_HNS             671
 #define TRAINER_RIVAL_SQUIRTLE_7_HNS             672
-#define TRAINER_RIVAL_TORCHIC_1_HNS              673
-#define TRAINER_RIVAL_TORCHIC_2_HNS              674
-#define TRAINER_RIVAL_TORCHIC_3_HNS              675
-#define TRAINER_RIVAL_TORCHIC_4_HNS              676
-#define TRAINER_RIVAL_TORCHIC_5_HNS              677
-#define TRAINER_RIVAL_TORCHIC_6_HNS              678
-#define TRAINER_RIVAL_TORCHIC_7_HNS              679
-#define TRAINER_RIVAL_TREECKO_1_HNS              680
-#define TRAINER_RIVAL_TREECKO_2_HNS              681
-#define TRAINER_RIVAL_TREECKO_3_HNS              682
-#define TRAINER_RIVAL_TREECKO_4_HNS              683
-#define TRAINER_RIVAL_TREECKO_5_HNS              684
-#define TRAINER_RIVAL_TREECKO_6_HNS              685
-#define TRAINER_RIVAL_TREECKO_7_HNS              686
+// Kalos Water (Greninja). These IDs were TRAINER_RIVAL_TORCHIC_1..7, renamed in
+// place when Blaziken moved onto CYNDAQUIL's party. Same reasoning as above.
+#define TRAINER_RIVAL_FROAKIE_1_HNS              673
+#define TRAINER_RIVAL_FROAKIE_2_HNS              674
+#define TRAINER_RIVAL_FROAKIE_3_HNS              675
+#define TRAINER_RIVAL_FROAKIE_4_HNS              676
+#define TRAINER_RIVAL_FROAKIE_5_HNS              677
+#define TRAINER_RIVAL_FROAKIE_6_HNS              678
+#define TRAINER_RIVAL_FROAKIE_7_HNS              679
+// ⚠️ SPARE, and safe to reuse in place. These were TRAINER_RIVAL_TREECKO_1..7,
+// retired when Hoenn Grass moved onto TURTWIG's party (Sceptile now comes from
+// src/data/rival_aces_hns.party). Their flags have NEVER been set on any save:
+// rival defeat flags key on the script's Johto ID (GetTrainerAFlag,
+// src/battle_setup.c), never on a redirected one. Rename one here to use it;
+// do not delete them, or every trainer after 686 renumbers and its flag moves.
+#define TRAINER_RESERVED_1_HNS                   680
+#define TRAINER_RESERVED_2_HNS                   681
+#define TRAINER_RESERVED_3_HNS                   682
+#define TRAINER_RESERVED_4_HNS                   683
+#define TRAINER_RESERVED_5_HNS                   684
+#define TRAINER_RESERVED_6_HNS                   685
+#define TRAINER_RESERVED_7_HNS                   686
 #define TRAINER_RIVAL_TURTWIG_1_HNS              687
 #define TRAINER_RIVAL_TURTWIG_2_HNS              688
 #define TRAINER_RIVAL_TURTWIG_3_HNS              689

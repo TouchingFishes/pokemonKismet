@@ -4,6 +4,7 @@
 #include "constants/moves.h"
 #include "constants/trainers.h"
 #include "constants/battle.h"
+#include "constants/rival_aces.h"
 #include "difficulty.h"
 #include "debug.h"
 
@@ -207,6 +208,8 @@ extern const struct TrainerBacksprite gTrainerBacksprites[];
 
 extern const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT];
 extern const struct Trainer gBattlePartners[DIFFICULTY_COUNT][PARTNER_COUNT];
+// Silver's shared-party aces - see include/constants/rival_aces.h
+extern const struct Trainer gRivalAces[DIFFICULTY_COUNT][RIVAL_ACE_COUNT];
 
 extern const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT];
 
@@ -266,6 +269,8 @@ static inline u16 GetPartnerIdFromTrainerId(u16 trainerId)
 
 // src/starter_generation.c. Redirects Silver's twenty-one Johto trainer IDs
 u16 GetRivalTrainerIdForStarterChoice(u16 trainerId);
+// src/starter_generation.c. The ace to swap into a shared rival party, or NULL
+const struct TrainerMon *GetRivalAceOverride(u16 trainerId);
 
 static inline const struct Trainer *GetTrainerStructFromId(u16 trainerId)
 {

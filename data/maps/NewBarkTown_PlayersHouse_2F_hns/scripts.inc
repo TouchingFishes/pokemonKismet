@@ -66,7 +66,7 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @ TEMPORARY TEST NPC - REMOVE BEFORE RELEASE.
 @ Also delete his object_event from map.json (5,5) and every Test text below.
 @
-@ Two jobs, both of them shortcuts past a lot of play:
+@ Three jobs, all of them shortcuts past a lot of play:
 @   GREEN   - sets every prerequisite her encounter needs, hands over a party
 @             that can fight her (she is L75-80) and warps to OAK'S LAB.
 @   FUCHSIA - hands over the same party and drops the player in the ROUTE 15
@@ -74,15 +74,18 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @             FEDERATION stages. The stage setter lives out there rather than
 @             in here because the arc's flags only take effect when FUCHSIA
 @             LOADS - see the long note in that gate house's scripts.inc.
+@   SILVER 7 - fights SILVER's last encounter (INDIGO PLATEAU, L68-70) for any
+@             starter region and any of his three starters, right here.
 @ ===========================================================================
 NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	lock
 	faceplayer
 	message NewBarkTown_PlayersHouse_2F_Text_TestAsk
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptSilver7, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
 	goto_if_eq VAR_RESULT, 0, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestGreen
 	goto_if_eq VAR_RESULT, 1, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestFuchsia
+	goto_if_eq VAR_RESULT, 2, NewBarkTown_PlayersHouse_2F_EventScript_Silver7Test
 	goto NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
 
 NewBarkTown_PlayersHouse_2F_EventScript_GreenTestGreen::
@@ -132,16 +135,137 @@ NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline::
 	release
 	end
 
+@ SILVER's encounter 7. It fights the same JOHTO trainer ID the real encounter
+@ uses (IndigoPlateau_PokemonCenter_hns), so GetRivalTrainerIdForStarterChoice
+@ and GetRivalAceOverride resolve it exactly as they would for a player of the
+@ chosen region: the shared party, the ace swap, the AI and the items are all
+@ the real ones. 6 regions x 3 starters = all 18 of his final teams.
+@
+@ ⚠️ It SETS VAR_STARTER_REGION and leaves it set - that is what makes the
+@ redirect pick the region's party, and a loss whites out before any script
+@ could put it back. The player's own starter is already caught and does not
+@ change; the dex's starter window and every later SILVER fight follow the new
+@ region. Fine on a test save, which is what this NPC is for.
+@
+@ The region menu is ordered by the STARTER_REGION_* constants (JOHTO 0 ...
+@ KALOS 5), which is why the choice can be copied straight into the var.
+NewBarkTown_PlayersHouse_2F_EventScript_Silver7Test::
+	message NewBarkTown_PlayersHouse_2F_Text_Silver7Region
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_RegionJohto, NewBarkTown_PlayersHouse_2F_Text_RegionKanto, NewBarkTown_PlayersHouse_2F_Text_RegionHoenn, NewBarkTown_PlayersHouse_2F_Text_RegionSinnoh, NewBarkTown_PlayersHouse_2F_Text_RegionUnova, NewBarkTown_PlayersHouse_2F_Text_RegionKalos
+	goto_if_ge VAR_RESULT, STARTER_REGION_COUNT, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	copyvar VAR_0x8005, VAR_RESULT
+	message NewBarkTown_PlayersHouse_2F_Text_Silver7Slot
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_SlotGrass, NewBarkTown_PlayersHouse_2F_Text_SlotFire, NewBarkTown_PlayersHouse_2F_Text_SlotWater
+	@ 0 / 1 / 2 are STARTER_SLOT_GRASS / _FIRE / _WATER. Those live in
+	@ include/starter_generation.h, which event scripts cannot see.
+	goto_if_eq VAR_RESULT, 0, NewBarkTown_PlayersHouse_2F_EventScript_Silver7Grass
+	goto_if_eq VAR_RESULT, 1, NewBarkTown_PlayersHouse_2F_EventScript_Silver7Fire
+	goto_if_eq VAR_RESULT, 2, NewBarkTown_PlayersHouse_2F_EventScript_Silver7Water
+	goto NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+
+@ The trainer flag the win sets is cleared again: the real encounter repeats
+@ daily on FLAG_DAILY_BEAT_SILVER and never reads it, but a test should leave
+@ no trace it does not have to.
+NewBarkTown_PlayersHouse_2F_EventScript_Silver7Grass::
+	call NewBarkTown_PlayersHouse_2F_EventScript_Silver7Setup
+	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_7_HNS, NewBarkTown_PlayersHouse_2F_Text_Silver7Beaten
+	cleartrainerflag TRAINER_RIVAL_CHIKORITA_7_HNS
+	goto NewBarkTown_PlayersHouse_2F_EventScript_Silver7Done
+
+NewBarkTown_PlayersHouse_2F_EventScript_Silver7Fire::
+	call NewBarkTown_PlayersHouse_2F_EventScript_Silver7Setup
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_7_HNS, NewBarkTown_PlayersHouse_2F_Text_Silver7Beaten
+	cleartrainerflag TRAINER_RIVAL_CYNDAQUIL_7_HNS
+	goto NewBarkTown_PlayersHouse_2F_EventScript_Silver7Done
+
+NewBarkTown_PlayersHouse_2F_EventScript_Silver7Water::
+	call NewBarkTown_PlayersHouse_2F_EventScript_Silver7Setup
+	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_7_HNS, NewBarkTown_PlayersHouse_2F_Text_Silver7Beaten
+	cleartrainerflag TRAINER_RIVAL_TOTODILE_7_HNS
+	goto NewBarkTown_PlayersHouse_2F_EventScript_Silver7Done
+
+NewBarkTown_PlayersHouse_2F_EventScript_Silver7Setup::
+	copyvar VAR_STARTER_REGION, VAR_0x8005
+	msgbox NewBarkTown_PlayersHouse_2F_Text_Silver7Party, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty
+	special HealPlayerParty
+	msgbox NewBarkTown_PlayersHouse_2F_Text_Silver7Go, MSGBOX_DEFAULT
+	closemessage
+	return
+
+NewBarkTown_PlayersHouse_2F_EventScript_Silver7Done::
+	special HealPlayerParty
+	msgbox NewBarkTown_PlayersHouse_2F_Text_Silver7Done, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 NewBarkTown_PlayersHouse_2F_Text_TestAsk:
 	.string "TEST: What do you want to try?\p"
-	.string "Either one hands you a level 95\n"
-	.string "party first.$"
+	.string "GREEN and FUCHSIA hand you a\n"
+	.string "level 95 party first.$"
 
 NewBarkTown_PlayersHouse_2F_Text_TestOptGreen:
 	.string "GREEN at OAK'S LAB$"
 
 NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia:
 	.string "FUCHSIA FEDERATION$"
+
+NewBarkTown_PlayersHouse_2F_Text_TestOptSilver7:
+	.string "SILVER battle 7$"
+
+NewBarkTown_PlayersHouse_2F_Text_Silver7Region:
+	.string "TEST: Which starter region?\p"
+	.string "It stays set afterwards.$"
+
+NewBarkTown_PlayersHouse_2F_Text_RegionJohto:
+	.string "JOHTO$"
+
+NewBarkTown_PlayersHouse_2F_Text_RegionKanto:
+	.string "KANTO$"
+
+NewBarkTown_PlayersHouse_2F_Text_RegionHoenn:
+	.string "HOENN$"
+
+NewBarkTown_PlayersHouse_2F_Text_RegionSinnoh:
+	.string "SINNOH$"
+
+NewBarkTown_PlayersHouse_2F_Text_RegionUnova:
+	.string "UNOVA$"
+
+NewBarkTown_PlayersHouse_2F_Text_RegionKalos:
+	.string "KALOS$"
+
+NewBarkTown_PlayersHouse_2F_Text_Silver7Slot:
+	.string "TEST: Which starter does SILVER\n"
+	.string "have?$"
+
+NewBarkTown_PlayersHouse_2F_Text_SlotGrass:
+	.string "GRASS starter$"
+
+NewBarkTown_PlayersHouse_2F_Text_SlotFire:
+	.string "FIRE starter$"
+
+NewBarkTown_PlayersHouse_2F_Text_SlotWater:
+	.string "WATER starter$"
+
+NewBarkTown_PlayersHouse_2F_Text_Silver7Party:
+	.string "TEST: Take the level 95 party\n"
+	.string "too?$"
+
+NewBarkTown_PlayersHouse_2F_Text_Silver7Go:
+	.string "TEST: Your party is healed.\n"
+	.string "Here he comes!$"
+
+NewBarkTown_PlayersHouse_2F_Text_Silver7Beaten:
+	.string "…\p"
+	.string "OK--I lost…$"
+
+NewBarkTown_PlayersHouse_2F_Text_Silver7Done:
+	.string "TEST: Done. Your party is healed\n"
+	.string "again. Talk to me for another go.$"
 
 NewBarkTown_PlayersHouse_2F_Text_TestOptCancel:
 	.string "Nothing$"
