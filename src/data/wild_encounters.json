@@ -55375,37 +55375,37 @@
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_NIDORINO"
+                "species": "SPECIES_BELLSPROUT"
               },
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_NIDORINA"
+                "species": "SPECIES_SHROOMISH"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PIDGEOTTO"
+                "species": "SPECIES_WEEPINBELL"
               },
               {
                 "min_level": 25,
                 "max_level": 27,
-                "species": "SPECIES_FLABEBE"
+                "species": "SPECIES_WEEPINBELL"
               },
               {
                 "min_level": 25,
                 "max_level": 27,
-                "species": "SPECIES_HOPPIP"
+                "species": "SPECIES_SKIPLOOM"
               },
               {
                 "min_level": 25,
                 "max_level": 27,
-                "species": "SPECIES_HOPPIP"
+                "species": "SPECIES_SHROOMISH"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_CHANSEY"
+                "species": "SPECIES_SKIPLOOM"
               },
               {
                 "min_level": 25,
@@ -55549,7 +55549,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_VENOMOTH"
+                "species": "SPECIES_GLOOM"
               },
               {
                 "min_level": 23,
@@ -55569,7 +55569,7 @@
               {
                 "min_level": 23,
                 "max_level": 25,
-                "species": "SPECIES_GREAVARD"
+                "species": "SPECIES_VENOMOTH"
               },
               {
                 "min_level": 25,
@@ -55584,7 +55584,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_CHANSEY"
+                "species": "SPECIES_VENOMOTH"
               },
               {
                 "min_level": 25,

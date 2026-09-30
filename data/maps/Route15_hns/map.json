@@ -43,7 +43,7 @@
       "x": 79,
       "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 7,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -56,7 +56,7 @@
       "x": 42,
       "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -69,7 +69,7 @@
       "x": 52,
       "y": 13,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -82,7 +82,7 @@
       "x": 43,
       "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -95,7 +95,7 @@
       "x": 36,
       "y": 6,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -108,7 +108,7 @@
       "x": 68,
       "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -182,7 +182,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_HOPPIP",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SKIPLOOM",
       "x": 34,
       "y": 23,
       "elevation": 0,
@@ -231,7 +231,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_DAY_POKEMON"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_ILLUMISE",
@@ -286,20 +286,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KROLUCADA",
-      "x": 18,
-      "y": 1,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_UP_LEFT_DOWN",
-      "movement_range_x": 10,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_DAY_POKEMON"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_KROLUCARD",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_VENOMOTH",
       "x": 18,
       "y": 1,
       "elevation": 0,
