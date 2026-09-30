@@ -227,7 +227,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FuchsiaCity_EventScript_FederationGuard",
-      "flag": "FLAG_HIDE_FUCHSIA_FEDERATION"
+      "flag": "FLAG_TEMP_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_HNS",
@@ -358,7 +358,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FuchsiaCity_EventScript_FederationLoafer1",
-      "flag": "FLAG_HIDE_FUCHSIA_HOLDOUTS"
+      "flag": "FLAG_HIDE_FUCHSIA_FEDERATION"
     },
     {
       "local_id": "LOCALID_FUCHSIA_FED_LOAFER2",
@@ -400,7 +400,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FuchsiaCity_EventScript_FederationLoafer4",
-      "flag": "FLAG_HIDE_FUCHSIA_HOLDOUTS"
+      "flag": "FLAG_HIDE_FUCHSIA_FEDERATION"
     },
     {
       "local_id": "LOCALID_FUCHSIA_FED_DOOR1",
@@ -456,7 +456,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FuchsiaCity_EventScript_FederationDoorman4",
-      "flag": "FLAG_HIDE_FUCHSIA_HOLDOUTS"
+      "flag": "FLAG_HIDE_FUCHSIA_FEDERATION"
     },
     {
       "local_id": "LOCALID_FUCHSIA_STANDOFF_JANINE",
@@ -586,7 +586,7 @@
     {
       "local_id": "LOCALID_FUCHSIA_STEVEN",
       "graphics_id": "OBJ_EVENT_GFX_STEVEN_HNS",
-      "x": 14,
+      "x": 18,
       "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",

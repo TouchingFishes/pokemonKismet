@@ -5,7 +5,9 @@ DaoDaoIsles_GiantsRest_hns_MapScripts::
 DaoDaoIsles_GiantsRest_OnTransition:
 	setflag FLAG_HIDE_DAODAO_STEVEN
 	goto_if_unset FLAG_HIDE_DAODAO_REGIGIGAS, DaoDaoIsles_GiantsRest_Ret
-	goto_if_set FLAG_DEFEATED_DAODAO_STEVEN, DaoDaoIsles_GiantsRest_Ret
+	goto_if_unset FLAG_DEFEATED_DAODAO_STEVEN, DaoDaoIsles_GiantsRest_ShowSteven
+	goto_if_set FLAG_FUCHSIA_SAFARI_NPC_TRADE_COMPLETED, DaoDaoIsles_GiantsRest_Ret
+DaoDaoIsles_GiantsRest_ShowSteven:
 	clearflag FLAG_HIDE_DAODAO_STEVEN
 DaoDaoIsles_GiantsRest_Ret:
 	end
@@ -13,18 +15,35 @@ DaoDaoIsles_GiantsRest_Ret:
 DaoDaoIsles_GiantsRest_EventScript_Steven::
 	lock
 	faceplayer
+	goto_if_set FLAG_DEFEATED_DAODAO_STEVEN, DaoDaoIsles_GiantsRest_EventScript_StevenBeaten
 	msgbox DaoDaoIsles_GiantsRest_Text_StevenIntro, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_STEVEN_HNS, DaoDaoIsles_GiantsRest_Text_StevenDefeat
 	setflag FLAG_DEFEATED_DAODAO_STEVEN
 	msgbox DaoDaoIsles_GiantsRest_Text_StevenAfter, MSGBOX_DEFAULT
 	closemessage
+	goto_if_unset FLAG_FUCHSIA_SAFARI_NPC_TRADE_COMPLETED, DaoDaoIsles_GiantsRest_EventScript_StevenRelease
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_STEVEN_FINAL
 	setflag FLAG_HIDE_DAODAO_STEVEN
 	fadescreenswapbuffers FADE_FROM_BLACK
+DaoDaoIsles_GiantsRest_EventScript_StevenRelease:
 	release
 	end
+
+DaoDaoIsles_GiantsRest_EventScript_StevenBeaten::
+	call FuchsiaCity_SafariZoneEntrance_EventScript_StevenTicketAndTrade
+	@ Traded just now, on this visit - he leaves on the next load.
+	goto_if_set FLAG_FUCHSIA_SAFARI_NPC_TRADE_COMPLETED, FuchsiaCity_SafariZoneEntrance_EventScript_StevenTradeCompleted
+	msgbox DaoDaoIsles_GiantsRest_Text_StevenIdle, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DaoDaoIsles_GiantsRest_Text_StevenIdle:
+	.string "I'm in no hurry to leave.\p"
+	.string "It is quiet up here, and I think\n"
+	.string "I have earned a little quiet.$"
 
 DaoDaoIsles_GiantsRest_Text_StevenIntro:
 	.string "I felt it in FUCHSIA. So did the\n"

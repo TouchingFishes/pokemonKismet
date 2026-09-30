@@ -15,7 +15,8 @@ DaoDaoIsles_TreasureBeach_EventScript_BossKlawf::
 	faceplayer
 	playmoncry SPECIES_KLAWF, CRY_MODE_ENCOUNTER
 	waitmoncry
-	msgbox DaoDaoIsles_TreasureBeach_Text_BossIntro, MSGBOX_AUTOCLOSE
+	msgbox DaoDaoIsles_TreasureBeach_Text_BossIntro, MSGBOX_DEFAULT
+	closemessage
 	setwildbossbattle species=SPECIES_KLAWF, level=70, item=ITEM_ROCKY_HELMET, move1_1=MOVE_STONE_EDGE, move1_2=MOVE_CRABHAMMER, move1_3=MOVE_KNOCK_OFF, move1_4=MOVE_SWORDS_DANCE
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 2, 0, 0, 1, 0
 	setflag FLAG_NO_WILD_CATCHING

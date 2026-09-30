@@ -15,7 +15,8 @@ DaoDaoIsles_BerryForest_EventScript_BossGalvantula::
 	faceplayer
 	playmoncry SPECIES_GALVANTULA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	msgbox DaoDaoIsles_BerryForest_Text_BossIntro, MSGBOX_AUTOCLOSE
+	msgbox DaoDaoIsles_BerryForest_Text_BossIntro, MSGBOX_DEFAULT
+	closemessage
 	setwildbossbattle species=SPECIES_GALVANTULA, level=70, item=ITEM_MAGNET, move1_1=MOVE_THUNDER, move1_2=MOVE_BUG_BUZZ, move1_3=MOVE_STICKY_WEB, move1_4=MOVE_THUNDER_WAVE
 	settotemboost B_POSITION_OPPONENT_LEFT, 0, 0, 2, 2, 0, 0
 	setflag FLAG_NO_WILD_CATCHING

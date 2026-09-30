@@ -44,11 +44,6 @@ DaoDaoIsles_RocketLab_SetGenesect:
 DaoDaoIsles_RocketLab_Ret:
 	return
 
-DaoDaoIsles_RocketLab_EventScript_Biker1::
-	trainerbattle_single TRAINER_DAODAO_LAB_BIKER_1_HNS, DaoDaoIsles_RocketLab_Text_Biker1Intro, DaoDaoIsles_RocketLab_Text_Biker1Defeat
-	msgbox DaoDaoIsles_RocketLab_Text_Biker1Post, MSGBOX_AUTOCLOSE
-	end
-
 DaoDaoIsles_RocketLab_EventScript_Cueball1::
 	trainerbattle_single TRAINER_DAODAO_LAB_CUEBALL_1_HNS, DaoDaoIsles_RocketLab_Text_Cueball1Intro, DaoDaoIsles_RocketLab_Text_Cueball1Defeat
 	msgbox DaoDaoIsles_RocketLab_Text_Cueball1Post, MSGBOX_AUTOCLOSE
@@ -80,6 +75,7 @@ DaoDaoIsles_RocketLab_EventScript_Gideon::
 
 DaoDaoIsles_RocketLab_EventScript_GideonDefeated::
 	setvar VAR_FUCHSIA_FEDERATION_STATE, 6
+	call Common_EventScript_ClearKantoCordon
 	setflag FLAG_DEFEATED_DAODAO_LAB_GIDEON
 	msgbox DaoDaoIsles_RocketLab_Text_GideonPostBattle, MSGBOX_DEFAULT
 	closemessage
@@ -97,7 +93,8 @@ DaoDaoIsles_RocketLab_EventScript_BossKlinklang::
 	faceplayer
 	playmoncry SPECIES_KLINKLANG, CRY_MODE_ENCOUNTER
 	waitmoncry
-	msgbox DaoDaoIsles_RocketLab_Text_KlinklangIntro, MSGBOX_AUTOCLOSE
+	msgbox DaoDaoIsles_RocketLab_Text_KlinklangIntro, MSGBOX_DEFAULT
+	closemessage
 	setwildbossbattle species=SPECIES_KLINKLANG, level=70, item=ITEM_METAL_COAT, move1_1=MOVE_GEAR_GRIND, move1_2=MOVE_WILD_CHARGE, move1_3=MOVE_FLASH_CANNON, move1_4=MOVE_SHIFT_GEAR
 	settotemboost B_POSITION_OPPONENT_LEFT, 2, 1, 1, 0, 0, 0
 	setflag FLAG_NO_WILD_CATCHING
@@ -185,18 +182,6 @@ DaoDaoIsles_RocketLab_EventScript_GenesectStays::
 	release
 	end
 
-DaoDaoIsles_RocketLab_Text_Biker1Intro:
-	.string "Nobody's come down that stair in\n"
-	.string "twenty years.\p"
-	.string "Should've stayed that way!$"
-
-DaoDaoIsles_RocketLab_Text_Biker1Defeat:
-	.string "Ugh... my exhaust...$"
-
-DaoDaoIsles_RocketLab_Text_Biker1Post:
-	.string "We don't guard the crates.\p"
-	.string "We guard the thing at the back.$"
-
 DaoDaoIsles_RocketLab_Text_Cueball1Intro:
 	.string "The boss said no visitors.\p"
 	.string "The boss is very clear about\n"
@@ -276,8 +261,6 @@ DaoDaoIsles_RocketLab_Text_GideonPostBattle:
 	.string "second chance. Clean work.\p"
 	.string "It took about a month to turn into\n"
 	.string "the same thing again.\p"
-	.string "Tell JANINE it's finished. She has\n"
-	.string "earned hearing it.\p"
 	.string "The boss never left either. Far\n"
 	.string "end of the floor. Still waiting.\p"
 	.string "Mind what's between you. We took\n"

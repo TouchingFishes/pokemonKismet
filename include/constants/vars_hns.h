@@ -151,10 +151,13 @@
 // 0 = robbery still happening, 1 = player intervened but has not taken the band,
 // 2 = window closed unseen (she was robbed), 3 = intervened and has the band
 #define VAR_OLIVINE_GATE_ROCKET                          0x40FA
-// KANTO POKeMON FEDERATION takeover of Fuchsia. 0 = not started, 1 = armed
-// (rumours live, city still normal), 2 = lockdown, 3 = streets cleared,
-// 4 = Rocket tie surfaced, 5 = leader beaten, 6 = city restored + Janine back,
-// 7 = Steven's readiness battle won, Alola passage granted.
+// KANTO POKeMON FEDERATION takeover of Fuchsia. 0 = before the arc (rumours;
+// the lockdown fires on the next FUCHSIA entry once its conditions hold),
+// 1 = lockdown (city and SAFARI building held, JANINE fighting), 2 = PAXTON's
+// bookmark, set just before his battle, 3 = PAXTON beaten (transient - the
+// aftermath follows in the same script), 4 = aftermath (city restored, JANINE
+// back in her GYM), 5 = STEVEN's charter battle won (ROUTE 13 boat open),
+// 6 = GIDEON beaten, arc closed. DARIUS's defeat is his trainer flag, not a state.
 #define VAR_FUCHSIA_FEDERATION_STATE                     0x40FB
 #define VAR_UNUSED_HNS_0x40FC                            0x40FC
 #define VAR_UNUSED_HNS_0x40FD                            0x40FD

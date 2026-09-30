@@ -982,7 +982,10 @@
 // it, and beating him opens the way the way a Rocket grunt should.
 #define FLAG_HIDE_DAODAO_LAB_DOORGUARD              (HNS_EXTENDED_CONTENT_START + 84)
 // STEVEN at GIANT'S REST. He is the inverse of a normal hide flag: visible only ONCE
-// FLAG_HIDE_DAODAO_REGIGIGAS is set, and hidden again once he has been beaten.
+// FLAG_HIDE_DAODAO_REGIGIGAS is set (the SAFARI STEVEN leaves on that same flag),
+// and hidden again once he is beaten AND the BELDUM trade is done - he carries
+// the EON TICKET and the trade over from the SAFARI, so he stays until he has
+// nothing left to give. Recomputed in DaoDaoIsles_GiantsRest_OnTransition.
 #define FLAG_HIDE_DAODAO_STEVEN                     (HNS_EXTENDED_CONTENT_START + 85)
 #define FLAG_DEFEATED_DAODAO_STEVEN                 (HNS_EXTENDED_CONTENT_START + 86)
 #define FLAG_BERRY_MASTER_INTRO                     (HNS_EXTENDED_CONTENT_START + 87)
@@ -1297,18 +1300,30 @@
 #define FLAG_HIDE_FUCHSIA_JANINE                    (HNS_EXTENDED_CONTENT_START + 326)
 #define FLAG_HIDE_SAFARI_FEDERATION                 (HNS_EXTENDED_CONTENT_START + 327)
 
-// Set at the Alola story beat. Read ONLY by the five Kanto blockers below - the
-// six existing E4/Hall-of-Fame checks keep using VAR_ALOLA_STATE >= 4, which is
-// a different and much heavier bar (the full 18-mon survey plus four Tapus).
+// "The isles are done": set by Common_EventScript_ClearKantoCordon, which GIDEON's
+// defeat calls (DaoDaoIsles_RocketLab_EventScript_GideonDefeated). Read by MISTY's
+// GYM; the blockers below carry flags of their own, set in the same call. The name
+// predates the isles merging into DAODAO; nothing still reads VAR_ALOLA_STATE >= 4
+// (the Hall of Fame's isle respawns key on FLAG_DEFEATED_DAODAO_LAB_GIDEON too).
 #define FLAG_ALOLA_CLEARED                          (HNS_EXTENDED_CONTENT_START + 328)
 
-// The five areas shut while the player is away. Each is a blocker NPC standing on
-// the tile in front of an entrance, cleared when FLAG_ALOLA_CLEARED is set - the
-// Route 20 Sage pattern. Misty needs no flag of her own: she is already hidden by
-// FLAG_HIDE_CERULEAN_GYM_TRAINERS, so the arc just delays that clearflag.
+// THE KANTO CORDON - everything shut until GIDEON falls, lifted in one call
+// (Common_EventScript_ClearKantoCordon). Each blocker stands on the tile in front
+// of an entrance - the Route 20 Sage pattern:
+//   MT MOON             FLAG_HIDE_MTMOON_BLOCKER (Route 4 + both outer cave mouths)
+//   DIGLETT'S CAVE      FLAG_HIDE_DIGLETTS_CAVE_BLOCKER (a swarm in both entrances)
+//   TANGLEBRUSH         FLAG_HIDE_TANGLEBRUSH_BLOCKER (Route 18 + Route 21 mouths)
+//   ROUTE 22 / the west FLAG_INDIGOJUNCTION_HIDE_KANTO_GUARD - the RECEPTION GATE's
+//                       Kanto guard, a one-tile plug in front of VIRIDIAN, PEWTER,
+//                       PALLET, CINNABAR and SEAFOAM (2.0 hid him when Vermilion's
+//                       Snorlax woke; not any more)
+//   MISTY               away; FLAG_ALOLA_CLEARED above, read by her GYM
+// So before GIDEON: 12 badges, no BROCK, no BLAINE, no MISTY (Moritz, 2026-09-30).
 #define FLAG_HIDE_MTMOON_BLOCKER                    (HNS_EXTENDED_CONTENT_START + 329)
 #define FLAG_HIDE_DIGLETTS_CAVE_BLOCKER             (HNS_EXTENDED_CONTENT_START + 330)
-#define FLAG_HIDE_CINNABAR_BLOCKER                  (HNS_EXTENDED_CONTENT_START + 331)
+// Free since 2026-09-30. It was FLAG_HIDE_CINNABAR_BLOCKER, set by the cordon but
+// never read by any object - CINNABAR is sealed at the RECEPTION GATE instead.
+#define FLAG_UNUSED_EXTENDED_331                    (HNS_EXTENDED_CONTENT_START + 331)
 #define FLAG_HIDE_TANGLEBRUSH_BLOCKER               (HNS_EXTENDED_CONTENT_START + 332)
 #define FLAG_HIDE_CERULEAN_GYM_GUIDE                (HNS_EXTENDED_CONTENT_START + 333)
 
@@ -1319,17 +1334,12 @@
 // shared with the Hoenn maps, so editing them would change Hoenn too.
 #define FLAG_HIDE_SAFARI_STAFF                      (HNS_EXTENDED_CONTENT_START + 334)
 
-// Everything that outlives DARIUS but not PAXTON: two of the four FUCHSIA
-// loafers, so the city is not completely empty during states 3-5 while the fight
-// moves indoors, plus the MART doorman, since the shop stays shut until PAXTON
-// falls.
-// They need their OWN flag: FLAG_HIDE_FUCHSIA_FEDERATION is SET at state 3
-// by DARIUS's cleanup, so anything sharing it disappears with him. This one is
-// cleared at the lockdown and set in the state 5->6 aftermath, which runs while
-// the player is inside the SAFARI ZONE ENTRANCE - so FUCHSIA reloads without
-// them rather than removing them in front of the player, and no removeobject is
-// needed for any of the three.
-#define FLAG_HIDE_FUCHSIA_HOLDOUTS                  (HNS_EXTENDED_CONTENT_START + 335)
+// Free since 2026-09-30. It was FLAG_HIDE_FUCHSIA_HOLDOUTS (two loafers and the
+// MART doorman), kept apart from FLAG_HIDE_FUCHSIA_FEDERATION back when DARIUS's
+// defeat set that flag. He no longer touches it, the two lifetimes became
+// identical, and the three objects now share FLAG_HIDE_FUCHSIA_FEDERATION.
+// Rename it if you reuse it.
+#define FLAG_UNUSED_EXTENDED_335                    (HNS_EXTENDED_CONTENT_START + 335)
 
 // JANINE arguing with two bikers in the middle of FUCHSIA, before any of this
 // escalates. Hide flags default to CLEAR, so the standoff is present from a new
@@ -1348,9 +1358,9 @@
 // Measured over all 48x40 player positions, inflating by movement_range:
 //   lockdown + this fight, zoo visible  -> peak 16 objects = 18 slots. OVERFLOWS.
 //   lockdown + this fight, zoo HIDDEN   -> peak 12 objects = 14 slots. Fits, 2 spare.
-// Worst case is the player at (24,13), where four zoo animals, three federation
-// NPCs, three holdouts, the cut tree, a berry tree and all four fight objects
-// co-reside. So this scene can run from the lockdown only BECAUSE the nine penned
+// Worst case is the player at (24,13), where four zoo animals, six federation
+// NPCs (the three former "holdouts" included), the cut tree, a berry tree and
+// all four fight objects co-reside. So this scene can run from the lockdown only BECAUSE the nine penned
 // zoo animals go dark for the duration - they share FLAG_HIDE_FUCHSIA_NPCS with
 // the townsfolk, and that flag carries the arithmetic.
 //

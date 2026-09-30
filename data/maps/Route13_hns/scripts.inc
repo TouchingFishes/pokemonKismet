@@ -31,17 +31,7 @@ Route13_OnTransition:
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_eq VAR_TEMP_0, 77, Route13_OnTransitionBoat
 	callnative SetTimeBasedEncounters
-	call Route13_EventScript_TryLiftKantoCordon
 	end
-
-Route13_EventScript_TryLiftKantoCordon::
-	goto_if_lt VAR_FUCHSIA_FEDERATION_STATE, 5, Route13_EventScript_CordonStays
-	goto_if_lt VAR_ALOLA_STATE, 2, Route13_EventScript_CordonStays
-	call Common_EventScript_ClearKantoCordon
-	return
-
-Route13_EventScript_CordonStays::
-	return
 
 Route13_OnTransitionBoat::
 	@addobject LOCALID_ROUTE13_BOAT
@@ -243,7 +233,8 @@ Route13_GetOffBoat::
 	applymovement Route13_Alola_Captain, Route13_GetOffBoat_Movement_0
 	applymovement LOCALID_PLAYER, Route13_GetOffBoat_Movement_1
 	waitmovement 0
-	msgbox Route13_GetOffBoat_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Route13_GetOffBoat_Text_0, MSGBOX_DEFAULT
+	closemessage
 	setvar VAR_ALOLA_TRAVEL, 0
 	applymovement LOCALID_ROUTE13_BOAT, Route13_TravelToAlola_Movement_2
 	waitmovement 0
@@ -260,11 +251,22 @@ Route13_GetOffBoat_2:
 	end
 
 
+@ Chartered by STEVEN: the captain sails once the charter battle is won (state
+@ 5). Before that he refuses, and at state 4 - FUCHSIA already freed - he points
+@ at STEVEN rather than at a city that no longer needs sorting out.
 Route13_TravelToAlola::
 	lock
 	faceplayer
 	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 5, Route13_TravelToAlola_1
-	msgbox Route13_TravelToAlola_Text_4, MSGBOX_AUTOCLOSE
+	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, Route13_TravelToAlola_NoWordYet
+	msgbox Route13_TravelToAlola_Text_4, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route13_TravelToAlola_NoWordYet:
+	msgbox Route13_TravelToAlola_Text_NoWordYet, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
@@ -277,10 +279,12 @@ Route13_TravelToAlola_1:
 	release
 	end
 
+@ No helpwindow HELP_ALOLA_WINDOW here any more: its "OPTIONAL BONUS CONTENT...
+@ NOT required for story" is 2.0's, and in this arc the ISLES hold GIDEON and
+@ beating him is what reopens KANTO (DaoDaoIsles_RocketLab_EventScript_GideonDefeated).
 Route13_TravelToAlola_4:
 	msgbox Route13_TravelToAlola_Text_0, MSGBOX_DEFAULT
 	closemessage
-	helpwindow HELP_ALOLA_WINDOW
 	msgbox Route13_TravelToAlola_Text_0_5, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Route13_TravelToAlola_7
@@ -289,7 +293,8 @@ Route13_TravelToAlola_4:
 	end
 
 Route13_TravelToAlola_7:
-	msgbox Route13_TravelToAlola_Text_1, MSGBOX_AUTOCLOSE
+	msgbox Route13_TravelToAlola_Text_1, MSGBOX_DEFAULT
+	closemessage
 	goto_if_eq VAR_FACING, DIR_SOUTH, Route13_TravelToAlola_14
 Route13_TravelToAlola_13:
 	addobject LOCALID_ROUTE13_BOAT
@@ -336,7 +341,8 @@ Route13_TravelToAlola_13:
 	end
 
 Route13_TravelToAlola_10:
-	msgbox Route13_TravelToAlola_Text_1, MSGBOX_AUTOCLOSE
+	msgbox Route13_TravelToAlola_Text_1, MSGBOX_DEFAULT
+	closemessage
 	goto_if_eq VAR_FACING, DIR_SOUTH, Route13_TravelToAlola_17
 Route13_TravelToAlola_16:
 	addobject LOCALID_ROUTE13_BOAT
@@ -431,14 +437,17 @@ Route13_Movement_BoatArrive:
 	step_end
 
 Route13_GetOffBoat_Text_0:
-	.string "Welcome back to mainland Kanto!\p"
+	.string "Welcome back to mainland KANTO!\p"
 	.string "Come back if you'd like to take a trip\n"
-	.string "to the ALOLA ISLES!$"
+	.string "to the DAODAO ISLES!$"
 
+@ 2.0's line here was about the ITEM_STRANGE_SOUVENIR that opened this boat.
+@ This arc opens it with STEVEN's charter instead, so the captain says so.
 Route13_TravelToAlola_Text_0:
 	.string "Ahoy there!\p"
-	.string "That's one strange souvenir.\n"
-	.string "You must be from the ISLES!$"
+	.string "You'll be STEVEN's passenger, then.\p"
+	.string "The charter's paid, and the course\n"
+	.string "is set for the DAODAO ISLES.$"
 Route13_TravelToAlola_Text_0_5:
 	.string "Would you like to take the next ship?\n"
 	.string "It departs shortly!$"
@@ -452,7 +461,7 @@ Route13_TravelToAlola_Text_2:
 
 Route13_TravelToAlola_Text_3:
 	.string "Ah, it's you again!\n"
-	.string "Do you want to go to the ALOLA ISLES?$"
+	.string "Do you want to go to the DAODAO ISLES?$"
 
 Route13_TravelToAlola_Text_4:
 	.string "Ahoy!\n"
@@ -461,3 +470,10 @@ Route13_TravelToAlola_Text_4:
 	.string "ZONE office says I sail.\p"
 	.string "Sort out whatever's gone wrong in\n"
 	.string "FUCHSIA and come back to me.$"
+
+Route13_TravelToAlola_Text_NoWordYet:
+	.string "Ahoy!\n"
+	.string "This port is chartered, not public.\p"
+	.string "I sail when the man in the SAFARI\n"
+	.string "ZONE office says I sail, and he\l"
+	.string "hasn't said so yet.$"

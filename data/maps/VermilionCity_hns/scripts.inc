@@ -235,7 +235,6 @@ VermilionCity_EventScript_SnorlaxWakeUp::
     removeobject 11
     setflag FLAG_HIDE_VERMILION_SNORLAX
     fadescreenswapbuffers FADE_FROM_BLACK
-    setflag FLAG_INDIGOJUNCTION_HIDE_KANTO_GUARD
     fadedefaultbgm
     release
     end

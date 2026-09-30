@@ -67,7 +67,8 @@ Alola_Melemele_GetOffBoat::
 	applymovement Alola_Melemele_Captain, Alola_Melemele_GetOffBoat_Movement_0
 	applymovement LOCALID_PLAYER, Alola_Melemele_GetOffBoat_Movement_1
 	waitmovement 0
-	msgbox Alola_Melemele_GetOffBoat_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Alola_Melemele_GetOffBoat_Text_0, MSGBOX_DEFAULT
+	closemessage
 	setvar VAR_ALOLA_TRAVEL, 2
 	applymovement LOCALID_PLAYER, MelemeleIsle_hns_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0_Movement_0
 	waitmovement 0
@@ -86,7 +87,8 @@ Alola_Melemele_TravelToKanto::
 	end
 
 Alola_Melemele_TravelToKanto_1:
-	msgbox Alola_Melemele_TravelToKanto_Text_1, MSGBOX_AUTOCLOSE
+	msgbox Alola_Melemele_TravelToKanto_Text_1, MSGBOX_DEFAULT
+	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_1, 32
 	goto_if_eq Alola_Melemele_TravelToKanto_5

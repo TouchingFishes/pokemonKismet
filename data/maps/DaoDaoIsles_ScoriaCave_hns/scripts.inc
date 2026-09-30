@@ -5,7 +5,8 @@ DaoDaoIsles_ScoriaCave_EventScript_Salazzle::
 	lock
 	faceplayer
 	playmoncry SPECIES_SALAZZLE, CRY_MODE_NORMAL
-	msgbox DaoDaoIsles_ScoriaCave_Text_Salazzle, MSGBOX_AUTOCLOSE
+	msgbox DaoDaoIsles_ScoriaCave_Text_Salazzle, MSGBOX_DEFAULT
+	closemessage
 	waitmoncry
 	setwildbattle SPECIES_SALAZZLE, 60
 	dowildbattle

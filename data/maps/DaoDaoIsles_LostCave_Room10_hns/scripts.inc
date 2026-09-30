@@ -15,7 +15,8 @@ DaoDaoIsles_LostCave_Room10_EventScript_BossGoodra::
 	faceplayer
 	playmoncry SPECIES_GOODRA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	msgbox DaoDaoIsles_LostCave_Room10_Text_BossIntro, MSGBOX_AUTOCLOSE
+	msgbox DaoDaoIsles_LostCave_Room10_Text_BossIntro, MSGBOX_DEFAULT
+	closemessage
 	setwildbossbattle species=SPECIES_GOODRA, level=70, item=ITEM_DRAGON_FANG, move1_1=MOVE_DRAGON_PULSE, move1_2=MOVE_MUDDY_WATER, move1_3=MOVE_POWER_WHIP, move1_4=MOVE_ACID_ARMOR
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 0, 2, 1, 0
 	setflag FLAG_NO_WILD_CATCHING

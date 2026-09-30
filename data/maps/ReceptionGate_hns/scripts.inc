@@ -54,6 +54,7 @@ ReceptionGate_EventScript_NotEnough::
 ReceptionGate_EventScript_SilverGuard::
     msgbox VictoryRoadGate_Text_LeftBlackBelt, MSGBOX_NPC
     end
+
 ReceptionGate_EventScript_KantoGuard::
     msgbox VictoryRoadGate_Text_RightBlackBelt, MSGBOX_NPC
     end
@@ -78,6 +79,7 @@ VictoryRoadGate_Text_LeftBlackBelt:
     .string "there.$"
 
 VictoryRoadGate_Text_RightBlackBelt:
-    .string "Off to the POKéMON LEAGUE, are you?\p"
-    .string "The ELITE FOUR are so strong it's\n"
-    .string "scary, and they're ready for you!$"
+    .string "The road to VIRIDIAN is closed.\p"
+    .string "The police shut it, same as the\n"
+    .string "tunnels, and they won't say for how\l"
+    .string "long.$"

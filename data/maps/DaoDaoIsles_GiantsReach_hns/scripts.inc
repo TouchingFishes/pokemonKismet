@@ -19,7 +19,8 @@ DaoDaoIsles_GiantsReach_PhantOutside::
 	lock
 	faceplayer
 	hidefollower
-	msgbox Alola_Ulaula_Phant_outside_Text_0, MSGBOX_AUTOCLOSE
+	msgbox Alola_Ulaula_Phant_outside_Text_0, MSGBOX_DEFAULT
+	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_0, 31
 	goto_if_eq DaoDaoIsles_GiantsReach_PhantOutside_3
@@ -37,7 +38,8 @@ DaoDaoIsles_GiantsReach_PhantOutside_16:
 	waitse
 	playse SE_LEDGE
 	waitse
-	msgbox Alola_Ulaula_Phant_outside_Text_1, MSGBOX_AUTOCLOSE
+	msgbox Alola_Ulaula_Phant_outside_Text_1, MSGBOX_DEFAULT
+	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_0, 31
 	goto_if_eq DaoDaoIsles_GiantsReach_PhantOutside_23

@@ -281,10 +281,7 @@ NewBarkTown_PlayersHouse_2F_Text_FuchsiaTestGo:
 	.string "gate house, east of FUCHSIA.\p"
 	.string "The man in there sets any stage of\n"
 	.string "the FEDERATION arc. Pick one, then\l"
-	.string "head west into the city.\p"
-	.string "Stages 2 and up want STEVEN to have\n"
-	.string "greeted you at the SAFARI ZONE\l"
-	.string "first. He'll tell you.$"
+	.string "head west into the city.$"
 
 NewBarkTown_PlayersHouse_2F_Text_GreenTestNoThanks:
 	.string "TEST: Talk to me again when\n"

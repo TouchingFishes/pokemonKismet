@@ -18,7 +18,7 @@ Route15FuchsiaGate_Text_Officer:
 @ Jumps VAR_FUCHSIA_FEDERATION_STATE to any point in the KANTO POKeMON
 @ FEDERATION arc and writes the object-visibility flags that go with it.
 @
-@ ⚠️ WHY A GATE HOUSE AND NOT THE CITY. The nine arc flags decide which
+@ ⚠️ WHY A GATE HOUSE AND NOT THE CITY. The eight arc flags decide which
 @ objects SPAWN, so they only take effect when a map loads.
 @ FuchsiaCity_EventScript_BeginLockdown goes out of its way never to
 @ rearrange FUCHSIA while the player is standing in it. Setting a stage out
@@ -28,7 +28,7 @@ Route15FuchsiaGate_Text_Officer:
 @ ⚠️ THE FLAG BLOCKS ARE ABSOLUTE, NOT DELTAS. The shipping arc only writes
 @ the flags that CHANGE at each transition, so the live state is the sum of
 @ every transition run so far. A tester jumping straight to the aftermath has
-@ run none of them, so each block below writes all nine flags explicitly. Do
+@ run none of them, so each block below writes all eight flags explicitly. Do
 @ not fold one back into a delta - it would inherit whatever was on screen
 @ before and show a half-dressed city.
 @
@@ -73,8 +73,9 @@ FuchsiaCity_Route15_Gate_EventScript_FedStage0::
 
 @ --- state 1: the lockdown. FEDERATION holds the city and the SAFARI gate,
 @ JANINE is fighting, the zoo pens are empty.
-@ SCENE 1 leaves STEVEN's PokeNav call armed, so it fires on the first step
-@ into the city the way it does in a real run.
+@ SCENE 1 arms STEVEN's siege briefing, so it fires on the first step into the
+@ SAFARI building the way it does in a real run. The SAFARI welcome needs no
+@ handling here: that building's ON_TRANSITION disarms it from state 1 on.
 FuchsiaCity_Route15_Gate_EventScript_FedStage1::
 	call FuchsiaCity_Route15_Gate_EventScript_FedFlagsLockdown
 	setvar VAR_FUCHSIA_FEDERATION_STATE, 1
@@ -85,10 +86,10 @@ FuchsiaCity_Route15_Gate_EventScript_FedStage1::
 @ apart now, which is why this needs its own entry.
 FuchsiaCity_Route15_Gate_EventScript_FedStage1Darius::
 	call FuchsiaCity_Route15_Gate_EventScript_FedFlagsLockdown
-	@ DARIUS only steps aside now, so this stage changes no visibility flag at
-	@ all - it is the four trainer flags that make it different from the one
-	@ above. Setting them also unblocks the SAFARI ZONE door, since his object
-	@ is only moved by his own defeat script.
+	@ No visibility flag differs from the stage above - it is the four trainer
+	@ flags. DARIUS's own is enough to clear the SAFARI ZONE door: his hide flag
+	@ is FLAG_TEMP_2, which FuchsiaCity_EventScript_PlaceDarius recomputes from
+	@ it on every load of the city.
 	setflag TRAINER_FLAGS_START + TRAINER_MACK_HNS
 	setflag TRAINER_FLAGS_START + TRAINER_VERN_HNS
 	setflag TRAINER_FLAGS_START + TRAINER_HOYT_HNS
@@ -144,15 +145,20 @@ FuchsiaCity_Route15_Gate_EventScript_FedStage6::
 	setvar VAR_FUCHSIA_FEDERATION_STATE, 6
 	setvar VAR_FUCHSIA_SCENE, 4
 	setflag FLAG_DEFEATED_DAODAO_LAB_GIDEON
+	@ Stands in for GIDEON's defeat script, which is where the KANTO cordon lifts.
+	call Common_EventScript_ClearKantoCordon
 	goto FuchsiaCity_Route15_Gate_EventScript_FedDone
 
 @ ===[ the SAFARI welcome toggle ]============================================
-@ The welcome is optional now, and which side of it you are on changes where the
+@ The welcome is optional, and which side of it you are on changes where the
 @ induction happens. Both paths need testing, and neither is reachable from the
 @ other without this.
-@   OWED  - level 0, latch armed, case taken away. STEVEN inducts the player
-@           AFTER JANINE, in the SAFARI building, with the reworded text.
-@   TAKEN - level 1, latch disarmed. Nothing re-arms; the reveal stays short.
+@   OWED  - level 0, case taken away. At stage 0 the automatic welcome plays on
+@           walking into the SAFARI building. From stage 1 that building disarms
+@           it by itself, and STEVEN inducts the player instead: on the road after
+@           JANINE, or on talk in the SAFARI building from stage 4.
+@   TAKEN - level 1, latch down, case handed back if it is missing. The scene
+@           after JANINE stays short.
 FuchsiaCity_Route15_Gate_EventScript_FedToggleWelcome::
 	goto_if_eq VAR_KANTO_SAFARI_ZONE_PROGRESS, 0, FuchsiaCity_Route15_Gate_EventScript_FedWelcomeTake
 	setvar VAR_KANTO_SAFARI_ZONE_PROGRESS, 0
@@ -164,21 +170,26 @@ FuchsiaCity_Route15_Gate_EventScript_FedToggleWelcome::
 FuchsiaCity_Route15_Gate_EventScript_FedWelcomeTake::
 	setvar VAR_KANTO_SAFARI_ZONE_PROGRESS, 1
 	setvar VAR_SAFARI_WELCOME, 1
+	checkitem ITEM_POKEBLOCK_CASE
+	call_if_eq VAR_RESULT, FALSE, FuchsiaCity_Route15_Gate_EventScript_FedGiveCase
 	msgbox FuchsiaCity_Route15_Gate_Text_FedWelcomeTaken, MSGBOX_DEFAULT
 	goto FuchsiaCity_Route15_Gate_EventScript_FedClose
 
+FuchsiaCity_Route15_Gate_EventScript_FedGiveCase::
+	additem ITEM_POKEBLOCK_CASE
+	return
+
 @ ===[ the five flag configurations ]=========================================
-@ Nine flags, written in the same order every time so the blocks can be read
+@ Eight flags, written in the same order every time so the blocks can be read
 @ against each other. Object events hide when their flag is SET.
 
 @ State 0. Matches new_game.inc: townsfolk and the JANINE standoff on, both
-@ FEDERATION populations and the holdouts off, zoo on.
+@ FEDERATION populations off, zoo on.
 FuchsiaCity_Route15_Gate_EventScript_FedFlagsPreArc::
 	clearflag FLAG_HIDE_FUCHSIA_NPCS
 	setflag   FLAG_HIDE_FUCHSIA_FEDERATION
 	setflag   FLAG_HIDE_FUCHSIA_JANINE
 	clearflag FLAG_HIDE_FUCHSIA_STANDOFF
-	setflag   FLAG_HIDE_FUCHSIA_HOLDOUTS
 	setflag   FLAG_HIDE_FUCHSIA_JANINE_FIGHT
 	setflag   FLAG_HIDE_SAFARI_FEDERATION
 	clearflag FLAG_HIDE_SAFARI_STAFF
@@ -194,17 +205,17 @@ FuchsiaCity_Route15_Gate_EventScript_FedFlagsLockdown::
 	clearflag FLAG_HIDE_FUCHSIA_FEDERATION
 	setflag   FLAG_HIDE_FUCHSIA_JANINE
 	setflag   FLAG_HIDE_FUCHSIA_STANDOFF
-	clearflag FLAG_HIDE_FUCHSIA_HOLDOUTS
 	clearflag FLAG_HIDE_FUCHSIA_JANINE_FIGHT
 	clearflag FLAG_HIDE_SAFARI_FEDERATION
 	setflag   FLAG_HIDE_SAFARI_STAFF
 	setflag   FLAG_HIDE_FUCHSIA_STEVEN
 	return
 
-@ ⚠️ There is no longer a "DARIUS down" flag configuration. He steps aside rather
-@ than taking the whole city FEDERATION with him, so states 1 and 2 are visually
-@ identical to the lockdown and only his trainer flag distinguishes them. The block
-@ that used to live here set FLAG_HIDE_FUCHSIA_FEDERATION and is deleted.
+@ ⚠️ There is no "DARIUS down" flag configuration. He leaves alone rather than
+@ taking the whole city FEDERATION with him, and his hide flag is FLAG_TEMP_2,
+@ recomputed from his trainer flag on every load of the city - so the stages
+@ above only set TRAINER_DARIUS_HNS. The block that used to live here set
+@ FLAG_HIDE_FUCHSIA_FEDERATION and is deleted.
 
 @ State 3. PAXTON down: the SAFARI gate is clear and its staff are back, but
 @ the city is STILL HELD - the grunts, both door guards and the mart guard only
@@ -214,7 +225,6 @@ FuchsiaCity_Route15_Gate_EventScript_FedFlagsPaxtonDown::
 	clearflag FLAG_HIDE_FUCHSIA_FEDERATION
 	setflag   FLAG_HIDE_FUCHSIA_JANINE
 	setflag   FLAG_HIDE_FUCHSIA_STANDOFF
-	clearflag FLAG_HIDE_FUCHSIA_HOLDOUTS
 	clearflag FLAG_HIDE_FUCHSIA_JANINE_FIGHT
 	setflag   FLAG_HIDE_SAFARI_FEDERATION
 	clearflag FLAG_HIDE_SAFARI_STAFF
@@ -228,7 +238,6 @@ FuchsiaCity_Route15_Gate_EventScript_FedFlagsAftermath::
 	setflag   FLAG_HIDE_FUCHSIA_FEDERATION
 	clearflag FLAG_HIDE_FUCHSIA_JANINE
 	setflag   FLAG_HIDE_FUCHSIA_STANDOFF
-	setflag   FLAG_HIDE_FUCHSIA_HOLDOUTS
 	setflag   FLAG_HIDE_FUCHSIA_JANINE_FIGHT
 	setflag   FLAG_HIDE_SAFARI_FEDERATION
 	clearflag FLAG_HIDE_SAFARI_STAFF
@@ -290,18 +299,20 @@ FuchsiaCity_Route15_Gate_Text_FedDone:
 
 FuchsiaCity_Route15_Gate_Text_FedWelcomeOwed:
 	.string "TEST: SAFARI welcome OWED.\p"
-	.string "LEVEL 0, latch armed, {POKEBLOCK}\n"
-	.string "CASE taken off you.\p"
-	.string "Beat JANINE, then walk into the\n"
-	.string "SAFARI building: the induction fires\l"
-	.string "there with the reworded text.$"
+	.string "LEVEL 0, {POKEBLOCK} CASE taken\n"
+	.string "off you.\p"
+	.string "Stage 0: the welcome plays in the\n"
+	.string "SAFARI building.\p"
+	.string "Later: STEVEN inducts you on the road\n"
+	.string "after JANINE, or when you talk to\l"
+	.string "him at the SAFARI from stage 4.$"
 
 FuchsiaCity_Route15_Gate_Text_FedWelcomeTaken:
 	.string "TEST: SAFARI welcome TAKEN.\p"
-	.string "LEVEL 1, latch disarmed.\p"
-	.string "Nothing will re-arm, so STEVEN's\n"
-	.string "reveal stays short and the SAFARI\l"
-	.string "building gives his ordinary lines.$"
+	.string "LEVEL 1, latch down, {POKEBLOCK}\n"
+	.string "CASE back if you had lost it.\p"
+	.string "STEVEN's scene after JANINE stays\n"
+	.string "short.$"
 
 FuchsiaCity_Route15_Gate_Text_FedCancel:
 	.string "TEST: Talk to me again when\n"

@@ -5,7 +5,8 @@ DaoDaoIsles_BarbHollow_EventScript_Barbaracle::
 	lock
 	faceplayer
 	playmoncry SPECIES_BARBARACLE, CRY_MODE_NORMAL
-	msgbox DaoDaoIsles_BarbHollow_Text_Barbaracle, MSGBOX_AUTOCLOSE
+	msgbox DaoDaoIsles_BarbHollow_Text_Barbaracle, MSGBOX_DEFAULT
+	closemessage
 	waitmoncry
 	setwildbattle SPECIES_BARBARACLE, 60
 	dowildbattle

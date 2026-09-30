@@ -61,7 +61,7 @@ DaoDaoIsles_LandfallIsle_Text_StevenArrival:
 	.string "Rough out past the shelf, isn't it.\n"
 	.string "I've done it twice and I still don't\l"
 	.string "care for it.\p"
-	.string "JANINE had word from the docks.\n"
+	.string "Word from the FUCHSIA docks is that\n"
 	.string "GIDEON came out this way.\p"
 	.string "He's the last thing carrying the\n"
 	.string "FEDERATION. Everyone else is\l"
@@ -79,8 +79,8 @@ DaoDaoIsles_LandfallIsle_Text_StevenArrival:
 	.string "tell you to.\p"
 	.string "Go and look, or don't. GIDEON is the\n"
 	.string "only thing I need from these islands.\p"
-	.string "The POKéCENTRE is north, by the way.\n"
-	.string "You'll may need it.$"
+	.string "The POKéMON CENTER is north, by the\n"
+	.string "way. You may need it.$"
 
 DaoDaoIsles_LandfallIsle_Text_StevenAgain:
 	.string "West, past the water.\p"

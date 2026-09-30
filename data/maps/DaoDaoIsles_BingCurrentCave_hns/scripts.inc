@@ -15,7 +15,8 @@ DaoDaoIsles_BingCurrentCave_EventScript_BossWalrein::
 	faceplayer
 	playmoncry SPECIES_WALREIN, CRY_MODE_ENCOUNTER
 	waitmoncry
-	msgbox DaoDaoIsles_BingCurrentCave_Text_BossIntro, MSGBOX_AUTOCLOSE
+	msgbox DaoDaoIsles_BingCurrentCave_Text_BossIntro, MSGBOX_DEFAULT
+	closemessage
 	setwildbossbattle species=SPECIES_WALREIN, level=70, item=ITEM_NEVER_MELT_ICE, move1_1=MOVE_BLIZZARD, move1_2=MOVE_SURF, move1_3=MOVE_CRUNCH, move1_4=MOVE_YAWN
 	settotemboost B_POSITION_OPPONENT_LEFT, 0, 1, 0, 2, 1, 0
 	setflag FLAG_NO_WILD_CATCHING
@@ -51,7 +52,8 @@ DaoDaoIsles_BingCurrentCave_EventScript_Klawf::
 	faceplayer
 	setflag FLAG_BATTLED_KLAWF
 	playmoncry SPECIES_KLAWF, CRY_MODE_NORMAL
-	msgbox DaoDaoIsles_BingCurrentCave_Text_Growl, MSGBOX_AUTOCLOSE
+	msgbox DaoDaoIsles_BingCurrentCave_Text_Growl, MSGBOX_DEFAULT
+	closemessage
 	waitmoncry
 	setwildbattle SPECIES_KLAWF, 60
 	dowildbattle
@@ -68,7 +70,8 @@ DaoDaoIsles_BingCurrentCave_EventScript_Mimikyu::
 	faceplayer
 	setflag FLAG_BATTLED_MIMIKYU
 	playmoncry SPECIES_MIMIKYU, CRY_MODE_NORMAL
-	msgbox DaoDaoIsles_BingCurrentCave_Text_Growl, MSGBOX_AUTOCLOSE
+	msgbox DaoDaoIsles_BingCurrentCave_Text_Growl, MSGBOX_DEFAULT
+	closemessage
 	waitmoncry
 	setwildbattle SPECIES_MIMIKYU, 60
 	dowildbattle

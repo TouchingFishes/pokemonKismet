@@ -28,8 +28,8 @@
 @ FUCHSIA and cannot be missed. The SAFARI ZONE condition is gone entirely - see
 @ VAR_SAFARI_WELCOME for where the welcome went instead.
 @
-@ STEVEN's call below moved with them: it is now an ON_FRAME scene in
-@ FuchsiaCity_hns, because pokenavcall must not run inside ON_TRANSITION.
+@ STEVEN's PokeNav call that used to live here is gone too - see the note at the
+@ bottom of this file.
 
 @ ===[ THE KANTO CORDON ]=====================================================
 @ MT MOON, DIGLETT'S CAVE and TANGLEBRUSH are shut by a police cordon until the
@@ -57,15 +57,15 @@ Common_Text_KantoCordon:
 	.string "them, we'll open it up again.$"
 
 @ ===[ TANGLEBRUSH - WHY NOBODY CAME TO HELP STEVEN ]=========================
-@ STEVEN's PokeNav call says "the police won't come out this far" and never says
-@ why. This is why: TANGLEBRUSH is where the FEDERATION's stash turned up, and
-@ it has swallowed the entire KANTO force. The cordon stops being a lock and
-@ starts being the reason the player has to do this alone.
+@ STEVEN's siege briefing says every officer in KANTO is at TANGLEBRUSH. This is
+@ why: TANGLEBRUSH is where the FEDERATION's stash turned up, and it has
+@ swallowed the entire KANTO force. The cordon stops being a lock and starts
+@ being the reason the player has to do this alone.
 @
 @ ⚠️ Most players will NOT walk past these officers. ROUTE 17 joins ROUTE 18 at
 @ offset 24 and FUCHSIA is east, so the TANGLEBRUSH mouth at x=8-9 is a westward
 @ detour. The same information is therefore carried where players actually go -
-@ STEVEN's call, and the SAFFRON ROUTE 7 gate guard.
+@ STEVEN's briefing in the SAFARI building, and the SAFFRON ROUTE 7 gate guard.
 Common_EventScript_TanglebrushCordon::
 	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 4, Common_EventScript_TanglebrushCordonAfter
 	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 1, Common_EventScript_TanglebrushCordonCrisis
@@ -130,15 +130,24 @@ Common_Text_DiglettSwarm:
 	.string "Something below has them stirred\n"
 	.string "up, and they will not budge.$"
 
-@ ⚠️ THE SINGLE HOOK THAT REOPENS KANTO. Called from the ALOLA story beat - see
-@ the PROVISIONAL note in data/maps/Melemele_PlayerHouse_hns/scripts.inc. If the
-@ beat moves, move the one `call` line; everything else keys off these flags.
+@ ⚠️ THE SINGLE HOOK THAT REOPENS KANTO. Called from exactly one place,
+@ DaoDaoIsles_RocketLab_EventScript_GideonDefeated, the moment GIDEON falls (the
+@ Route 15 test NPC's stage 6 calls it too, standing in for that script). If the
+@ beat moves, move that one `call` line; everything else keys off these flags.
+@
+@ What it opens: MT MOON, both ends of DIGLETT'S CAVE, both mouths of TANGLEBRUSH,
+@ MISTY's GYM (FLAG_ALOLA_CLEARED), and the Route 22 exit of the RECEPTION GATE.
+@ That last one is a one-tile plug - the Kanto guard at (14,7) - and behind it
+@ lies the whole west of KANTO: VIRIDIAN, PEWTER (BROCK), PALLET, Route 21,
+@ CINNABAR and SEAFOAM (BLAINE). Route 19's Kinglers and the unconnected Route
+@ 17/18 west water close every other way in, so before GIDEON the player can
+@ hold 12 badges and no more (Moritz, 2026-09-30).
 Common_EventScript_ClearKantoCordon::
 	setflag FLAG_ALOLA_CLEARED
 	setflag FLAG_HIDE_MTMOON_BLOCKER
 	setflag FLAG_HIDE_DIGLETTS_CAVE_BLOCKER
 	setflag FLAG_HIDE_TANGLEBRUSH_BLOCKER
-	setflag FLAG_HIDE_CINNABAR_BLOCKER
+	setflag FLAG_INDIGOJUNCTION_HIDE_KANTO_GUARD
 	return
 
 @ ⚠️ STEVEN'S POKENAV CALL IS GONE, deliberately - no speaker name and no call
