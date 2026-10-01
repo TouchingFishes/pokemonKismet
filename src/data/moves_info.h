@@ -6477,7 +6477,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Whips up a vicious twister\n"
             "to tear at foes. May flinch."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 90 : 40,
+        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 65 : 40,
         .type = B_UPDATED_MOVE_TYPES == CUSTOM_FOR_KISMET ? TYPE_FLYING : TYPE_DRAGON,
         .accuracy = 100,
         .pp = 20,
