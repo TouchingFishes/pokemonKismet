@@ -115,7 +115,7 @@ static const u8 sClimateWeather[NUM_CLIMATES][NUM_WEATHER_PATTERNS] =
         [WEATHER_PATTERN_FAIR]      = WEATHER_SHADE,
         [WEATHER_PATTERN_OVERCAST]  = WEATHER_SHADE,
         [WEATHER_PATTERN_RAINY]     = WEATHER_RAIN,
-        [WEATHER_PATTERN_DRIZZLY]   = WEATHER_FOG_HORIZONTAL,
+        [WEATHER_PATTERN_DRIZZLY]   = WEATHER_RAIN,
         [WEATHER_PATTERN_STORMY]    = WEATHER_DOWNPOUR,
     },
     // Tropical: reliably bright, and when it does break it breaks hard --
