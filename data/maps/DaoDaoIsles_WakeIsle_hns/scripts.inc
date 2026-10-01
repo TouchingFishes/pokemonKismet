@@ -1,6 +1,12 @@
 DaoDaoIsles_WakeIsle_hns_MapScripts::
 	.byte 0
 
+DaoDaoIsles_WakeIsle_EventScript_HideKecleon::
+	setvar VAR_TEMP_9, 1
+	setflag FLAG_TEMP_1
+	removeobject LOCALID_DAODAO_WAKE_KECLEON
+	end
+
 DaoDaoIsles_WakeIsle_EventScript_Sidney::
 	trainerbattle_single TRAINER_ELITE_SIDNEY_HNS, DaoDaoIsles_WakeIsle_Text_SidneyIntro, DaoDaoIsles_WakeIsle_Text_SidneyDefeat
 	msgbox DaoDaoIsles_WakeIsle_Text_SidneyAfter, MSGBOX_AUTOCLOSE
