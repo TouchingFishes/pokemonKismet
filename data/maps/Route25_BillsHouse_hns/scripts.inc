@@ -11,6 +11,7 @@ Route25_BillsHouse_hns_OnTransition::
 Route25_BillsHouse_hns_EventScript_TeleporterTest::
 	lockall
 	goto_if_unset FLAG_TELEPORTER_UNLOCKED, Route25_BillsHouse_hns_Locked
+	goto_if_unset FLAG_DEFEATED_BILL_SCIENTIST, Route25_BillsHouse_hns_BillsNote
 	helpwindow HELP_TELEPORTER_WINDOW
 	msgbox Route25_BillsHouse_Text_Teleporter, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, Route25_BillsHouse_hns_EndChoice
@@ -29,6 +30,12 @@ Route25_BillsHouse_hns_Locked::
 	releaseall
 	end
 
+Route25_BillsHouse_hns_BillsNote::
+	msgbox Route25_BillsHouse_hns_Text_BillsNote, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
 Route25_BillsHouse_hns_NoHiddenAbility::
 	msgbox Route25_BillsHouse_hns_Text_NoHiddenAbility, MSGBOX_DEFAULT
 	closemessage
@@ -39,6 +46,12 @@ Route25_BillsHouse_hns_Text_Locked:
 	.string "The machine is dark and silent.\p"
 	.string "BILL'S GRANDPA must know how to\n"
 	.string "switch it on.$"
+
+Route25_BillsHouse_hns_Text_BillsNote:
+	.string "The machine hums, but won't start.\p"
+	.string "A note is taped to the screen:\p"
+	.string "“Nobody uses this until I've battled\n"
+	.string "them myself. - BILL”$"
 
 Route25_BillsHouse_hns_Text_NoHiddenAbility:
 	.string "The machine hums, then falls quiet.\p"
