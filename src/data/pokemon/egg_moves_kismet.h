@@ -300,6 +300,7 @@ static const u16 sZubatEggMoveLearnset_Kismet[] = {
     MOVE_BRAVE_BIRD,
     MOVE_GIGA_DRAIN,
     MOVE_STEEL_WING,
+    MOVE_DRAIN_LIFE,
     MOVE_UNAVAILABLE,
 };
 

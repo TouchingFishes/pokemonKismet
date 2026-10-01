@@ -12698,7 +12698,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_FLAME_BODY, ABILITY_SHIELD_DUST, ABILITY_SWARM },
+    #else
         .abilities = { ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_SWARM },
+    #endif
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("LARVESTA"),
         .cryId = CRY_LARVESTA,
@@ -12778,7 +12782,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
     #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
-        .abilities = { ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_SWARM },
+        .abilities = { ABILITY_FLAME_BODY, ABILITY_SHIELD_DUST, ABILITY_SWARM },
     #else
         .abilities = { ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_SWARM },
     #endif

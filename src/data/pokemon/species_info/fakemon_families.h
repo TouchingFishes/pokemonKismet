@@ -308,7 +308,7 @@
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG, EGG_GROUP_FLYING),
     #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
         .abilities = { ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_COMPOUND_EYES },
     #else
@@ -364,7 +364,7 @@
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG, EGG_GROUP_FLYING),
     #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
         .abilities = { ABILITY_INSOMNIA, ABILITY_NONE, ABILITY_INTIMIDATE },
     #else

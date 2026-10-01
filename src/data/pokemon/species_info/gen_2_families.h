@@ -4716,7 +4716,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
     #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
-        .abilities = { ABILITY_OVERCOAT, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_OVERCOAT, ABILITY_STURDY, ABILITY_NONE },
     #else
         .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_OVERCOAT },
     #endif
@@ -8273,7 +8273,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
     #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
-        .abilities = { ABILITY_THICK_FAT, ABILITY_CUD_CHEW, ABILITY_SAP_SIPPER },
+        .abilities = { ABILITY_CUD_CHEW, ABILITY_SCRAPPY, ABILITY_THICK_FAT },
     #elif P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_THICK_FAT, ABILITY_SCRAPPY, ABILITY_SAP_SIPPER },
     #else

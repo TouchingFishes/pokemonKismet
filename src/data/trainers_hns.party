@@ -16440,13 +16440,13 @@ Timid Nature
 
 Probopass @ Light Clay
 Level: 70
-Ability: Sturdy
+Ability: Transistor
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 4 SpA / 0 SpD / 0 Spe
 Bold Nature
 - Light Screen
 - Reflect
-- Stealth Rock
+- Thunder
 - Power Gem
 
 Drapion @ Assault Vest
@@ -16607,11 +16607,11 @@ Level: 67
 - Tail Whip  
 
 Golduck @ Scope Lens  
-Ability: Cloud Nine  
+Ability: Psi Conduit  
 Level: 60     
 Jolly Nature  
 - Cross Chop  
-- Aqua Jet  
+- Zen Headbutt  
 - Shadow Claw  
 - Yawn  
 
@@ -16719,7 +16719,7 @@ Jolly Nature
 - Wish  
 
 Milotic (F)  
-Ability: Cute Charm  
+Ability: Competitive  
 Level: 66
 EVs: 248 Atk / 248 SpD  
 Adamant Nature  
@@ -16861,7 +16861,7 @@ Level: 63
 - Tailwind  
 
 Beedrill @ Scope Lens  
-Ability: Sniper  
+Ability: Adaptability  
 Level: 65  
 - Poison Jab  
 - Drill Run  
@@ -16889,7 +16889,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Pinsir @ Life Orb  
-Ability: Hyper Cutter  
+Ability: Chitinize  
 Level: 61  
 - Close Combat  
 - Double-Edge  
@@ -16952,7 +16952,7 @@ Level: 63
 - U-turn  
 
 Tangrowth @ Leftovers  
-Ability: Leaf Guard  
+Ability: Tangled Feet  
 Level: 61  
 - Ingrain  
 - Power Whip  
@@ -16979,7 +16979,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Primeape  
-Ability: Anger Point  
+Ability: Defiant  
 Level: 61  
 - Cross Chop  
 - Curse  
@@ -17100,7 +17100,7 @@ Level: 61
 - Sand Tomb  
 
 Leafeon @ Sitrus Berry  
-Ability: Leaf Guard  
+Ability: Guts  
 Level: 63  
 - Leaf Blade  
 - Iron Tail  
@@ -17156,7 +17156,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Skarmory  
-Ability: Keen Eye  
+Ability: Weak Armor  
 Level: 61 
 - Iron Defense  
 - Autotomize  
@@ -17164,7 +17164,7 @@ Level: 61
 - Rock Slide  
 
 Primeape  
-Ability: Anger Point  
+Ability: Defiant  
 Level: 64  
 Happiness: 0  
 - Frustration  
@@ -17204,7 +17204,7 @@ EVs: 156 HP / 0 Atk / 100 Def / 0 SpA / 252 SpD / 0 Spe
 
 Miltank @ Charcoal
 Level: 70
-Ability: Sap Sipper
+Ability: Thick Fat
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 0 Spe
 - Milk Drink
@@ -17224,7 +17224,7 @@ EVs: 248 HP / 8 Atk / 248 Def / 0 SpA / 4 SpD / 0 Spe
 
 Miltank @ Hard Stone
 Level: 70
-Ability: Sap Sipper
+Ability: Scrappy
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 - Milk Drink
@@ -17234,7 +17234,7 @@ EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 
 Miltank @ Lagging Tail
 Level: 70
-Ability: Scrappy
+Ability: Thick Fat
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 EVs: 252 HP / 4 Atk / 252 Def / 0 SpA / 0 SpD / 0 Spe
 - Milk Drink
@@ -17336,7 +17336,7 @@ Adamant Nature
 - Spikes  
 
 Omastar @ Sitrus Berry  
-Ability: Shell Armor  
+Ability: Solid Rock  
 Level: 77 
 EVs: 128 Def / 40 SpA / 252 SpD  
 Relaxed Nature  
@@ -17478,7 +17478,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Dazzling Gleam  
 
 Blastoise (M) @ Leftovers  
-Ability: Rain Dish  
+Ability: Torrent  
 Level: 70
 EVs: 36 HP / 252 Def / 220 SpD  
 Bold Nature  
@@ -17601,7 +17601,7 @@ Adamant Nature
 - Earthquake  
 
 Crobat @ Big Root  
-Ability: Inner Focus  
+Ability: Technician  
 Level: 70 
 EVs: 252 HP / 252 Atk / 4 SpD  
 Adamant Nature  
@@ -17650,7 +17650,7 @@ Modest Nature
 - Shock Wave
 
 Lucario @ Black Belt
-Ability: Steadfast
+Ability: Justified
 Level: 87
 EVs: 4 HP / 252 Atk / 252 Spe
 Jolly Nature
@@ -17779,7 +17779,7 @@ AI: Smart Trainer
 Mugshot: Orange
 
 Scizor @ Metal Coat
-Ability: Swarm
+Ability: Sharpness
 Level: 77
 EVs: 248 HP / 252 Atk / 8 SpD
 Adamant Nature
@@ -17789,7 +17789,7 @@ Adamant Nature
 - Roost
 
 Drapion @ Black Sludge
-Ability: Sniper
+Ability: Sharpness
 Level: 77
 EVs: 252 HP / 4 Spe / 252 SpD
 Jolly Nature
@@ -17809,7 +17809,7 @@ Adamant Nature
 - Fire Punch
 
 Vanilluxe @ Wise Glasses
-Ability: Ice Body
+Ability: Weak Armor
 Level: 77
 EVs: 4 HP / 252 SpA / 252 Spe
 Timid Nature
@@ -17819,7 +17819,7 @@ Timid Nature
 - Water Pulse
 
 Tauros @ Silk Scarf
-Ability: Intimidate
+Ability: Sheer Force
 Level: 75
 EVs: 4 HP / 252 Atk / 252 Spe
 Jolly Nature
@@ -19518,7 +19518,7 @@ EVs: 252 SpA / 100 Spe
 
 SPECIES_FLAREON @ ITEM_CHARCOAL
 Level: Badge+4
-Ability: Flash Fire
+Ability: Immolate
 EVs: 252 Atk / 100 SpA
 - MOVE_FLARE_BLITZ
 - MOVE_DOUBLE_EDGE
@@ -19631,7 +19631,7 @@ Timid Nature
 - Thunderbolt
 
 Banette @ Sitrus Berry
-Ability: Insomnia
+Ability: Cursed Body
 Level: 70
 EVs: 252 Atk / 248 Spe
 Adamant Nature
@@ -19769,7 +19769,7 @@ Modest Nature
 - Heal Bell
 
 Luxray @ Magnet
-Ability: Rivalry
+Ability: Intimidate
 Level: Badge+5
 EVs: 4 HP / 252 Atk / 252 Spe
 Adamant Nature
@@ -19865,7 +19865,7 @@ Modest Nature
 - Giga Drain
 
 Togekiss @ Life Orb
-Ability: Hustle
+Ability: Serene Grace
 Level: Badge+19
 EVs: 4 HP / 252 SpA / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
