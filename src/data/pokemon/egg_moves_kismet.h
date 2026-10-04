@@ -206,6 +206,7 @@ static const u16 sNidoranFEggMoveLearnset_Kismet[] = {
     MOVE_BEAT_UP,
     MOVE_PURSUIT,
     MOVE_SKULL_BASH,
+    MOVE_TOXIC_SPIKES,
     MOVE_IRON_TAIL,
     MOVE_POISON_TAIL,
     MOVE_ENDURE,
@@ -221,6 +222,7 @@ static const u16 sNidoranMEggMoveLearnset_Kismet[] = {
     MOVE_CONFUSION,
     MOVE_BEAT_UP,
     MOVE_HEAD_SMASH,
+    MOVE_TOXIC_SPIKES,
     MOVE_IRON_TAIL,
     MOVE_POISON_TAIL,
     MOVE_ENDURE,
@@ -281,6 +283,7 @@ static const u16 sIgglybuffEggMoveLearnset_Kismet[] = {
     MOVE_SLEEP_TALK,
     MOVE_PUNISHMENT,
     MOVE_HEAL_PULSE,
+    MOVE_GYRO_BALL,
     MOVE_UNAVAILABLE,
 };
 
@@ -684,6 +687,7 @@ static const u16 sShellderEggMoveLearnset_Kismet[] = {
     MOVE_RAPID_SPIN,
     MOVE_SCREECH,
     MOVE_ICICLE_SPEAR,
+    MOVE_TOXIC_SPIKES,
     MOVE_MUD_SHOT,
     MOVE_ROCK_BLAST,
     MOVE_WATER_PULSE,
@@ -816,6 +820,7 @@ static const u16 sTyrogueEggMoveLearnset_Kismet[] = {
     MOVE_MACH_PUNCH,
     MOVE_MIND_READER,
     MOVE_HELPING_HAND,
+    MOVE_CLOSE_COMBAT,
     MOVE_COUNTER,
     MOVE_ENDURE,
     MOVE_PURSUIT,
@@ -994,6 +999,8 @@ static const u16 sStaryuEggMoveLearnset_Kismet[] = {
     MOVE_AURORA_BEAM,
     MOVE_BARRIER,
     MOVE_SUPERSONIC,
+    MOVE_GYRO_BALL,
+    MOVE_BRINE,
     MOVE_UNAVAILABLE,
 };
 
@@ -1163,6 +1170,7 @@ static const u16 sEeveeEggMoveLearnset_Kismet[] = {
     MOVE_EXTREME_SPEED,
     MOVE_FAKE_TEARS,
     MOVE_COVET,
+    MOVE_COPYCAT,
     MOVE_DETECT,
     MOVE_STORED_POWER,
     MOVE_UNAVAILABLE,
@@ -1306,6 +1314,7 @@ static const u16 sCyndaquilEggMoveLearnset_Kismet[] = {
     MOVE_FLARE_BLITZ,
     MOVE_EXTRASENSORY,
     MOVE_NATURE_POWER,
+    MOVE_GYRO_BALL,
     MOVE_UNAVAILABLE,
 };
 
@@ -1770,6 +1779,7 @@ static const u16 sQwilfishEggMoveLearnset_Kismet[] = {
     MOVE_HAZE,
     MOVE_BUBBLE_BEAM,
     MOVE_SUPERSONIC,
+    MOVE_ROLLOUT,
     MOVE_ASTONISH,
     MOVE_SIGNAL_BEAM,
     MOVE_WATER_PULSE,
@@ -2059,6 +2069,7 @@ static const u16 sMiltankEggMoveLearnset_Kismet[] = {
     MOVE_HELPING_HAND,
     MOVE_SLEEP_TALK,
     MOVE_DIZZY_PUNCH,
+    MOVE_PLAY_ROUGH,
     MOVE_HAMMER_ARM,
     MOVE_DOUBLE_EDGE,
     MOVE_PUNISHMENT,
@@ -2339,6 +2350,7 @@ static const u16 sMakuhitaEggMoveLearnset_Kismet[] = {
     MOVE_DETECT,
     MOVE_FORESIGHT,
     MOVE_HELPING_HAND,
+    MOVE_CLOSE_COMBAT,
     MOVE_CROSS_CHOP,
     MOVE_REVENGE,
     MOVE_DYNAMIC_PUNCH,
@@ -2729,6 +2741,7 @@ static const u16 sZangooseEggMoveLearnset_Kismet[] = {
     MOVE_FURY_SWIPES,
     MOVE_NIGHT_SLASH,
     MOVE_METAL_CLAW,
+    MOVE_CLOSE_COMBAT,
     MOVE_DOUBLE_HIT,
     MOVE_DISABLE,
     MOVE_IRON_TAIL,
@@ -2874,6 +2887,7 @@ static const u16 sShuppetEggMoveLearnset_Kismet[] = {
     MOVE_OMINOUS_WIND,
     MOVE_GUNK_SHOT,
     MOVE_PHANTOM_FORCE,
+    MOVE_REVENGE,
     MOVE_UNAVAILABLE,
 };
 
@@ -2986,6 +3000,7 @@ static const u16 sSphealEggMoveLearnset_Kismet[] = {
     MOVE_SWALLOW,
     MOVE_SPIT_UP,
     MOVE_YAWN,
+    MOVE_BRINE,
     MOVE_CURSE,
     MOVE_FISSURE,
     MOVE_SIGNAL_BEAM,
@@ -3213,6 +3228,7 @@ static const u16 sGlameowEggMoveLearnset_Kismet[] = {
 static const u16 sBronzorEggMoveLearnset_Kismet[] = {
     MOVE_GRAVITY,
     MOVE_RECYCLE,
+    MOVE_GYRO_BALL,
     MOVE_UNAVAILABLE,
 };
 
@@ -3265,6 +3281,7 @@ static const u16 sRioluEggMoveLearnset_Kismet[] = {
     MOVE_BLAZE_KICK,
     MOVE_FOLLOW_ME,
     MOVE_METEOR_MASH,
+    MOVE_CLOSE_COMBAT,
     MOVE_UNAVAILABLE,
 };
 
@@ -3503,6 +3520,7 @@ static const u16 sMienfooEggMoveLearnset_Kismet[] = {
 static const u16 sRuffletEggMoveLearnset_Kismet[] = {
     MOVE_ROCK_SMASH,
     MOVE_ROOST,
+    MOVE_TAILWIND,
     MOVE_UNAVAILABLE,
 };
 
@@ -3516,6 +3534,7 @@ static const u16 sVullabyEggMoveLearnset_Kismet[] = {
     MOVE_KNOCK_OFF,
     MOVE_FAKE_TEARS,
     MOVE_FOUL_PLAY,
+    MOVE_TAILWIND,
     MOVE_UNAVAILABLE,
 };
 

@@ -392,17 +392,17 @@ enum __attribute__((packed)) Move
     MOVE_MIRACLE_EYE = 357, //do not use
     MOVE_WAKE_UP_SLAP = 358,
     MOVE_HAMMER_ARM = 359,
-    MOVE_GYRO_BALL = 360, //until here
+    MOVE_GYRO_BALL = 360,
     MOVE_HEALING_WISH = 361, //do not use
     MOVE_BRINE = 362,
     MOVE_NATURAL_GIFT = 363, //do not use
     MOVE_FEINT = 364, //do not use
-    MOVE_PLUCK = 365,
+    MOVE_PLUCK = 365, //until here
     MOVE_TAILWIND = 366,
     MOVE_ACUPRESSURE = 367, //do not use
     MOVE_METAL_BURST = 368,
     MOVE_U_TURN = 369, //do not use
-    MOVE_CLOSE_COMBAT = 370, //use but nerf to 100 BP
+    MOVE_CLOSE_COMBAT = 370,
     MOVE_PAYBACK = 371,
     MOVE_ASSURANCE = 372, //do not use
     MOVE_EMBARGO = 373, //do not use
@@ -424,7 +424,7 @@ enum __attribute__((packed)) Move
     MOVE_SUCKER_PUNCH = 389, //do not use
     MOVE_TOXIC_SPIKES = 390,
     MOVE_HEART_SWAP = 391,  //do not use unless Manaphy / Phione is in
-    MOVE_AQUA_RING = 392,
+    MOVE_AQUA_RING = 392, //until here
     MOVE_MAGNET_RISE = 393,
     MOVE_FLARE_BLITZ = 394,
     MOVE_FORCE_PALM = 395,
@@ -713,7 +713,7 @@ enum __attribute__((packed)) Move
     MOVE_MOONGEIST_BEAM = 668,
     MOVE_TEARFUL_LOOK = 669,
     MOVE_ZING_ZAP = 670,
-    MOVE_NATURES_MADNESS = 671, //should be in (shared by all four Tapus)
+    MOVE_NATURES_MADNESS = 671, //should be in if the Tapus are in (shared by all four Tapus)
     MOVE_MULTI_ATTACK = 672,
     // USUM Moves
     MOVE_MIND_BLOWN = 673,
@@ -867,7 +867,7 @@ enum __attribute__((packed)) Move
     MOVE_TRAILBLAZE = 811,
     MOVE_CHILLING_WATER = 812,
     MOVE_HYPER_DRILL = 813, //should be in if dunsparce is in
-    MOVE_TWIN_BEAM = 814, //should be in
+    MOVE_TWIN_BEAM = 814, //should be in if girafarig is in
     MOVE_RAGE_FIST = 815, //should be in if primeape is in
     MOVE_ARMOR_CANNON = 816,
     MOVE_BITTER_BLADE = 817,
