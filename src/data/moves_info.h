@@ -9971,7 +9971,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("CLOSE COMBAT"),
         .description = sCloseCombatDescription,
         .effect = EFFECT_HIT,
-        .power = 120,
+        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 100 : 120,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
         .pp = 5,
