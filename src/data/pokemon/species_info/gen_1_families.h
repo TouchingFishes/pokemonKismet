@@ -15091,11 +15091,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_FAMILY_LICKITUNG
     [SPECIES_LICKITUNG] =
     {
-        .baseHP        = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 105 : (90),
+        .baseHP        = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 100 : (90),
         .baseAttack    = 55,
         .baseDefense   = 75,
         .baseSpeed     = 30,
-        .baseSpAttack  = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 90 : (60),
+        .baseSpAttack  = 60,
         .baseSpDefense = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 85 : (P_UPDATED_STATS >= GEN_2 ? 75 : 60),
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 45,
@@ -15167,7 +15167,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_LICKILICKY] =
     {
-        .baseHP        = 110,
+        .baseHP        = P_UPDATED_STATS == CUSTOM_FOR_KISMET ? 125 : (110),
         .baseAttack    = 85,
         .baseDefense   = 95,
         .baseSpeed     = 50,
