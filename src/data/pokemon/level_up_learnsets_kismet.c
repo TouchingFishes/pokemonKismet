@@ -1390,6 +1390,9 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_BRUXISH
     [SPECIES_BRUXISH] = sBruxishLevelUpLearnset_Kismet,
 #endif
+#if P_FAMILY_MARSHADOW
+    [SPECIES_MARSHADOW] = sMarshadowLevelUpLearnset_Kismet,
+#endif
 #if P_FAMILY_SINISTEA
     [SPECIES_SINISTEA] = sSinisteaLevelUpLearnset_Kismet,
     [SPECIES_POLTEAGEIST] = sPolteageistLevelUpLearnset_Kismet,

@@ -2270,6 +2270,7 @@ enum JohtoDexOrder
     JOHTO_DEX_GOOMY,
     JOHTO_DEX_SLIGGOO,
     JOHTO_DEX_GOODRA,
+    JOHTO_DEX_MARSHADOW,
     // --- Sinjoh stage. The final stage.
     JOHTO_DEX_SPHEAL,
     JOHTO_DEX_SEALEO,
@@ -2334,7 +2335,7 @@ enum JohtoDexOrder
 // Staged regional dex (D40). The list is cumulative: each stage appends
 #define JOHTO_DEX_STAGE_JOHTO_END   JOHTO_DEX_CELEBI
 #define JOHTO_DEX_STAGE_KANTO_END   JOHTO_DEX_JIRACHI
-#define JOHTO_DEX_STAGE_ALOLA_END   JOHTO_DEX_GOODRA
+#define JOHTO_DEX_STAGE_ALOLA_END   JOHTO_DEX_MARSHADOW
 #define JOHTO_DEX_STAGE_SINJOH_END  JOHTO_DEX_ARCEUS
 
 #if SEPARATE_OBTAINABLE_DEX
@@ -2883,9 +2884,11 @@ enum ObtainableDexOrder {
     OBTAINABLE_DEX_FROAKIE,
     OBTAINABLE_DEX_FROGADIER,
     OBTAINABLE_DEX_GRENINJA,
+    // The post-game shadow in the FOXFIRE HOLLOW Mansion's study. Appended for the same reason.
+    OBTAINABLE_DEX_MARSHADOW,
 };
 
-#define OBTAINABLE_DEX_COUNT (OBTAINABLE_DEX_GRENINJA + 1)
+#define OBTAINABLE_DEX_COUNT (OBTAINABLE_DEX_MARSHADOW + 1)
 
 #else
 
