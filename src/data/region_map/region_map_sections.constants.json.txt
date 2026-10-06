@@ -28,8 +28,10 @@ enum {
 #define KANTO_MAPSEC_END    MAPSEC_POWER_PLANT
 #define KANTO_MAPSEC_COUNT  (KANTO_MAPSEC_END - KANTO_MAPSEC_START + 1)
 
+// FOXFIRE HOLLOW is appended after WHIRL ISLANDS rather than filed beside the Lake of Rage,
+// so no existing section's value shifts and met locations on old saves keep their names.
 #define JOHTO_MAPSEC_START  MAPSEC_NEW_BARK_TOWN
-#define JOHTO_MAPSEC_END    MAPSEC_WHIRL_ISLANDS
+#define JOHTO_MAPSEC_END    MAPSEC_FOXFIRE_HOLLOW
 #define JOHTO_MAPSEC_COUNT  (JOHTO_MAPSEC_END - JOHTO_MAPSEC_START + 1)
 
 #define ALOLA_MAPSEC_START  MAPSEC_MELEMELE_ISLAND

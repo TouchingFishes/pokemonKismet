@@ -284,7 +284,11 @@
     "MahoganyTown_House1_hns",
     "LakeOfRage_House1_hns",
     "LakeOfRage_House2_hns",
-    "MahoganyTown_House2_hns"
+    "MahoganyTown_House2_hns",
+    "FoxfireHollow_Mansion_1F_hns",
+    "FoxfireHollow_Mansion_2F_hns",
+    "FoxfireHollow_Mansion_3F_hns",
+    "FoxfireHollow_Mansion_B1F_hns"
   ],
   "gMapGroup_IndoorBlackthorn_Hns": [
     "BlackthornCity_PokemonCenter_hns",
@@ -565,7 +569,8 @@
     "StarshoalCave_hns",
     "Tanglebrush_hns",
     "ChallengersCave_1F_hns",
-    "ChallengersCave_B1F_hns"
+    "ChallengersCave_B1F_hns",
+    "FoxfireHollow_hns"
   ],
   "gMapGrouop_OutdoorAlola_Hns": [
     "PoniIsle_hns",
@@ -639,11 +644,7 @@
     "DaoDaoIsles_LandfallIsle_House6_hns",
     "DaoDaoIsles_GiantsReach_House_hns",
     "DaoDaoIsles_BerryForest_hns",
-    "DaoDaoIsles_BarbHollow_hns",
-    "DaoDaoIsles_Mansion_1F_hns",
-    "DaoDaoIsles_Mansion_2F_hns",
-    "DaoDaoIsles_Mansion_3F_hns",
-    "DaoDaoIsles_Mansion_B1F_hns"
+    "DaoDaoIsles_BarbHollow_hns"
   ],
   "gMapGroup_IndoorDynamic_Hns": [
     "UnionRoom_hns"

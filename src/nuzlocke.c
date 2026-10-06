@@ -148,7 +148,10 @@ static const u8 sNuzlockeLUT[] =
     [MAPSEC_ROUTE_50] = 0x6D,
     [MAPSEC_NEW_SINJOH] = 0x6E,
     [MAPSEC_SINJOH_RUINS] = 0x6F,
-    // Max bit index: 0x6F (112 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
+    // Johto, added later. MAPSEC_FOXFIRE_HOLLOW is the highest section value, so without a
+    // row here the table would be read past its end.
+    [MAPSEC_FOXFIRE_HOLLOW] = 0x70,
+    // Max bit index: 0x70 (113 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
     // If you exceed 0x7F, grow nuzlockeEncounterFlags in include/global.h.
 
 #else

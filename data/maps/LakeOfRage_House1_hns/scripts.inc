@@ -13,8 +13,17 @@ LakeOfRage_House1_EventScript_HiddenPowerGuy::
 	release
 	end
 
+@ The trees behind his house hide FOXFIRE HOLLOW. Its fog lifts once its NINETALES has been
+@ caught or set free (VAR_FOXFIRE_HOLLOW_STATE 6).
 LakeOfRage_House1_EventScript_HiddenPowerGuyAfter::
+	goto_if_ge VAR_FOXFIRE_HOLLOW_STATE, 6, LakeOfRage_House1_EventScript_HiddenPowerGuyFogLifted
 	msgbox HiddenPowerGuy_Text_Meditating, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LakeOfRage_House1_EventScript_HiddenPowerGuyFogLifted:
+	msgbox HiddenPowerGuy_Text_FogLifted, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -34,4 +43,14 @@ HiddenPowerGuy_Text_Explanation:
     .string "depend on the POKéMON using it.$"
 
 HiddenPowerGuy_Text_Meditating:
-    .string "I am meditating…$"
+    .string "I am meditating…\p"
+    .string "…Beyond the trees behind this\n"
+    .string "house, the fog has not lifted in\l"
+    .string "all the years I have sat here.$"
+
+HiddenPowerGuy_Text_FogLifted:
+    .string "I am meditating…\p"
+    .string "…The fog beyond the trees has\n"
+    .string "lifted.\p"
+    .string "In all my years here, I have never\n"
+    .string "once seen it lift.$"

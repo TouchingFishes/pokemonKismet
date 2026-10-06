@@ -2225,6 +2225,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/MtMortar_B1F_hns/scripts.inc"
 	.include "data/maps/LakeOfRage_hns/scripts.inc"
 	.include "data/maps/LakeOfRageLowTide_hns/scripts.inc"
+	.include "data/maps/FoxfireHollow_hns/scripts.inc"
 	.include "data/maps/IcePath_1F_hns/scripts.inc"
 	.include "data/maps/IcePath_B1F_hns/scripts.inc"
 	.include "data/maps/IcePath_B2F_hns/scripts.inc"
@@ -2469,10 +2470,10 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/DaoDaoIsles_GiantsReach_House_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_BerryForest_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_BarbHollow_hns/scripts.inc"
-	.include "data/maps/DaoDaoIsles_Mansion_1F_hns/scripts.inc"
-	.include "data/maps/DaoDaoIsles_Mansion_2F_hns/scripts.inc"
-	.include "data/maps/DaoDaoIsles_Mansion_3F_hns/scripts.inc"
-	.include "data/maps/DaoDaoIsles_Mansion_B1F_hns/scripts.inc"
+	.include "data/maps/FoxfireHollow_Mansion_1F_hns/scripts.inc"
+	.include "data/maps/FoxfireHollow_Mansion_2F_hns/scripts.inc"
+	.include "data/maps/FoxfireHollow_Mansion_3F_hns/scripts.inc"
+	.include "data/maps/FoxfireHollow_Mansion_B1F_hns/scripts.inc"
 
 .endif
 

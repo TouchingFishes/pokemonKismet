@@ -2204,6 +2204,17 @@ const struct Tileset gTileset_MahoganyTown_Hns =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_FoxfireHollow_Hns =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FoxfireHollow_Hns,
+    .palettes = gTilesetPalettes_FoxfireHollow_Hns,
+    .metatiles = gMetatiles_FoxfireHollow_Hns,
+    .metatileAttributes = gMetatileAttributes_FoxfireHollow_Hns,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_MtSilverSnow_Hns =
 {
     .isCompressed = TRUE,

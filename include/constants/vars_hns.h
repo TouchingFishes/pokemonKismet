@@ -109,8 +109,15 @@
 #define VAR_TRIGGER_ELM_ROCKET_CALL                            0x40B3
 #define VAR_FUCHSIA_SCENE                                0x40B4
 #define VAR_SAFARI_WELCOME                               0x40C2
-#define VAR_UNUSED_HNS_0x40C6                            0x40C6
-#define VAR_UNUSED_HNS_0x40C9                            0x40C9
+// FOXFIRE HOLLOW, the Ninetales story north of the Lake of Rage (anime EP232):
+// 0 never entered, 1 met the woman in the fog, 2 greeted in the lodge, 3 the truth scene
+// is running (only ever inside it; the lodge puts it back to 2 on load), 4 illusion broken
+// (the lodge's reveal runs), 5 NINETALES waiting in the ruins, 6 caught or set free - the
+// fog is gone.
+#define VAR_FOXFIRE_HOLLOW_STATE                         0x40C6
+// The doll shrine in DaoDao's Eterna Forest: 0 the MIMIKYU not found yet, 1 KAREN took it
+// (her rematch brings it), 2 the player kept it.
+#define VAR_DOLL_SHRINE_STATE                            0x40C9
 #define VAR_UNUSED_HNS_0x40CA                            0x40CA
 
 #define VAR_UNUSED_HNS_0x40D8                           0x40D8

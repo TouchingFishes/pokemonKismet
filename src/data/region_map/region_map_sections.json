@@ -1729,6 +1729,9 @@
       "width": 1,
       "height": 1,
       "in_hns": true
+    },
+    {
+      "id": "MAPSEC_ROUTE_32"
     }
   ],
   "hns_map_sections": [
@@ -2692,6 +2695,14 @@
       "width": 1,
       "x": 6,
       "y": 11
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_FOXFIRE_HOLLOW",
+      "name": "FOXFIRE HOLLOW",
+      "width": 1,
+      "x": 15,
+      "y": 0
     }
   ]
 }

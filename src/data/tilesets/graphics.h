@@ -4256,6 +4256,25 @@ const u16 gTilesetPalettes_MahoganyTown_Hns[][16] =
     INCBIN_U16("data/tilesets/secondary/mahogany_town_hns/palettes/12.gbapal"),
 };
 
+const u32 gTilesetTiles_FoxfireHollow_Hns[] = INCBIN_U32("data/tilesets/secondary/foxfire_hollow_hns/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_FoxfireHollow_Hns[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/palettes/12.gbapal"),
+};
+
 const u32 gTilesetTiles_MtSilverSnow_Hns[] = INCBIN_U32("data/tilesets/secondary/mt_silver_snow_hns/tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_MtSilverSnow_Hns[][16] =

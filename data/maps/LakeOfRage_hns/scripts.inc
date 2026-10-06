@@ -1,6 +1,37 @@
 LakeOfRage_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LakeOfRage_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, LakeOfRage_OnLoad
 	.byte 0
+
+@ The path north to FOXFIRE HOLLOW, beside the hermit's house, opens once the player holds
+@ Johto badges 1-7 (Blackthorn's is not needed). Every badge is checked, not just Pryce's,
+@ because Cianwood and Olivine can come in either order. Until then the cut is covered with
+@ the tree line it replaced; the values are what .claude/make_foxfire_hollow.py cut out.
+@ ON_LOAD runs after ON_TRANSITION has picked the tide layout, and the rows are the same in
+@ both, so this one closure covers both tides.
+LakeOfRage_OnLoad:
+	goto_if_unset FLAG_BADGE01_GET, LakeOfRage_EventScript_CloseFoxfirePath
+	goto_if_unset FLAG_BADGE02_GET, LakeOfRage_EventScript_CloseFoxfirePath
+	goto_if_unset FLAG_BADGE03_GET, LakeOfRage_EventScript_CloseFoxfirePath
+	goto_if_unset FLAG_BADGE04_GET, LakeOfRage_EventScript_CloseFoxfirePath
+	goto_if_unset FLAG_BADGE05_GET, LakeOfRage_EventScript_CloseFoxfirePath
+	goto_if_unset FLAG_BADGE06_GET, LakeOfRage_EventScript_CloseFoxfirePath
+	goto_if_unset FLAG_BADGE07_GET, LakeOfRage_EventScript_CloseFoxfirePath
+	end
+
+LakeOfRage_EventScript_CloseFoxfirePath:
+	setmetatile 19, 0, 0x015, TRUE
+	setmetatile 20, 0, 0x014, TRUE
+	setmetatile 21, 0, 0x015, TRUE
+	setmetatile 22, 0, 0x014, TRUE
+	setmetatile 19, 1, 0x01D, TRUE
+	setmetatile 20, 1, 0x01C, TRUE
+	setmetatile 21, 1, 0x01D, TRUE
+	setmetatile 22, 1, 0x01C, TRUE
+	setmetatile 19, 2, 0x025, TRUE
+	setmetatile 20, 2, 0x024, TRUE
+	setmetatile 21, 2, 0x025, TRUE
+	end
 
 LakeOfRage_OnTransition::
 	setflag FLAG_VISITED_LAKE_OF_RAGE

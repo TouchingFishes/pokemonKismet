@@ -881,11 +881,11 @@
 #define TRAINER_DAODAO_LAB_SCIENTIST_2_HNS            817
 #define TRAINER_LAWSON_HNS                            818
 #define TRAINER_MANSION_TED_HNS                       819
-#define TRAINER_MANSION_JOHNSON_HNS                   820
+#define TRAINER_MANSION_MAVIS_HNS                     820
 #define TRAINER_MANSION_ARNIE_HNS                     821
 #define TRAINER_MANSION_SIMON_HNS                     822
-#define TRAINER_MANSION_BRAYDON_HNS                   823
-#define TRAINER_MANSION_LEWIS_HNS                     824
+#define TRAINER_MANSION_OPAL_HNS                      823
+#define TRAINER_MANSION_LORETTA_HNS                   824
 #define TRAINER_MANSION_IVAN_HNS                      825
 #define TRAINER_ELITE_SIDNEY_HNS                      826
 #define TRAINER_ELITE_PHOEBE_HNS                      827
@@ -902,7 +902,8 @@
 #define TRAINER_TASHA_HNS                             838
 #define TRAINER_KINDRA_HNS                            839
 #define TRAINER_LUNA_HNS                              840
-#define TRAINERS_COUNT_HNS                       841
+#define TRAINER_KAREN_3_HNS                           841
+#define TRAINERS_COUNT_HNS                       842
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

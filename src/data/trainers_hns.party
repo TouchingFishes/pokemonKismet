@@ -9713,6 +9713,65 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_IRON_TAIL
 - MOVE_ROAR
 
+=== TRAINER_KAREN_3_HNS ===
+Name: KAREN
+Class: Elite Four Hns
+Pic: Elite Four Karen Hns
+Gender: Male
+Music: Elite Four
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Items: Full Restore / Full Restore
+
+SPECIES_UMBREON @ ITEM_SITRUS_BERRY
+Level: 68
+IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
+- MOVE_COSMIC_POWER
+- MOVE_SHADOW_BALL
+- MOVE_MOONLIGHT
+- MOVE_BATON_PASS
+
+SPECIES_MIMIKYU @ ITEM_LIFE_ORB
+Level: 69
+IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
+- MOVE_PLAY_ROUGH
+- MOVE_SHADOW_CLAW
+- MOVE_SHADOW_SNEAK
+- MOVE_HONE_CLAWS
+
+SPECIES_MISMAGIUS @ ITEM_SCOPE_LENS
+Level: 69
+IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
+- MOVE_SHADOW_BALL
+- MOVE_MAGICAL_LEAF
+- MOVE_THUNDERBOLT
+- MOVE_POWER_GEM
+
+SPECIES_BOMBIRDIER @ ITEM_HARD_STONE
+Level: 69
+IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
+- MOVE_STONE_EDGE
+- MOVE_AERIAL_ACE
+- MOVE_NIGHT_SLASH
+- MOVE_SOFT_BOILED
+
+SPECIES_VILEPLUME @ ITEM_LEFTOVERS
+Level: 68
+IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
+- MOVE_SLEEP_POWDER
+- MOVE_GIGA_DRAIN
+- MOVE_LEECH_SEED
+- MOVE_SUBSTITUTE
+
+SPECIES_HOUNDOOM @ ITEM_CHARCOAL
+Level: 70
+IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
+- MOVE_FLAMETHROWER
+- MOVE_DARK_PULSE
+- MOVE_IRON_TAIL
+- MOVE_ROAR
+
 === TRAINER_KOGA_1_HNS ===
 Name: KOGA
 Class: Elite Four Hns
@@ -21359,53 +21418,33 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_MAGNETON
-Level: 60
+Level: Badge+5
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_FLASH_CANNON
-- MOVE_THUNDER_WAVE
-- MOVE_TRI_ATTACK
-- MOVE_SCREECH
 
 SPECIES_MUK
-Level: 60
+Level: Badge+5
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_GUNK_SHOT
-- MOVE_SLUDGE_BOMB
-- MOVE_FOCUS_BLAST
-- MOVE_ACID_ARMOR
 
 SPECIES_ELECTRODE
-Level: 60
+Level: Badge+6
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_CHARGE_BEAM
-- MOVE_FLASH_CANNON
-- MOVE_LIGHT_SCREEN
-- MOVE_EXPLOSION
 
-=== TRAINER_MANSION_JOHNSON_HNS ===
-Name: JOHNSON
-Class: Youngster Hns
-Pic: Youngster Hns
-Gender: Male
-Music: Hg Boy 1
+=== TRAINER_MANSION_MAVIS_HNS ===
+Name: MAVIS
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Gender: Female
+Music: Hg Sage
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_RATICATE
-Level: 58
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
-- MOVE_CRUNCH
-- MOVE_SUPER_FANG
-- MOVE_HYPER_FANG
-- MOVE_ENDEAVOR
+SPECIES_HAUNTER
+Level: Badge+6
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_LINOONE
-Level: 58
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
-- MOVE_SLASH
-- MOVE_PLAY_ROUGH
-- MOVE_BELLY_DRUM
-- MOVE_COVET
+SPECIES_BANETTE
+Level: Badge+8
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_MANSION_ARNIE_HNS ===
 Name: ARNIE
@@ -21417,20 +21456,12 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_MAGMAR
-Level: 60
+Level: Badge+6
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_FIRE_BLAST
-- MOVE_FIRE_PUNCH
-- MOVE_CONFUSE_RAY
-- MOVE_FLAMETHROWER
 
 SPECIES_ARCANINE
-Level: 61
+Level: Badge+7
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_EXTREME_SPEED
-- MOVE_FLAME_WHEEL
-- MOVE_BITE
-- MOVE_ROAR
 
 === TRAINER_MANSION_SIMON_HNS ===
 Name: SIMON
@@ -21442,70 +21473,46 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_MAGCARGO
-Level: 60
+Level: Badge+7
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_FLAMETHROWER
-- MOVE_ROCK_SLIDE
-- MOVE_RECOVER
-- MOVE_BODY_SLAM
 
 SPECIES_NINETALES
-Level: 61
+Level: Badge+8
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_MYSTICAL_FIRE
-- MOVE_WILL_O_WISP
-- MOVE_CONFUSE_RAY
-- MOVE_SHADOW_CLAW
 
-=== TRAINER_MANSION_BRAYDON_HNS ===
-Name: BRAYDON
-Class: Scientist Hns
-Pic: Scientist Hns
-Gender: Male
-Music: Hg Boy 1
+=== TRAINER_MANSION_OPAL_HNS ===
+Name: OPAL
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Gender: Female
+Music: Hg Sage
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_WEEZING
-Level: 60
+SPECIES_BANETTE
+Level: Badge+6
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_SLUDGE_BOMB
-- MOVE_HAZE
-- MOVE_DESTINY_BOND
-- MOVE_EXPLOSION
 
-SPECIES_PORYGON2
-Level: 61
+SPECIES_GRUMPIG
+Level: Badge+8
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_TRI_ATTACK
-- MOVE_RECOVER
-- MOVE_CHARGE_BEAM
-- MOVE_SIGNAL_BEAM
 
-=== TRAINER_MANSION_LEWIS_HNS ===
-Name: LEWIS
-Class: Burglar Hns
-Pic: Burglar Hns
-Gender: Male
-Music: Hg Boy 1
+=== TRAINER_MANSION_LORETTA_HNS ===
+Name: LORETTA
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Gender: Female
+Music: Hg Sage
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_TORKOAL
-Level: 60
+SPECIES_DUSCLOPS
+Level: Badge+7
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_ERUPTION
-- MOVE_HEAT_WAVE
-- MOVE_IRON_DEFENSE
-- MOVE_SCORCHING_SANDS
 
-SPECIES_CAMERUPT
-Level: 61
+SPECIES_JYNX
+Level: Badge+9
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_ERUPTION
-- MOVE_EARTHQUAKE
-- MOVE_ROCK_SLIDE
-- MOVE_EARTH_POWER
 
 === TRAINER_MANSION_IVAN_HNS ===
 Name: IVAN
@@ -21517,20 +21524,12 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_ELECTABUZZ
-Level: 60
+Level: Badge+8
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_THUNDERBOLT
-- MOVE_THUNDER_PUNCH
-- MOVE_BRICK_BREAK
-- MOVE_SCREECH
 
 SPECIES_HOUNDOOM
-Level: 61
+Level: Badge+9
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_CRUNCH
-- MOVE_FLAMETHROWER
-- MOVE_FAINT_ATTACK
-- MOVE_BEAT_UP
 
 === TRAINER_ELITE_SIDNEY_HNS ===
 Name: SIDNEY

@@ -246,6 +246,9 @@ static const struct RegionMapLocation sRegionMapEntries_Johto[] = {
     [MAPSEC_CLIFF_CAVE]        = { 0,  9,  1, 1, COMPOUND_STRING("CLIFF CAVE") },
     [MAPSEC_MT_MORTAR]         = { 10, 3,  1, 1, COMPOUND_STRING("MT MORTAR") },
     [MAPSEC_LAKE_OF_RAGE]      = { 9,  1,  1, 1, COMPOUND_STRING("LAKE OF RAGE") },
+    // Shares the lake's cell, as in region_map_sections.json. It is the highest section
+    // value, so this row is also what keeps lookups for it inside the table.
+    [MAPSEC_FOXFIRE_HOLLOW]    = { 9,  1,  1, 1, COMPOUND_STRING("FOXFIRE HOLLOW") },
     [MAPSEC_ICE_PATH]          = { 11, 2,  2, 1, COMPOUND_STRING("ICE PATH") },
     [MAPSEC_MT_SILVER]         = { 14, 7,  1, 1, COMPOUND_STRING("MT. SILVER") },
     [MAPSEC_SNOWSWEPT_CAVERN]  = { 14, 6,  1, 1, COMPOUND_STRING("SNOWSWEPT CAVERN") },

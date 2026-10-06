@@ -27,7 +27,13 @@ PokemonLeague_KarensRoom_EventScript_KarenRematch::
 	msgbox PokemonLeague_KarensRoom_Text_RematchBefore, MSGBOX_DEFAULT
 	setflag FLAG_TEMP_3
 	setflag FLAG_TEMP_5
+	@ The MIMIKYU from the doll shrine in Eterna Forest takes Krolucard's place if she has it.
+	goto_if_eq VAR_DOLL_SHRINE_STATE, 1, PokemonLeague_KarensRoom_EventScript_KarenRematchMimikyu
 	trainerbattle_no_intro TRAINER_KAREN_2_HNS, PokemonLeague_KarensRoom_Text_Beaten
+	goto PokemonLeague_KarensRoom_EventScript_KarenOnDefeat
+
+PokemonLeague_KarensRoom_EventScript_KarenRematchMimikyu:
+	trainerbattle_no_intro TRAINER_KAREN_3_HNS, PokemonLeague_KarensRoom_Text_Beaten
 	goto PokemonLeague_KarensRoom_EventScript_KarenOnDefeat
 
 PokemonLeague_KarensRoom_EventScript_KarenOnDefeat::

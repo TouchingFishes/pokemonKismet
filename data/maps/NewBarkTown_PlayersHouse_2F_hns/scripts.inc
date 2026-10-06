@@ -66,7 +66,7 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @ TEMPORARY TEST NPC - REMOVE BEFORE RELEASE.
 @ Also delete his object_event from map.json (5,5) and every Test text below.
 @
-@ Three jobs, all of them shortcuts past a lot of play:
+@ Four jobs, all of them shortcuts past a lot of play:
 @   GREEN   - sets every prerequisite her encounter needs, hands over a party
 @             that can fight her (she is L75-80) and warps to OAK'S LAB.
 @   FUCHSIA - hands over the same party and drops the player in the ROUTE 15
@@ -76,17 +76,68 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @             LOADS - see the long note in that gate house's scripts.inc.
 @   SILVER 7 - fights SILVER's last encounter (INDIGO PLATEAU, L68-70) for any
 @             starter region and any of his three starters, right here.
+@   FOXFIRE - sets any stage of the NINETALES story and warps to where it plays.
+@   DOLL SHRINE - resets the MIMIKYU hide-and-seek and warps to the shrine in
+@             DAODAO's ETERNA FOREST (MIGRATION_DECISIONS.md 60).
+@
+@ Whichever is picked, TestBasics first sets the eight JOHTO badges, the RUNNING
+@ SHOES and the eight HMs.
 @ ===========================================================================
 NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	lock
 	faceplayer
 	message NewBarkTown_PlayersHouse_2F_Text_TestAsk
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptSilver7, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
-	goto_if_eq VAR_RESULT, 0, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestGreen
-	goto_if_eq VAR_RESULT, 1, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestFuchsia
-	goto_if_eq VAR_RESULT, 2, NewBarkTown_PlayersHouse_2F_EventScript_Silver7Test
-	goto NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptSilver7, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
+	goto_if_ge VAR_RESULT, 5, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	copyvar VAR_0x8006, VAR_RESULT
+	call NewBarkTown_PlayersHouse_2F_EventScript_TestBasics
+	goto_if_eq VAR_0x8006, 0, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestGreen
+	goto_if_eq VAR_0x8006, 1, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestFuchsia
+	goto_if_eq VAR_0x8006, 2, NewBarkTown_PlayersHouse_2F_EventScript_Silver7Test
+	goto_if_eq VAR_0x8006, 4, NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest
+	goto NewBarkTown_PlayersHouse_2F_EventScript_FoxfireTest
+
+NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest::
+	setvar VAR_DOLL_SHRINE_STATE, 0
+	special HealPlayerParty
+	msgbox NewBarkTown_PlayersHouse_2F_Text_FoxfireGo, MSGBOX_DEFAULT
+	closemessage
+	warp MAP_DAO_DAO_ISLES_ETERNA_FOREST_HNS, 21, 16
+	waitstate
+	end
+
+@ The HMs go in silently and only once - a second visit would otherwise stack
+@ copies in the TM case. VAR_NUM_BADGES is only ever raised, never lowered, so
+@ GREEN's 16 survives a later visit.
+NewBarkTown_PlayersHouse_2F_EventScript_TestBasics::
+	setflag FLAG_BADGE01_GET
+	setflag FLAG_BADGE02_GET
+	setflag FLAG_BADGE03_GET
+	setflag FLAG_BADGE04_GET
+	setflag FLAG_BADGE05_GET
+	setflag FLAG_BADGE06_GET
+	setflag FLAG_BADGE07_GET
+	setflag FLAG_BADGE08_GET
+	call_if_lt VAR_NUM_BADGES, 8, NewBarkTown_PlayersHouse_2F_EventScript_TestEightBadges
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_B_DASH
+	checkitem ITEM_HM_CUT
+	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_PlayersHouse_2F_EventScript_TestBasicsDone
+	additem ITEM_HM_CUT
+	additem ITEM_HM_FLY
+	additem ITEM_HM_SURF
+	additem ITEM_HM_STRENGTH
+	additem ITEM_HM_FLASH
+	additem ITEM_HM_ROCK_SMASH
+	additem ITEM_HM_WATERFALL
+	additem ITEM_HM_WHIRLPOOL
+NewBarkTown_PlayersHouse_2F_EventScript_TestBasicsDone:
+	return
+
+NewBarkTown_PlayersHouse_2F_EventScript_TestEightBadges::
+	setvar VAR_NUM_BADGES, 8
+	return
 
 NewBarkTown_PlayersHouse_2F_EventScript_GreenTestGreen::
 	@ GREEN spawns on FLAG_IS_KANTO_CHAMPION and despawns for good on
@@ -202,8 +253,88 @@ NewBarkTown_PlayersHouse_2F_EventScript_Silver7Done::
 	release
 	end
 
+@ FOXFIRE HOLLOW. Every stage is VAR_FOXFIRE_HOLLOW_STATE and nothing else - the
+@ fog, the woman, the lodge's ruined layout and both NINETALES are worked out from
+@ it each time a map loads - so any stage can be set, and set again, from here.
+@ The LAKE start relies on TestBasics' badges, which open the path north of the
+@ hermit's house. It lands on the nook itself, so the tide does not matter.
+NewBarkTown_PlayersHouse_2F_EventScript_FoxfireTest::
+	message NewBarkTown_PlayersHouse_2F_Text_FoxfireStage
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_FoxfireLake, NewBarkTown_PlayersHouse_2F_Text_FoxfireFresh, NewBarkTown_PlayersHouse_2F_Text_FoxfireGreeted, NewBarkTown_PlayersHouse_2F_Text_FoxfireDesk, NewBarkTown_PlayersHouse_2F_Text_FoxfireRuins, NewBarkTown_PlayersHouse_2F_Text_FoxfireOver, NewBarkTown_PlayersHouse_2F_Text_FoxfireShadow
+	goto_if_ge VAR_RESULT, 7, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	copyvar VAR_0x8005, VAR_RESULT
+	msgbox NewBarkTown_PlayersHouse_2F_Text_FoxfireKit, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_FoxfireKit
+	special HealPlayerParty
+	msgbox NewBarkTown_PlayersHouse_2F_Text_FoxfireGo, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_0x8005
+	case 0, NewBarkTown_PlayersHouse_2F_EventScript_FoxfireLake
+	case 1, NewBarkTown_PlayersHouse_2F_EventScript_FoxfireFresh
+	case 2, NewBarkTown_PlayersHouse_2F_EventScript_FoxfireGreeted
+	case 3, NewBarkTown_PlayersHouse_2F_EventScript_FoxfireDesk
+	case 4, NewBarkTown_PlayersHouse_2F_EventScript_FoxfireRuins
+	case 5, NewBarkTown_PlayersHouse_2F_EventScript_FoxfireOver
+	goto NewBarkTown_PlayersHouse_2F_EventScript_FoxfireShadow
+
+NewBarkTown_PlayersHouse_2F_EventScript_FoxfireKit::
+	call NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty
+	giveitem ITEM_MASTER_BALL, 5
+	return
+
+NewBarkTown_PlayersHouse_2F_EventScript_FoxfireLake::
+	setvar VAR_FOXFIRE_HOLLOW_STATE, 0
+	warp MAP_LAKE_OF_RAGE_HNS, 20, 3
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_FoxfireFresh::
+	setvar VAR_FOXFIRE_HOLLOW_STATE, 0
+	warp MAP_FOXFIRE_HOLLOW_HNS, 14, 30
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_FoxfireGreeted::
+	setvar VAR_FOXFIRE_HOLLOW_STATE, 2
+	warp MAP_FOXFIRE_HOLLOW_MANSION_1F_HNS, 0
+	waitstate
+	end
+
+@ Greeted, and standing at the east dining table facing the diary: read it to start the truth
+@ scene.
+NewBarkTown_PlayersHouse_2F_EventScript_FoxfireDesk::
+	setvar VAR_FOXFIRE_HOLLOW_STATE, 2
+	warp MAP_FOXFIRE_HOLLOW_MANSION_1F_HNS, 33, 9
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_FoxfireRuins::
+	setvar VAR_FOXFIRE_HOLLOW_STATE, 5
+	warp MAP_FOXFIRE_HOLLOW_MANSION_B1F_HNS, 22, 30
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_FoxfireOver::
+	setvar VAR_FOXFIRE_HOLLOW_STATE, 6
+	warp MAP_FOXFIRE_HOLLOW_HNS, 14, 30
+	waitstate
+	end
+
+@ The post-game MARSHADOW in the study chair. This sets FLAG_SYS_GAME_CLEAR, which opens
+@ every other post-game door on this save too.
+NewBarkTown_PlayersHouse_2F_EventScript_FoxfireShadow::
+	setvar VAR_FOXFIRE_HOLLOW_STATE, 6
+	setflag FLAG_SYS_GAME_CLEAR
+	clearflag FLAG_CAUGHT_FOXFIRE_MANSION_MARSHADOW
+	warp MAP_FOXFIRE_HOLLOW_MANSION_B1F_HNS, 18, 28
+	waitstate
+	end
+
 NewBarkTown_PlayersHouse_2F_Text_TestAsk:
 	.string "TEST: What do you want to try?\p"
+	.string "Each one sets the eight JOHTO\n"
+	.string "badges, RUNNING SHOES and HMs.\p"
 	.string "GREEN and FUCHSIA hand you a\n"
 	.string "level 95 party first.$"
 
@@ -215,6 +346,44 @@ NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia:
 
 NewBarkTown_PlayersHouse_2F_Text_TestOptSilver7:
 	.string "SILVER battle 7$"
+
+NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire:
+	.string "FOXFIRE HOLLOW$"
+
+NewBarkTown_PlayersHouse_2F_Text_TestOptShrine:
+	.string "DOLL SHRINE$"
+
+NewBarkTown_PlayersHouse_2F_Text_FoxfireStage:
+	.string "TEST: Which FOXFIRE HOLLOW stage?$"
+
+NewBarkTown_PlayersHouse_2F_Text_FoxfireLake:
+	.string "LAKE: path north$"
+
+NewBarkTown_PlayersHouse_2F_Text_FoxfireFresh:
+	.string "HOLLOW: fresh start$"
+
+NewBarkTown_PlayersHouse_2F_Text_FoxfireGreeted:
+	.string "MANSION: just greeted$"
+
+NewBarkTown_PlayersHouse_2F_Text_FoxfireDesk:
+	.string "MANSION: at the diary$"
+
+NewBarkTown_PlayersHouse_2F_Text_FoxfireRuins:
+	.string "B1F: NINETALES waits$"
+
+NewBarkTown_PlayersHouse_2F_Text_FoxfireOver:
+	.string "OVER: fog lifted$"
+
+NewBarkTown_PlayersHouse_2F_Text_FoxfireShadow:
+	.string "B1F: MARSHADOW (post-game)$"
+
+NewBarkTown_PlayersHouse_2F_Text_FoxfireKit:
+	.string "TEST: Take the level 95 party and\n"
+	.string "five MASTER BALLs too?$"
+
+NewBarkTown_PlayersHouse_2F_Text_FoxfireGo:
+	.string "TEST: Your party is healed.\n"
+	.string "Off you go!$"
 
 NewBarkTown_PlayersHouse_2F_Text_Silver7Region:
 	.string "TEST: Which starter region?\p"

@@ -588,6 +588,8 @@ const u16 gMetatileAttributes_Lighthouse_Hns[] = INCBIN_U16("data/tilesets/secon
 
 const u16 gMetatiles_MahoganyTown_Hns[] = INCBIN_U16("data/tilesets/secondary/mahogany_town_hns/metatiles.bin");
 const u16 gMetatileAttributes_MahoganyTown_Hns[] = INCBIN_U16("data/tilesets/secondary/mahogany_town_hns/metatile_attributes.bin");
+const u16 gMetatiles_FoxfireHollow_Hns[] = INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/metatiles.bin");
+const u16 gMetatileAttributes_FoxfireHollow_Hns[] = INCBIN_U16("data/tilesets/secondary/foxfire_hollow_hns/metatile_attributes.bin");
 
 const u16 gMetatiles_MtSilverSnow_Hns[] = INCBIN_U16("data/tilesets/secondary/mt_silver_snow_hns/metatiles.bin");
 const u16 gMetatileAttributes_MtSilverSnow_Hns[] = INCBIN_U16("data/tilesets/secondary/mt_silver_snow_hns/metatile_attributes.bin");
