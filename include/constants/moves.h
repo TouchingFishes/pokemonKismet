@@ -424,7 +424,7 @@ enum __attribute__((packed)) Move
     MOVE_SUCKER_PUNCH = 389, //do not use
     MOVE_TOXIC_SPIKES = 390,
     MOVE_HEART_SWAP = 391,  //do not use unless Manaphy / Phione is in
-    MOVE_AQUA_RING = 392, //until here
+    MOVE_AQUA_RING = 392,
     MOVE_MAGNET_RISE = 393,
     MOVE_FLARE_BLITZ = 394,
     MOVE_FORCE_PALM = 395,
@@ -433,7 +433,7 @@ enum __attribute__((packed)) Move
     MOVE_POISON_JAB = 398,
     MOVE_DARK_PULSE = 399,
     MOVE_NIGHT_SLASH = 400,
-    MOVE_AQUA_TAIL = 401,
+    MOVE_AQUA_TAIL = 401, //until here
     MOVE_SEED_BOMB = 402,
     MOVE_AIR_SLASH = 403,
     MOVE_X_SCISSOR = 404,
@@ -811,7 +811,7 @@ enum __attribute__((packed)) Move
     MOVE_STONE_AXE = 758, //should be in
     MOVE_SPRINGTIDE_STORM = 759, //should be in
     MOVE_MYSTICAL_POWER = 760, //should be in
-    MOVE_RAGING_FURY = 761,
+    MOVE_RAGING_FURY = 761, //should be in
     MOVE_WAVE_CRASH = 762, //should be in
     MOVE_CHLOROBLAST = 763,
     MOVE_MOUNTAIN_GALE = 764, //should be in

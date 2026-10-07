@@ -10544,7 +10544,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A charge that may burn the\n"
             "foe. Also hurts the user."),
         .effect = EFFECT_RECOIL,
-        .power = 120,
+        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 100 : 120,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 15,
