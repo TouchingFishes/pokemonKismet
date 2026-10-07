@@ -81,7 +81,7 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @             DAODAO's ETERNA FOREST (MIGRATION_DECISIONS.md 60).
 @
 @ Whichever is picked, TestBasics first sets the eight JOHTO badges, the RUNNING
-@ SHOES and the eight HMs.
+@ SHOES and the eight HMs, and hands over a TOWN MAP.
 @ ===========================================================================
 NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	lock
@@ -107,9 +107,10 @@ NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest::
 	waitstate
 	end
 
-@ The HMs go in silently and only once - a second visit would otherwise stack
-@ copies in the TM case. VAR_NUM_BADGES is only ever raised, never lowered, so
-@ GREEN's 16 survives a later visit.
+@ The TOWN MAP and the HMs go in silently and only once - a second visit would
+@ otherwise stack copies. The map gets its own check so that saves which already
+@ have the HMs still receive it. VAR_NUM_BADGES is only ever raised, never
+@ lowered, so GREEN's 16 survives a later visit.
 NewBarkTown_PlayersHouse_2F_EventScript_TestBasics::
 	setflag FLAG_BADGE01_GET
 	setflag FLAG_BADGE02_GET
@@ -122,6 +123,10 @@ NewBarkTown_PlayersHouse_2F_EventScript_TestBasics::
 	call_if_lt VAR_NUM_BADGES, 8, NewBarkTown_PlayersHouse_2F_EventScript_TestEightBadges
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_SYS_B_DASH
+	checkitem ITEM_TOWN_MAP
+	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_PlayersHouse_2F_EventScript_TestBasicsHMs
+	additem ITEM_TOWN_MAP
+NewBarkTown_PlayersHouse_2F_EventScript_TestBasicsHMs:
 	checkitem ITEM_HM_CUT
 	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_PlayersHouse_2F_EventScript_TestBasicsDone
 	additem ITEM_HM_CUT
@@ -170,13 +175,16 @@ NewBarkTown_PlayersHouse_2F_EventScript_GreenTestFuchsia::
 	waitstate
 	end
 
+@ AERODACTYL goes first so it lands in the party rather than the PC when the
+@ player already carries a POKeMON, and it knows FLY: test the TOWN MAP and the
+@ fly map from anywhere outdoors. Its other three moves are its level-up ones.
 NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty::
+	givemon SPECIES_AERODACTYL, 95, move1=MOVE_FLY
 	givemon SPECIES_TYPHLOSION, 95
 	givemon SPECIES_LUCARIO, 95
 	givemon SPECIES_MILOTIC, 95
 	givemon SPECIES_ALAKAZAM, 95
 	givemon SPECIES_HYDREIGON, 95
-	givemon SPECIES_AERODACTYL, 95
 	special HealPlayerParty
 	return
 
@@ -334,7 +342,8 @@ NewBarkTown_PlayersHouse_2F_EventScript_FoxfireShadow::
 NewBarkTown_PlayersHouse_2F_Text_TestAsk:
 	.string "TEST: What do you want to try?\p"
 	.string "Each one sets the eight JOHTO\n"
-	.string "badges, RUNNING SHOES and HMs.\p"
+	.string "badges, RUNNING SHOES and HMs,\l"
+	.string "and gives you a TOWN MAP.\p"
 	.string "GREEN and FUCHSIA hand you a\n"
 	.string "level 95 party first.$"
 
