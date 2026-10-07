@@ -1787,6 +1787,7 @@ static const u16 sQwilfishEggMoveLearnset_Kismet[] = {
     MOVE_SIGNAL_BEAM,
     MOVE_WATER_PULSE,
     MOVE_BRINE,
+    MOVE_AQUA_TAIL,
     MOVE_ACID_SPRAY,
     MOVE_UNAVAILABLE,
 };

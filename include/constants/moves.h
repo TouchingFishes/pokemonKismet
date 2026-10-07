@@ -433,7 +433,7 @@ enum __attribute__((packed)) Move
     MOVE_POISON_JAB = 398,
     MOVE_DARK_PULSE = 399,
     MOVE_NIGHT_SLASH = 400,
-    MOVE_AQUA_TAIL = 401, //until here
+    MOVE_AQUA_TAIL = 401,
     MOVE_SEED_BOMB = 402,
     MOVE_AIR_SLASH = 403,
     MOVE_X_SCISSOR = 404,
@@ -449,7 +449,7 @@ enum __attribute__((packed)) Move
     MOVE_EARTH_POWER = 414,
     MOVE_SWITCHEROO = 415, //do not use
     MOVE_GIGA_IMPACT = 416,
-    MOVE_NASTY_PLOT = 417,
+    MOVE_NASTY_PLOT = 417, //until here
     MOVE_BULLET_PUNCH = 418, //do not use
     MOVE_AVALANCHE = 419,
     MOVE_ICE_SHARD = 420, //do not use
