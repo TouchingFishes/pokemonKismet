@@ -3,7 +3,7 @@
   "name": "Route32South_House_hns",
   "layout": "LAYOUT_ROUTE32SOUTH_HOUSE_HNS",
   "music": "MUS_HG_ROUTE26",
-  "region_map_section": "MAPSEC_MT_SILVER",
+  "region_map_section": "MAPSEC_STARSHOAL_COAST",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

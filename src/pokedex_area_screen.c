@@ -353,7 +353,7 @@ static void FindMapsWithMon(u16 species)
 
 #if IS_HNS
         if (currentRegionMapType == REGION_MAP_JOHTO
-            && headerSectionId >= KANTO_MAPSEC_START && headerSectionId <= KANTO_MAPSEC_END)
+            && GetRegionForSectionId(headerSectionId) == REGION_KANTO)
             continue;
 #else
         if (GetRegionMapType(headerSectionId) != currentRegionMapType)

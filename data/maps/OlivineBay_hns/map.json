@@ -3,7 +3,7 @@
   "name": "OlivineBay_hns",
   "layout": "LAYOUT_OLIVINE_BAY_HNS",
   "music": "MUS_HG_VIOLET",
-  "region_map_section": "MAPSEC_ROUTE_35",
+  "region_map_section": "MAPSEC_OLIVINE_BAY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

@@ -3,7 +3,7 @@
   "name": "StormyBeach_hns",
   "layout": "LAYOUT_STORMY_BEACH_HNS",
   "music": "MUS_HG_ROUTE34",
-  "region_map_section": "MAPSEC_ROUTE_34",
+  "region_map_section": "MAPSEC_STORMY_BEACH",
   "requires_flash": false,
   "weather": "WEATHER_RAIN",
   "map_type": "MAP_TYPE_ROUTE",

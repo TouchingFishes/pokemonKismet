@@ -3,7 +3,7 @@
   "name": "CeruleanCape_hns",
   "layout": "LAYOUT_CERULEAN_CAPE_HNS",
   "music": "MUS_HG_ROUTE24",
-  "region_map_section": "MAPSEC_ROUTE_25",
+  "region_map_section": "MAPSEC_CERULEAN_CAPE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

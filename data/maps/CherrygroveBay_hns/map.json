@@ -3,7 +3,7 @@
   "name": "CherrygroveBay_hns",
   "layout": "LAYOUT_CHERRYGROVE_BAY_HNS",
   "music": "MUS_HG_ROUTE30",
-  "region_map_section": "MAPSEC_CHERRYGROVE_CITY",
+  "region_map_section": "MAPSEC_CHERRYGROVE_BAY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

@@ -3,7 +3,7 @@
   "name": "StarshoalCave_hns",
   "layout": "LAYOUT_STARSHOAL_CAVE_HNS",
   "music": "MUS_CAVE_OF_ORIGIN",
-  "region_map_section": "MAPSEC_ROUTE_32",
+  "region_map_section": "MAPSEC_STARSHOAL_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

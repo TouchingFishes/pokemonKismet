@@ -152,9 +152,12 @@ static const u8 sRegionMapPlayerIcon_KrisGfx[] = INCBIN_U8("graphics/pokenav/reg
 #include "data/region_map/region_map_entries.h"
 
 #if IS_HNS
-// Johto-only map coordinates (before FLAG_VISITED_KANTO is set).
-// The auto-generated gRegionMapEntries has JK combined coordinates.
-static const struct RegionMapLocation sRegionMapEntries_Johto[] = {
+// Johto + Kanto map coordinates, used once FLAG_VISITED_KANTO is set. The auto-generated
+// gRegionMapEntries (region_map_sections.json) has the Johto-only map's coordinates.
+// From then on this table is also the only source of a section's NAME, so every section an
+// HnS map uses needs a row here: a missing one has a NULL name and a width of 0, and the
+// highest section value needs one to keep lookups inside the table.
+static const struct RegionMapLocation sRegionMapEntries_JK[] = {
     [MAPSEC_VIOLET_CITY]       = { 7,  5,  1, 1, COMPOUND_STRING("VIOLET CITY") },
     [MAPSEC_AZALEA_TOWN]       = { 6,  12, 1, 1, COMPOUND_STRING("AZALEA TOWN") },
     [MAPSEC_GOLDENROD_CITY]    = { 5,  7,  1, 2, COMPOUND_STRING("GOLDENROD CITY") },
@@ -222,8 +225,10 @@ static const struct RegionMapLocation sRegionMapEntries_Johto[] = {
     [MAPSEC_ROUTE_14]          = { 26, 11, 1, 1, COMPOUND_STRING("ROUTE 14") },
     [MAPSEC_ROUTE_15]          = { 25, 11, 1, 1, COMPOUND_STRING("ROUTE 15") },
     [MAPSEC_ROUTE_16]          = { 21, 5,  1, 1, COMPOUND_STRING("ROUTE 16") },
-    [MAPSEC_ROUTE_17]          = { 21, 6,  1, 6, COMPOUND_STRING("ROUTE 17") },
-    [MAPSEC_ROUTE_18]          = { 22, 11, 2, 1, COMPOUND_STRING("ROUTE 18") },
+    [MAPSEC_ROUTE_17]          = { 21, 6,  1, 5, COMPOUND_STRING("ROUTE 17") },
+    // Route 18 now starts at Route 21: the corner where Cycling Road comes down is Route 18,
+    // and so is the cell below it, beside Tanglebrush's island.
+    [MAPSEC_ROUTE_18]          = { 21, 11, 3, 1, COMPOUND_STRING("ROUTE 18") },
     [MAPSEC_ROUTE_19]          = { 22, 12, 3, 2, COMPOUND_STRING("ROUTE 19") },
     [MAPSEC_ROUTE_20]          = { 20, 13, 2, 1, COMPOUND_STRING("ROUTE 20") },
     [MAPSEC_ROUTE_21]          = { 19, 12, 1, 1, COMPOUND_STRING("ROUTE 21") },
@@ -231,6 +236,7 @@ static const struct RegionMapLocation sRegionMapEntries_Johto[] = {
     [MAPSEC_ROUTE_24]          = { 24, 0,  1, 2, COMPOUND_STRING("ROUTE 24") },
     [MAPSEC_ROUTE_25]          = { 25, 0,  1, 1, COMPOUND_STRING("ROUTE 25") },
     [MAPSEC_VIRIDIAN_FOREST]   = { 19, 4,  1, 2, COMPOUND_STRING("VIRIDIAN FOREST") },
+    [MAPSEC_TANGLEBRUSH]       = { 20, 12, 1, 1, COMPOUND_STRING("TANGLEBRUSH") },
     [MAPSEC_MT_MOON]           = { 22, 2,  1, 1, COMPOUND_STRING("MT. MOON") },
     [MAPSEC_DIGLETTS_CAVE]     = { 20, 3,  6, 4, COMPOUND_STRING("DIGLETT'S CAVE") },
     [MAPSEC_ROCKET_HIDEOUT_HNS] = { 9,  3,  1, 1, COMPOUND_STRING("ROCKET HIDEOUT") },
@@ -246,9 +252,17 @@ static const struct RegionMapLocation sRegionMapEntries_Johto[] = {
     [MAPSEC_CLIFF_CAVE]        = { 0,  9,  1, 1, COMPOUND_STRING("CLIFF CAVE") },
     [MAPSEC_MT_MORTAR]         = { 10, 3,  1, 1, COMPOUND_STRING("MT MORTAR") },
     [MAPSEC_LAKE_OF_RAGE]      = { 9,  1,  1, 1, COMPOUND_STRING("LAKE OF RAGE") },
-    // Shares the lake's cell, as in region_map_sections.json. It is the highest section
-    // value, so this row is also what keeps lookups for it inside the table.
+    // Shares the lake's cell, as in region_map_sections.json.
     [MAPSEC_FOXFIRE_HOLLOW]    = { 9,  1,  1, 1, COMPOUND_STRING("FOXFIRE HOLLOW") },
+    [MAPSEC_CHERRYGROVE_BAY]   = { 8,  11, 1, 1, COMPOUND_STRING("CHERRYGROVE BAY") },
+    [MAPSEC_STARSHOAL_COAST]   = { 8,  12, 1, 1, COMPOUND_STRING("STARSHOAL COAST") },
+    // Shares Starshoal Coast's cell: the JK map has room for only one.
+    [MAPSEC_STARSHOAL_CAVE]    = { 8,  12, 1, 1, COMPOUND_STRING("STARSHOAL CAVE") },
+    // From Olivine's east side (the lighthouse's old cell) down to Goldenrod.
+    [MAPSEC_OLIVINE_BAY]       = { 4,  6,  1, 3, COMPOUND_STRING("OLIVINE BAY") },
+    [MAPSEC_STORMY_BEACH]      = { 4,  10, 1, 1, COMPOUND_STRING("STORMY BEACH") },
+    // The highest section value: this row is also what keeps lookups for it inside the table.
+    [MAPSEC_CERULEAN_CAPE]     = { 26, 0,  1, 1, COMPOUND_STRING("CERULEAN CAPE") },
     [MAPSEC_ICE_PATH]          = { 11, 2,  2, 1, COMPOUND_STRING("ICE PATH") },
     [MAPSEC_MT_SILVER]         = { 14, 7,  1, 1, COMPOUND_STRING("MT. SILVER") },
     [MAPSEC_SNOWSWEPT_CAVERN]  = { 14, 6,  1, 1, COMPOUND_STRING("SNOWSWEPT CAVERN") },
@@ -285,7 +299,7 @@ const struct RegionMapLocation *GetActiveRegionMapEntries(void)
 #if IS_HNS
     const struct RegionMapLocation *entries;
     if (FlagGet(FLAG_VISITED_KANTO))
-        entries = sRegionMapEntries_Johto;
+        entries = sRegionMapEntries_JK;
     else
         entries = gRegionMapEntries;
     return entries;
