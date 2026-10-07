@@ -1,6 +1,10 @@
 #include "global.h"
 #include "regions.h"
 
+#if IS_HNS
+STATIC_ASSERT(KANTO_MAPSEC_END < JOHTO_MAPSEC_START, KantoSectionsMustEndBeforeJohtoBegins);
+STATIC_ASSERT(JOHTO_MAPSEC_END == MAPSEC_NONE - 1, JohtoSectionsMustBeTheLastBlock);
+#endif
 
 static const u16 sKantoSubregionMapsecs[KANTO_SUBREGION_COUNT][30] = {
     [KANTO_SUBREGION_KANTO] =

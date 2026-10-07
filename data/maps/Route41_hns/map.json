@@ -27,6 +27,11 @@
       "map": "MAP_OLIVINE_BAY_HNS",
       "offset": -31,
       "direction": "right"
+    },
+    {
+      "map": "MAP_GOLDENROD_HARBOR_HNS",
+      "offset": 49,
+      "direction": "right"
     }
   ],
   "object_events": [

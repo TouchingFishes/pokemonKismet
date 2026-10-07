@@ -19,14 +19,14 @@
       "direction": "left"
     },
     {
-      "map": "MAP_GOLDENROD_CITY_HNS",
-      "offset": 32,
-      "direction": "down"
-    },
-    {
       "map": "MAP_ROUTE41_HNS",
       "offset": 31,
       "direction": "left"
+    },
+    {
+      "map": "MAP_GOLDENROD_HARBOR_HNS",
+      "offset": 2,
+      "direction": "down"
     }
   ],
   "object_events": [

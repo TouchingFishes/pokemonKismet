@@ -148,17 +148,19 @@ static const u8 sNuzlockeLUT[] =
     [MAPSEC_ROUTE_50] = 0x6D,
     [MAPSEC_NEW_SINJOH] = 0x6E,
     [MAPSEC_SINJOH_RUINS] = 0x6F,
-    // Johto, added later. Sections are appended after these, so the highest section value
-    // must always have a row here, or the table would be read past its end.
+    // Sections added later. Their bits run in the order they were added, which is not the
+    // order of their values: CERULEAN CAPE's value sits in the Kanto block.
     [MAPSEC_FOXFIRE_HOLLOW] = 0x70,
     [MAPSEC_CHERRYGROVE_BAY]  = 0x71,
     [MAPSEC_STARSHOAL_COAST]  = 0x72,
     [MAPSEC_STARSHOAL_CAVE]   = 0x73,
     [MAPSEC_OLIVINE_BAY]      = 0x74,
     [MAPSEC_STORMY_BEACH]     = 0x75,
-    // Kanto, added later. Currently the highest section value.
     [MAPSEC_CERULEAN_CAPE]    = 0x76,
-    // Max bit index: 0x76 (119 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
+    // Currently the highest section value. The table is sized by its highest row, so the
+    // highest section must always have one, or lookups for it read past the end.
+    [MAPSEC_GOLDENROD_HARBOR] = 0x77,
+    // Max bit index: 0x77 (120 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
     // If you exceed 0x7F, grow nuzlockeEncounterFlags in include/global.h.
 
 #else

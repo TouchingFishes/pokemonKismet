@@ -3809,20 +3809,16 @@ Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_CARVANHA
-Level: 23
+SPECIES_TENTACOOL
+Level: Badge+2
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SHELLDER
+Level: Badge
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_TENTACOOL
-Level: 25
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-
-SPECIES_CARVANHA
-Level: 23
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-
-SPECIES_TENTACOOL
-Level: 25
+Level: Badge+2
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_DARYL_HNS ===
@@ -4182,11 +4178,11 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_CORSOLA
-Level: 28
+Level: Badge+2
 IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_CORSOLA
-Level: 28
+Level: Badge+2
 IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_MARY_HNS ===

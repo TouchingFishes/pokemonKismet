@@ -252,17 +252,14 @@ static const struct RegionMapLocation sRegionMapEntries_JK[] = {
     [MAPSEC_CLIFF_CAVE]        = { 0,  9,  1, 1, COMPOUND_STRING("CLIFF CAVE") },
     [MAPSEC_MT_MORTAR]         = { 10, 3,  1, 1, COMPOUND_STRING("MT MORTAR") },
     [MAPSEC_LAKE_OF_RAGE]      = { 9,  1,  1, 1, COMPOUND_STRING("LAKE OF RAGE") },
-    // Shares the lake's cell, as in region_map_sections.json.
     [MAPSEC_FOXFIRE_HOLLOW]    = { 9,  1,  1, 1, COMPOUND_STRING("FOXFIRE HOLLOW") },
     [MAPSEC_CHERRYGROVE_BAY]   = { 8,  11, 1, 1, COMPOUND_STRING("CHERRYGROVE BAY") },
     [MAPSEC_STARSHOAL_COAST]   = { 8,  12, 1, 1, COMPOUND_STRING("STARSHOAL COAST") },
-    // Shares Starshoal Coast's cell: the JK map has room for only one.
     [MAPSEC_STARSHOAL_CAVE]    = { 8,  12, 1, 1, COMPOUND_STRING("STARSHOAL CAVE") },
-    // From Olivine's east side (the lighthouse's old cell) down to Goldenrod.
-    [MAPSEC_OLIVINE_BAY]       = { 4,  6,  1, 3, COMPOUND_STRING("OLIVINE BAY") },
+    [MAPSEC_OLIVINE_BAY]       = { 4,  6,  1, 2, COMPOUND_STRING("OLIVINE BAY") },
     [MAPSEC_STORMY_BEACH]      = { 4,  10, 1, 1, COMPOUND_STRING("STORMY BEACH") },
-    // The highest section value: this row is also what keeps lookups for it inside the table.
     [MAPSEC_CERULEAN_CAPE]     = { 26, 0,  1, 1, COMPOUND_STRING("CERULEAN CAPE") },
+    [MAPSEC_GOLDENROD_HARBOR]  = { 4,  8,  1, 2, COMPOUND_STRING("GOLDENROD HARBOR") },
     [MAPSEC_ICE_PATH]          = { 11, 2,  2, 1, COMPOUND_STRING("ICE PATH") },
     [MAPSEC_MT_SILVER]         = { 14, 7,  1, 1, COMPOUND_STRING("MT. SILVER") },
     [MAPSEC_SNOWSWEPT_CAVERN]  = { 14, 6,  1, 1, COMPOUND_STRING("SNOWSWEPT CAVERN") },

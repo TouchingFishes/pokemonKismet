@@ -983,9 +983,8 @@ static void GenerateStationContent(struct Pokenav_Radio *radio, u8 station)
         u32 numPlaces, firstPick, secondPick, i;
         u8 mapNameBuf[24];
 
-        // GetCurrentRegion() rather than IsPlayerInJohto(): the Hisui map
-        // sections sit *inside* the Johto range, so the simple bounds test
-        // reports Sinjoh as Johto. GetRegionForSectionId() tests Hisui first.
+        // GetCurrentRegion() rather than IsPlayerInJohto(): that one counts
+        // Sinjoh as Johto, while the forecast has places of its own there.
         switch (GetCurrentRegion())
         {
         case REGION_KANTO:
@@ -1132,10 +1131,12 @@ bool8 IsHoennSoundPlaying(void)
     return FALSE;
 }
 
+// Sinjoh counts as Johto here: its sections lie inside the Johto range, where the radio has
+// always treated them as Johto.
 static bool8 IsPlayerInJohto(void)
 {
-    u16 mapsec = gMapHeader.regionMapSectionId;
-    return (mapsec >= JOHTO_MAPSEC_START && mapsec <= JOHTO_MAPSEC_END);
+    enum Region region = GetCurrentRegion();
+    return region == REGION_JOHTO || region == REGION_HISUI;
 }
 
 static bool8 IsStationAvailable(u8 station)

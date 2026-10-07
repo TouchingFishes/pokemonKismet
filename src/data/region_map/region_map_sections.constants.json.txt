@@ -7,8 +7,13 @@
 #if IS_HNS
 
 enum {
+## for map_section in hns_map_sections
+{% set unused = setVar(map_section.id, "hns") %}
+## endfor
 ## for map_section in map_sections
-{% if existsIn(map_section, "in_hns") %}{% else %}
+{# Porymap reads only map_sections, so saving a map whose section lives in hns_map_sections #}
+{# appends a bare {"id": ...} entry here; aliasing it to 0 would redeclare the real one. #}
+{% if existsIn(map_section, "in_hns") %}{% else if getVar(map_section.id) == "hns" %}{% else %}
     {{ map_section.id }} = 0,
 {% endif %}
 ## endfor
@@ -24,21 +29,18 @@ enum {
     MAPSEC_COUNT,
 };
 
+// Each region's sections form one block, and a section added later goes at the end of its
+// region's block, which then moves that range's END: Kanto's newest is CERULEAN CAPE, and
+// Johto's are FOXFIRE HOLLOW .. GOLDENROD HARBOR, after WHIRL ISLANDS. That shifts every
+// later section's value, which renames met locations on saves made before the change.
+// Test regions through GetRegionForSectionId(), never through these ranges.
 #define KANTO_MAPSEC_START  MAPSEC_PALLET_TOWN
-#define KANTO_MAPSEC_END    MAPSEC_POWER_PLANT
+#define KANTO_MAPSEC_END    MAPSEC_CERULEAN_CAPE
 #define KANTO_MAPSEC_COUNT  (KANTO_MAPSEC_END - KANTO_MAPSEC_START + 1)
 
-// Sections added later are appended after WHIRL ISLANDS rather than filed beside their
-// neighbours, so no existing section's value shifts and met locations on old saves keep
-// their names: first the Johto ones (FOXFIRE HOLLOW .. STORMY BEACH), which extend the Johto
-// range, then the Kanto ones, which form a second Kanto range. Test Kanto through
-// GetRegionForSectionId(), which knows both.
 #define JOHTO_MAPSEC_START  MAPSEC_NEW_BARK_TOWN
-#define JOHTO_MAPSEC_END    MAPSEC_STORMY_BEACH
+#define JOHTO_MAPSEC_END    MAPSEC_GOLDENROD_HARBOR
 #define JOHTO_MAPSEC_COUNT  (JOHTO_MAPSEC_END - JOHTO_MAPSEC_START + 1)
-
-#define KANTO_LATER_MAPSEC_START  MAPSEC_CERULEAN_CAPE
-#define KANTO_LATER_MAPSEC_END    MAPSEC_CERULEAN_CAPE
 
 #define ALOLA_MAPSEC_START  MAPSEC_MELEMELE_ISLAND
 #define ALOLA_MAPSEC_END    MAPSEC_ULAULA_CAVE_2

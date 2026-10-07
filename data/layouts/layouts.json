@@ -17159,6 +17159,18 @@
       "border_width": 2,
       "game_version": "hns",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_GOLDENROD_HARBOR_HNS",
+      "name": "GoldenrodHarbor_hns_Layout",
+      "width": 46,
+      "height": 50,
+      "primary_tileset": "gTileset_Johto_General_Hns",
+      "secondary_tileset": "gTileset_Goldenrod_Hns",
+      "border_filepath": "data/layouts/GoldenrodHarbor_hns/border.bin",
+      "blockdata_filepath": "data/layouts/GoldenrodHarbor_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
     }
   ]
 }

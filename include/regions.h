@@ -17,8 +17,6 @@ static inline enum Region GetRegionForSectionId(u32 sectionId)
         return REGION_JOHTO;
     if (sectionId >= KANTO_MAPSEC_START && sectionId <= KANTO_MAPSEC_END)
         return REGION_KANTO;
-    if (sectionId >= KANTO_LATER_MAPSEC_START && sectionId <= KANTO_LATER_MAPSEC_END)
-        return REGION_KANTO;
     if (sectionId >= ALOLA_MAPSEC_START && sectionId <= ALOLA_MAPSEC_END)
         return REGION_ALOLA;
     return REGION_HOENN;

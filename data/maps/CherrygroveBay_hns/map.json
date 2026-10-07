@@ -79,7 +79,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CherryGroveCity_EventScript_Corsola",
+      "script": "GoldenrodHarbor_EventScript_Wattrel",
       "flag": "0"
     },
     {
@@ -92,7 +92,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CherryGroveCity_EventScript_Corsola",
+      "script": "GoldenrodHarbor_EventScript_Wattrel",
       "flag": "0"
     },
     {
@@ -235,7 +235,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CherryGroveCity_EventScript_Corsola",
+      "script": "CherrygroveBay_EventScript_Kilowattrel",
       "flag": "0"
     },
     {

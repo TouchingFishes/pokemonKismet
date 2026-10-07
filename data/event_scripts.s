@@ -1879,6 +1879,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/EcruteakCity_hns/scripts.inc"
 	.include "data/maps/OlivineCity_hns/scripts.inc"
 	.include "data/maps/OlivineBay_hns/scripts.inc"
+	.include "data/maps/GoldenrodHarbor_hns/scripts.inc"
 	.include "data/maps/Gate_Route39_OlivineCity_hns/scripts.inc"
 	.include "data/maps/CianwoodCity_hns/scripts.inc"
 	.include "data/maps/SafariZoneGate_hns/scripts.inc"

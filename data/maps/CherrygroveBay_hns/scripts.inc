@@ -123,3 +123,16 @@ CherrygroveBay_Text_MatthewPostBattle:
 	.string "right through your fingers.\p"
 	.string "That's no reason to give up,\n"
 	.string "though.$"
+
+CherrygroveBay_EventScript_Kilowattrel::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_KILOWATTREL, CRY_MODE_NORMAL
+	msgbox CherrygroveBay_Text_Kilowattrel, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+CherrygroveBay_Text_Kilowattrel:
+	.string "KILOWATTREL: Kyaaaah!$"
