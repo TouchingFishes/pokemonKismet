@@ -13827,7 +13827,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "An electrical tackle that\n"
             "also hurts the user."),
         .effect = EFFECT_RECOIL,
-        .power = 90,
+        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 100 : 90,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
         .pp = 15,
