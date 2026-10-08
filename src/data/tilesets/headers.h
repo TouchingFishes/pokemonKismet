@@ -2664,6 +2664,16 @@ const struct Tileset gTileset_AlolaIsland_Buildings_Hns =
     .metatileAttributes = gMetatileAttributes_AlolaIsland_Buildings_Hns,
     .callback = NULL,
 };
+const struct Tileset gTileset_EternaForest_Hns =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_EternaForest_Hns,
+    .palettes = gTilesetPalettes_EternaForest_Hns,
+    .metatiles = gMetatiles_EternaForest_Hns,
+    .metatileAttributes = gMetatileAttributes_EternaForest_Hns,
+    .callback = NULL,
+};
 const struct Tileset gTileset_AlolaIsland_Ruins_Hns =
 {
     .isCompressed = TRUE,

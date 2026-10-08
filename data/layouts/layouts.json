@@ -16582,7 +16582,7 @@
       "width": 64,
       "height": 50,
       "primary_tileset": "gTileset_AlolaIsland",
-      "secondary_tileset": "gTileset_AlolaIsland_Buildings_Hns",
+      "secondary_tileset": "gTileset_EternaForest_Hns",
       "border_filepath": "data/layouts/DaoDaoIsles_EternaForest_hns/border.bin",
       "blockdata_filepath": "data/layouts/DaoDaoIsles_EternaForest_hns/map.bin",
       "game_version": "hns",

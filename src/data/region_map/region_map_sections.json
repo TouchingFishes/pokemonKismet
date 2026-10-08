@@ -2199,6 +2199,14 @@
     },
     {
       "height": 1,
+      "id": "MAPSEC_CERULEAN_CAPE",
+      "name": "CERULEAN CAPE",
+      "width": 1,
+      "x": 17,
+      "y": 1
+    },
+    {
+      "height": 1,
       "id": "MAPSEC_NEW_BARK_TOWN",
       "name": "NEW BARK TOWN",
       "width": 1,
@@ -2726,7 +2734,7 @@
       "y": 13
     },
     {
-      "height": 5,
+      "height": 4,
       "id": "MAPSEC_OLIVINE_BAY",
       "name": "OLIVINE BAY",
       "width": 1,
@@ -2742,12 +2750,12 @@
       "y": 11
     },
     {
-      "height": 1,
-      "id": "MAPSEC_CERULEAN_CAPE",
-      "name": "CERULEAN CAPE",
+      "height": 2,
+      "id": "MAPSEC_GOLDENROD_HARBOR",
+      "name": "GOLDENROD HARBOR",
       "width": 1,
-      "x": 17,
-      "y": 1
+      "x": 7,
+      "y": 8
     }
   ]
 }
