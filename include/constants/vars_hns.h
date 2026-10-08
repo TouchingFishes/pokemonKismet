@@ -115,9 +115,9 @@
 // (the lodge's reveal runs), 5 NINETALES waiting in the ruins, 6 caught or set free - the
 // fog is gone.
 #define VAR_FOXFIRE_HOLLOW_STATE                         0x40C6
-// The doll shrine in DaoDao's Eterna Forest: 0 not met KAREN yet (she greets the player at the
-// garden gate), 3 met her and the MIMIKYU is still hiding, 1 KAREN took it (her rematch brings
-// it), 2 the player kept it.
+// The doll room in DaoDao's Mansion (Eterna Forest, 1F): 0 not met KAREN yet (she greets the
+// player in its doorway), 3 met her and the MIMIKYU is still hiding, 1 KAREN took it (her rematch
+// brings it), 2 the player kept it. The name is from when the dolls sat at a shrine outside.
 #define VAR_DOLL_SHRINE_STATE                            0x40C9
 #define VAR_UNUSED_HNS_0x40CA                            0x40CA
 

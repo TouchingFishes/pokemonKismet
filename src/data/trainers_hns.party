@@ -21527,6 +21527,133 @@ SPECIES_HOUNDOOM
 Level: Badge+9
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
+/*
+ * DaoDao's Mansion in Eterna Forest: the crew above, copied, at DaoDao's level (Eterna
+ * Forest's Bug Catchers are Lv 61/63). Each Badge+N became Lv 55+N. Names are drafts.
+ */
+=== TRAINER_DAODAO_MANSION_HOLLIS_HNS ===
+Name: HOLLIS
+Class: Scientist Hns
+Pic: Scientist Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MAGNETON
+Level: 60
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_MUK
+Level: 60
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_ELECTRODE
+Level: 61
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_DAODAO_MANSION_TAMSIN_HNS ===
+Name: TAMSIN
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Gender: Female
+Music: Hg Sage
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_HAUNTER
+Level: 61
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_BANETTE
+Level: 63
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_DAODAO_MANSION_GRIFFIN_HNS ===
+Name: GRIFFIN
+Class: Burglar Hns
+Pic: Burglar Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MAGMAR
+Level: 61
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_ARCANINE
+Level: 62
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_DAODAO_MANSION_BRAM_HNS ===
+Name: BRAM
+Class: Burglar Hns
+Pic: Burglar Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MAGCARGO
+Level: 62
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_NINETALES
+Level: 63
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_DAODAO_MANSION_RHODA_HNS ===
+Name: RHODA
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Gender: Female
+Music: Hg Sage
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_BANETTE
+Level: 61
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_GRUMPIG
+Level: 63
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_DAODAO_MANSION_WREN_HNS ===
+Name: WREN
+Class: Hex Maniac Hns
+Pic: Hex Maniac
+Gender: Female
+Music: Hg Sage
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_DUSCLOPS
+Level: 62
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_JYNX
+Level: 64
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_DAODAO_MANSION_MARCUS_HNS ===
+Name: MARCUS
+Class: Scientist Hns
+Pic: Scientist Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_ELECTABUZZ
+Level: 63
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_HOUNDOOM
+Level: 64
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
 === TRAINER_ELITE_SIDNEY_HNS ===
 Name: SIDNEY
 Class: Ex Elite Hns

@@ -16582,7 +16582,7 @@
       "width": 64,
       "height": 50,
       "primary_tileset": "gTileset_AlolaIsland",
-      "secondary_tileset": "gTileset_EternaForest_Hns",
+      "secondary_tileset": "gTileset_AlolaIsland_Buildings_Hns",
       "border_filepath": "data/layouts/DaoDaoIsles_EternaForest_hns/border.bin",
       "blockdata_filepath": "data/layouts/DaoDaoIsles_EternaForest_hns/map.bin",
       "game_version": "hns",
@@ -17171,6 +17171,62 @@
       "blockdata_filepath": "data/layouts/GoldenrodHarbor_hns/map.bin",
       "game_version": "hns",
       "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_MANSION_1F_HNS",
+      "name": "DaoDaoIsles_Mansion_1F_hns_Layout",
+      "width": 38,
+      "height": 35,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_PokemonMansion",
+      "border_filepath": "data/layouts/DaoDaoIsles_Mansion_1F_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_Mansion_1F_hns/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "game_version": "hns",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_MANSION_2F_HNS",
+      "name": "DaoDaoIsles_Mansion_2F_hns_Layout",
+      "width": 38,
+      "height": 38,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_PokemonMansion",
+      "border_filepath": "data/layouts/DaoDaoIsles_Mansion_2F_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_Mansion_2F_hns/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "game_version": "hns",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_MANSION_3F_HNS",
+      "name": "DaoDaoIsles_Mansion_3F_hns_Layout",
+      "width": 38,
+      "height": 35,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_PokemonMansion",
+      "border_filepath": "data/layouts/DaoDaoIsles_Mansion_3F_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_Mansion_3F_hns/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "game_version": "hns",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_DAO_DAO_ISLES_MANSION_B1F_HNS",
+      "name": "DaoDaoIsles_Mansion_B1F_hns_Layout",
+      "width": 38,
+      "height": 35,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_PokemonMansion",
+      "border_filepath": "data/layouts/DaoDaoIsles_Mansion_B1F_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DaoDaoIsles_Mansion_B1F_hns/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "game_version": "hns",
+      "layout_version": "frlg"
     }
   ]
 }

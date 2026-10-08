@@ -714,9 +714,6 @@ const u16 gMetatileAttributes_AlolaIslandSecondary[] = INCBIN_U16("data/tilesets
 const u16 gMetatiles_AlolaIsland_Buildings_Hns[] = INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/metatiles.bin");
 const u16 gMetatileAttributes_AlolaIsland_Buildings_Hns[] = INCBIN_U16("data/tilesets/secondary/alola_island_buildings_hns/metatile_attributes.bin");
 
-const u16 gMetatiles_EternaForest_Hns[] = INCBIN_U16("data/tilesets/secondary/eterna_forest_hns/metatiles.bin");
-const u16 gMetatileAttributes_EternaForest_Hns[] = INCBIN_U16("data/tilesets/secondary/eterna_forest_hns/metatile_attributes.bin");
-
 const u16 gMetatiles_AlolaIsland_Ruins_Hns[] = INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/metatiles.bin");
 const u16 gMetatileAttributes_AlolaIsland_Ruins_Hns[] = INCBIN_U16("data/tilesets/secondary/alola_island_ruins_hns/metatile_attributes.bin");
 

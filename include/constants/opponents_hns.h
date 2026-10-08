@@ -903,7 +903,16 @@
 #define TRAINER_KINDRA_HNS                            839
 #define TRAINER_LUNA_HNS                              840
 #define TRAINER_KAREN_3_HNS                           841
-#define TRAINERS_COUNT_HNS                       842
+// DaoDao's Mansion (Eterna Forest): copies of the FOXFIRE Mansion's crew above, which stays
+// until the honjin replaces it. Names are drafts.
+#define TRAINER_DAODAO_MANSION_HOLLIS_HNS             842
+#define TRAINER_DAODAO_MANSION_TAMSIN_HNS             843
+#define TRAINER_DAODAO_MANSION_GRIFFIN_HNS            844
+#define TRAINER_DAODAO_MANSION_BRAM_HNS               845
+#define TRAINER_DAODAO_MANSION_RHODA_HNS              846
+#define TRAINER_DAODAO_MANSION_WREN_HNS               847
+#define TRAINER_DAODAO_MANSION_MARCUS_HNS             848
+#define TRAINERS_COUNT_HNS                       849
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

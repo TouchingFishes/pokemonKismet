@@ -645,7 +645,11 @@
     "DaoDaoIsles_LandfallIsle_House6_hns",
     "DaoDaoIsles_GiantsReach_House_hns",
     "DaoDaoIsles_BerryForest_hns",
-    "DaoDaoIsles_BarbHollow_hns"
+    "DaoDaoIsles_BarbHollow_hns",
+    "DaoDaoIsles_Mansion_1F_hns",
+    "DaoDaoIsles_Mansion_2F_hns",
+    "DaoDaoIsles_Mansion_3F_hns",
+    "DaoDaoIsles_Mansion_B1F_hns"
   ],
   "gMapGroup_IndoorDynamic_Hns": [
     "UnionRoom_hns"
