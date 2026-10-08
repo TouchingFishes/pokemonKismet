@@ -103,7 +103,7 @@ NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest::
 	special HealPlayerParty
 	msgbox NewBarkTown_PlayersHouse_2F_Text_FoxfireGo, MSGBOX_DEFAULT
 	closemessage
-	warp MAP_DAO_DAO_ISLES_ETERNA_FOREST_HNS, 21, 16
+	warp MAP_DAO_DAO_ISLES_ETERNA_FOREST_HNS, 21, 19
 	waitstate
 	end
 

@@ -8,14 +8,16 @@ DaoDaoIsles_EternaForest_hns_MapScripts::
 @ KAREN and the three rags share FLAG_TEMP_1: there until the MIMIKYU has gone with someone.
 DaoDaoIsles_EternaForest_OnTransition:
 	setflag FLAG_TEMP_1
-	goto_if_ne VAR_DOLL_SHRINE_STATE, 0, DaoDaoIsles_EternaForest_EventScript_ShrineQuiet
+	goto_if_eq VAR_DOLL_SHRINE_STATE, 1, DaoDaoIsles_EternaForest_EventScript_ShrineQuiet
+	goto_if_eq VAR_DOLL_SHRINE_STATE, 2, DaoDaoIsles_EternaForest_EventScript_ShrineQuiet
 	clearflag FLAG_TEMP_1
 	call DaoDaoIsles_EternaForest_EventScript_DealDolls
 DaoDaoIsles_EternaForest_EventScript_ShrineQuiet:
 	end
 
-@ The rags trade places on every visit and after every wrong guess. Both the templates and the
-@ live objects move, so it works from ON_TRANSITION (nothing spawned yet) and mid-scene.
+@ The rags trade places on every visit, over three spots: below the left lamp, at the shrine's
+@ step, beside its plinth. Both the templates and the live objects move, so it works from
+@ ON_TRANSITION (nothing spawned yet) and mid-scene.
 DaoDaoIsles_EternaForest_EventScript_DealDolls:
 	random 3
 	switch VAR_RESULT
@@ -25,29 +27,29 @@ DaoDaoIsles_EternaForest_EventScript_DealDolls:
 
 DaoDaoIsles_EternaForest_EventScript_DealLeft:
 	setvar VAR_0x8004, 18
-	setvar VAR_0x8005, 11
-	setvar VAR_0x8006, 21
-	setvar VAR_0x8007, 12
-	setvar VAR_0x8008, 24
-	setvar VAR_0x8009, 11
+	setvar VAR_0x8005, 12
+	setvar VAR_0x8006, 20
+	setvar VAR_0x8007, 10
+	setvar VAR_0x8008, 23
+	setvar VAR_0x8009, 9
 	goto DaoDaoIsles_EternaForest_EventScript_PlaceDolls
 
 DaoDaoIsles_EternaForest_EventScript_DealMiddle:
-	setvar VAR_0x8004, 21
-	setvar VAR_0x8005, 12
+	setvar VAR_0x8004, 20
+	setvar VAR_0x8005, 10
 	setvar VAR_0x8006, 18
-	setvar VAR_0x8007, 11
-	setvar VAR_0x8008, 24
-	setvar VAR_0x8009, 11
+	setvar VAR_0x8007, 12
+	setvar VAR_0x8008, 23
+	setvar VAR_0x8009, 9
 	goto DaoDaoIsles_EternaForest_EventScript_PlaceDolls
 
 DaoDaoIsles_EternaForest_EventScript_DealRight:
-	setvar VAR_0x8004, 24
-	setvar VAR_0x8005, 11
+	setvar VAR_0x8004, 23
+	setvar VAR_0x8005, 9
 	setvar VAR_0x8006, 18
-	setvar VAR_0x8007, 11
-	setvar VAR_0x8008, 21
-	setvar VAR_0x8009, 12
+	setvar VAR_0x8007, 12
+	setvar VAR_0x8008, 20
+	setvar VAR_0x8009, 10
 DaoDaoIsles_EternaForest_EventScript_PlaceDolls:
 	setobjectxyperm LOCALID_ETERNA_FOREST_MIMIKYU, VAR_0x8004, VAR_0x8005
 	setobjectxy LOCALID_ETERNA_FOREST_MIMIKYU, VAR_0x8004, VAR_0x8005
@@ -57,29 +59,77 @@ DaoDaoIsles_EternaForest_EventScript_PlaceDolls:
 	setobjectxy LOCALID_ETERNA_FOREST_RAG_2, VAR_0x8008, VAR_0x8009
 	return
 
+@ Swaps the MIMIKYU with the rag whose local id is in VAR_0x8008, templates and live objects.
+@ Positions are read from the templates (1 is TEMPLATE_POSITION, a C enum in
+@ constants/field_specials.h), which DealDolls keeps in step with the live objects.
+DaoDaoIsles_EternaForest_EventScript_SwapMimikyu:
+	getobjectxy LOCALID_ETERNA_FOREST_MIMIKYU, 1, VAR_0x8004, VAR_0x8005
+	getobjectxy VAR_0x8008, 1, VAR_0x8006, VAR_0x8007
+	setobjectxyperm LOCALID_ETERNA_FOREST_MIMIKYU, VAR_0x8006, VAR_0x8007
+	setobjectxy LOCALID_ETERNA_FOREST_MIMIKYU, VAR_0x8006, VAR_0x8007
+	setobjectxyperm VAR_0x8008, VAR_0x8004, VAR_0x8005
+	setobjectxy VAR_0x8008, VAR_0x8004, VAR_0x8005
+	return
+
+@ First visit (state 0), at the garden gate: KAREN sees the player come in, walks down to meet
+@ them, looks back at the dolls while she explains, and returns to her place.
+DaoDaoIsles_EternaForest_EventScript_KarenNotices::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_ETERNA_FOREST_KAREN, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_ETERNA_FOREST_KAREN, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_ETERNA_FOREST_KAREN, DaoDaoIsles_EternaForest_Movement_KarenToGate
+	waitmovement 0
+	msgbox DaoDaoIsles_EternaForest_Text_KarenGreets, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ETERNA_FOREST_KAREN, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox DaoDaoIsles_EternaForest_Text_KarenDolls, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ETERNA_FOREST_KAREN, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox DaoDaoIsles_EternaForest_Text_KarenAsk, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ETERNA_FOREST_KAREN, DaoDaoIsles_EternaForest_Movement_KarenBack
+	waitmovement 0
+	setvar VAR_DOLL_SHRINE_STATE, 3
+	releaseall
+	end
+
+@ She is only here at states 0 and 3. At 0 the player got in without passing the gate (the old
+@ test warp landed inside); she has explained now, so the gate must not greet them again.
 DaoDaoIsles_EternaForest_EventScript_Karen::
 	lock
 	faceplayer
 	msgbox DaoDaoIsles_EternaForest_Text_KarenHint, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_DOLL_SHRINE_STATE, 3
 	release
 	end
 
+@ A wrong guess. The doll the player is looking at stays put and stays empty: in the dark the
+@ MIMIKYU either stays where it is or swaps with the other rag, so it only ever turns up in a
+@ doll the player has walked away from.
 DaoDaoIsles_EternaForest_EventScript_EmptyRag::
 	lockall
 	msgbox DaoDaoIsles_EternaForest_Text_EmptyRag, MSGBOX_DEFAULT
 	closemessage
 	playmoncry SPECIES_MIMIKYU, CRY_MODE_HIGH_PITCH
 	waitmoncry
-	call DaoDaoIsles_EternaForest_EventScript_Reshuffle
+	setvar VAR_0x8008, LOCALID_ETERNA_FOREST_RAG_1
+	goto_if_ne VAR_LAST_TALKED, LOCALID_ETERNA_FOREST_RAG_1, DaoDaoIsles_EternaForest_EventScript_OtherRag
+	setvar VAR_0x8008, LOCALID_ETERNA_FOREST_RAG_2
+DaoDaoIsles_EternaForest_EventScript_OtherRag:
+	fadescreenswapbuffers FADE_TO_BLACK
+	random 2
+	call_if_eq VAR_RESULT, 0, DaoDaoIsles_EternaForest_EventScript_SwapMimikyu
+	fadescreenswapbuffers FADE_FROM_BLACK
 	releaseall
 	end
-
-DaoDaoIsles_EternaForest_EventScript_Reshuffle:
-	fadescreenswapbuffers FADE_TO_BLACK
-	call DaoDaoIsles_EternaForest_EventScript_DealDolls
-	fadescreenswapbuffers FADE_FROM_BLACK
-	return
 
 DaoDaoIsles_EternaForest_EventScript_Mimikyu::
 	lockall
@@ -104,7 +154,7 @@ DaoDaoIsles_EternaForest_EventScript_Mimikyu::
 	goto DaoDaoIsles_EternaForest_EventScript_GoesWithKaren
 
 @ NO: the player battles it. Caught, it is theirs; knocked out, KAREN takes it after all; if
-@ the player runs, it hides among the dolls again.
+@ the player runs, it hides among the dolls again - never in the one it was just found in.
 DaoDaoIsles_EternaForest_EventScript_KeepIt:
 	msgbox DaoDaoIsles_EternaForest_Text_KarenNo, MSGBOX_DEFAULT
 	closemessage
@@ -115,7 +165,14 @@ DaoDaoIsles_EternaForest_EventScript_KeepIt:
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, DaoDaoIsles_EternaForest_EventScript_KnockedOut
 	msgbox DaoDaoIsles_EternaForest_Text_SlippedBack, MSGBOX_DEFAULT
 	closemessage
-	call DaoDaoIsles_EternaForest_EventScript_Reshuffle
+	setvar VAR_0x8008, LOCALID_ETERNA_FOREST_RAG_1
+	random 2
+	goto_if_eq VAR_RESULT, 0, DaoDaoIsles_EternaForest_EventScript_SlipAway
+	setvar VAR_0x8008, LOCALID_ETERNA_FOREST_RAG_2
+DaoDaoIsles_EternaForest_EventScript_SlipAway:
+	fadescreenswapbuffers FADE_TO_BLACK
+	call DaoDaoIsles_EternaForest_EventScript_SwapMimikyu
+	fadescreenswapbuffers FADE_FROM_BLACK
 	releaseall
 	end
 
@@ -148,6 +205,38 @@ DaoDaoIsles_EternaForest_EventScript_KarenLeaves:
 DaoDaoIsles_EternaForest_Movement_Heart:
 	emote_heart
 	step_end
+
+DaoDaoIsles_EternaForest_Movement_KarenToGate:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+DaoDaoIsles_EternaForest_Movement_KarenBack:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	face_down
+	step_end
+
+@ Draft for Moritz.
+DaoDaoIsles_EternaForest_Text_KarenGreets:
+	.string "KAREN: Oh? The CHAMPION.\p"
+	.string "I didn't take you for someone\n"
+	.string "who visits shrines.$"
+
+DaoDaoIsles_EternaForest_Text_KarenDolls:
+	.string "KAREN: People leave their old dolls\n"
+	.string "here once they've stopped loving\l"
+	.string "them.\p"
+	.string "One of those rag dolls isn't a doll.\n"
+	.string "It hides whenever I look for it.$"
+
+DaoDaoIsles_EternaForest_Text_KarenAsk:
+	.string "KAREN: See if it will come out\n"
+	.string "for you.$"
 
 DaoDaoIsles_EternaForest_Text_KarenHint:
 	.string "KAREN: People leave their old dolls\n"
