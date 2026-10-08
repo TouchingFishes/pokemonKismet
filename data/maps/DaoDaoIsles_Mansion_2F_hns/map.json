@@ -87,7 +87,7 @@
       "y": 14,
       "elevation": 3,
       "dest_map": "MAP_DAO_DAO_ISLES_MANSION_1F_HNS",
-      "dest_warp_id": "3"
+      "dest_warp_id": "1"
     },
     {
       "x": 9,
@@ -108,8 +108,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 2,
-      "y": 16,
+      "x": 19,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "DaoDaoIsles_Mansion_2F_EventScript_Statue"

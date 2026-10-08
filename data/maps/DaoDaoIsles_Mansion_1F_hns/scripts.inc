@@ -5,6 +5,7 @@ DaoDaoIsles_Mansion_1F_hns_MapScripts::
 
 DaoDaoIsles_Mansion_1F_OnLoad::
 	call_if_set FLAG_DAODAO_MANSION_SWITCH_STATE, DaoDaoIsles_Mansion_EventScript_PressSwitch_1F
+	call_if_set FLAG_DAODAO_MANSION_SHORTCUT_OPEN, DaoDaoIsles_Mansion_1F_EventScript_OpenShortcut
 	end
 
 @ KAREN and the three rags share FLAG_TEMP_1: there until the MIMIKYU has gone with someone.
@@ -46,6 +47,44 @@ DaoDaoIsles_Mansion_1F_EventScript_ItemEscapeRope::
 DaoDaoIsles_Mansion_1F_EventScript_ItemProtein::
 	finditem ITEM_PROTEIN
 	end
+DaoDaoIsles_Mansion_1F_EventScript_ItemChillDrive::
+	finditem ITEM_CHILL_DRIVE
+	end
+
+@ The gate in the plant room's west wall, (16,28..32). The east half is only reached by
+@ falling from 3F, and FRLG's way back out was a back door, now removed. The gate unlatches
+@ from the plant-room side only and then stays open, so the first trip still goes via 3F.
+DaoDaoIsles_Mansion_1F_EventScript_ShortcutGate::
+	goto_if_set FLAG_DAODAO_MANSION_SHORTCUT_OPEN, DaoDaoIsles_Mansion_1F_EventScript_ShortcutGateOpen
+	lockall
+	getplayerxy VAR_0x8004, VAR_0x8005
+	goto_if_lt VAR_0x8004, 16, DaoDaoIsles_Mansion_1F_EventScript_ShortcutLocked
+	msgbox DaoDaoIsles_Mansion_1F_Text_ShortcutLatch, MSGBOX_DEFAULT
+	closemessage
+	call DaoDaoIsles_Mansion_1F_EventScript_OpenShortcut
+	playse SE_UNLOCK
+	special DrawWholeMapView
+	waitse
+	setflag FLAG_DAODAO_MANSION_SHORTCUT_OPEN
+	releaseall
+	end
+
+DaoDaoIsles_Mansion_1F_EventScript_ShortcutLocked:
+	msgbox DaoDaoIsles_Mansion_1F_Text_ShortcutLocked, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DaoDaoIsles_Mansion_1F_EventScript_ShortcutGateOpen:
+	end
+
+@ The 2F barrier's open tiles (PressSwitch_2F), except the end cap stays solid.
+DaoDaoIsles_Mansion_1F_EventScript_OpenShortcut::
+	setmetatile 16, 28, METATILE_PokemonMansion_Wall_EndPost_Mid, 1
+	setmetatile 16, 29, METATILE_PokemonMansion_Wall_EndPost_Bottom, 1
+	setmetatile 16, 30, METATILE_PokemonMansion_Floor_ShadeFull, 0
+	setmetatile 16, 31, METATILE_PokemonMansion_Floor, 0
+	setmetatile 16, 32, METATILE_PokemonMansion_Wall_EndCap, 1
+	return
 
 DaoDaoIsles_Mansion_1F_EventScript_DealDolls:
 	random 3
@@ -580,6 +619,14 @@ DaoDaoIsles_Mansion_1F_Text_KarenKnockedOut:
 
 DaoDaoIsles_Mansion_1F_Text_Doll:
 	.string "A doll, left behind on a dare.$"
+
+DaoDaoIsles_Mansion_1F_Text_ShortcutLatch:
+	.string "The gate is bolted on this side.\p"
+	.string "{PLAYER} slid the bolt back!$"
+
+DaoDaoIsles_Mansion_1F_Text_ShortcutLocked:
+	.string "The gate won't budge. It's bolted\n"
+	.string "from the other side.$"
 
 DaoDaoIsles_Mansion_1F_Text_EmptyRag:
 	.string "A rag doll, stitched to look like a\n"

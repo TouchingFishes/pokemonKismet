@@ -94,14 +94,14 @@
       "y": 18,
       "elevation": 3,
       "dest_map": "MAP_DAO_DAO_ISLES_MANSION_1F_HNS",
-      "dest_warp_id": "7"
+      "dest_warp_id": "3"
     },
     {
       "x": 19,
       "y": 18,
       "elevation": 3,
       "dest_map": "MAP_DAO_DAO_ISLES_MANSION_1F_HNS",
-      "dest_warp_id": "8"
+      "dest_warp_id": "4"
     },
     {
       "x": 23,
@@ -115,7 +115,7 @@
       "y": 18,
       "elevation": 3,
       "dest_map": "MAP_DAO_DAO_ISLES_MANSION_1F_HNS",
-      "dest_warp_id": "8"
+      "dest_warp_id": "4"
     },
     {
       "x": 24,
