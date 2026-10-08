@@ -393,6 +393,7 @@ static const u16 sMeowthEggMoveLearnset_Kismet[] = {
     MOVE_SNATCH,
     MOVE_IRON_TAIL,
     MOVE_FOUL_PLAY,
+    MOVE_NASTY_PLOT,
     MOVE_PSYCH_UP,
     MOVE_UNAVAILABLE,
 };
