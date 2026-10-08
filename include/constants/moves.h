@@ -454,10 +454,10 @@ enum __attribute__((packed)) Move
     MOVE_AVALANCHE = 419,
     MOVE_ICE_SHARD = 420, //do not use
     MOVE_SHADOW_CLAW = 421,
-    MOVE_THUNDER_FANG = 422, //until here
+    MOVE_THUNDER_FANG = 422,
     MOVE_ICE_FANG = 423,
     MOVE_FIRE_FANG = 424,
-    MOVE_SHADOW_SNEAK = 425,
+    MOVE_SHADOW_SNEAK = 425, //until here
     MOVE_MUD_BOMB = 426, //do not use
     MOVE_PSYCHO_CUT = 427,
     MOVE_ZEN_HEADBUTT = 428,

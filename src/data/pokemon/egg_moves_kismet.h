@@ -444,6 +444,7 @@ static const u16 sGrowlitheEggMoveLearnset_Kismet[] = {
     MOVE_CRUNCH,
     MOVE_THRASH,
     MOVE_FIRE_SPIN,
+    MOVE_FIRE_FANG,
     MOVE_HOWL,
     MOVE_HEAT_WAVE,
     MOVE_DOUBLE_EDGE,
