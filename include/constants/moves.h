@@ -457,7 +457,7 @@ enum __attribute__((packed)) Move
     MOVE_THUNDER_FANG = 422,
     MOVE_ICE_FANG = 423,
     MOVE_FIRE_FANG = 424,
-    MOVE_SHADOW_SNEAK = 425, //until here
+    MOVE_SHADOW_SNEAK = 425,
     MOVE_MUD_BOMB = 426, //do not use
     MOVE_PSYCHO_CUT = 427,
     MOVE_ZEN_HEADBUTT = 428,
@@ -465,7 +465,7 @@ enum __attribute__((packed)) Move
     MOVE_FLASH_CANNON = 430,
     MOVE_ROCK_CLIMB = 431, //do not use
     MOVE_DEFOG = 432, //do not use
-    MOVE_TRICK_ROOM = 433,
+    MOVE_TRICK_ROOM = 433, //until here
     MOVE_DRACO_METEOR = 434, //do not use
     MOVE_DISCHARGE = 435,
     MOVE_LAVA_PLUME = 436,
