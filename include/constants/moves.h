@@ -465,10 +465,10 @@ enum __attribute__((packed)) Move
     MOVE_FLASH_CANNON = 430,
     MOVE_ROCK_CLIMB = 431, //do not use
     MOVE_DEFOG = 432, //do not use
-    MOVE_TRICK_ROOM = 433, //until here
+    MOVE_TRICK_ROOM = 433,
     MOVE_DRACO_METEOR = 434, //do not use
     MOVE_DISCHARGE = 435,
-    MOVE_LAVA_PLUME = 436,
+    MOVE_LAVA_PLUME = 436, //until here
     MOVE_LEAF_STORM = 437,
     MOVE_POWER_WHIP = 438,
     MOVE_ROCK_WRECKER = 439,
