@@ -17,8 +17,8 @@ Regenerate with `py -3 .claude/gen_move_changes.py`. Do not hand-edit — it is 
 
 | | |
 |---|---:|
-| Moves changed | 125 |
-| Field changes applied | 172 |
+| Moves changed | 128 |
+| Field changes applied | 176 |
 | …whose base value is itself a gen-gated expression | 60 |
 | Excluded by decision | 8 |
 | Representation-only differences, not ported | 37 |
@@ -57,7 +57,7 @@ Nothing is hardcoded. `include/config/general.h` defines `CUSTOM_FOR_KISMET` as 
 
 To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATED_MOVE_TYPES` in `include/config/battle.h` back to `GEN_LATEST`. The two gates are independent: types and numeric data can be reverted separately.
 
-60 of the 172 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
+60 of the 176 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
 
 ## All changes
 
@@ -92,6 +92,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `BUBBLE_BEAM` | Secondary chance | (B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33) | **15** | yes |
 | `BULLET_SEED` | Power | (B_UPDATED_MOVE_DATA >= GEN_5 ? 25 : 10) | **20** | yes |
 | `CLAMP` | Power | 35 | **50** |  |
+| `CLOSE_COMBAT` | Power | 120 | **100** |  |
 | `COMET_PUNCH` | Accuracy | 85 | **100** |  |
 | `COMET_PUNCH` | Power | 18 | **30** |  |
 | `CONSTRICT` | Power | 10 | **40** |  |
@@ -125,6 +126,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `FIRE_FANG` | Accuracy | 95 | **90** |  |
 | `FIRE_SPIN` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_5 ? 85 : 70) | **95** | yes |
 | `FLAMETHROWER` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95) | **95** | yes |
+| `FLARE_BLITZ` | Power | 120 | **100** |  |
 | `FLY` | Accuracy | 95 | **100** |  |
 | `FLY` | Power | (B_UPDATED_MOVE_DATA >= GEN_4 ? 90 : 70) | **80** | yes |
 | `FOUL_PLAY` | Power | 95 | **85** |  |
@@ -196,7 +198,8 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `SILVER_WIND` | Secondary chance | 10 | **15** |  |
 | `SKULL_BASH` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 130 : 100) | **100** | yes |
 | `SKY_ATTACK` | Accuracy | 90 | **100** |  |
-| `SKY_ATTACK` | Power | 140 | **180** |  |
+| `SKY_ATTACK` | additionalEffect | FLINCH @30% | **SPD_PLUS_1 @always** |  |
+| `SKY_ATTACK` | Power | 140 | **150** |  |
 | `SKY_UPPERCUT` | Power | 85 | **110** |  |
 | `SLUDGE_WAVE` | Accuracy | 100 | **85** |  |
 | `SLUDGE_WAVE` | additionalEffect | POISON @10% | **POISON @15% + SPD_MINUS_1 @15%** |  |
@@ -234,6 +237,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `UPROAR` | Power | (B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 50) | **55** | yes |
 | `VENOSHOCK` | PP | 10 | **20** |  |
 | `WEATHER_BALL` | PP | 10 | **30** |  |
+| `WILD_CHARGE` | Power | 90 | **100** |  |
 | `WRAP` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 85) | **85** | yes |
 | `WRAP` | Power | 15 | **35** |  |
 | `ZAP_CANNON` | Accuracy | 50 | **60** |  |

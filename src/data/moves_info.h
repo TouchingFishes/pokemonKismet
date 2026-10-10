@@ -3899,11 +3899,19 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_SKY_ATTACK] =
     {
         .name = COMPOUND_STRING("SKY ATTACK"),
+        // Gated with the mechanic: the Kismet version raises Speed on the
+        // charge turn, like METEOR BEAM, and no longer flinches.
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+        .description = COMPOUND_STRING(
+            "Raises Speed, then strikes\n"
+            "next turn. High crit ratio."),
+        #else
         .description = COMPOUND_STRING(
             "2-turn attack. High critical\n"
             "hit ratio, and may flinch."),
+        #endif
         .effect = EFFECT_TWO_TURNS_ATTACK,
-        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 180 : 140,
+        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 150 : 140,
         .type = TYPE_FLYING,
         .accuracy = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 100 : 90,
         .pp = 5,
@@ -3914,7 +3922,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .sleepTalkBanned = TRUE,
         .instructBanned = TRUE,
         .argument.twoTurnAttack = { .stringId = B_UPDATED_MOVE_DATA >= GEN_4 ? STRINGID_CLOAKEDINAHARSHLIGHT : STRINGID_PKMNISGLOWING },
-    #if B_UPDATED_MOVE_DATA >= GEN_3
+    // An #if rather than a ternary: the effect itself differs, and .chance = 0
+    // would mean "guaranteed" rather than "never".
+    #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
+            .self = TRUE,
+            .onChargeTurnOnly = TRUE,
+        }),
+    #elif B_UPDATED_MOVE_DATA >= GEN_3
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 30,
