@@ -1808,6 +1808,29 @@ bool32 MoodyCantLowerStat(u32 stat)
     return stat == GET_STAT_BUFF_ID(gBattleScripting.statChanger) || CompareStat(gBattlerAttacker, stat, MIN_STAT_STAGE, CMP_EQUAL, GetBattlerAbility(gBattlerAttacker));
 }
 
+// Kismet custom: HIVE QUEEN fires only when the order move actually worked. Called from the
+// once-per-move ABILITYEFFECT_MOVE_END_FOES_FAINTED hook, before MOVEEND_CLEAR_BITS resets any of this.
+static bool32 DidHiveQueenOrderMoveWork(enum BattlerId battler, enum Move move)
+{
+    if (gBattleStruct->unableToUseMove || gBattleStruct->snatchedMoveIsUsed)
+        return FALSE;
+
+    switch (move)
+    {
+    case MOVE_ATTACK_ORDER:
+        return IsBattlerTurnDamaged(gBattlerTarget, INCLUDING_SUBSTITUTES);
+    case MOVE_DEFEND_ORDER:
+        // BattleScript_CantRaiseMultipleStats flags the failure; raising either stat counts
+        return !(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_FAILED);
+    case MOVE_HEAL_ORDER:
+        // tryhealhalfhealth stores the heal before its full-HP check, and applying it clears it,
+        // so an amount still pending means "HP is full" and nothing was healed
+        return gBattleStruct->passiveHpUpdate[battler] == 0;
+    default:
+        return FALSE;
+    }
+}
+
 void TryToRevertMimicryAndFlags(void)
 {
     for (enum BattlerId battler = 0; battler < gBattlersCount; battler++)
@@ -4647,6 +4670,30 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                     BattleScriptCall(BattleScript_RaiseStatOnFaintingTarget);
                     effect = TRUE;
                 }
+            }
+            break;
+        case ABILITY_HIVE_QUEEN: // Kismet custom: a working order move raises one random stat by 1
+            if (IsBattlerAlive(battler) && !NoAliveMonsForEitherParty() && DidHiveQueenOrderMoveWork(battler, move))
+            {
+                u32 validToRaise = 0;
+
+                // Moody's pool under B_MOODY_ACC_EVASION >= GEN_8: Attack to Sp. Def, no accuracy or evasion
+                for (u32 statId = STAT_ATK; statId < NUM_STATS; statId++)
+                {
+                    if (CompareStat(battler, statId, MAX_STAT_STAGE, CMP_LESS_THAN, ability))
+                        validToRaise |= 1u << statId;
+                }
+                if (!validToRaise)
+                    break;
+
+                // MoodyCantRaiseStat reads gBattlerAttacker, which is this battler here
+                enum Stat stat = RandomUniformExcept(RNG_HIVE_QUEEN, STAT_ATK, NUM_STATS - 1, MoodyCantRaiseStat);
+                gLastUsedAbility = ability;
+                SET_STATCHANGER(stat, 1, FALSE);
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, stat);
+                gBattleScripting.animArg1 = GET_STAT_BUFF_ID(stat) + STAT_ANIM_PLUS1;
+                BattleScriptCall(BattleScript_RaiseStatOnFaintingTarget);
+                effect = TRUE;
             }
             break;
         case ABILITY_BATTLE_BOND:

@@ -2556,7 +2556,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+    #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
+        .abilities = { ABILITY_HIVE_QUEEN, ABILITY_NONE, ABILITY_NONE },
+    #else
         .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_UNNERVE },
+    #endif
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("VESPIQUEN"),
         .cryId = CRY_VESPIQUEN,

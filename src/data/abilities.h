@@ -2500,4 +2500,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Fury raises a stat when hit."),
         .aiRating = 6,
     },
+
+    [ABILITY_HIVE_QUEEN] =
+    {
+        .name = _("HIVE QUEEN"),
+        .description = COMPOUND_STRING("Order moves raise a random stat."),
+        .aiRating = 6,
+    },
 };

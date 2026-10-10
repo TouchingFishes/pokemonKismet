@@ -344,6 +344,7 @@ enum __attribute__((packed)) Ability
     ABILITY_GLACIAL_DRIFT,
     ABILITY_SUNBLOOM,
     ABILITY_SHORT_FUSE,
+    ABILITY_HIVE_QUEEN,
 
     ABILITIES_COUNT,
 };
