@@ -468,7 +468,7 @@ enum __attribute__((packed)) Move
     MOVE_TRICK_ROOM = 433,
     MOVE_DRACO_METEOR = 434, //do not use
     MOVE_DISCHARGE = 435,
-    MOVE_LAVA_PLUME = 436, //until here
+    MOVE_LAVA_PLUME = 436,
     MOVE_LEAF_STORM = 437,
     MOVE_POWER_WHIP = 438,
     MOVE_ROCK_WRECKER = 439,
@@ -525,7 +525,7 @@ enum __attribute__((packed)) Move
     MOVE_SOAK = 487,
     MOVE_FLAME_CHARGE = 488, //should be in
     MOVE_COIL = 489, //should be in
-    MOVE_LOW_SWEEP = 490, //should be in
+    MOVE_LOW_SWEEP = 490,
     MOVE_ACID_SPRAY = 491, //should be in
     MOVE_FOUL_PLAY = 492, //should be in
     MOVE_SIMPLE_BEAM = 493,
@@ -571,7 +571,7 @@ enum __attribute__((packed)) Move
     MOVE_SACRED_SWORD = 533,
     MOVE_RAZOR_SHELL = 534, //should be in
     MOVE_HEAT_CRASH = 535,
-    MOVE_LEAF_TORNADO = 536, //should be in
+    MOVE_LEAF_TORNADO = 536,
     MOVE_STEAMROLLER = 537, //should be in
     MOVE_COTTON_GUARD = 538, //should be in
     MOVE_NIGHT_DAZE = 539, //should be in if zoroark is in
@@ -587,7 +587,7 @@ enum __attribute__((packed)) Move
     MOVE_GLACIATE = 549,
     MOVE_BOLT_STRIKE = 550,
     MOVE_BLUE_FLARE = 551,
-    MOVE_FIERY_DANCE = 552, //should be in
+    MOVE_FIERY_DANCE = 552, //should be in if volcarona is in
     MOVE_FREEZE_SHOCK = 553,
     MOVE_ICE_BURN = 554,
     MOVE_SNARL = 555,
@@ -628,7 +628,7 @@ enum __attribute__((packed)) Move
     MOVE_FAIRY_LOCK = 587,
     MOVE_KINGS_SHIELD = 588, //should be in if aegislash is in
     MOVE_PLAY_NICE = 589,
-    MOVE_CONFIDE = 590, //should be in
+    MOVE_CONFIDE = 590, //should be in until here
     MOVE_DIAMOND_STORM = 591,
     MOVE_STEAM_ERUPTION = 592,
     MOVE_HYPERSPACE_HOLE = 593,
@@ -663,7 +663,7 @@ enum __attribute__((packed)) Move
     MOVE_HYPERSPACE_FURY = 621,
     MOVES_COUNT_GEN6,
 
-    // Gen 7
+    // Gen 7 done
     MOVE_SHORE_UP = MOVES_COUNT_GEN6,
     MOVE_FIRST_IMPRESSION = 623,
     MOVE_BANEFUL_BUNKER = 624,
@@ -736,7 +736,7 @@ enum __attribute__((packed)) Move
     MOVE_DOUBLE_IRON_BASH = 689,
     MOVES_COUNT_GEN7,
 
-    // Gen 8
+    // Gen 8 not done yet
     MOVE_DYNAMAX_CANNON = MOVES_COUNT_GEN7,
     MOVE_SNIPE_SHOT = 691,
     MOVE_JAW_LOCK = 692,
@@ -831,7 +831,7 @@ enum __attribute__((packed)) Move
     MOVE_TAKE_HEART = 778,
     MOVES_COUNT_GEN8,
 
-    // Gen 9
+    // Gen 9 done
     MOVE_TERA_BLAST = MOVES_COUNT_GEN8,
     MOVE_SILK_TRAP = 780,
     MOVE_AXE_KICK = 781,
@@ -872,7 +872,7 @@ enum __attribute__((packed)) Move
     MOVE_ARMOR_CANNON = 816,
     MOVE_BITTER_BLADE = 817,
     MOVE_DOUBLE_SHOCK = 818,
-    MOVE_GIGATON_HAMMER = 819, //should be in
+    MOVE_GIGATON_HAMMER = 819, //should be in if tinkaton is in
     MOVE_COMEUPPANCE = 820,
     MOVE_AQUA_CUTTER = 821,
     MOVE_BLAZING_TORQUE = 822,

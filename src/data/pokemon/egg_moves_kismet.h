@@ -604,6 +604,7 @@ static const u16 sSlowpokeEggMoveLearnset_Kismet[] = {
 #if P_FAMILY_MAGNEMITE
 static const u16 sMagnemiteEggMoveLearnset_Kismet[] = {
     MOVE_EXPLOSION,
+    MOVE_ELECTRO_BALL,
     MOVE_UNAVAILABLE,
 };
 
@@ -635,6 +636,7 @@ static const u16 sDoduoEggMoveLearnset_Kismet[] = {
     MOVE_HAZE,
     MOVE_FEINT_ATTACK,
     MOVE_FLAIL,
+    MOVE_BOUNCE,
     MOVE_ENDEAVOR,
     MOVE_MIRROR_MOVE,
     MOVE_BRAVE_BIRD,
@@ -791,6 +793,7 @@ static const u16 sExeggcuteEggMoveLearnset_Kismet[] = {
     MOVE_LEAF_STORM,
     MOVE_GIGA_DRAIN,
     MOVE_SKILL_SWAP,
+    MOVE_PSYSHOCK,
     MOVE_BLOCK,
     MOVE_REFLECT,
     MOVE_PSYCH_UP,
@@ -1054,6 +1057,7 @@ static const u16 sScytherEggMoveLearnset_Kismet[] = {
     MOVE_BATON_PASS,
     MOVE_RAZOR_WIND,
     MOVE_REVERSAL,
+    MOVE_DOUBLE_HIT,
     MOVE_ENDURE,
     MOVE_SILVER_WIND,
     MOVE_BUG_BUZZ,
@@ -1430,6 +1434,7 @@ static const u16 sChinchouEggMoveLearnset_Kismet[] = {
     MOVE_SHOCK_WAVE,
     MOVE_BRINE,
     MOVE_WATER_PULSE,
+    MOVE_ELECTRO_BALL,
     MOVE_UNAVAILABLE,
 };
 
@@ -1483,6 +1488,7 @@ static const u16 sMareepEggMoveLearnset_Kismet[] = {
     MOVE_EERIE_IMPULSE,
     MOVE_SAFEGUARD,
     MOVE_REFLECT,
+    MOVE_ELECTRO_BALL,
     MOVE_UNAVAILABLE,
 };
 
@@ -1735,6 +1741,7 @@ static const u16 sDunsparceEggMoveLearnset_Kismet[] = {
     MOVE_AGILITY,
     MOVE_SECRET_POWER,
     MOVE_SLEEP_TALK,
+    MOVE_DRILL_PECK,
     MOVE_HEX,
     MOVE_ROCK_SLIDE,
     MOVE_UNAVAILABLE,
@@ -1802,6 +1809,8 @@ static const u16 sQwilfishEggMoveLearnset_Kismet[] = {
 static const u16 sShuckleEggMoveLearnset_Kismet[] = {
     MOVE_SWEET_SCENT,
     MOVE_KNOCK_OFF,
+    MOVE_GUARD_SPLIT,
+    MOVE_POWER_SPLIT,
     MOVE_HELPING_HAND,
     MOVE_SAND_TOMB,
     MOVE_MUD_SLAP,
@@ -2770,6 +2779,7 @@ static const u16 sSeviperEggMoveLearnset_Kismet[] = {
     MOVE_NIGHT_SLASH,
     MOVE_IRON_TAIL,
     MOVE_PUNISHMENT,
+    MOVE_BELCH,
     MOVE_UNAVAILABLE,
 };
 
