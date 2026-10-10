@@ -14,15 +14,15 @@ Route13_hns_MapScripts_MAP_SCRIPT_ON_RESUME:
 	return
 
 Route13_hns_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_ALOLA_TRAVEL, 2, Route13_GetOffBoat
+	map_script_2 VAR_DAODAO_TRAVEL, 2, Route13_GetOffBoat
 	.2byte 0
 
 Route13_hns_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-	map_script_2 VAR_ALOLA_TRAVEL, 2, Route13_hns_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
+	map_script_2 VAR_DAODAO_TRAVEL, 2, Route13_hns_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
 	.2byte 0
 
 Route13_hns_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
-	applymovement Route13_Alola_Captain, Route13_hns_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0_Movement_0
+	applymovement LOCALID_ROUTE13_DAODAO_CAPTAIN, Route13_hns_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0_Movement_0
 	applymovement LOCALID_PLAYER, Route13_hns_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0_Movement_0
 	return
 
@@ -230,12 +230,12 @@ Route13_GetOffBoat::
 	compare VAR_TEMP_1, 26
 	goto_if_ne Route13_GetOffBoat_2
 	delay 30
-	applymovement Route13_Alola_Captain, Route13_GetOffBoat_Movement_0
+	applymovement LOCALID_ROUTE13_DAODAO_CAPTAIN, Route13_GetOffBoat_Movement_0
 	applymovement LOCALID_PLAYER, Route13_GetOffBoat_Movement_1
 	waitmovement 0
 	msgbox Route13_GetOffBoat_Text_0, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_ALOLA_TRAVEL, 0
+	setvar VAR_DAODAO_TRAVEL, 0
 	applymovement LOCALID_ROUTE13_BOAT, Route13_TravelToAlola_Movement_2
 	waitmovement 0
 	setobjectxyperm LOCALID_ROUTE13_BOAT, 89, 28
@@ -246,7 +246,7 @@ Route13_GetOffBoat::
 	end
 
 Route13_GetOffBoat_2:
-	setvar VAR_ALOLA_TRAVEL, 0
+	setvar VAR_DAODAO_TRAVEL, 0
 	release
 	end
 
@@ -271,7 +271,7 @@ Route13_TravelToAlola_NoWordYet:
 	end
 
 Route13_TravelToAlola_1:
-	goto_if_unset FLAG_VISITED_ALOLA, Route13_TravelToAlola_4
+	goto_if_unset FLAG_VISITED_DAODAO, Route13_TravelToAlola_4
 	msgbox Route13_TravelToAlola_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Route13_TravelToAlola_10
@@ -301,7 +301,7 @@ Route13_TravelToAlola_13:
 	clearflag FLAG_HIDE_ROUTE13_BOAT
 	applymovement LOCALID_ROUTE13_BOAT, Route13_Movement_BoatArrive
 	waitmovement 0
-	applymovement Route13_Alola_Captain, Route13_TravelToAlola_Movement_1
+	applymovement LOCALID_ROUTE13_DAODAO_CAPTAIN, Route13_TravelToAlola_Movement_1
 	applymovement LOCALID_PLAYER, Route13_TravelToAlola_Movement_1
 	waitmovement 0
 	fadescreenswapbuffers FADE_TO_BLACK
@@ -309,7 +309,7 @@ Route13_TravelToAlola_13:
 	playse SE_EXIT
 	special SpawnCameraObject
 	hideobjectat LOCALID_PLAYER, MAP_ROUTE13_HNS
-	hideobjectat Route13_Alola_Captain, MAP_ROUTE13_HNS
+	hideobjectat LOCALID_ROUTE13_DAODAO_CAPTAIN, MAP_ROUTE13_HNS
 	applymovement OBJ_EVENT_ID_CAMERA, Route13_TravelToAlola_Movement_1
 	waitmovement 0
 	waitse
@@ -319,17 +319,9 @@ Route13_TravelToAlola_13:
 
 	playse SE_M_SURF
 	applymovement LOCALID_ROUTE13_BOAT, Route13_TravelToAlola_Movement_2
-	setvar VAR_ALOLA_TRAVEL, 1
-	setflag FLAG_HIDE_MELEMELE_TOTEM
-	setflag FLAG_HIDE_AKALA_TOTEM
+	setvar VAR_DAODAO_TRAVEL, 1
 	setflag FLAG_HIDE_ULAULA_TOTEM
-	setflag FLAG_HIDE_PONI_TOTEM
 	setflag FLAG_HIDE_SAMSONOAK_INTRO
-	setflag FLAG_HIDE_TAPU_KOKO
-	setflag FLAG_HIDE_TAPU_LELE
-	setflag FLAG_HIDE_TAPU_BULU
-	setflag FLAG_HIDE_TAPU_FINI
-	setflag FLAG_HIDE_FLYOVER
 	setflag FLAG_HIDE_PHANT_OUTSIDE
 	setflag FLAG_HIDE_PHANT_INSIDE
 	delay 90
@@ -349,7 +341,7 @@ Route13_TravelToAlola_16:
 	clearflag FLAG_HIDE_ROUTE13_BOAT
 	applymovement LOCALID_ROUTE13_BOAT, Route13_Movement_BoatArrive
 	waitmovement 0
-	applymovement Route13_Alola_Captain, Route13_TravelToAlola_Movement_1
+	applymovement LOCALID_ROUTE13_DAODAO_CAPTAIN, Route13_TravelToAlola_Movement_1
 	applymovement LOCALID_PLAYER, Route13_TravelToAlola_Movement_1
 	waitmovement 0
 	fadescreenswapbuffers FADE_TO_BLACK
@@ -357,7 +349,7 @@ Route13_TravelToAlola_16:
 	playse SE_EXIT
 	special SpawnCameraObject
 	hideobjectat LOCALID_PLAYER, MAP_ROUTE13_HNS
-	hideobjectat Route13_Alola_Captain, MAP_ROUTE13_HNS
+	hideobjectat LOCALID_ROUTE13_DAODAO_CAPTAIN, MAP_ROUTE13_HNS
 	applymovement OBJ_EVENT_ID_CAMERA, Route13_TravelToAlola_Movement_1
 	waitmovement 0
 	waitse
@@ -367,7 +359,7 @@ Route13_TravelToAlola_16:
 	waitse
 	playse SE_M_SURF
 	applymovement LOCALID_ROUTE13_BOAT, Route13_TravelToAlola_Movement_2
-	setvar VAR_ALOLA_TRAVEL, 1
+	setvar VAR_DAODAO_TRAVEL, 1
 	delay 90
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_ROUTE13_BOAT

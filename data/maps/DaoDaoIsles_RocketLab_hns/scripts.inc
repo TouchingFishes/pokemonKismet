@@ -37,6 +37,7 @@ DaoDaoIsles_RocketLab_SetGiovanni:
 DaoDaoIsles_RocketLab_SetGenesect:
 	setflag FLAG_HIDE_DAODAO_LAB_GENESECT
 	goto_if_set FLAG_DAODAO_GENESECT_TAKEN, DaoDaoIsles_RocketLab_Ret
+	goto_if_set FLAG_DAODAO_GENESECT_KNOCKED_OUT, DaoDaoIsles_RocketLab_Ret
 	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_GIOVANNI, DaoDaoIsles_RocketLab_Ret
 	clearflag FLAG_HIDE_DAODAO_LAB_GENESECT
 	return
@@ -104,6 +105,8 @@ DaoDaoIsles_RocketLab_EventScript_BossKlinklang::
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_RocketLab_EventScript_BossStays
+	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a win.
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_RocketLab_EventScript_BossStays
 	setflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_BOSS_REGISTEEL
@@ -170,10 +173,19 @@ DaoDaoIsles_RocketLab_EventScript_Genesect::
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_RocketLab_EventScript_GenesectStays
+	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a knockout.
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_RocketLab_EventScript_GenesectStays
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, DaoDaoIsles_RocketLab_EventScript_Genesect_Caught
+	@ Knocked out: back after the next Hall of Fame (SpawnDaoDaoLegendaries).
+	setflag FLAG_DAODAO_GENESECT_KNOCKED_OUT
+	goto DaoDaoIsles_RocketLab_EventScript_Genesect_Gone
+
+DaoDaoIsles_RocketLab_EventScript_Genesect_Caught:
+	setflag FLAG_DAODAO_GENESECT_TAKEN
+DaoDaoIsles_RocketLab_EventScript_Genesect_Gone:
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_LAB_GENESECT
 	setflag FLAG_HIDE_DAODAO_LAB_GENESECT
-	setflag FLAG_DAODAO_GENESECT_TAKEN
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end

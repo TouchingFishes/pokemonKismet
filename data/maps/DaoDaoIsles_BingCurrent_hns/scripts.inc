@@ -29,3 +29,25 @@ DaoDaoIsles_BingCurrent_Text_GlaciaAfter:
 	.string "like this exists on an island so warm.\p"
 	.string "Perhaps that is reason enough to\n"
 	.string "keep looking.$"
+
+@ -----------------------------------------------------------------------------------------
+@ Moved from AlolaWater_hns/scripts.inc (2026-10-08, MIGRATION_DECISIONS 63). Labels kept their
+@ names past the prefix; Alola place names in the texts now name the DaoDao isles.
+@ -----------------------------------------------------------------------------------------
+
+DaoDaoIsles_BingCurrent_TrainerBattleSwimmer::
+	trainerbattle_single TRAINER_DAODAO_BING_CURRENT_SWIMMER_HNS, DaoDaoIsles_BingCurrent_TrainerBattleSwimmer_Text_0, DaoDaoIsles_BingCurrent_TrainerBattleSwimmer_Text_1
+	msgbox DaoDaoIsles_BingCurrent_TrainerBattleSwimmer_Text_2, MSGBOX_AUTOCLOSE
+	release
+	end
+
+
+DaoDaoIsles_BingCurrent_TrainerBattleSwimmer_Text_0:
+	.string "So much open water here!$"
+
+DaoDaoIsles_BingCurrent_TrainerBattleSwimmer_Text_1:
+	.string "Ouch,\npulled a hamstring…$"
+
+DaoDaoIsles_BingCurrent_TrainerBattleSwimmer_Text_2:
+	.string "There are some strong currents here.\n"
+	.string "I think it attracts strong POKéMON!$"

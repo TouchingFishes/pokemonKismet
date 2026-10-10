@@ -105,6 +105,7 @@ PokemonLeague_HallOfFame_EventScript_SetGameClearFlags::
 	call_if_ge VAR_VIRIDIAN_FOREST_PICHU, 4, PokemonLeague_HallOfFame_EventScript_SpawnPichu
 	call_if_set FLAG_DEFEATED_DAODAO_LAB_GIDEON, PokemonLeague_HallOfFame_EventScript_SpawnAlolaMons
 	call PokemonLeague_HallOfFame_EventScript_SpawnSinjohMons
+	call PokemonLeague_HallOfFame_EventScript_SpawnDaoDaoLegendaries
 	call_if_ge VAR_SINJOH_STORYLINE, 13 PokemonLeague_HallOfFame_EventScript_SpawnArceus
 	clearflag FLAG_DEFEATED_MEW
 	clearflag FLAG_CAUGHT_MEW
@@ -115,18 +116,30 @@ PokemonLeague_HallOfFame_EventScript_SetGameClearFlags::
 	return
 
 PokemonLeague_HallOfFame_EventScript_SpawnAlolaMons::
-	clearflag FLAG_HIDE_TAPU_BULU
-	clearflag FLAG_HIDE_TAPU_FINI
-	clearflag FLAG_HIDE_TAPU_KOKO
-	clearflag FLAG_HIDE_TAPU_LELE
 	clearflag FLAG_HIDE_CAMERUPT
-	clearflag FLAG_HIDE_KROOKODILE
+	clearflag FLAG_HIDE_DAODAO_SCORIA_CAVE_SALAZZLE
 	clearflag FLAG_HIDE_TSAREENA
-	clearflag FLAG_HIDE_KLAWF
-	clearflag FLAG_HIDE_MIMIKYU
 	clearflag FLAG_HIDE_DRAPION
 	clearflag FLAG_HIDE_TOXICROAK
 	clearflag FLAG_HIDE_PROBOPASS
+	clearflag FLAG_HIDE_DAODAO_BARB_HOLLOW_BARBARACLE
+	clearflag FLAG_HIDE_DAODAO_BINGCURRENT_CAVE_KLAWF
+	clearflag FLAG_HIDE_DAODAO_BINGCURRENT_CAVE_MIMIKYU
+	return
+
+@ The DAODAO legendaries, knocked out rather than caught. A caught one keeps its *_TAKEN flag
+@ and stays gone; the chambers and the lab re-derive their objects on the next visit.
+PokemonLeague_HallOfFame_EventScript_SpawnDaoDaoLegendaries::
+	clearflag FLAG_DAODAO_REGIROCK_KNOCKED_OUT
+	clearflag FLAG_DAODAO_REGISTEEL_KNOCKED_OUT
+	clearflag FLAG_DAODAO_REGICE_KNOCKED_OUT
+	clearflag FLAG_DAODAO_REGIELEKI_KNOCKED_OUT
+	clearflag FLAG_DAODAO_REGIDRAGO_KNOCKED_OUT
+	clearflag FLAG_DAODAO_GENESECT_KNOCKED_OUT
+	goto_if_unset FLAG_DAODAO_REGIGIGAS_KNOCKED_OUT, PokemonLeague_HallOfFame_EventScript_SpawnDaoDaoLegendaries_Ret
+	clearflag FLAG_DAODAO_REGIGIGAS_KNOCKED_OUT
+	setflag FLAG_DAODAO_REGIGIGAS_RESPAWNED
+PokemonLeague_HallOfFame_EventScript_SpawnDaoDaoLegendaries_Ret:
 	return
 
 PokemonLeague_HallOfFame_EventScript_SpawnSinjohMons::

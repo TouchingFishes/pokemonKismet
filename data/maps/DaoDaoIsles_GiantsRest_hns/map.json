@@ -7,7 +7,7 @@
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
-  "allow_cycling": false,
+  "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": false,
@@ -32,7 +32,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "DaoDaoIsles_GiantsRest_EventScript_Regigigas",
-      "flag": "FLAG_HIDE_DAODAO_REGIGIGAS"
+      "flag": "FLAG_TEMP_11"
     },
     {
       "local_id": "LOCALID_DAODAO_STEVEN_FINAL",

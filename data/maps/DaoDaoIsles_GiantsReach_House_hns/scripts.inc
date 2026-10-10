@@ -1,2 +1,187 @@
 DaoDaoIsles_GiantsReach_House_hns_MapScripts::
 	.byte 0
+
+@ -----------------------------------------------------------------------------------------
+@ Moved from UlaUla_House_hns/scripts.inc (2026-10-08, MIGRATION_DECISIONS 63). Labels kept their
+@ names past the prefix; Alola place names in the texts now name the DaoDao isles.
+@ -----------------------------------------------------------------------------------------
+
+DaoDaoIsles_GiantsReach_House_Phant::
+	lock
+	faceplayer
+	compare VAR_DAODAO_STATE, 4
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_1
+	msgbox DaoDaoIsles_GiantsReach_House_Phant_Text_7, MSGBOX_AUTOCLOSE
+	release
+	end
+
+DaoDaoIsles_GiantsReach_House_Phant_1:
+	msgbox DaoDaoIsles_GiantsReach_House_Phant_Text_0, MSGBOX_AUTOCLOSE
+	setvar VAR_DAODAO_STATE, 5
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 8
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_9
+DaoDaoIsles_GiantsReach_House_Phant_7:
+	compare VAR_TEMP_1, 9
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_14
+DaoDaoIsles_GiantsReach_House_Phant_12:
+	compare VAR_TEMP_1, 8
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_19
+DaoDaoIsles_GiantsReach_House_Phant_17:
+	playse SE_LEDGE
+	waitse
+	playse SE_LEDGE
+	waitse
+	msgbox DaoDaoIsles_GiantsReach_House_Phant_Text_3
+	compare VAR_TEMP_1, 8
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_24
+DaoDaoIsles_GiantsReach_House_Phant_22:
+	compare VAR_TEMP_1, 9
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_29
+DaoDaoIsles_GiantsReach_House_Phant_27:
+	compare VAR_TEMP_1, 8
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_34
+DaoDaoIsles_GiantsReach_House_Phant_32:
+	giveegg SPECIES_NOIBAT
+	playfanfare MUS_HG_OBTAIN_EGG
+	msgbox DaoDaoIsles_GiantsReach_House_Phant_Text_4
+	waitfanfare
+	msgbox DaoDaoIsles_GiantsReach_House_Phant_Text_5, MSGBOX_AUTOCLOSE
+	release
+	end
+
+DaoDaoIsles_GiantsReach_House_Phant_8:
+	applymovement Phantonomy, DaoDaoIsles_GiantsReach_House_Phant_Movement_0
+	goto DaoDaoIsles_GiantsReach_House_Phant_7
+
+DaoDaoIsles_GiantsReach_House_Phant_9:
+	compare VAR_TEMP_2, 10
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_8
+	goto DaoDaoIsles_GiantsReach_House_Phant_7
+
+DaoDaoIsles_GiantsReach_House_Phant_13:
+	applymovement Phantonomy, DaoDaoIsles_GiantsReach_House_Phant_Movement_1
+	goto DaoDaoIsles_GiantsReach_House_Phant_12
+
+DaoDaoIsles_GiantsReach_House_Phant_14:
+	compare VAR_TEMP_2, 9
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_13
+	goto DaoDaoIsles_GiantsReach_House_Phant_12
+
+DaoDaoIsles_GiantsReach_House_Phant_18:
+	applymovement Phantonomy, DaoDaoIsles_GiantsReach_House_Phant_Movement_2
+	goto DaoDaoIsles_GiantsReach_House_Phant_17
+
+DaoDaoIsles_GiantsReach_House_Phant_19:
+	compare VAR_TEMP_2, 8
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_18
+	goto DaoDaoIsles_GiantsReach_House_Phant_17
+
+DaoDaoIsles_GiantsReach_House_Phant_23:
+	applymovement Phantonomy, DaoDaoIsles_GiantsReach_House_Phant_Movement_3
+	waitmovement 0
+	delay 30
+	goto DaoDaoIsles_GiantsReach_House_Phant_22
+
+DaoDaoIsles_GiantsReach_House_Phant_24:
+	compare VAR_TEMP_2, 10
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_23
+	goto DaoDaoIsles_GiantsReach_House_Phant_22
+
+DaoDaoIsles_GiantsReach_House_Phant_28:
+	applymovement Phantonomy, DaoDaoIsles_GiantsReach_House_Phant_Movement_4
+	waitmovement 0
+	delay 30
+	goto DaoDaoIsles_GiantsReach_House_Phant_27
+
+DaoDaoIsles_GiantsReach_House_Phant_29:
+	compare VAR_TEMP_2, 9
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_28
+	goto DaoDaoIsles_GiantsReach_House_Phant_27
+
+DaoDaoIsles_GiantsReach_House_Phant_33:
+	applymovement Phantonomy, DaoDaoIsles_GiantsReach_House_Phant_Movement_5
+	waitmovement 0
+	delay 30
+	goto DaoDaoIsles_GiantsReach_House_Phant_32
+
+DaoDaoIsles_GiantsReach_House_Phant_34:
+	compare VAR_TEMP_2, 8
+	goto_if_eq DaoDaoIsles_GiantsReach_House_Phant_33
+	goto DaoDaoIsles_GiantsReach_House_Phant_32
+
+
+DaoDaoIsles_GiantsReach_House_Noivern::
+	lock
+	faceplayer
+	playmoncry SPECIES_NOIVERN, 0
+	msgbox DaoDaoIsles_GiantsReach_House_Noivern_Text_0, MSGBOX_AUTOCLOSE
+	waitmoncry
+	release
+	end
+
+
+DaoDaoIsles_GiantsReach_House_Typholosion::
+	lock
+	faceplayer
+	playmoncry SPECIES_SPIRITOMB, 0
+	msgbox DaoDaoIsles_GiantsReach_House_Typholosion_Text_0
+	waitmoncry
+	release
+	end
+
+
+DaoDaoIsles_GiantsReach_House_Phant_Movement_0:
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
+DaoDaoIsles_GiantsReach_House_Phant_Movement_1:
+	jump_in_place_right
+	jump_in_place_right
+	step_end
+
+DaoDaoIsles_GiantsReach_House_Phant_Movement_2:
+	jump_in_place_up
+	jump_in_place_up
+	step_end
+
+DaoDaoIsles_GiantsReach_House_Phant_Movement_3:
+	walk_in_place_down
+	walk_in_place_down
+	step_end
+
+DaoDaoIsles_GiantsReach_House_Phant_Movement_4:
+	walk_in_place_right
+	walk_in_place_right
+	step_end
+
+DaoDaoIsles_GiantsReach_House_Phant_Movement_5:
+	walk_in_place_up
+	walk_in_place_up
+	step_end
+
+DaoDaoIsles_GiantsReach_House_Phant_Text_0:
+	.string "Welcome, {PLAYER}.\p"
+	.string "Thanks again for playing!$"
+
+DaoDaoIsles_GiantsReach_House_Phant_Text_3:
+	.string "I think you've earned this.$"
+
+DaoDaoIsles_GiantsReach_House_Phant_Text_4:
+	.string "You received an EGG from PHANTONOMY!$"
+
+DaoDaoIsles_GiantsReach_House_Phant_Text_5:
+	.string "That EGG contains my favorite POKéMON.\p"
+	.string "Please, take good care of it…$"
+
+DaoDaoIsles_GiantsReach_House_Phant_Text_7:
+	.string "I hope you enjoyed this taste of DAODAO.\p"
+	.string "I'm working on a full demake of the\n"
+	.string "region called ULTRA ECLIPSE.$"
+
+DaoDaoIsles_GiantsReach_House_Noivern_Text_0:
+	.string "Scree!$"
+
+DaoDaoIsles_GiantsReach_House_Typholosion_Text_0:
+	.string "Graa!$"

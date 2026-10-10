@@ -26,6 +26,8 @@ DaoDaoIsles_BingCurrentCave_EventScript_BossWalrein::
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_BingCurrentCave_EventScript_BossStays
+	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a win.
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_BingCurrentCave_EventScript_BossStays
 	setflag FLAG_DEFEATED_DAODAO_BOSS_REGICE
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_BOSS_REGICE
@@ -59,6 +61,8 @@ DaoDaoIsles_BingCurrentCave_EventScript_Klawf::
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_BingCurrentCave_EventScript_KlawfStays
+	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a win.
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_BingCurrentCave_EventScript_KlawfStays
 	setflag FLAG_HIDE_DAODAO_BINGCURRENT_CAVE_KLAWF
 	removeobject LOCALID_DAODAO_BINGCURRENT_CAVE_KLAWF
 DaoDaoIsles_BingCurrentCave_EventScript_KlawfStays::
@@ -77,6 +81,8 @@ DaoDaoIsles_BingCurrentCave_EventScript_Mimikyu::
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_BingCurrentCave_EventScript_MimikyuStays
+	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a win.
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_BingCurrentCave_EventScript_MimikyuStays
 	setflag FLAG_HIDE_DAODAO_BINGCURRENT_CAVE_MIMIKYU
 	removeobject LOCALID_DAODAO_BINGCURRENT_CAVE_MIMIKYU
 DaoDaoIsles_BingCurrentCave_EventScript_MimikyuStays::

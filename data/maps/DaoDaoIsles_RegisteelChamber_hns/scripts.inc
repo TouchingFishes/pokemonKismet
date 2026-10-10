@@ -5,6 +5,7 @@ DaoDaoIsles_RegisteelChamber_hns_MapScripts::
 DaoDaoIsles_RegisteelChamber_OnTransition:
 	setflag FLAG_HIDE_DAODAO_REGISTEEL
 	goto_if_set FLAG_DAODAO_REGISTEEL_TAKEN, DaoDaoIsles_RegisteelChamber_Ret
+	goto_if_set FLAG_DAODAO_REGISTEEL_KNOCKED_OUT, DaoDaoIsles_RegisteelChamber_Ret
 	goto_if_unset FLAG_DAODAO_REGIS_ENABLED, DaoDaoIsles_RegisteelChamber_Ret
 	goto_if_unset FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL, DaoDaoIsles_RegisteelChamber_Ret
 	clearflag FLAG_HIDE_DAODAO_REGISTEEL
@@ -23,10 +24,19 @@ DaoDaoIsles_RegisteelChamber_EventScript_Registeel::
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_RegisteelChamber_EventScript_Stays
+	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a knockout.
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_RegisteelChamber_EventScript_Stays
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, DaoDaoIsles_RegisteelChamber_EventScript_Regi_Caught
+	@ Knocked out: back after the next Hall of Fame (SpawnDaoDaoLegendaries).
+	setflag FLAG_DAODAO_REGISTEEL_KNOCKED_OUT
+	goto DaoDaoIsles_RegisteelChamber_EventScript_Regi_Gone
+
+DaoDaoIsles_RegisteelChamber_EventScript_Regi_Caught:
+	setflag FLAG_DAODAO_REGISTEEL_TAKEN
+DaoDaoIsles_RegisteelChamber_EventScript_Regi_Gone:
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_REGISTEEL
 	setflag FLAG_HIDE_DAODAO_REGISTEEL
-	setflag FLAG_DAODAO_REGISTEEL_TAKEN
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end

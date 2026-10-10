@@ -967,7 +967,7 @@
 #define FLAG_HIDE_ROUTE49_TM_ROCK_CLIMB                     (HNS_EXTENDED_CONTENT_START + 74)
 #define FLAG_COMPLETED_CASTFORM_TRADE                   (HNS_EXTENDED_CONTENT_START + 75)
 #define FLAG_HIDE_SLOWPOKE_WELL_TAILLESS_SLOWPOKES                    (HNS_EXTENDED_CONTENT_START + 76)
-#define FLAG_ULAULA_MOVE_TUTOR_PAID                 (HNS_EXTENDED_CONTENT_START + 77) // paid the Ula'ula move tutor his 5 HEART SCALES
+#define FLAG_DAODAO_GIANTS_REACH_MOVE_TUTOR_PAID    (HNS_EXTENDED_CONTENT_START + 77) // paid the Ula'ula move tutor his 5 HEART SCALES
 #define FLAG_ITEM_ROUTE37_GRASS_KNOT                (HNS_EXTENDED_CONTENT_START + 78)
 #define FLAG_ITEM_ROUTE_41_SHOAL_SALT_1             (HNS_EXTENDED_CONTENT_START + 79)
 #define FLAG_ITEM_ROUTE_41_SHOAL_SALT_2             (HNS_EXTENDED_CONTENT_START + 80)
@@ -1045,16 +1045,20 @@
 #define FLAG_HIDDEN_ITEM_DAODAO_MANSION_B1F_ELIXIR  (HNS_EXTENDED_CONTENT_START + 135)
 #define FLAG_DAODAO_MANSION_SHORTCUT_OPEN           (HNS_EXTENDED_CONTENT_START + 136) // 1F gate, unlatched from the plant-room side; replaces FRLG's back door
 #define FLAG_HIDE_DAODAO_MANSION_1F_CHILL_DRIVE     (HNS_EXTENDED_CONTENT_START + 137) // where the back door was
-#define FLAG_EXTENDED_CONTENT_138                   (HNS_EXTENDED_CONTENT_START + 138)
-#define FLAG_EXTENDED_CONTENT_139                   (HNS_EXTENDED_CONTENT_START + 139)
-#define FLAG_EXTENDED_CONTENT_140                   (HNS_EXTENDED_CONTENT_START + 140)
-#define FLAG_EXTENDED_CONTENT_141                  (HNS_EXTENDED_CONTENT_START + 141)
-#define FLAG_EXTENDED_CONTENT_142                  (HNS_EXTENDED_CONTENT_START + 142)
-#define FLAG_EXTENDED_CONTENT_143                  (HNS_EXTENDED_CONTENT_START + 143)
-#define FLAG_EXTENDED_CONTENT_144                  (HNS_EXTENDED_CONTENT_START + 144)
-#define FLAG_EXTENDED_CONTENT_145                  (HNS_EXTENDED_CONTENT_START + 145)
-#define FLAG_EXTENDED_CONTENT_146                  (HNS_EXTENDED_CONTENT_START + 146)
-#define FLAG_EXTENDED_CONTENT_147                  (HNS_EXTENDED_CONTENT_START + 147)
+#define FLAG_HIDE_DAODAO_MANSION_2F_DOUSE_DRIVE     (HNS_EXTENDED_CONTENT_START + 138) // the study behind 2F's barrier (switch on)
+#define FLAG_HIDE_DAODAO_MANSION_3F_SHOCK_DRIVE     (HNS_EXTENDED_CONTENT_START + 139) // beside 3F's machines (switch off)
+// Knocked out, not caught: gone until the next Hall of Fame, which clears these
+// (PokemonLeague_HallOfFame_EventScript_SpawnDaoDaoLegendaries). A catch sets the
+// matching *_TAKEN flag instead, which is permanent. Regigigas has no TAKEN flag: the
+// Hall of Fame turns its knockout into FLAG_DAODAO_REGIGIGAS_RESPAWNED instead.
+#define FLAG_DAODAO_REGIROCK_KNOCKED_OUT            (HNS_EXTENDED_CONTENT_START + 140)
+#define FLAG_DAODAO_REGISTEEL_KNOCKED_OUT           (HNS_EXTENDED_CONTENT_START + 141)
+#define FLAG_DAODAO_REGICE_KNOCKED_OUT              (HNS_EXTENDED_CONTENT_START + 142)
+#define FLAG_DAODAO_REGIELEKI_KNOCKED_OUT           (HNS_EXTENDED_CONTENT_START + 143)
+#define FLAG_DAODAO_REGIDRAGO_KNOCKED_OUT           (HNS_EXTENDED_CONTENT_START + 144)
+#define FLAG_DAODAO_REGIGIGAS_KNOCKED_OUT           (HNS_EXTENDED_CONTENT_START + 145)
+#define FLAG_DAODAO_GENESECT_KNOCKED_OUT            (HNS_EXTENDED_CONTENT_START + 146)
+#define FLAG_DAODAO_REGIGIGAS_RESPAWNED             (HNS_EXTENDED_CONTENT_START + 147) // a knocked-out REGIGIGAS is back (see FLAG_HIDE_DAODAO_REGIGIGAS)
 #define FLAG_EXTENDED_CONTENT_148                  (HNS_EXTENDED_CONTENT_START + 148)
 #define FLAG_EXTENDED_CONTENT_149                  (HNS_EXTENDED_CONTENT_START + 149)
 #define FLAG_EXTENDED_CONTENT_150                  (HNS_EXTENDED_CONTENT_START + 150)
@@ -1133,80 +1137,80 @@
 #define FLAG_EXTENDED_CONTENT_223                   (HNS_EXTENDED_CONTENT_START + 223)
 #define FLAG_EXTENDED_CONTENT_224                   (HNS_EXTENDED_CONTENT_START + 224)
 #define FLAG_EXTENDED_CONTENT_225                   (HNS_EXTENDED_CONTENT_START + 225)
-#define FLAG_AKALA_TOTEM_DAY                            (HNS_EXTENDED_CONTENT_START + 226) // sets totem to day variant on akala
+#define FLAG_DAODAO_KILN_TOTEM_DAY                      (HNS_EXTENDED_CONTENT_START + 226) // sets totem to day variant on akala
 #define FLAG_ULAULA_TOTEM_DAY                           (HNS_EXTENDED_CONTENT_START + 227) // sets totem to day variant on ulaula
-#define FLAG_MELEMELE_TOTEM_DAY                         (HNS_EXTENDED_CONTENT_START + 228) // sets totem to day variant on melemele
+#define FLAG_DAODAO_LANDFALL_TOTEM_DAY                  (HNS_EXTENDED_CONTENT_START + 228) // sets totem to day variant on melemele
 #define FLAG_HIDE_PHANT_INSIDE                          (HNS_EXTENDED_CONTENT_START + 229) // hide phantonomy inside on ulaula
 #define FLAG_HIDE_PHANT_OUTSIDE                         (HNS_EXTENDED_CONTENT_START + 230) // hide phantonomy outside on ulaula
-#define FLAG_BATTLED_TAPU_FINI                          (HNS_EXTENDED_CONTENT_START + 231) // battled tapu fini
-#define FLAG_BATTLED_TAPU_BULU                          (HNS_EXTENDED_CONTENT_START + 232) // battled tapu bulu
-#define FLAG_BATTLED_TAPU_LELE                          (HNS_EXTENDED_CONTENT_START + 233) // battled tapu lele
-#define FLAG_BATTLED_TAPU_KOKO                          (HNS_EXTENDED_CONTENT_START + 234) // battled tapu koko
-#define FLAG_HIDE_FLYOVER                               (HNS_EXTENDED_CONTENT_START + 235) // hide flyover object
-#define FLAG_HIDE_TAPU_BULU                             (HNS_EXTENDED_CONTENT_START + 236) // hide tapu bulu if caught or defeated
-#define FLAG_HIDE_TAPU_LELE                             (HNS_EXTENDED_CONTENT_START + 237) // hide tapu lele if caught or defeated
-#define FLAG_HIDE_TAPU_FINI                             (HNS_EXTENDED_CONTENT_START + 238) // hide tapu fini if caught or defeated
-#define FLAG_HIDE_TAPU_KOKO                             (HNS_EXTENDED_CONTENT_START + 239) // hide tapu koko if caught or defeated
-#define FLAG_FLYOVER_TAPU_BULU                          (HNS_EXTENDED_CONTENT_START + 240) // flyover tapu bulu in the wild
-#define FLAG_FLYOVER_TAPU_LELE                          (HNS_EXTENDED_CONTENT_START + 241) // flyover tapu lele in the wild
-#define FLAG_FLYOVER_TAPU_FINI                          (HNS_EXTENDED_CONTENT_START + 242) // flyover tapu fini in the wild
-#define FLAG_FLYOVER_TAPU_KOKO                          (HNS_EXTENDED_CONTENT_START + 243) // flyover tapu koko in the wild
+#define FLAG_EXTENDED_CONTENT_231                       (HNS_EXTENDED_CONTENT_START + 231) // freed 2026-10-08 (was FLAG_BATTLED_TAPU_FINI; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_232                       (HNS_EXTENDED_CONTENT_START + 232) // freed 2026-10-08 (was FLAG_BATTLED_TAPU_BULU; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_233                       (HNS_EXTENDED_CONTENT_START + 233) // freed 2026-10-08 (was FLAG_BATTLED_TAPU_LELE; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_234                       (HNS_EXTENDED_CONTENT_START + 234) // freed 2026-10-08 (was FLAG_BATTLED_TAPU_KOKO; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_235                       (HNS_EXTENDED_CONTENT_START + 235) // freed 2026-10-08 (was FLAG_HIDE_FLYOVER; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_236                       (HNS_EXTENDED_CONTENT_START + 236) // freed 2026-10-08 (was FLAG_HIDE_TAPU_BULU; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_237                       (HNS_EXTENDED_CONTENT_START + 237) // freed 2026-10-08 (was FLAG_HIDE_TAPU_LELE; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_238                       (HNS_EXTENDED_CONTENT_START + 238) // freed 2026-10-08 (was FLAG_HIDE_TAPU_FINI; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_239                       (HNS_EXTENDED_CONTENT_START + 239) // freed 2026-10-08 (was FLAG_HIDE_TAPU_KOKO; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_240                       (HNS_EXTENDED_CONTENT_START + 240) // freed 2026-10-08 (was FLAG_FLYOVER_TAPU_BULU; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_241                       (HNS_EXTENDED_CONTENT_START + 241) // freed 2026-10-08 (was FLAG_FLYOVER_TAPU_LELE; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_242                       (HNS_EXTENDED_CONTENT_START + 242) // freed 2026-10-08 (was FLAG_FLYOVER_TAPU_FINI; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_243                       (HNS_EXTENDED_CONTENT_START + 243) // freed 2026-10-08 (was FLAG_FLYOVER_TAPU_KOKO; older saves may have it set)
 #define FLAG_HIDE_ROUTE13_BOAT                       (HNS_EXTENDED_CONTENT_START + 244) 
 #define FLAG_EXTENDED_CONTENT_245                       (HNS_EXTENDED_CONTENT_START + 245) 
 #define FLAG_EXTENDED_CONTENT_246                        (HNS_EXTENDED_CONTENT_START + 246) 
-#define FLAG_TRIGGERED_PONI_TOTEM                       (HNS_EXTENDED_CONTENT_START + 247) // for use in triggering poni totem anim
+#define FLAG_TRIGGERED_DAODAO_WAKE_TOTEM                (HNS_EXTENDED_CONTENT_START + 247) // for use in triggering poni totem anim
 #define FLAG_TRIGGERED_ULAULA_TOTEM                     (HNS_EXTENDED_CONTENT_START + 248) // for use in triggering ulaula totem anim
-#define FLAG_TRIGGERED_AKALA_TOTEM                      (HNS_EXTENDED_CONTENT_START + 249) // for use in triggering akala totem anim
-#define FLAG_TRIGGERED_MELEMELE_TOTEM                   (HNS_EXTENDED_CONTENT_START + 250) // for use in triggering melemele totem anim
-#define FLAG_DEFEATED_SAMSON_OAK                        (HNS_EXTENDED_CONTENT_START + 251) // if the player defeated Samson Oak
+#define FLAG_TRIGGERED_DAODAO_KILN_TOTEM                (HNS_EXTENDED_CONTENT_START + 249) // for use in triggering akala totem anim
+#define FLAG_TRIGGERED_DAODAO_LANDFALL_TOTEM            (HNS_EXTENDED_CONTENT_START + 250) // for use in triggering melemele totem anim
+#define FLAG_EXTENDED_CONTENT_251                       (HNS_EXTENDED_CONTENT_START + 251) // freed 2026-10-08 (was FLAG_DEFEATED_SAMSON_OAK; older saves may have it set)
 #define FLAG_DEFEATED_ULAULA_TOTEM                      (HNS_EXTENDED_CONTENT_START + 252) // if the player defeated the ulaula totem
-#define FLAG_DEFEATED_PONI_TOTEM                        (HNS_EXTENDED_CONTENT_START + 253) // if the player defeated the poni totem
-#define FLAG_DEFEATED_AKALA_TOTEM                       (HNS_EXTENDED_CONTENT_START + 254) // if the player defeated the akala totem
-#define FLAG_DEFEATED_MELEMELE_TOTEM                    (HNS_EXTENDED_CONTENT_START + 255) // if the player defeated the melemele totem
-#define FLAG_CAUGHT_ALL_ULAULA                          (HNS_EXTENDED_CONTENT_START + 256) // caught every checklist mon on ula'ula
-#define FLAG_CAUGHT_ALL_PONI                            (HNS_EXTENDED_CONTENT_START + 257) // caught every checklist mon on poni
-#define FLAG_CAUGHT_ALL_AKALA                           (HNS_EXTENDED_CONTENT_START + 258) // caught every checklist mon on akala
-#define FLAG_CAUGHT_ALL_MELEMELE                        (HNS_EXTENDED_CONTENT_START + 259) // caught every checklist mon on melemele
+#define FLAG_DEFEATED_DAODAO_WAKE_TOTEM                 (HNS_EXTENDED_CONTENT_START + 253) // if the player defeated the poni totem
+#define FLAG_DEFEATED_DAODAO_KILN_TOTEM                 (HNS_EXTENDED_CONTENT_START + 254) // if the player defeated the akala totem
+#define FLAG_DEFEATED_DAODAO_LANDFALL_TOTEM             (HNS_EXTENDED_CONTENT_START + 255) // if the player defeated the melemele totem
+#define FLAG_EXTENDED_CONTENT_256                       (HNS_EXTENDED_CONTENT_START + 256) // freed 2026-10-08 (was FLAG_CAUGHT_ALL_ULAULA; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_257                       (HNS_EXTENDED_CONTENT_START + 257) // freed 2026-10-08 (was FLAG_CAUGHT_ALL_PONI; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_258                       (HNS_EXTENDED_CONTENT_START + 258) // freed 2026-10-08 (was FLAG_CAUGHT_ALL_AKALA; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_259                       (HNS_EXTENDED_CONTENT_START + 259) // freed 2026-10-08 (was FLAG_CAUGHT_ALL_MELEMELE; older saves may have it set)
 #define FLAG_BATTLED_PROBOPASS                          (HNS_EXTENDED_CONTENT_START + 260) // used for progression if battled probopass at all
 #define FLAG_BATTLED_KLAWF                              (HNS_EXTENDED_CONTENT_START + 261) // used for progression if battled klawf at all
 #define FLAG_BATTLED_MIMIKYU                            (HNS_EXTENDED_CONTENT_START + 262) // used for progression if battled mimikyu at all
 #define FLAG_BATTLED_DRAPION                            (HNS_EXTENDED_CONTENT_START + 263) // used for progression if battled drapion at all
 #define FLAG_BATTLED_CAMERUPT                           (HNS_EXTENDED_CONTENT_START + 264) // used for progression if battled camerupt at all
-#define FLAG_BATTLED_KROOKODILE                         (HNS_EXTENDED_CONTENT_START + 265) // used for progression if battled krookodile at all
+#define FLAG_EXTENDED_CONTENT_265                       (HNS_EXTENDED_CONTENT_START + 265) // freed 2026-10-08 (was FLAG_BATTLED_KROOKODILE; older saves may have it set)
 #define FLAG_BATTLED_TOXICROAK                          (HNS_EXTENDED_CONTENT_START + 266) // used for progression if battled toxicroak at all
 #define FLAG_BATTLED_TSAREENA                           (HNS_EXTENDED_CONTENT_START + 267) // used for progression if battled tsareena at all
 #define FLAG_HIDE_SAMSONOAK_INTRO                       (HNS_EXTENDED_CONTENT_START + 268) // hides the samson oak intro object
 #define FLAG_CAUGHT_PALOSSAND                           (HNS_EXTENDED_CONTENT_START + 269) // hide palossand if caught or defeated
 #define FLAG_EXTENDED_CONTENT_270                          (HNS_EXTENDED_CONTENT_START + 270)
-#define FLAG_HIDE_KLAWF                               (HNS_EXTENDED_CONTENT_START + 271) // hide klawf if caught or defeated
-#define FLAG_HIDE_MIMIKYU                             (HNS_EXTENDED_CONTENT_START + 272) // hide mimikyu if caught or defeated
+#define FLAG_EXTENDED_CONTENT_271                     (HNS_EXTENDED_CONTENT_START + 271) // freed 2026-10-08 (was FLAG_HIDE_KLAWF; older saves may have it set)
+#define FLAG_EXTENDED_CONTENT_272                     (HNS_EXTENDED_CONTENT_START + 272) // freed 2026-10-08 (was FLAG_HIDE_MIMIKYU; older saves may have it set)
 #define FLAG_HIDE_DRAPION                             (HNS_EXTENDED_CONTENT_START + 273) // hide drapion if caught or defeated
 #define FLAG_HIDE_CAMERUPT                            (HNS_EXTENDED_CONTENT_START + 274) // hide camerupt if caught or defeated
-#define FLAG_HIDE_KROOKODILE                          (HNS_EXTENDED_CONTENT_START + 275) // hide krookodile if caught or defeated
+#define FLAG_HIDE_DAODAO_SCORIA_CAVE_SALAZZLE         (HNS_EXTENDED_CONTENT_START + 275) // SCORIA CAVE's SALAZZLE; FLAG_HIDE_KROOKODILE (Akala Cave's static) until 2026-10-08
 #define FLAG_HIDE_TOXICROAK                           (HNS_EXTENDED_CONTENT_START + 276) // hide toxicroak if caught or defeated
 #define FLAG_HIDE_PROBOPASS                           (HNS_EXTENDED_CONTENT_START + 277) // hide probopass if caught or defeated
 #define FLAG_HIDE_TSAREENA                            (HNS_EXTENDED_CONTENT_START + 278) // hide tsareena if caught or defeated
-#define FLAG_HIDE_PONI_TOTEM                            (HNS_EXTENDED_CONTENT_START + 279) // hide the poni totem mon
+#define FLAG_HIDE_DAODAO_WAKE_TOTEM                     (HNS_EXTENDED_CONTENT_START + 279) // hide the poni totem mon
 #define FLAG_HIDE_ULAULA_TOTEM                          (HNS_EXTENDED_CONTENT_START + 280) // hide the ula'ula totem mon
-#define FLAG_HIDE_AKALA_TOTEM                           (HNS_EXTENDED_CONTENT_START + 281) // hide the akala totem mon
-#define FLAG_HIDE_MELEMELE_TOTEM                        (HNS_EXTENDED_CONTENT_START + 282) // hide the melemele totem mon
+#define FLAG_HIDE_DAODAO_KILN_TOTEM                     (HNS_EXTENDED_CONTENT_START + 281) // hide the akala totem mon
+#define FLAG_HIDE_DAODAO_LANDFALL_TOTEM                 (HNS_EXTENDED_CONTENT_START + 282) // hide the melemele totem mon
 #define FLAG_EXTENDED_CONTENT_283                          (HNS_EXTENDED_CONTENT_START + 283) 
-#define FLAG_VISITED_ALOLA                              (HNS_EXTENDED_CONTENT_START + 284) // track if the player has been to alola before.
-#define FLAG_PONI_HIDDEN_ITEM_1                     (HNS_EXTENDED_CONTENT_START + 285)
+#define FLAG_VISITED_DAODAO                             (HNS_EXTENDED_CONTENT_START + 284) // track if the player has been to alola before.
+#define FLAG_DAODAO_WAKE_HIDDEN_ITEM_1              (HNS_EXTENDED_CONTENT_START + 285)
 #define FLAG_ULAULA_CAVE_HIDDEN_ITEM_2              (HNS_EXTENDED_CONTENT_START + 286)
 #define FLAG_ULAULA_CAVE_HIDDEN_ITEM_1              (HNS_EXTENDED_CONTENT_START + 287)
-#define FLAG_ULAULA_HIDDEN_ITEM_2                   (HNS_EXTENDED_CONTENT_START + 288)
-#define FLAG_ULAULA_HIDDEN_ITEM_1                   (HNS_EXTENDED_CONTENT_START + 289)
-#define FLAG_AKALA_CAVE_HIDDEN_ITEM_2               (HNS_EXTENDED_CONTENT_START + 290)
-#define FLAG_AKALA_CAVE_HIDDEN_ITEM_1               (HNS_EXTENDED_CONTENT_START + 291)
-#define FLAG_AKALA_FOREST_HIDDEN_ITEM_2             (HNS_EXTENDED_CONTENT_START + 292)
-#define FLAG_AKALA_FOREST_HIDDEN_ITEM_1             (HNS_EXTENDED_CONTENT_START + 293)
-#define FLAG_AKALA_HIDDEN_ITEM_3                    (HNS_EXTENDED_CONTENT_START + 294)
-#define FLAG_AKALA_HIDDEN_ITEM_2                    (HNS_EXTENDED_CONTENT_START + 295)
-#define FLAG_AKALA_HIDDEN_ITEM_1                    (HNS_EXTENDED_CONTENT_START + 296)
-#define FLAG_PONI_CAVE_HIDDEN_ITEM_2                (HNS_EXTENDED_CONTENT_START + 297)
-#define FLAG_PONI_CAVE_HIDDEN_ITEM_1                (HNS_EXTENDED_CONTENT_START + 298)
-#define FLAG_MELEMELE_HIDDEN_ITEM                   (HNS_EXTENDED_CONTENT_START + 299)
+#define FLAG_DAODAO_GIANTS_REACH_HIDDEN_ITEM_2      (HNS_EXTENDED_CONTENT_START + 288)
+#define FLAG_DAODAO_GIANTS_REACH_HIDDEN_ITEM_1      (HNS_EXTENDED_CONTENT_START + 289)
+#define FLAG_DAODAO_SCORIA_CAVE_HIDDEN_ITEM_2       (HNS_EXTENDED_CONTENT_START + 290)
+#define FLAG_DAODAO_SCORIA_CAVE_HIDDEN_ITEM_1       (HNS_EXTENDED_CONTENT_START + 291)
+#define FLAG_DAODAO_ETERNA_FOREST_HIDDEN_ITEM_2     (HNS_EXTENDED_CONTENT_START + 292)
+#define FLAG_DAODAO_ETERNA_FOREST_HIDDEN_ITEM_1     (HNS_EXTENDED_CONTENT_START + 293)
+#define FLAG_DAODAO_KILN_HIDDEN_ITEM_3              (HNS_EXTENDED_CONTENT_START + 294)
+#define FLAG_DAODAO_KILN_HIDDEN_ITEM_2              (HNS_EXTENDED_CONTENT_START + 295)
+#define FLAG_DAODAO_KILN_HIDDEN_ITEM_1              (HNS_EXTENDED_CONTENT_START + 296)
+#define FLAG_DAODAO_WAKE_CAVE_HIDDEN_ITEM_2         (HNS_EXTENDED_CONTENT_START + 297)
+#define FLAG_DAODAO_WAKE_CAVE_HIDDEN_ITEM_1         (HNS_EXTENDED_CONTENT_START + 298)
+#define FLAG_DAODAO_LANDFALL_HIDDEN_ITEM            (HNS_EXTENDED_CONTENT_START + 299)
 
 // The 11 maps ported in MIGRATION_DECISIONS.md section 22. Two NPC TM gifts and
 // five item balls. The fork spelled the TM flags FLAG_RECEIVED_TM_MUD_SLAP /
@@ -1308,9 +1312,9 @@
 // "The isles are done": set by Common_EventScript_ClearKantoCordon, which GIDEON's
 // defeat calls (DaoDaoIsles_RocketLab_EventScript_GideonDefeated). Read by MISTY's
 // GYM; the blockers below carry flags of their own, set in the same call. The name
-// predates the isles merging into DAODAO; nothing still reads VAR_ALOLA_STATE >= 4
+// predates the isles merging into DAODAO; nothing still reads VAR_DAODAO_STATE >= 4
 // (the Hall of Fame's isle respawns key on FLAG_DEFEATED_DAODAO_LAB_GIDEON too).
-#define FLAG_ALOLA_CLEARED                          (HNS_EXTENDED_CONTENT_START + 328)
+#define FLAG_DAODAO_CLEARED                         (HNS_EXTENDED_CONTENT_START + 328)
 
 // THE KANTO CORDON - everything shut until GIDEON falls, lifted in one call
 // (Common_EventScript_ClearKantoCordon). Each blocker stands on the tile in front
@@ -1322,7 +1326,7 @@
 //                       Kanto guard, a one-tile plug in front of VIRIDIAN, PEWTER,
 //                       PALLET, CINNABAR and SEAFOAM (2.0 hid him when Vermilion's
 //                       Snorlax woke; not any more)
-//   MISTY               away; FLAG_ALOLA_CLEARED above, read by her GYM
+//   MISTY               away; FLAG_DAODAO_CLEARED above, read by her GYM
 // So before GIDEON: 12 badges, no BROCK, no BLAINE, no MISTY (Moritz, 2026-09-30).
 #define FLAG_HIDE_MTMOON_BLOCKER                    (HNS_EXTENDED_CONTENT_START + 329)
 #define FLAG_HIDE_DIGLETTS_CAVE_BLOCKER             (HNS_EXTENDED_CONTENT_START + 330)
@@ -1423,6 +1427,10 @@
 #define FLAG_DEFEATED_DAODAO_BOSS_REGICE            (HNS_EXTENDED_CONTENT_START + 352)
 #define FLAG_DEFEATED_DAODAO_BOSS_REGIELEKI         (HNS_EXTENDED_CONTENT_START + 353)
 #define FLAG_DEFEATED_DAODAO_BOSS_REGIDRAGO         (HNS_EXTENDED_CONTENT_START + 354)
+// Set once REGIGIGAS has been battled to the end, and never cleared: both STEVENs read it
+// (the SAFARI one uses it as his hide flag). The REGIGIGAS object itself hides on FLAG_TEMP_11,
+// derived in DaoDaoIsles_GiantsRest_OnTransition, so a Hall of Fame respawn after a knockout
+// (FLAG_DAODAO_REGIGIGAS_RESPAWNED) can bring it back without bringing the SAFARI STEVEN back.
 #define FLAG_HIDE_DAODAO_REGIGIGAS                  (HNS_EXTENDED_CONTENT_START + 355)
 
 // The five bosses themselves. Each map derives its own in ON_TRANSITION from
@@ -1480,7 +1488,6 @@
 // ALIAS, not a new flag: only 11 remain in this block before
 // TRAINER_FLAGS_START, and with the Alola copy of that cave unreachable,
 // reusing its hide flag costs nothing while the name still says what it hides.
-#define FLAG_HIDE_DAODAO_SCORIA_CAVE_SALAZZLE           FLAG_HIDE_KROOKODILE
 
 // The POKeMON MANSION interior, behind the mansion drawn in Eterna Forest.
 // Every one of these exists because the FRLG original's flag resolves to 0

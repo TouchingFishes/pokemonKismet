@@ -188,8 +188,8 @@
 #define STARTER_REGION_COUNT     6
 
 // Alola Vars
-#define VAR_ALOLA_TRAVEL                                 0x40AD // var for setting up mapscripts when traveling to and from alola.
-#define VAR_ALOLA_STATE                                  0x40AE // state of the story in alola
+#define VAR_DAODAO_TRAVEL                                0x40AD // var for setting up mapscripts when traveling to and from alola.
+#define VAR_DAODAO_STATE                                 0x40AE // state of the story in alola
 
 // Sinjoh Vars
 #define VAR_SINJOH_STORYLINE                             0x40AF // 6: Free roam. 7: return to steven with plates. 9: stairs opened, battle with steven. 10: meet arceus. 11: done.

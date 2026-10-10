@@ -3,6 +3,14 @@ DaoDaoIsles_GiantsRest_hns_MapScripts::
 	.byte 0
 
 DaoDaoIsles_GiantsRest_OnTransition:
+	@ REGIGIGAS stands until first battled, and again after a Hall of Fame that followed a
+	@ knockout. FLAG_HIDE_DAODAO_REGIGIGAS stays set either way - both STEVENs read it.
+	setflag FLAG_TEMP_11
+	goto_if_unset FLAG_HIDE_DAODAO_REGIGIGAS, DaoDaoIsles_GiantsRest_ShowRegigigas
+	goto_if_unset FLAG_DAODAO_REGIGIGAS_RESPAWNED, DaoDaoIsles_GiantsRest_SetSteven
+DaoDaoIsles_GiantsRest_ShowRegigigas:
+	clearflag FLAG_TEMP_11
+DaoDaoIsles_GiantsRest_SetSteven:
 	setflag FLAG_HIDE_DAODAO_STEVEN
 	goto_if_unset FLAG_HIDE_DAODAO_REGIGIGAS, DaoDaoIsles_GiantsRest_Ret
 	goto_if_unset FLAG_DEFEATED_DAODAO_STEVEN, DaoDaoIsles_GiantsRest_ShowSteven
@@ -139,6 +147,11 @@ DaoDaoIsles_GiantsRest_EventScript_RegigigasWakes::
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_GiantsRest_EventScript_RegigigasStays
+	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a knockout.
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_GiantsRest_EventScript_RegigigasStays
+	@ Knocked out: back after the next Hall of Fame (SpawnDaoDaoLegendaries). Caught, it is gone.
+	clearflag FLAG_DAODAO_REGIGIGAS_RESPAWNED
+	call_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, DaoDaoIsles_GiantsRest_EventScript_RegigigasKnockedOut
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_REGIGIGAS
 	setflag FLAG_HIDE_DAODAO_REGIGIGAS
@@ -149,6 +162,10 @@ DaoDaoIsles_GiantsRest_EventScript_RegigigasWakes::
 DaoDaoIsles_GiantsRest_EventScript_RegigigasStays::
 	release
 	end
+
+DaoDaoIsles_GiantsRest_EventScript_RegigigasKnockedOut:
+	setflag FLAG_DAODAO_REGIGIGAS_KNOCKED_OUT
+	return
 
 DaoDaoIsles_GiantsRest_Text_RegigigasTier0:
 	.string "Moss over stone, and stone all the\n"

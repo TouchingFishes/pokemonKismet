@@ -6,7 +6,7 @@
   "region_map_section": "MAPSEC_MELEMELE_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Melemele_House4_Woman",
+      "script": "DaoDaoIsles_LandfallIsle_House4_Woman",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Melemele_House4_Man",
+      "script": "DaoDaoIsles_LandfallIsle_House4_Man",
       "flag": "0"
     }
   ],

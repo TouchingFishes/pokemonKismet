@@ -222,7 +222,7 @@
       "flag": "FLAG_HIDE_ROUTE13_BOAT"
     },
     {
-      "local_id": "Route13_Alola_Captain",
+      "local_id": "LOCALID_ROUTE13_DAODAO_CAPTAIN",
       "graphics_id": "OBJ_EVENT_GFX_CAPTAIN_HNS",
       "x": 78,
       "y": 26,

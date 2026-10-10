@@ -38,6 +38,11 @@ DaoDaoIsles_Mansion_2F_EventScript_ItemZinc::
 DaoDaoIsles_Mansion_2F_EventScript_ItemHPUp::
 	finditem ITEM_HP_UP
 	end
+@ GIDEON's Drives, one per floor: Burn in his basement, Chill on 1F, Douse here in the
+@ study behind the barrier (switch on), Shock beside 3F's machines (switch off).
+DaoDaoIsles_Mansion_2F_EventScript_ItemDouseDrive::
+	finditem ITEM_DOUSE_DRIVE
+	end
 
 DaoDaoIsles_Mansion_Text_PressSecretSwitch::
 	.string "A secret switch!\p"

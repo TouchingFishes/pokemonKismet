@@ -16451,81 +16451,17 @@ Level: 61
 Mightyena
 Level: 63
 
-=== TRAINER_SAMSON_OAK_HNS ===
-Name: SAMSON OAK
+=== TRAINER_UNUSED_587_HNS ===
+Name: UNUSED
 Class: Professor Hns
 Pic: Samson Oak Hns
 Gender: Male
 Music: Elite Four
 Double Battle: No
 AI: Smart Trainer
-Mugshot: Green
 
-Bewear
-Level: 70
-Ability: Fluffy
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Swords Dance
-- Double-Edge
-- Drain Punch
-- Substitute
-
-Tsareena @ Choice Band
-Level: 70
-Ability: Queenly Majesty
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Adamant Nature
-- Trop Kick
-- Hi Jump Kick
-- Play Rough
-- Bounce
-
-
-Drifblim @ Flying Gem
-Level: 70
-Ability: Unburden
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-EVs: 252 HP / 0 Atk / 0 Def / 4 SpA / 0 SpD / 252 Spe
-Timid Nature
-- Charge Beam
-- Ominous Wind
-- Hurricane
-- Substitute
-
-Probopass @ Light Clay
-Level: 70
-Ability: Transistor
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 4 SpA / 0 SpD / 0 Spe
-Bold Nature
-- Light Screen
-- Reflect
-- Thunder
-- Power Gem
-
-Drapion @ Assault Vest
-Level: 70
-Ability: Battle Armor
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 252 SpD / 0 Spe
-Adamant Nature
-- Cross Poison
-- Knock Off
-- Aqua Tail
-- Fire Fang
-
-
-Tropius @ Sitrus Berry
-Level: 70
-Ability: Harvest
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-EVs: 248 HP / 0 Atk / 252 Def / 0 SpA / 8 SpD / 0 Spe
-Bold Nature
-- Leech Seed
-- Substitute
-- Air Slash
-- Toxic
+Rattata
+Level: 1
 
 === TRAINER_PHANTONOMY_UNUSED_HNS ===
 Name: PHANTONOMY
@@ -16557,7 +16493,7 @@ EVs: 0 HP / 0 Atk / 0 Def / 255 SpA / 6 SpD / 255 Spe
 IVs: 27 HP / 31 Atk / 26 Def / 28 SpA / 28 SpD / 26 Spe
 Shiny: Yes
 
-=== TRAINER_MELEMELE_SWIMMER_1_HNS ===
+=== TRAINER_DAODAO_LANDFALL_SWIMMER_1_HNS ===
 Name: MIA
 Class: Swimmer F Hns
 Pic: Swimmer F Frlg
@@ -16599,7 +16535,7 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 
 
-=== TRAINER_MELEMELE_SWIMMER_2_HNS ===
+=== TRAINER_DAODAO_BING_CURRENT_SWIMMER_HNS ===
 Name: JIMMY
 Class: Swimmer M Hns
 Pic: Swimmer M Frlg
@@ -16634,7 +16570,7 @@ Level: 68
 - Scary Face  
 
 
-=== TRAINER_AKALA_SWIMMER_1_HNS ===
+=== TRAINER_DAODAO_KILN_SWIMMER_1_HNS ===
 Name: KELSIE
 Class: Swimmer F Hns
 Pic: Swimmer F Frlg
@@ -16672,7 +16608,7 @@ Jolly Nature
 
 
 
-=== TRAINER_AKALA_SWIMMER_2_HNS ===
+=== TRAINER_DAODAO_KILN_SWIMMER_2_HNS ===
 Name: PORTIA
 Class: Swimmer F Hns
 Pic: Swimmer F Frlg
@@ -16708,7 +16644,7 @@ Careful Nature
 - Aqua Tail  
 - Rock Blast  
 
-=== TRAINER_AKALA_SWIMMER_3_HNS ===
+=== TRAINER_DAODAO_KILN_SWIMMER_3_HNS ===
 Name: GEOFF
 Class: Swimmer M Hns
 Pic: Swimmer M Frlg
@@ -16744,7 +16680,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 
 
-=== TRAINER_PONI_SWIMMER_1_HNS ===
+=== TRAINER_DAODAO_WAKE_SWIMMER_1_HNS ===
 Name: JADE
 Class: Swimmer F Hns
 Pic: Swimmer F Frlg
@@ -16785,7 +16721,7 @@ Adamant Nature
 
 
 
-=== TRAINER_PONI_SWIMMER_2_HNS ===
+=== TRAINER_DAODAO_WAKE_SWIMMER_2_HNS ===
 Name: RODDY
 Class: Tuber M
 Pic: Tuber M
@@ -16825,7 +16761,7 @@ EVs: 8 HP / 248 Atk / 252 SpD
 
 
 
-=== TRAINER_AKALA_HIKER_HNS ===
+=== TRAINER_DAODAO_KILN_HIKER_HNS ===
 Name: IAN
 Class: Hiker Hns
 Pic: Hiker
@@ -16862,7 +16798,7 @@ Level: 65
 
 
 
-=== TRAINER_AKALA_PICNICKER_HNS ===
+=== TRAINER_DAODAO_KILN_PICNICKER_HNS ===
 Name: TATIANA
 Class: Picnicker Hns
 Pic: Picnicker Frlg
@@ -16898,7 +16834,7 @@ Level: 63
 
 
 
-=== TRAINER_AKALA_CAMPER_HNS ===
+=== TRAINER_DAODAO_KILN_CAMPER_HNS ===
 Name: OLIVER
 Class: Camper Hns
 Pic: Camper Frlg
@@ -16934,7 +16870,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 
 
-=== TRAINER_AKALA_FOREST_BUGCATCHER_1_HNS ===
+=== TRAINER_DAODAO_ETERNA_FOREST_BUGCATCHER_1_HNS ===
 Name: STANLEY
 Class: Bug Catcher Hns
 Pic: Bug Catcher Frlg
@@ -16961,7 +16897,7 @@ Level: 63
 
 
 
-=== TRAINER_AKALA_FOREST_BUGCATCHER_2_HNS ===
+=== TRAINER_DAODAO_ETERNA_FOREST_BUGCATCHER_2_HNS ===
 Name: SCOTTY
 Class: Bug Catcher Hns
 Pic: Bug Catcher Frlg
@@ -16989,7 +16925,7 @@ Level: 61
 
 
 
-=== TRAINER_AKALA_CAVE_PICNICKER_HNS ===
+=== TRAINER_DAODAO_SCORIA_CAVE_PICNICKER_HNS ===
 Name: MELISSA
 Class: Picnicker Hns
 Pic: Picnicker Frlg
@@ -17024,7 +16960,7 @@ Level: 62
 
 
 
-=== TRAINER_AKALA_CAVE_CAMPER_HNS ===
+=== TRAINER_DAODAO_SCORIA_CAVE_CAMPER_HNS ===
 Name: RONNY
 Class: Camper Hns
 Pic: Camper Frlg
@@ -17059,7 +16995,7 @@ Level: 61
 
 
 
-=== TRAINER_AKALA_CAVE_HIKER_HNS ===
+=== TRAINER_DAODAO_SCORIA_CAVE_HIKER_HNS ===
 Name: FRANK
 Class: Hiker Hns
 Pic: Hiker
@@ -17092,7 +17028,7 @@ Level: 64
 
 
 
-=== TRAINER_ULAULA_PICNICKER_HNS ===
+=== TRAINER_DAODAO_GIANTS_REACH_PICNICKER_HNS ===
 Name: MELISSA
 Class: Picnicker Hns
 Pic: Picnicker Frlg
@@ -17129,7 +17065,7 @@ Level: 61
 
 
 
-=== TRAINER_ULAULA_YOUNGSTER_HNS ===
+=== TRAINER_DAODAO_GIANTS_REACH_YOUNGSTER_HNS ===
 Name: JOEY
 Class: Youngster Hns
 Pic: Youngster Frlg
@@ -17164,7 +17100,7 @@ Level: 63
 
 
 
-=== TRAINER_ULAULA_HIKER_HNS ===
+=== TRAINER_DAODAO_GIANTS_REACH_HIKER_HNS ===
 Name: FRANK
 Class: Hiker Hns
 Pic: Hiker
@@ -17201,7 +17137,7 @@ IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 
 
-=== TRAINER_ULAULA_COOLTRAINER_HNS ===
+=== TRAINER_DAODAO_GIANTS_REACH_COOLTRAINER_HNS ===
 Name: LOIS
 Class: Ace Trainer Hns
 Pic: Cooltrainer F

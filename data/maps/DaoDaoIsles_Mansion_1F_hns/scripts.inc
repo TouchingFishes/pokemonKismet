@@ -382,7 +382,7 @@ DaoDaoIsles_Mansion_EventScript_PressSwitch_1F::
 	setmetatile 31, 19, METATILE_PokemonMansion_Barrier_Horizontal_BottomLeft, 1
 	setmetatile 32, 19, METATILE_PokemonMansion_Barrier_Horizontal_BottomMid, 1
 	setmetatile 33, 19, METATILE_PokemonMansion_Barrier_Horizontal_BottomRight, 1
-	setmetatile  5,  4, METATILE_PokemonMansion_Statue_RedEyes, 0
+	setmetatile  3, 16, METATILE_PokemonMansion_Statue_RedEyes, 0
 	return
 
 DaoDaoIsles_Mansion_EventScript_ResetSwitch_1F::
@@ -410,7 +410,7 @@ DaoDaoIsles_Mansion_EventScript_ResetSwitch_1F::
 	setmetatile 31, 19, METATILE_PokemonMansion_Floor_ShadeFull, 0
 	setmetatile 32, 19, METATILE_PokemonMansion_Floor, 0
 	setmetatile 33, 19, METATILE_PokemonMansion_Floor, 0
-	setmetatile  5,  4, METATILE_PokemonMansion_Statue_BlackEyes, 0
+	setmetatile  3, 16, METATILE_PokemonMansion_Statue_BlackEyes, 0
 	return
 
 DaoDaoIsles_Mansion_EventScript_PressSwitch_2F::
@@ -430,7 +430,7 @@ DaoDaoIsles_Mansion_EventScript_PressSwitch_2F::
 	setmetatile 12,  6, METATILE_PokemonMansion_Barrier_Vertical_MidShadow, 1
 	setmetatile 12,  7, METATILE_PokemonMansion_Barrier_Vertical_Mid, 1
 	setmetatile 12,  8, METATILE_PokemonMansion_Barrier_Vertical_Bottom, 1
-	setmetatile  2, 15, METATILE_PokemonMansion_Statue_RedEyes, 0
+	setmetatile 19,  4, METATILE_PokemonMansion_Statue_RedEyes, 0
 	return
 
 DaoDaoIsles_Mansion_EventScript_ResetSwitch_2F::
@@ -450,7 +450,7 @@ DaoDaoIsles_Mansion_EventScript_ResetSwitch_2F::
 	setmetatile 12,  6, METATILE_PokemonMansion_Floor_ShadeFull, 0
 	setmetatile 12,  7, METATILE_PokemonMansion_Floor, 0
 	setmetatile 12,  8, METATILE_PokemonMansion_Wall_EndCap, 0
-	setmetatile  2, 15, METATILE_PokemonMansion_Statue_BlackEyes, 0
+	setmetatile 19,  4, METATILE_PokemonMansion_Statue_BlackEyes, 0
 	return
 
 DaoDaoIsles_Mansion_EventScript_PressSwitch_3F::

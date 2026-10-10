@@ -1672,43 +1672,43 @@
     },
     {
       "id": "MAPSEC_MELEMELE_ISLAND",
-      "name": "MELEMELE ISLE",
+      "name": "LANDFALL ISLE",
       "in_hns": true,
       "region": "REGION_ALOLA"
     },
     {
       "id": "MAPSEC_AKALA_ISLAND",
-      "name": "AKALA ISLE",
+      "name": "KILN ISLE",
       "in_hns": true
     },
     {
       "id": "MAPSEC_ULAULA_ISLAND",
-      "name": "ULA'ULA ISLE",
+      "name": "GIANT'S REACH",
       "in_hns": true
     },
     {
       "id": "MAPSEC_PONI_ISLAND",
-      "name": "PONI ISLE",
+      "name": "WAKE ISLE",
       "in_hns": true
     },
     {
       "id": "MAPSEC_ALOLA_OCEAN",
-      "name": "MELMELE SEA",
+      "name": "DAODAO ISLES",
       "in_hns": true
     },
     {
       "id": "MAPSEC_AKALA_CAVE",
-      "name": "AKALA CAVE",
+      "name": "SCORIA CAVE",
       "in_hns": true
     },
     {
       "id": "MAPSEC_AKALA_FOREST",
-      "name": "AKALA FOREST",
+      "name": "ETERNA FOREST",
       "in_hns": true
     },
     {
       "id": "MAPSEC_PONI_CAVE",
-      "name": "PONI CAVE",
+      "name": "WAKE CAVE",
       "in_hns": true
     },
     {
@@ -1718,7 +1718,7 @@
     },
     {
       "id": "MAPSEC_ULAULA_CAVE_2",
-      "name": "ULA'ULA CAVE",
+      "name": "BARB HOLLOW",
       "in_hns": true
     },
     {
@@ -1798,36 +1798,36 @@
     },
     {
       "id": "MAPSEC_MELEMELE_ISLAND",
-      "name": "MELEMELE ISLE",
+      "name": "LANDFALL ISLE",
       "region": "REGION_ALOLA"
     },
     {
       "id": "MAPSEC_AKALA_ISLAND",
-      "name": "AKALA ISLE"
+      "name": "KILN ISLE"
     },
     {
       "id": "MAPSEC_ULAULA_ISLAND",
-      "name": "ULA'ULA ISLE"
+      "name": "GIANT'S REACH"
     },
     {
       "id": "MAPSEC_PONI_ISLAND",
-      "name": "PONI ISLE"
+      "name": "WAKE ISLE"
     },
     {
       "id": "MAPSEC_ALOLA_OCEAN",
-      "name": "MELEMELE SEA"
+      "name": "DAODAO ISLES"
     },
     {
       "id": "MAPSEC_AKALA_CAVE",
-      "name": "AKALA CAVE"
+      "name": "SCORIA CAVE"
     },
     {
       "id": "MAPSEC_AKALA_FOREST",
-      "name": "AKALA FOREST"
+      "name": "ETERNA FOREST"
     },
     {
       "id": "MAPSEC_PONI_CAVE",
-      "name": "PONI CAVE"
+      "name": "WAKE CAVE"
     },
     {
       "id": "MAPSEC_ULAULA_CAVE",
@@ -1835,7 +1835,7 @@
     },
     {
       "id": "MAPSEC_ULAULA_CAVE_2",
-      "name": "ULA'ULA CAVE"
+      "name": "BARB HOLLOW"
     },
     {
       "height": 1,

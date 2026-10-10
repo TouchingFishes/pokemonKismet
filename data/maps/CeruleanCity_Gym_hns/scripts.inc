@@ -5,7 +5,7 @@ CeruleanCity_Gym_hns_MapScripts::
 
 CeruleanCity_Gym_OnTransition::
 	goto_if_lt VAR_CERULEAN_CITY_STATE, 3, CeruleanCity_Gym_EventScript_MistyNotDueYet
-	goto_if_unset FLAG_ALOLA_CLEARED, CeruleanCity_Gym_EventScript_MistyStillAway
+	goto_if_unset FLAG_DAODAO_CLEARED, CeruleanCity_Gym_EventScript_MistyStillAway
 	clearflag FLAG_HIDE_CERULEAN_GYM_TRAINERS
 	setflag FLAG_HIDE_CERULEAN_GYM_POKEMON
 	setflag FLAG_HIDE_CERULEAN_GYM_GUIDE

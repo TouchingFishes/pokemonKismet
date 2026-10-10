@@ -26,6 +26,8 @@ DaoDaoIsles_TreasureBeach_EventScript_BossKlawf::
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_TreasureBeach_EventScript_BossStays
+	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a win.
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_TreasureBeach_EventScript_BossStays
 	setflag FLAG_DEFEATED_DAODAO_BOSS_REGIROCK
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_BOSS_REGIROCK

@@ -7,7 +7,7 @@
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_ROUTE",
-  "allow_cycling": false,
+  "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": false,
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
-      "script": "Alola_AkalaForest_TrainerBattleBugCatcher1",
+      "script": "DaoDaoIsles_EternaForest_TrainerBattleBugCatcher1",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Alola_AkalaForest_TrainerBattleBugCatcher2",
+      "script": "DaoDaoIsles_EternaForest_TrainerBattleBugCatcher2",
       "flag": "0"
     },
     {
@@ -50,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Akala_Forest_FindItem2",
-      "flag": "FLAG_AKALA_FOREST_HIDDEN_ITEM_2"
+      "script": "DaoDaoIsles_EternaForest_FindItem2",
+      "flag": "FLAG_DAODAO_ETERNA_FOREST_HIDDEN_ITEM_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BUTTERFREE)",
@@ -80,17 +80,17 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_AKALA_TOXICROAK",
+      "local_id": "LOCALID_DAODAO_ETERNA_FOREST_TOXICROAK",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TOXICROAK)",
-      "x": 8,
-      "y": 35,
+      "x": 7,
+      "y": 34,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Akala_BattleToxicroak",
+      "script": "DaoDaoIsles_EternaForest_BattleToxicroak",
       "flag": "FLAG_HIDE_TOXICROAK"
     },
     {
@@ -191,7 +191,7 @@
       "y": 38,
       "elevation": 0,
       "item": "ITEM_FULL_RESTORE",
-      "flag": "FLAG_AKALA_FOREST_HIDDEN_ITEM_1"
+      "flag": "FLAG_DAODAO_ETERNA_FOREST_HIDDEN_ITEM_1"
     }
   ],
   "game_version": "hns",

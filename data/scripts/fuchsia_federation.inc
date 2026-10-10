@@ -136,14 +136,14 @@ Common_Text_DiglettSwarm:
 @ beat moves, move that one `call` line; everything else keys off these flags.
 @
 @ What it opens: MT MOON, both ends of DIGLETT'S CAVE, both mouths of TANGLEBRUSH,
-@ MISTY's GYM (FLAG_ALOLA_CLEARED), and the Route 22 exit of the RECEPTION GATE.
+@ MISTY's GYM (FLAG_DAODAO_CLEARED), and the Route 22 exit of the RECEPTION GATE.
 @ That last one is a one-tile plug - the Kanto guard at (14,7) - and behind it
 @ lies the whole west of KANTO: VIRIDIAN, PEWTER (BROCK), PALLET, Route 21,
 @ CINNABAR and SEAFOAM (BLAINE). Route 19's Kinglers and the unconnected Route
 @ 17/18 west water close every other way in, so before GIDEON the player can
 @ hold 12 badges and no more (Moritz, 2026-09-30).
 Common_EventScript_ClearKantoCordon::
-	setflag FLAG_ALOLA_CLEARED
+	setflag FLAG_DAODAO_CLEARED
 	setflag FLAG_HIDE_MTMOON_BLOCKER
 	setflag FLAG_HIDE_DIGLETTS_CAVE_BLOCKER
 	setflag FLAG_HIDE_TANGLEBRUSH_BLOCKER

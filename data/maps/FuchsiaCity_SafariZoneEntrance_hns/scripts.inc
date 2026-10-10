@@ -485,9 +485,9 @@ FuchsiaCity_SafariZoneEntrance_EventScript_StevenDeclineBattle::
 	end
 
 FuchsiaCity_SafariZoneEntrance_EventScript_StevenCharterDone::
-	@ GIDEON beaten means the ship has sailed, whatever FLAG_VISITED_ALOLA says.
+	@ GIDEON beaten means the ship has sailed, whatever FLAG_VISITED_DAODAO says.
 	goto_if_ge VAR_FUCHSIA_FEDERATION_STATE, 6, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNormal
-	goto_if_set FLAG_VISITED_ALOLA, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNormal
+	goto_if_set FLAG_VISITED_DAODAO, FuchsiaCity_SafariZoneEntrance_EventScript_StevenNormal
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenCharterReminder, MSGBOX_DEFAULT
 	closemessage
 	release

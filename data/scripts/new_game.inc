@@ -117,7 +117,7 @@ EventScript_ResetAllBerries::
 	@ KANTO POKeMON FEDERATION. Hide flags default to CLEAR, so the occupying
 	@ bikers would otherwise be standing in FUCHSIA from a new file. The five
 	@ FLAG_HIDE_*_BLOCKER flags are deliberately NOT set here: those areas are
-	@ shut until FLAG_ALOLA_CLEARED, and CLEAR is exactly "blocker present".
+	@ shut until FLAG_DAODAO_CLEARED, and CLEAR is exactly "blocker present".
 	setflag FLAG_HIDE_FUCHSIA_FEDERATION
 	setflag FLAG_HIDE_SAFARI_FEDERATION
 	setflag FLAG_HIDE_FUCHSIA_JANINE

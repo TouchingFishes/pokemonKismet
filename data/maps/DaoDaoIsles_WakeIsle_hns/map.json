@@ -7,7 +7,7 @@
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
-  "allow_cycling": false,
+  "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
@@ -31,7 +31,7 @@
   ],
   "object_events": [
     {
-      "local_id": "Alola_Poni_Tsareena",
+      "local_id": "LOCALID_DAODAO_WAKE_TSAREENA",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TSAREENA)",
       "x": 10,
       "y": 21,
@@ -41,11 +41,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Poni_BattleTsareena",
+      "script": "DaoDaoIsles_WakeIsle_BattleTsareena",
       "flag": "FLAG_HIDE_TSAREENA"
     },
     {
-      "local_id": "Poni_Totem",
+      "local_id": "LOCALID_DAODAO_WAKE_TOTEM",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTIVIRE)",
       "x": 13,
       "y": 8,
@@ -55,8 +55,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Poni_TotemBattle",
-      "flag": "FLAG_HIDE_PONI_TOTEM"
+      "script": "DaoDaoIsles_WakeIsle_TotemBattle",
+      "flag": "FLAG_HIDE_DAODAO_WAKE_TOTEM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M_SWIMMING_HNS",
@@ -68,7 +68,7 @@
       "movement_range_y": 7,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
-      "script": "Alola_Poni_TrainerBattleSwimmer2",
+      "script": "DaoDaoIsles_WakeIsle_TrainerBattleSwimmer2",
       "flag": "0"
     },
     {
@@ -81,7 +81,7 @@
       "movement_range_y": 9,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
-      "script": "Alola_Poni_TrainerBattleSwimmer1",
+      "script": "DaoDaoIsles_WakeIsle_TrainerBattleSwimmer1",
       "flag": "0"
     },
     {
@@ -94,7 +94,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Poni_NPC_girl",
+      "script": "DaoDaoIsles_WakeIsle_NPC_girl",
       "flag": "0"
     },
     {
@@ -133,8 +133,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Alola_Poni_FindItem1",
-      "flag": "FLAG_PONI_HIDDEN_ITEM_1"
+      "script": "DaoDaoIsles_WakeIsle_FindItem1",
+      "flag": "FLAG_DAODAO_WAKE_HIDDEN_ITEM_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS)",
@@ -207,7 +207,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "Alola_Poni_TotemBattle_Trigger"
+      "script": "DaoDaoIsles_WakeIsle_TotemBattle_Trigger"
     },
     {
       "type": "trigger",
@@ -216,7 +216,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "Alola_Poni_TotemBattle_Trigger"
+      "script": "DaoDaoIsles_WakeIsle_TotemBattle_Trigger"
     },
     {
       "type": "trigger",
@@ -225,7 +225,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "Alola_Poni_TotemBattle_Trigger"
+      "script": "DaoDaoIsles_WakeIsle_TotemBattle_Trigger"
     },
     {
       "type": "trigger",
@@ -234,7 +234,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "Alola_Poni_TotemBattle_Trigger"
+      "script": "DaoDaoIsles_WakeIsle_TotemBattle_Trigger"
     },
     {
       "type": "trigger",
@@ -243,7 +243,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "Alola_Poni_TotemBattle_Trigger"
+      "script": "DaoDaoIsles_WakeIsle_TotemBattle_Trigger"
     },
     {
       "type": "trigger",
@@ -252,7 +252,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "Alola_Poni_Bench_Heal_Right"
+      "script": "DaoDaoIsles_WakeIsle_Bench_Heal_Right"
     },
     {
       "type": "trigger",
@@ -288,7 +288,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "Alola_Poni_Bench_Heal_Left"
+      "script": "DaoDaoIsles_WakeIsle_Bench_Heal_Left"
     }
   ],
   "bg_events": [
@@ -298,7 +298,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Alola_Poni_Totem_sign"
+      "script": "DaoDaoIsles_WakeIsle_Totem_sign"
     },
     {
       "type": "sign",
@@ -306,7 +306,7 @@
       "y": 26,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Alola_Poni_Island_Sign"
+      "script": "DaoDaoIsles_WakeIsle_Island_Sign"
     }
   ],
   "game_version": "hns",

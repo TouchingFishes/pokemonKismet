@@ -36,6 +36,10 @@ DaoDaoIsles_Mansion_3F_EventScript_ItemMaxPotion::
 DaoDaoIsles_Mansion_3F_EventScript_ItemIron::
 	finditem ITEM_IRON
 	end
+@ One of GIDEON's four Drives (see 2F's Douse Drive).
+DaoDaoIsles_Mansion_3F_EventScript_ItemShockDrive::
+	finditem ITEM_SHOCK_DRIVE
+	end
 
 DaoDaoIsles_Mansion_3F_Text_BramIntro::
 	.string "This place is, like, huge!$"
