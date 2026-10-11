@@ -816,7 +816,7 @@ enum __attribute__((packed)) Move
     MOVE_CHLOROBLAST = 763,
     MOVE_MOUNTAIN_GALE = 764, //should be in
     MOVE_VICTORY_DANCE = 765,
-    MOVE_HEADLONG_RUSH = 766, //should be in if Ursaluna is in
+    MOVE_HEADLONG_RUSH = 766, //should be in
     MOVE_BARB_BARRAGE = 767, //should be in if Qwilfish is in
     MOVE_ESPER_WING = 768, //should be in (Hot Springs tutor; also Togekiss, Xatu, Altaria)
     MOVE_BITTER_MALICE = 769, //should be in (New Sinjoh Hot Springs tutor)

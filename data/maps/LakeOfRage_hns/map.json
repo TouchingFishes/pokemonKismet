@@ -17,11 +17,6 @@
       "map": "MAP_ROUTE43_HNS",
       "offset": 16,
       "direction": "down"
-    },
-    {
-      "map": "MAP_FOXFIRE_HOLLOW_HNS",
-      "offset": 6,
-      "direction": "up"
     }
   ],
   "object_events": [

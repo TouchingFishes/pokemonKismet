@@ -139,7 +139,7 @@ const u8 *GetNationalPokedexRatingText(u32 count)
     u32 i, j, k;
     // doesNotCountForObtainablePokedex
     u16 maxDex = OBTAINABLE_DEX_COUNT - 1;
-    for (i = 1; i < OBTAINABLE_DEX_COUNT - 1; i++)
+    for (i = 0; i < OBTAINABLE_DEX_COUNT - 1; i++)
     {
         j = ObtainableToNationalOrder(i + 1);
         k = NationalPokedexNumToSpecies(j);

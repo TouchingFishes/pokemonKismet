@@ -7,6 +7,7 @@ DaoDaoIsles_RocketLab_OnTransition:
 	call DaoDaoIsles_RocketLab_SetKlinklang
 	call DaoDaoIsles_RocketLab_SetGiovanni
 	call DaoDaoIsles_RocketLab_SetGenesect
+	call DaoDaoIsles_RocketLab_SetAssistant
 	end
 
 DaoDaoIsles_RocketLab_SetGideon:
@@ -42,8 +43,58 @@ DaoDaoIsles_RocketLab_SetGenesect:
 	clearflag FLAG_HIDE_DAODAO_LAB_GENESECT
 	return
 
+@ The assistant who stayed behind, at GIDEON's desk once he is gone - the KLINK and KLANG
+@ have no wild slot since the Alola tables went, so this is where the line comes from.
+@ No hide flag of its own: FLAG_TEMP_11 is derived here on every load.
+DaoDaoIsles_RocketLab_SetAssistant:
+	setflag FLAG_TEMP_11
+	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_GIDEON, DaoDaoIsles_RocketLab_Ret
+	clearflag FLAG_TEMP_11
+	return
+
 DaoDaoIsles_RocketLab_Ret:
 	return
+
+DaoDaoIsles_RocketLab_EventScript_Assistant::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_DAODAO_LAB_KLINK, DaoDaoIsles_RocketLab_EventScript_AssistantAfter
+	msgbox DaoDaoIsles_RocketLab_Text_AssistantKlink, MSGBOX_DEFAULT
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KLINK
+	bufferspeciesname STR_VAR_1, SPECIES_KLINK
+	givemon SPECIES_KLINK, 43
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, DaoDaoIsles_RocketLab_EventScript_AssistantNoRoom
+	call Common_EventScript_GiftMon
+	setflag FLAG_RECEIVED_DAODAO_LAB_KLINK
+DaoDaoIsles_RocketLab_EventScript_AssistantAfter:
+	msgbox DaoDaoIsles_RocketLab_Text_AssistantAfter, MSGBOX_DEFAULT
+	release
+	end
+
+DaoDaoIsles_RocketLab_EventScript_AssistantNoRoom:
+	msgbox DaoDaoIsles_RocketLab_Text_AssistantNoRoom, MSGBOX_DEFAULT
+	release
+	end
+
+DaoDaoIsles_RocketLab_Text_AssistantKlink:
+	.string "DR. GIDEON is gone, and the rest of\n"
+	.string "the staff with him.\p"
+	.string "Somebody had to stay and feed the\n"
+	.string "KLINK.\p"
+	.string "It came off the big one at the far\n"
+	.string "end. One gear, years ago. It has\l"
+	.string "been turning in a box under my\l"
+	.string "desk ever since.\p"
+	.string "Take it. It's the only thing in this\n"
+	.string "room that never hurt anybody.$"
+
+DaoDaoIsles_RocketLab_Text_AssistantAfter:
+	.string "Gears like that don't belong in a\n"
+	.string "box.$"
+
+DaoDaoIsles_RocketLab_Text_AssistantNoRoom:
+	.string "You've got no room for it. Come back\n"
+	.string "when you do.$"
 
 DaoDaoIsles_RocketLab_EventScript_Cueball1::
 	trainerbattle_single TRAINER_DAODAO_LAB_CUEBALL_1_HNS, DaoDaoIsles_RocketLab_Text_Cueball1Intro, DaoDaoIsles_RocketLab_Text_Cueball1Defeat
