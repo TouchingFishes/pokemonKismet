@@ -628,13 +628,13 @@ enum __attribute__((packed)) Move
     MOVE_FAIRY_LOCK = 587,
     MOVE_KINGS_SHIELD = 588, //should be in if aegislash is in
     MOVE_PLAY_NICE = 589,
-    MOVE_CONFIDE = 590, //should be in until here
+    MOVE_CONFIDE = 590, //should be in
     MOVE_DIAMOND_STORM = 591,
     MOVE_STEAM_ERUPTION = 592,
     MOVE_HYPERSPACE_HOLE = 593,
     MOVE_WATER_SHURIKEN = 594,
     MOVE_MYSTICAL_FIRE = 595, //should be in
-    MOVE_SPIKY_SHIELD = 596, //should be in if glimmora is in
+    MOVE_SPIKY_SHIELD = 596, //should be in
     MOVE_AROMATIC_MIST = 597,
     MOVE_EERIE_IMPULSE = 598, //should be in
     MOVE_VENOM_DRENCH = 599,
@@ -854,7 +854,7 @@ enum __attribute__((packed)) Move
     MOVE_FLOWER_TRICK = 798,
     MOVE_TORCH_SONG = 799,
     MOVE_AQUA_STEP = 800,
-    MOVE_RAGING_BULL = 801,
+    MOVE_RAGING_BULL = 801, //should be in if tauros is in
     MOVE_MAKE_IT_RAIN = 802,
     MOVE_RUINATION = 803,
     MOVE_COLLISION_COURSE = 804,
@@ -865,7 +865,7 @@ enum __attribute__((packed)) Move
     MOVE_SNOWSCAPE = 809,
     MOVE_POUNCE = 810, //should be in
     MOVE_TRAILBLAZE = 811,
-    MOVE_CHILLING_WATER = 812,
+    MOVE_CHILLING_WATER = 812, //should be in
     MOVE_HYPER_DRILL = 813, //should be in if dunsparce is in
     MOVE_TWIN_BEAM = 814, //should be in if girafarig is in
     MOVE_RAGE_FIST = 815, //should be in if primeape is in

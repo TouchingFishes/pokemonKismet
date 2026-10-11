@@ -3753,6 +3753,7 @@ static const u16 sFlittleEggMoveLearnset_Kismet[] = {
 #if P_FAMILY_TINKATINK
 static const u16 sTinkatinkEggMoveLearnset_Kismet[] = {
     MOVE_ICE_HAMMER,
+    MOVE_BABY_DOLL_EYES,
     MOVE_UNAVAILABLE,
 };
 

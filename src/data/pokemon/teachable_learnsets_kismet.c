@@ -975,6 +975,7 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_ROSELIA
 #if P_GEN_4_CROSS_EVOS
+    [SPECIES_BUDEW] = sBudewTeachableLearnset_Kismet,
 #endif
 #endif
 #if P_FAMILY_ROSELIA
@@ -1266,7 +1267,6 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_DRAPION] = sDrapionTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_CROAGUNK
-    [SPECIES_CROAGUNK] = sCroagunkTeachableLearnset_Kismet,
     [SPECIES_TOXICROAK] = sToxicroakTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_FINNEON
@@ -1442,26 +1442,6 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_FLETCHINDER] = sFletchinderTeachableLearnset_Kismet,
     [SPECIES_TALONFLAME] = sTalonflameTeachableLearnset_Kismet,
 #endif
-#if P_FAMILY_FLABEBE
-    [SPECIES_FLABEBE] = sFlabebeTeachableLearnset_Kismet,
-    [SPECIES_FLABEBE_RED] = sFlabebeTeachableLearnset_Kismet,
-    [SPECIES_FLABEBE_YELLOW] = sFlabebeTeachableLearnset_Kismet,
-    [SPECIES_FLABEBE_ORANGE] = sFlabebeTeachableLearnset_Kismet,
-    [SPECIES_FLABEBE_BLUE] = sFlabebeTeachableLearnset_Kismet,
-    [SPECIES_FLOETTE] = sFloetteTeachableLearnset_Kismet,
-    [SPECIES_FLABEBE_WHITE] = sFloetteTeachableLearnset_Kismet,
-    [SPECIES_FLOETTE_RED] = sFloetteTeachableLearnset_Kismet,
-    [SPECIES_FLOETTE_YELLOW] = sFloetteTeachableLearnset_Kismet,
-    [SPECIES_FLOETTE_ORANGE] = sFloetteTeachableLearnset_Kismet,
-    [SPECIES_FLOETTE_BLUE] = sFloetteTeachableLearnset_Kismet,
-    [SPECIES_FLOETTE_WHITE] = sFloetteTeachableLearnset_Kismet,
-    [SPECIES_FLORGES] = sFlorgesTeachableLearnset_Kismet,
-    [SPECIES_FLORGES_RED] = sFlorgesTeachableLearnset_Kismet,
-    [SPECIES_FLORGES_YELLOW] = sFlorgesTeachableLearnset_Kismet,
-    [SPECIES_FLORGES_ORANGE] = sFlorgesTeachableLearnset_Kismet,
-    [SPECIES_FLORGES_BLUE] = sFlorgesTeachableLearnset_Kismet,
-    [SPECIES_FLORGES_WHITE] = sFlorgesTeachableLearnset_Kismet,
-#endif
 #if P_FAMILY_PANCHAM
     [SPECIES_PANCHAM] = sPanchamTeachableLearnset_Kismet,
     [SPECIES_PANGORO] = sPangoroTeachableLearnset_Kismet,
@@ -1518,6 +1498,9 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_BRUXISH
     [SPECIES_BRUXISH] = sBruxishTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_MARSHADOW
+    [SPECIES_MARSHADOW] = sMarshadowTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_SINISTEA
     [SPECIES_POLTEAGEIST] = sPolteageistTeachableLearnset_Kismet,
