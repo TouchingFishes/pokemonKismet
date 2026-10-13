@@ -3598,6 +3598,13 @@ static const u16 sGreavardEggMoveLearnset_KismetGen3[] = {
 
 #endif
 #if P_KISMET_FAKEMON
+static const u16 sGekoponEggMoveLearnset_KismetGen3[] = {
+    MOVE_THUNDER_SHOCK,
+    MOVE_SEED_BOMB,
+    MOVE_GIGA_DRAIN,
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sKrolucadaEggMoveLearnset_KismetGen3[] = {
     MOVE_BATON_PASS,
     MOVE_SILVER_WIND,

@@ -575,6 +575,11 @@ const u16 *const gEggMoves_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_SHINX
     [SPECIES_SHINX] = sShinxEggMoveLearnset_Kismet,
 #endif
+#if P_FAMILY_BURMY
+    [SPECIES_BURMY_PLANT] = sBurmyEggMoveLearnset_Kismet,
+    [SPECIES_BURMY_SANDY] = sBurmyEggMoveLearnset_Kismet,
+    [SPECIES_BURMY_TRASH] = sBurmyEggMoveLearnset_Kismet,
+#endif
 #if P_FAMILY_BUIZEL
     [SPECIES_BUIZEL] = sBuizelEggMoveLearnset_Kismet,
 #endif
@@ -719,6 +724,7 @@ const u16 *const gEggMoves_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_GREAVARD] = sGreavardEggMoveLearnset_Kismet,
 #endif
 #if P_KISMET_FAKEMON
+    [SPECIES_GEKOPON] = sGekoponEggMoveLearnset_Kismet,
     [SPECIES_KROLUCADA] = sKrolucadaEggMoveLearnset_Kismet,
     [SPECIES_LARVICID] = sLarvicidEggMoveLearnset_Kismet,
     [SPECIES_PURGISLUG] = sPurgislugEggMoveLearnset_Kismet,

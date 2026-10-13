@@ -701,6 +701,7 @@ const u16 *const gEggMoves_KismetGen3[NUM_SPECIES + 1] = {
     [SPECIES_GREAVARD] = sGreavardEggMoveLearnset_KismetGen3,
 #endif
 #if P_KISMET_FAKEMON
+    [SPECIES_GEKOPON] = sGekoponEggMoveLearnset_KismetGen3,
     [SPECIES_KROLUCADA] = sKrolucadaEggMoveLearnset_KismetGen3,
     [SPECIES_LARVICID] = sLarvicidEggMoveLearnset_KismetGen3,
     [SPECIES_PURGISLUG] = sPurgislugEggMoveLearnset_KismetGen3,
