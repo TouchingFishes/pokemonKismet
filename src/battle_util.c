@@ -7237,7 +7237,7 @@ static inline u32 CalcAttackStat(struct BattleContext *ctx)
         break;
     case ABILITY_ROCKY_PAYLOAD:
         if (moveType == TYPE_ROCK)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET ? 1.75 : 1.5));
         break;
     case ABILITY_PSI_CONDUIT: // Kismet custom. 1.75x is the fork's value - higher
         if (moveType == TYPE_PSYCHIC) // than any official type-boost ability.

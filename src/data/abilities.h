@@ -2126,7 +2126,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("ROCKY PAYLOAD"),
         .description = COMPOUND_STRING("Powers up Rock moves."),
-        .aiRating = 6,
+        .aiRating = 8, // as PSI CONDUIT: Kismet boosts Rock moves 1.75x
     },
 
     [ABILITY_WIND_POWER] =
