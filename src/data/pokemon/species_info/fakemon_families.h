@@ -698,7 +698,7 @@
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER),
-        .abilities = { ABILITY_DAMP, ABILITY_NONE, ABILITY_NONE }, // TODO: hidden ability (D31)
+        .abilities = { ABILITY_ELECTROMORPHOSIS, ABILITY_STATIC, ABILITY_DAMP },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("GEKOPON"),
         .cryId = CRY_GEKOPON,
