@@ -357,8 +357,8 @@
       "x": 1,
       "y": 12,
       "elevation": 0,
-      "item": "ITEM_TM_ROCK_BLAST",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE10_TM_ROCK_POLISH"
+      "item": "ITEM_ROCK_GEM",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE10_ROCK_GEM"
     }
   ],
   "game_version": "hns",

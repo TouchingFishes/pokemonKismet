@@ -1,9 +1,3 @@
-@ NOTE: the hidden-item flag in this map's map.json is still called
-@ FLAG_HIDDEN_ITEM_ROUTE10_TM_ROCK_POLISH, but the item is now
-@ ITEM_TM_ROCK_BLAST - Rock Polish left the TM list. The flag is reused on
-@ purpose so existing saves keep their pickup state; only the name is stale.
-@ map.json is JSON and cannot hold a comment, hence this note here.
-
 Route10_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route10_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
