@@ -5310,4 +5310,54 @@ const u16 gTilesetPalettes_PokemonMansion[][16] =
 };
 
 
+// ---------------------------------------------------------------------------
+// YELLOW FOREST's own copies of FRLG General + Berry Forest, in the HnS format
+// (2-byte attributes): Porymap writes 2-byte attributes, which halved the FRLG
+// originals on every save (MIGRATION_DECISIONS §70). Same tiles and metatile ids;
+// InitTilesetAnim_General_Frlg is built for every game.
+// ---------------------------------------------------------------------------
+const u32 gTilesetTiles_General_Frlg_Hns[] = INCBIN_U32("data/tilesets/primary/general_frlg_hns/tiles.4bpp.smol");
+
+const u16 ALIGNED(4) gTilesetPalettes_General_Frlg_Hns[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_frlg_hns/palettes/15.gbapal"),
+};
+
+const u32 gTilesetTiles_BerryForest_Hns[] = INCBIN_U32("data/tilesets/secondary/berry_forest_hns/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_BerryForest_Hns[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/berry_forest_hns/palettes/15.gbapal"),
+};
+
 #endif // IS_FRLG || IS_HNS

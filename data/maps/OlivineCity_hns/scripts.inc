@@ -14,37 +14,8 @@ OlivineCity_MapScript_ClearWeather::
 	end
 
 OlivineCity_OnFrame::
-	map_script_2 VAR_SAFARI_ZONE_GATE_STATE, 1, OlivineCity_EventScript_BaobaCall
 	map_script_2 VAR_TRIGGER_ELM_ROCKET_CALL, 1, Mahoganytown_EventScript_RocketTrigger
 	.2byte 0
-
-OlivineCity_EventScript_BaobaCall::
-	lock
-	setspeaker OlivineCity_Text_BaobaName
-	pokenavcall OlivineCity_Text_Baoba
-	waitmessage
-	delay 30
-	setvar VAR_SAFARI_ZONE_GATE_STATE, 2
-	release
-	end
-
-OlivineCity_Text_BaobaName:
-	.string "BAOBA$"
-
-OlivineCity_Text_Baoba:
-	.string "{PLAYER}!\p"
-	.string "This is WARDEN BAOBA.\p"
-	.string "Sorry to have kept you waiting.\n"
-	.string "We've finally opened the\l"
-	.string "SAFARI ZONE!\p"
-	.string "Do you know where it is?\p"
-	.string "You know the GATE inside the cavern\n"
-	.string "in CIANWOOD CITY?\p"
-	.string "If you go through there and walk for\n"
-	.string "a short while, you should soon see\l"
-	.string "the SAFARI ZONE!\p"
-	.string "We're a little out of the way, but\n"
-	.string "please come visit!$"
 
 OlivineCity_EventScript_CityTrigger:: @FLAGHEAP
 	setflag FLAG_HIDE_OLIVINE_CITY_GYM_JASMINE

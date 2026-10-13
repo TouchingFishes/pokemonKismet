@@ -31,7 +31,7 @@ enum {
 
 // Each region's sections form one block, and a section added later goes at the end of its
 // region's block, which then moves that range's END: Kanto's newest is CERULEAN CAPE, and
-// Johto's are FOXFIRE HOLLOW .. GOLDENROD HARBOR, after WHIRL ISLANDS. That shifts every
+// Johto's are FOXFIRE HOLLOW .. YELLOW FOREST, after WHIRL ISLANDS. That shifts every
 // later section's value, which renames met locations on saves made before the change.
 // Test regions through GetRegionForSectionId(), never through these ranges.
 #define KANTO_MAPSEC_START  MAPSEC_PALLET_TOWN
@@ -39,7 +39,7 @@ enum {
 #define KANTO_MAPSEC_COUNT  (KANTO_MAPSEC_END - KANTO_MAPSEC_START + 1)
 
 #define JOHTO_MAPSEC_START  MAPSEC_NEW_BARK_TOWN
-#define JOHTO_MAPSEC_END    MAPSEC_GOLDENROD_HARBOR
+#define JOHTO_MAPSEC_END    MAPSEC_YELLOW_FOREST
 #define JOHTO_MAPSEC_COUNT  (JOHTO_MAPSEC_END - JOHTO_MAPSEC_START + 1)
 
 #define ALOLA_MAPSEC_START  MAPSEC_MELEMELE_ISLAND

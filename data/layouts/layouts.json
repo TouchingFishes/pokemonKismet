@@ -12648,7 +12648,7 @@
       "id": "LAYOUT_ROUTE44_HNS",
       "name": "Route44_hns_Layout",
       "width": 78,
-      "height": 36,
+      "height": 54,
       "primary_tileset": "gTileset_Johto_NorthEast_Hns",
       "secondary_tileset": "gTileset_CianwoodCity_Hns",
       "border_filepath": "data/layouts/Route44_hns/border.bin",
@@ -12695,8 +12695,8 @@
     {
       "id": "LAYOUT_ROUTE48_HNS",
       "name": "Route48_hns_Layout",
-      "width": 55,
-      "height": 32,
+      "width": 80,
+      "height": 36,
       "primary_tileset": "gTileset_Johto_NorthEast_Hns",
       "secondary_tileset": "gTileset_CianwoodCity_Hns",
       "border_filepath": "data/layouts/Route48_hns/border.bin",
@@ -17227,6 +17227,32 @@
       "border_width": 2,
       "game_version": "hns",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ROCK_TUNNEL_2F_HNS",
+      "name": "RockTunnel_2F_hns_Layout",
+      "width": 40,
+      "height": 60,
+      "primary_tileset": "gTileset_Johto_General_Hns",
+      "secondary_tileset": "gTileset_Cave_Gray_Hns",
+      "border_filepath": "data/layouts/RockTunnel_2F_hns/border.bin",
+      "blockdata_filepath": "data/layouts/RockTunnel_2F_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_YELLOW_FOREST_HNS",
+      "name": "YellowForest_hns_Layout",
+      "width": 87,
+      "height": 78,
+      "primary_tileset": "gTileset_General_Frlg_Hns",
+      "secondary_tileset": "gTileset_BerryForest_Hns",
+      "border_filepath": "data/layouts/YellowForest_hns/border.bin",
+      "blockdata_filepath": "data/layouts/YellowForest_hns/map.bin",
+      "border_height": 2,
+      "border_width": 3,
+      "game_version": "hns",
+      "layout_version": "hns"
     }
   ]
 }

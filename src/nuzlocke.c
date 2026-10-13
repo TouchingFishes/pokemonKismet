@@ -157,10 +157,11 @@ static const u8 sNuzlockeLUT[] =
     [MAPSEC_OLIVINE_BAY]      = 0x74,
     [MAPSEC_STORMY_BEACH]     = 0x75,
     [MAPSEC_CERULEAN_CAPE]    = 0x76,
+    [MAPSEC_GOLDENROD_HARBOR] = 0x77,
     // Currently the highest section value. The table is sized by its highest row, so the
     // highest section must always have one, or lookups for it read past the end.
-    [MAPSEC_GOLDENROD_HARBOR] = 0x77,
-    // Max bit index: 0x77 (120 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
+    [MAPSEC_YELLOW_FOREST]    = 0x78,
+    // Max bit index: 0x78 (121 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
     // If you exceed 0x7F, grow nuzlockeEncounterFlags in include/global.h.
 
 #else

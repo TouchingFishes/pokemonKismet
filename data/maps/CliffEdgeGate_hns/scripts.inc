@@ -1,5 +1,14 @@
 CliffEdgeGate_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CliffEdgeGate_OnTransition
 	.byte 0
+
+CliffEdgeGate_OnTransition:
+	call_if_ge VAR_SAFARI_ZONE_GATE_STATE, 2, CliffEdgeGate_EventScript_PathOpen
+	end
+
+CliffEdgeGate_EventScript_PathOpen:
+	setflag FLAG_TEMP_1
+	return
 
 CliffEdgeGate_EventScript_Woman::
 	lock

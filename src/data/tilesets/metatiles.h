@@ -755,4 +755,18 @@ const u16 gMetatiles_PokemonMansion[] = INCBIN_U16("data/tilesets/secondary/poke
 
 const u16 gMetatileAttributes_PokemonMansion[] = INCBIN_U16("data/tilesets/secondary/pokemon_mansion_frlg/metatile_attributes.bin");
 
+// ---------------------------------------------------------------------------
+// YELLOW FOREST's own copies of FRLG General + Berry Forest, in the HnS format
+// (2-byte attributes): Porymap writes 2-byte attributes, which halved the FRLG
+// originals on every save (MIGRATION_DECISIONS §70). Same tiles and metatile ids;
+// InitTilesetAnim_General_Frlg is built for every game.
+// ---------------------------------------------------------------------------
+const u16 gMetatiles_General_Frlg_Hns[] = INCBIN_U16("data/tilesets/primary/general_frlg_hns/metatiles.bin");
+
+const u16 gMetatileAttributes_General_Frlg_Hns[] = INCBIN_U16("data/tilesets/primary/general_frlg_hns/metatile_attributes.bin");
+
+const u16 gMetatiles_BerryForest_Hns[] = INCBIN_U16("data/tilesets/secondary/berry_forest_hns/metatiles.bin");
+
+const u16 gMetatileAttributes_BerryForest_Hns[] = INCBIN_U16("data/tilesets/secondary/berry_forest_hns/metatile_attributes.bin");
+
 #endif // IS_FRLG || IS_HNS

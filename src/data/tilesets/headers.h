@@ -2782,4 +2782,32 @@ const struct Tileset gTileset_PokemonMansion =
     .callback = NULL,
 };
 
+// ---------------------------------------------------------------------------
+// YELLOW FOREST's own copies of FRLG General + Berry Forest, in the HnS format
+// (2-byte attributes): Porymap writes 2-byte attributes, which halved the FRLG
+// originals on every save (MIGRATION_DECISIONS §70). Same tiles and metatile ids;
+// InitTilesetAnim_General_Frlg is built for every game.
+// ---------------------------------------------------------------------------
+const struct Tileset gTileset_General_Frlg_Hns =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General_Frlg_Hns,
+    .palettes = gTilesetPalettes_General_Frlg_Hns,
+    .metatiles = gMetatiles_General_Frlg_Hns,
+    .metatileAttributes = gMetatileAttributes_General_Frlg_Hns,
+    .callback = InitTilesetAnim_General_Frlg,
+};
+
+const struct Tileset gTileset_BerryForest_Hns =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_BerryForest_Hns,
+    .palettes = gTilesetPalettes_BerryForest_Hns,
+    .metatiles = gMetatiles_BerryForest_Hns,
+    .metatileAttributes = gMetatileAttributes_BerryForest_Hns,
+    .callback = NULL,
+};
+
 #endif // IS_FRLG || IS_HNS

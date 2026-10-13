@@ -6978,19 +6978,19 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_HAUNTER
-Level: 25
+Level: 55
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_GOLBAT
-Level: 25
+Level: 55
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_HAUNTER
-Level: 25
+Level: 55
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_PERSIAN
-Level: 25
+Level: 60
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_ETHEL_HNS ===
@@ -22318,3 +22318,331 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 SPECIES_MISMAGIUS
 Level: 62
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+
+=== TRAINER_LENNY_HNS ===
+Name: LENNY
+Class: Hiker Hns
+Pic: Hiker
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_MACHOKE
+Level: 55
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_MACHOKE
+Level: 55
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_QUAGSIRE
+Level: 58
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_ROCK_TUNNEL_RON_HNS ===
+Name: RON
+Class: Pokemaniac Hns
+Pic: Pokemaniac Frlg
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_SLOWBRO
+Level: 56
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_MAROWAK
+Level: 59
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SLOWBRO
+Level: 56
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_CHARIZARD
+Level: 61
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_BRICE_HNS ===
+Name: BRICE
+Class: Hiker Hns
+Pic: Hiker
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_ONIX
+Level: 56
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_ONIX
+Level: 56
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_HARIYAMA
+Level: 58
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_ROCK_TUNNEL_BURT_HNS ===
+Name: BURT
+Class: Firebreather Hns
+Pic: Firebreather Hns
+Gender: Male
+Music: Hg Suspicious 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_TORKOAL
+Level: 56
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_WEEZING
+Level: 53
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_WEEZING
+Level: 53
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_ROCK_TUNNEL_DALE_HNS ===
+Name: DALE
+Class: Camper Hns
+Pic: Camper Frlg
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_PIDGEOT
+Level: 58
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_RATICATE
+Level: 55
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_VICTREEBEL
+Level: 60
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_NORA_HNS ===
+Name: NORA
+Class: Pkmn Ranger Hns
+Pic: Pokemon Ranger F
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_GOLBAT
+Level: 62
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_AIPOM
+Level: 57
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SANDSLASH
+Level: 57
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_RAICHU
+Level: 60
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_AMBROSE_HNS ===
+Name: AMBROSE
+Class: Expert Hns
+Pic: Expert M
+Gender: Male
+Music: Hg Sage
+Mugshot: Purple
+Double Battle: No
+AI: Smart Trainer
+Items: Hyper Potion / Hyper Potion
+
+SPECIES_NOCTOWL
+Level: 63
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_HYPNOSIS
+- MOVE_AIR_SLASH
+- MOVE_EXTRASENSORY
+- MOVE_ROOST
+
+SPECIES_HITMONTOP
+Level: 64
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_DETECT
+- MOVE_COUNTER
+- MOVE_BRICK_BREAK
+- MOVE_EARTHQUAKE
+
+SPECIES_KANGASKHAN
+Level: 64
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_FAKE_OUT
+- MOVE_DOUBLE_HIT
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+
+SPECIES_NINETALES
+Level: 65
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_WILL_O_WISP
+- MOVE_HEX
+- MOVE_FLAMETHROWER
+- MOVE_NASTY_PLOT
+
+SPECIES_KINGLER
+Level: 65
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_ENDURE
+- MOVE_FLAIL
+- MOVE_CRABHAMMER
+- MOVE_SWORDS_DANCE
+
+SPECIES_HOUNDSTONE
+Level: 66
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_SHADOW_CLAW
+- MOVE_PLAY_ROUGH
+- MOVE_BODY_PRESS
+- MOVE_REST
+
+=== TRAINER_YELLOW_FOREST_SARAH_HNS ===
+Name: SARAH
+Class: School Kid Hns
+Pic: School Kid F
+Gender: Female
+Music: Hg Girl 1
+Double Battle: No
+AI: Check Bad Move
+
+CHARMER (SPECIES_CHARMANDER)
+Level: 41
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SENTRET
+Level: 39
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_MARILL
+Level: 40
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_ISABEL_HNS ===
+Name: ISABEL
+Class: School Kid Hns
+Pic: School Kid F
+Gender: Female
+Music: Hg Girl 1
+Double Battle: No
+AI: Check Bad Move
+
+TURTLE (SPECIES_SQUIRTLE)
+Level: 41
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_PIDGEY
+Level: 39
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_PIKACHU
+Level: 40
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_KATHRYN_HNS ===
+Name: KATHRYN
+Class: Lass Hns
+Pic: Lass
+Gender: Female
+Music: Hg Girl 1
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_BELLOSSOM
+Level: 44
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_PIDGEOTTO
+Level: 42
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_FURRET
+Level: 41
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_SOPHIE_HNS ===
+Name: SOPHIE
+Class: Pkmn Breeder Hns
+Pic: Pokemon Breeder F
+Gender: Female
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+SPECIES_PICHU @ ITEM_EVIOLITE
+Level: 41
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_PIKACHU @ ITEM_LIGHT_BALL
+Level: 42
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_RAICHU @ ITEM_DESTINY_KNOT
+Level: 43
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+=== TRAINER_LEADER_NORMAN_HNS ===
+Name: NORMAN
+Class: Leader Hns
+Pic: Leader Norman
+Gender: Male
+Music: Hg Boy 1
+Mugshot: Green
+Double Battle: No
+AI: Smart Trainer
+Items: Hyper Potion / Hyper Potion
+
+SPECIES_AMBIPOM
+Level: Badge+6
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_FAKE_OUT
+- MOVE_DOUBLE_HIT
+- MOVE_SHADOW_CLAW
+- MOVE_ICE_PUNCH
+
+SPECIES_GIRAFARIG
+Level: Badge+7
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_PSYCHIC
+- MOVE_THUNDERBOLT
+- MOVE_SHADOW_BALL
+- MOVE_CALM_MIND
+
+SPECIES_PERSIAN
+Level: Badge+7
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_HYPNOSIS
+- MOVE_BODY_SLAM
+- MOVE_KNOCK_OFF
+- MOVE_IRON_TAIL
+
+SPECIES_VIGOROTH @ ITEM_SITRUS_BERRY
+Level: Badge+8
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_BULK_UP
+- MOVE_SLASH
+- MOVE_ROCK_SLIDE
+- MOVE_BRICK_BREAK
+
+SPECIES_SLAKING @ ITEM_SILK_SCARF
+Level: Badge+9
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_DOUBLE_EDGE
+- MOVE_EARTHQUAKE
+- MOVE_HAMMER_ARM
+- MOVE_SLACK_OFF

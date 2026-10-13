@@ -350,3 +350,37 @@ Route44_Text_LadySarahAfter:
 	.string "that is true elegance.\p"
 	.string "I do hope our encounter brought\n"
 	.string "you a measure of peace.$"
+
+@ BAOBA's call that opens the SAFARI ZONE, moved here from OLIVINE (2026-10-11): ROUTE 47/48 now open
+@ as the player is about to enter the ICE PATH. The coord events test VAR_TEMP_1, and the script tests
+@ "< 2", so a save left at the old post-LIGHTHOUSE state 1 is caught too.
+Route44_EventScript_BaobaCall::
+	goto_if_ge VAR_SAFARI_ZONE_GATE_STATE, 2, Route44_EventScript_BaobaCallDone
+	lock
+	setspeaker Route44_Text_BaobaName
+	pokenavcall Route44_Text_Baoba
+	waitmessage
+	delay 30
+	setvar VAR_SAFARI_ZONE_GATE_STATE, 2
+	release
+Route44_EventScript_BaobaCallDone:
+	setvar VAR_TEMP_1, 1
+	end
+
+Route44_Text_BaobaName:
+	.string "BAOBA$"
+
+Route44_Text_Baoba:
+	.string "{PLAYER}!\p"
+	.string "This is WARDEN BAOBA.\p"
+	.string "Sorry to have kept you waiting.\n"
+	.string "We've finally opened the\l"
+	.string "SAFARI ZONE!\p"
+	.string "Do you know where it is?\p"
+	.string "You know the GATE inside the cavern\n"
+	.string "in CIANWOOD CITY?\p"
+	.string "If you go through there and walk for\n"
+	.string "a short while, you should soon see\l"
+	.string "the SAFARI ZONE!\p"
+	.string "We're a little out of the way, but\n"
+	.string "please come visit!$"

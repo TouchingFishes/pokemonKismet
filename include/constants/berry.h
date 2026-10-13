@@ -196,6 +196,11 @@ enum __attribute__((__packed__)) Flavor
 #define BERRY_TREE_BERRY_FOREST_LUM_1    BERRY_TREE_ROUTE_119_LEPPA
 #define BERRY_TREE_BERRY_FOREST_LUM_2    BERRY_TREE_ROUTE_111_RAZZ_1
 
+// YELLOW FOREST (2026-10-13). Hoenn "soil" ids: the Emerald block of new_game.inc
+// plants nothing there, so a save from before this shows empty soil.
+#define BERRY_TREE_YELLOW_FOREST_SITRUS  BERRY_TREE_ROUTE_104_SOIL_1
+#define BERRY_TREE_YELLOW_FOREST_LEPPA   BERRY_TREE_ROUTE_104_SOIL_2
+
 #define BERRY_TREES_COUNT 128
 
 #endif // GUARD_CONSTANTS_BERRY_H

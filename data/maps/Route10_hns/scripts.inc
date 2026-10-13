@@ -106,3 +106,23 @@ Route10_Text_PowerPlant:
 Route10_Text_Sign:
 	.string "ROUTE 10\p"
 	.string "CERULEAN CITY - LAVENDER TOWN$"
+
+Route10_EventScript_Ambrose::
+	trainerbattle_single TRAINER_AMBROSE_HNS, Route10_Text_ElderAmbroseSeen, Route10_Text_ElderAmbroseBeaten
+	msgbox Route10_Text_ElderAmbroseAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route10_Text_ElderAmbroseSeen:
+	.string "Ho ho. A young TRAINER, all the way\n"
+	.string "out here in the mountains.\p"
+	.string "These old bones still have a battle\n"
+	.string "or two left in them!$"
+
+Route10_Text_ElderAmbroseBeaten:
+	.string "Ho ho ho!\n"
+	.string "Splendid, splendid.$"
+
+Route10_Text_ElderAmbroseAfter:
+	.string "LAVENDER TOWN lies just below.\p"
+	.string "Walk softly there. The town\n"
+	.string "remembers everyone who passes.$"

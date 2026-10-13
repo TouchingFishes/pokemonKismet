@@ -912,7 +912,19 @@
 #define TRAINER_DAODAO_MANSION_RHODA_HNS              846
 #define TRAINER_DAODAO_MANSION_WREN_HNS               847
 #define TRAINER_DAODAO_MANSION_MARCUS_HNS             848
-#define TRAINERS_COUNT_HNS                       849
+#define TRAINER_LENNY_HNS                             849
+#define TRAINER_ROCK_TUNNEL_RON_HNS                   850
+#define TRAINER_BRICE_HNS                             851
+#define TRAINER_ROCK_TUNNEL_BURT_HNS                  852
+#define TRAINER_ROCK_TUNNEL_DALE_HNS                  853
+#define TRAINER_NORA_HNS                              854
+#define TRAINER_AMBROSE_HNS                           855
+#define TRAINER_YELLOW_FOREST_SARAH_HNS               856
+#define TRAINER_ISABEL_HNS                            857
+#define TRAINER_KATHRYN_HNS                           858
+#define TRAINER_SOPHIE_HNS                            859
+#define TRAINER_LEADER_NORMAN_HNS                     860
+#define TRAINERS_COUNT_HNS                       861
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
