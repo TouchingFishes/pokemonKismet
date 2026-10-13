@@ -542,3 +542,18 @@ MoveTutor_EventScript_StormTutorDecline_hns::
 	msgbox MoveTutor_Text_StormTutorComeBack, MSGBOX_DEFAULT
 	release
 	end
+
+MoveTutor_EventScript_CurseTutor_hns::
+	move_tutor MOVE_CURSE, MoveTutor_Text_CurseTeach, MoveTutor_Text_CurseWhichMon, MoveTutor_EventScript_CurseDeclined_hns, MoveTutor_EventScript_CurseTaught_hns, 5000
+	release
+	end
+
+MoveTutor_EventScript_CurseDeclined_hns::
+	msgbox MoveTutor_Text_CurseDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_CurseTaught_hns::
+	msgbox MoveTutor_Text_CurseTaught, MSGBOX_DEFAULT
+	release
+	end

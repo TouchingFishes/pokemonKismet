@@ -766,3 +766,28 @@ MoveTutor_Text_StormMove_Sandsear:
 
 MoveTutor_Text_StormMove_Cancel:
 	.string "CANCEL$"
+
+MoveTutor_Text_CurseTeach:
+	.string "…Do you hear them too?\p"
+	.string "The old TOWER is gone, but the\n"
+	.string "spirits never left this town.\p"
+	.string "They taught me CURSE.\p"
+	.string "A GHOST gives up its own life\n"
+	.string "to wear down its foe.\p"
+	.string "Any other POKéMON grows slower…\n"
+	.string "but stronger and sturdier.\p"
+	.string "For 5000¥, I will pass their\n"
+	.string "whisper on to your POKéMON.$"
+
+MoveTutor_Text_CurseWhichMon:
+	.string "Which POKéMON will hear\n"
+	.string "the whisper?$"
+
+MoveTutor_Text_CurseDeclined:
+	.string "…The spirits will wait.\n"
+	.string "They always do.$"
+
+MoveTutor_Text_CurseTaught:
+	.string "It is done.\p"
+	.string "Use it with care…\n"
+	.string "the spirits remember.$"

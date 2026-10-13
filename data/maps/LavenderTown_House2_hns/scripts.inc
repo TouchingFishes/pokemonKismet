@@ -2,7 +2,10 @@ LavenderTown_House2_hns_MapScripts::
 	.byte 0
 
 LavenderTown_House2_EventScript_Woman::
-	msgbox LavenderSpeechHouse_Text_PokefanF, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox LavenderSpeechHouse_Text_PokefanF, MSGBOX_DEFAULT
+	goto MoveTutor_EventScript_CurseTutor_hns
 	end
 
 LavenderSpeechHouse_Text_PokefanF:
