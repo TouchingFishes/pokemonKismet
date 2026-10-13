@@ -530,7 +530,6 @@ static const u16 sBellsproutEggMoveLearnset_Kismet[] = {
     MOVE_CLEAR_SMOG,
     MOVE_POWER_WHIP,
     MOVE_ACID_SPRAY,
-    MOVE_BELCH,
     MOVE_STRENGTH_SAP,
     MOVE_SWORDS_DANCE,
     MOVE_REFLECT,
@@ -595,7 +594,6 @@ static const u16 sSlowpokeEggMoveLearnset_Kismet[] = {
     MOVE_BLOCK,
     MOVE_ZEN_HEADBUTT,
     MOVE_WONDER_ROOM,
-    MOVE_BELCH,
     MOVE_SAFEGUARD,
     MOVE_UNAVAILABLE,
 };
@@ -661,7 +659,6 @@ static const u16 sSeelEggMoveLearnset_Kismet[] = {
     MOVE_WATER_PULSE,
     MOVE_IRON_TAIL,
     MOVE_SLEEP_TALK,
-    MOVE_BELCH,
     MOVE_UNAVAILABLE,
 };
 
@@ -849,7 +846,6 @@ static const u16 sLickitungEggMoveLearnset_Kismet[] = {
     MOVE_HAMMER_ARM,
     MOVE_MUDDY_WATER,
     MOVE_ZEN_HEADBUTT,
-    MOVE_BELCH,
     MOVE_THRASH,
     MOVE_SUBSTITUTE,
     MOVE_UNAVAILABLE,
@@ -1118,7 +1114,6 @@ static const u16 sMagbyEggMoveLearnset_Kismet[] = {
     MOVE_BELLY_DRUM,
     MOVE_IRON_TAIL,
     MOVE_FOCUS_ENERGY,
-    MOVE_BELCH,
     MOVE_UNAVAILABLE,
 };
 
@@ -1251,7 +1246,6 @@ static const u16 sMunchlaxEggMoveLearnset_Kismet[] = {
     MOVE_ZEN_HEADBUTT,
     MOVE_COUNTER,
     MOVE_SELF_DESTRUCT,
-    MOVE_BELCH,
     MOVE_UNAVAILABLE,
 };
 
@@ -1267,7 +1261,6 @@ static const u16 sSnorlaxEggMoveLearnset_Kismet[] = {
     MOVE_WHIRLWIND,
     MOVE_PURSUIT,
     MOVE_COUNTER,
-    MOVE_BELCH,
     MOVE_SUBSTITUTE,
     MOVE_UNAVAILABLE,
 };
@@ -2091,7 +2084,6 @@ static const u16 sMiltankEggMoveLearnset_Kismet[] = {
     MOVE_HAMMER_ARM,
     MOVE_DOUBLE_EDGE,
     MOVE_PUNISHMENT,
-    MOVE_BELCH,
     MOVE_PSYCH_UP,
     MOVE_UNAVAILABLE,
 };
@@ -2729,7 +2721,6 @@ static const u16 sCacneaEggMoveLearnset_Kismet[] = {
     MOVE_NASTY_PLOT,
     MOVE_DISABLE,
     MOVE_BLOCK,
-    MOVE_BELCH,
     MOVE_UNAVAILABLE,
 };
 
@@ -2779,7 +2770,6 @@ static const u16 sSeviperEggMoveLearnset_Kismet[] = {
     MOVE_NIGHT_SLASH,
     MOVE_IRON_TAIL,
     MOVE_PUNISHMENT,
-    MOVE_BELCH,
     MOVE_UNAVAILABLE,
 };
 
@@ -3573,7 +3563,6 @@ static const u16 sDeinoEggMoveLearnset_Kismet[] = {
     MOVE_SCREECH,
     MOVE_HEAD_SMASH,
     MOVE_DARK_PULSE,
-    MOVE_BELCH,
     MOVE_UNAVAILABLE,
 };
 
@@ -3662,7 +3651,6 @@ static const u16 sFomantisEggMoveLearnset_Kismet[] = {
 #endif
 #if P_FAMILY_SALANDIT
 static const u16 sSalanditEggMoveLearnset_Kismet[] = {
-    MOVE_BELCH,
     MOVE_KNOCK_OFF,
     MOVE_SAND_ATTACK,
     MOVE_SNATCH,

@@ -600,7 +600,7 @@ enum __attribute__((packed)) Move
     // Gen 6
     MOVE_FLYING_PRESS = MOVES_COUNT_GEN5,
     MOVE_MAT_BLOCK = 561,
-    MOVE_BELCH = 562, //should be in
+    MOVE_BELCH = 562,
     MOVE_ROTOTILLER = 563,
     MOVE_STICKY_WEB = 564,
     MOVE_FELL_STINGER = 565,
@@ -618,8 +618,8 @@ enum __attribute__((packed)) Move
     MOVE_DRAINING_KISS = 577, //should be in
     MOVE_CRAFTY_SHIELD = 578,
     MOVE_FLOWER_SHIELD = 579,
-    MOVE_GRASSY_TERRAIN = 580, //should be in if tapu_bulu is in
-    MOVE_MISTY_TERRAIN = 581, //should be in if tapu_fini is in
+    MOVE_GRASSY_TERRAIN = 580,
+    MOVE_MISTY_TERRAIN = 581,
     MOVE_ELECTRIFY = 582,
     MOVE_PLAY_ROUGH = 583, //should be in
     MOVE_FAIRY_WIND = 584, //should be in
@@ -642,7 +642,7 @@ enum __attribute__((packed)) Move
     MOVE_GEOMANCY = 601,
     MOVE_MAGNETIC_FLUX = 602,
     MOVE_HAPPY_HOUR = 603,
-    MOVE_ELECTRIC_TERRAIN = 604, //should be in if tapu_koko is in
+    MOVE_ELECTRIC_TERRAIN = 604,
     MOVE_DAZZLING_GLEAM = 605, //should be in
     MOVE_CELEBRATE = 606,
     MOVE_HOLD_HANDS = 607,
@@ -683,7 +683,7 @@ enum __attribute__((packed)) Move
     MOVE_THROAT_CHOP = 638,
     MOVE_POLLEN_PUFF = 639,
     MOVE_ANCHOR_SHOT = 640,
-    MOVE_PSYCHIC_TERRAIN = 641, //should be in if tapu_lele is in
+    MOVE_PSYCHIC_TERRAIN = 641,
     MOVE_LUNGE = 642, //should be in
     MOVE_FIRE_LASH = 643, //should be in if salazzle is in
     MOVE_POWER_TRIP = 644,
@@ -713,7 +713,7 @@ enum __attribute__((packed)) Move
     MOVE_MOONGEIST_BEAM = 668,
     MOVE_TEARFUL_LOOK = 669,
     MOVE_ZING_ZAP = 670,
-    MOVE_NATURES_MADNESS = 671, //should be in if the Tapus are in (shared by all four Tapus)
+    MOVE_NATURES_MADNESS = 671,
     MOVE_MULTI_ATTACK = 672,
     // USUM Moves
     MOVE_MIND_BLOWN = 673,
@@ -835,7 +835,7 @@ enum __attribute__((packed)) Move
     MOVE_TERA_BLAST = MOVES_COUNT_GEN8,
     MOVE_SILK_TRAP = 780,
     MOVE_AXE_KICK = 781,
-    MOVE_LAST_RESPECTS = 782, //should be in if houndstone is in
+    MOVE_LAST_RESPECTS = 782,
     MOVE_LUMINA_CRASH = 783, //should be in if espathra is in
     MOVE_ORDER_UP = 784,
     MOVE_JET_PUNCH = 785,
