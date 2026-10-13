@@ -553,9 +553,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_WING_ATTACK] =
     {
         .name = COMPOUND_STRING("WING ATTACK"),
+        #if B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET
+        .description = COMPOUND_STRING(
+            "Strikes with wings spread\n"
+            "wide. High crit ratio."),
+        #else
         .description = COMPOUND_STRING(
             "Strikes the foe with wings\n"
             "spread wide."),
+        #endif
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_2 ? 60 : 35,
         .type = TYPE_FLYING,
@@ -564,6 +570,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 1 : 0,
         .makesContact = TRUE,
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -1117,7 +1124,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A life-risking tackle that\n"
             "also hurts the user."),
         .effect = EFFECT_RECOIL,
-        .power = B_UPDATED_MOVE_DATA >= GEN_2 ? 120 : 100,
+        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 135 : (B_UPDATED_MOVE_DATA >= GEN_2 ? 120 : 100),
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 15,
@@ -10560,7 +10567,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A charge that may burn the\n"
             "foe. Also hurts the user."),
         .effect = EFFECT_RECOIL,
-        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 100 : 120,
+        .power = 120,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 15,
@@ -13590,9 +13597,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Powerful and sure to inflict\n"
             "a burn, but inaccurate."),
         .effect = EFFECT_HIT,
-        .power = 100,
+        .power = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 120 : 100,   // as ZAP CANNON / DYNAMIC PUNCH
         .type = TYPE_FIRE,
-        .accuracy = 50,
+        .accuracy = B_UPDATED_MOVE_DATA == CUSTOM_FOR_KISMET ? 60 : 50,
         .pp = 5,
         .target = TARGET_SELECTED,
         .priority = 0,
