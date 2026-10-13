@@ -1423,7 +1423,7 @@ static void ApplyRecommendedPresets(void)
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_INFINITE_TMS)       = 0; // OFF
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SURVIVE_POISON)     = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SPLIT)              = 1; // ON
-    *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE)   = 0; // GEN 3
+    *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE)   = 1; // GEN 1
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_NATURES)            = NATURES_OFF;
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_IGNORE_EV_CAP)      = 0; // OFF
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_NEW_EFFECTIVENESS)  = 0; // GEN 3
@@ -2291,7 +2291,7 @@ void CB2_InitChallengeMenu(void)
              && cs->tx_Mode_TypeEffectiveness == 0
              && cs->tx_Mode_Weather == WEATHER_MODE_PERMANENT_BUFF
              && cs->optionStyle == 0
-             && cs->genOneRecharge == 0)
+             && cs->genOneRecharge == 1)
                 *GetSelectionPtr(TAB_MODE, ITEM_MODE_GAMEMODE) = 0; // RECOMMENDED
             else
                 *GetSelectionPtr(TAB_MODE, ITEM_MODE_GAMEMODE) = 1; // CUSTOM
