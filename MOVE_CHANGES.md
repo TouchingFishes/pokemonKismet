@@ -17,9 +17,9 @@ Regenerate with `py -3 .claude/gen_move_changes.py`. Do not hand-edit — it is 
 
 | | |
 |---|---:|
-| Moves changed | 128 |
-| Field changes applied | 176 |
-| …whose base value is itself a gen-gated expression | 60 |
+| Moves changed | 130 |
+| Field changes applied | 179 |
+| …whose base value is itself a gen-gated expression | 61 |
 | Excluded by decision | 8 |
 | Representation-only differences, not ported | 37 |
 
@@ -57,7 +57,7 @@ Nothing is hardcoded. `include/config/general.h` defines `CUSTOM_FOR_KISMET` as 
 
 To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATED_MOVE_TYPES` in `include/config/battle.h` back to `GEN_LATEST`. The two gates are independent: types and numeric data can be reverted separately.
 
-60 of the 176 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
+61 of the 179 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
 
 ## All changes
 
@@ -111,6 +111,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `DISABLE` | Accuracy | 100 | **80** |  |
 | `DIZZY_PUNCH` | Power | 70 | **85** |  |
 | `DOOM_DESIRE` | Power | (B_UPDATED_MOVE_DATA >= GEN_5 ? 140 : 120) | **150** | yes |
+| `DOUBLE_EDGE` | Power | (B_UPDATED_MOVE_DATA >= GEN_2 ? 120 : 100) | **135** | yes |
 | `DOUBLE_SLAP` | Power | 15 | **20** |  |
 | `DRAGON_CLAW` | additionalEffect | none | **DEF_MINUS_1 @30%** |  |
 | `DRAGON_PULSE` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 85 : 90) | **95** | yes |
@@ -126,7 +127,6 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `FIRE_FANG` | Accuracy | 95 | **90** |  |
 | `FIRE_SPIN` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_5 ? 85 : 70) | **95** | yes |
 | `FLAMETHROWER` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95) | **95** | yes |
-| `FLARE_BLITZ` | Power | 120 | **100** |  |
 | `FLY` | Accuracy | 95 | **100** |  |
 | `FLY` | Power | (B_UPDATED_MOVE_DATA >= GEN_4 ? 90 : 70) | **80** | yes |
 | `FOUL_PLAY` | Power | 95 | **85** |  |
@@ -150,6 +150,8 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `ICE_BEAM` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95) | **95** | yes |
 | `ICE_FANG` | Accuracy | 95 | **90** |  |
 | `ICICLE_SPEAR` | Power | (B_UPDATED_MOVE_DATA >= GEN_5 ? 25 : 10) | **20** | yes |
+| `INFERNO` | Accuracy | 50 | **60** |  |
+| `INFERNO` | Power | 100 | **120** |  |
 | `JUMP_KICK` | Power | 100 | **90** |  |
 | `JUMP_KICK` | PP | (B_UPDATED_MOVE_DATA >= GEN_5 ? 10 : 25) | **25** | yes |
 | `KNOCK_OFF` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 65 : 20) | **40** | yes |
@@ -238,6 +240,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `VENOSHOCK` | PP | 10 | **20** |  |
 | `WEATHER_BALL` | PP | 10 | **30** |  |
 | `WILD_CHARGE` | Power | 90 | **100** |  |
+| `WING_ATTACK` | Crit stage | 0 | **1** |  |
 | `WRAP` | Accuracy | (B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 85) | **85** | yes |
 | `WRAP` | Power | 15 | **35** |  |
 | `ZAP_CANNON` | Accuracy | 50 | **60** |  |
