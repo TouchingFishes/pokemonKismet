@@ -303,7 +303,6 @@ static const u16 sZubatEggMoveLearnset_Kismet[] = {
     MOVE_NASTY_PLOT,
     MOVE_HYPNOSIS,
     MOVE_ZEN_HEADBUTT,
-    MOVE_BRAVE_BIRD,
     MOVE_GIGA_DRAIN,
     MOVE_STEEL_WING,
     MOVE_DRAIN_LIFE,
@@ -1059,6 +1058,7 @@ static const u16 sScytherEggMoveLearnset_Kismet[] = {
     MOVE_RAZOR_WIND,
     MOVE_REVERSAL,
     MOVE_DOUBLE_HIT,
+    MOVE_GUST,
     MOVE_ENDURE,
     MOVE_SILVER_WIND,
     MOVE_BUG_BUZZ,
@@ -1417,6 +1417,7 @@ static const u16 sSpinarakEggMoveLearnset_Kismet[] = {
     MOVE_NIGHT_SLASH,
     MOVE_MEGAHORN,
     MOVE_LUNGE,
+    MOVE_DESTINY_BOND,
     MOVE_UNAVAILABLE,
 };
 
@@ -1467,6 +1468,7 @@ static const u16 sNatuEggMoveLearnset_Kismet[] = {
     MOVE_REFRESH,
     MOVE_ZEN_HEADBUTT,
     MOVE_ROOST,
+    MOVE_AGILITY,
     MOVE_SKILL_SWAP,
     MOVE_PSYCH_UP,
     MOVE_BATON_PASS,
@@ -1718,6 +1720,7 @@ static const u16 sPinecoEggMoveLearnset_Kismet[] = {
     MOVE_FLAIL,
     MOVE_SWIFT,
     MOVE_COUNTER,
+    MOVE_ROCK_THROW,
     MOVE_SAND_TOMB,
     MOVE_REVENGE,
     MOVE_DOUBLE_EDGE,
@@ -2776,6 +2779,7 @@ static const u16 sZangooseEggMoveLearnset_Kismet[] = {
     MOVE_DISABLE,
     MOVE_IRON_TAIL,
     MOVE_BELLY_DRUM,
+    MOVE_EXTREME_SPEED,
     MOVE_UNAVAILABLE,
 };
 
@@ -2915,6 +2919,7 @@ static const u16 sShuppetEggMoveLearnset_Kismet[] = {
     MOVE_SHADOW_SNEAK,
     MOVE_CONFUSE_RAY,
     MOVE_OMINOUS_WIND,
+    MOVE_EXTRASENSORY,
     MOVE_GUNK_SHOT,
     MOVE_PHANTOM_FORCE,
     MOVE_REVENGE,
@@ -3191,6 +3196,7 @@ static const u16 sShinxEggMoveLearnset_Kismet[] = {
 #if P_FAMILY_BURMY
 static const u16 sBurmyEggMoveLearnset_Kismet[] = {
     MOVE_RAZOR_LEAF,
+    MOVE_GRASS_WHISTLE,
     MOVE_UNAVAILABLE,
 };
 
@@ -3820,6 +3826,7 @@ static const u16 sKrolucadaEggMoveLearnset_Kismet[] = {
     MOVE_SILVER_WIND,
     MOVE_SHADOW_SNEAK,
     MOVE_TRICK,
+    MOVE_NASTY_PLOT,
     MOVE_UNAVAILABLE,
 };
 

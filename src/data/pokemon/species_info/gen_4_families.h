@@ -2243,7 +2243,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_ANTICIPATION, ABILITY_NONE, ABILITY_OVERCOAT },
+        .abilities = { ABILITY_OVERCOAT, ABILITY_NONE, ABILITY_ADAPTABILITY },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("WORMADAM"),
         .cryId = CRY_WORMADAM,
@@ -2312,7 +2312,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_ANTICIPATION, ABILITY_NONE, ABILITY_OVERCOAT },
+        .abilities = { ABILITY_OVERCOAT, ABILITY_NONE, ABILITY_ADAPTABILITY },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("WORMADAM"),
         .cryId = CRY_WORMADAM,
@@ -2373,7 +2373,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 // gives all three the same abilities, so making them agree is the intended
 // reading, but it IS a behaviour change for those two forms.
 #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
-#define MOTHIM_ABILITIES { ABILITY_TINTED_LENS, ABILITY_NONE, ABILITY_ADAPTABILITY }
+#define MOTHIM_ABILITIES { ABILITY_ADAPTABILITY, ABILITY_NONE, ABILITY_TINTED_LENS }
 #else
 #define MOTHIM_ABILITIES { ABILITY_SWARM, ABILITY_NONE, ABILITY_TINTED_LENS }
 #endif
@@ -2383,7 +2383,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseHP        = 70,                                                \
         .baseAttack    = 94,                                                \
         .baseDefense   = 50,                                                \
-        .baseSpeed     = 66,                                                \
+        .baseSpeed     = 96,                                                \
         .baseSpAttack  = 94,                                                \
         .baseSpDefense = 50,                                                \
         .types = MON_TYPES(TYPE_BUG, TYPE_FLYING),                          \

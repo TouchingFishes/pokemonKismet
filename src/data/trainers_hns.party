@@ -1703,7 +1703,7 @@ Level: 15
 IVs: 20 HP / 20 Atk / 20 Def / 28 SpA / 28 SpD / 20 Spe
 - MOVE_QUICK_ATTACK
 - MOVE_MUD_SLAP
-- MOVE_METRONOME
+- MOVE_ASSIST
 - MOVE_HEADBUTT
 
 SPECIES_FURRET @ ITEM_NUGGET
@@ -1816,13 +1816,13 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - MOVE_DIVE
 - MOVE_BOUNCE
 
-SPECIES_GLIGAR
-Level: 36
+SPECIES_SMEARGLE
+Level: Badge+7
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_CROSS_CHOP
-- MOVE_MEGAHORN
-- MOVE_DOUBLE_EDGE
-- MOVE_SELF_DESTRUCT
+- MOVE_FLARE_BLITZ
+- MOVE_WAVE_CRASH
+- MOVE_WOOD_HAMMER
+- MOVE_VOLT_TACKLE
 
 === TRAINER_CARLENE_HNS ===
 Name: CARLENE
@@ -3191,13 +3191,21 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_LEDIAN
-Level: 18
+SPECIES_BURMY
+Level: 16
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
-- MOVE_MACH_PUNCH
-- MOVE_THUNDER_PUNCH
-- MOVE_SUPERSONIC
-- MOVE_GUST
+- MOVE_BUG_BITE
+- MOVE_PROTECT
+- MOVE_RAZOR_LEAF
+- MOVE_TACKLE
+
+SPECIES_BURMY
+Level: 16
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+- MOVE_BUG_BITE
+- MOVE_PROTECT
+- MOVE_RAZOR_LEAF
+- MOVE_TACKLE
 
 === TRAINER_ARNIE_HNS ===
 Name: ARNIE
@@ -6424,29 +6432,29 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_BURMY
-Level: 19
+SPECIES_MOTHIM
+Level: 20
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+- MOVE_GUST
+- MOVE_BUG_BITE
+- MOVE_HIDDEN_POWER
 - MOVE_RAZOR_LEAF
-- MOVE_CUT
-- MOVE_BEAT_UP
-- MOVE_POUNCE
 
 SPECIES_YANMA
-Level: 17
+Level: 16
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 - MOVE_SILVER_WIND
 - MOVE_QUICK_ATTACK
 - MOVE_DOUBLE_TEAM
 - MOVE_MIMIC
 
-SPECIES_BURMY
-Level: 19
+SPECIES_MOTHIM
+Level: 20
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+- MOVE_ACROBATICS
+- MOVE_BUG_BITE
+- MOVE_DOUBLE_TEAM
 - MOVE_RAZOR_LEAF
-- MOVE_CUT
-- MOVE_INGRAIN
-- MOVE_GROWTH
 
 === TRAINER_TED_HNS ===
 Name: TED
@@ -6885,9 +6893,9 @@ SPECIES_WORMADAM
 Level: Badge+2
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - MOVE_RAZOR_LEAF
+- MOVE_GROWTH
+- MOVE_BUG_BITE
 - MOVE_GRASS_WHISTLE
-- MOVE_AERIAL_ACE
-- MOVE_DOUBLE_TEAM
 
 SPECIES_MASQUERAIN
 Level: Badge+5
@@ -7351,7 +7359,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
 - MOVE_FIRE_BLAST
 - MOVE_QUICK_ATTACK
 - MOVE_WILL_O_WISP
-- MOVE_ENDEAVOR
+- MOVE_FLAIL
 
 === TRAINER_SAYO_HNS ===
 Name: SAYO
@@ -7369,7 +7377,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
 - MOVE_ICE_BEAM
 - MOVE_DOUBLE_TEAM
 - MOVE_SHADOW_BALL
-- MOVE_ENDEAVOR
+- MOVE_FLAIL
 
 === TRAINER_ZUKI_HNS ===
 Name: ZUKI
@@ -7387,7 +7395,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
 - MOVE_LEAF_BLADE
 - MOVE_SWORDS_DANCE
 - MOVE_QUICK_ATTACK
-- MOVE_ENDEAVOR
+- MOVE_FLAIL
 
 === TRAINER_KUNI_HNS ===
 Name: KUNI
@@ -7405,7 +7413,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
 - MOVE_SURF
 - MOVE_QUICK_ATTACK
 - MOVE_AURORA_BEAM
-- MOVE_ENDEAVOR
+- MOVE_FLAIL
 
 === TRAINER_MIKI_HNS ===
 Name: MIKI
@@ -7423,7 +7431,7 @@ IVs: 16 HP / 12 Atk / 16 Def / 20 SpA / 20 SpD / 16 Spe
 - MOVE_THUNDERBOLT
 - MOVE_DOUBLE_TEAM
 - MOVE_THUNDER_WAVE
-- MOVE_ENDEAVOR
+- MOVE_FLAIL
 
 === TRAINER_NAOKO_2_HNS ===
 Name: NAOKO
@@ -7437,7 +7445,7 @@ Mugshot: Dark Red
 
 SPECIES_FLAREON
 Level: 22
-- MOVE_EMBER
+- MOVE_FIRE_FANG
 - MOVE_QUICK_ATTACK
 - MOVE_BITE
 - MOVE_SAND_ATTACK
@@ -7801,13 +7809,13 @@ Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_AERIAL_ACE
 - MOVE_QUICK_ATTACK
-- MOVE_HEAT_WAVE
-- MOVE_METAL_CLAW
+- MOVE_FLARE_BLITZ
+- MOVE_BRAVE_BIRD
 
 SPECIES_BOMBIRDIER @ ITEM_HARD_STONE
 Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SKY_ATTACK
+- MOVE_ACROBATICS
 - MOVE_ROCK_SLIDE
 - MOVE_DOUBLE_TEAM
 - MOVE_STEEL_WING
@@ -7893,7 +7901,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 SPECIES_YANMEGA @ ITEM_BERRY_JUICE
 Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_HEAT_WAVE
+- MOVE_FLAME_CHARGE
 - MOVE_HYPNOSIS
 - MOVE_ANCIENT_POWER
 - MOVE_BUG_BUZZ
@@ -8076,22 +8084,22 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SHADOW_PUNCH
 - MOVE_ROCK_SLIDE
 - MOVE_CURSE
-- MOVE_DETECT
+- MOVE_PROTECT
 
 SPECIES_HOUNDSTONE @ ITEM_SILK_SCARF
 Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SWORDS_DANCE
-- MOVE_QUICK_ATTACK
-- MOVE_SLASH
-- MOVE_SHADOW_BALL
+- MOVE_CRUNCH
+- MOVE_SHADOW_SNEAK
+- MOVE_YAWN
+- MOVE_PLAY_ROUGH
 
 SPECIES_MISMAGIUS @ ITEM_SPELL_TAG
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SHADOW_BALL
-- MOVE_GIGA_DRAIN
-- MOVE_SLUDGE_BOMB
+- MOVE_MAGICAL_LEAF
+- MOVE_THUNDERBOLT
 - MOVE_PSYCHIC
 
 SPECIES_BANETTE
@@ -8178,7 +8186,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_FLY
 - MOVE_BLIZZARD
 - MOVE_PRESENT
-- MOVE_HEAT_WAVE
+- MOVE_FIRE_PUNCH
 
 SPECIES_LAPRAS @ ITEM_CHESTO_BERRY
 Level: 63
@@ -8258,9 +8266,9 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 SPECIES_CRYOGONAL
 Level: 38
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- MOVE_ICICLE_CRASH
-- MOVE_REVENGE
-- MOVE_SLASH
+- MOVE_BLIZZARD
+- MOVE_WATER_PULSE
+- MOVE_ANCIENT_POWER
 - MOVE_HAIL
 
 SPECIES_PILOSWINE @ ITEM_SITRUS_BERRY
@@ -8309,9 +8317,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 SPECIES_CRYOGONAL
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_ICICLE_CRASH
-- MOVE_REVENGE
-- MOVE_SLASH
+- MOVE_BLIZZARD
+- MOVE_WATER_PULSE
+- MOVE_ANCIENT_POWER
 - MOVE_HAIL
 
 SPECIES_PILOSWINE @ ITEM_SITRUS_BERRY
@@ -8421,7 +8429,7 @@ Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_ROCK_SLIDE
 - MOVE_IRON_TAIL
-- MOVE_SWORDS_DANCE
+- MOVE_CURSE
 - MOVE_EARTHQUAKE
 
 SPECIES_STEELIX @ ITEM_QUICK_CLAW
@@ -8565,9 +8573,9 @@ SPECIES_MLLOY
 Level: 32
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - MOVE_CUT
-- MOVE_AERIAL_ACE
+- MOVE_ACROBATICS
 - MOVE_MUD_SLAP
-- MOVE_JUMP_KICK
+- MOVE_BRICK_BREAK
 
 SPECIES_POLIWRATH @ ITEM_BLACK_BELT
 Level: 34
@@ -8608,9 +8616,9 @@ SPECIES_MLLOY @ ITEM_BLACK_BELT
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_CUT
-- MOVE_AERIAL_ACE
+- MOVE_ACROBATICS
 - MOVE_MUD_SLAP
-- MOVE_JUMP_KICK
+- MOVE_BRICK_BREAK
 
 SPECIES_PANGORO @ ITEM_BLACK_BELT
 Level: 63
@@ -8618,7 +8626,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_CRUNCH
 - MOVE_DYNAMIC_PUNCH
 - MOVE_BULK_UP
-- MOVE_SKY_UPPERCUT
+- MOVE_HAMMER_ARM
 
 SPECIES_KINGLER @ ITEM_WHITE_HERB
 Level: 65
@@ -8667,9 +8675,9 @@ SPECIES_MLLOY
 Level: 36
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - MOVE_CUT
-- MOVE_AERIAL_ACE
+- MOVE_ACROBATICS
 - MOVE_MUD_SLAP
-- MOVE_JUMP_KICK
+- MOVE_BRICK_BREAK
 
 SPECIES_KINGLER
 Level: 34
@@ -8718,9 +8726,9 @@ SPECIES_MLLOY
 Level: 38
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_CUT
-- MOVE_AERIAL_ACE
+- MOVE_ACROBATICS
 - MOVE_MUD_SLAP
-- MOVE_JUMP_KICK
+- MOVE_BRICK_BREAK
 
 SPECIES_KINGLER
 Level: 37
@@ -8865,7 +8873,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_STEAMROLLER
 - MOVE_SPIKES
 - MOVE_EXPLOSION
-- MOVE_ANCIENT_POWER
+- MOVE_ROCK_SLIDE
 
 SPECIES_GOLEM @ ITEM_LEFTOVERS
 Level: 67
@@ -8879,7 +8887,7 @@ SPECIES_AERODACTYL @ ITEM_HARD_STONE
 Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_FIRE_BLAST
-- MOVE_SKY_ATTACK
+- MOVE_BRAVE_BIRD
 - MOVE_EARTHQUAKE
 - MOVE_ANCIENT_POWER
 
@@ -8956,7 +8964,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_THUNDER
 - MOVE_ICE_BEAM
 - MOVE_RAIN_DANCE
-- MOVE_REFLECT
+- MOVE_SURF
 
 SPECIES_STARMIE @ ITEM_WISE_GLASSES
 Level: 65
@@ -9064,9 +9072,9 @@ SPECIES_LUDICOLO @ ITEM_SITRUS_BERRY
 Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_GIGA_DRAIN
-- MOVE_PSYCHIC
-- MOVE_MAGICAL_LEAF
-- MOVE_GRASS_WHISTLE
+- MOVE_SURF
+- MOVE_ICE_BEAM
+- MOVE_LEECH_SEED
 
 SPECIES_VICTREEBEL @ ITEM_POISON_BARB
 Level: 63
@@ -9154,11 +9162,11 @@ AI: Smart Trainer
 Mugshot: Purple
 Items: Full Restore / Full Restore
 
-SPECIES_ARIADOS @ ITEM_LEFTOVERS
+SPECIES_ARIADOS @ ITEM_SILVER_POWDER
 Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- MOVE_SLUDGE_BOMB
-- MOVE_FIRE_BLAST
+- MOVE_BUG_BUZZ
+- MOVE_PSYCHIC
 - MOVE_DESTINY_BOND
 - MOVE_TOXIC
 
@@ -9170,12 +9178,12 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_EARTHQUAKE
 - MOVE_TOXIC
 
-SPECIES_PENDRAGON @ ITEM_POISON_BARB
+SPECIES_PENDRAGON @ ITEM_LEFTOVERS
 Level: 62
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_LUNGE
 - MOVE_IRON_TAIL
-- MOVE_POISON_TAIL
+- MOVE_DIG
 - MOVE_TOXIC
 
 SPECIES_VENUSAUR @ ITEM_QUICK_CLAW
@@ -9234,16 +9242,16 @@ Level: 65
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_HEAT_WAVE
 - MOVE_SUBSTITUTE
-- MOVE_REFRESH
+- MOVE_RECOVER
 - MOVE_ROCK_SLIDE
 
 SPECIES_KUJINOUGHT @ ITEM_LEFTOVERS
 Level: 67
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_OCTAZOOKA
-- MOVE_BODY_SLAM
+- MOVE_CHARGE_BEAM
 - MOVE_ICE_BEAM
-- MOVE_OVERHEAT
+- MOVE_FIRE_BLAST
 
 SPECIES_TYPHLOSION @ ITEM_CHARCOAL
 Level: 67
@@ -9446,7 +9454,7 @@ Level: 67
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_AIR_SLASH
 - MOVE_BATON_PASS
-- MOVE_AGILITY
+- MOVE_CALM_MIND
 - MOVE_PSYCHIC
 
 SPECIES_JYNX @ ITEM_FOCUS_BAND
@@ -9463,13 +9471,13 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_ANCIENT_POWER
 - MOVE_SLEEP_POWDER
 - MOVE_DREAM_EATER
-- MOVE_SOFT_BOILED
+- MOVE_WOOD_HAMMER
 
 SPECIES_BRONZONG @ ITEM_LEFTOVERS
 Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_CALM_MIND
-- MOVE_POWER_GEM
+- MOVE_ANCIENT_POWER
 - MOVE_FLASH_CANNON
 - MOVE_PSYCHIC
 
@@ -9503,10 +9511,10 @@ Items: Full Restore / Full Restore
 SPECIES_HERACROSS
 Level: Badge+15
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- MOVE_ACROBATICS
+- MOVE_AERIAL_ACE
 - MOVE_ROCK_TOMB
 - MOVE_BRICK_BREAK
-- MOVE_BLAZE_KICK
+- MOVE_MEGAHORN
 
 SPECIES_HITMONCHAN @ ITEM_BLACK_BELT
 Level: Badge+13
@@ -9529,16 +9537,16 @@ Level: Badge+13
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DOUBLE_EDGE
 - MOVE_EARTHQUAKE
-- MOVE_ROCK_TOMB
+- MOVE_BLAZE_KICK
 - MOVE_HI_JUMP_KICK
 
 SPECIES_MACHAMP @ ITEM_BLACK_BELT
 Level: Badge+16
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DYNAMIC_PUNCH
-- MOVE_ROCK_SLIDE
+- MOVE_STONE_EDGE
 - MOVE_BULK_UP
-- MOVE_MACH_PUNCH
+- MOVE_DRAIN_PUNCH
 
 === TRAINER_BRUNO_2_HNS ===
 Name: BRUNO
@@ -9595,9 +9603,9 @@ SPECIES_MACHAMP @ ITEM_BLACK_BELT
 Level: 69
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_DYNAMIC_PUNCH
-- MOVE_ROCK_SLIDE
-- MOVE_EARTHQUAKE
-- MOVE_MACH_PUNCH
+- MOVE_STONE_EDGE
+- MOVE_BULK_UP
+- MOVE_DRAIN_PUNCH
 
 === TRAINER_KAREN_1_HNS ===
 Name: KAREN
@@ -9637,10 +9645,10 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 SPECIES_BOMBIRDIER
 Level: Badge+16
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
+- MOVE_KNOCK_OFF
 - MOVE_ROCK_SLIDE
-- MOVE_SKY_ATTACK
-- MOVE_FAINT_ATTACK
-- MOVE_HAZE
+- MOVE_TAUNT
+- MOVE_ROOST
 
 SPECIES_HOUNDOOM @ ITEM_BLACK_GLASSES
 Level: Badge+18
@@ -9675,7 +9683,7 @@ IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_DRAIN_LIFE
 - MOVE_SILVER_WIND
 - MOVE_EXTRASENSORY
-- MOVE_DARK_PULSE
+- MOVE_THIEF
 
 SPECIES_MISMAGIUS @ ITEM_SCOPE_LENS
 Level: 69
@@ -9689,9 +9697,9 @@ SPECIES_BOMBIRDIER @ ITEM_HARD_STONE
 Level: 69
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_STONE_EDGE
-- MOVE_AERIAL_ACE
+- MOVE_BRAVE_BIRD
 - MOVE_NIGHT_SLASH
-- MOVE_SOFT_BOILED
+- MOVE_KNOCK_OFF
 
 SPECIES_VILEPLUME @ ITEM_LEFTOVERS
 Level: 68
@@ -9748,9 +9756,9 @@ SPECIES_BOMBIRDIER @ ITEM_HARD_STONE
 Level: 69
 IVs: 30 HP / 30 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
 - MOVE_STONE_EDGE
-- MOVE_AERIAL_ACE
+- MOVE_BRAVE_BIRD
 - MOVE_NIGHT_SLASH
-- MOVE_SOFT_BOILED
+- MOVE_KNOCK_OFF
 
 SPECIES_VILEPLUME @ ITEM_LEFTOVERS
 Level: 68
@@ -9858,7 +9866,7 @@ SPECIES_DRAPION @ ITEM_QUICK_CLAW
 Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - MOVE_CROSS_POISON
-- MOVE_CRUNCH
+- MOVE_NIGHT_SLASH
 - MOVE_DIG
 - MOVE_TOXIC
 
@@ -9956,13 +9964,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_FLAMETHROWER
 - MOVE_HYPER_BEAM
 
-SPECIES_HAXORUS @ ITEM_SITRUS_BERRY
+SPECIES_HAXORUS @ ITEM_SILK_SCARF
 Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_BLIZZARD
-- MOVE_EXTREME_SPEED
-- MOVE_THUNDER
-- MOVE_HYPER_BEAM
+- MOVE_DRAGON_RUSH
+- MOVE_EARTHQUAKE
+- MOVE_BRICK_BREAK
+- MOVE_GIGA_IMPACT
 
 SPECIES_AEGISLASH @ ITEM_KINGS_ROCK
 Level: 71
@@ -9983,7 +9991,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 SPECIES_AERODACTYL @ ITEM_SCOPE_LENS
 Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SKY_ATTACK
+- MOVE_BRAVE_BIRD
 - MOVE_ROCK_SLIDE
 - MOVE_EARTHQUAKE
 - MOVE_IRON_TAIL
@@ -10009,10 +10017,10 @@ Mugshot: Blue
 
 Gyarados @ Quick Claw
 Level: 68
-- Waterfall
-- Earthquake
-- Dragon Dance
-- Dragon Rush
+- MOVE_WATERFALL
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_DANCE
+- MOVE_DRAGON_TAIL
 
 Charizard @ Leftovers
 Level: 68
@@ -10546,7 +10554,7 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_NIGHT_SHADE
 - MOVE_DISABLE
-- MOVE_ASTONISH
+- MOVE_PURSUIT
 - MOVE_LEER
 
 SPECIES_KADABRA
@@ -10589,7 +10597,7 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_NIGHT_SHADE
 - MOVE_DISABLE
-- MOVE_ASTONISH
+- MOVE_PURSUIT
 - MOVE_LEER
 
 SPECIES_KADABRA
@@ -10605,7 +10613,7 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_BITE
 - MOVE_CONFUSE_RAY
-- MOVE_POISON_STING
+- MOVE_VENOSHOCK
 - MOVE_GUST
 
 SPECIES_GROTLE
@@ -10633,7 +10641,7 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_NIGHT_SHADE
 - MOVE_DISABLE
-- MOVE_ASTONISH
+- MOVE_PURSUIT
 - MOVE_LEER
 
 SPECIES_KADABRA
@@ -10649,7 +10657,7 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_BITE
 - MOVE_CONFUSE_RAY
-- MOVE_POISON_STING
+- MOVE_VENOSHOCK
 - MOVE_GUST
 
 SPECIES_QUILAVA
@@ -10763,7 +10771,7 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_NIGHT_SHADE
 - MOVE_DISABLE
-- MOVE_ASTONISH
+- MOVE_PURSUIT
 - MOVE_LEER
 
 SPECIES_KADABRA
@@ -10779,7 +10787,7 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_BITE
 - MOVE_CONFUSE_RAY
-- MOVE_POISON_STING
+- MOVE_VENOSHOCK
 - MOVE_GUST
 
 SPECIES_CROCONAW
@@ -10849,7 +10857,7 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_NIGHT_SHADE
 - MOVE_DISABLE
-- MOVE_ASTONISH
+- MOVE_PURSUIT
 - MOVE_LEER
 
 SPECIES_KADABRA
@@ -10865,14 +10873,14 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_BITE
 - MOVE_CONFUSE_RAY
-- MOVE_POISON_STING
+- MOVE_VENOSHOCK
 - MOVE_GUST
 
 SPECIES_PRINPLUP
 Level: 24
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_PECK
-- MOVE_ICE_PUNCH
+- MOVE_ICE_BEAM
 - MOVE_BUBBLE_BEAM
 - MOVE_MUD_SLAP
 
@@ -10892,7 +10900,7 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_NIGHT_SHADE
 - MOVE_DISABLE
-- MOVE_ASTONISH
+- MOVE_PURSUIT
 - MOVE_LEER
 
 SPECIES_KADABRA
@@ -10908,7 +10916,7 @@ Level: 22
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_BITE
 - MOVE_CONFUSE_RAY
-- MOVE_POISON_STING
+- MOVE_VENOSHOCK
 - MOVE_GUST
 
 SPECIES_FROGADIER
@@ -10947,7 +10955,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_FLAME_WHEEL
 - MOVE_WING_ATTACK
 - MOVE_QUICK_ATTACK
-- MOVE_RAZOR_WIND
+- MOVE_FLY
 
 SPECIES_SNEASEL
 Level: 38
@@ -11511,7 +11519,7 @@ SPECIES_GLIGAR
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SWIFT
-- MOVE_AIR_CUTTER
+- MOVE_AERIAL_ACE
 - MOVE_STEEL_WING
 - MOVE_REST
 
@@ -12539,7 +12547,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_X_SCISSOR
 - MOVE_ROCK_SLIDE
 - MOVE_BRICK_BREAK
-- MOVE_AERIAL_ACE
+- MOVE_FEINT_ATTACK
 
 SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
 Level: 64
@@ -12598,7 +12606,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_LUNGE
 - MOVE_ROCK_SLIDE
 - MOVE_BRICK_BREAK
-- MOVE_AERIAL_ACE
+- MOVE_FEINT_ATTACK
 
 SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
 Level: 64
@@ -12620,7 +12628,7 @@ SPECIES_GRENINJA @ ITEM_BLACK_GLASSES
 Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SURF
-- MOVE_DARK_PULSE
+- MOVE_NIGHT_SLASH
 - MOVE_ICE_BEAM
 - MOVE_GRASS_KNOT
 
@@ -13134,7 +13142,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_X_SCISSOR
 - MOVE_ROCK_SLIDE
 - MOVE_BRICK_BREAK
-- MOVE_AERIAL_ACE
+- MOVE_FEINT_ATTACK
 
 SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
 Level: 68
@@ -13193,7 +13201,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_LUNGE
 - MOVE_ROCK_SLIDE
 - MOVE_BRICK_BREAK
-- MOVE_AERIAL_ACE
+- MOVE_FEINT_ATTACK
 
 SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
 Level: 68
@@ -13215,7 +13223,7 @@ SPECIES_GRENINJA @ ITEM_BLACK_GLASSES
 Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SURF
-- MOVE_DARK_PULSE
+- MOVE_NIGHT_SLASH
 - MOVE_ICE_BEAM
 - MOVE_GRASS_KNOT
 
@@ -13253,7 +13261,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_BLAST_BURN
 - MOVE_EARTHQUAKE
 - MOVE_OUTRAGE
-- MOVE_TWISTER
+- MOVE_HURRICANE
 
 SPECIES_VENUSAUR @ ITEM_MIRACLE_SEED
 Level: 79
@@ -13311,7 +13319,7 @@ Level: Badge+7
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_THUNDER
 - MOVE_ROLLOUT
-- MOVE_BODY_SLAM
+- MOVE_DOUBLE_EDGE
 - MOVE_THUNDER_WAVE
 
 SPECIES_ESPEON
@@ -13345,7 +13353,7 @@ SPECIES_HONCHKROW
 Level: 61
 IVs: 27 HP / 31 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_DARK_PULSE
-- MOVE_AIR_SLASH
+- MOVE_DRILL_PECK
 - MOVE_THIEF
 - MOVE_DOUBLE_TEAM
 
@@ -13357,12 +13365,12 @@ IVs: 27 HP / 31 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_SURF
 - MOVE_BODY_SLAM
 
-SPECIES_PERSIAN
+SPECIES_PERSIAN @ ITEM_SCOPE_LENS
 Level: 61
 IVs: 27 HP / 31 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
-- MOVE_FAINT_ATTACK
-- MOVE_SWAGGER
-- MOVE_SCREECH
+- MOVE_FAKE_OUT
+- MOVE_NIGHT_SLASH
+- MOVE_HYPNOSIS
 - MOVE_SLASH
 
 SPECIES_RHYDON
@@ -13370,7 +13378,7 @@ Level: 60
 IVs: 27 HP / 31 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_EARTHQUAKE
 - MOVE_SANDSTORM
-- MOVE_PLAY_ROUGH
+- MOVE_STONE_EDGE
 - MOVE_DOUBLE_EDGE
 
 SPECIES_NIDOKING
@@ -13468,7 +13476,7 @@ Items: Full Restore / Full Restore
 SPECIES_HONCHKROW
 Level: 42
 IVs: 31 HP / 27 Atk / 27 Def / 31 SpA / 27 SpD / 27 Spe
-- MOVE_SHADOW_SNEAK
+- MOVE_HEX
 - MOVE_DRILL_PECK
 - MOVE_FAINT_ATTACK
 - MOVE_HEAT_WAVE
@@ -13521,13 +13529,13 @@ Level: 39
 IVs: 31 HP / 27 Atk / 27 Def / 31 SpA / 27 SpD / 27 Spe
 - MOVE_BITE
 - MOVE_STRENGTH
-- MOVE_GUST
+- MOVE_BOUNCE
 - MOVE_SURF
 
 SPECIES_HONCHKROW
 Level: 38
 IVs: 31 HP / 27 Atk / 27 Def / 31 SpA / 27 SpD / 27 Spe
-- MOVE_SHADOW_SNEAK
+- MOVE_HEX
 - MOVE_DRILL_PECK
 - MOVE_FAINT_ATTACK
 - MOVE_HEAT_WAVE
@@ -13556,7 +13564,7 @@ Level: 39
 IVs: 31 HP / 27 Atk / 27 Def / 31 SpA / 27 SpD / 27 Spe
 - Tri Attack
 - Zap Cannon
-- Flamethrower
+- MOVE_DARK_PULSE
 - Ice Beam
 
 Tauros
@@ -13572,7 +13580,7 @@ Level: 39
 IVs: 31 HP / 27 Atk / 27 Def / 31 SpA / 27 SpD / 27 Spe
 - Bite
 - Strength
-- Gust
+- MOVE_BOUNCE
 - Surf
 
 Houndoom
@@ -13607,7 +13615,7 @@ Level: 39
 IVs: 31 HP / 27 Atk / 27 Def / 31 SpA / 27 SpD / 27 Spe
 - Tri Attack
 - Zap Cannon
-- Flamethrower
+- MOVE_DARK_PULSE
 - Ice Beam
 
 Tauros
@@ -13623,7 +13631,7 @@ Level: 39
 IVs: 31 HP / 27 Atk / 27 Def / 31 SpA / 27 SpD / 27 Spe
 - Bite
 - Strength
-- Gust
+- MOVE_BOUNCE
 - Surf
 
 Houndoom
@@ -13672,7 +13680,7 @@ IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
 SPECIES_MAGCARGO
 Level: Badge+6
 IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
-- MOVE_SMOG
+- MOVE_CLEAR_SMOG
 - MOVE_FLAMETHROWER
 - MOVE_ROCK_SLIDE
 - MOVE_CURSE
@@ -13715,7 +13723,7 @@ IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
 SPECIES_MAGCARGO
 Level: 37
 IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
-- MOVE_SMOG
+- MOVE_CLEAR_SMOG
 - MOVE_FLAMETHROWER
 - MOVE_ROCK_SLIDE
 - MOVE_CURSE
@@ -13733,7 +13741,7 @@ Level: 40
 IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_SLUDGE_BOMB
 - MOVE_BRICK_BREAK
-- MOVE_FAINT_ATTACK
+- MOVE_PAYBACK
 - MOVE_CURSE
 
 === TRAINER_ARIANA_1_HNS ===
@@ -14167,7 +14175,7 @@ Level: 45
 Seaking
 Level: 48
 - Waterfall
-- Megahorn
+- MOVE_SIGNAL_BEAM
 - Rain Dance
 - Drill Peck
 
@@ -14175,7 +14183,7 @@ Tentacruel
 Level: 45
 - Sludge Bomb
 - Surf
-- Acid Armor
+- MOVE_BARRIER
 - Ice Beam
 
 === TRAINER_RALPH_5_HNS ===
@@ -14197,7 +14205,7 @@ Level: 55
 Seaking
 Level: 58
 - Waterfall
-- Megahorn
+- MOVE_SIGNAL_BEAM
 - Rain Dance
 - Drill Peck
 
@@ -14205,7 +14213,7 @@ Tentacruel
 Level: 55
 - Sludge Bomb
 - Surf
-- Acid Armor
+- MOVE_HEX
 - Ice Beam
 
 === TRAINER_LIZ_2_HNS ===
@@ -14902,7 +14910,7 @@ Level: 44
 - Surf
 - Disable
 - Psychic
-- Screech
+- Calm Mind
 
 Ampharos
 Level: 45
@@ -14925,7 +14933,7 @@ Level: 54
 - Surf
 - Disable
 - Psychic
-- Screech
+- Calm Mind
 
 Ampharos
 Level: 55
@@ -16517,7 +16525,7 @@ Ability: Swift Swim
 Level: 63    
 Modest Nature  
 IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Hurricane  
+- MOVE_WING_ATTACK  
 - Water Pulse  
 - Signal Beam  
 - Aqua Ring  
@@ -16545,28 +16553,29 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper  
+Ability: Drizzle
+Level: 63  
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Surf  
+- Hurricane  
+- Feather Dance  
+- Shock Wave  
+
+Pelipper  
 Ability: Keen Eye  
 Level: 63  
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Surf  
 - Ice Beam  
-- Feather Dance  
+- Hurricane  
 - Shock Wave  
 
-Poliwrath @ Life Orb  
-Ability: Water Absorb  
-Level: 63  
-- Darkest Lariat  
-- Drain Punch  
-- Liquidation  
-- Power-Up Punch  
-
-Huntail @ White Herb  
-Ability: Water Veil  
+Huntail @ Life Orb  
+Ability: Swift Swim 
 Level: 68  
-- Shell Smash  
-- Super Fang  
-- Waterfall  
+- MOVE_COIL  
+- MOVE_CRUNCH  
+- MOVE_WATERFALL  
 - Scary Face  
 
 
@@ -16584,7 +16593,7 @@ Ability: Analytic
 Level: 66    
 EVs: 140 HP / 204 Atk / 104 Def / 60 SpD  
 Adamant Nature  
-- Dive  
+- MOVE_WATERFALL  
 - Avalanche  
 - Curse  
 - Recover  
@@ -16593,9 +16602,9 @@ Seaking @ King's Rock
 Ability: Lightning Rod  
 Level: 67    
 - Drill Run  
-- Acupressure  
-- Scale Shot  
-- Tail Whip  
+- MOVE_SWAGGER  
+- MOVE_WATERFALL  
+- MOVE_HORN_DRILL  
 
 Golduck @ Scope Lens  
 Ability: Psi Conduit  
@@ -16625,14 +16634,14 @@ IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Liquidation  
 - Head Smash  
 - Recover  
-- Sucker Punch  
+- MOVE_DIG  
 
 Octillery @ Leftovers  
 Ability: Moody  
 Level: 65  
 - Protect  
 - Octazooka  
-- Gunk Shot  
+- Sludge Bomb  
 - Rock Blast  
 
 Mantine @ Assault Vest  
@@ -16642,7 +16651,7 @@ Careful Nature
 - Mirror Coat  
 - Seed Bomb  
 - Aqua Tail  
-- Rock Blast  
+- MOVE_ROCK_SLIDE  
 
 === TRAINER_DAODAO_KILN_SWIMMER_3_HNS ===
 Name: GEOFF
@@ -16656,8 +16665,8 @@ AI: Check Bad Move
 Tentacruel  
 Ability: Liquid Ooze  
 Level: 64
-- Gunk Shot  
-- Flip Turn  
+- MOVE_POISON_JAB  
+- MOVE_DIVE  
 - Toxic Spikes  
 - Rapid Spin  
 
@@ -16667,16 +16676,16 @@ Level: 64
 - Crunch  
 - Earthquake  
 - Rage  
-- Scary Face  
+- MOVE_ROAR  
 
-Kingdra @ Scope Lens  
-Ability: Sniper  
-Level: 64 
+Sharpedo
+Ability: Strong Jaw
+Level: 64
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Dragon Pulse  
-- Smokescreen  
-- Brine  
-- Focus Energy  
+- Waterfall
+- Crunch
+- Ice Fang
+- Poison Fang
 
 
 
@@ -16696,7 +16705,7 @@ EVs: 252 Def / 248 Spe
 Timid Nature  
 - Scald  
 - Draining Kiss  
-- Bind  
+- MOVE_SHELL_SMASH  
 - Confuse Ray  
 
 Luvdisc  
@@ -16705,8 +16714,8 @@ Level: 63
 EVs: 252 Spe  
 Jolly Nature  
 - Charm  
-- Captivate  
-- Flip Turn  
+- MOVE_ICE_BEAM  
+- MOVE_WATER_PULSE
 - Wish  
 
 Milotic (F)  
@@ -16747,7 +16756,7 @@ EVs: 252 HP / 116 Def / 140 SpD
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Water Spout  
 - Aqua Ring  
-- Noble Roar  
+- MOVE_YAWN  
 - Ice Beam  
 
 Kingler @ Life Orb  
@@ -16775,16 +16784,16 @@ Ability: Levitate
 Level: 63   
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Cosmic Power  
-- Stored Power  
+- MOVE_PSYCHIC  
 - Calm Mind  
-- Power Gem  
+- MOVE_METEOR_BEAM  
 
 Solrock @ Heat Rock  
 Ability: Levitate  
 Level: 63   
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Sunny Day  
-- Weather Ball  
+- MOVE_METEOR_BEAM  
 - Morning Sun  
 - Solar Beam  
 
@@ -16813,7 +16822,7 @@ Level: 64
 IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 - Venoshock  
 - Toxic  
-- Iron Defense  
+- Moonlight  
 - Quiver Dance  
 
 Pinsir @ Life Orb  
@@ -16829,8 +16838,8 @@ Ability: Rain Dish
 Level: 63
 - Teeter Dance  
 - Scald  
-- Trailblaze  
-- Encore  
+- MOVE_RAZOR_LEAF  
+- MOVE_METRONOME  
 
 
 
@@ -16856,8 +16865,8 @@ Ability: Adaptability
 Level: 65  
 - Poison Jab  
 - Drill Run  
-- Outrage  
-- Fell Stinger  
+- MOVE_DOUBLE_EDGE  
+- MOVE_POUNCE  
 
 Dustox  
 Ability: Shield Dust  
@@ -16884,13 +16893,13 @@ Ability: Chitinize
 Level: 61  
 - Close Combat  
 - Double-Edge  
-- Outrage  
+- MOVE_X_SCISSOR  
 - Rock Slide  
 
 Scyther @ Eviolite  
 Ability: Technician  
 Level: 63 
-- Psycho Cut  
+- MOVE_AERIAL_ACE  
 - Steel Wing  
 - Roost  
 - Bug Bite  
@@ -16910,7 +16919,7 @@ Butterfree @ Bright Powder
 Ability: Compound Eyes  
 Level: 64   
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Hurricane  
+- MOVE_AIR_SLASH  
 - Quiver Dance  
 - Signal Beam  
 - Sleep Powder  
@@ -16920,7 +16929,7 @@ Ability: Guts
 Level: 61  
 - Facade  
 - Close Combat  
-- Throat Chop  
+- MOVE_THIEF  
 - Megahorn  
 
 
@@ -16934,13 +16943,13 @@ Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
-Mankey @ Flying Gem  
+Primeape @ Flying Gem  
 Ability: Vital Spirit  
 Level: 63   
 - Acrobatics  
 - Close Combat  
 - Taunt  
-- U-turn  
+- MOVE_POUNCE  
 
 Tangrowth @ Leftovers  
 Ability: Tangled Feet  
@@ -16953,10 +16962,10 @@ Level: 61
 Tropius  
 Ability: Harvest  
 Level: 62   
-- Dragon Dance  
-- Dragon Hammer  
-- Petal Blizzard  
-- Safeguard  
+- MOVE_AERIAL_ACE  
+- MOVE_DRAGON_TAIL  
+- MOVE_LEAF_BLADE  
+- Dragon Dance 
 
 
 
@@ -16974,7 +16983,7 @@ Ability: Defiant
 Level: 61  
 - Cross Chop  
 - Curse  
-- Rage Fist  
+- MOVE_SHADOW_CLAW  
 - Ice Punch  
 
 Hariyama @ Loaded Dice  
@@ -16985,13 +16994,12 @@ Level: 61
 - Bulk Up  
 - Knock Off  
 
-Machoke  
-Ability: No Guard  
+SPECIES_KROKOROK    
 Level: 61  
 - Dynamic Punch  
-- Bullet Punch  
-- Bulk Up  
-- Dual Chop  
+- MOVE_DIG  
+- MOVE_SWAGGER  
+- MOVE_FOUL_PLAY  
 
 
 
@@ -17004,14 +17012,12 @@ Music: Hg Suspicious 2
 Double Battle: No
 AI: Check Bad Move
 
-Kangaskhan  
-Ability: Scrappy  
+Klawf  
 Level: 62  
-Happiness: 254  
-- Return  
-- Power-Up Punch  
-- Beat Up  
-- Disable  
+- MOVE_ROCK_SLIDE  
+- MOVE_X_SCISSOR  
+- MOVE_METAL_CLAW  
+- MOVE_SHELL_SMASH  
 
 Solrock  
 Ability: Levitate  
@@ -17043,7 +17049,7 @@ Level: 61
 IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 - Heat Wave  
 - Air Cutter  
-- Feather Dance  
+- MOVE_MIRROR_MOVE  
 - Supersonic  
 
 Tangela @ Eviolite  
@@ -17055,13 +17061,13 @@ IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 - Substitute  
 - Sludge Bomb  
 
-Miltank  
-Ability: Thick Fat  
-Level: 61  
-- Retaliate  
-- Earthquake  
-- Heal Bell  
-- Milk Drink  
+Spinda   
+Level: 62
+IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe  
+- MOVE_SUPERPOWER  
+- MOVE_TEETER_DANCE  
+- MOVE_DIZZY_PUNCH  
+- MOVE_PLAY_ROUGH  
 
 
 
@@ -17082,13 +17088,13 @@ Level: 61
 - Shadow Claw
 - Shadow Sneak
 
-Scizor  
+Lurantis  
 Ability: Technician  
 Level: 61 
-- Brutal Swing  
-- Bullet Punch  
+- MOVE_AERIAL_ACE  
+- MOVE_LEAF_BLADE  
 - Swords Dance  
-- Sand Tomb  
+- MOVE_POUNCE  
 
 Leafeon @ Sitrus Berry  
 Ability: Guts  
@@ -17114,16 +17120,15 @@ Ability: Intimidate
 Level: 62  
 - Ice Fang  
 - Play Rough  
-- Stealth Rock  
-- Psychic Fangs  
+- MOVE_BATON_PASS  
+- MOVE_METAL_CLAW  
 
-Magmar @ Sitrus Berry  
-Ability: Flame Body  
+SPECIES_BEWEAR @ Sitrus Berry  
 Level: 63   
-- Fire Punch  
-- Belly Drum  
-- Mach Punch  
-- Dual Chop  
+- MOVE_FIRE_PUNCH  
+- MOVE_BELLY_DRUM  
+- MOVE_DYNAMIC_PUNCH  
+- MOVE_BODY_SLAM  
 
 Electivire @ Zoom Lens  
 Ability: Motor Drive  
@@ -17146,11 +17151,10 @@ Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
 
-Skarmory  
-Ability: Weak Armor  
+SPECIES_BRAVIARY  
 Level: 61 
 - Iron Defense  
-- Autotomize  
+- MOVE_METAL_SOUND  
 - Drill Peck  
 - Rock Slide  
 
@@ -17160,16 +17164,16 @@ Level: 64
 Happiness: 0  
 - Frustration  
 - Close Combat  
-- Lash Out  
+- MOVE_NIGHT_SLASH  
 - Taunt  
 
 Tauros @ Life Orb  
 Ability: Sheer Force  
 Level: 63 
 - Wild Charge  
-- Bulldoze  
+- MOVE_EARTHQUAKE  
 - Raging Bull  
-- Focus Energy  
+- MOVE_SWAGGER  
 
 
 
@@ -17200,8 +17204,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 0 Spe
 - Milk Drink
 - Fire Punch
-- Iron Head
-- Stealth Rock
+- Body Slam
+- MOVE_CURSE
 
 Miltank @ Leftovers
 Level: 70
@@ -17241,7 +17245,7 @@ EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 - Milk Drink
 - Double-Edge
 - Play Rough 
-- Power-Up Punch
+- MOVE_WAKE_UP_SLAP
 
 === TRAINER_MIHARU_HNS ===
 Name: MIHARU
@@ -17300,10 +17304,10 @@ Level: 70
 Happiness: 254   
 EVs: 124 HP / 252 Atk / 132 Def  
 Adamant Nature  
-- Skull Bash  
+- MOVE_HYPER_VOICE  
 - Iron Tail  
 - Curse  
-- Sing  
+- MOVE_BATON_PASS  
 
 === TRAINER_STEVEN_HNS ===
 Name: STEVEN
@@ -17321,9 +17325,9 @@ Ability: Sturdy
 Level: 77 
 EVs: 8 HP / 252 Atk / 248 Def  
 Adamant Nature  
-- Autotomize  
+- MOVE_IRON_DEFENSE  
 - Brave Bird  
-- Iron Head  
+- MOVE_STEEL_WING  
 - Spikes  
 
 Omastar @ Sitrus Berry  
@@ -17345,7 +17349,7 @@ Modest Nature
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Light Screen  
 - Reflect  
-- Expanding Force  
+- MOVE_EXTRASENSORY  
 - Earth Power  
 
 Aggron @ Rocky Helmet  
@@ -17353,7 +17357,7 @@ Ability: Heavy Metal
 Level: 77 
 EVs: 4 HP / 248 Atk / 252 Def / 4 SpD  
 Adamant Nature  
-- Heavy Slam  
+- MOVE_IRON_TAIL  
 - Body Press  
 - Curse  
 - Rock Slide  
@@ -17365,7 +17369,7 @@ EVs: 124 Atk / 132 Def / 252 Spe
 Adamant Nature  
 - Stone Axe  
 - X-Scissor  
-- Cross Poison  
+- MOVE_ROCK_SLIDE  
 - Double Team  
 
 Metagross @ Metal Coat  
@@ -17373,9 +17377,9 @@ Ability: Clear Body
 Level: 79   
 EVs: 128 HP / 120 Atk / 4 Def / 252 SpD  
 Brave Nature  
-- Bullet Punch  
+- MOVE_METAL_CLAW  
 - Meteor Mash  
-- Psychic Fangs  
+- MOVE_PSYCHO_CUT  
 - Cosmic Power 
 
 === TRAINER_FINLEY_HNS ===
@@ -17393,8 +17397,8 @@ Level: 70
 EVs: 252 SpA / 252 Spe  
 Modest Nature  
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Dragon Cheer  
-- Alluring Voice  
+- MOVE_HONE_CLAWS  
+- MOVE_DRAGON_PULSE  
 - Heat Wave  
 - Scorching Sands  
 
@@ -17406,7 +17410,7 @@ Adamant Nature
 - Dragon Dance  
 - Dragon Rush  
 - Crunch  
-- Temper Flare  
+- MOVE_FIRE_FANG  
 
 Kingdra @ Scope Lens  
 Ability: Sniper  
@@ -17422,9 +17426,9 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 Altaria @ White Herb
 Ability: Natural Cure
 Level: 70
-- Light Screen
-- Draco Meteor
-- Hurricane
+- MOVE_MIST
+- MOVE_DRAGON_PULSE
+- MOVE_FLY
 - Roost
 
 === TRAINER_MUALANI_HNS ===
@@ -17452,10 +17456,10 @@ Level: 70
 EVs: 252 HP / 92 Def / 72 SpA / 92 SpD  
 Quiet Nature  
 IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Clear Smog  
+- MOVE_ICY_WIND  
 - Scald  
 - Earth Power
-- Recover  
+- MOVE_SWAGGER  
 
 Lanturn @ Assault Vest  
 Ability: Volt Absorb  
@@ -17465,7 +17469,7 @@ Sassy Nature
 IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Discharge  
 - Signal Beam  
-- Volt Switch  
+- MOVE_SHOCK_WAVE  
 - Dazzling Gleam  
 
 Blastoise (M) @ Leftovers  
@@ -17495,7 +17499,7 @@ Level: 70
 EVs: 192 HP / 64 SpA / 252 SpD  
 Modest Nature  
 IVs: 15 HP / 14 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Hurricane  
+- MOVE_AIR_CUTTER  
 - Hydro Pump  
 - Tailwind  
 - Feather Dance  
@@ -17515,7 +17519,7 @@ Level: 70
 EVs: 252 HP / 252 Def
 Relaxed Nature
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Stealth Rock
+- MOVE_ROCK_POLISH
 - Spikes
 - Gyro Ball
 - Rapid Spin
@@ -17528,7 +17532,7 @@ Sassy Nature
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Head Smash  
 - Gyro Ball  
-- Psychic Fangs  
+- MOVE_DIG  
 - Fire Fang  
 
 Scizor @ Covert Cloak  
@@ -17537,7 +17541,7 @@ Level: 70
 EVs: 172 HP / 124 Atk / 88 Def / 124 SpD  
 Adamant Nature  
 - Pounce  
-- Dual Wingbeat  
+- MOVE_ACROBATICS  
 - Iron Head  
 - Curse  
 
@@ -17546,7 +17550,7 @@ Ability: Heavy Metal
 Level: 70   
 EVs: 108 HP / 252 Atk / 28 Def / 120 SpD  
 Relaxed Nature  
-- Heavy Slam  
+- MOVE_IRON_TAIL  
 - Body Press  
 - Iron Defense  
 - Rock Blast  
@@ -17559,7 +17563,7 @@ Modest Nature
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - Thunderbolt
 - Flash Cannon
-- Volt Switch
+- MOVE_DISCHARGE
 - Body Press
 
 === TRAINER_SKYLAR_HNS ===
@@ -17576,10 +17580,10 @@ Ability: Technician
 Level: 70
 EVs: 4 HP / 252 Atk / 252 Spe  
 Hasty Nature  
-- Dual Wingbeat  
-- Close Combat  
+- MOVE_ACROBATICS  
+- MOVE_DOUBLE_EDGE  
 - Lunge  
-- Psycho Cut  
+- MOVE_NIGHT_SLASH  
 
 Gliscor @ Toxic Orb  
 Ability: Poison Heal  
@@ -17774,7 +17778,7 @@ Ability: Sharpness
 Level: 77
 EVs: 248 HP / 252 Atk / 8 SpD
 Adamant Nature
-- Bullet Punch
+- MOVE_METAL_CLAW
 - X Scissor
 - Swords Dance
 - Roost
@@ -17785,9 +17789,9 @@ Level: 77
 EVs: 252 HP / 4 Spe / 252 SpD
 Jolly Nature
 - Cross Poison
-- Crunch
+- Night Slash
 - Rock Slide
-- Bulk Up
+- MOVE_AGILITY
 
 Flygon @ Dragon Gem
 Ability: Levitate
@@ -17795,7 +17799,7 @@ Level: 75
 EVs: 4 HP / 252 Atk / 252 Spe
 Adamant Nature
 - Dragon Claw
-- Lunge
+- MOVE_BUG_BITE
 - Earthquake
 - Fire Punch
 
@@ -17933,7 +17937,7 @@ Level: 97
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_NASTY_PLOT
 - MOVE_PSYCHIC
-- MOVE_DARK_PULSE
+- MOVE_BUG_BUZZ
 - MOVE_DRAIN_LIFE
 
 SPECIES_MISMAGIUS @ ITEM_WISE_GLASSES
@@ -17942,7 +17946,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SHADOW_BALL
 - MOVE_THUNDERBOLT
 - MOVE_PSYCHIC
-- MOVE_MYSTICAL_FIRE
+- MOVE_DAZZLING_GLEAM
 
 SPECIES_GYARADOS @ ITEM_LUM_BERRY
 Level: 97
@@ -17966,7 +17970,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_GIGA_DRAIN
 - MOVE_DRAGON_PULSE
 - MOVE_EARTHQUAKE
-- MOVE_ANCIENT_POWER
+- MOVE_ROCK_TOMB
 
 === TRAINER_ALEC_HNS ===
 Name: ALEC
@@ -18164,7 +18168,7 @@ SPECIES_PINSIR
 Level: 56
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 - MOVE_EARTHQUAKE
-- MOVE_MEGA_PUNCH
+- MOVE_BODY_SLAM
 - MOVE_X_SCISSOR
 - MOVE_SUBMISSION
 
@@ -18180,17 +18184,17 @@ SPECIES_PENDRAGON
 Level: 54
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 - MOVE_DIG
-- MOVE_HEADBUTT
+- MOVE_SLASH
 - MOVE_LUNGE
 - MOVE_IRON_TAIL
 
 SPECIES_VENOMOTH
 Level: 58
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
-- MOVE_BUG_BUZZ
+- MOVE_SIGNAL_BEAM
 - MOVE_SLUDGE_BOMB
 - MOVE_PSYCHIC
-- MOVE_SHADOW_BALL
+- MOVE_GIGA_DRAIN
 
 === TRAINER_CORY_HNS ===
 Name: CORY
@@ -18266,7 +18270,7 @@ IVs: 18 HP / 22 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_EARTHQUAKE
 - MOVE_SLASH
 - MOVE_AERIAL_ACE
-- MOVE_ANCIENT_POWER
+- MOVE_ROCK_TOMB
 
 SPECIES_CLAYDOL
 Level: 62
@@ -18356,16 +18360,16 @@ SPECIES_MANKEY
 Level: 23
 IVs: 18 HP / 22 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_DIG
-- MOVE_SLASH
-- MOVE_SAND_ATTACK
+- MOVE_SMELLING_SALTS
+- MOVE_SCREECH
 - MOVE_KARATE_CHOP
 
 SPECIES_MANKEY
 Level: 25
 IVs: 18 HP / 22 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_DIG
-- MOVE_SLASH
-- MOVE_SAND_ATTACK
+- MOVE_SMELLING_SALTS
+- MOVE_SCREECH
 - MOVE_KARATE_CHOP
 
 SPECIES_BALTOY
@@ -18403,49 +18407,49 @@ AI: Smart Trainer
 SPECIES_MAGNEZONE @ ITEM_LEFTOVERS
 Level: 65
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- MOVE_FAKE_OUT
-- MOVE_EARTHQUAKE
-- MOVE_OUTRAGE
-- MOVE_DIZZY_PUNCH
+- MOVE_TRI_ATTACK
+- MOVE_THUNDERBOLT
+- MOVE_MAGNET_BOMB
+- MOVE_MAGNET_RISE
 
 SPECIES_ALTARIA @ ITEM_LEFTOVERS
 Level: 67
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- MOVE_SUPERPOWER
+- MOVE_DRAGON_CLAW
 - MOVE_FLAMETHROWER
 - MOVE_EARTHQUAKE
-- MOVE_ROCK_SLIDE
+- MOVE_FLY
 
 SPECIES_EXPLOUD @ ITEM_LEFTOVERS
 Level: 69
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- MOVE_DRAGON_PULSE
+- MOVE_HYPER_VOICE
 - MOVE_BLIZZARD
 - MOVE_FIRE_BLAST
-- MOVE_THUNDER
+- MOVE_SHOCK_WAVE
 
 SPECIES_ABSOL @ ITEM_LEFTOVERS
 Level: 70
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - MOVE_QUICK_ATTACK
-- MOVE_SCORCHING_SANDS
-- MOVE_DOUBLE_KICK
+- MOVE_AIR_SLASH
+- MOVE_POUNCE
 - MOVE_BITE
 
 SPECIES_CLAYDOL @ ITEM_LEFTOVERS
 Level: 70
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- MOVE_QUICK_ATTACK
-- MOVE_THUNDER
-- MOVE_DOUBLE_KICK
-- MOVE_SHADOW_BALL
+- MOVE_EXTRASENSORY
+- MOVE_EARTHQUAKE
+- MOVE_BODY_PRESS
+- MOVE_ANCIENT_POWER
 
 SPECIES_DUSCLOPS @ ITEM_LEFTOVERS
 Level: 70
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- MOVE_QUICK_ATTACK
-- MOVE_HYDRO_PUMP
-- MOVE_DOUBLE_KICK
+- MOVE_MEGA_PUNCH
+- MOVE_SHADOW_PUNCH
+- MOVE_EARTHQUAKE
 - MOVE_BLIZZARD
 
 === TRAINER_MARK_2_HNS ===
@@ -19375,7 +19379,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 SPECIES_KINGLER
 Level: 41
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_SCORCHING_SANDS
+- MOVE_MUD_SHOT
 - MOVE_CUT
 - MOVE_GUILLOTINE
 - MOVE_STRENGTH
@@ -19383,7 +19387,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 SPECIES_CLOYSTER
 Level: 42
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- MOVE_SPIKE_CANNON
+- MOVE_SIGNAL_BEAM
 - MOVE_SURF
 - MOVE_HEADBUTT
 - MOVE_AURORA_BEAM
@@ -19460,7 +19464,7 @@ SPECIES_KILOWATTREL
 Level: 43
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 - MOVE_QUICK_ATTACK
-- MOVE_MIRROR_MOVE
+- MOVE_FEATHER_DANCE
 - MOVE_AERIAL_ACE
 - MOVE_THUNDER
 
@@ -19628,7 +19632,7 @@ EVs: 252 Atk / 248 Spe
 Adamant Nature
 - Shadow Claw
 - Will-O-Wisp
-- Sucker Punch
+- MOVE_PAYBACK
 - Trick
 
 Drifblim @ Ghost Gem
@@ -19676,7 +19680,7 @@ Level: 70
 EVs: 252 SpA / 252 Spe
 Timid Nature
 - Shadow Ball
-- Mystical Fire
+- MOVE_DAZZLING_GLEAM
 - Power Gem
 - Nasty Plot
 
@@ -19853,7 +19857,7 @@ Modest Nature
 - Acid Spray
 - Thunderbolt
 - Flamethrower
-- Giga Drain
+- MOVE_DRAGON_CLAW
 
 Togekiss @ Life Orb
 Ability: Serene Grace
@@ -19896,7 +19900,7 @@ Timid Nature
 - Leaf Blade
 - Fake Out
 - Extrasensory
-- Night Slash
+- MOVE_FOUL_PLAY
 
 Alakazam @ Black Belt
 Ability: Synchronize
@@ -19926,10 +19930,10 @@ Level: Badge+16
 EVs: 252 HP / 252 Atk / 4 SpD
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Adamant Nature
-- Dragon Dance
-- Crunch
-- Stone Edge
-- Earthquake
+- MOVE_GUNK_SHOT
+- MOVE_PAYBACK
+- MOVE_ROCK_SLIDE
+- MOVE_CURSE
 
 Salamence @ Leftovers
 Ability: Intimidate
@@ -19937,10 +19941,10 @@ Level: Badge+18
 EVs: 4 HP / 252 Atk / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Adamant Nature
-- Dragon Dance
-- Outrage
-- Earthquake
-- Extreme Speed
+- MOVE_OUTRAGE
+- MOVE_DRAGON_DANCE
+- MOVE_EARTHQUAKE
+- MOVE_ROCK_SLIDE
 
 === TRAINER_SARI_HNS ===
 Name: SARI
@@ -20255,7 +20259,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 SPECIES_CROBAT
 Level: Badge+5
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- MOVE_RAZOR_WIND
+- MOVE_AIR_CUTTER
 - MOVE_SLUDGE_BOMB
 - MOVE_FAINT_ATTACK
 - MOVE_QUICK_ATTACK
@@ -20337,7 +20341,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 SPECIES_ELECTABUZZ
 Level: 61
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_FLAMETHROWER
+- MOVE_FIRE_PUNCH
 - MOVE_THUNDER_PUNCH
 - MOVE_BRICK_BREAK
 - MOVE_THIEF
@@ -20365,7 +20369,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_SLUDGE_BOMB
 - MOVE_SHADOW_PUNCH
 - MOVE_GIGA_DRAIN
-- MOVE_HARDEN
+- MOVE_ACID_ARMOR
 
 SPECIES_GRIMER
 Level: 59
@@ -20373,7 +20377,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_SLUDGE_BOMB
 - MOVE_SHADOW_PUNCH
 - MOVE_GIGA_DRAIN
-- MOVE_HARDEN
+- MOVE_ACID_ARMOR
 
 SPECIES_MUK
 Level: 61
@@ -20398,7 +20402,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_THUNDERBOLT
 - MOVE_THUNDER_WAVE
 - MOVE_SWIFT
-- MOVE_SCREECH
+- MOVE_METAL_SOUND
 
 SPECIES_WEEZING
 Level: 62
@@ -20431,7 +20435,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_THUNDERBOLT
 - MOVE_THUNDER_WAVE
 - MOVE_SWIFT
-- MOVE_SCREECH
+- MOVE_METAL_SOUND
 
 SPECIES_ARBOK
 Level: 63
@@ -20472,7 +20476,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_THUNDERBOLT
 - MOVE_THUNDER_WAVE
 - MOVE_SWIFT
-- MOVE_SCREECH
+- MOVE_METAL_SOUND
 
 SPECIES_MAGNETON
 Level: 61
@@ -20480,12 +20484,12 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_THUNDERBOLT
 - MOVE_THUNDER_WAVE
 - MOVE_SWIFT
-- MOVE_SCREECH
+- MOVE_METAL_SOUND
 
 SPECIES_PANGORO
 Level: 64
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- MOVE_CROSS_CHOP
+- MOVE_HAMMER_ARM
 - MOVE_EARTHQUAKE
 - MOVE_ROCK_SLIDE
 - MOVE_THUNDER_PUNCH
@@ -20780,7 +20784,7 @@ SPECIES_KINGLER
 Level: 62
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_GUILLOTINE
-- MOVE_STOMP
+- MOVE_FLAIL
 - MOVE_CRABHAMMER
 - MOVE_ROCK_TOMB
 
@@ -20789,7 +20793,7 @@ Level: 62
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_ROCK_SLIDE
 - MOVE_DIZZY_PUNCH
-- MOVE_OUTRAGE
+- MOVE_EARTHQUAKE
 - MOVE_COUNTER
 
 SPECIES_TENTACRUEL
@@ -20829,17 +20833,17 @@ SPECIES_HARIYAMA
 Level: 62
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_SWAGGER
-- MOVE_DOUBLE_KICK
-- MOVE_HIGH_JUMP_KICK
+- MOVE_FORCE_PALM
+- MOVE_DYNAMIC_PUNCH
 - MOVE_FORESIGHT
 
 SPECIES_PANGORO
 Level: 62
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-- MOVE_CROSS_CHOP
+- MOVE_HAMMER_ARM
 - MOVE_ROCK_SLIDE
 - MOVE_EARTHQUAKE
-- MOVE_FORESIGHT
+- MOVE_ROAR
 
 SPECIES_HITMONCHAN
 Level: 62
@@ -20853,8 +20857,8 @@ SPECIES_PRIMEAPE
 Level: 62
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_SWAGGER
-- MOVE_DOUBLE_KICK
-- MOVE_HIGH_JUMP_KICK
+- MOVE_BOUNCE
+- MOVE_DYNAMIC_PUNCH
 - MOVE_FORESIGHT
 
 SPECIES_HITMONTOP
@@ -20908,7 +20912,7 @@ Level: 68
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - MOVE_FLAMETHROWER
 - MOVE_SHADOW_BALL
-- MOVE_CALM_MIND
+- MOVE_NASTY_PLOT
 - MOVE_PSYCHIC
 
 SPECIES_BANETTE
@@ -20971,18 +20975,18 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 SPECIES_KABUTOPS
 Level: 64
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-- MOVE_X_SCISSOR
+- MOVE_SLASH
 - MOVE_AERIAL_ACE
-- MOVE_METAL_CLAW
+- MOVE_ROCK_TOMB
 - MOVE_DIG
 
 SPECIES_OMASTAR
 Level: 64
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-- MOVE_RECOVER
-- MOVE_CURSE
+- MOVE_SHELL_SMASH
+- MOVE_SURF
 - MOVE_ANCIENT_POWER
-- MOVE_SLUDGE_BOMB
+- MOVE_VENOSHOCK
 
 SPECIES_LANTURN
 Level: 64
@@ -20995,10 +20999,10 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 SPECIES_BRAVIARY
 Level: 64
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-- MOVE_PSYCHIC
-- MOVE_CALM_MIND
-- MOVE_ICY_WIND
-- MOVE_SHOCK_WAVE
+- MOVE_HEAT_WAVE
+- MOVE_BULK_UP
+- MOVE_AVALANCHE
+- MOVE_AERIAL_ACE
 
 === TRAINER_GIDEON_HNS ===
 Name: GIDEON
@@ -21040,7 +21044,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - MOVE_OUTRAGE
 - MOVE_EARTHQUAKE
 - MOVE_X_SCISSOR
-- MOVE_DRAGON_DANCE
+- MOVE_HONE_CLAWS
 
 SPECIES_KLINKLANG
 Level: 73
@@ -21130,25 +21134,25 @@ SPECIES_DUSTOX
 Level: 67
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_SLUDGE_BOMB
-- MOVE_HAZE
-- MOVE_THUNDERBOLT
-- MOVE_EXPLOSION
+- MOVE_LIGHT_SCREEN
+- MOVE_SIGNAL_BEAM
+- MOVE_DOUBLE_EDGE
 
 SPECIES_DUSTOX
 Level: 67
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_SLUDGE_BOMB
-- MOVE_HAZE
-- MOVE_THUNDERBOLT
-- MOVE_EXPLOSION
+- MOVE_LIGHT_SCREEN
+- MOVE_SIGNAL_BEAM
+- MOVE_DOUBLE_EDGE
 
 SPECIES_SWALOT
 Level: 70
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_GUNK_SHOT
-- MOVE_DARK_PULSE
+- MOVE_THIEF
 - MOVE_DYNAMIC_PUNCH
-- MOVE_MINIMIZE
+- MOVE_ENCORE
 
 === TRAINER_DAODAO_LAB_CUEBALL_1_HNS ===
 Name: DOYLE
@@ -21162,17 +21166,17 @@ AI: Smart Trainer
 SPECIES_BEWEAR
 Level: 70
 IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- MOVE_CROSS_CHOP
-- MOVE_SEISMIC_TOSS
-- MOVE_VITAL_THROW
+- MOVE_HAMMER_ARM
+- MOVE_FORCE_PALM
+- MOVE_BRICK_BREAK
 - MOVE_BULK_UP
 
 SPECIES_BEWEAR
 Level: 70
 IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- MOVE_CROSS_CHOP
+- MOVE_HAMMER_ARM
 - MOVE_THRASH
-- MOVE_SCREECH
+- MOVE_PAIN_SPLIT
 - MOVE_BULK_UP
 
 === TRAINER_DAODAO_LAB_SCIENTIST_1_HNS ===
@@ -21195,10 +21199,10 @@ IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
 SPECIES_GALVANTULA
 Level: 71
 IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
-- MOVE_TRI_ATTACK
-- MOVE_ICE_BEAM
+- MOVE_SLASH
+- MOVE_BUG_BUZZ
 - MOVE_THUNDERBOLT
-- MOVE_RECOVER
+- MOVE_CAMOUFLAGE
 
 === TRAINER_DAODAO_LAB_BIKER_2_HNS ===
 Name: VANCE
@@ -21212,25 +21216,25 @@ AI: Smart Trainer
 SPECIES_MIGHTYENA
 Level: 69
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 25 Spe
-- MOVE_THUNDERBOLT
-- MOVE_CHARGE_BEAM
-- MOVE_LIGHT_SCREEN
-- MOVE_EXPLOSION
+- MOVE_FIRE_FANG
+- MOVE_THUNDER_FANG
+- MOVE_HOWL
+- MOVE_CRUNCH
 
 SPECIES_MIGHTYENA
 Level: 69
 IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
-- MOVE_FLAMETHROWER
-- MOVE_DARK_PULSE
+- MOVE_FIRE_FANG
+- MOVE_DIG
 - MOVE_CRUNCH
-- MOVE_SOLAR_BEAM
+- MOVE_DOUBLE_EDGE
 
 SPECIES_SWALOT
 Level: 71
 IVs: 20 HP / 20 Atk / 20 Def / 25 SpA / 20 SpD / 20 Spe
-- MOVE_FLAMETHROWER
-- MOVE_DARK_PULSE
-- MOVE_CRUNCH
+- MOVE_FIRE_PUNCH
+- MOVE_SLUDGE_BOMB
+- MOVE_THIEF
 - MOVE_SOLAR_BEAM
 
 === TRAINER_DAODAO_LAB_CUEBALL_2_HNS ===
@@ -21245,26 +21249,26 @@ AI: Smart Trainer
 SPECIES_TOXICROAK
 Level: 71
 IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- MOVE_HI_JUMP_KICK
-- MOVE_BLAZE_KICK
+- MOVE_VENOSHOCK
+- MOVE_EARTHQUAKE
 - MOVE_MEGA_KICK
-- MOVE_REVERSAL
+- MOVE_REVENGE
 
 SPECIES_SHARPEDO
 Level: 70
 IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- MOVE_BRICK_BREAK
+- MOVE_CRUNCH
 - MOVE_ICE_BEAM
 - MOVE_EARTHQUAKE
-- MOVE_BULK_UP
+- MOVE_AGILITY
 
 SPECIES_TOXICROAK
 Level: 71
 IVs: 20 HP / 25 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- MOVE_HI_JUMP_KICK
-- MOVE_BLAZE_KICK
+- MOVE_VENOSHOCK
+- MOVE_EARTHQUAKE
 - MOVE_MEGA_KICK
-- MOVE_REVERSAL
+- MOVE_REVENGE
 
 === TRAINER_DAODAO_LAB_SCIENTIST_2_HNS ===
 Name: HALLORAN
@@ -21280,8 +21284,8 @@ Level: 70
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_EARTH_POWER
 - MOVE_EXTRASENSORY
-- MOVE_ICE_BEAM
-- MOVE_EXPLOSION
+- MOVE_ICY_WIND
+- MOVE_SHADOW_BALL
 
 SPECIES_DITTO
 Level: 68
