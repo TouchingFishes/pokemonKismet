@@ -23,12 +23,14 @@ enum RivalAce
     RIVAL_ACE_NONE, // keep the family's own ace
     RIVAL_ACE_LINE(BLAZIKEN),   // Hoenn Fire, on CYNDAQUIL's party
     RIVAL_ACE_LINE(INFERNAPE),  // Sinnoh Fire, on CYNDAQUIL's party
-    RIVAL_ACE_LINE(SCEPTILE),   // Hoenn Grass, on TURTWIG's party
-    RIVAL_ACE_LINE(SERPERIOR),  // Unova Grass, on TURTWIG's party
-    RIVAL_ACE_LINE(CHESNAUGHT), // Kalos Grass, on TURTWIG's party
+    RIVAL_ACE_LINE(SCEPTILE),   // Hoenn Grass, on CHIKORITA's party
+    RIVAL_ACE_LINE(SERPERIOR),  // Unova Grass, on CHIKORITA's party
+    RIVAL_ACE_LINE(CHESNAUGHT), // Kalos Grass, on CHIKORITA's party
     RIVAL_ACE_LINE(EMBOAR),     // Unova Fire, on CYNDAQUIL's party
-    RIVAL_ACE_LINE(SAMUROTT),   // Unova Water, on TOTODILE's party
+    RIVAL_ACE_LINE(SAMUROTT),   // Unova Water, on SQUIRTLE's party
     RIVAL_ACE_LINE(SWAMPERT),   // Hoenn Water, on SQUIRTLE's party
+    RIVAL_ACE_LINE(FERALIGATR), // Johto Water, on SQUIRTLE's party
+    RIVAL_ACE_LINE(TORTERRA),   // Sinnoh Grass, on CHIKORITA's party
     RIVAL_ACE_COUNT
 };
 

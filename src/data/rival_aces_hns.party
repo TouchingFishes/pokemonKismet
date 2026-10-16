@@ -686,3 +686,169 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_MUDDY_WATER
 - MOVE_BRICK_BREAK
 - MOVE_EARTHQUAKE
+
+=== RIVAL_ACE_FERALIGATR_1 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_TOTODILE
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_FERALIGATR_2 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_CROCONAW
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_FERALIGATR_3 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_CROCONAW
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_BITE
+- MOVE_ICE_PUNCH
+- MOVE_WATER_GUN
+- MOVE_MUD_SLAP
+
+=== RIVAL_ACE_FERALIGATR_4 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_FERALIGATR
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_ICE_PUNCH
+- MOVE_SCALD
+- MOVE_CRUSH_CLAW
+- MOVE_BITE
+
+=== RIVAL_ACE_FERALIGATR_5 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_FERALIGATR @ ITEM_MYSTIC_WATER
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SCALD
+- MOVE_BULK_UP
+- MOVE_BRICK_BREAK
+- MOVE_CRUNCH
+
+=== RIVAL_ACE_FERALIGATR_6 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_FERALIGATR @ ITEM_SCOPE_LENS
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_ICE_PUNCH
+- MOVE_SCALD
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+
+=== RIVAL_ACE_FERALIGATR_7 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_FERALIGATR @ ITEM_SCOPE_LENS
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_ICE_PUNCH
+- MOVE_SCALD
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+
+=== RIVAL_ACE_TORTERRA_1 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_TURTWIG
+Level: 5
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_TORTERRA_2 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_GROTLE
+Level: 18
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== RIVAL_ACE_TORTERRA_3 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_GROTLE
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_BITE
+- MOVE_RAZOR_LEAF
+- MOVE_CURSE
+- MOVE_MUD_SLAP
+
+=== RIVAL_ACE_TORTERRA_4 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_TORTERRA
+Level: 40
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_BITE
+- MOVE_EARTHQUAKE
+- MOVE_RAZOR_LEAF
+- MOVE_CURSE
+
+=== RIVAL_ACE_TORTERRA_5 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_TORTERRA @ ITEM_MIRACLE_SEED
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_ROCK_SLIDE
+- MOVE_CURSE
+
+=== RIVAL_ACE_TORTERRA_6 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_TORTERRA @ ITEM_QUICK_CLAW
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_ROCK_SLIDE
+- MOVE_WOOD_HAMMER
+
+=== RIVAL_ACE_TORTERRA_7 ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+
+SPECIES_TORTERRA @ ITEM_QUICK_CLAW
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_ROCK_SLIDE
+- MOVE_WOOD_HAMMER

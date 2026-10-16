@@ -1220,6 +1220,9 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_WORMADAM_PLANT] = sWormadamTeachableLearnset_Kismet,
     [SPECIES_WORMADAM_SANDY] = sWormadamSandyTeachableLearnset_Kismet,
     [SPECIES_WORMADAM_TRASH] = sWormadamTrashTeachableLearnset_Kismet,
+    [SPECIES_MOTHIM_PLANT] = sMothimTeachableLearnset_Kismet,
+    [SPECIES_MOTHIM_SANDY] = sMothimTeachableLearnset_Kismet,
+    [SPECIES_MOTHIM_TRASH] = sMothimTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_COMBEE
     [SPECIES_COMBEE] = sCombeeTeachableLearnset_Kismet,

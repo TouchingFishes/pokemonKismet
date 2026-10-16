@@ -78,11 +78,14 @@ static const enum NationalDexOrder sStarterDexBlocks[STARTER_REGION_COUNT][START
 
 // Silver takes the starter that beats the player's, so each region/slot pair
 // needs a party family of seven battles. Several pairs SHARE a family - which
-// ones is Moritz's design, not a rule to extend (2026-09-28):
+// ones is Moritz's design, not a rule to extend (2026-09-28, regrouped 2026-10-16):
 //
-//   TURTWIG's    Torterra, Sceptile, (Serperior, Chesnaught)
+//   CHIKORITA's  Meganium, Sceptile, Torterra, Serperior, Chesnaught
 //   CYNDAQUIL's  Typhlosion, Blaziken, Infernape, (Emboar)
-//   SQUIRTLE's   Blastoise, Swampert
+//   SQUIRTLE's   Blastoise, Swampert, Feraligatr, Samurott
+//
+// TURTWIG's and TOTODILE's families are no longer fought. TOTODILE's IDs are
+// still the scripts' Johto IDs; only their parties are unread.
 //
 // A pair on someone else's family gets its own ace from sRivalAceBase below.
 // The families are numbered alphabetically rather than by generation, so this
@@ -91,7 +94,7 @@ static const u16 sRivalTrainerBase[STARTER_REGION_COUNT][STARTER_SLOT_COUNT] =
 {
     [STARTER_REGION_JOHTO] =
     {
-        TRAINER_RIVAL_CHIKORITA_1_HNS, TRAINER_RIVAL_CYNDAQUIL_1_HNS, TRAINER_RIVAL_TOTODILE_1_HNS,
+        TRAINER_RIVAL_CHIKORITA_1_HNS, TRAINER_RIVAL_CYNDAQUIL_1_HNS, TRAINER_RIVAL_SQUIRTLE_1_HNS,
     },
     [STARTER_REGION_KANTO] =
     {
@@ -99,19 +102,19 @@ static const u16 sRivalTrainerBase[STARTER_REGION_COUNT][STARTER_SLOT_COUNT] =
     },
     [STARTER_REGION_HOENN] =
     {
-        TRAINER_RIVAL_TURTWIG_1_HNS, TRAINER_RIVAL_CYNDAQUIL_1_HNS, TRAINER_RIVAL_SQUIRTLE_1_HNS,
+        TRAINER_RIVAL_CHIKORITA_1_HNS, TRAINER_RIVAL_CYNDAQUIL_1_HNS, TRAINER_RIVAL_SQUIRTLE_1_HNS,
     },
     [STARTER_REGION_SINNOH] =
     {
-        TRAINER_RIVAL_TURTWIG_1_HNS, TRAINER_RIVAL_CYNDAQUIL_1_HNS, TRAINER_RIVAL_PIPLUP_1_HNS,
+        TRAINER_RIVAL_CHIKORITA_1_HNS, TRAINER_RIVAL_CYNDAQUIL_1_HNS, TRAINER_RIVAL_PIPLUP_1_HNS,
     },
     [STARTER_REGION_UNOVA] =
     {
-        TRAINER_RIVAL_TURTWIG_1_HNS, TRAINER_RIVAL_CYNDAQUIL_1_HNS, TRAINER_RIVAL_TOTODILE_1_HNS,
+        TRAINER_RIVAL_CHIKORITA_1_HNS, TRAINER_RIVAL_CYNDAQUIL_1_HNS, TRAINER_RIVAL_SQUIRTLE_1_HNS,
     },
     [STARTER_REGION_KALOS] =
     {
-        TRAINER_RIVAL_TURTWIG_1_HNS, TRAINER_RIVAL_FENNEKIN_1_HNS, TRAINER_RIVAL_FROAKIE_1_HNS,
+        TRAINER_RIVAL_CHIKORITA_1_HNS, TRAINER_RIVAL_FENNEKIN_1_HNS, TRAINER_RIVAL_FROAKIE_1_HNS,
     },
 };
 
@@ -121,10 +124,10 @@ static const u16 sRivalTrainerBase[STARTER_REGION_COUNT][STARTER_SLOT_COUNT] =
 // .claude/rival_overlap.py can resolve every party the game fights from it.
 static const u8 sRivalAceBase[STARTER_REGION_COUNT][STARTER_SLOT_COUNT] =
 {
-    [STARTER_REGION_JOHTO]  = { RIVAL_ACE_NONE,       RIVAL_ACE_NONE,        RIVAL_ACE_NONE },
+    [STARTER_REGION_JOHTO]  = { RIVAL_ACE_NONE,       RIVAL_ACE_NONE,        RIVAL_ACE_FERALIGATR_1 },
     [STARTER_REGION_KANTO]  = { RIVAL_ACE_NONE,       RIVAL_ACE_NONE,        RIVAL_ACE_NONE },
     [STARTER_REGION_HOENN]  = { RIVAL_ACE_SCEPTILE_1, RIVAL_ACE_BLAZIKEN_1,  RIVAL_ACE_SWAMPERT_1 },
-    [STARTER_REGION_SINNOH] = { RIVAL_ACE_NONE,       RIVAL_ACE_INFERNAPE_1, RIVAL_ACE_NONE },
+    [STARTER_REGION_SINNOH] = { RIVAL_ACE_TORTERRA_1, RIVAL_ACE_INFERNAPE_1, RIVAL_ACE_NONE },
     [STARTER_REGION_UNOVA]  = { RIVAL_ACE_SERPERIOR_1,  RIVAL_ACE_EMBOAR_1,    RIVAL_ACE_SAMUROTT_1 },
     [STARTER_REGION_KALOS]  = { RIVAL_ACE_CHESNAUGHT_1, RIVAL_ACE_NONE,        RIVAL_ACE_NONE },
 };
@@ -177,10 +180,8 @@ u16 GetRivalTrainerIdForStarterChoice(u16 trainerId)
      || trainerId > TRAINER_RIVAL_TOTODILE_1_HNS + RIVAL_BATTLE_COUNT - 1)
         return trainerId;
 
+    // Johto goes through the table too: its Water slot fights on SQUIRTLE's family.
     region = GetStarterRegion();
-    if (region == STARTER_REGION_JOHTO)
-        return trainerId;
-
     slot = (trainerId - TRAINER_RIVAL_CHIKORITA_1_HNS) / RIVAL_BATTLE_COUNT;
     return sRivalTrainerBase[region][slot]
          + (trainerId - TRAINER_RIVAL_CHIKORITA_1_HNS) % RIVAL_BATTLE_COUNT;
