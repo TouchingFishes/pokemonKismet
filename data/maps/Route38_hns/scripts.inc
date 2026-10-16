@@ -13,10 +13,10 @@ Route38_EventScript_Toby::
 	end
 
 Route38_EventScript_Chad::
-	trainerbattle_single TRAINER_CHAD_HNS, Route38_Text_SchoolboyChad1Seen, Route38_Text_SchoolboyChad1Beaten, Route38_EventScript_RegisterChad
+	trainerbattle_single TRAINER_CHAD_HNS, Route38_Text_SuperNerdChad1Seen, Route38_Text_SuperNerdChad1Beaten, Route38_EventScript_RegisterChad
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route38_EventScript_RematchChad
-	msgbox Route38_Text_SchoolboyChadAfter, MSGBOX_AUTOCLOSE
+	msgbox Route38_Text_SuperNerdChadAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route38_EventScript_RegisterChad::
@@ -110,15 +110,15 @@ Route38_Text_BirdKeeperTobyAfter:
 	.string "I plan to train in CIANWOOD CITY\n"
 	.string "to teach my POKéMON how to FLY.$"
 
-Route38_Text_SchoolboyChad1Seen:
+Route38_Text_SuperNerdChad1Seen:
 	.string "Let me try something\n"
 	.string "I learned today.$"
 
-Route38_Text_SchoolboyChad1Beaten:
+Route38_Text_SuperNerdChad1Beaten:
 	.string "I didn't study enough,\n"
 	.string "I guess.$"
 
-Route38_Text_SchoolboyChadAfter:
+Route38_Text_SuperNerdChadAfter:
 	.string "I have to take so many\n"
 	.string "tests, I don't have much\l"
 	.string "time for POKéMON.\p"

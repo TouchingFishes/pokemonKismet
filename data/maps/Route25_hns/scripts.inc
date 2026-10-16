@@ -28,9 +28,9 @@ Route25_Text_Misty:
 	.string "If you're ready for a real splash,\n"
 	.string "meet me at the FIGHTING DOJO!$"
 
-Route25_EventScript_Dudley::
-	trainerbattle_single TRAINER_DUDLEY_HNS, Route25_Text_SchoolboyDudleySeen, Route25_Text_SchoolboyDudleyBeaten
-	msgbox Route25_Text_SchoolboyDudleyAfter, MSGBOX_AUTOCLOSE
+Route25_EventScript_Daisy::
+	trainerbattle_single TRAINER_DAISY_HNS, Route25_Text_SchoolgirlDaisySeen, Route25_Text_SchoolgirlDaisyBeaten
+	msgbox Route25_Text_SchoolgirlDaisyAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route25_EventScript_Ellen::
@@ -38,9 +38,9 @@ Route25_EventScript_Ellen::
 	msgbox Route25_Text_LassEllenAfter, MSGBOX_AUTOCLOSE
 	end
 
-Route25_EventScript_Joe::
-	trainerbattle_single TRAINER_JOE_HNS, Route25_Text_SchoolboyJoeSeen, Route25_Text_SchoolboyJoeBeaten
-	msgbox Route25_Text_SchoolboyJoeAfter, MSGBOX_AUTOCLOSE
+Route25_EventScript_Jo::
+	trainerbattle_single TRAINER_JO_HNS, Route25_Text_SchoolgirlJoSeen, Route25_Text_SchoolgirlJoBeaten
+	msgbox Route25_Text_SchoolgirlJoAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route25_EventScript_Laura::
@@ -396,15 +396,15 @@ Route25_Text_MistyDate:
 	.string "I'm MISTY, the GYM LEADER in\n"
 	.string "CERULEAN.$"
 
-Route25_Text_SchoolboyDudleySeen:
+Route25_Text_SchoolgirlDaisySeen:
 	.string "Beat the six of us trainers to\n"
 	.string "win a fabulous prize!\p"
 	.string "Think you've got what it takes?$"
 
-Route25_Text_SchoolboyDudleyBeaten:
+Route25_Text_SchoolgirlDaisyBeaten:
 	.string "Whoo! Good stuff.$"
 
-Route25_Text_SchoolboyDudleyAfter:
+Route25_Text_SchoolgirlDaisyAfter:
 	.string "I did my best.\n"
 	.string "I have no regrets.$"
 
@@ -419,14 +419,14 @@ Route25_Text_LassEllenAfter:
 	.string "I did my best.\n"
 	.string "I have no regrets.$"
 
-Route25_Text_SchoolboyJoeSeen:
+Route25_Text_SchoolgirlJoSeen:
 	.string "Here's No. 3!\n"
 	.string "I won't be easy.$"
 
-Route25_Text_SchoolboyJoeBeaten:
+Route25_Text_SchoolgirlJoBeaten:
 	.string "Ow! Stomped flat!$"
 
-Route25_Text_SchoolboyJoeAfter:
+Route25_Text_SchoolgirlJoAfter:
 	.string "I did my best.\n"
 	.string "I have no regrets.$"
 

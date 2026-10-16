@@ -40,43 +40,43 @@ Route15_EventScript_RematchHillaryTryGiveItem::
 	closemessage
 	end
 
-Route15_EventScript_Kipp::
-	trainerbattle_single TRAINER_KIPP_HNS, Route15_Text_SchoolboyKippSeen, Route15_Text_SchoolboyKippBeaten
-	msgbox Route15_Text_SchoolboyKippAfterBattle, MSGBOX_AUTOCLOSE
+Route15_EventScript_Kippi::
+	trainerbattle_single TRAINER_KIPPI_HNS, Route15_Text_SchoolgirlKippiSeen, Route15_Text_SchoolgirlKippiBeaten
+	msgbox Route15_Text_SchoolgirlKippiAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route15_EventScript_Tommy::
-	trainerbattle_single TRAINER_TOMMY_HNS, Route15_Text_SchoolboyTommySeen, Route15_Text_SchoolboyTommyBeaten
-	msgbox Route15_Text_SchoolboyTommyAfterBattle, MSGBOX_AUTOCLOSE
+Route15_EventScript_Thea::
+	trainerbattle_single TRAINER_THEA_HNS, Route15_Text_SchoolgirlTheaSeen, Route15_Text_SchoolgirlTheaBeaten
+	msgbox Route15_Text_SchoolgirlTheaAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route15_EventScript_Johnny::
-	trainerbattle_single TRAINER_JOHNNY_HNS, Route15_Text_SchoolboyJohnnySeen, Route15_Text_SchoolboyJohnnyBeaten
-	msgbox Route15_Text_SchoolboyJohnnyAfterBattle, MSGBOX_AUTOCLOSE
+Route15_EventScript_Joanna::
+	trainerbattle_single TRAINER_JOANNA_HNS, Route15_Text_SchoolgirlJoannaSeen, Route15_Text_SchoolgirlJoannaBeaten
+	msgbox Route15_Text_SchoolgirlJoannaAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route15_EventScript_Billy::
-	trainerbattle_single TRAINER_BILLY_HNS, Route15_Text_SchoolboyBillySeen, Route15_Text_SchoolboyBillyBeaten, Route15_EventScript_RegisterBilly
+Route15_EventScript_Billie::
+	trainerbattle_single TRAINER_BILLIE_HNS, Route15_Text_SchoolgirlBillieSeen, Route15_Text_SchoolgirlBillieBeaten, Route15_EventScript_RegisterBillie
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route15_EventScript_RematchBilly
-	msgbox Route15_Text_SchoolboyBillyAfterBattle, MSGBOX_AUTOCLOSE
+	goto_if_eq VAR_RESULT, TRUE, Route15_EventScript_RematchBillie
+	msgbox Route15_Text_SchoolgirlBillieAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route15_EventScript_RegisterBilly::
+Route15_EventScript_RegisterBillie::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
-	msgbox Route15_Text_BillyRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_BILLY_HNS
+	msgbox Route15_Text_BillieRegister, MSGBOX_DEFAULT
+	register_matchcall TRAINER_BILLIE_HNS
 	release
 	end
 
-Route15_EventScript_RematchBilly::
-	trainerbattle_rematch TRAINER_BILLY_HNS, Route15_Text_BillyRematchIntro, Route15_Text_BillyRematchDefeat
-	msgbox Route15_Text_BillyPostRematch, MSGBOX_AUTOCLOSE
-	goto_if_defeated TRAINER_BILLY_2_HNS, Route15_EventScript_RematchBillyTryGiveItem
+Route15_EventScript_RematchBillie::
+	trainerbattle_rematch TRAINER_BILLIE_HNS, Route15_Text_BillieRematchIntro, Route15_Text_BillieRematchDefeat
+	msgbox Route15_Text_BilliePostRematch, MSGBOX_AUTOCLOSE
+	goto_if_defeated TRAINER_BILLIE_2_HNS, Route15_EventScript_RematchBillieTryGiveItem
 	end
 
-Route15_EventScript_RematchBillyTryGiveItem::
+Route15_EventScript_RematchBillieTryGiveItem::
 	checkitem ITEM_TM_FACADE
 	goto_if_eq VAR_RESULT, TRUE, Common_EventScript_NoOp
 	giveitem ITEM_TM_FACADE
@@ -127,59 +127,59 @@ Route15_Text_HillaryPostRematch:
 	.string "Teaching POKéMON is just like\n"
 	.string "teaching children. Patience!$"
 
-Route15_Text_SchoolboyKippSeen:
+Route15_Text_SchoolgirlKippiSeen:
 	.string "Hang on. I have to phone my mom.$"
 
-Route15_Text_SchoolboyKippBeaten:
+Route15_Text_SchoolgirlKippiBeaten:
 	.string "Sorry, Mom! I was beaten!$"
 
-Route15_Text_SchoolboyKippAfterBattle:
+Route15_Text_SchoolgirlKippiAfterBattle:
 	.string "My mom worries so much about me, I\n"
 	.string "have to phone her all the time.$"
 
-Route15_Text_SchoolboyTommySeen:
+Route15_Text_SchoolgirlTheaSeen:
 	.string "Let's battle. I won't lose!$"
 
-Route15_Text_SchoolboyTommyBeaten:
+Route15_Text_SchoolgirlTheaBeaten:
 	.string "I forgot to do my homework!$"
 
-Route15_Text_SchoolboyTommyAfterBattle:
+Route15_Text_SchoolgirlTheaAfterBattle:
 	.string "Sayonara! I just learned that in\n"
 	.string "my Japanese class.$"
 
-Route15_Text_SchoolboyJohnnySeen:
+Route15_Text_SchoolgirlJoannaSeen:
 	.string "We're on a field trip to LAVENDER\n"
 	.string "RADIO TOWER for social studies.$"
 
-Route15_Text_SchoolboyJohnnyBeaten:
+Route15_Text_SchoolgirlJoannaBeaten:
 	.string "You're wickedly tough!$"
 
-Route15_Text_SchoolboyJohnnyAfterBattle:
+Route15_Text_SchoolgirlJoannaAfterBattle:
 	.string "I'm tired of walking. I need to\n"
 	.string "take a break.$"
 
-Route15_Text_SchoolboyBillySeen:
+Route15_Text_SchoolgirlBillieSeen:
 	.string "My favorite class is Gym!$"
 
-Route15_Text_SchoolboyBillyBeaten:
+Route15_Text_SchoolgirlBillieBeaten:
 	.string "Oh, no! How could I lose?$"
 
-Route15_Text_SchoolboyBillyAfterBattle:
+Route15_Text_SchoolgirlBillieAfterBattle:
 	.string "If POKéMON were a subject at\n"
 	.string "school, I'd be the best!$"
 
-Route15_Text_BillyRegister:
+Route15_Text_BillieRegister:
 	.string "I should've paid more attention in class.\n"
 	.string "Can I have your number?$"
 
-Route15_Text_BillyRematchIntro:
+Route15_Text_BillieRematchIntro:
 	.string "I've been studying hard!\n"
 	.string "Let me show you what I learned!$"
 
-Route15_Text_BillyRematchDefeat:
+Route15_Text_BillieRematchDefeat:
 	.string "I need to study more…$"
 
-Route15_Text_BillyPostRematch:
+Route15_Text_BilliePostRematch:
 	.string "Book smarts aren't everything.\n"
 	.string "I need battle experience too!$"
 

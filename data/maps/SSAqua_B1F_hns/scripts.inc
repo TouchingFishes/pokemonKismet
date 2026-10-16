@@ -205,34 +205,34 @@ SSAqua_B1F_Text_TeacherShirleyAfter:
 	.string "We're on a field trip to the\n"
 	.string "RUINS outside VIOLET.$"
 
-SSAqua_B1F_EventScript_Nate::
-	trainerbattle_single TRAINER_NATE_HNS, SSAqua_B1F_Text_SchoolboyNateSeen, SSAqua_B1F_Text_SchoolboyNateBeaten
-	msgbox SSAqua_B1F_Text_SchoolboyNateAfter, MSGBOX_AUTOCLOSE
+SSAqua_B1F_EventScript_Natalie::
+	trainerbattle_single TRAINER_NATALIE_HNS, SSAqua_B1F_Text_SchoolgirlNatalieSeen, SSAqua_B1F_Text_SchoolgirlNatalieBeaten
+	msgbox SSAqua_B1F_Text_SchoolgirlNatalieAfter, MSGBOX_AUTOCLOSE
 	end
 
-SSAqua_B1F_Text_SchoolboyNateSeen:
+SSAqua_B1F_Text_SchoolgirlNatalieSeen:
 	.string "Do you know the RUINS OF ALPH?$"
 
-SSAqua_B1F_Text_SchoolboyNateBeaten:
+SSAqua_B1F_Text_SchoolgirlNatalieBeaten:
 	.string "Yaargh!$"
 
-SSAqua_B1F_Text_SchoolboyNateAfter:
+SSAqua_B1F_Text_SchoolgirlNatalieAfter:
 	.string "Radios pick up strange signals\n"
 	.string "inside the RUINS.$"
 
-SSAqua_B1F_EventScript_Ricky::
-	trainerbattle_single TRAINER_RICKY_HNS, SSAqua_B1F_Text_SchoolboyRickySeen, SSAqua_B1F_Text_SchoolboyRickyBeaten
-	msgbox SSAqua_B1F_Text_SchoolboyRickyAfter, MSGBOX_AUTOCLOSE
+SSAqua_B1F_EventScript_Rikki::
+	trainerbattle_single TRAINER_RIKKI_HNS, SSAqua_B1F_Text_SchoolgirlRikkiSeen, SSAqua_B1F_Text_SchoolgirlRikkiBeaten
+	msgbox SSAqua_B1F_Text_SchoolgirlRikkiAfter, MSGBOX_AUTOCLOSE
 	end
 
-SSAqua_B1F_Text_SchoolboyRickySeen:
+SSAqua_B1F_Text_SchoolgirlRikkiSeen:
 	.string "There are some odd stone panels\n"
 	.string "in the RUINS OF ALPH.$"
 
-SSAqua_B1F_Text_SchoolboyRickyBeaten:
+SSAqua_B1F_Text_SchoolgirlRikkiBeaten:
 	.string "I was done in!$"
 
-SSAqua_B1F_Text_SchoolboyRickyAfter:
+SSAqua_B1F_Text_SchoolgirlRikkiAfter:
 	.string "I read that there are four of\n"
 	.string "those stone panels.$"
 

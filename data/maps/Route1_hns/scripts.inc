@@ -7,9 +7,9 @@ Route1_OnTransition:
 	callnative SetTimeBasedEncounters
 	end
 
-Route1_EventScript_SchoolboyDanny::
-	trainerbattle_single TRAINER_DANNY_HNS, Route1_Text_SchoolboyDanny_Seen, Route1_Text_SchoolboyDanny_Beaten
-	msgbox Route1_Text_SchoolboyDanny_AfterBattle, MSGBOX_AUTOCLOSE
+Route1_EventScript_SchoolgirlDani::
+	trainerbattle_single TRAINER_DANI_HNS, Route1_Text_SchoolgirlDani_Seen, Route1_Text_SchoolgirlDani_Beaten
+	msgbox Route1_Text_SchoolgirlDani_AfterBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route1_EventScript_Quinn::
@@ -21,14 +21,14 @@ Route1_EventScript_Sign::
 	msgbox Route1_Text_Sign, MSGBOX_SIGN
 	end
 
-Route1_Text_SchoolboyDanny_Seen:
+Route1_Text_SchoolgirlDani_Seen:
 	.string "If trainers meet, the first\n"
 	.string "thing to do is battle.$"
 
-Route1_Text_SchoolboyDanny_Beaten:
+Route1_Text_SchoolgirlDani_Beaten:
 	.string "Awww… I've got a losing record…$"
 
-Route1_Text_SchoolboyDanny_AfterBattle:
+Route1_Text_SchoolgirlDani_AfterBattle:
 	.string "For trainers, it's a given that\n"
 	.string "we'll battle whenever we meet.$"
 

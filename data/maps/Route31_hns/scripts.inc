@@ -85,10 +85,10 @@ Route31_EventScript_SleepyMan_Fail::
 	end
 
 
-Route31_EventScript_Boy::
+Route31_EventScript_Schoolgirl::
 	lock
 	faceplayer
-	msgbox Route31_Text_Youngster, MSGBOX_DEFAULT
+	msgbox Route31_Text_Schoolgirl, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -190,7 +190,7 @@ Route31_Text_CantTakeLastMon:
 	.string "what are you going to use in\n"
 	.string "battle?$"
 
-Route31_Text_Youngster:
+Route31_Text_Schoolgirl:
 	.string "I found a good POKéMON in DARK\n"
 	.string "CAVE.\p"
 	.string "I'm going to raise it to take\n"

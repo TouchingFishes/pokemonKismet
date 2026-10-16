@@ -156,37 +156,37 @@ Route36_EventScript_Mark::
 	msgbox Route36_Text_PsychicMarkAfter, MSGBOX_AUTOCLOSE
 	end
 
-Route36_EventScript_Schoolboy::
-	trainerbattle_single TRAINER_ALAN_HNS, Route36_Text_SchoolboyAlan1Seen, Route36_Text_SchoolboyAlan1Beaten, Route36_EventScript_RegisterAlan
-	goto_if_set FLAG_ALAN_HAS_ITEM_HNS, Route36_EventScript_AlanGiveItem
+Route36_EventScript_Schoolgirl::
+	trainerbattle_single TRAINER_ALANA_HNS, Route36_Text_SchoolgirlAlana1Seen, Route36_Text_SchoolgirlAlana1Beaten, Route36_EventScript_RegisterAlana
+	goto_if_set FLAG_ALANA_HAS_ITEM_HNS, Route36_EventScript_AlanaGiveItem
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route36_EventScript_RematchAlan
-	msgbox Route36_Text_SchoolboyAlanAfter, MSGBOX_AUTOCLOSE
+	goto_if_eq VAR_RESULT, TRUE, Route36_EventScript_RematchAlana
+	msgbox Route36_Text_SchoolgirlAlanaAfter, MSGBOX_AUTOCLOSE
 	end
 
-Route36_EventScript_RegisterAlan::
+Route36_EventScript_RegisterAlana::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
-	msgbox Route36_Text_AlanRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_ALAN_HNS
+	msgbox Route36_Text_AlanaRegister, MSGBOX_DEFAULT
+	register_matchcall TRAINER_ALANA_HNS
 	release
 	end
 
-Route36_EventScript_RematchAlan::
-	trainerbattle_rematch TRAINER_ALAN_HNS, Route36_Text_AlanRematchIntro, Route36_Text_AlanRematchDefeat
-	msgbox Route36_Text_AlanPostRematch, MSGBOX_AUTOCLOSE
+Route36_EventScript_RematchAlana::
+	trainerbattle_rematch TRAINER_ALANA_HNS, Route36_Text_AlanaRematchIntro, Route36_Text_AlanaRematchDefeat
+	msgbox Route36_Text_AlanaPostRematch, MSGBOX_AUTOCLOSE
 	end
 
-Route36_EventScript_AlanGiveItem::
-	msgbox Route36_Text_AlanHasItem, MSGBOX_DEFAULT
-	giveitem VAR_ALAN_ITEM_HNS
-	goto_if_eq VAR_RESULT, FALSE, Route36_EventScript_AlanNoRoom
-	clearflag FLAG_ALAN_HAS_ITEM_HNS
-	msgbox Route36_Text_AlanGaveItem, MSGBOX_AUTOCLOSE
+Route36_EventScript_AlanaGiveItem::
+	msgbox Route36_Text_AlanaHasItem, MSGBOX_DEFAULT
+	giveitem VAR_ALANA_ITEM_HNS
+	goto_if_eq VAR_RESULT, FALSE, Route36_EventScript_AlanaNoRoom
+	clearflag FLAG_ALANA_HAS_ITEM_HNS
+	msgbox Route36_Text_AlanaGaveItem, MSGBOX_AUTOCLOSE
 	end
 
-Route36_EventScript_AlanNoRoom::
-	msgbox Route36_Text_AlanNoRoom, MSGBOX_AUTOCLOSE
+Route36_EventScript_AlanaNoRoom::
+	msgbox Route36_Text_AlanaNoRoom, MSGBOX_AUTOCLOSE
 	end
 
 Route36_EventScript_Sign::
@@ -275,14 +275,14 @@ Route36_Text_PsychicMarkAfter:
 	.string "I'd be strong if only I could tell\n"
 	.string "what my opponent was thinking.$"
 
-Route36_Text_SchoolboyAlan1Seen:
+Route36_Text_SchoolgirlAlana1Seen:
 	.string "Thanks to my studies, I'm ready\n"
 	.string "for any POKéMON!$"
 
-Route36_Text_SchoolboyAlan1Beaten:
+Route36_Text_SchoolgirlAlana1Beaten:
 	.string "Oops! Computation error?$"
 
-Route36_Text_SchoolboyAlanAfter:
+Route36_Text_SchoolgirlAlanaAfter:
 	.string "Darn. I study five hours a day too.\p"
 	.string "There's more to learning than just\n"
 	.string "reading books.$"
@@ -330,32 +330,32 @@ Route36_Text_Tips2:
 	.string "It is convenient for exploring\n"
 	.string "caves and other landmarks.$"
 
-Route36_Text_AlanRegister:
+Route36_Text_AlanaRegister:
 	.string "Darn. I study five hours a day too.\p"
 	.string "There's more to learning than just\n"
 	.string "reading books.$"
 
-Route36_Text_AlanRematchIntro:
+Route36_Text_AlanaRematchIntro:
 	.string "Thanks to my studies, I'm ready\n"
 	.string "for any POKéMON!$"
 
-Route36_Text_AlanRematchDefeat:
+Route36_Text_AlanaRematchDefeat:
 	.string "Oops! Computation error?$"
 
-Route36_Text_AlanPostRematch:
+Route36_Text_AlanaPostRematch:
 	.string "Darn. I study five hours a day too.\p"
 	.string "There's more to learning than just\n"
 	.string "reading books.$"
 
-Route36_Text_AlanHasItem:
+Route36_Text_AlanaHasItem:
 	.string "Hey! I found something\n"
 	.string "while studying!\p"
 	.string "Here, you can have it!$"
 
-Route36_Text_AlanGaveItem:
+Route36_Text_AlanaGaveItem:
 	.string "I'll let you know if I find\n"
 	.string "anything else!$"
 
-Route36_Text_AlanNoRoom:
+Route36_Text_AlanaNoRoom:
 	.string "Hmm, your BAG is full.\p"
 	.string "Come back when you have room.$"

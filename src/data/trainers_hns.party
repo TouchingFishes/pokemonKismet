@@ -252,12 +252,12 @@ SPECIES_MANECTRIC
 Level: 57
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_JACK_HNS ===
-Name: JACK
+=== TRAINER_JACKIE_HNS ===
+Name: JACKIE
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -269,12 +269,12 @@ SPECIES_VOLTORB
 Level: 15
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_KIPP_HNS ===
-Name: KIPP
+=== TRAINER_KIPPI_HNS ===
+Name: KIPPI
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -286,12 +286,12 @@ Magnemite
 Level: 59
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_ALAN_HNS ===
-Name: ALAN
+=== TRAINER_ALANA_HNS ===
+Name: ALANA
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -299,16 +299,16 @@ SPECIES_TANGELA
 Level: 19
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_JOHNNY_HNS ===
-Name: JOHNNY
+=== TRAINER_JOANNA_HNS ===
+Name: JOANNA
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
-Tauros
+Miltank
 Level: 59
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -316,12 +316,12 @@ Victreebel
 Level: 59
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_DANNY_HNS ===
-Name: DANNY
+=== TRAINER_DANI_HNS ===
+Name: DANI
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -337,12 +337,12 @@ Magmar
 Level: 55
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_TOMMY_HNS ===
-Name: TOMMY
+=== TRAINER_THEA_HNS ===
+Name: THEA
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -354,12 +354,12 @@ SPECIES_VANILLUXE
 Level: 58
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_DUDLEY_HNS ===
-Name: DUDLEY
+=== TRAINER_DAISY_HNS ===
+Name: DAISY
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -367,12 +367,12 @@ SPECIES_GEKOPON
 Level: 56
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_JOE_HNS ===
-Name: JOE
+=== TRAINER_JO_HNS ===
+Name: JO
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -384,12 +384,12 @@ Vaporeon
 Level: 56
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_BILLY_HNS ===
-Name: BILLY
+=== TRAINER_BILLIE_HNS ===
+Name: BILLIE
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -407,10 +407,10 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_CHAD_HNS ===
 Name: CHAD
-Class: School Kid Hns
-Pic: School Kid M
+Class: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
-Music: Hg Boy 1
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -418,12 +418,12 @@ SPECIES_MR_MIME
 Level: 25
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_NATE_HNS ===
-Name: NATE
+=== TRAINER_NATALIE_HNS ===
+Name: NATALIE
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -435,12 +435,12 @@ Exeggutor
 Level: 62
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_RICKY_HNS ===
-Name: RICKY
+=== TRAINER_RIKKI_HNS ===
+Name: RIKKI
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -14774,12 +14774,12 @@ Level: 57
 Pinsir
 Level: 56
 
-=== TRAINER_ALAN_2_HNS ===
-Name: ALAN
+=== TRAINER_ALANA_2_HNS ===
+Name: ALANA
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -14791,12 +14791,12 @@ SPECIES_YANMA
 Level: Badge+3
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_ALAN_3_HNS ===
-Name: ALAN
+=== TRAINER_ALANA_3_HNS ===
+Name: ALANA
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -14820,12 +14820,12 @@ SPECIES_YANMEGA
 Level: Badge+4
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_ALAN_4_HNS ===
-Name: ALAN
+=== TRAINER_ALANA_4_HNS ===
+Name: ALANA
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -14841,12 +14841,12 @@ Level: 30
 Yanma
 Level: 30
 
-=== TRAINER_ALAN_5_HNS ===
-Name: ALAN
+=== TRAINER_ALANA_5_HNS ===
+Name: ALANA
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -14960,10 +14960,10 @@ Level: 55
 
 === TRAINER_CHAD_2_HNS ===
 Name: CHAD
-Class: School Kid Hns
-Pic: School Kid M
+Class: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
-Music: Hg Boy 1
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -14977,10 +14977,10 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_CHAD_3_HNS ===
 Name: CHAD
-Class: School Kid Hns
-Pic: School Kid M
+Class: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
-Music: Hg Boy 1
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -15006,10 +15006,10 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_CHAD_4_HNS ===
 Name: CHAD
-Class: School Kid Hns
-Pic: School Kid M
+Class: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
-Music: Hg Boy 1
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -15021,10 +15021,10 @@ Level: 44
 
 === TRAINER_CHAD_5_HNS ===
 Name: CHAD
-Class: School Kid Hns
-Pic: School Kid M
+Class: Super Nerd Hns
+Pic: Super Nerd Frlg
 Gender: Male
-Music: Hg Boy 1
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -15541,12 +15541,12 @@ SPECIES_BLISSEY
 Level: Badge+4
 IVs: 16 HP / 12 Atk / 20 Def / 16 SpA / 16 SpD / 20 Spe
 
-=== TRAINER_JACK_2_HNS ===
-Name: JACK
+=== TRAINER_JACKIE_2_HNS ===
+Name: JACKIE
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -15562,12 +15562,12 @@ SPECIES_ELECTRODE
 Level: Badge+8
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_JACK_3_HNS ===
-Name: JACK
+=== TRAINER_JACKIE_3_HNS ===
+Name: JACKIE
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -15591,12 +15591,12 @@ SPECIES_ELECTRODE
 Level: Badge+8
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_JACK_4_HNS ===
-Name: JACK
+=== TRAINER_JACKIE_4_HNS ===
+Name: JACKIE
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -15609,12 +15609,12 @@ Level: 43
 Electrode
 Level: 43
 
-=== TRAINER_JACK_5_HNS ===
-Name: JACK
+=== TRAINER_JACKIE_5_HNS ===
+Name: JACKIE
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
@@ -16295,12 +16295,12 @@ Level: 68
 Luvdisc
 Level: 69
 
-=== TRAINER_BILLY_2_HNS ===
-Name: BILLY
+=== TRAINER_BILLIE_2_HNS ===
+Name: BILLIE
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -16316,12 +16316,12 @@ Level: 61
 Ditto
 Level: 62
 
-=== TRAINER_BILLY_3_HNS ===
-Name: BILLY
+=== TRAINER_BILLIE_3_HNS ===
+Name: BILLIE
 Class: School Kid Hns
-Pic: School Kid M
-Gender: Male
-Music: Hg Boy 1
+Pic: School Kid F Hns
+Gender: Female
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
@@ -19888,8 +19888,8 @@ Timid Nature
 
 === TRAINER_MORI_HNS ===
 Name: MORI
-Class: School Kid Hns
-Pic: School Kid M
+Class: Ace Trainer Hns
+Pic: Cooltrainer M
 Gender: Male
 Music: Hg Champion
 Double Battle: No
@@ -19965,7 +19965,7 @@ Adamant Nature
 === TRAINER_SARI_HNS ===
 Name: SARI
 Class: School Kid Hns
-Pic: School Kid F
+Pic: School Kid F Hns
 Gender: Female
 Music: Hg Champion
 Double Battle: No
@@ -22535,7 +22535,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 === TRAINER_YELLOW_FOREST_SARAH_HNS ===
 Name: SARAH
 Class: School Kid Hns
-Pic: School Kid F
+Pic: School Kid F Hns
 Gender: Female
 Music: Hg Girl 1
 Double Battle: No
@@ -22556,7 +22556,7 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 === TRAINER_ISABEL_HNS ===
 Name: ISABEL
 Class: School Kid Hns
-Pic: School Kid F
+Pic: School Kid F Hns
 Gender: Female
 Music: Hg Girl 1
 Double Battle: No

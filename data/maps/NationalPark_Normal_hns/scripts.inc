@@ -106,24 +106,24 @@ NationalPark_Normal_Text_Teacher2:
 NationalPark_Normal_Text_Persian:
 	.string "PERSIAN: Fufushaa!$"
 
-NationalPark_Normal_EventScript_Jack::
-	trainerbattle_single TRAINER_JACK_HNS, NationalPark_Normal_Text_SchoolboyJack1_Seen, NationalPark_Normal_Text_SchoolboyJack1_Beaten, NationalPark_Normal_EventScript_RegisterJack
+NationalPark_Normal_EventScript_Jackie::
+	trainerbattle_single TRAINER_JACKIE_HNS, NationalPark_Normal_Text_SchoolgirlJackie1_Seen, NationalPark_Normal_Text_SchoolgirlJackie1_Beaten, NationalPark_Normal_EventScript_RegisterJackie
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, NationalPark_Normal_EventScript_RematchJack
-	msgbox NationalPark_Normal_Text_SchoolboyJack_After, MSGBOX_AUTOCLOSE
+	goto_if_eq VAR_RESULT, TRUE, NationalPark_Normal_EventScript_RematchJackie
+	msgbox NationalPark_Normal_Text_SchoolgirlJackie_After, MSGBOX_AUTOCLOSE
 	end
 
-NationalPark_Normal_EventScript_RegisterJack::
+NationalPark_Normal_EventScript_RegisterJackie::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
-	msgbox NationalPark_Normal_Text_JackRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_JACK_HNS
+	msgbox NationalPark_Normal_Text_JackieRegister, MSGBOX_DEFAULT
+	register_matchcall TRAINER_JACKIE_HNS
 	release
 	end
 
-NationalPark_Normal_EventScript_RematchJack::
-	trainerbattle_rematch TRAINER_JACK_HNS, NationalPark_Normal_Text_JackRematchIntro, NationalPark_Normal_Text_JackRematchDefeat
-	msgbox NationalPark_Normal_Text_JackPostRematch, MSGBOX_AUTOCLOSE
+NationalPark_Normal_EventScript_RematchJackie::
+	trainerbattle_rematch TRAINER_JACKIE_HNS, NationalPark_Normal_Text_JackieRematchIntro, NationalPark_Normal_Text_JackieRematchDefeat
+	msgbox NationalPark_Normal_Text_JackiePostRematch, MSGBOX_AUTOCLOSE
 	end
 
 NationalPark_Normal_EventScript_Beverly::
@@ -177,35 +177,35 @@ NationalPark_Normal_EventScript_Item_Soothe_Bell::
 	finditem ITEM_SOOTHE_BELL
 	end
 
-NationalPark_Normal_Text_SchoolboyJack1_Seen:
+NationalPark_Normal_Text_SchoolgirlJackie1_Seen:
 	.string "The world of POKéMON is deep.\p"
 	.string "There are still lots of things we\n"
 	.string "don't know.\p"
 	.string "But I know more than you do!$"
 
-NationalPark_Normal_Text_SchoolboyJack1_Beaten:
+NationalPark_Normal_Text_SchoolgirlJackie1_Beaten:
 	.string "Wha-wha-what?$"
 
-NationalPark_Normal_Text_SchoolboyJack_After:
+NationalPark_Normal_Text_SchoolgirlJackie_After:
 	.string "There is a lot to learn.\p"
 	.string "For example…\p"
 	.string "There are 92 kinds of TMs.\p"
 	.string "Traded POKéMON level up faster.$"
 
-NationalPark_Normal_Text_JackRegister:
+NationalPark_Normal_Text_JackieRegister:
 	.string "There is a lot to learn.\p"
 	.string "For example…\p"
 	.string "There are 92 kinds of TMs.\p"
 	.string "Traded POKéMON level up faster.$"
 
-NationalPark_Normal_Text_JackRematchIntro:
+NationalPark_Normal_Text_JackieRematchIntro:
 	.string "I've learned a lot since we\n"
 	.string "last battled! Let's go!$"
 
-NationalPark_Normal_Text_JackRematchDefeat:
+NationalPark_Normal_Text_JackieRematchDefeat:
 	.string "Wha-wha-what?$"
 
-NationalPark_Normal_Text_JackPostRematch:
+NationalPark_Normal_Text_JackiePostRematch:
 	.string "There is a lot to learn.\p"
 	.string "For example…\p"
 	.string "There are 92 kinds of TMs.\p"

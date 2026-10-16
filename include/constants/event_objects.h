@@ -631,7 +631,8 @@
 #define OBJ_EVENT_GFX_MEARA_HNS                 591
 #define OBJ_EVENT_GFX_CUEBALL_HNS               592
 #define OBJ_EVENT_GFX_GREEN_NPC_HNS             593
-#define NUM_OBJ_EVENT_GFX                        594
+#define OBJ_EVENT_GFX_SCHOOL_KID_F_HNS          594
+#define NUM_OBJ_EVENT_GFX                        595
 
 
 // These are dynamic object gfx ids.
@@ -868,6 +869,7 @@
 #define OBJ_EVENT_PAL_TAG_ALDER_HNS                 0x11C7
 #define OBJ_EVENT_PAL_TAG_IRIS_HNS                  0x11C8
 #define OBJ_EVENT_PAL_TAG_MEARA_HNS                 0x11C9
+#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_F_HNS          0x11CA
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

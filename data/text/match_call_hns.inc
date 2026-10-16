@@ -319,10 +319,10 @@ MatchCall_HNS_Arnie_Battle::
 	.string "I was waiting for you.\n"
 	.string "Let's battle!$"
 
-@ Alan - Schoolboy, Route 36
-MatchCall_HNS_Alan_General1::
+@ Alana - School Kid, Route 36
+MatchCall_HNS_Alana_General1::
 	.string "Hi, {PLAYER}!\n"
-	.string "It's ALAN!\p"
+	.string "It's ALANA!\p"
 	.string "{PLAYER}, are you raising\n"
 	.string "your POKéMON properly?\p"
 	.string "I read in a book that you\n"
@@ -330,34 +330,34 @@ MatchCall_HNS_Alan_General1::
 	.string "you catch with love and\l"
 	.string "care.$"
 
-MatchCall_HNS_Alan_General2::
+MatchCall_HNS_Alana_General2::
 	.string "Hi, {PLAYER}!\n"
-	.string "It's ALAN!\p"
+	.string "It's ALANA!\p"
 	.string "My {STR_VAR_3}'s getting\n"
 	.string "stronger, exactly as I\l"
 	.string "calculated!$"
 
-MatchCall_HNS_Alan_General3::
+MatchCall_HNS_Alana_General3::
 	.string "Hi, {PLAYER}!\n"
-	.string "It's ALAN!\p"
+	.string "It's ALANA!\p"
 	.string "By the way, we knocked\n"
 	.string "out a wild {STR_VAR_3}\l"
 	.string "just the other day.\p"
 	.string "Studying up in advance\n"
 	.string "worked!$"
 
-MatchCall_HNS_Alan_FoundItem::
+MatchCall_HNS_Alana_FoundItem::
 	.string "Hi, {PLAYER}!\n"
-	.string "It's ALAN!\p"
+	.string "It's ALANA!\p"
 	.string "Hehehe, I picked up\n"
 	.string "something nice!\p"
 	.string "You can have it!\p"
 	.string "Why don't you come to\n"
 	.string "ROUTE 36 and pick it up?$"
 
-MatchCall_HNS_Alan_Battle::
+MatchCall_HNS_Alana_Battle::
 	.string "Hi, {PLAYER}!\n"
-	.string "It's ALAN!\p"
+	.string "It's ALANA!\p"
 	.string "I was waiting for you.\n"
 	.string "Let's battle!$"
 
@@ -404,7 +404,7 @@ MatchCall_HNS_Dana_Battle::
 	.string "I was waiting for you.\n"
 	.string "Let's battle!$"
 
-@ Chad - Schoolboy, Route 38
+@ Chad - Super Nerd, Route 38
 MatchCall_HNS_Chad_General1::
 	.string "Hello, {PLAYER}!\n"
 	.string "It's CHAD!\p"
@@ -785,27 +785,27 @@ MatchCall_HNS_Erin_Battle::
 	.string "Come back for another\n"
 	.string "battle!$"
 
-@ Jack - Schoolboy, National Park
-MatchCall_HNS_Jack_General1::
+@ Jackie - School Kid, National Park
+MatchCall_HNS_Jackie_General1::
 	.string "Hey, {PLAYER}!\n"
-	.string "It's JACK!\p"
+	.string "It's JACKIE!\p"
 	.string "How are your POKéMON\n"
 	.string "doing?\p"
 	.string "My {STR_VAR_3} is so\n"
 	.string "curious, it's a problem.\p"
 	.string "Maybe it's like me…$"
 
-MatchCall_HNS_Jack_General2::
+MatchCall_HNS_Jackie_General2::
 	.string "Hey, {PLAYER}!\n"
-	.string "It's JACK!\p"
+	.string "It's JACKIE!\p"
 	.string "My {STR_VAR_3}'s\n"
 	.string "intelligence keeps rising.\p"
 	.string "It might be smarter\n"
 	.string "than yours!$"
 
-MatchCall_HNS_Jack_General3::
+MatchCall_HNS_Jackie_General3::
 	.string "Hey, {PLAYER}!\n"
-	.string "It's JACK!\p"
+	.string "It's JACKIE!\p"
 	.string "Did you know?\p"
 	.string "When it's raining, THUNDER\n"
 	.string "is sure to strike.\p"
@@ -814,9 +814,9 @@ MatchCall_HNS_Jack_General3::
 	.string "I'll call right away and\l"
 	.string "tell you.$"
 
-MatchCall_HNS_Jack_Battle::
+MatchCall_HNS_Jackie_Battle::
 	.string "Hey, {PLAYER}!\n"
-	.string "It's JACK!\p"
+	.string "It's JACKIE!\p"
 	.string "I was waiting for you.\n"
 	.string "Let's battle!$"
 
@@ -1208,25 +1208,25 @@ MatchCall_HNS_Nicole_Battle::
 	.string "raring to battle!\p"
 	.string "Come to ROUTE 20!$"
 
-@ Billy - School Kid, Route 15
-MatchCall_HNS_Billy_General1::
+@ Billie - School Kid, Route 15
+MatchCall_HNS_Billie_General1::
 	.string "Hey, {PLAYER}!\n"
-	.string "It's BILLY.\p"
+	.string "It's BILLIE.\p"
 	.string "I've been studying battle\n"
 	.string "strategies in class.\p"
 	.string "{STR_VAR_3} and I have\n"
 	.string "been practicing them!$"
 
-MatchCall_HNS_Billy_General2::
+MatchCall_HNS_Billie_General2::
 	.string "Hey, {PLAYER}!\p"
 	.string "Tests are coming up, but\n"
 	.string "I'd rather be battling.\p"
 	.string "Book smarts aren't\n"
 	.string "everything, right?$"
 
-MatchCall_HNS_Billy_Battle::
+MatchCall_HNS_Billie_Battle::
 	.string "Hey, {PLAYER}!\n"
-	.string "It's BILLY.\p"
+	.string "It's BILLIE.\p"
 	.string "I learned some new tricks!\n"
 	.string "Come to ROUTE 15!$"
 

@@ -948,6 +948,7 @@ const u16 gObjectEventPal_Collector_hns[] = INCBIN_U16("graphics/object_events/p
 const u16 gObjectEventPal_Alder_hns[] = INCBIN_U16("graphics/object_events/palettes/alder_hns.gbapal");
 const u16 gObjectEventPal_Iris_hns[] = INCBIN_U16("graphics/object_events/palettes/iris_hns.gbapal");
 const u16 gObjectEventPal_Meara_hns[] = INCBIN_U16("graphics/object_events/palettes/meara_hns.gbapal");
+const u16 gObjectEventPal_SchoolKidF_hns[] = INCBIN_U16("graphics/object_events/palettes/school_kid_f_hns.gbapal");
 const u32 gObjectEventPic_KrisFieldMove_hns[] = INCBIN_U32("graphics/object_events/pics/people/kris/field_move_hns.4bpp");
 const u32 gObjectEventPic_KrisSurfing_hns[] = INCBIN_U32("graphics/object_events/pics/people/kris/surfing_hns.4bpp");
 const u32 gObjectEventPic_KrisMachBike_hns[] = INCBIN_U32("graphics/object_events/pics/people/kris/mach_bike_hns.4bpp");
@@ -959,4 +960,5 @@ const u32 gObjectEventPic_KrisUnderwater_hns[] = INCBIN_U32("graphics/object_eve
 const u32 gObjectEventPic_Alder_hns[] = INCBIN_U32("graphics/object_events/pics/people/alder_hns.4bpp");
 const u32 gObjectEventPic_Iris_hns[] = INCBIN_U32("graphics/object_events/pics/people/iris_hns.4bpp");
 const u32 gObjectEventPic_Meara_hns[] = INCBIN_U32("graphics/object_events/pics/people/meara_hns.4bpp");
+const u32 gObjectEventPic_SchoolKidF_hns[] = INCBIN_U32("graphics/object_events/pics/people/school_kid_f_hns.4bpp");
 #endif // IS_HNS

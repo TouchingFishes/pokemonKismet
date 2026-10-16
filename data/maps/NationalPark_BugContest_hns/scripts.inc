@@ -199,7 +199,7 @@ NationalParkBugContest_Text_Contestant9A:
 	.string "chat, go find some bug POKéMON.$"
 
 NationalParkBugContest_Text_Contestant10A:
-	.string "KIPP: I've studied about bug\n"
+	.string "KIPPI: I've studied about bug\n"
 	.string "POKéMON a lot.\p"
 	.string "I'm going to win for sure.$"
 

@@ -27,7 +27,7 @@ Route10_Text_Surge:
 	.string "If you want a rematch, report to\n"
 	.string "the FIGHTING DOJO!$"
 
-Route10_EventScript_Item_Rock_Polish::
+Route10_EventScript_Item_Rock_Blast::
     finditem ITEM_TM_ROCK_BLAST
     end
 

@@ -131,7 +131,7 @@ struct HnsMatchCallTrainerInfo
 };
 
 static const u16 sWadeGiftItems[] = { ITEM_ORAN_BERRY, ITEM_PECHA_BERRY, ITEM_CHERI_BERRY, ITEM_RAWST_BERRY };
-static const u16 sAlanGiftItems[] = { ITEM_FIRE_STONE, ITEM_THUNDER_STONE, ITEM_WATER_STONE, ITEM_LEAF_STONE };
+static const u16 sAlanaGiftItems[] = { ITEM_FIRE_STONE, ITEM_THUNDER_STONE, ITEM_WATER_STONE, ITEM_LEAF_STONE };
 static const u16 sDanaGiftItems[] = { ITEM_THUNDER_STONE, ITEM_FIRE_STONE, ITEM_WATER_STONE };
 static const u16 sTullyGiftItems[] = { ITEM_WATER_STONE, ITEM_SHARP_BEAK };
 static const u16 sWiltonGiftItems[] = { ITEM_WATER_STONE, ITEM_HEAVY_BALL, ITEM_LURE_BALL };
@@ -181,7 +181,7 @@ static const struct HnsMatchCallTrainerInfo sHnsMatchCallTrainers[] =
     HNS_MC_ENTRY3(Gina,     TRAINER_GINA_HNS),
     HNS_MC_ENTRY3(Irwin,    TRAINER_IRWIN_HNS),
     HNS_MC_ENTRY3(Arnie,    TRAINER_ARNIE_HNS),
-    HNS_MC_ITEM3(Alan,      TRAINER_ALAN_HNS,     FLAG_ALAN_HAS_ITEM_HNS,    VAR_ALAN_ITEM_HNS,    sAlanGiftItems),
+    HNS_MC_ITEM3(Alana,      TRAINER_ALANA_HNS,     FLAG_ALANA_HAS_ITEM_HNS,    VAR_ALANA_ITEM_HNS,    sAlanaGiftItems),
     HNS_MC_ITEM3(Dana,      TRAINER_DANA_HNS,     FLAG_DANA_HAS_ITEM_HNS,    VAR_DANA_ITEM_HNS,    sDanaGiftItems),
     HNS_MC_ENTRY3(Chad,     TRAINER_CHAD_HNS),
     HNS_MC_ITEM3(Derek,     TRAINER_DEREK_HNS,    FLAG_DEREK_HAS_ITEM_HNS,   VAR_DEREK_ITEM_HNS,   sDerekGiftItems),
@@ -193,7 +193,7 @@ static const struct HnsMatchCallTrainerInfo sHnsMatchCallTrainers[] =
     HNS_MC_ITEM3(Kenji,     TRAINER_KENJI_HNS,    FLAG_KENJI_HAS_ITEM_HNS,   VAR_KENJI_ITEM_HNS,   sKenjiGiftItems),
     HNS_MC_ENTRY3(Parry,    TRAINER_PARRY_HNS),
     HNS_MC_ENTRY3(Erin,     TRAINER_ERIN_HNS),
-    HNS_MC_ENTRY3(Jack,     TRAINER_JACK_HNS),
+    HNS_MC_ENTRY3(Jackie,     TRAINER_JACKIE_HNS),
     HNS_MC_ITEM3(Beverly,   TRAINER_BEVERLY_HNS,  FLAG_BEVERLY_HAS_ITEM_HNS, VAR_BEVERLY_ITEM_HNS, sBeverlyGiftItems),
     HNS_MC_ENTRY2(Huey,     TRAINER_HUEY_HNS),
     HNS_MC_ENTRY3(Gaven,    TRAINER_GAVEN_HNS),
@@ -208,7 +208,7 @@ static const struct HnsMatchCallTrainerInfo sHnsMatchCallTrainers[] =
     HNS_MC_ENTRY2(Hillary,  TRAINER_HILLARY_HNS),
     HNS_MC_ENTRY2(Rob,      TRAINER_ROB_HNS),
     HNS_MC_ENTRY2(Nicole,   TRAINER_NICOLE_HNS),
-    HNS_MC_ENTRY2(Billy,    TRAINER_BILLY_HNS),
+    HNS_MC_ENTRY2(Billie,    TRAINER_BILLIE_HNS),
     HNS_MC_ENTRY2(Kenny,    TRAINER_KENNY_HNS),
     HNS_MC_ENTRY2(Joel,     TRAINER_JOEL_HNS),
     HNS_MC_ENTRY2(Charles,  TRAINER_CHARLES_HNS),

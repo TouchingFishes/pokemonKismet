@@ -90,7 +90,7 @@
 #define VAR_PALLET_TOWN_STATE                            0x4094
 #define VAR_LAVENDER_TOWN_STATE                          0x4096
 #define VAR_WADE_ITEM_HNS                                0x4097
-#define VAR_ALAN_ITEM_HNS                                0x4098
+#define VAR_ALANA_ITEM_HNS                                0x4098
 #define VAR_DANA_ITEM_HNS                                0x409A
 #define VAR_TULLY_ITEM_HNS                               0x409B
 #define VAR_DEREK_ITEM_HNS                               0x409D
