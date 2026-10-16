@@ -6811,15 +6811,15 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_BELLSPROUT
-Level: 8
+Level: 7
 IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 SPECIES_LOTAD
-Level: 8
+Level: 7
 IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 SPECIES_CHIMECHO
-Level: 11
+Level: 10
 IVs: 26 HP / 28 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 === TRAINER_GAKU_HNS ===
@@ -7761,7 +7761,7 @@ IVs: 1 HP / 4 Atk / 4 Def / 1 SpA / 1 SpD / 1 Spe
 - MOVE_ROOST
 - MOVE_DOUBLE_TEAM
 
-SPECIES_NOCTOWL @ ITEM_ORAN_BERRY
+SPECIES_NOCTOWL @ ITEM_PECHA_BERRY
 Level: 12
 IVs: 1 HP / 4 Atk / 4 Def / 1 SpA / 1 SpD / 1 Spe
 - MOVE_PECK
