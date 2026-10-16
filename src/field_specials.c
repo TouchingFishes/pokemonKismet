@@ -6403,3 +6403,18 @@ void RollTreasureBeachItem(void)
     else
         gSpecialVar_Result = ITEM_BIG_PEARL;
 }
+
+// The New Bark test NPC's "full POKeDEX": the dex itself, and every obtainable species marked
+// seen and caught, as the debug menu's "Pokedex Flags All" does. Test saves only.
+void FillObtainablePokedex(void)
+{
+    u32 i;
+
+    FlagSet(FLAG_SYS_POKEDEX_GET);
+    for (i = 0; i < OBTAINABLE_DEX_COUNT - 1; i++)
+    {
+        enum NationalDexOrder national = ObtainableToNationalOrder(i + 1);
+        GetSetPokedexFlag(national, FLAG_SET_SEEN);
+        GetSetPokedexFlag(national, FLAG_SET_CAUGHT);
+    }
+}

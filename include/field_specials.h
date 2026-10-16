@@ -39,5 +39,6 @@ bool32 CheckPartyHasSpecies(u32);
 bool8 CutMoveRuinValleyCheck(void);
 void CutMoveOpenDottedHoleDoor(void);
 void RollTreasureBeachItem(void);
+void FillObtainablePokedex(void);
 
 #endif // GUARD_FIELD_SPECIALS_H

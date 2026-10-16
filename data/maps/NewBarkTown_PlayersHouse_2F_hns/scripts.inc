@@ -74,28 +74,31 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @             FEDERATION stages. The stage setter lives out there rather than
 @             in here because the arc's flags only take effect when FUCHSIA
 @             LOADS - see the long note in that gate house's scripts.inc.
-@   SILVER 7 - fights SILVER's last encounter (INDIGO PLATEAU, L68-70) for any
-@             starter region and any of his three starters, right here.
+@   OLIVINE GATE - replays the ROCKET robbery in the ROUTE 39 / OLIVINE gate,
+@             which otherwise expires once the fifth badge is set.
+@   KIMONO GIRLS - the ECRUTEAK THEATER gauntlet before LUGIA or HO-OH.
 @   FOXFIRE - sets any stage of the NINETALES story and warps to where it plays.
 @   DOLL SHRINE - resets the MIMIKYU hide-and-seek and warps to the shrine in
 @             DAODAO's ETERNA FOREST (MIGRATION_DECISIONS.md 60).
 @
 @ Whichever is picked, TestBasics first sets the eight JOHTO badges, the RUNNING
-@ SHOES and the eight HMs, and hands over a TOWN MAP.
+@ SHOES and the eight HMs, hands over a TOWN MAP and MAX REPELs, and fills the
+@ POKeDEX (every obtainable species seen and caught).
 @ ===========================================================================
 NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	lock
 	faceplayer
 	message NewBarkTown_PlayersHouse_2F_Text_TestAsk
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptSilver7, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
-	goto_if_ge VAR_RESULT, 5, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptOlivineGate, NewBarkTown_PlayersHouse_2F_Text_TestOptKimono, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
+	goto_if_ge VAR_RESULT, 6, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
 	copyvar VAR_0x8006, VAR_RESULT
 	call NewBarkTown_PlayersHouse_2F_EventScript_TestBasics
 	goto_if_eq VAR_0x8006, 0, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestGreen
 	goto_if_eq VAR_0x8006, 1, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestFuchsia
-	goto_if_eq VAR_0x8006, 2, NewBarkTown_PlayersHouse_2F_EventScript_Silver7Test
-	goto_if_eq VAR_0x8006, 4, NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest
+	goto_if_eq VAR_0x8006, 2, NewBarkTown_PlayersHouse_2F_EventScript_OlivineGateTest
+	goto_if_eq VAR_0x8006, 3, NewBarkTown_PlayersHouse_2F_EventScript_KimonoTest
+	goto_if_eq VAR_0x8006, 5, NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest
 	goto NewBarkTown_PlayersHouse_2F_EventScript_FoxfireTest
 
 NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest::
@@ -107,8 +110,8 @@ NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest::
 	waitstate
 	end
 
-@ The TOWN MAP and the HMs go in silently and only once - a second visit would
-@ otherwise stack copies. The map gets its own check so that saves which already
+@ The TOWN MAP, the HMs and the MAX REPELs go in silently and only while the player
+@ has none - a second visit would otherwise stack copies. The map gets its own check so that saves which already
 @ have the HMs still receive it. VAR_NUM_BADGES is only ever raised, never
 @ lowered, so GREEN's 16 survives a later visit.
 NewBarkTown_PlayersHouse_2F_EventScript_TestBasics::
@@ -123,6 +126,11 @@ NewBarkTown_PlayersHouse_2F_EventScript_TestBasics::
 	call_if_lt VAR_NUM_BADGES, 8, NewBarkTown_PlayersHouse_2F_EventScript_TestEightBadges
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_SYS_B_DASH
+	callnative FillObtainablePokedex
+	checkitem ITEM_MAX_REPEL
+	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_PlayersHouse_2F_EventScript_TestBasicsMap
+	additem ITEM_MAX_REPEL, 50
+NewBarkTown_PlayersHouse_2F_EventScript_TestBasicsMap:
 	checkitem ITEM_TOWN_MAP
 	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_PlayersHouse_2F_EventScript_TestBasicsHMs
 	additem ITEM_TOWN_MAP
@@ -194,71 +202,50 @@ NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline::
 	release
 	end
 
-@ SILVER's encounter 7. It fights the same JOHTO trainer ID the real encounter
-@ uses (IndigoPlateau_PokemonCenter_hns), so GetRivalTrainerIdForStarterChoice
-@ and GetRivalAceOverride resolve it exactly as they would for a player of the
-@ chosen region: the shared party, the ace swap, the AI and the items are all
-@ the real ones. 6 regions x 3 starters = all 18 of his final teams.
-@
-@ ⚠️ It SETS VAR_STARTER_REGION and leaves it set - that is what makes the
-@ redirect pick the region's party, and a loss whites out before any script
-@ could put it back. The player's own starter is already caught and does not
-@ change; the dex's starter window and every later SILVER fight follow the new
-@ region. Fine on a test save, which is what this NPC is for.
-@
-@ The region menu is ordered by the STARTER_REGION_* constants (JOHTO 0 ...
-@ KALOS 5), which is why the choice can be copied straight into the var.
-NewBarkTown_PlayersHouse_2F_EventScript_Silver7Test::
-	message NewBarkTown_PlayersHouse_2F_Text_Silver7Region
-	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_RegionJohto, NewBarkTown_PlayersHouse_2F_Text_RegionKanto, NewBarkTown_PlayersHouse_2F_Text_RegionHoenn, NewBarkTown_PlayersHouse_2F_Text_RegionSinnoh, NewBarkTown_PlayersHouse_2F_Text_RegionUnova, NewBarkTown_PlayersHouse_2F_Text_RegionKalos
-	goto_if_ge VAR_RESULT, STARTER_REGION_COUNT, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
-	copyvar VAR_0x8005, VAR_RESULT
-	message NewBarkTown_PlayersHouse_2F_Text_Silver7Slot
-	waitmessage
-	dynmultichoice 0, 0, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_SlotGrass, NewBarkTown_PlayersHouse_2F_Text_SlotFire, NewBarkTown_PlayersHouse_2F_Text_SlotWater
-	@ 0 / 1 / 2 are STARTER_SLOT_GRASS / _FIRE / _WATER. Those live in
-	@ include/starter_generation.h, which event scripts cannot see.
-	goto_if_eq VAR_RESULT, 0, NewBarkTown_PlayersHouse_2F_EventScript_Silver7Grass
-	goto_if_eq VAR_RESULT, 1, NewBarkTown_PlayersHouse_2F_EventScript_Silver7Fire
-	goto_if_eq VAR_RESULT, 2, NewBarkTown_PlayersHouse_2F_EventScript_Silver7Water
-	goto NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
-
-@ The trainer flag the win sets is cleared again: the real encounter repeats
-@ daily on FLAG_DAILY_BEAT_SILVER and never reads it, but a test should leave
-@ no trace it does not have to.
-NewBarkTown_PlayersHouse_2F_EventScript_Silver7Grass::
-	call NewBarkTown_PlayersHouse_2F_EventScript_Silver7Setup
-	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_7_HNS, NewBarkTown_PlayersHouse_2F_Text_Silver7Beaten
-	cleartrainerflag TRAINER_RIVAL_CHIKORITA_7_HNS
-	goto NewBarkTown_PlayersHouse_2F_EventScript_Silver7Done
-
-NewBarkTown_PlayersHouse_2F_EventScript_Silver7Fire::
-	call NewBarkTown_PlayersHouse_2F_EventScript_Silver7Setup
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_7_HNS, NewBarkTown_PlayersHouse_2F_Text_Silver7Beaten
-	cleartrainerflag TRAINER_RIVAL_CYNDAQUIL_7_HNS
-	goto NewBarkTown_PlayersHouse_2F_EventScript_Silver7Done
-
-NewBarkTown_PlayersHouse_2F_EventScript_Silver7Water::
-	call NewBarkTown_PlayersHouse_2F_EventScript_Silver7Setup
-	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_7_HNS, NewBarkTown_PlayersHouse_2F_Text_Silver7Beaten
-	cleartrainerflag TRAINER_RIVAL_TOTODILE_7_HNS
-	goto NewBarkTown_PlayersHouse_2F_EventScript_Silver7Done
-
-NewBarkTown_PlayersHouse_2F_EventScript_Silver7Setup::
-	copyvar VAR_STARTER_REGION, VAR_0x8005
-	msgbox NewBarkTown_PlayersHouse_2F_Text_Silver7Party, MSGBOX_YESNO
+@ The ROCKET robbery in the ROUTE 39 / OLIVINE gate. The gate expires the scene once
+@ FLAG_BADGE05_GET is set, which TestBasics always sets, so this hands it
+@ VAR_OLIVINE_GATE_ROCKET 4: the gate's on-transition turns that into one fresh robbery.
+@ The player lands on the ROUTE 39 side and trips it walking south.
+NewBarkTown_PlayersHouse_2F_EventScript_OlivineGateTest::
+	msgbox NewBarkTown_PlayersHouse_2F_Text_TestPartyAsk, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty
 	special HealPlayerParty
-	msgbox NewBarkTown_PlayersHouse_2F_Text_Silver7Go, MSGBOX_DEFAULT
+	setvar VAR_OLIVINE_GATE_ROCKET, 4
+	cleartrainerflag TRAINER_GRUNT_33_HNS
+	msgbox NewBarkTown_PlayersHouse_2F_Text_OlivineGateGo, MSGBOX_DEFAULT
 	closemessage
-	return
+	warp MAP_GATE_ROUTE39_OLIVINE_CITY_HNS, 1
+	waitstate
+	end
 
-NewBarkTown_PlayersHouse_2F_EventScript_Silver7Done::
+@ The KIMONO GIRLS' gauntlet in the ECRUTEAK THEATER (VAR_ECRUTEAK_CITY_THEATER 5, as
+@ after SILVER's ECRUTEAK scene): KIMONOs shown and the audience hidden, as ELM's call
+@ leaves it. The menu picks VAR_LUGIA_OR_HOOH (1 LUGIA, 2 HO-OH), which decides the
+@ bell and the legendary afterwards. The player lands on the door and trips the
+@ cutscene by stepping in.
+NewBarkTown_PlayersHouse_2F_EventScript_KimonoTest::
+	message NewBarkTown_PlayersHouse_2F_Text_KimonoWhich
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 2, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_KimonoLugia, NewBarkTown_PlayersHouse_2F_Text_KimonoHooh
+	goto_if_ge VAR_RESULT, 2, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	addvar VAR_RESULT, 1
+	copyvar VAR_LUGIA_OR_HOOH, VAR_RESULT
+	msgbox NewBarkTown_PlayersHouse_2F_Text_TestPartyAsk, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty
 	special HealPlayerParty
-	msgbox NewBarkTown_PlayersHouse_2F_Text_Silver7Done, MSGBOX_DEFAULT
+	setvar VAR_ECRUTEAK_CITY_THEATER, 5
+	setflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_NPCS
+	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_KIMONOS
+	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_ZUKI
+	cleartrainerflag TRAINER_ZUKI_HNS
+	cleartrainerflag TRAINER_NAOKO_HNS
+	cleartrainerflag TRAINER_MIKI_HNS
+	cleartrainerflag TRAINER_SAYO_HNS
+	cleartrainerflag TRAINER_KUNI_HNS
+	msgbox NewBarkTown_PlayersHouse_2F_Text_KimonoGo, MSGBOX_DEFAULT
 	closemessage
-	release
+	warp MAP_ECRUTEAK_CITY_THEATER_HNS, 0
+	waitstate
 	end
 
 @ FOXFIRE HOLLOW. Every stage is VAR_FOXFIRE_HOLLOW_STATE and nothing else - the
@@ -343,7 +330,8 @@ NewBarkTown_PlayersHouse_2F_Text_TestAsk:
 	.string "TEST: What do you want to try?\p"
 	.string "Each one sets the eight JOHTO\n"
 	.string "badges, RUNNING SHOES and HMs,\l"
-	.string "and gives you a TOWN MAP.\p"
+	.string "fills your POKéDEX and gives you\l"
+	.string "a TOWN MAP and MAX REPELs.\p"
 	.string "GREEN and FUCHSIA hand you a\n"
 	.string "level 95 party first.$"
 
@@ -353,8 +341,11 @@ NewBarkTown_PlayersHouse_2F_Text_TestOptGreen:
 NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia:
 	.string "FUCHSIA FEDERATION$"
 
-NewBarkTown_PlayersHouse_2F_Text_TestOptSilver7:
-	.string "SILVER battle 7$"
+NewBarkTown_PlayersHouse_2F_Text_TestOptOlivineGate:
+	.string "ROCKETS at OLIVINE GATE$"
+
+NewBarkTown_PlayersHouse_2F_Text_TestOptKimono:
+	.string "KIMONO GIRLS gauntlet$"
 
 NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire:
 	.string "FOXFIRE HOLLOW$"
@@ -394,56 +385,9 @@ NewBarkTown_PlayersHouse_2F_Text_FoxfireGo:
 	.string "TEST: Your party is healed.\n"
 	.string "Off you go!$"
 
-NewBarkTown_PlayersHouse_2F_Text_Silver7Region:
-	.string "TEST: Which starter region?\p"
-	.string "It stays set afterwards.$"
-
-NewBarkTown_PlayersHouse_2F_Text_RegionJohto:
-	.string "JOHTO$"
-
-NewBarkTown_PlayersHouse_2F_Text_RegionKanto:
-	.string "KANTO$"
-
-NewBarkTown_PlayersHouse_2F_Text_RegionHoenn:
-	.string "HOENN$"
-
-NewBarkTown_PlayersHouse_2F_Text_RegionSinnoh:
-	.string "SINNOH$"
-
-NewBarkTown_PlayersHouse_2F_Text_RegionUnova:
-	.string "UNOVA$"
-
-NewBarkTown_PlayersHouse_2F_Text_RegionKalos:
-	.string "KALOS$"
-
-NewBarkTown_PlayersHouse_2F_Text_Silver7Slot:
-	.string "TEST: Which starter does SILVER\n"
-	.string "have?$"
-
-NewBarkTown_PlayersHouse_2F_Text_SlotGrass:
-	.string "GRASS starter$"
-
-NewBarkTown_PlayersHouse_2F_Text_SlotFire:
-	.string "FIRE starter$"
-
-NewBarkTown_PlayersHouse_2F_Text_SlotWater:
-	.string "WATER starter$"
-
-NewBarkTown_PlayersHouse_2F_Text_Silver7Party:
+NewBarkTown_PlayersHouse_2F_Text_TestPartyAsk:
 	.string "TEST: Take the level 95 party\n"
 	.string "too?$"
-
-NewBarkTown_PlayersHouse_2F_Text_Silver7Go:
-	.string "TEST: Your party is healed.\n"
-	.string "Here he comes!$"
-
-NewBarkTown_PlayersHouse_2F_Text_Silver7Beaten:
-	.string "…\p"
-	.string "OK--I lost…$"
-
-NewBarkTown_PlayersHouse_2F_Text_Silver7Done:
-	.string "TEST: Done. Your party is healed\n"
-	.string "again. Talk to me for another go.$"
 
 NewBarkTown_PlayersHouse_2F_Text_TestOptCancel:
 	.string "Nothing$"
@@ -496,3 +440,22 @@ PlayersHouse_2F_Text_OversleptWhatDay:
 	.string "Huh…? I totally overslept!\p"
 	.string "Wait…\n"
 	.string "what day is it again?$"
+
+NewBarkTown_PlayersHouse_2F_Text_OlivineGateGo:
+	.string "TEST: You'll arrive at the ROUTE 39\n"
+	.string "end of the OLIVINE gate.\p"
+	.string "Walk south to trip the robbery.$"
+
+NewBarkTown_PlayersHouse_2F_Text_KimonoWhich:
+	.string "TEST: Which legendary do they\n"
+	.string "call for?$"
+
+NewBarkTown_PlayersHouse_2F_Text_KimonoLugia:
+	.string "LUGIA$"
+
+NewBarkTown_PlayersHouse_2F_Text_KimonoHooh:
+	.string "HO-OH$"
+
+NewBarkTown_PlayersHouse_2F_Text_KimonoGo:
+	.string "TEST: You'll arrive at the THEATER\n"
+	.string "door. Step in to start it.$"

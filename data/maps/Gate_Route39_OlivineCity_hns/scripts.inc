@@ -7,11 +7,14 @@ Gate_Route39_OlivineCity_hns_MapScripts::
 @   1 - the player broke it up, the band is not handed over yet
 @   2 - the window closed unseen; she was robbed
 @   3 - the player broke it up and has the band
+@   4 - New Bark's test NPC: the next load replays the robbery once, whatever
+@       the badges (it sets all eight, which would expire the scene)
 @
 @ The gate is the land route into Olivine, but a player with SURF can come in by
 @ water through Olivine Bay and never pass through here. Rather than block that,
 @ the scene simply expires: once Chuck is beaten the robbery is long over.
 OlivineGate_OnTransition:
+	goto_if_eq VAR_OLIVINE_GATE_ROCKET, 4, OlivineGate_EventScript_TestReplay
 	goto_if_ne VAR_OLIVINE_GATE_ROCKET, 0, OlivineGate_OnTransition_Done
 	goto_if_set FLAG_BADGE05_GET, OlivineGate_EventScript_ExpireScene
 OlivineGate_OnTransition_Done:
@@ -20,6 +23,11 @@ OlivineGate_OnTransition_Done:
 OlivineGate_EventScript_ExpireScene:
 	setvar VAR_OLIVINE_GATE_ROCKET, 2
 	setflag FLAG_HIDE_OLIVINE_GATE_ROCKET
+	return
+
+OlivineGate_EventScript_TestReplay:
+	setvar VAR_OLIVINE_GATE_ROCKET, 0
+	clearflag FLAG_HIDE_OLIVINE_GATE_ROCKET
 	return
 
 @ Two entrances, so the scene has to start from either end of the corridor.
