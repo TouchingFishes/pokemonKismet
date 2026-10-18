@@ -230,6 +230,7 @@ DaoDaoIsles_Mansion_1F_EventScript_OtherRag:
 
 DaoDaoIsles_Mansion_1F_EventScript_Mimikyu::
 	lockall
+	hidefollower
 	playse SE_PIN
 	applymovement LOCALID_DAODAO_MANSION_MIMIKYU, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -237,8 +238,7 @@ DaoDaoIsles_Mansion_1F_EventScript_Mimikyu::
 	waitmoncry
 	msgbox DaoDaoIsles_Mansion_1F_Text_ItMoved, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_DAODAO_MANSION_KAREN, Common_Movement_FacePlayer
-	waitmovement 0
+	call DaoDaoIsles_Mansion_1F_EventScript_KarenComesOver
 	msgbox DaoDaoIsles_Mansion_1F_Text_KarenFound, MSGBOX_DEFAULT
 	msgbox DaoDaoIsles_Mansion_1F_Text_LetItGo, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, DaoDaoIsles_Mansion_1F_EventScript_KeepIt
@@ -269,6 +269,9 @@ DaoDaoIsles_Mansion_1F_EventScript_KeepIt:
 DaoDaoIsles_Mansion_1F_EventScript_SlipAway:
 	fadescreenswapbuffers FADE_TO_BLACK
 	call DaoDaoIsles_Mansion_1F_EventScript_SwapMimikyu
+	@ KAREN walked over to the player; back to her place, which is where her routes start.
+	setobjectxy LOCALID_DAODAO_MANSION_KAREN, 10, 4
+	turnobject LOCALID_DAODAO_MANSION_KAREN, DIR_EAST
 	fadescreenswapbuffers FADE_FROM_BLACK
 	releaseall
 	end
@@ -298,6 +301,299 @@ DaoDaoIsles_Mansion_1F_EventScript_KarenLeaves:
 	fadescreen FADE_FROM_BLACK
 	releaseall
 	end
+
+@ KAREN walks over to the player once the MIMIKYU is found. She starts from her place at (10,4);
+@ the player stands beside one of the three doll spots, and every tile beside them gets a
+@ route of its own (shortest, round the dolls - scripted steps ignore collision, so each
+@ route is checked against the room once, offline). A player tile with no route leaves her
+@ turning to face them from where she is, as before.
+DaoDaoIsles_Mansion_1F_EventScript_KarenComesOver:
+	playse SE_PIN
+	applymovement LOCALID_DAODAO_MANSION_KAREN, Common_Movement_ExclamationMark
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	getplayerxy VAR_0x8004, VAR_0x8005
+	setvar VAR_0x8006, 0
+	call_if_eq VAR_0x8004, 1, DaoDaoIsles_Mansion_1F_EventScript_KarenFromX1
+	call_if_eq VAR_0x8004, 2, DaoDaoIsles_Mansion_1F_EventScript_KarenFromX2
+	call_if_eq VAR_0x8004, 3, DaoDaoIsles_Mansion_1F_EventScript_KarenFromX3
+	call_if_eq VAR_0x8004, 5, DaoDaoIsles_Mansion_1F_EventScript_KarenFromX5
+	call_if_eq VAR_0x8004, 6, DaoDaoIsles_Mansion_1F_EventScript_KarenFromX6
+	call_if_eq VAR_0x8004, 7, DaoDaoIsles_Mansion_1F_EventScript_KarenFromX7
+	call_if_eq VAR_0x8004, 10, DaoDaoIsles_Mansion_1F_EventScript_KarenFromX10
+	call_if_eq VAR_0x8004, 11, DaoDaoIsles_Mansion_1F_EventScript_KarenFromX11
+	call_if_eq VAR_0x8004, 12, DaoDaoIsles_Mansion_1F_EventScript_KarenFromX12
+	goto_if_eq VAR_0x8006, 1, DaoDaoIsles_Mansion_1F_EventScript_KarenArrived
+	applymovement LOCALID_DAODAO_MANSION_KAREN, Common_Movement_FacePlayer
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+DaoDaoIsles_Mansion_1F_EventScript_KarenArrived:
+	return
+
+DaoDaoIsles_Mansion_1F_EventScript_KarenFromX1:
+	goto_if_eq VAR_0x8005, 8, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_1_8
+	return
+
+DaoDaoIsles_Mansion_1F_EventScript_KarenFromX2:
+	goto_if_eq VAR_0x8005, 7, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_2_7
+	goto_if_eq VAR_0x8005, 9, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_2_9
+	return
+
+DaoDaoIsles_Mansion_1F_EventScript_KarenFromX3:
+	goto_if_eq VAR_0x8005, 8, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_3_8
+	return
+
+DaoDaoIsles_Mansion_1F_EventScript_KarenFromX5:
+	goto_if_eq VAR_0x8005, 8, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_5_8
+	return
+
+DaoDaoIsles_Mansion_1F_EventScript_KarenFromX6:
+	goto_if_eq VAR_0x8005, 7, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_6_7
+	goto_if_eq VAR_0x8005, 9, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_6_9
+	return
+
+DaoDaoIsles_Mansion_1F_EventScript_KarenFromX7:
+	goto_if_eq VAR_0x8005, 8, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_7_8
+	return
+
+DaoDaoIsles_Mansion_1F_EventScript_KarenFromX10:
+	goto_if_eq VAR_0x8005, 7, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_10_7
+	return
+
+DaoDaoIsles_Mansion_1F_EventScript_KarenFromX11:
+	goto_if_eq VAR_0x8005, 6, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_11_6
+	goto_if_eq VAR_0x8005, 8, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_11_8
+	return
+
+DaoDaoIsles_Mansion_1F_EventScript_KarenFromX12:
+	goto_if_eq VAR_0x8005, 7, DaoDaoIsles_Mansion_1F_EventScript_KarenTo_12_7
+	return
+
+@ MIMIKYU at (6,8), player at (6,7): KAREN ends at (7,7).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_6_7:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_6_7
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (6,8), player at (6,9): KAREN ends at (7,9).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_6_9:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_6_9
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (6,8), player at (5,8): KAREN ends at (5,7).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_5_8:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_5_8
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (6,8), player at (7,8): KAREN ends at (8,8).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_7_8:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_7_8
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (2,8), player at (2,7): KAREN ends at (3,7).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_2_7:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_2_7
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (2,8), player at (2,9): KAREN ends at (3,9).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_2_9:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_2_9
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (2,8), player at (1,8): KAREN ends at (1,7).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_1_8:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_1_8
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (2,8), player at (3,8): KAREN ends at (4,8).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_3_8:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_3_8
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (11,7), player at (11,6): KAREN ends at (10,6).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_11_6:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_11_6
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (11,7), player at (11,8): KAREN ends at (10,8).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_11_8:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_11_8
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (11,7), player at (10,7): KAREN ends at (10,6).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_10_7:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_10_7
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	setvar VAR_0x8006, 1
+	return
+
+@ MIMIKYU at (11,7), player at (12,7): KAREN ends at (12,6).
+DaoDaoIsles_Mansion_1F_EventScript_KarenTo_12_7:
+	applymovement LOCALID_DAODAO_MANSION_KAREN, DaoDaoIsles_Mansion_1F_Movement_KarenTo_12_7
+	waitmovement LOCALID_DAODAO_MANSION_KAREN
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	setvar VAR_0x8006, 1
+	return
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_6_7:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	face_left
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_6_9:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	face_left
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_5_8:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_7_8:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	face_left
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_2_7:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_left
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_2_9:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_left
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_1_8:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_3_8:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_left
+	face_left
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_11_6:
+	walk_down
+	walk_down
+	face_right
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_11_8:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	face_right
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_10_7:
+	walk_down
+	walk_down
+	face_down
+	step_end
+
+DaoDaoIsles_Mansion_1F_Movement_KarenTo_12_7:
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	face_down
+	step_end
 
 DaoDaoIsles_Mansion_1F_Movement_Heart:
 	emote_heart

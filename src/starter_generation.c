@@ -77,19 +77,7 @@ static const enum NationalDexOrder sStarterDexBlocks[STARTER_REGION_COUNT][START
 };
 
 // Silver takes the starter that beats the player's, so each region/slot pair
-// needs a party family of seven battles. Several pairs SHARE a family - which
-// ones is Moritz's design, not a rule to extend (2026-09-28, regrouped 2026-10-16):
-//
-//   CHIKORITA's  Meganium, Sceptile, Torterra, Serperior, Chesnaught
-//   CYNDAQUIL's  Typhlosion, Blaziken, Infernape, (Emboar)
-//   SQUIRTLE's   Blastoise, Swampert, Feraligatr, Samurott
-//
-// TURTWIG's and TOTODILE's families are no longer fought. TOTODILE's IDs are
-// still the scripts' Johto IDs; only their parties are unread.
-//
-// A pair on someone else's family gets its own ace from sRivalAceBase below.
-// The families are numbered alphabetically rather than by generation, so this
-// cannot be arithmetic.
+// needs a party family of seven battles. Several pairs SHARE a family
 static const u16 sRivalTrainerBase[STARTER_REGION_COUNT][STARTER_SLOT_COUNT] =
 {
     [STARTER_REGION_JOHTO] =

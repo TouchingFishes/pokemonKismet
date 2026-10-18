@@ -1037,7 +1037,7 @@ MatchCall_HNS_Reena_Battle::
 	.string "I was waiting for you.\n"
 	.string "Let's battle!$"
 
-@ Alex - Battle Girl, Route 13
+@ Alex - Pokefan M, Route 13
 MatchCall_HNS_Alex_General1::
 	.string "Hey, {PLAYER}!\n"
 	.string "It's ALEX!\p"

@@ -76,7 +76,7 @@ Scientist (scientist_trainer_hns)     UNATTRIBUTED
   source A - left blank rather than guessed.
 
   The Lover M/F attribution is inferred from a category name rather than the
-  sprite filename: source B lists "Young Couple" rather than "Lover". Moritz
+  sprite filename: source B lists "Young Couple" rather than "Lover". XXX
   drew the same inference independently, so it stands.
 
 
@@ -86,7 +86,7 @@ Bird Catcher (bird_catcher_hns)       Spherical Ice
 Farmer (farmer_hns)                   Spherical Ice
 Guitarist M (guitarist_m_hns)         Aveontrainer                   [source A]
 
-  ⚠ The Ace Trainer / Bird Catcher pairing is inferred, not stated. Moritz gave
+  ⚠ The Ace Trainer / Bird Catcher pairing is inferred, not stated. XXX gave
   the two names without pairing them to the two sprites. Source A assigns
   "Cooltrainer (Female and Male)" to Aveontrainer and "Bird_Keeper" to
   Spherical Ice, and Cooltrainer is the old name for Ace Trainer, so the
@@ -118,7 +118,7 @@ Frontier      Greta, Lucy, Spenser, Tasso
 
 Wally                                 Poffin_Case (inferred - see below)
 
-  Attribution from Moritz, who sourced the sheets: Poffin_Case made the Hoenn
+  Attribution from XXX, who sourced the sheets: Poffin_Case made the Hoenn
   Gym Leader, Elite Four and Frontier Brain overworld sprites. Source A spells
   the name "PoffinCase"; treat the two as the same artist.
 

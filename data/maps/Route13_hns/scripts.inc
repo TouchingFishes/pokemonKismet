@@ -61,15 +61,20 @@ Route13_EventScript_RematchAlex::
 	end
 
 Route13_EventScript_RematchAlexTryGiveItem::
-	checkitem ITEM_RED_SHARD
+	checkitem ITEM_KINGS_ROCK
 	goto_if_eq VAR_RESULT, TRUE, Common_EventScript_NoOp
-	giveitem ITEM_RED_SHARD
+	giveitem ITEM_KINGS_ROCK
 	closemessage
 	end
 
-Route13_EventScript_Joshua::
-	trainerbattle_single TRAINER_JOSHUA_HNS, Route13_Text_PokefanmJoshuaSeen, Route13_Text_PokefanmJoshuaBeaten
-	msgbox Route13_Text_PokefanmJoshuaAfterBattle, MSGBOX_AUTOCLOSE
+Route13_EventScript_Jo::
+	trainerbattle_double TRAINER_JO_AND_LEXI_HNS, Route13_Text_CoupleSeen, Route13_Text_CoupleBeaten, Route104_Text_GinaNotEnoughMons
+	msgbox Route13_Text_JoAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route13_EventScript_Lexi::
+	trainerbattle_double TRAINER_JO_AND_LEXI_HNS, Route13_Text_CoupleSeen, Route13_Text_CoupleBeaten, Route104_Text_GinaNotEnoughMons
+	msgbox Route13_Text_LexiAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route13_EventScript_Perry::
@@ -146,17 +151,23 @@ Route13_Text_AlexRematchDefeat:
 Route13_Text_AlexPostRematch:
 	.string "Maybe I'm just a pawn after all.$"
 
-Route13_Text_PokefanmJoshuaSeen:
-	.string "Nihihi! Would you like to battle\n"
-	.string "my PIKACHU gang?$"
+Route13_Text_CoupleSeen:
+	.string "JO: LEXI and I came out here to\n"
+	.string "watch the sea together.\p"
+	.string "LEXI: And to battle anyone who\n"
+	.string "gets in the way!$"
 
-Route13_Text_PokefanmJoshuaBeaten:
-	.string "PI-PIKACHU!$"
+Route13_Text_CoupleBeaten:
+	.string "JO: Beaten as a team…\n"
+	.string "LEXI: …but still a team!$"
 
-Route13_Text_PokefanmJoshuaAfterBattle:
-	.string "You look like you have many\n"
-	.string "POKéMON, but PIKACHU\l"
-	.string "is still the best.$"
+Route13_Text_JoAfter:
+	.string "JO: CLEFABLE and WIGGLYTUFF\n"
+	.string "are never apart. Just like us!$"
+
+Route13_Text_LexiAfter:
+	.string "LEXI: You battle well on your own.\n"
+	.string "Imagine you with a partner!$"
 
 Route13_Text_BirdKeeperPerrySeen:
 	.string "Agility is the key attribute of\n"

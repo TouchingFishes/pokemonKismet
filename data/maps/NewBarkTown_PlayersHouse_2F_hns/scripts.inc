@@ -80,26 +80,135 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @   FOXFIRE - sets any stage of the NINETALES story and warps to where it plays.
 @   DOLL SHRINE - resets the MIMIKYU hide-and-seek and warps to the shrine in
 @             DAODAO's ETERNA FOREST (MIGRATION_DECISIONS.md 60).
+@   ROCKET LAB - any of the DAODAO lab's four steps, the earlier ones marked done.
 @
-@ Whichever is picked, TestBasics first sets the eight JOHTO badges, the RUNNING
-@ SHOES and the eight HMs, hands over a TOWN MAP and MAX REPELs, and fills the
-@ POKeDEX (every obtainable species seen and caught).
+@ Talking to him at all opens the start menu's POKeDEX, and its POKeMON entry once the player
+@ has a POKeMON (TestMenuFlags), so a save that used him early can look at both like any other.
+@
+@ Whichever test is picked, the player is asked first whether to take the test kit
+@ (TestBasics): the eight JOHTO badges, the RUNNING SHOES and the eight HMs, a TOWN MAP
+@ and MAX REPELs, and a full POKeDEX (every obtainable species seen and caught). NO
+@ leaves the save's own progress alone, so a test can be played on from where the save
+@ really is. FOXFIRE's LAKE start needs the badges for the path north of the hermit's
+@ house.
 @ ===========================================================================
 NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	lock
 	faceplayer
+	call NewBarkTown_PlayersHouse_2F_EventScript_TestMenuFlags
 	message NewBarkTown_PlayersHouse_2F_Text_TestAsk
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptOlivineGate, NewBarkTown_PlayersHouse_2F_Text_TestOptKimono, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
-	goto_if_ge VAR_RESULT, 6, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptOlivineGate, NewBarkTown_PlayersHouse_2F_Text_TestOptKimono, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptRocketLab, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
+	goto_if_ge VAR_RESULT, 7, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
 	copyvar VAR_0x8006, VAR_RESULT
-	call NewBarkTown_PlayersHouse_2F_EventScript_TestBasics
+	msgbox NewBarkTown_PlayersHouse_2F_Text_TestKitAsk, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_TestBasics
 	goto_if_eq VAR_0x8006, 0, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestGreen
 	goto_if_eq VAR_0x8006, 1, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestFuchsia
 	goto_if_eq VAR_0x8006, 2, NewBarkTown_PlayersHouse_2F_EventScript_OlivineGateTest
 	goto_if_eq VAR_0x8006, 3, NewBarkTown_PlayersHouse_2F_EventScript_KimonoTest
 	goto_if_eq VAR_0x8006, 5, NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest
+	goto_if_eq VAR_0x8006, 6, NewBarkTown_PlayersHouse_2F_EventScript_RocketLabTest
 	goto NewBarkTown_PlayersHouse_2F_EventScript_FoxfireTest
+
+@ The start menu shows POKeDEX on FLAG_SYS_POKEDEX_GET and POKeMON on FLAG_SYS_POKEMON_GET
+@ (src/start_menu.c). POKeMON waits until there is a POKeMON to show; GiveTestParty calls this
+@ again once it has handed the party over.
+NewBarkTown_PlayersHouse_2F_EventScript_TestMenuFlags::
+	setflag FLAG_SYS_POKEDEX_GET
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, NewBarkTown_PlayersHouse_2F_EventScript_TestMenuFlagsDone
+	setflag FLAG_SYS_POKEMON_GET
+NewBarkTown_PlayersHouse_2F_EventScript_TestMenuFlagsDone:
+	return
+
+@ The DAODAO ROCKET LAB at any of its four steps - GIDEON, the KLINKLANG boss, GIOVANNI and
+@ the GENESECT he lets go - with every step before it done. The KANTO POKeMON FEDERATION arc
+@ is put where the lab sits in it (5 before GIDEON, 6 after), FUCHSIA gets the aftermath
+@ flags from the gate house's own stage setter (FedFlagsAftermath), and the KANTO cordon is
+@ up before GIDEON and down after, exactly as his defeat leaves it. The save can be played on
+@ from there. GIDEON starts at the lab door so the grunts are there to fight; the other steps
+@ land beside their boss.
+NewBarkTown_PlayersHouse_2F_EventScript_RocketLabTest::
+	message NewBarkTown_PlayersHouse_2F_Text_LabStage
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 4, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_LabGideon, NewBarkTown_PlayersHouse_2F_Text_LabKlinklang, NewBarkTown_PlayersHouse_2F_Text_LabGiovanni, NewBarkTown_PlayersHouse_2F_Text_LabGenesect
+	goto_if_ge VAR_RESULT, 4, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	copyvar VAR_0x8005, VAR_RESULT
+	msgbox NewBarkTown_PlayersHouse_2F_Text_TestPartyAsk, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty
+	special HealPlayerParty
+	call NewBarkTown_PlayersHouse_2F_EventScript_LabBeforeGideon
+	call FuchsiaCity_Route15_Gate_EventScript_FedFlagsAftermath
+	setvar VAR_FUCHSIA_SCENE, 4
+	msgbox NewBarkTown_PlayersHouse_2F_Text_FoxfireGo, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_0x8005
+	case 0, NewBarkTown_PlayersHouse_2F_EventScript_LabGideon
+	case 1, NewBarkTown_PlayersHouse_2F_EventScript_LabKlinklang
+	case 2, NewBarkTown_PlayersHouse_2F_EventScript_LabGiovanni
+	goto NewBarkTown_PlayersHouse_2F_EventScript_LabGenesect
+
+@ STEVEN's charter has run (state 5), nothing in the lab has, and the cordon is up. Every flag
+@ is written outright rather than as a delta, so a save that played further gets reset too.
+NewBarkTown_PlayersHouse_2F_EventScript_LabBeforeGideon::
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 5
+	clearflag FLAG_DEFEATED_DAODAO_LAB_GIDEON
+	clearflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
+	clearflag FLAG_DEFEATED_DAODAO_LAB_GIOVANNI
+	clearflag FLAG_DAODAO_GENESECT_TAKEN
+	clearflag FLAG_DAODAO_GENESECT_KNOCKED_OUT
+	clearflag FLAG_RECEIVED_DAODAO_LAB_KLINK
+	cleartrainerflag TRAINER_GIDEON_HNS
+	cleartrainerflag TRAINER_GIOVANNI_LAB_HNS
+	cleartrainerflag TRAINER_DAODAO_LAB_CUEBALL_1_HNS
+	cleartrainerflag TRAINER_DAODAO_LAB_CUEBALL_2_HNS
+	cleartrainerflag TRAINER_DAODAO_LAB_SCIENTIST_1_HNS
+	cleartrainerflag TRAINER_DAODAO_LAB_SCIENTIST_2_HNS
+	cleartrainerflag TRAINER_DAODAO_LAB_BIKER_2_HNS
+	@ Common_EventScript_ClearKantoCordon, undone. Nothing else sets these four, and the
+	@ guard's flag is only ever cleared elsewhere (ROUTE 27).
+	clearflag FLAG_DAODAO_CLEARED
+	clearflag FLAG_HIDE_MTMOON_BLOCKER
+	clearflag FLAG_HIDE_DIGLETTS_CAVE_BLOCKER
+	clearflag FLAG_HIDE_TANGLEBRUSH_BLOCKER
+	clearflag FLAG_INDIGOJUNCTION_HIDE_KANTO_GUARD
+	return
+
+@ GIDEON beaten, as his defeat script leaves things.
+NewBarkTown_PlayersHouse_2F_EventScript_LabAfterGideon::
+	setvar VAR_FUCHSIA_FEDERATION_STATE, 6
+	setflag FLAG_DEFEATED_DAODAO_LAB_GIDEON
+	settrainerflag TRAINER_GIDEON_HNS
+	call Common_EventScript_ClearKantoCordon
+	return
+
+NewBarkTown_PlayersHouse_2F_EventScript_LabGideon::
+	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_HNS, 0
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_LabKlinklang::
+	call NewBarkTown_PlayersHouse_2F_EventScript_LabAfterGideon
+	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_HNS, 12, 14
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_LabGiovanni::
+	call NewBarkTown_PlayersHouse_2F_EventScript_LabAfterGideon
+	setflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
+	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_HNS, 7, 6
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_LabGenesect::
+	call NewBarkTown_PlayersHouse_2F_EventScript_LabAfterGideon
+	setflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
+	setflag FLAG_DEFEATED_DAODAO_LAB_GIOVANNI
+	settrainerflag TRAINER_GIOVANNI_LAB_HNS
+	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_HNS, 5, 5
+	waitstate
+	end
 
 NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest::
 	setvar VAR_DOLL_SHRINE_STATE, 0
@@ -194,6 +303,7 @@ NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty::
 	givemon SPECIES_ALAKAZAM, 95
 	givemon SPECIES_HYDREIGON, 95
 	special HealPlayerParty
+	call NewBarkTown_PlayersHouse_2F_EventScript_TestMenuFlags
 	return
 
 NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline::
@@ -328,10 +438,9 @@ NewBarkTown_PlayersHouse_2F_EventScript_FoxfireShadow::
 
 NewBarkTown_PlayersHouse_2F_Text_TestAsk:
 	.string "TEST: What do you want to try?\p"
-	.string "Each one sets the eight JOHTO\n"
-	.string "badges, RUNNING SHOES and HMs,\l"
-	.string "fills your POKéDEX and gives you\l"
-	.string "a TOWN MAP and MAX REPELs.\p"
+	.string "Each one offers the test kit\n"
+	.string "first: badges, HMs, a full\l"
+	.string "POKéDEX and travel items.\p"
 	.string "GREEN and FUCHSIA hand you a\n"
 	.string "level 95 party first.$"
 
@@ -389,8 +498,34 @@ NewBarkTown_PlayersHouse_2F_Text_TestPartyAsk:
 	.string "TEST: Take the level 95 party\n"
 	.string "too?$"
 
+NewBarkTown_PlayersHouse_2F_Text_TestOptRocketLab:
+	.string "ROCKET LAB$"
+
 NewBarkTown_PlayersHouse_2F_Text_TestOptCancel:
 	.string "Nothing$"
+
+NewBarkTown_PlayersHouse_2F_Text_TestKitAsk:
+	.string "TEST: Take the test kit too?\p"
+	.string "The eight JOHTO badges, RUNNING\n"
+	.string "SHOES and HMs, a full POKéDEX,\l"
+	.string "a TOWN MAP and MAX REPELs.\p"
+	.string "NO leaves your save as it is.$"
+
+NewBarkTown_PlayersHouse_2F_Text_LabStage:
+	.string "TEST: Which part of the ROCKET\n"
+	.string "LAB?$"
+
+NewBarkTown_PlayersHouse_2F_Text_LabGideon:
+	.string "GIDEON, from the door$"
+
+NewBarkTown_PlayersHouse_2F_Text_LabKlinklang:
+	.string "KLINKLANG$"
+
+NewBarkTown_PlayersHouse_2F_Text_LabGiovanni:
+	.string "GIOVANNI$"
+
+NewBarkTown_PlayersHouse_2F_Text_LabGenesect:
+	.string "GENESECT$"
 
 NewBarkTown_PlayersHouse_2F_Text_GreenTestGo:
 	.string "TEST: You'll arrive at the LAB\n"

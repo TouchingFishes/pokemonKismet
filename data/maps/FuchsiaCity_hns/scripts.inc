@@ -49,37 +49,14 @@ FuchsiaCity_EventScript_PlaceDarius::
 FuchsiaCity_EventScript_PlaceDariusRet::
 	return
 
-@ ===[ KANTO POKeMON FEDERATION ]=============================================
-@ Same arrangement as GOLDENROD: two populations share the same tiles and also flags
-@
-@ ⚠️ THE ARC'S TRIGGER LIVES HERE, not in data/scripts/fuchsia_federation.inc.
-@ It used to be Common_EventScript_TryArmFederation, called from the three KANTO
-@ gyms and the POWER PLANT back room - four ONE-SHOT sites, each inside a
-@ first-win branch. So the conditions were tested once apiece and never again,
-@ and a player who tripped the last one with a condition unmet lost the arc
-@ permanently. See the long note in fuchsia_federation.inc for the full account.
-@
-@ ON_TRANSITION re-evaluates on EVERY entry to FUCHSIA, so nothing can be missed
-@ and no ordering of the four prerequisites can strand the player.
 FuchsiaCity_EventScript_TryBeginLockdown::
 	goto_if_unset FLAG_DEFEATED_VERMILION_GYM, FuchsiaCity_EventScript_LockdownDefer
 	goto_if_unset FLAG_DEFEATED_CELADON_GYM, FuchsiaCity_EventScript_LockdownDefer
 	goto_if_unset FLAG_DEFEATED_SAFFRON_GYM, FuchsiaCity_EventScript_LockdownDefer
-	@ The POWER PLANT thread must land BEFORE the trip to the ISLES. State 7 is
-	@ its last beat - the MACHINE PART returned, TM THUNDER given. It also makes
-	@ the theft read as the first, small sign of the backer behind all this.
 	goto_if_lt VAR_KANTO_ROCKET_STORY_STATE, 7, FuchsiaCity_EventScript_LockdownDefer
-	@ There is deliberately NO check on the SAFARI ZONE welcome here. It used to
-	@ gate the whole arc on optional side content, and it was the condition that
-	@ made the one-shot bug reachable. A player who skipped the welcome is
-	@ inducted after JANINE instead - see FuchsiaCity_EventScript_StevenSafariAside.
 	goto FuchsiaCity_EventScript_BeginLockdown
 
 FuchsiaCity_EventScript_BeginLockdown::
-	@ Never while the player is inside the SAFARI ZONE. Exiting the safari
-	@ warps to the ENTRANCE map rather than the city, so this should be
-	@ unreachable - but a rearranged city and a live safari session at the same
-	@ time would be very hard to unpick, so it is asserted rather than assumed.
 	goto_if_eq VAR_SAFARI_ZONE_STATE, 2, FuchsiaCity_EventScript_LockdownDefer
 	setvar VAR_FUCHSIA_FEDERATION_STATE, 1
 	setflag FLAG_HIDE_FUCHSIA_NPCS
@@ -88,50 +65,18 @@ FuchsiaCity_EventScript_BeginLockdown::
 	setflag FLAG_HIDE_FUCHSIA_STANDOFF
 	clearflag FLAG_HIDE_SAFARI_FEDERATION
 	setflag FLAG_HIDE_SAFARI_STAFF
-	@ JANINE fights from the lockdown rather than waiting for DARIUS to fall. The
-	@ zoo empties to pay for her four objects, and it shares FLAG_HIDE_FUCHSIA_NPCS
-	@ to do it - see that flag for the budget arithmetic.
 	clearflag FLAG_HIDE_FUCHSIA_JANINE_FIGHT
-	@ Disarm STEVEN's SAFARI welcome for good. A player who never took it must not
-	@ get "Welcome to the DEVON SAFARI ZONE!" over a hostage scene, and FirstTime
-	@ must not drag him off the siege tableau to (4,10). A player who never had it
-	@ is inducted after JANINE instead - FuchsiaCity_EventScript_StevenSafariAside.
-	@ The SAFARI building's ON_TRANSITION enforces the same thing on its own, so
-	@ this line is belt and braces rather than the only guard.
 	setvar VAR_SAFARI_WELCOME, 1
 	setvar VAR_FUCHSIA_SCENE, 1
-	@ ⚠️ The music has to be switched by hand on a walk-in. Crossing a route
-	@ border picks the new map's music BEFORE its ON_TRANSITION runs
-	@ (LoadMapFromCameraTransition, src/overworld.c: TransitionMapMusic comes
-	@ before RunOnTransitionMapScript), so without this the first step into an
-	@ occupied FUCHSIA from ROUTE 15, 18 or 19 plays the peacetime theme. On a
-	@ warp in, the field callback settles on the same takeover song afterwards.
 	fadedefaultbgm
 	return
 
 FuchsiaCity_EventScript_LockdownDefer::
 	return
 
-@ ===[ THE BACKER, on the road outside the GYM ]===============================
-@ Armed by JANINE's defeat (VAR_FUCHSIA_SCENE 3) and disarmed here (4), so it
-@ fires on the player's first step out of the GYM and exactly once.
-@
-@ ⚠️ THIS IS WHERE GIDEON'S NAME IS FIRST SPOKEN. Nothing in KANTO says it before
-@ this scene - not PAXTON, who never asked, not the bikers, who only ever saw
-@ somebody paying them. Keep it that way: the breadcrumbs point at a scientist,
-@ never at a name.
-@
-@ The name is STEVEN's find - he followed the money, as his aftermath speech in
-@ the SAFARI building promised. It used to be credited to JANINE here, at the
-@ DAODAO landing and in his closing line; Moritz found her turning up in nearly
-@ every character's mouth odd (2026-09-30), so those credits are gone. The scene
-@ still waits for her badge, because the charter asks for all four KANTO badges.
 FuchsiaCity_EventScript_StevenBackers::
 	lock
 	clearflag FLAG_HIDE_FUCHSIA_STEVEN
-	@ He is added OFF camera at (18,33) and walks on. The player is on the GYM
-	@ doorstep (9,33) and the screen shows x 2-16, so adding or removing him at the
-	@ old (14,33) made him pop in and out in plain view.
 	addobject LOCALID_FUCHSIA_STEVEN
 	applymovement LOCALID_FUCHSIA_STEVEN, FuchsiaCity_Movement_StevenApproach
 	waitmovement LOCALID_FUCHSIA_STEVEN
@@ -141,30 +86,9 @@ FuchsiaCity_EventScript_StevenBackers::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	applymovement LOCALID_FUCHSIA_STEVEN, FuchsiaCity_Movement_StevenApproach
 	waitmovement LOCALID_FUCHSIA_STEVEN
-	@ FacePlayer rather than a turnobject: the player leaves the GYM onto (9,33)
-	@ but need not still be standing there, and a movement action resolves the
-	@ direction at run time.
 	applymovement LOCALID_FUCHSIA_STEVEN, Common_Movement_FacePlayer
 	waitmovement LOCALID_FUCHSIA_STEVEN
 	msgbox FuchsiaCity_Text_StevenBackers, MSGBOX_DEFAULT
-	@ ===[ THE CHARTER HAPPENS HERE, NOT BACK AT THE SAFARI ZONE ]==============
-	@ This scene used to end by sending the player to the SAFARI ZONE for a second
-	@ conversation that asked for the battle and opened the ROUTE 13 boat. That put
-	@ a round trip across town between the reveal and the boat for no reason. The
-	@ ask, the fight and the boat all land here; the SAFARI ZONE copy survives only
-	@ as the fallback below.
-	@
-	@ The four gym flags are not re-checked. This scene is armed by JANINE's defeat,
-	@ so the fourth badge is the reason it is playing, and the other three are
-	@ prerequisites of the lockdown that got us here.
-	msgbox FuchsiaCity_Text_StevenCharter, MSGBOX_YESNO
-	@ ⚠️ DISARMED BEFORE THE FIGHT, not after it. Losing whites the player out and
-	@ ends this script on the spot, so anything left for afterwards never runs:
-	@ SCENE would stay 3 and replay the whole scene from wherever the player next
-	@ walks in, and FLAG_HIDE_FUCHSIA_STEVEN would leave him standing on the road.
-	@ Setting the flag does not remove him now - an active object outlives its
-	@ flag, including across the battle - it only stops him spawning again. After
-	@ a loss the charter falls to STEVEN at the SAFARI ZONE, like a decline does.
 	setvar VAR_FUCHSIA_SCENE, 4
 	setflag FLAG_HIDE_FUCHSIA_STEVEN
 	goto_if_eq VAR_RESULT, NO, FuchsiaCity_EventScript_StevenCharterDecline
@@ -174,18 +98,11 @@ FuchsiaCity_EventScript_StevenBackers::
 	setvar VAR_FUCHSIA_FEDERATION_STATE, 5
 	goto FuchsiaCity_EventScript_StevenBackersLeave
 
-@ A decline leaves the scene disarmed too - SCENE went to 4 before the branch, and
-@ TryRunOnFrameMapScript would otherwise re-fire this cutscene on every input
-@ poll. The player picks the charter up from STEVEN at the SAFARI ZONE instead,
-@ which is exactly what the branch there is still for.
 FuchsiaCity_EventScript_StevenCharterDecline::
 	msgbox FuchsiaCity_Text_StevenCharterDecline, MSGBOX_DEFAULT
 	goto FuchsiaCity_EventScript_StevenBackersLeave
 
 FuchsiaCity_EventScript_StevenBackersLeave::
-	@ The SAFARI induction for a player who skipped the welcome - Moritz's call,
-	@ 2026-09-26: after JANINE, and only if it has not happened before. LEVEL 0 is
-	@ what "never had it" means. A player who had it gets the short scene.
 	call_if_eq VAR_KANTO_SAFARI_ZONE_PROGRESS, 0, FuchsiaCity_EventScript_StevenSafariAside
 	closemessage
 	applymovement LOCALID_FUCHSIA_STEVEN, FuchsiaCity_Movement_StevenLeave

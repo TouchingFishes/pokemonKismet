@@ -76,3 +76,20 @@ Route3_Text_MtMoonSquareSign:
 	.string "MT.MOON SQUARE\p"
 	.string "Just go up the stairs.$"
 
+Route3_EventScript_Trent::
+	trainerbattle_single TRAINER_TRENT_HNS, Route3_Text_HikerTrentSeen, Route3_Text_HikerTrentBeaten
+	msgbox Route3_Text_HikerTrentAfterBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route3_Text_HikerTrentSeen:
+	.string "Hold it! I'm warming up for\n"
+	.string "MT. MOON. You'll do nicely!$"
+
+Route3_Text_HikerTrentBeaten:
+	.string "Huff… I'm the one who got\n"
+	.string "flattened!$"
+
+Route3_Text_HikerTrentAfterBattle:
+	.string "My SUDOWOODO pretends to be a\n"
+	.string "tree, and my PROBOPASS always\l"
+	.string "points north. Odd rocks, eh?$"

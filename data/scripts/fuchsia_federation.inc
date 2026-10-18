@@ -130,18 +130,6 @@ Common_Text_DiglettSwarm:
 	.string "Something below has them stirred\n"
 	.string "up, and they will not budge.$"
 
-@ ⚠️ THE SINGLE HOOK THAT REOPENS KANTO. Called from exactly one place,
-@ DaoDaoIsles_RocketLab_EventScript_GideonDefeated, the moment GIDEON falls (the
-@ Route 15 test NPC's stage 6 calls it too, standing in for that script). If the
-@ beat moves, move that one `call` line; everything else keys off these flags.
-@
-@ What it opens: MT MOON, both ends of DIGLETT'S CAVE, both mouths of TANGLEBRUSH,
-@ MISTY's GYM (FLAG_DAODAO_CLEARED), and the Route 22 exit of the RECEPTION GATE.
-@ That last one is a one-tile plug - the Kanto guard at (14,7) - and behind it
-@ lies the whole west of KANTO: VIRIDIAN, PEWTER (BROCK), PALLET, Route 21,
-@ CINNABAR and SEAFOAM (BLAINE). Route 19's Kinglers and the unconnected Route
-@ 17/18 west water close every other way in, so before GIDEON the player can
-@ hold 12 badges and no more (Moritz, 2026-09-30).
 Common_EventScript_ClearKantoCordon::
 	setflag FLAG_DAODAO_CLEARED
 	setflag FLAG_HIDE_MTMOON_BLOCKER
@@ -149,20 +137,3 @@ Common_EventScript_ClearKantoCordon::
 	setflag FLAG_HIDE_TANGLEBRUSH_BLOCKER
 	setflag FLAG_INDIGOJUNCTION_HIDE_KANTO_GUARD
 	return
-
-@ ⚠️ STEVEN'S POKENAV CALL IS GONE, deliberately - no speaker name and no call
-@ text live here any more.
-@
-@ It used to fire when the arc armed, from anywhere in KANTO, summoning the player
-@ to FUCHSIA. Two problems: with the arc live from a new file there is no arming
-@ moment to hang it on, and it could reach a player who had never met him at all,
-@ since VERMILION's introduction is skippable (ROUTE 11 runs east to ROUTE 12, not
-@ into the cordoned DIGLETT'S CAVE, so the north exit carrying the three
-@ VAR_VERMILION_CITY_STEVEN triggers is avoidable).
-@
-@ He briefs the player IN PERSON instead, on their first step into the occupied
-@ SAFARI ZONE building:
-@   FuchsiaCity_SafariZoneEntrance_EventScript_StevenSiegeBriefing
-@ which absorbed this text's content about the police being at TANGLEBRUSH. The
-@ player is pointed up the road by JANINE's fight dialogue and by DARIUS standing
-@ on the SAFARI ZONE door, so nothing was lost by dropping the summons.

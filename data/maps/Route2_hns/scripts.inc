@@ -141,3 +141,20 @@ Route2_Text_CorbynAfter:
 	.string "Bug POKéMON thrive there.\n"
 	.string "It's their paradise.\p"
 	.string "I come here when I miss it…$"
+
+Route2_EventScript_Percy::
+	trainerbattle_single TRAINER_PERCY_HNS, Route2_Text_PokefanmPercySeen, Route2_Text_PokefanmPercyBeaten
+	msgbox Route2_Text_PokefanmPercyAfterBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route2_Text_PokefanmPercySeen:
+	.string "Nihihi! Would you like to battle\n"
+	.string "my PIKACHU gang?$"
+
+Route2_Text_PokefanmPercyBeaten:
+	.string "PI-PIKACHU!$"
+
+Route2_Text_PokefanmPercyAfterBattle:
+	.string "You look like you have many\n"
+	.string "POKéMON, but PIKACHU\l"
+	.string "is still the best.$"

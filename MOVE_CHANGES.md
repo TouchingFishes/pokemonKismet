@@ -31,8 +31,8 @@ The old fork gave these official moves a different move's mechanics. Porting the
 
 ### Excluded
 
-- **BLOOD_MOON** accuracy — 2.0 keeps `100`, fork had `90`. Excluded by Moritz; deliberate exception.
-- **BLOOD_MOON** type — 2.0 keeps `NORMAL`, fork had `GHOST`. Excluded by Moritz; deliberate exception.
+- **BLOOD_MOON** accuracy — 2.0 keeps `100`, fork had `90`. Excluded by XXX; deliberate exception.
+- **BLOOD_MOON** type — 2.0 keeps `NORMAL`, fork had `GHOST`. Excluded by XXX; deliberate exception.
 
 ### Conditional-Fairy types — deliberately not ported
 

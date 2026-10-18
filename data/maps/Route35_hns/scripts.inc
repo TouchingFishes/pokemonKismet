@@ -7,11 +7,6 @@ Route35_OnTransition:
 	callnative SetTimeBasedEncounters
 	end	
 
-Route35_EventScript_CamperIvan::
-	trainerbattle_single TRAINER_IVAN_HNS, Route35_Text_CamperIvanSeen, Route35_Text_CamperIvanBeaten
-	msgbox Route35_Text_CamperIvanAfter, MSGBOX_AUTOCLOSE
-	end
-
 Route35_EventScript_CamperElliot::
 	trainerbattle_single TRAINER_ELLIOT_HNS, Route35_Text_CamperElliotSeen, Route35_Text_CamperElliotBeaten
 	msgbox Route35_Text_CamperElliotAfter, MSGBOX_AUTOCLOSE
@@ -107,17 +102,6 @@ Route35_EventScript_Item_Nugget::
 Route35_EventScript_Item_ParalyzeHeal::
 	finditem ITEM_PARALYZE_HEAL
 	end
-
-Route35_Text_CamperIvanSeen:
-	.string "I've been getting POKéMON data off\n"
-	.string "my radio. I think I'm good.$"
-
-Route35_Text_CamperIvanBeaten:
-	.string "I give!$"
-
-Route35_Text_CamperIvanAfter:
-	.string "Music on the radio changes the\n"
-	.string "moods of wild POKéMON.$"
 
 Route35_Text_CamperElliotSeen:
 	.string "I'm gonna show my girlfriend I'm\n"

@@ -138,23 +138,6 @@ FuchsiaCity_SafariZoneEntrance_EventScript_StevenGiveCase::
 	closemessage
 	return
 
-@ ===[ THE LATE INDUCTION - for a player who skipped the welcome ]============
-@ Moritz, 2026-09-26: visiting the SAFARI ZONE before the FEDERATION arrive is NOT
-@ a requirement, but a player who skipped it is told what the place is and gets
-@ the {POKEBLOCK} CASE after JANINE - and only if that has not happened already.
-@
-@ Shared by two callers, each with its own opener:
-@   FuchsiaCity_EventScript_StevenSafariAside  - the road outside the GYM, after
-@                                                JANINE (the case Moritz asked for)
-@   StevenInductionHere, below                 - his talk script here, from state
-@                                                4 on: a player who walks in
-@                                                between PAXTON and JANINE, or
-@                                                who lost the fight on the road
-@ The upgrade clerk tells a level-0 player "Have a word with STEVEN first. He'll
-@ see you signed in", and this is what makes that true.
-@
-@ PROGRESS 1 is SAFARI LEVEL 1 and WELCOME 1 keeps the automatic welcome down;
-@ both are set every time, like MeetSteven does.
 FuchsiaCity_SafariZoneEntrance_EventScript_StevenInduction::
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_StevenInduction, MSGBOX_DEFAULT
 	closemessage
@@ -202,25 +185,6 @@ FuchsiaCity_SafariZoneEntrance_EventScript_StevenNormal::
 	release
 	end
 
-@ ===[ THE EON TICKET, THEN THE BELDUM TRADE - shared by both STEVENs ]========
-@ Moritz, 2026-09-30: the STEVEN here and the one at GIANT'S REST both offer the
-@ ticket and then the trade, so the player is free to go after REGIGIGAS or not.
-@ He is here until REGIGIGAS is gone (his hide flag is FLAG_HIDE_DAODAO_REGIGIGAS)
-@ and at GIANT'S REST from then on, so exactly one of them is ever offering.
-@
-@ The gates are unchanged: the ticket once the player is KANTO Champion, the
-@ trade while they hold it. The trade repeats until it is done - a decline says
-@ the offer stands, and a wrong species is asked for again - because BELDUM,
-@ METANG and METAGROSS have no other source.
-@
-@ It ends the script only when it has something to OFFER - the ticket to a
-@ Champion without one, the trade to a ticket holder who has not traded - and
-@ returns otherwise, so the caller can say its own line.
-@ ⚠️ The ticket is a key item and is never consumed, so "holds the ticket" stays
-@ true forever. Branching to Steven_Trade on that alone sent every later talk to
-@ StevenTradeCompleted's `end`, and everything after the call - the case
-@ recovery, the GIDEON line - became unreachable. Hence the explicit
-@ trade-completed test.
 FuchsiaCity_SafariZoneEntrance_EventScript_StevenTicketAndTrade::
 	checkitem ITEM_EON_TICKET
 	goto_if_eq VAR_RESULT, FALSE, FuchsiaCity_SafariZoneEntrance_EventScript_StevenTryGiveTicket
@@ -842,20 +806,6 @@ FuchsiaCity_SafariZoneEntrance_Text_MaxLevel:
 	.string "Hello {PLAYER}, thank you for\n"
 	.string "continuing to be a premium member\l"
 	.string "at the FUCHSIA SAFARI ZONE.$"
-
-@ ===[ THE SHOWDOWN - STATES 3 TO 6 ]=========================================
-@ GIL and BRIX can be taken in either order; PAXTON will not fight until both
-@ are down, which forces the whole gauntlet without dictating a sequence.
-@
-@ The PAXTON battle is where the tie lands, and it lands in the AUDIO: his party
-@ entry carries `Music: Rocket`, so the TEAM ROCKET battle theme plays before any
-@ character has said the words. His team does the rest - CROBAT and WEEZING are
-@ biker mon, but RHYDON and NIDOKING are GIOVANNI's. Nobody ever says
-@ "TEAM ROCKET" out loud in this whole arc.
-@
-@ ⚠️ The party itself is Moritz's and is hand-maintained in trainers_hns.party -
-@ do not edit it from here. If the team changes, this comment is what goes stale:
-@ it already had to drop PERSIAN once when the ace became ANNIHILAPE.
 
 FuchsiaCity_SafariZoneEntrance_EventScript_Gil::
 	trainerbattle_single TRAINER_GIL_HNS, FuchsiaCity_SafariZoneEntrance_Text_GilSeen, FuchsiaCity_SafariZoneEntrance_Text_GilBeaten

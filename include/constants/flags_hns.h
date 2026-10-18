@@ -1065,7 +1065,7 @@
 #define FLAG_HIDDEN_ITEM_YELLOW_FOREST_BIG_MUSHROOM_1 (HNS_EXTENDED_CONTENT_START + 151)
 #define FLAG_HIDDEN_ITEM_YELLOW_FOREST_BIG_MUSHROOM_2 (HNS_EXTENDED_CONTENT_START + 152)
 #define FLAG_HIDE_YELLOW_FOREST_PIKACHU             (HNS_EXTENDED_CONTENT_START + 153) // gone after its battle, caught or not
-#define FLAG_EXTENDED_CONTENT_154                  (HNS_EXTENDED_CONTENT_START + 154)
+#define FLAG_HIDDEN_ITEM_ROUTE13_RED_SHARD         (HNS_EXTENDED_CONTENT_START + 154)
 #define FLAG_EXTENDED_CONTENT_155                  (HNS_EXTENDED_CONTENT_START + 155)
 #define FLAG_EXTENDED_CONTENT_156                  (HNS_EXTENDED_CONTENT_START + 156)
 #define FLAG_EXTENDED_CONTENT_157                  (HNS_EXTENDED_CONTENT_START + 157)
@@ -1240,7 +1240,7 @@
 #define FLAG_WEEKEND_OBJECTS                        (HNS_EXTENDED_CONTENT_START + 314)
 
 // Union Cave's Lapras: appears every Friday until caught or defeated, then never
-// again (Moritz).
+// again.
 //
 // Two bits are unavoidable, because object spawning reads exactly ONE flag per
 // object and that flag has to mean "(not Friday) OR already taken". It is
@@ -1327,7 +1327,6 @@
 //                       PALLET, CINNABAR and SEAFOAM (2.0 hid him when Vermilion's
 //                       Snorlax woke; not any more)
 //   MISTY               away; FLAG_DAODAO_CLEARED above, read by her GYM
-// So before GIDEON: 12 badges, no BROCK, no BLAINE, no MISTY (Moritz, 2026-09-30).
 #define FLAG_HIDE_MTMOON_BLOCKER                    (HNS_EXTENDED_CONTENT_START + 329)
 #define FLAG_HIDE_DIGLETTS_CAVE_BLOCKER             (HNS_EXTENDED_CONTENT_START + 330)
 // Free since 2026-09-30. It was FLAG_HIDE_CINNABAR_BLOCKER, set by the cordon but

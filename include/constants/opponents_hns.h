@@ -385,7 +385,7 @@
 #define TRAINER_WILLIAM_HNS                           372
 #define TRAINER_DEREK_HNS                             373
 #define TRAINER_ROBERT_HNS                            374
-#define TRAINER_JOSHUA_HNS                            375
+#define TRAINER_JO_AND_LEXI_HNS                              375
 #define TRAINER_CARTER_HNS                            376
 #define TRAINER_TREVOR_HNS                            377
 #define TRAINER_BRANDON_HNS                           378
@@ -723,13 +723,17 @@
 #define TRAINER_RESERVED_5_HNS                   684
 #define TRAINER_RESERVED_6_HNS                   685
 #define TRAINER_RESERVED_7_HNS                   686
-#define TRAINER_RIVAL_TURTWIG_1_HNS              687
-#define TRAINER_RIVAL_TURTWIG_2_HNS              688
-#define TRAINER_RIVAL_TURTWIG_3_HNS              689
-#define TRAINER_RIVAL_TURTWIG_4_HNS              690
-#define TRAINER_RIVAL_TURTWIG_5_HNS              691
-#define TRAINER_RIVAL_TURTWIG_6_HNS              692
-#define TRAINER_RIVAL_TURTWIG_7_HNS              693
+// TURTWIG's rival family, unused since SILVER's regroup (2026-10-16: Hoenn, Sinnoh, Unova
+// and Kalos Grass all ride on CHIKORITA's party now). Same reasoning as the RESERVED blocks:
+// rival IDs' own flags were never set. Two went to new trainers on 2026-10-18; the rest are
+// spare - rename one here to use it.
+#define TRAINER_PERCY_HNS                        687
+#define TRAINER_TRENT_HNS                        688
+#define TRAINER_RESERVED_15_HNS                  689
+#define TRAINER_RESERVED_16_HNS                  690
+#define TRAINER_RESERVED_17_HNS                  691
+#define TRAINER_RESERVED_18_HNS                  692
+#define TRAINER_RESERVED_19_HNS                  693
 #define TRAINER_ALEC_HNS                         694
 #define TRAINER_AMALA_HNS                        695
 #define TRAINER_AMALA_2_HNS                      696
