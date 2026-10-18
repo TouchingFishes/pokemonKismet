@@ -220,13 +220,13 @@ Debug_EventScript_Script_2::
 	end
 
 Debug_EventScript_Script_3::
-	goto SinjohRuins_EventScript_StevenBattle
+	goto SinjohRuins_EventScript_CynthiaBattle
 	release
 	end
 
 Debug_EventScript_Script_4::
-	msgbox SinjohRuins_Lab_Text_StevenCall3Plates, MSGBOX_DEFAULT
-	pokenavcall SinjohRuins_Lab_Text_StevenCall6Plates
+	msgbox SinjohRuins_Lab_Text_CynthiaCall3Plates, MSGBOX_DEFAULT
+	pokenavcall SinjohRuins_Lab_Text_CynthiaCall6Plates
 	release
 	end
 

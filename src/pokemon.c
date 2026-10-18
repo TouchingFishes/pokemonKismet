@@ -8655,9 +8655,11 @@ u16 GetBattleBGM(void)
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_PKMN_TRAINER_1_HNS:
         #if IS_HNS
-            // Steven is an Emerald guest, so he keeps the Emerald champion theme.
+            // Steven is an Emerald guest, so he keeps the Emerald champion theme, his
+            // CHAMPION's ROOM challenger team included.
             if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
-             && TRAINER_BATTLE_PARAM.opponentA == TRAINER_STEVEN_HNS)
+             && (TRAINER_BATTLE_PARAM.opponentA == TRAINER_STEVEN_HNS
+              || TRAINER_BATTLE_PARAM.opponentA == TRAINER_CHALLENGER_STEVEN_HNS))
                 return MUS_VS_CHAMPION;
         #endif
             return MUS_HG_VS_CHAMPION;

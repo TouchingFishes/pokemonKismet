@@ -1,5 +1,14 @@
 VioletCity_TrainerSchool_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, VioletCity_TrainerSchool_OnTransition
 	.byte 0
+
+VioletCity_TrainerSchool_OnTransition:
+	call_if_unset FLAG_IS_KANTO_CHAMPION, VioletCity_TrainerSchool_EventScript_HideHoennLeader
+	end
+
+VioletCity_TrainerSchool_EventScript_HideHoennLeader:
+	setflag FLAG_TEMP_HIDE_HOENN_LEADER
+	return
 
 VioletCity_TrainerSchool_EventScript_Earl::
 	lock
@@ -197,3 +206,47 @@ VioletCity_TrainerSchool_Text_Notebook3:
 VioletCity_TrainerSchool_Text_StickerMachine:
 	.string "This super machine prints data\n"
 	.string "out as stickers!$"
+
+VioletCity_TrainerSchool_EventScript_Roxanne::
+	lock
+	goto_if_defeated TRAINER_LEADER_ROXANNE_HNS, VioletCity_TrainerSchool_EventScript_RoxanneAfter
+	faceplayer
+	msgbox VioletCity_TrainerSchool_Text_RoxanneIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_LEADER_ROXANNE_HNS, VioletCity_TrainerSchool_Text_RoxanneDefeat
+	msgbox VioletCity_TrainerSchool_Text_RoxannePostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+VioletCity_TrainerSchool_EventScript_RoxanneAfter:
+	faceplayer
+	msgbox VioletCity_TrainerSchool_Text_RoxanneAfter, MSGBOX_DEFAULT
+	release
+	end
+
+VioletCity_TrainerSchool_Text_RoxanneIntro:
+	.string "Oh! You must be the CHAMPION of\n"
+	.string "JOHTO and KANTO.\p"
+	.string "I'm ROXANNE, the GYM LEADER of\n"
+	.string "RUSTBORO CITY in HOENN.\p"
+	.string "I teach at the TRAINER'S SCHOOL\n"
+	.string "there, so EARL asked me to teach\l"
+	.string "a class here.\p"
+	.string "But a good teacher keeps learning.\p"
+	.string "Pop quiz! Show me everything your\n"
+	.string "POKéMON know!$"
+
+VioletCity_TrainerSchool_Text_RoxanneDefeat:
+	.string "Flawless answers…\n"
+	.string "That's full marks!$"
+
+VioletCity_TrainerSchool_Text_RoxannePostBattle:
+	.string "Rock-type POKéMON are sturdy,\n"
+	.string "but you found every weakness.\p"
+	.string "I hear the POKéMON LEAGUE lets\n"
+	.string "trainers challenge the CHAMPION.\p"
+	.string "Don't be surprised if I'm the next\n"
+	.string "one to test you there!$"
+
+VioletCity_TrainerSchool_Text_RoxanneAfter:
+	.string "The students here are so eager.\n"
+	.string "They remind me of RUSTBORO.$"

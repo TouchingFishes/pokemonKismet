@@ -9370,7 +9370,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_ICE_BEAM
 - MOVE_HYDRO_CANNON
 
-=== TRAINER_BLUE_2_HNS ===
+=== TRAINER_CHALLENGER_BLUE_HNS ===
 Name: BLUE
 Class: Leader Kanto Hns
 Pic: Leader Blue Hns
@@ -9381,8 +9381,16 @@ AI: Smart Trainer
 Mugshot: Blue
 Items: Full Restore / Full Restore
 
+SPECIES_JOLTEON @ ITEM_FOCUS_BAND
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDERBOLT
+- MOVE_SHADOW_BALL
+- MOVE_AGILITY
+- MOVE_BATON_PASS
+
 SPECIES_SCIZOR @ ITEM_SILVER_POWDER
-Level: 75
+Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_STEEL_WING
 - MOVE_AERIAL_ACE
@@ -9390,44 +9398,36 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HYPER_BEAM
 
 SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
-Level: 77
+Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_PSYCHIC
-- MOVE_REFLECT
 - MOVE_CALM_MIND
+- MOVE_ENERGY_BALL
 - MOVE_SHADOW_BALL
 
-SPECIES_TYRANITAR @ ITEM_FOCUS_BAND
-Level: 75
+SPECIES_TYRANITAR @ ITEM_CHOICE_BAND
+Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_CRUNCH
-- MOVE_THUNDERBOLT
+- MOVE_STONE_EDGE
 - MOVE_EARTHQUAKE
 - MOVE_BRICK_BREAK
 
 SPECIES_ARCANINE @ ITEM_SILK_SCARF
-Level: 77
+Level: 83
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_FLAMETHROWER
 - MOVE_DRAGON_BREATH
 - MOVE_CRUNCH
 - MOVE_EXTREME_SPEED
 
-SPECIES_GYARADOS @ ITEM_LEFTOVERS
-Level: 77
+SPECIES_BLASTOISE @ ITEM_CHESTO_BERRY
+Level: 85
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_WATERFALL
-- MOVE_TWISTER
-- MOVE_EARTHQUAKE
-- MOVE_DRAGON_DANCE
-
-SPECIES_JOLTEON @ ITEM_SILK_SCARF
-Level: 79
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_THUNDERBOLT
-- MOVE_SHADOW_BALL
-- MOVE_HIDDEN_POWER
-- MOVE_DOUBLE_KICK
+- MOVE_HYDRO_PUMP
+- MOVE_REST
+- MOVE_ICE_BEAM
+- MOVE_HYDRO_CANNON
 
 === TRAINER_WILL_1_HNS ===
 Name: WILL
@@ -17342,10 +17342,12 @@ Gender: Female
 Music: Hg Champion
 Double Battle: No
 AI: Smart Trainer
+Mugshot: Orange
+Items: Full Restore / Full Restore
 
 Spiritomb @ Leftovers
 Ability: Technician
-Level: 85
+Level: 77
 EVs: 4 HP / 252 Def / 252 SpD
 Modest Nature
 - Dark Pulse
@@ -17355,7 +17357,7 @@ Modest Nature
 
 Lucario @ Black Belt
 Ability: Justified
-Level: 87
+Level: 78
 EVs: 4 HP / 252 Atk / 252 Spe
 Jolly Nature
 - Aura Sphere
@@ -17365,7 +17367,7 @@ Jolly Nature
 
 Togekiss @ Wise Glasses
 Ability: Serene Grace
-Level: 85
+Level: 77
 EVs: 4 HP / 252 SpA / 252 Spe
 Modest Nature
 - Aura Sphere
@@ -17375,7 +17377,7 @@ Modest Nature
 
 Milotic @ Chesto Berry
 Ability: Marvel Scale
-Level: 87
+Level: 78
 EVs: 252 HP / 16 SpA / 240 Def
 Bold Nature
 - Scald
@@ -17385,7 +17387,7 @@ Bold Nature
 
 Lapras @ Chesto Berry
 Ability: Water Absorb
-Level: 84
+Level: 77
 EVs: 252 HP / 4 Def / 252 SpA
 Bold Nature
 - Ice Beam
@@ -17395,7 +17397,7 @@ Bold Nature
 
 Garchomp @ Muscle Band
 Ability: Rough Skin
-Level: 89
+Level: 79
 EVs: 4 HP / 252 Atk / 252 Spe
 Jolly Nature
 - Dragon Claw
@@ -21961,6 +21963,64 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SLUDGE_BOMB
 - MOVE_LEECH_SEED
 
+=== TRAINER_CHALLENGER_GREEN_HNS ===
+Name: GREEN
+Class: Pkmn Trainer 1 Hns
+Pic: Leaf
+Gender: Female
+Music: Hg Champion
+Double Battle: No
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
+Items: Full Restore / Full Restore
+
+SPECIES_MISMAGIUS @ ITEM_SPELL_TAG
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SHADOW_BALL
+- MOVE_THUNDERBOLT
+- MOVE_MAGICAL_LEAF
+- MOVE_CALM_MIND
+
+SPECIES_CLEFABLE @ ITEM_LEFTOVERS
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDERBOLT
+- MOVE_ICE_BEAM
+- MOVE_PSYCHIC
+- MOVE_SOFT_BOILED
+
+SPECIES_AERODACTYL @ ITEM_CHOICE_BAND
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_HEAD_SMASH
+- MOVE_AERIAL_ACE
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+
+SPECIES_KINGDRA @ ITEM_DRAGON_FANG
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_ICE_BEAM
+- MOVE_SURF
+- MOVE_DRAGON_PULSE
+- MOVE_HURRICANE
+
+SPECIES_FLAREON @ ITEM_CHARCOAL
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_EXTREME_SPEED
+- MOVE_IRON_TAIL
+- MOVE_SCORCHING_SANDS
+- MOVE_SUPERPOWER
+
+SPECIES_VENUSAUR @ ITEM_MIRACLE_SEED
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_GIGA_DRAIN
+- MOVE_FRENZY_PLANT
+- MOVE_SLUDGE_BOMB
+- MOVE_LEECH_SEED
+
 === TRAINER_TASHA_HNS ===
 Name: TASHA
 Class: Hex Maniac Hns
@@ -22323,7 +22383,7 @@ IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 
 === TRAINER_LEADER_NORMAN_HNS ===
 Name: NORMAN
-Class: Leader Hns
+Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Hg Boy 1
@@ -22371,3 +22431,1061 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_EARTHQUAKE
 - MOVE_HAMMER_ARM
 - MOVE_SLACK_OFF
+
+=== TRAINER_LEADER_ROXANNE_HNS ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Hg Girl 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Orange
+Items: Full Restore / Full Restore
+
+SPECIES_GOLEM @ ITEM_QUICK_CLAW
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_EARTHQUAKE
+- MOVE_STONE_EDGE
+- MOVE_EXPLOSION
+- MOVE_FIRE_PUNCH
+
+SPECIES_RELICANTH @ ITEM_SITRUS_BERRY
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_HEAD_SMASH
+- MOVE_WATERFALL
+- MOVE_EARTHQUAKE
+- MOVE_YAWN
+
+SPECIES_OMASTAR @ ITEM_MYSTIC_WATER
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_HYDRO_PUMP
+- MOVE_ANCIENT_POWER
+- MOVE_ICE_BEAM
+- MOVE_EARTH_POWER
+
+SPECIES_KABUTOPS @ ITEM_SCOPE_LENS
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_STONE_EDGE
+- MOVE_WATERFALL
+- MOVE_X_SCISSOR
+- MOVE_SWORDS_DANCE
+
+SPECIES_AERODACTYL @ ITEM_HARD_STONE
+Ability: Rock Head
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_HEAD_SMASH
+- MOVE_EARTHQUAKE
+- MOVE_ROCK_POLISH
+- MOVE_CRUNCH
+
+SPECIES_PROBOPASS @ ITEM_LEFTOVERS
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_POWER_GEM
+- MOVE_EARTH_POWER
+- MOVE_FLASH_CANNON
+- MOVE_DISCHARGE
+
+=== TRAINER_LEADER_BRAWLY_HNS ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Items: Full Restore / Full Restore
+
+SPECIES_HITMONTOP @ ITEM_KINGS_ROCK
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_TRIPLE_KICK
+- MOVE_MACH_PUNCH
+- MOVE_FAKE_OUT
+
+SPECIES_BRELOOM @ ITEM_LUM_BERRY
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SPORE
+- MOVE_FOCUS_PUNCH
+- MOVE_SEED_BOMB
+- MOVE_MACH_PUNCH
+
+SPECIES_POLIWRATH @ ITEM_MYSTIC_WATER
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WATERFALL
+- MOVE_DYNAMIC_PUNCH
+- MOVE_ICE_PUNCH
+- MOVE_EARTHQUAKE
+
+SPECIES_MACHAMP @ ITEM_BLACK_BELT
+Ability: No Guard
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_DYNAMIC_PUNCH
+- MOVE_STONE_EDGE
+- MOVE_EARTHQUAKE
+- MOVE_ICE_PUNCH
+
+SPECIES_GALLADE @ ITEM_SCOPE_LENS
+Ability: Sharpness
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_PSYCHO_CUT
+- MOVE_LEAF_BLADE
+- MOVE_ICE_PUNCH
+
+SPECIES_HARIYAMA @ ITEM_LEFTOVERS
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_ICE_PUNCH
+- MOVE_EARTHQUAKE
+- MOVE_FAKE_OUT
+
+=== TRAINER_LEADER_WATTSON_HNS ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Items: Full Restore / Full Restore
+
+SPECIES_ELECTRODE @ ITEM_FOCUS_SASH
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDERBOLT
+- MOVE_EXPLOSION
+- MOVE_THUNDER_WAVE
+- MOVE_SIGNAL_BEAM
+
+SPECIES_RAICHU @ ITEM_MAGNET
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FOCUS_BLAST
+- MOVE_GRASS_KNOT
+- MOVE_NASTY_PLOT
+
+SPECIES_LANTURN @ ITEM_LEFTOVERS
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SURF
+- MOVE_DISCHARGE
+- MOVE_ICE_BEAM
+- MOVE_THUNDER_WAVE
+
+SPECIES_AMPHAROS @ ITEM_WISE_GLASSES
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDER
+- MOVE_POWER_GEM
+- MOVE_FOCUS_BLAST
+- MOVE_SIGNAL_BEAM
+
+SPECIES_MAGNEZONE @ ITEM_METAL_COAT
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_THUNDER_WAVE
+
+SPECIES_MANECTRIC @ ITEM_LIFE_ORB
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDERBOLT
+- MOVE_FLAMETHROWER
+- MOVE_SIGNAL_BEAM
+- MOVE_CRUNCH
+
+=== TRAINER_LEADER_FLANNERY_HNS ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Hg Girl 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Dark Red
+Items: Full Restore / Full Restore
+
+SPECIES_MAGCARGO @ ITEM_SITRUS_BERRY
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_LAVA_PLUME
+- MOVE_EARTH_POWER
+- MOVE_ANCIENT_POWER
+- MOVE_RECOVER
+
+SPECIES_MAGMORTAR @ ITEM_CHARCOAL
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FIRE_BLAST
+- MOVE_THUNDERBOLT
+- MOVE_FOCUS_BLAST
+- MOVE_HYPER_BEAM
+
+SPECIES_NINETALES @ ITEM_HEAT_ROCK
+Ability: Drought
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FIRE_BLAST
+- MOVE_SOLAR_BEAM
+- MOVE_WILL_O_WISP
+- MOVE_NASTY_PLOT
+
+SPECIES_HOUNDOOM @ ITEM_BLACK_GLASSES
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FIRE_BLAST
+- MOVE_DARK_PULSE
+- MOVE_SLUDGE_BOMB
+- MOVE_NASTY_PLOT
+
+SPECIES_CAMERUPT @ ITEM_LUM_BERRY
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_ERUPTION
+- MOVE_EARTH_POWER
+- MOVE_ROCK_SLIDE
+- MOVE_FLAMETHROWER
+
+SPECIES_TORKOAL @ ITEM_LEFTOVERS
+Ability: Drought
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_ERUPTION
+- MOVE_OVERHEAT
+- MOVE_EARTH_POWER
+- MOVE_YAWN
+
+=== TRAINER_LEADER_WINONA_HNS ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Hg Girl 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Light Blue
+Items: Hyper Potion / Hyper Potion
+
+SPECIES_PIDGEOT
+Level: Badge+6
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_WING_ATTACK
+- MOVE_QUICK_ATTACK
+- MOVE_FEATHER_DANCE
+- MOVE_AERIAL_ACE
+
+SPECIES_MANTINE
+Level: Badge+7
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_WATER_PULSE
+- MOVE_AERIAL_ACE
+- MOVE_SUPERSONIC
+- MOVE_PROTECT
+
+SPECIES_TROPIUS
+Level: Badge+7
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_SUNNY_DAY
+- MOVE_AERIAL_ACE
+- MOVE_SOLAR_BEAM
+- MOVE_EARTHQUAKE
+
+SPECIES_SKARMORY @ ITEM_SITRUS_BERRY
+Level: Badge+8
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_STEEL_WING
+- MOVE_AIR_CUTTER
+- MOVE_SAND_ATTACK
+- MOVE_AERIAL_ACE
+
+SPECIES_ALTARIA @ ITEM_SHARP_BEAK
+Level: Badge+9
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_DRAGON_BREATH
+- MOVE_AERIAL_ACE
+- MOVE_EARTHQUAKE
+- MOVE_ROOST
+
+=== TRAINER_LEADER_TATE_AND_LIZA_HNS ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Hg Boy 1
+Double Battle: Yes
+AI: Smart Trainer
+Mugshot: Pink
+Items: Full Restore / Full Restore
+
+SPECIES_XATU @ ITEM_LIGHT_CLAY
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_PSYCHIC
+- MOVE_AIR_SLASH
+- MOVE_TAILWIND
+- MOVE_REFLECT
+
+SPECIES_SLOWKING @ ITEM_LEFTOVERS
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_FLAMETHROWER
+- MOVE_ICE_BEAM
+
+SPECIES_CLAYDOL @ ITEM_SITRUS_BERRY
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_EARTHQUAKE
+- MOVE_PSYCHIC
+- MOVE_ICE_BEAM
+- MOVE_LIGHT_SCREEN
+
+SPECIES_GARDEVOIR @ ITEM_WISE_GLASSES
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_PSYCHIC
+- MOVE_DAZZLING_GLEAM
+- MOVE_THUNDERBOLT
+- MOVE_SHADOW_BALL
+
+SPECIES_SOLROCK @ ITEM_LIFE_ORB
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_ROCK_SLIDE
+- MOVE_PSYCHO_CUT
+- MOVE_EARTHQUAKE
+- MOVE_FLARE_BLITZ
+
+SPECIES_LUNATONE @ ITEM_LEFTOVERS
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_PSYCHIC
+- MOVE_MOONBLAST
+- MOVE_ICE_BEAM
+- MOVE_EARTH_POWER
+
+=== TRAINER_LEADER_WALLACE_HNS ===
+Name: WALLACE
+Class: Leader
+Pic: Champion Wallace
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Purple
+Items: Full Restore / Full Restore
+
+SPECIES_WAILORD @ ITEM_MYSTIC_WATER
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WATER_SPOUT
+- MOVE_ICE_BEAM
+- MOVE_EARTHQUAKE
+- MOVE_REST
+
+SPECIES_TENTACRUEL @ ITEM_BLACK_SLUDGE
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_HYDRO_PUMP
+- MOVE_SLUDGE_BOMB
+- MOVE_ICE_BEAM
+- MOVE_TOXIC
+
+SPECIES_LUDICOLO @ ITEM_DAMP_ROCK
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SURF
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_RAIN_DANCE
+
+SPECIES_WHISCASH @ ITEM_SITRUS_BERRY
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WATERFALL
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_DANCE
+- MOVE_ZEN_HEADBUTT
+
+SPECIES_GYARADOS @ ITEM_LUM_BERRY
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_WATERFALL
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_DANCE
+- MOVE_ICE_FANG
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SURF
+- MOVE_ICE_BEAM
+- MOVE_RECOVER
+- MOVE_DRAGON_PULSE
+
+=== TRAINER_CHALLENGER_NORMAN_HNS ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Green
+Items: Full Restore / Full Restore
+
+SPECIES_AMBIPOM @ ITEM_KINGS_ROCK
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FAKE_OUT
+- MOVE_DOUBLE_HIT
+- MOVE_SHADOW_CLAW
+- MOVE_ICE_PUNCH
+
+SPECIES_URSARING @ ITEM_FLAME_ORB
+Ability: Guts
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FACADE
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_SWORDS_DANCE
+
+SPECIES_FARIGIRAF @ ITEM_SITRUS_BERRY
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_PSYCHIC
+- MOVE_THUNDERBOLT
+- MOVE_SHADOW_BALL
+- MOVE_CALM_MIND
+
+SPECIES_KANGASKHAN @ ITEM_LEFTOVERS
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FAKE_OUT
+- MOVE_DOUBLE_EDGE
+- MOVE_EARTHQUAKE
+- MOVE_CRUNCH
+
+SPECIES_VIGOROTH @ ITEM_EVIOLITE
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_BULK_UP
+- MOVE_SLASH
+- MOVE_ROCK_SLIDE
+- MOVE_BRICK_BREAK
+
+SPECIES_SLAKING @ ITEM_SILK_SCARF
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_DOUBLE_EDGE
+- MOVE_EARTHQUAKE
+- MOVE_HAMMER_ARM
+- MOVE_SLACK_OFF
+
+=== TRAINER_CHALLENGER_WINONA_HNS ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Hg Girl 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Light Blue
+Items: Full Restore / Full Restore
+
+SPECIES_TOGEKISS @ ITEM_SHARP_BEAK
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_HURRICANE
+- MOVE_AURA_SPHERE
+- MOVE_ROOST
+- MOVE_ESPER_WING
+
+SPECIES_GYARADOS @ ITEM_LEFTOVERS
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_AVALANCHE
+- MOVE_EARTHQUAKE
+- MOVE_BOUNCE
+- MOVE_DRAGON_DANCE
+
+SPECIES_TROPIUS @ ITEM_SITRUS_BERRY
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_LEAF_BLADE
+- MOVE_AIR_SLASH
+- MOVE_EARTHQUAKE
+- MOVE_SYNTHESIS
+
+SPECIES_CHARIZARD @ ITEM_CHARCOAL
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_AERIAL_ACE
+- MOVE_OVERHEAT
+- MOVE_DRAGON_DANCE
+- MOVE_EARTHQUAKE
+
+SPECIES_SKARMORY @ ITEM_ROCKY_HELMET
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_STEEL_WING
+- MOVE_SPIKES
+- MOVE_ROOST
+
+SPECIES_ALTARIA @ ITEM_LUM_BERRY
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_ICE_BEAM
+- MOVE_ROOST
+
+=== TRAINER_CHALLENGER_LANCE_HNS ===
+Name: LANCE
+Class: Champion Hns
+Pic: Champion Lance Hns
+Gender: Male
+Music: Hg Champion
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Items: Full Restore / Full Restore
+
+SPECIES_AERODACTYL @ ITEM_SCOPE_LENS
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_ROCK_SLIDE
+- MOVE_EARTHQUAKE
+- MOVE_IRON_TAIL
+
+SPECIES_EELEKTROSS @ ITEM_LEFTOVERS
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDERBOLT
+- MOVE_DRAGON_CLAW
+- MOVE_FLAMETHROWER
+- MOVE_HYPER_BEAM
+
+SPECIES_AEGISLASH @ ITEM_KINGS_ROCK
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SHADOW_BALL
+- MOVE_FLASH_CANNON
+- MOVE_KINGS_SHIELD
+- MOVE_BRICK_BREAK
+
+SPECIES_AERODACTYL @ ITEM_SCOPE_LENS
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_BRAVE_BIRD
+- MOVE_ROCK_SLIDE
+- MOVE_EARTHQUAKE
+- MOVE_IRON_TAIL
+
+SPECIES_HAXORUS @ ITEM_SILK_SCARF
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_OUTRAGE
+- MOVE_EARTHQUAKE
+- MOVE_BRICK_BREAK
+- MOVE_GIGA_IMPACT
+
+SPECIES_DRAGONITE @ ITEM_WISE_GLASSES
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_OUTRAGE
+- MOVE_BLIZZARD
+- MOVE_THUNDER
+- MOVE_FIRE_BLAST
+
+SPECIES_DRAGONITE @ ITEM_DRAGON_FANG
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_OUTRAGE
+- MOVE_EXTREME_SPEED
+- MOVE_EARTHQUAKE
+- MOVE_DRAGON_DANCE
+
+=== TRAINER_CHALLENGER_EUSINE_HNS ===
+Name: EUSINE
+Class: Mystery Man Hns
+Pic: Eusine Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Yellow
+Items: Full Restore / Full Restore
+
+SPECIES_HYPNO @ ITEM_LEFTOVERS
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_PSYCHIC
+- MOVE_HYPNOSIS
+- MOVE_SHADOW_BALL
+- MOVE_NASTY_PLOT
+
+SPECIES_ELECTRODE @ ITEM_LIGHT_CLAY
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDER
+- MOVE_EXPLOSION
+- MOVE_LIGHT_SCREEN
+- MOVE_THUNDER_WAVE
+
+SPECIES_STARMIE @ ITEM_SITRUS_BERRY
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SURF
+- MOVE_PSYCHIC
+- MOVE_THUNDERBOLT
+- MOVE_ICE_BEAM
+
+SPECIES_SMEARGLE @ ITEM_FOCUS_SASH
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FLY
+- MOVE_SPORE
+- MOVE_MEAN_LOOK
+- MOVE_ENERGY_BALL
+
+SPECIES_GENGAR @ ITEM_SPELL_TAG
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SHADOW_BALL
+- MOVE_SLUDGE_BOMB
+- MOVE_THUNDERBOLT
+- MOVE_HYPNOSIS
+
+SPECIES_ESPEON @ ITEM_TWISTED_SPOON
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_PSYCHIC
+- MOVE_SHADOW_BALL
+- MOVE_CALM_MIND
+- MOVE_MORNING_SUN
+
+=== TRAINER_CHALLENGER_GIOVANNI_HNS ===
+Name: GIOVANNI
+Class: Rocket Admin Hns
+Pic: Giovanni Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Dark Red
+Items: Full Restore / Full Restore / Full Restore
+
+SPECIES_PERSIAN @ ITEM_SCOPE_LENS
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_NIGHT_SLASH
+- MOVE_PLAY_ROUGH
+- MOVE_FAKE_OUT
+- MOVE_HYPNOSIS
+
+SPECIES_HONCHKROW @ ITEM_BLACK_GLASSES
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_DARK_PULSE
+- MOVE_AERIAL_ACE
+- MOVE_KNOCK_OFF
+- MOVE_ROOST
+
+SPECIES_DUGTRIO @ ITEM_SOFT_SAND
+Ability: Arena Trap
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_EARTHQUAKE
+- MOVE_ROCK_SLIDE
+- MOVE_SHADOW_CLAW
+- MOVE_SWORDS_DANCE
+
+SPECIES_NIDOQUEEN @ ITEM_LEFTOVERS
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_EARTH_POWER
+- MOVE_SLUDGE_BOMB
+- MOVE_ICE_BEAM
+- MOVE_THUNDERBOLT
+
+SPECIES_NIDOKING @ ITEM_POISON_BARB
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_EARTHQUAKE
+- MOVE_MEGAHORN
+- MOVE_SLUDGE_BOMB
+- MOVE_THUNDERBOLT
+
+SPECIES_RHYPERIOR @ ITEM_HARD_STONE
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_ROCK_WRECKER
+- MOVE_EARTHQUAKE
+- MOVE_MEGAHORN
+- MOVE_HAMMER_ARM
+
+=== TRAINER_CHALLENGER_CLAIR_HNS ===
+Name: CLAIR
+Class: Leader Hns
+Pic: Leader Clair Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Blue
+Items: Full Restore / Full Restore
+
+SPECIES_ALTARIA @ ITEM_SHARP_BEAK
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FLAMETHROWER
+- MOVE_EARTHQUAKE
+- MOVE_FLY
+- MOVE_DRAGON_BREATH
+
+SPECIES_GYARADOS @ ITEM_FOCUS_BAND
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_CRUNCH
+- MOVE_WATERFALL
+- MOVE_HURRICANE
+- MOVE_EARTHQUAKE
+
+SPECIES_DRAGONAIR @ ITEM_EVIOLITE
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_THUNDER_WAVE
+- MOVE_THUNDERBOLT
+- MOVE_SURF
+- MOVE_DRAGON_BREATH
+
+SPECIES_DUNLONG @ ITEM_DRAGON_FANG
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_DRAGON_PULSE
+- MOVE_ICE_BEAM
+- MOVE_EARTH_POWER
+- MOVE_THUNDERBOLT
+
+SPECIES_SALAMENCE @ ITEM_LUM_BERRY
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_DRAGON_CLAW
+- MOVE_EARTHQUAKE
+- MOVE_FIRE_BLAST
+- MOVE_DRAGON_DANCE
+
+SPECIES_KINGDRA @ ITEM_LEFTOVERS
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_DRAGON_PULSE
+- MOVE_SURF
+- MOVE_ICE_BEAM
+- MOVE_RAIN_DANCE
+
+=== TRAINER_CHALLENGER_CYNTHIA_HNS ===
+Name: CYNTHIA
+Class: Pkmn Trainer 1 Hns
+Pic: Cynthia Hns
+Gender: Female
+Music: Hg Champion
+Double Battle: No
+AI: Smart Trainer
+Items: Full Restore / Full Restore
+
+Spiritomb @ Leftovers
+Ability: Technician
+Level: 81
+EVs: 4 HP / 252 Def / 252 SpD
+Modest Nature
+- Dark Pulse
+- Ominous Wind
+- Silver Wind
+- Shock Wave
+
+Lucario @ Black Belt
+Ability: Justified
+Level: 83
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Aura Sphere
+- Psychic
+- Earthquake
+- Extreme Speed
+
+Togekiss @ Wise Glasses
+Ability: Serene Grace
+Level: 82
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Aura Sphere
+- Air Slash
+- Moonblast
+- Esper Wing
+
+Milotic @ Chesto Berry
+Ability: Marvel Scale
+Level: 82
+EVs: 252 HP / 16 SpA / 240 Def
+Bold Nature
+- Scald
+- Ice Beam
+- Dragon Pulse
+- Rest
+
+Roserade @ Miracle Seed
+Ability: Natural Cure
+Level: 81
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Energy Ball
+- Sludge Bomb
+- Shadow Ball
+- Extrasensory
+
+Garchomp @ Muscle Band
+Ability: Rough Skin
+Level: 85
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Dragon Claw
+- Brick Break
+- Earthquake
+- Giga Impact
+
+=== TRAINER_CHALLENGER_IRIS_HNS ===
+Name: IRIS
+Class: Pkmn Trainer 1 Hns
+Pic: Iris Hns
+Gender: Female
+Music: Hg Champion
+Double Battle: No
+AI: Smart Trainer
+Items: Full Restore / Full Restore
+
+Hydreigon @ Lum Berry
+Ability: Levitate
+Level: 81
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Dragon Pulse
+- Surf
+- Dark Pulse
+- Flamethrower
+
+Mienshao @ Flying Gem
+Ability: Inner Focus
+Level: 81
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Rock Slide
+- Acrobatics
+- High Jump Kick
+- Fake Out
+
+Charizard @ Sitrus Berry
+Ability: Blaze
+Level: 82
+EVs: 252 HP / 4 SpA / 252 SpD
+Adamant Nature
+- Dragon Claw
+- Dragon Dance
+- Fire Punch
+- Shadow Claw
+
+Aggron @ Hard Stone
+Ability: Sturdy
+Level: 82
+EVs: 4 HP / 252 SpD / 252 Def
+Adamant Nature
+- Iron Head
+- Rock Slide
+- Ice Punch
+- Metal Burst
+
+Lapras @ Chesto Berry
+Ability: Water Absorb
+Level: 83
+EVs: 252 HP / 4 Def / 252 SpA
+Bold Nature
+- Ice Beam
+- Surf
+- Thunderbolt
+- Rest
+
+Haxorus @ Dragon Fang
+Ability: Mold Breaker
+Level: 85
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Dragon Dance
+- Outrage
+- Earthquake
+- Brick Break
+
+=== TRAINER_CHALLENGER_ALDER_HNS ===
+Name: ALDER
+Class: Expert Hns
+Pic: Expert M
+Gender: Male
+Music: Hg Champion
+Double Battle: No
+AI: Smart Trainer
+Mugshot: Orange
+Items: Full Restore / Full Restore
+
+Scizor @ Metal Coat
+Ability: Sharpness
+Level: 81
+EVs: 248 HP / 252 Atk / 8 SpD
+Adamant Nature
+- MOVE_METAL_CLAW
+- X Scissor
+- Swords Dance
+- Roost
+
+Drapion @ Black Sludge
+Ability: Sharpness
+Level: 81
+EVs: 252 HP / 4 Spe / 252 SpD
+Jolly Nature
+- Cross Poison
+- Night Slash
+- Rock Slide
+- MOVE_AGILITY
+
+Flygon @ Dragon Gem
+Ability: Levitate
+Level: 82
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Claw
+- MOVE_BUG_BITE
+- Earthquake
+- Fire Punch
+
+Vanilluxe @ Wise Glasses
+Ability: Weak Armor
+Level: 82
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Blizzard
+- Flash Cannon
+- Milk Drink
+- Water Pulse
+
+Tauros @ Silk Scarf
+Ability: Sheer Force
+Level: 83
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Double Edge
+- Zen Headbutt
+- Rock Slide
+- Earthquake
+
+Volcarona @ Charcoal
+Ability: Flame Body
+Level: 85
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Fiery Dance
+- Bug Buzz
+- Quiver Dance
+- Giga Drain
+
+=== TRAINER_CHALLENGER_STEVEN_HNS ===
+Name: STEVEN
+Class: Pkmn Trainer 1 Hns
+Pic: Steven
+Music: Hg Champion
+Gender: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Items: Full Restore / Full Restore
+Mugshot: Orange
+
+Skarmory @ Covert Cloak  
+Ability: Sturdy  
+Level: 81
+EVs: 8 HP / 252 Atk / 248 Def  
+Adamant Nature  
+- MOVE_IRON_DEFENSE  
+- Brave Bird  
+- MOVE_STEEL_WING  
+- Spikes
+
+Omastar @ Sitrus Berry  
+Ability: Solid Rock  
+Level: 81
+EVs: 128 Def / 40 SpA / 252 SpD  
+Relaxed Nature  
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Hydro Pump  
+- Meteor Beam  
+- Brine  
+- Toxic Spikes
+
+Claydol @ Light Clay  
+Ability: Levitate  
+Level: 82
+EVs: 248 HP / 252 SpA / 8 SpD  
+Modest Nature  
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Light Screen  
+- Reflect  
+- MOVE_EXTRASENSORY  
+- Earth Power
+
+Aggron @ Rocky Helmet  
+Ability: Heavy Metal  
+Level: 82
+EVs: 4 HP / 248 Atk / 252 Def / 4 SpD  
+Adamant Nature  
+- MOVE_IRON_TAIL  
+- Body Press  
+- Curse  
+- Rock Slide
+
+Kleavor @ Scope Lens  
+Ability: Sharpness  
+Level: 83
+EVs: 124 Atk / 132 Def / 252 Spe  
+Adamant Nature  
+- Stone Axe  
+- X-Scissor  
+- MOVE_ROCK_SLIDE  
+- Double Team
+
+Metagross @ Metal Coat  
+Ability: Clear Body  
+Level: 85
+EVs: 128 HP / 120 Atk / 4 Def / 252 SpD  
+Brave Nature  
+- MOVE_METAL_CLAW  
+- Meteor Mash  
+- MOVE_PSYCHO_CUT  
+- Cosmic Power

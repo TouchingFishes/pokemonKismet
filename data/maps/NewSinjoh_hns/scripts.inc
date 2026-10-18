@@ -31,12 +31,12 @@ NewSinjoh_EventScript_PetStantler::
 NewSinjoh_Text_Stantler_Cry:
     .string "Lerrrrr!$"
 
-NewSinjoh_EventScript_Steven::
-	msgbox NewSinjoh_Text_Steven, MSGBOX_AUTOCLOSE
+NewSinjoh_EventScript_Cynthia::
+	msgbox NewSinjoh_Text_Cynthia, MSGBOX_AUTOCLOSE
 	end
 
-NewSinjoh_Text_Steven:
-	.string "STEVEN: Ma'am, may I help you to\n"
+NewSinjoh_Text_Cynthia:
+	.string "CYNTHIA: Ma'am, may I help you to\n"
 	.string "the spring over there?\p"
 	.string "It seems there is plenty of room.$"
 
@@ -210,11 +210,11 @@ NewSinjoh_Text_OldLady1:
 	.string "invigorate this old soul.$"
 
 NewSinjoh_EventScript_OldLady2::
-	goto_if_ge VAR_SINJOH_STORYLINE, 13, NewSinjoh_EventScript_OldLady2Steven
+	goto_if_ge VAR_SINJOH_STORYLINE, 13, NewSinjoh_EventScript_OldLady2Cynthia
 	msgbox NewSinjoh_Text_OldLady2, MSGBOX_NPC
 	end
-NewSinjoh_EventScript_OldLady2Steven::
-	msgbox NewSinjoh_Text_OldLady2Steven, MSGBOX_NPC
+NewSinjoh_EventScript_OldLady2Cynthia::
+	msgbox NewSinjoh_Text_OldLady2Cynthia, MSGBOX_NPC
 	end
 
 NewSinjoh_Text_OldLady2:
@@ -222,8 +222,8 @@ NewSinjoh_Text_OldLady2:
 	.string "are hogging our hot springs!\p"
 	.string "It's been one bad thing after\n"
 	.string "another lately!$"
-NewSinjoh_Text_OldLady2Steven:
-	.string "What a handsome young man!\p"
+NewSinjoh_Text_OldLady2Cynthia:
+	.string "What a lovely young woman!\p"
 	.string "Maybe these tourists aren't\n"
 	.string "so bad after all.$"
 

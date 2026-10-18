@@ -5,6 +5,7 @@ RuinsOfAlph_Outside_hns_MapScripts::
 
 RuinsOfAlph_Outside_OnTransition: 
 	callnative SetTimeBasedEncounters
+	call_if_unset FLAG_IS_KANTO_CHAMPION, RuinsOfAlph_Outside_EventScript_HideHoennLeader
 	end	
 
 RuinsOfAlph_Outside_EventScript_Quagsire::
@@ -204,3 +205,67 @@ RuinsOfAlph_Outside_Text_HunterAfter:
 RuinsOfAlph_Outside_EventScript_TmCosmicPower::
 	finditem ITEM_TM_COSMIC_POWER
 	end
+
+RuinsOfAlph_Outside_EventScript_HideHoennLeader:
+	setflag FLAG_TEMP_HIDE_HOENN_LEADER
+	return
+
+RuinsOfAlph_Outside_EventScript_TateAndLiza::
+	lock
+	goto_if_defeated TRAINER_LEADER_TATE_AND_LIZA_HNS, RuinsOfAlph_Outside_EventScript_TateAndLizaAfter
+	playse SE_PIN
+	applymovement LOCALID_RUINS_OF_ALPH_TATE, Common_Movement_ExclamationMark
+	applymovement LOCALID_RUINS_OF_ALPH_LIZA, Common_Movement_ExclamationMark
+	waitmovement LOCALID_RUINS_OF_ALPH_LIZA
+	faceplayer
+	msgbox RuinsOfAlph_Outside_Text_TateAndLizaIntro, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, CountPartyAliveNonEggMons
+	goto_if_lt VAR_RESULT, 2, RuinsOfAlph_Outside_EventScript_TateAndLizaNotEnough
+	trainerbattle_no_intro TRAINER_LEADER_TATE_AND_LIZA_HNS, RuinsOfAlph_Outside_Text_TateAndLizaDefeat
+	msgbox RuinsOfAlph_Outside_Text_TateAndLizaPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+RuinsOfAlph_Outside_EventScript_TateAndLizaNotEnough:
+	msgbox RuinsOfAlph_Outside_Text_TateAndLizaNotEnough, MSGBOX_DEFAULT
+	release
+	end
+
+RuinsOfAlph_Outside_EventScript_TateAndLizaAfter:
+	faceplayer
+	msgbox RuinsOfAlph_Outside_Text_TateAndLizaAfter, MSGBOX_DEFAULT
+	release
+	end
+
+RuinsOfAlph_Outside_Text_TateAndLizaIntro:
+	.string "TATE: Hehehe… Were you surprised?\p"
+	.string "LIZA: Fufufu… We felt you coming.\p"
+	.string "TATE: We're TATE and LIZA, the GYM\n"
+	.string "LEADERS of MOSSDEEP CITY!\p"
+	.string "LIZA: The UNOWN here feel so\n"
+	.string "mysterious…\p"
+	.string "TATE: …and so do you, CHAMPION!\p"
+	.string "LIZA: Let's see if you can beat our\n"
+	.string "combination!$"
+
+RuinsOfAlph_Outside_Text_TateAndLizaNotEnough:
+	.string "TATE: Two of us…\n"
+	.string "LIZA: …and only one of you?\p"
+	.string "TATE: Come back with two POKéMON\n"
+	.string "that can still battle!$"
+
+RuinsOfAlph_Outside_Text_TateAndLizaDefeat:
+	.string "TATE: What?! Our combination…\n"
+	.string "LIZA: …was beaten!$"
+
+RuinsOfAlph_Outside_Text_TateAndLizaPostBattle:
+	.string "TATE: You read our minds better\n"
+	.string "than we read yours.\p"
+	.string "LIZA: We'll train hard and come\n"
+	.string "challenge you at the LEAGUE!$"
+
+RuinsOfAlph_Outside_Text_TateAndLizaAfter:
+	.string "TATE: LIZA and I always know what\n"
+	.string "the other is thinking.\p"
+	.string "LIZA: But we couldn't read you at\n"
+	.string "all!$"

@@ -8,6 +8,12 @@
 #define FLAG_SHINY_STARTER_1    FLAG_TEMP_4
 #define FLAG_SHINY_STARTER_2    FLAG_TEMP_5
 #define FLAG_SHINY_STARTER_3    FLAG_TEMP_6
+// A HOENN GYM LEADER's object while that leader is not due yet (the KANTO title; WINONA: the
+// fourth badge). Set in the map's ON_TRANSITION, so it costs no saved flag. FLAG_TEMP_9 is
+// unused tree-wide; E (followers), 1 and 11 have global meanings. MIGRATION_DECISIONS.md 81.
+#define FLAG_TEMP_HIDE_HOENN_LEADER     FLAG_TEMP_9
+// The CHAMPION's ROOM's two challenger objects, shown by addobject during a title defense.
+#define FLAG_TEMP_HIDE_CHALLENGER       FLAG_TEMP_9
 
 // Content flags (0x22 – 0x4FF)
 
@@ -945,11 +951,11 @@
 #define FLAG_HIDE_HOTSPRINGS_NOBLE_URSALUNA                     (HNS_EXTENDED_CONTENT_START + 53)
 #define FLAG_HIDE_ROUTE50_NOBLE_ELECTRODE                     (HNS_EXTENDED_CONTENT_START + 54)
 #define FLAG_HIDE_ROUTE50_NOBLE_KLEAVOR                     (HNS_EXTENDED_CONTENT_START + 55)
-#define FLAG_HIDE_SINJOHRUINS_STEVEN                     (HNS_EXTENDED_CONTENT_START + 56)
-#define FLAG_HIDE_SINJOHRUINS_LAB_STEVEN                     (HNS_EXTENDED_CONTENT_START + 57)
+#define FLAG_HIDE_SINJOHRUINS_CYNTHIA                     (HNS_EXTENDED_CONTENT_START + 56)
+#define FLAG_HIDE_SINJOHRUINS_LAB_CYNTHIA                     (HNS_EXTENDED_CONTENT_START + 57)
 #define FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_ARCEUS                     (HNS_EXTENDED_CONTENT_START + 58)
-#define FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_STEVEN                  (HNS_EXTENDED_CONTENT_START + 59)
-#define FLAG_HIDE_NEWSINJOH_STEVEN                   (HNS_EXTENDED_CONTENT_START + 60)
+#define FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_CYNTHIA                  (HNS_EXTENDED_CONTENT_START + 59)
+#define FLAG_HIDE_NEWSINJOH_CYNTHIA                   (HNS_EXTENDED_CONTENT_START + 60)
 
 #define FLAG_BROUGHT_REGICE                    (HNS_EXTENDED_CONTENT_START + 61)
 #define FLAG_BROUGHT_REGIROCK                    (HNS_EXTENDED_CONTENT_START + 62)

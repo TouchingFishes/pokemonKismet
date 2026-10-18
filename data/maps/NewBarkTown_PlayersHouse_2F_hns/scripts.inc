@@ -81,6 +81,8 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @   DOLL SHRINE - resets the MIMIKYU hide-and-seek and warps to the shrine in
 @             DAODAO's ETERNA FOREST (MIGRATION_DECISIONS.md 60).
 @   ROCKET LAB - any of the DAODAO lab's four steps, the earlier ones marked done.
+@   CHALLENGERS - the KANTO title, all 16 badges and every CHAMPION's ROOM challenger's
+@             unlock battle, then the CHAMPION's ROOM door (MIGRATION_DECISIONS.md 81).
 @
 @ Talking to him at all opens the start menu's POKeDEX, and its POKeMON entry once the player
 @ has a POKeMON (TestMenuFlags), so a save that used him early can look at both like any other.
@@ -98,8 +100,8 @@ NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	call NewBarkTown_PlayersHouse_2F_EventScript_TestMenuFlags
 	message NewBarkTown_PlayersHouse_2F_Text_TestAsk
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptOlivineGate, NewBarkTown_PlayersHouse_2F_Text_TestOptKimono, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptRocketLab, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
-	goto_if_ge VAR_RESULT, 7, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptOlivineGate, NewBarkTown_PlayersHouse_2F_Text_TestOptKimono, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptRocketLab, NewBarkTown_PlayersHouse_2F_Text_TestOptChallengers, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
+	goto_if_ge VAR_RESULT, 8, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
 	copyvar VAR_0x8006, VAR_RESULT
 	msgbox NewBarkTown_PlayersHouse_2F_Text_TestKitAsk, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_TestBasics
@@ -109,6 +111,7 @@ NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	goto_if_eq VAR_0x8006, 3, NewBarkTown_PlayersHouse_2F_EventScript_KimonoTest
 	goto_if_eq VAR_0x8006, 5, NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest
 	goto_if_eq VAR_0x8006, 6, NewBarkTown_PlayersHouse_2F_EventScript_RocketLabTest
+	goto_if_eq VAR_0x8006, 7, NewBarkTown_PlayersHouse_2F_EventScript_ChallengersTest
 	goto NewBarkTown_PlayersHouse_2F_EventScript_FoxfireTest
 
 @ The start menu shows POKeDEX on FLAG_SYS_POKEDEX_GET and POKeMON on FLAG_SYS_POKEMON_GET
@@ -207,6 +210,57 @@ NewBarkTown_PlayersHouse_2F_EventScript_LabGenesect::
 	setflag FLAG_DEFEATED_DAODAO_LAB_GIOVANNI
 	settrainerflag TRAINER_GIOVANNI_LAB_HNS
 	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_HNS, 5, 5
+	waitstate
+	end
+
+@ The CHAMPION's ROOM title defense. Sets the KANTO title, all 16 badges and every challenger's
+@ unlock battle, so the whole pool of 18 is open, then lands at the CHAMPION's ROOM door: the
+@ room walks the player in and picks a challenger at random, a fresh pick per visit. Side
+@ effects, as with every stage: those trainers count as beaten on this save, and DAODAO's
+@ GIANT'S REST STEVEN (FLAG_DEFEATED_DAODAO_STEVEN) goes home.
+NewBarkTown_PlayersHouse_2F_EventScript_ChallengersTest::
+	msgbox NewBarkTown_PlayersHouse_2F_Text_TestPartyAsk, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty
+	special HealPlayerParty
+	setflag FLAG_IS_CHAMPION
+	setflag FLAG_IS_KANTO_CHAMPION
+	setflag FLAG_BADGE01_GET
+	setflag FLAG_BADGE02_GET
+	setflag FLAG_BADGE03_GET
+	setflag FLAG_BADGE04_GET
+	setflag FLAG_BADGE05_GET
+	setflag FLAG_BADGE06_GET
+	setflag FLAG_BADGE07_GET
+	setflag FLAG_BADGE08_GET
+	setflag FLAG_BADGE09_GET
+	setflag FLAG_BADGE10_GET
+	setflag FLAG_BADGE11_GET
+	setflag FLAG_BADGE12_GET
+	setflag FLAG_BADGE13_GET
+	setflag FLAG_BADGE14_GET
+	setflag FLAG_BADGE15_GET
+	setflag FLAG_BADGE16_GET
+	setvar VAR_NUM_BADGES, 16
+	settrainerflag TRAINER_CYNTHIA_HNS
+	settrainerflag TRAINER_EUSINE_HNS
+	settrainerflag TRAINER_GIOVANNI_LAB_HNS
+	settrainerflag TRAINER_GREEN_HNS
+	settrainerflag TRAINER_BLUE_HNS
+	settrainerflag TRAINER_CLAIR_2_HNS
+	settrainerflag TRAINER_IRIS_HNS
+	settrainerflag TRAINER_ALDER_HNS
+	setflag FLAG_DEFEATED_DAODAO_STEVEN
+	settrainerflag TRAINER_LEADER_ROXANNE_HNS
+	settrainerflag TRAINER_LEADER_BRAWLY_HNS
+	settrainerflag TRAINER_LEADER_WATTSON_HNS
+	settrainerflag TRAINER_LEADER_FLANNERY_HNS
+	settrainerflag TRAINER_LEADER_NORMAN_HNS
+	settrainerflag TRAINER_LEADER_WINONA_HNS
+	settrainerflag TRAINER_LEADER_TATE_AND_LIZA_HNS
+	settrainerflag TRAINER_LEADER_WALLACE_HNS
+	msgbox NewBarkTown_PlayersHouse_2F_Text_FoxfireGo, MSGBOX_DEFAULT
+	closemessage
+	warp MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM_HNS, 0
 	waitstate
 	end
 
@@ -500,6 +554,9 @@ NewBarkTown_PlayersHouse_2F_Text_TestPartyAsk:
 
 NewBarkTown_PlayersHouse_2F_Text_TestOptRocketLab:
 	.string "ROCKET LAB$"
+
+NewBarkTown_PlayersHouse_2F_Text_TestOptChallengers:
+	.string "CHAMPION's ROOM challengers$"
 
 NewBarkTown_PlayersHouse_2F_Text_TestOptCancel:
 	.string "Nothing$"

@@ -1,5 +1,14 @@
 CherrygroveBay_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CherrygroveBay_OnTransition
 	.byte 0
+
+CherrygroveBay_OnTransition:
+	call_if_unset FLAG_BADGE04_GET, CherrygroveBay_EventScript_HideHoennLeader
+	end
+
+CherrygroveBay_EventScript_HideHoennLeader:
+	setflag FLAG_TEMP_HIDE_HOENN_LEADER
+	return
 
 CherrygroveBay_EventScript_SwimmerMTyler::
 	trainerbattle_single TRAINER_TYLER_HNS, CherrygroveBay_Text_TylerIntro, CherrygroveBay_Text_TylerDefeat
@@ -136,3 +145,61 @@ CherrygroveBay_EventScript_Kilowattrel::
 
 CherrygroveBay_Text_Kilowattrel:
 	.string "KILOWATTREL: Kyaaaah!$"
+
+CherrygroveBay_EventScript_Winona::
+	lock
+	goto_if_defeated TRAINER_LEADER_WINONA_HNS, CherrygroveBay_EventScript_WinonaAfter
+	playmoncry SPECIES_ALTARIA, CRY_MODE_NORMAL
+	waitmoncry
+	faceplayer
+	goto_if_lt VAR_NUM_BADGES, 7, CherrygroveBay_EventScript_WinonaNotYet
+	msgbox CherrygroveBay_Text_WinonaIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_LEADER_WINONA_HNS, CherrygroveBay_Text_WinonaDefeat
+	msgbox CherrygroveBay_Text_WinonaPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+CherrygroveBay_EventScript_WinonaNotYet:
+	msgbox CherrygroveBay_Text_WinonaNotYet, MSGBOX_DEFAULT
+	release
+	end
+
+CherrygroveBay_EventScript_WinonaAfter:
+	faceplayer
+	msgbox CherrygroveBay_Text_WinonaAfter, MSGBOX_DEFAULT
+	release
+	end
+
+CherrygroveBay_Text_WinonaNotYet:
+	.string "The petals ride the wind so\n"
+	.string "gracefully here…\p"
+	.string "I am WINONA, the GYM LEADER of\n"
+	.string "FORTREE CITY in HOENN.\p"
+	.string "Your wings are still growing,\n"
+	.string "young trainer.\p"
+	.string "Come back once you have earned\n"
+	.string "seven BADGES, and we will fly.$"
+
+CherrygroveBay_Text_WinonaIntro:
+	.string "The petals ride the wind so\n"
+	.string "gracefully here…\p"
+	.string "I am WINONA, the GYM LEADER of\n"
+	.string "FORTREE CITY in HOENN.\p"
+	.string "I came to JOHTO to watch its birds\n"
+	.string "soar on new winds.\p"
+	.string "Your POKéMON have spirit.\n"
+	.string "Let us take to the skies!$"
+
+CherrygroveBay_Text_WinonaDefeat:
+	.string "Never before have I seen a trainer\n"
+	.string "command POKéMON so gracefully.$"
+
+CherrygroveBay_Text_WinonaPostBattle:
+	.string "Keep flying higher, and one day\n"
+	.string "you may soar above us all.\p"
+	.string "Perhaps we will meet again at\n"
+	.string "the POKéMON LEAGUE.$"
+
+CherrygroveBay_Text_WinonaAfter:
+	.string "When the wind blows through these\n"
+	.string "trees, even the petals fly.$"

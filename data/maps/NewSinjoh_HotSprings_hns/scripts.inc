@@ -1,5 +1,14 @@
 NewSinjoh_HotSprings_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, NewSinjoh_HotSprings_OnTransition
 	.byte 0
+
+NewSinjoh_HotSprings_OnTransition:
+	call_if_unset FLAG_IS_KANTO_CHAMPION, NewSinjoh_HotSprings_EventScript_HideHoennLeader
+	end
+
+NewSinjoh_HotSprings_EventScript_HideHoennLeader:
+	setflag FLAG_TEMP_HIDE_HOENN_LEADER
+	return
 
 NewSinjoh_HotSprings_EventScript_Item_MaxRevive::
     finditem ITEM_MAX_REVIVE
@@ -445,3 +454,56 @@ NewSinjoh_HotSprings_EventScript_UrsalunaRan::
 	clearflag FLAG_NO_SHINY
 	release
 	end
+
+NewSinjoh_HotSprings_EventScript_Flannery::
+	lock
+	goto_if_defeated TRAINER_LEADER_FLANNERY_HNS, NewSinjoh_HotSprings_EventScript_FlanneryAfter
+	faceplayer
+	msgbox NewSinjoh_HotSprings_Text_FlanneryIntro, MSGBOX_DEFAULT
+	setvar VAR_0x8004, 1  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 6  @ num shakes
+	setvar VAR_0x8007, 4  @ shake delay
+	special ShakeCamera
+	waitstate
+	msgbox NewSinjoh_HotSprings_Text_FlannerySeen, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_LEADER_FLANNERY_HNS, NewSinjoh_HotSprings_Text_FlanneryDefeat
+	msgbox NewSinjoh_HotSprings_Text_FlanneryPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+NewSinjoh_HotSprings_EventScript_FlanneryAfter:
+	faceplayer
+	msgbox NewSinjoh_HotSprings_Text_FlanneryAfter, MSGBOX_DEFAULT
+	release
+	end
+
+NewSinjoh_HotSprings_Text_FlanneryIntro:
+	.string "Hi there! Good to see someone else\n"
+	.string "exploring this place!\p"
+	.string "I'm FLANNERY, the GYM LEADER of\n"
+	.string "LAVARIDGE TOWN in HOENN.\p"
+	.string "I love humidity and hot springs,\n"
+	.string "so these springs feel like home!\p"
+	.string "Let's exchange superhot moves in a\n"
+	.string "battle!$"
+
+NewSinjoh_HotSprings_Text_FlannerySeen:
+	.string "I'll show you the hot moves I\n"
+	.string "honed close to a volcano!$"
+
+NewSinjoh_HotSprings_Text_FlanneryDefeat:
+	.string "Whew!\n"
+	.string "On the verge of eruption!$"
+
+NewSinjoh_HotSprings_Text_FlanneryPostBattle:
+	.string "I lost the match, but I'm\n"
+	.string "completely satisfied.\p"
+	.string "It's not often I get to enjoy a\n"
+	.string "battle this heated.\p"
+	.string "Let's have another one like this\n"
+	.string "sometime!$"
+
+NewSinjoh_HotSprings_Text_FlanneryAfter:
+	.string "These springs are perfect for\n"
+	.string "warming up before a battle!$"

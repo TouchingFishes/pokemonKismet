@@ -107,8 +107,8 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_SINJOHRUINS_LAB_STEVEN",
-      "graphics_id": "OBJ_EVENT_GFX_STEVEN_HNS",
+      "local_id": "LOCALID_SINJOHRUINS_LAB_CYNTHIA",
+      "graphics_id": "OBJ_EVENT_GFX_CYNTHIA_HNS",
       "x": 15,
       "y": 10,
       "elevation": 0,
@@ -117,8 +117,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SinjohRuins_Lab_EventScript_Steven",
-      "flag": "FLAG_HIDE_SINJOHRUINS_LAB_STEVEN"
+      "script": "SinjohRuins_Lab_EventScript_Cynthia",
+      "flag": "FLAG_HIDE_SINJOHRUINS_LAB_CYNTHIA"
     }
   ],
   "warp_events": [

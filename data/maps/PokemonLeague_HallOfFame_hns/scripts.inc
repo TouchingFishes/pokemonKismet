@@ -8,6 +8,7 @@ PokemonLeague_HallOfFame_OnFrame::
 
 PokemonLeague_HallOfFame_EventScript_Cutscene::
 	lock
+	goto_if_set FLAG_IS_KANTO_CHAMPION, PokemonLeague_HallOfFame_EventScript_CutsceneTitleDefense
 	goto_if_set FLAG_IS_CHAMPION, PokemonLeague_HallOfFame_EventScript_CutsceneKantoChamp
 	applymovement LOCALID_HALLOFFAME_LANCE, PokemonLeague_HallOfFame_Movement_LanceEnter
 	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_HallOfFame_Movement_PlayerEnter
@@ -37,6 +38,29 @@ PokemonLeague_HallOfFame_EventScript_CutsceneKantoChamp::
 	waitmovement OBJ_EVENT_ID_PLAYER
 	waitmovement LOCALID_HALLOFFAME_LANCE
 	msgbox PokemonLeague_HallOfFame_Rematch_LanceText, MSGBOX_DEFAULT
+	closemessage
+	special GivePartyMonChampionRibbon
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	delay 20
+	dofieldeffect FLDEFF_HALL_OF_FAME_RECORD_FRLG
+	waitfieldeffect FLDEFF_HALL_OF_FAME_RECORD_FRLG
+	delay 40
+	setvar VAR_TEMP_1, 1
+	call PokemonLeague_HallOfFame_EventScript_SetGameClearFlags
+	setrespawn HEAL_LOCATION_NEW_BARK_TOWN_HNS
+	fadescreenspeed FADE_TO_BLACK, 24
+	special GameClear
+	waitstate
+	releaseall
+	end
+
+PokemonLeague_HallOfFame_EventScript_CutsceneTitleDefense::
+	applymovement LOCALID_HALLOFFAME_LANCE, PokemonLeague_HallOfFame_Movement_LanceEnter
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_HallOfFame_Movement_PlayerEnter
+	waitmovement OBJ_EVENT_ID_PLAYER
+	waitmovement LOCALID_HALLOFFAME_LANCE
+	msgbox PokemonLeague_HallOfFame_TitleDefense_LanceText, MSGBOX_DEFAULT
 	closemessage
 	special GivePartyMonChampionRibbon
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
@@ -243,3 +267,11 @@ PokemonLeague_HallOfFame_Rematch_LanceText:
     .string "you, and your trusted partners,\l"
     .string "as champions once again.$"
 
+PokemonLeague_HallOfFame_TitleDefense_LanceText:
+	.string "LANCE: Another challenger has come\n"
+	.string "and gone, {PLAYER}.\p"
+	.string "Everyone who climbs those stairs\n"
+	.string "tests the CHAMPION anew…\p"
+	.string "and each time, you have answered.\p"
+	.string "Let us record this victory beside\n"
+	.string "the others.$"

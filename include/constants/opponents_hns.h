@@ -442,7 +442,7 @@
 #define TRAINER_JANINE_HNS                            429
 #define TRAINER_BLAINE_HNS                            430
 #define TRAINER_BLUE_HNS                              431
-#define TRAINER_BLUE_2_HNS                            432
+#define TRAINER_CHALLENGER_BLUE_HNS                   432
 #define TRAINER_WILL_1_HNS                            433
 #define TRAINER_WILL_2_HNS                            434
 #define TRAINER_BRUNO_1_HNS                           435
@@ -676,17 +676,18 @@
 #define TRAINER_RIVAL_FENNEKIN_5_HNS             649
 #define TRAINER_RIVAL_FENNEKIN_6_HNS             650
 #define TRAINER_RIVAL_FENNEKIN_7_HNS             651
-// ⚠️ SPARE, and safe to reuse in place. These were TRAINER_RIVAL_MUDKIP_1..7,
-// retired when Hoenn Water moved onto SQUIRTLE's party (Swampert now comes from
-// src/data/rival_aces_hns.party). Rival IDs' own flags are never set - see the
-// note on TRAINER_RESERVED_1_HNS below. Rename one here to use it.
-#define TRAINER_RESERVED_8_HNS                   652
-#define TRAINER_RESERVED_9_HNS                   653
-#define TRAINER_RESERVED_10_HNS                  654
-#define TRAINER_RESERVED_11_HNS                  655
-#define TRAINER_RESERVED_12_HNS                  656
-#define TRAINER_RESERVED_13_HNS                  657
-#define TRAINER_RESERVED_14_HNS                  658
+// These were TRAINER_RIVAL_MUDKIP_1..7, retired when Hoenn Water moved onto SQUIRTLE's
+// party (Swampert now comes from src/data/rival_aces_hns.party). Rival IDs' own flags are
+// never set - see the note on the TREECKO block below - so they were reused in place on
+// 2026-10-18 for the CHAMPION's ROOM title defense (MIGRATION_DECISIONS.md 81). Each is one
+// challenger's team there, fought with trainerbattle_no_intro; no gate reads these flags.
+#define TRAINER_CHALLENGER_LANCE_HNS             652
+#define TRAINER_CHALLENGER_CYNTHIA_HNS           653
+#define TRAINER_CHALLENGER_EUSINE_HNS            654
+#define TRAINER_CHALLENGER_GIOVANNI_HNS          655
+#define TRAINER_CHALLENGER_CLAIR_HNS             656
+#define TRAINER_CHALLENGER_IRIS_HNS              657
+#define TRAINER_CHALLENGER_ALDER_HNS             658
 #define TRAINER_RIVAL_PIPLUP_1_HNS               659
 #define TRAINER_RIVAL_PIPLUP_2_HNS               660
 #define TRAINER_RIVAL_PIPLUP_3_HNS               661
@@ -710,28 +711,30 @@
 #define TRAINER_RIVAL_FROAKIE_5_HNS              677
 #define TRAINER_RIVAL_FROAKIE_6_HNS              678
 #define TRAINER_RIVAL_FROAKIE_7_HNS              679
-// ⚠️ SPARE, and safe to reuse in place. These were TRAINER_RIVAL_TREECKO_1..7,
-// retired when Hoenn Grass moved onto TURTWIG's party (Sceptile now comes from
-// src/data/rival_aces_hns.party). Their flags have NEVER been set on any save:
-// rival defeat flags key on the script's Johto ID (GetTrainerAFlag,
-// src/battle_setup.c), never on a redirected one. Rename one here to use it;
-// do not delete them, or every trainer after 686 renumbers and its flag moves.
-#define TRAINER_RESERVED_1_HNS                   680
-#define TRAINER_RESERVED_2_HNS                   681
-#define TRAINER_RESERVED_3_HNS                   682
-#define TRAINER_RESERVED_4_HNS                   683
-#define TRAINER_RESERVED_5_HNS                   684
-#define TRAINER_RESERVED_6_HNS                   685
-#define TRAINER_RESERVED_7_HNS                   686
+// These were TRAINER_RIVAL_TREECKO_1..7, retired when Hoenn Grass moved onto TURTWIG's
+// party (Sceptile now comes from src/data/rival_aces_hns.party). Their flags had NEVER been
+// set on any save: rival defeat flags key on the script's Johto ID (GetTrainerAFlag,
+// src/battle_setup.c), never on a redirected one. Reused in place on 2026-10-18 for the
+// HOENN GYM LEADERS met in JOHTO and KANTO (MIGRATION_DECISIONS.md 81). WINONA's is her
+// CHERRYGROVE BAY team; the other six fight with the same team in the CHAMPION's ROOM.
+// Do not delete any of these IDs, or every trainer after them renumbers and its flag moves.
+#define TRAINER_LEADER_ROXANNE_HNS               680
+#define TRAINER_LEADER_BRAWLY_HNS                681
+#define TRAINER_LEADER_WATTSON_HNS               682
+#define TRAINER_LEADER_FLANNERY_HNS              683
+#define TRAINER_LEADER_WINONA_HNS                684
+#define TRAINER_LEADER_TATE_AND_LIZA_HNS         685
+#define TRAINER_LEADER_WALLACE_HNS               686
 // TURTWIG's rival family, unused since SILVER's regroup (2026-10-16: Hoenn, Sinnoh, Unova
 // and Kalos Grass all ride on CHIKORITA's party now). Same reasoning as the RESERVED blocks:
-// rival IDs' own flags were never set. Two went to new trainers on 2026-10-18; the rest are
-// spare - rename one here to use it.
+// rival IDs' own flags were never set. Two went to new trainers on 2026-10-18 and three to
+// CHAMPION's ROOM challengers the same day (MIGRATION_DECISIONS.md 81); RESERVED_18 and 19
+// are spare - rename one here to use it.
 #define TRAINER_PERCY_HNS                        687
 #define TRAINER_TRENT_HNS                        688
-#define TRAINER_RESERVED_15_HNS                  689
-#define TRAINER_RESERVED_16_HNS                  690
-#define TRAINER_RESERVED_17_HNS                  691
+#define TRAINER_CHALLENGER_STEVEN_HNS            689
+#define TRAINER_CHALLENGER_NORMAN_HNS            690
+#define TRAINER_CHALLENGER_WINONA_HNS            691
 #define TRAINER_RESERVED_18_HNS                  692
 #define TRAINER_RESERVED_19_HNS                  693
 #define TRAINER_ALEC_HNS                         694
@@ -858,10 +861,10 @@
 #define TRAINER_BRIX_HNS                              795
 #define TRAINER_PAXTON_HNS                            796
 
-// ⚠️ Steven's FIRST battle, not TRAINER_STEVEN_HNS (612). That one is the SINJOH
-// RUINS endgame Steven at L77-79 with a champion mugshot, and src/pokemon.c gives
-// it MUS_VS_CHAMPION. Reusing it here would set trainer flag 612 and silently
-// consume the Sinjoh battle. Two constants = two teams = two encounters.
+// ⚠️ Steven's FIRST battle, not TRAINER_STEVEN_HNS (612). That one is DAODAO's GIANT'S
+// REST Steven at L77-79 with a champion mugshot (it was also his SINJOH RUINS battle until
+// CYNTHIA took that over on 2026-10-18), and src/pokemon.c gives it MUS_VS_CHAMPION.
+// Two constants = two teams = two encounters.
 #define TRAINER_STEVEN_KANTO_HNS                      797
 #define TRAINER_NAOMI_HNS                             798
 #define TRAINER_ALEXA_HNS                             799
@@ -874,7 +877,9 @@
 #define TRAINER_NEWTON_HNS                            806
 #define TRAINER_HELENA_HNS                            807
 #define TRAINER_GREEN_HNS                             808
-#define TRAINER_GREEN_2_HNS                           809
+// Was TRAINER_GREEN_2_HNS, which had no party at all; GREEN's CHAMPION's ROOM team since
+// 2026-10-18 (MIGRATION_DECISIONS.md 81).
+#define TRAINER_CHALLENGER_GREEN_HNS                  809
 #define TRAINER_GIDEON_HNS                            810
 #define TRAINER_GIOVANNI_LAB_HNS                      811
 #define TRAINER_DAODAO_LAB_BIKER_1_HNS                812

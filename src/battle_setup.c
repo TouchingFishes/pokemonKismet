@@ -1089,8 +1089,9 @@ static u8 GetSumOfEnemyPartyLevel(u16 opponentId, u8 numMons)
     sum = 0;
 
     party = GetTrainerPartyFromId(opponentId);
+    // Badge-relative levels are LEVEL_BASED_ON_BADGE plus an offset; decode them first.
     for (i = 0; i < count && party != NULL; i++)
-        sum += party[i].lvl;
+        sum += GetScaledTrainerMonLevel(party[i].lvl);
 
     return sum;
 }

@@ -9,16 +9,16 @@ SinjohRuins_OnFrame::
 	.2byte 0
 
 SinjohRuins_hns_OnTransition::
-    call_if_eq VAR_SINJOH_STORYLINE, 9, SinjohRuins_StevenLanding
-    call_if_eq VAR_SINJOH_STORYLINE, 10, SinjohRuins_StevenLanding
-    call_if_eq VAR_SINJOH_STORYLINE, 11, SinjohRuins_StevenLanding
-    call_if_eq VAR_SINJOH_STORYLINE, 12, SinjohRuins_StevenLanding
+    call_if_eq VAR_SINJOH_STORYLINE, 9, SinjohRuins_CynthiaLanding
+    call_if_eq VAR_SINJOH_STORYLINE, 10, SinjohRuins_CynthiaLanding
+    call_if_eq VAR_SINJOH_STORYLINE, 11, SinjohRuins_CynthiaLanding
+    call_if_eq VAR_SINJOH_STORYLINE, 12, SinjohRuins_CynthiaLanding
     callnative SetTimeBasedEncounters
 	end
 
-SinjohRuins_StevenLanding::
-    setobjectxyperm LOCALID_SINJOHRUINS_STEVEN, 24, 31
-    setobjectmovementtype LOCALID_SINJOHRUINS_STEVEN, MOVEMENT_TYPE_FACE_UP
+SinjohRuins_CynthiaLanding::
+    setobjectxyperm LOCALID_SINJOHRUINS_CYNTHIA, 24, 31
+    setobjectmovementtype LOCALID_SINJOHRUINS_CYNTHIA, MOVEMENT_TYPE_FACE_UP
     return
 
 SinjohRuins_hns_OnLoad::
@@ -96,11 +96,11 @@ SinjohRuins_StairsScene::
     applymovement LOCALID_PLAYER, SinjohRuins_Movement_PlayerWalkRight
     opendoor 14, 52
 	waitdooranim
-    addobject LOCALID_SINJOHRUINS_STEVEN
-    clearflag FLAG_HIDE_SINJOHRUINS_STEVEN
-    applymovement LOCALID_SINJOHRUINS_STEVEN, Common_Movement_WalkDown1
-    waitmovement LOCALID_SINJOHRUINS_STEVEN
-    applymovement LOCALID_SINJOHRUINS_STEVEN, SinjohRuins_Movement_StevenWalkRight
+    addobject LOCALID_SINJOHRUINS_CYNTHIA
+    clearflag FLAG_HIDE_SINJOHRUINS_CYNTHIA
+    applymovement LOCALID_SINJOHRUINS_CYNTHIA, Common_Movement_WalkDown1
+    waitmovement LOCALID_SINJOHRUINS_CYNTHIA
+    applymovement LOCALID_SINJOHRUINS_CYNTHIA, SinjohRuins_Movement_CynthiaWalkRight
     waitmovement 0
     closedoor 14, 52
 	waitdooranim
@@ -110,7 +110,7 @@ SinjohRuins_StairsScene::
 	setvar VAR_0x8007, 3  @ shake delay
 	special ShakeCamera
 	waitstate
-    waitmovement LOCALID_SINJOHRUINS_STEVEN
+    waitmovement LOCALID_SINJOHRUINS_CYNTHIA
     waitmovement 0
     setvar VAR_0x8004, 2  @ vertical pan
 	setvar VAR_0x8005, 2  @ horizontal pan
@@ -126,51 +126,52 @@ SinjohRuins_StairsScene::
 	setvar VAR_0x8006, 40  @ num shakes
 	setvar VAR_0x8007, 3  @ shake delay
 	special ShakeCamera
-    setobjectxyperm LOCALID_SINJOHRUINS_STEVEN, 19, 52
-    setobjectmovementtype LOCALID_SINJOHRUINS_STEVEN, MOVEMENT_TYPE_FACE_UP
+    setobjectxyperm LOCALID_SINJOHRUINS_CYNTHIA, 19, 52
+    setobjectmovementtype LOCALID_SINJOHRUINS_CYNTHIA, MOVEMENT_TYPE_FACE_UP
     call SinjohRuins_OpenArceus
     special DrawWholeMapView
     delay 60
     applymovement OBJ_EVENT_ID_CAMERA, SinjohRuins_Movement_CameraPanDown
     waitmovement 0
     special RemoveCameraObject
-    msgbox SinjohRuins_Text_StevenGotoStairs1, MSGBOX_AUTOCLOSE
-    turnobject LOCALID_SINJOHRUINS_STEVEN, DIR_EAST
+    msgbox SinjohRuins_Text_CynthiaGotoStairs1, MSGBOX_AUTOCLOSE
+    turnobject LOCALID_SINJOHRUINS_CYNTHIA, DIR_EAST
     delay 10
     turnobject LOCALID_PLAYER, DIR_WEST
-    msgbox SinjohRuins_Text_StevenGotoStairs2, MSGBOX_AUTOCLOSE
+    msgbox SinjohRuins_Text_CynthiaGotoStairs2, MSGBOX_AUTOCLOSE
     setvar VAR_SINJOH_STORYLINE, 9
     setvar VAR_PLATECOUNTER, 17
-    applymovement LOCALID_SINJOHRUINS_STEVEN, SinjohRuins_Movement_StevenGoesToStairs
+    applymovement LOCALID_SINJOHRUINS_CYNTHIA, SinjohRuins_Movement_CynthiaGoesToStairs
     waitmovement 0
-    removeobject LOCALID_SINJOHRUINS_STEVEN
-    setobjectxyperm LOCALID_SINJOHRUINS_STEVEN, 24, 31
-    setobjectmovementtype LOCALID_SINJOHRUINS_STEVEN, MOVEMENT_TYPE_FACE_UP
-    addobject LOCALID_SINJOHRUINS_STEVEN
-    clearflag FLAG_HIDE_SINJOHRUINS_STEVEN
-    setflag FLAG_HIDE_SINJOHRUINS_LAB_STEVEN
+    removeobject LOCALID_SINJOHRUINS_CYNTHIA
+    setobjectxyperm LOCALID_SINJOHRUINS_CYNTHIA, 24, 31
+    setobjectmovementtype LOCALID_SINJOHRUINS_CYNTHIA, MOVEMENT_TYPE_FACE_UP
+    addobject LOCALID_SINJOHRUINS_CYNTHIA
+    clearflag FLAG_HIDE_SINJOHRUINS_CYNTHIA
+    setflag FLAG_HIDE_SINJOHRUINS_LAB_CYNTHIA
     setvar VAR_SINJOH_STORYLINE, 9
     release
     end
 
-SinjohRuins_Text_StevenGotoStairs1:
-    .string "STEVEN: This could only mean one thing.$"
+SinjohRuins_Text_CynthiaGotoStairs1:
+    .string "CYNTHIA: This could only mean\n"
+    .string "one thing.$"
 
-SinjohRuins_Text_StevenGotoStairs2:
+SinjohRuins_Text_CynthiaGotoStairs2:
     .string "{PLAYER}. We were able to decipher\n"
     .string "the rest of the glyphs...\p"
     .string "If the translation is right, \n"
     .string "the POKéMON at the top of that\l"
     .string "staircase is the most powerful\l"
     .string "being in the universe.\p"
-    .string "And it is my duty as former\n"
-    .string "CHAMPION of the HOENN LEAGUE\l"
+    .string "And it is my duty as\n"
+    .string "CHAMPION of the SINNOH LEAGUE\l"
     .string "to make sure you are strong\l"
     .string "enough to face it.\p"
     .string "Meet me at that landing\n"
     .string "when you are ready.$"
 
-SinjohRuins_Movement_StevenGoesToStairs:
+SinjohRuins_Movement_CynthiaGoesToStairs:
     walk_up
     walk_up
     walk_up
@@ -227,7 +228,7 @@ SinjohRuins_Movement_CameraPanUp:
     walk_up
     step_end
 
-SinjohRuins_Movement_StevenWalkRight:
+SinjohRuins_Movement_CynthiaWalkRight:
     walk_fast_right
     walk_fast_right
     walk_fast_right
@@ -244,12 +245,12 @@ SinjohRuins_Movement_PlayerWalkRight:
     walk_fast_right
     walk_up
     step_end
-SinjohRuins_EventScript_TriggerStevenBattleRight::
+SinjohRuins_EventScript_TriggerCynthiaBattleRight::
     lock
-    turnobject LOCALID_SINJOHRUINS_STEVEN, DIR_EAST
-    msgbox SinjohRuins_Text_StevenReadytoBattle, MSGBOX_YESNO
+    turnobject LOCALID_SINJOHRUINS_CYNTHIA, DIR_EAST
+    msgbox SinjohRuins_Text_CynthiaReadytoBattle, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, FALSE, SinjohRuins_EventScript_TriggerPlayerLeaveRight
-    call SinjohRuins_EventScript_StevenBattle
+    call SinjohRuins_EventScript_CynthiaBattle
     setvar VAR_SINJOH_STORYLINE, 10
     release
     end
@@ -259,12 +260,12 @@ SinjohRuins_EventScript_TriggerPlayerLeaveRight::
     waitmovement 0
     release
     end
-SinjohRuins_EventScript_TriggerStevenBattleLeft::
+SinjohRuins_EventScript_TriggerCynthiaBattleLeft::
     lock
-    turnobject LOCALID_SINJOHRUINS_STEVEN, DIR_WEST
-    msgbox SinjohRuins_Text_StevenReadytoBattle, MSGBOX_YESNO
+    turnobject LOCALID_SINJOHRUINS_CYNTHIA, DIR_WEST
+    msgbox SinjohRuins_Text_CynthiaReadytoBattle, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, FALSE, SinjohRuins_EventScript_TriggerPlayerLeaveLeft
-    call SinjohRuins_EventScript_StevenBattle
+    call SinjohRuins_EventScript_CynthiaBattle
     setvar VAR_SINJOH_STORYLINE, 10
     release
     end
@@ -275,7 +276,7 @@ SinjohRuins_EventScript_TriggerPlayerLeaveLeft::
     release
     end 
 
-SinjohRuins_Movement_StevenLeaveRight:
+SinjohRuins_Movement_CynthiaLeaveRight:
     walk_left
     walk_left
     walk_left
@@ -290,7 +291,7 @@ SinjohRuins_Movement_StevenLeaveRight:
     walk_down
     step_end
 
-SinjohRuins_Movement_StevenLeaveLeft:
+SinjohRuins_Movement_CynthiaLeaveLeft:
     walk_right
     walk_right
     walk_right
@@ -305,10 +306,10 @@ SinjohRuins_Movement_StevenLeaveLeft:
     walk_down
     step_end
 
-SinjohRuins_EventScript_StevenBattle::
-    msgbox SinjohRuins_Text_ChallengeSteven, MSGBOX_AUTOCLOSE
-    trainerbattle_no_intro TRAINER_STEVEN_HNS, SinjohRuins_Text_StevenDefeat
-    msgbox SinjohRuins_Text_StevenAfterBattle, MSGBOX_AUTOCLOSE
+SinjohRuins_EventScript_CynthiaBattle::
+    msgbox SinjohRuins_Text_ChallengeCynthia, MSGBOX_AUTOCLOSE
+    trainerbattle_no_intro TRAINER_CYNTHIA_HNS, SinjohRuins_Text_CynthiaDefeat
+    msgbox SinjohRuins_Text_CynthiaAfterBattle, MSGBOX_AUTOCLOSE
     giveitem ITEM_STONE_PLATE
     msgbox SinjohRuins_Text_HealParty, MSGBOX_AUTOCLOSE
     fadescreenswapbuffers FADE_TO_BLACK
@@ -317,25 +318,25 @@ SinjohRuins_EventScript_StevenBattle::
 	playfanfare MUS_HEAL
 	waitfanfare
     fadescreenswapbuffers FADE_FROM_BLACK
-    msgbox SinjohRuins_Text_StevenAfterPlate, MSGBOX_AUTOCLOSE
+    msgbox SinjohRuins_Text_CynthiaAfterPlate, MSGBOX_AUTOCLOSE
     return
 
 SinjohRuins_Text_HealParty::
-    .string "STEVEN: Let me heal your POKéMON\n"
+    .string "CYNTHIA: Let me heal your POKéMON\n"
     .string "before you go.$"
 
-SinjohRuins_Text_StevenAfterPlate:
-    .string "STEVEN: Good luck, {PLAYER}\p"
+SinjohRuins_Text_CynthiaAfterPlate:
+    .string "CYNTHIA: Good luck, {PLAYER}\p"
     .string "Go on, I'm right behind you.$"
 
-SinjohRuins_Text_StevenAfterBattle:
-	.string "STEVEN: To think, another trainer \n"
+SinjohRuins_Text_CynthiaAfterBattle:
+	.string "CYNTHIA: To think, another trainer \n"
 	.string "would defeat me like this.\p"
     .string "Incredible.\p"
 	.string "Take this, it's the final plate.$"
 
-SinjohRuins_Text_StevenReadytoBattle:
-    .string "STEVEN: {PLAYER}.\p"
+SinjohRuins_Text_CynthiaReadytoBattle:
+    .string "CYNTHIA: {PLAYER}.\p"
     .string "Ever since I first saw the\n"
     .string "determination in your eyes,\l"
     .string "I felt it would lead to this.\p"
@@ -343,16 +344,16 @@ SinjohRuins_Text_StevenReadytoBattle:
     .string "and your POKéMON.\p"
     .string "Are you ready?$"
 
-SinjohRuins_Text_ChallengeSteven:
-	.string "Okay, {PLAYER}{KUN}, if you're going to mount\n"
-	.string "a serious challenge, expect the worst!$"
+SinjohRuins_Text_ChallengeCynthia:
+	.string "Then I, CYNTHIA, accept your\n"
+	.string "challenge. I won't hold back!$"
 
-SinjohRuins_Text_StevenDefeat:
+SinjohRuins_Text_CynthiaDefeat:
 	.string "You...\n"
 	.string "You are ready.$"
 
-SinjohRuins_EventScript_Steven::
-    msgbox SinjohRuins_Text_StevenAfterPlate, MSGBOX_NPC
+SinjohRuins_EventScript_Cynthia::
+    msgbox SinjohRuins_Text_CynthiaAfterPlate, MSGBOX_NPC
     end
 
 SinjohRuins_EventScript_Sign::

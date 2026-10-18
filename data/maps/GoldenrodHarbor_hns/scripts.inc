@@ -1,5 +1,14 @@
 GoldenrodHarbor_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, GoldenrodHarbor_OnTransition
 	.byte 0
+
+GoldenrodHarbor_OnTransition:
+	call_if_unset FLAG_IS_KANTO_CHAMPION, GoldenrodHarbor_EventScript_HideHoennLeader
+	end
+
+GoldenrodHarbor_EventScript_HideHoennLeader:
+	setflag FLAG_TEMP_HIDE_HOENN_LEADER
+	return
 
 GoldenrodHarbor_EventScript_Sign::
 	lock
@@ -268,3 +277,45 @@ GoldenrodHarbor_Text_Wattrel:
 
 GoldenrodHarbor_Text_Meowth:
 	.string "MEOWTH: Meowth!$"
+
+GoldenrodHarbor_EventScript_Wallace::
+	lock
+	goto_if_defeated TRAINER_LEADER_WALLACE_HNS, GoldenrodHarbor_EventScript_WallaceAfter
+	playmoncry SPECIES_MILOTIC, CRY_MODE_NORMAL
+	waitmoncry
+	faceplayer
+	msgbox GoldenrodHarbor_Text_WallaceIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_LEADER_WALLACE_HNS, GoldenrodHarbor_Text_WallaceDefeat
+	msgbox GoldenrodHarbor_Text_WallacePostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodHarbor_EventScript_WallaceAfter:
+	faceplayer
+	msgbox GoldenrodHarbor_Text_WallaceAfter, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodHarbor_Text_WallaceIntro:
+	.string "Hm? Ah, a trainer with fine eyes.\p"
+	.string "I am WALLACE, the GYM LEADER of\n"
+	.string "SOOTOPOLIS CITY in HOENN.\p"
+	.string "The sea here glitters so\n"
+	.string "beautifully, I had to see it\l"
+	.string "for myself.\p"
+	.string "Now, show me the beauty you and\n"
+	.string "your POKéMON share!$"
+
+GoldenrodHarbor_Text_WallaceDefeat:
+	.string "Bravo!\n"
+	.string "What a magnificent performance!$"
+
+GoldenrodHarbor_Text_WallacePostBattle:
+	.string "I sensed the bond you share with\n"
+	.string "your POKéMON. It was beautiful.\p"
+	.string "If ever I visit the POKéMON\n"
+	.string "LEAGUE, it will be to see it again.$"
+
+GoldenrodHarbor_Text_WallaceAfter:
+	.string "The harbor's light on the water…\n"
+	.string "It rivals even SOOTOPOLIS.$"

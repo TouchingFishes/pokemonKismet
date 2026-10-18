@@ -16,77 +16,77 @@ SinjohRuins_Lab_OnFrame::
 SinjohRuins_Lab_EventScript_TriggerIntroTop::
 	lock
 	playse SE_PIN
-	applymovement2 LOCALID_SINJOHRUINS_LAB_STEVEN, Common_Movement_ExclamationMark
+	applymovement2 LOCALID_SINJOHRUINS_LAB_CYNTHIA, Common_Movement_ExclamationMark
 	delay 55
-	waitmovement LOCALID_SINJOHRUINS_LAB_STEVEN
-	msgbox SinjohRuins_Lab_Text_StevenIntroCutscene1, MSGBOX_DEFAULT
+	waitmovement LOCALID_SINJOHRUINS_LAB_CYNTHIA
+	msgbox SinjohRuins_Lab_Text_CynthiaIntroCutscene1, MSGBOX_DEFAULT
 	closemessage
 	applymovement2 LOCALID_PLAYER, Common_Movement_WalkDown1
-	applymovement2 LOCALID_SINJOHRUINS_LAB_STEVEN, SinjohRuins_Lab_Movement_StevenMeetPlayer
+	applymovement2 LOCALID_SINJOHRUINS_LAB_CYNTHIA, SinjohRuins_Lab_Movement_CynthiaMeetPlayer
 	waitmovement 0
-	waitmovement LOCALID_SINJOHRUINS_LAB_STEVEN
+	waitmovement LOCALID_SINJOHRUINS_LAB_CYNTHIA
 	goto SinjohRuins_Lab_EventScript_TriggerIntro
 
 SinjohRuins_Lab_EventScript_TriggerIntroMid::
 	lock
 	playse SE_PIN
-	applymovement2 LOCALID_SINJOHRUINS_LAB_STEVEN, Common_Movement_ExclamationMark
+	applymovement2 LOCALID_SINJOHRUINS_LAB_CYNTHIA, Common_Movement_ExclamationMark
 	delay 55
-	waitmovement LOCALID_SINJOHRUINS_LAB_STEVEN
-	msgbox SinjohRuins_Lab_Text_StevenIntroCutscene1, MSGBOX_DEFAULT
+	waitmovement LOCALID_SINJOHRUINS_LAB_CYNTHIA
+	msgbox SinjohRuins_Lab_Text_CynthiaIntroCutscene1, MSGBOX_DEFAULT
 	closemessage
-	applymovement2 LOCALID_SINJOHRUINS_LAB_STEVEN, SinjohRuins_Lab_Movement_StevenMeetPlayer
-	waitmovement LOCALID_SINJOHRUINS_LAB_STEVEN
+	applymovement2 LOCALID_SINJOHRUINS_LAB_CYNTHIA, SinjohRuins_Lab_Movement_CynthiaMeetPlayer
+	waitmovement LOCALID_SINJOHRUINS_LAB_CYNTHIA
 	goto SinjohRuins_Lab_EventScript_TriggerIntro
 
 SinjohRuins_Lab_EventScript_TriggerIntroBot::
 	lock
 	playse SE_PIN
-	applymovement2 LOCALID_SINJOHRUINS_LAB_STEVEN, Common_Movement_ExclamationMark
+	applymovement2 LOCALID_SINJOHRUINS_LAB_CYNTHIA, Common_Movement_ExclamationMark
 	delay 55
-	waitmovement LOCALID_SINJOHRUINS_LAB_STEVEN
-	msgbox SinjohRuins_Lab_Text_StevenIntroCutscene1, MSGBOX_DEFAULT
+	waitmovement LOCALID_SINJOHRUINS_LAB_CYNTHIA
+	msgbox SinjohRuins_Lab_Text_CynthiaIntroCutscene1, MSGBOX_DEFAULT
 	closemessage
 	applymovement2 LOCALID_PLAYER, Common_Movement_WalkUp1
-	applymovement2 LOCALID_SINJOHRUINS_LAB_STEVEN, SinjohRuins_Lab_Movement_StevenMeetPlayer
+	applymovement2 LOCALID_SINJOHRUINS_LAB_CYNTHIA, SinjohRuins_Lab_Movement_CynthiaMeetPlayer
 	waitmovement 0
-	waitmovement LOCALID_SINJOHRUINS_LAB_STEVEN
+	waitmovement LOCALID_SINJOHRUINS_LAB_CYNTHIA
 	goto SinjohRuins_Lab_EventScript_TriggerIntro
 
 SinjohRuins_Lab_EventScript_TriggerIntro::
 	turnobject LOCALID_PLAYER, DIR_EAST
-	msgbox SinjohRuins_Lab_Text_StevenIntroCutscene2, MSGBOX_DEFAULT
+	msgbox SinjohRuins_Lab_Text_CynthiaIntroCutscene2, MSGBOX_DEFAULT
 	closemessage
-	applymovement2 LOCALID_SINJOHRUINS_LAB_STEVEN, SinjohRuins_Lab_Movement_StevenSitsDown
+	applymovement2 LOCALID_SINJOHRUINS_LAB_CYNTHIA, SinjohRuins_Lab_Movement_CynthiaSitsDown
 	delay 10
 	applymovement LOCALID_PLAYER, SinjohRuins_Lab_Movement_PlayerGoesToTable
 	delay 40
 	applymovement2 LOCALID_NEWSINJOH_LAB_LINGUIST, SinjohRuins_Lab_Movement_LinguistWalkDown
 	waitmovement 0
-	waitmovement LOCALID_SINJOHRUINS_LAB_STEVEN
+	waitmovement LOCALID_SINJOHRUINS_LAB_CYNTHIA
 	waitmovement LOCALID_NEWSINJOH_LAB_LINGUIST
-	applymovement2 LOCALID_SINJOHRUINS_LAB_STEVEN, Common_Movement_WalkInPlaceRight
+	applymovement2 LOCALID_SINJOHRUINS_LAB_CYNTHIA, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	msgbox SinjohRuins_Lab_Text_StevenIntroCutscene3, MSGBOX_DEFAULT
+	msgbox SinjohRuins_Lab_Text_CynthiaIntroCutscene3, MSGBOX_DEFAULT
 	closemessage
 	delay 10
 	applymovement2 LOCALID_NEWSINJOH_LAB_LINGUIST, Common_Movement_WalkInPlaceDown
 	waitmovement 0
-	msgbox SinjohRuins_Lab_Text_StevenIntroCutscene4, MSGBOX_DEFAULT
+	msgbox SinjohRuins_Lab_Text_CynthiaIntroCutscene4, MSGBOX_DEFAULT
 	closemessage
 	delay 10
 	applymovement LOCALID_NEWSINJOH_LAB_LINGUIST, SinjohRuins_Lab_Movement_LinguistWalkUp
-	applymovement2 LOCALID_SINJOHRUINS_LAB_STEVEN, Common_Movement_WalkInPlaceRight
+	applymovement2 LOCALID_SINJOHRUINS_LAB_CYNTHIA, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	msgbox SinjohRuins_Lab_Text_StevenIntroCutscene5, MSGBOX_YESNO
+	msgbox SinjohRuins_Lab_Text_CynthiaIntroCutscene5, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, TRUE, SinjohRuins_Lab_EventScript_IntroChoseYes
 SinjohRuins_Lab_EventScript_IntroChoice::
-	msgbox SinjohRuins_Lab_Text_StevenIntroCutsceneRefused, MSGBOX_YESNO
+	msgbox SinjohRuins_Lab_Text_CynthiaIntroCutsceneRefused, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, TRUE, SinjohRuins_Lab_EventScript_IntroChoseYes
 	goto SinjohRuins_Lab_EventScript_IntroChoice
 
 SinjohRuins_Lab_EventScript_IntroChoseYes::
-	msgbox SinjohRuins_Lab_Text_StevenIntroCutscene6, MSGBOX_DEFAULT
+	msgbox SinjohRuins_Lab_Text_CynthiaIntroCutscene6, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_SINJOH_STORYLINE, 6
 	setvar VAR_NOBLE_SNEASLER, 1
@@ -100,14 +100,14 @@ SinjohRuins_Lab_EventScript_IntroChoseYes::
 	release
 	end
 
-SinjohRuins_Lab_Movement_StevenMeetPlayer:
+SinjohRuins_Lab_Movement_CynthiaMeetPlayer:
 	walk_up
 	walk_up
 	walk_up
 	face_left
 	step_end
 
-SinjohRuins_Lab_Movement_StevenSitsDown:
+SinjohRuins_Lab_Movement_CynthiaSitsDown:
 	walk_down
 	walk_down
 	walk_down
@@ -149,12 +149,13 @@ SinjohRuins_Lab_Movement_LinguistWalkUp:
 	step_end
 
 
-SinjohRuins_Lab_Text_StevenIntroCutscene1:
-   	.string "STEVEN: Hm?$"
+SinjohRuins_Lab_Text_CynthiaIntroCutscene1:
+   	.string "CYNTHIA: Hm?$"
 
-SinjohRuins_Lab_Text_StevenIntroCutscene2:
-	.string "STEVEN: {PLAYER}!\p"
-	.string "I'd recognize those eyes anywhere.\p"
+SinjohRuins_Lab_Text_CynthiaIntroCutscene2:
+	.string "CYNTHIA: {PLAYER}!\p"
+	.string "The CHAMPION of JOHTO and KANTO,\n"
+	.string "here in person.\p"
 	.string "What brings you this far north?\p"
 	.string ".............\p"
 	.string "I see, the KIMONO GIRLS of NEW SINJOH\n"
@@ -163,11 +164,11 @@ SinjohRuins_Lab_Text_StevenIntroCutscene2:
 	.string "In that case, allow me to bring you\n"
 	.string "up to speed.$"
 
-SinjohRuins_Lab_Text_StevenIntroCutscene3:
-	.string "STEVEN: When I first heard about\n"
+SinjohRuins_Lab_Text_CynthiaIntroCutscene3:
+	.string "CYNTHIA: When I first heard about\n"
 	.string "these ruins, I had to come see\l"
 	.string "them for myself.\p"
-	.string "I assembled a team from DEVON CORP.\n"
+	.string "I assembled a team of scholars\n"
 	.string "and we set off on a research\l"
 	.string "expedition.\p"
 	.string "Who knows what we'll find buried\n"
@@ -175,7 +176,7 @@ SinjohRuins_Lab_Text_StevenIntroCutscene3:
 	.string "We've learned quite a lot\n"
 	.string "already.$"
 
-SinjohRuins_Lab_Text_StevenIntroCutscene4:
+SinjohRuins_Lab_Text_CynthiaIntroCutscene4:
 	.string "LINGUIST: While the full translation\n"
 	.string "of the glyphs found around the ruins\l"
 	.string "still eludes me, I've been able\l"
@@ -188,8 +189,8 @@ SinjohRuins_Lab_Text_StevenIntroCutscene4:
 	.string "by POKéMON and trainers of\l"
 	.string "awesome power.$"
 
-SinjohRuins_Lab_Text_StevenIntroCutscene5:
-	.string "STEVEN: That's the story, {PLAYER}.\p"
+SinjohRuins_Lab_Text_CynthiaIntroCutscene5:
+	.string "CYNTHIA: That's the story, {PLAYER}.\p"
 	.string "The NOBLE POKéMON that guard the\n"
 	.string "remaining PLATES are too strong\l"
 	.string "for my team, I'm afraid.\p"
@@ -198,7 +199,7 @@ SinjohRuins_Lab_Text_StevenIntroCutscene5:
 	.string "But I think you could do it.\n"
 	.string "Will you help us?$"
 
-SinjohRuins_Lab_Text_StevenIntroCutscene6:
+SinjohRuins_Lab_Text_CynthiaIntroCutscene6:
 	.string "Excellent.\p"
 	.string "The glyphs say the PLATES are\n"
 	.string "held by NOBLE POKéMON and\l"
@@ -207,7 +208,7 @@ SinjohRuins_Lab_Text_StevenIntroCutscene6:
 	.string "learn anything new.\p"
 	.string "Thank you, {PLAYER}.$"
 
-SinjohRuins_Lab_Text_StevenIntroCutsceneRefused:
+SinjohRuins_Lab_Text_CynthiaIntroCutsceneRefused:
 	.string "Are you sure?\p"
 	.string "Who knows what we'll find buried\n"
 	.string "here.\p"
@@ -216,8 +217,8 @@ SinjohRuins_Lab_Text_StevenIntroCutsceneRefused:
 @==========================Final plate Cutscene SCRIPTS================================================================================
 
 SinjohRuins_Lab_SetupFinalPlateScene::
-	setobjectxyperm LOCALID_SINJOHRUINS_LAB_STEVEN, 4, 7
-	setobjectmovementtype LOCALID_SINJOHRUINS_LAB_STEVEN, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_SINJOHRUINS_LAB_CYNTHIA, 4, 7
+	setobjectmovementtype LOCALID_SINJOHRUINS_LAB_CYNTHIA, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectxyperm LOCALID_NEWSINJOH_LAB_LINGUIST, 5, 7
 	setobjectmovementtype LOCALID_NEWSINJOH_LAB_LINGUIST, MOVEMENT_TYPE_FACE_LEFT
 	return
@@ -229,12 +230,12 @@ SinjohRuins_Lab_FinalPlateScene::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp1
 	waitmovement 0
 	playse SE_PIN
-	applymovement LOCALID_SINJOHRUINS_LAB_STEVEN, Common_Movement_ExclamationMark
+	applymovement LOCALID_SINJOHRUINS_LAB_CYNTHIA, Common_Movement_ExclamationMark
 	delay 55
-	waitmovement LOCALID_SINJOHRUINS_LAB_STEVEN
-	turnobject LOCALID_SINJOHRUINS_LAB_STEVEN, DIR_SOUTH
+	waitmovement LOCALID_SINJOHRUINS_LAB_CYNTHIA
+	turnobject LOCALID_SINJOHRUINS_LAB_CYNTHIA, DIR_SOUTH
 	delay 30
-	applymovement LOCALID_SINJOHRUINS_LAB_STEVEN, Common_Movement_WalkDown1
+	applymovement LOCALID_SINJOHRUINS_LAB_CYNTHIA, Common_Movement_WalkDown1
 	turnobject LOCALID_NEWSINJOH_LAB_LINGUIST, DIR_SOUTH
 	delay 30
 	msgbox SinjohRuins_Lab_Text_FinalPlateScene1, MSGBOX_DEFAULT
@@ -257,7 +258,7 @@ SinjohRuins_Lab_FinalPlateScene::
 	msgbox SinjohRuins_Lab_Text_FinalPlateScene2, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, SinjohRuins_Lab_Movement_PlayerLeaveLab
-	applymovement LOCALID_SINJOHRUINS_LAB_STEVEN, SinjohRuins_Lab_Movement_StevenLeaveLab
+	applymovement LOCALID_SINJOHRUINS_LAB_CYNTHIA, SinjohRuins_Lab_Movement_CynthiaLeaveLab
 	waitmovement 0
 	waitmovement 0
 	setvar VAR_SINJOH_STORYLINE, 8
@@ -266,7 +267,7 @@ SinjohRuins_Lab_FinalPlateScene::
 	end
 
 SinjohRuins_Lab_Text_FinalPlateScene1:
-	.string "STEVEN: {PLAYER}!\p"
+	.string "CYNTHIA: {PLAYER}!\p"
 	.string "I think I know what's going to\n"
 	.string "happen we bring together all 17 of\l"
 	.string "the PLATES.\p"
@@ -274,7 +275,7 @@ SinjohRuins_Lab_Text_FinalPlateScene1:
 	.string ".....................$"
 
 SinjohRuins_Lab_Text_FinalPlateScene2:
-	.string "STEVEN: I need to see this for\n"
+	.string "CYNTHIA: I need to see this for\n"
 	.string "myself!\p"
 	.string "Outside, {PLAYER}!$" 
 
@@ -284,7 +285,7 @@ SinjohRuins_Lab_Movement_PlayerLeaveLab:
 	walk_in_place_fast_down
 	step_end
 
-SinjohRuins_Lab_Movement_StevenLeaveLab:
+SinjohRuins_Lab_Movement_CynthiaLeaveLab:
 	walk_fast_down
 	walk_fast_down
 	walk_in_place_fast_down
@@ -292,52 +293,52 @@ SinjohRuins_Lab_Movement_StevenLeaveLab:
 
 @==========================NPC SCRIPTS================================================================================
 
-SinjohRuins_Lab_EventScript_Steven::
+SinjohRuins_Lab_EventScript_Cynthia::
 	lock
 	faceplayer
 	buffernumberstring STR_VAR_1, VAR_PLATECOUNTER
-	goto_if_ge VAR_PLATECOUNTER, 17, SinjohRuins_Lab_EventScript_StevenAfterAllPlates
-	goto_if_ge VAR_PLATECOUNTER, 15, SinjohRuins_Lab_EventScript_StevenAfter15Plates
-	goto_if_ge VAR_PLATECOUNTER, 12, SinjohRuins_Lab_EventScript_StevenAfter12Plates
-	goto_if_ge VAR_PLATECOUNTER, 9, SinjohRuins_Lab_EventScript_StevenAfter9Plates
-	goto_if_ge VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_StevenAfter6Plates
-	goto_if_ge VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_StevenAfter3Plates
-	msgbox SinjohRuins_Lab_Text_StevenFindPlates, MSGBOX_AUTOCLOSE
+	goto_if_ge VAR_PLATECOUNTER, 17, SinjohRuins_Lab_EventScript_CynthiaAfterAllPlates
+	goto_if_ge VAR_PLATECOUNTER, 15, SinjohRuins_Lab_EventScript_CynthiaAfter15Plates
+	goto_if_ge VAR_PLATECOUNTER, 12, SinjohRuins_Lab_EventScript_CynthiaAfter12Plates
+	goto_if_ge VAR_PLATECOUNTER, 9, SinjohRuins_Lab_EventScript_CynthiaAfter9Plates
+	goto_if_ge VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_CynthiaAfter6Plates
+	goto_if_ge VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_CynthiaAfter3Plates
+	msgbox SinjohRuins_Lab_Text_CynthiaFindPlates, MSGBOX_AUTOCLOSE
 	release
 	end
 
-SinjohRuins_Lab_EventScript_StevenAfter3Plates::
-	msgbox SinjohRuins_Lab_Text_StevenFindPlates3, MSGBOX_AUTOCLOSE
+SinjohRuins_Lab_EventScript_CynthiaAfter3Plates::
+	msgbox SinjohRuins_Lab_Text_CynthiaFindPlates3, MSGBOX_AUTOCLOSE
 	release
 	end
 
-SinjohRuins_Lab_EventScript_StevenAfter6Plates::
-	msgbox SinjohRuins_Lab_Text_StevenFindPlates3, MSGBOX_AUTOCLOSE
+SinjohRuins_Lab_EventScript_CynthiaAfter6Plates::
+	msgbox SinjohRuins_Lab_Text_CynthiaFindPlates3, MSGBOX_AUTOCLOSE
 	release
 	end
 
-SinjohRuins_Lab_EventScript_StevenAfter9Plates::
-	msgbox SinjohRuins_Lab_Text_StevenFindPlates9, MSGBOX_AUTOCLOSE
+SinjohRuins_Lab_EventScript_CynthiaAfter9Plates::
+	msgbox SinjohRuins_Lab_Text_CynthiaFindPlates9, MSGBOX_AUTOCLOSE
 	release
 	end
 
-SinjohRuins_Lab_EventScript_StevenAfter12Plates::
-	msgbox SinjohRuins_Lab_Text_StevenFindPlates9, MSGBOX_AUTOCLOSE
+SinjohRuins_Lab_EventScript_CynthiaAfter12Plates::
+	msgbox SinjohRuins_Lab_Text_CynthiaFindPlates9, MSGBOX_AUTOCLOSE
 	release
 	end
 
-SinjohRuins_Lab_EventScript_StevenAfter15Plates::
-	msgbox SinjohRuins_Lab_Text_StevenFindPlates9, MSGBOX_AUTOCLOSE
+SinjohRuins_Lab_EventScript_CynthiaAfter15Plates::
+	msgbox SinjohRuins_Lab_Text_CynthiaFindPlates9, MSGBOX_AUTOCLOSE
 	release
 	end
 
-SinjohRuins_Lab_EventScript_StevenAfterAllPlates::
-	msgbox SinjohRuins_Lab_Text_StevenAfterAll, MSGBOX_AUTOCLOSE
+SinjohRuins_Lab_EventScript_CynthiaAfterAllPlates::
+	msgbox SinjohRuins_Lab_Text_CynthiaAfterAll, MSGBOX_AUTOCLOSE
 	release
 	end
 
-SinjohRuins_Lab_Text_StevenFindPlates:
-	.string "STEVEN: Ah, {PLAYER}.\p"
+SinjohRuins_Lab_Text_CynthiaFindPlates:
+	.string "CYNTHIA: Ah, {PLAYER}.\p"
 	.string "{STR_VAR_1} PLATES so far.\n"
 	.string "Not bad at all.\p"
 	.string "I have to admit, I'm curious\n"
@@ -345,16 +346,16 @@ SinjohRuins_Lab_Text_StevenFindPlates:
 	.string "all gathered.\p"
 	.string "Well, let's see what you find.$"
 
-SinjohRuins_Lab_Text_StevenFindPlates3:
-	.string "STEVEN: Ah, {PLAYER}.\p"
+SinjohRuins_Lab_Text_CynthiaFindPlates3:
+	.string "CYNTHIA: Ah, {PLAYER}.\p"
 	.string "{STR_VAR_1} PLATES so far.\n"
 	.string "Not bad at all.\p"
 	.string "Have you investigated that\n"
 	.string "chamber yet?\l"
 	.string "It's all quite mysterious.$"
 
-SinjohRuins_Lab_Text_StevenFindPlates9:
-	.string "STEVEN: Ah, {PLAYER}.\p"
+SinjohRuins_Lab_Text_CynthiaFindPlates9:
+	.string "CYNTHIA: Ah, {PLAYER}.\p"
 	.string "{STR_VAR_1} PLATES so far.\n"
 	.string "Making great progress.\p"
 	.string "The chambers that have opened\n"
@@ -368,8 +369,8 @@ SinjohRuins_Lab_Text_StevenFindPlates9:
 	.string "And here, there are at least 6.\p"
 	.string "Who knows what we'll find next.$"
 
-SinjohRuins_Lab_Text_StevenAfterAll:
-	.string "STEVEN: {PLAYER}!\p"
+SinjohRuins_Lab_Text_CynthiaAfterAll:
+	.string "CYNTHIA: {PLAYER}!\p"
 	.string "This expedition has been the\n"
 	.string "experience of a lifetime.\p"
 	.string "Ever since I heard about these ruins,\n"
@@ -434,7 +435,7 @@ SinjohRuins_Lab_Text_LinguistDuring:
     .string "Imagine my surprise as I\n"
 	.string "translated the glyph!\p"
 	.string "I triple and quadruple checked\n"
-	.string "it before telling STEVEN!\p"
+	.string "it before telling CYNTHIA!\p"
 	.string "I mean, really, the God of\n"
 	.string "POKéMON?\p"
 	.string "It's incredible.$"
@@ -774,49 +775,49 @@ SinjohRuins_Lab_Text_DropedItem:
 	.string "The NOBLE {STR_VAR_1} dropped\n"
 	.string "an item...$"
 
-SinjohRuins_Lab_Text_StevenName:
-	.string "STEVEN$"
+SinjohRuins_Lab_Text_CynthiaName:
+	.string "CYNTHIA$"
 
 SinjohRuins_Lab_EventScript_3Plates::
-	setspeaker SinjohRuins_Lab_Text_StevenName
-	pokenavcall SinjohRuins_Lab_Text_StevenCall3Plates
+	setspeaker SinjohRuins_Lab_Text_CynthiaName
+	pokenavcall SinjohRuins_Lab_Text_CynthiaCall3Plates
 	waitmessage
 	delay 30
 	return
 SinjohRuins_Lab_EventScript_6Plates::
-	setspeaker SinjohRuins_Lab_Text_StevenName
-	pokenavcall SinjohRuins_Lab_Text_StevenCall6Plates
+	setspeaker SinjohRuins_Lab_Text_CynthiaName
+	pokenavcall SinjohRuins_Lab_Text_CynthiaCall6Plates
 	waitmessage
 	delay 30
 	return
 SinjohRuins_Lab_EventScript_9Plates::
-	setspeaker SinjohRuins_Lab_Text_StevenName
-	pokenavcall SinjohRuins_Lab_Text_StevenCall9Plates
+	setspeaker SinjohRuins_Lab_Text_CynthiaName
+	pokenavcall SinjohRuins_Lab_Text_CynthiaCall9Plates
 	waitmessage
 	delay 30
 	return
 SinjohRuins_Lab_EventScript_12Plates::
-	setspeaker SinjohRuins_Lab_Text_StevenName
-	pokenavcall SinjohRuins_Lab_Text_StevenCall12Plates
+	setspeaker SinjohRuins_Lab_Text_CynthiaName
+	pokenavcall SinjohRuins_Lab_Text_CynthiaCall12Plates
 	waitmessage
 	delay 30
 	return
 SinjohRuins_Lab_EventScript_15Plates::
-	setspeaker SinjohRuins_Lab_Text_StevenName
-	pokenavcall SinjohRuins_Lab_Text_StevenCall15Plates
+	setspeaker SinjohRuins_Lab_Text_CynthiaName
+	pokenavcall SinjohRuins_Lab_Text_CynthiaCall15Plates
 	waitmessage
 	delay 30
 	return
 SinjohRuins_Lab_EventScript_16Plates::
-	setspeaker SinjohRuins_Lab_Text_StevenName
-	pokenavcall SinjohRuins_Lab_Text_StevenCall16Plates
+	setspeaker SinjohRuins_Lab_Text_CynthiaName
+	pokenavcall SinjohRuins_Lab_Text_CynthiaCall16Plates
 	waitmessage
 	delay 30
 	setvar VAR_SINJOH_STORYLINE, 7
 	return
 
-SinjohRuins_Lab_Text_StevenCall3Plates:
-	.string "STEVEN: {PLAYER}.\p"
+SinjohRuins_Lab_Text_CynthiaCall3Plates:
+	.string "CYNTHIA: {PLAYER}.\p"
 	.string "We felt a tremor at the ruins\n"
 	.string "just now.\p"
 	.string "Everyone's fine, don't worry.\p"
@@ -828,8 +829,8 @@ SinjohRuins_Lab_Text_StevenCall3Plates:
 	.string "You should come take a look\n"
 	.string "when you can.$"
 
-SinjohRuins_Lab_Text_StevenCall6Plates:
-	.string "STEVEN: {PLAYER}.\p"
+SinjohRuins_Lab_Text_CynthiaCall6Plates:
+	.string "CYNTHIA: {PLAYER}.\p"
 	.string "How's the search going?\p"
 	.string "We had another tremor here.\n"
 	.string "A second chamber opened up\l"
@@ -840,8 +841,8 @@ SinjohRuins_Lab_Text_StevenCall6Plates:
 	.string "The deeper we dig... The more\n"
 	.string "questions we find.$"
 
-SinjohRuins_Lab_Text_StevenCall9Plates:
-	.string "STEVEN: {PLAYER}.\p"
+SinjohRuins_Lab_Text_CynthiaCall9Plates:
+	.string "CYNTHIA: {PLAYER}.\p"
 	.string "Another tremor here at the ruins.\p"
 	.string "The data paints an intriguing\n"
 	.string "picture.\p"
@@ -852,8 +853,8 @@ SinjohRuins_Lab_Text_StevenCall9Plates:
 	.string "What could cause that...\n"
 	.string "I honestly don't know.$"
 
-SinjohRuins_Lab_Text_StevenCall12Plates:
-	.string "STEVEN: {PLAYER}.\p"
+SinjohRuins_Lab_Text_CynthiaCall12Plates:
+	.string "CYNTHIA: {PLAYER}.\p"
 	.string "Another tremor. Another chamber\n"
 	.string "opening up.\p"
 	.string "We still can't figure out the\n"
@@ -863,8 +864,8 @@ SinjohRuins_Lab_Text_StevenCall12Plates:
 	.string "this, are you?\p"
 	.string "No, that can't be right.$"
 
-SinjohRuins_Lab_Text_StevenCall15Plates:
-	.string "STEVEN: {PLAYER}.\p"
+SinjohRuins_Lab_Text_CynthiaCall15Plates:
+	.string "CYNTHIA: {PLAYER}.\p"
 	.string "Did you just find another PLATE?\p"
 	.string ".................\p"
 	.string "Of course.\p"
@@ -876,8 +877,8 @@ SinjohRuins_Lab_Text_StevenCall15Plates:
 	.string "I should have known better than\l"
 	.string "to doubt you.$"
 
-SinjohRuins_Lab_Text_StevenCall16Plates:
-	.string "STEVEN: {PLAYER}.\p"
+SinjohRuins_Lab_Text_CynthiaCall16Plates:
+	.string "CYNTHIA: {PLAYER}.\p"
 	.string "We're very close now. I can feel it.\p"
 	.string "..................\p"
 	.string "You should come see this for\n"

@@ -324,23 +324,23 @@ SinjohRuins_ArceusRoom_Text_CryArceus2:
 	.string "The ARCEUS is weakened...\n"
 	.string "Can be caught?$"
 
-SinjohRuins_ArceusRoom_TriggerSteven::
+SinjohRuins_ArceusRoom_TriggerCynthia::
 	lock
-	addobject LOCALID_SINJOHRUINS_ARCEUSROOM_STEVEN
-	applymovement2 LOCALID_SINJOHRUINS_ARCEUSROOM_STEVEN, SinjohRuins_ArceusRoom_Movement_StevenWalkUp
+	addobject LOCALID_SINJOHRUINS_ARCEUSROOM_CYNTHIA
+	applymovement2 LOCALID_SINJOHRUINS_ARCEUSROOM_CYNTHIA, SinjohRuins_ArceusRoom_Movement_CynthiaWalkUp
 	waitmovement 0
-	msgbox SinjohRuins_ArceusRoom_Text_StevenCongrats, MSGBOX_AUTOCLOSE
-	applymovement2 LOCALID_SINJOHRUINS_ARCEUSROOM_STEVEN, SinjohRuins_ArceusRoom_Movement_StevenWalkDown
+	msgbox SinjohRuins_ArceusRoom_Text_CynthiaCongrats, MSGBOX_AUTOCLOSE
+	applymovement2 LOCALID_SINJOHRUINS_ARCEUSROOM_CYNTHIA, SinjohRuins_ArceusRoom_Movement_CynthiaWalkDown
 	waitmovement 0
-	removeobject LOCALID_SINJOHRUINS_ARCEUSROOM_STEVEN
+	removeobject LOCALID_SINJOHRUINS_ARCEUSROOM_CYNTHIA
 	playse SE_EXIT
-	setflag FLAG_HIDE_SINJOHRUINS_STEVEN
-	clearflag FLAG_HIDE_NEWSINJOH_STEVEN
+	setflag FLAG_HIDE_SINJOHRUINS_CYNTHIA
+	clearflag FLAG_HIDE_NEWSINJOH_CYNTHIA
 	setvar VAR_SINJOH_STORYLINE, 13	
 	release
 	end
 
-SinjohRuins_ArceusRoom_Movement_StevenWalkUp:
+SinjohRuins_ArceusRoom_Movement_CynthiaWalkUp:
 	walk_up
 	walk_up
 	walk_up
@@ -348,7 +348,7 @@ SinjohRuins_ArceusRoom_Movement_StevenWalkUp:
 	walk_up
 	step_end
 
-SinjohRuins_ArceusRoom_Movement_StevenWalkDown:
+SinjohRuins_ArceusRoom_Movement_CynthiaWalkDown:
 	walk_down
 	walk_down
 	walk_down
@@ -357,8 +357,8 @@ SinjohRuins_ArceusRoom_Movement_StevenWalkDown:
 	walk_in_place_down
 	step_end
 
-SinjohRuins_ArceusRoom_Text_StevenCongrats:
-    .string "STEVEN: You did it, {PLAYER}!\p"
+SinjohRuins_ArceusRoom_Text_CynthiaCongrats:
+    .string "CYNTHIA: You did it, {PLAYER}!\p"
 	.string "That battle was breathtaking.\p"
 	.string "Seeing your power made me realize.\p"
 	.string "The KIMONO GIRLS didn't send you\n"

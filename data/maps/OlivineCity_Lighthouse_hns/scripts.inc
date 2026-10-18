@@ -1,5 +1,14 @@
 OlivineCity_Lighthouse_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, OlivineLighthouse_OnTransition
 	.byte 0
+
+OlivineLighthouse_OnTransition:
+	call_if_unset FLAG_IS_KANTO_CHAMPION, OlivineLighthouse_EventScript_HideHoennLeader
+	end
+
+OlivineLighthouse_EventScript_HideHoennLeader:
+	setflag FLAG_TEMP_HIDE_HOENN_LEADER
+	return
 
 OlivineLighthouse_EventScript_Item_Ether::
     finditem ITEM_ETHER
@@ -437,3 +446,45 @@ OlivineLighthouse_Text_GaborAfter:
 	.string "Engineering is not easy,\n"
 	.string "but I think\p"
 	.string "you could be good at it.$"
+
+OlivineLighthouse_EventScript_Wattson::
+	lock
+	goto_if_defeated TRAINER_LEADER_WATTSON_HNS, OlivineLighthouse_EventScript_WattsonAfter
+	playse SE_M_THUNDER_WAVE
+	waitse
+	faceplayer
+	msgbox OlivineLighthouse_Text_WattsonIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_LEADER_WATTSON_HNS, OlivineLighthouse_Text_WattsonDefeat
+	msgbox OlivineLighthouse_Text_WattsonPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+OlivineLighthouse_EventScript_WattsonAfter:
+	faceplayer
+	msgbox OlivineLighthouse_Text_WattsonAfter, MSGBOX_DEFAULT
+	release
+	end
+
+OlivineLighthouse_Text_WattsonIntro:
+	.string "Wahahahah! Well, if it isn't the\n"
+	.string "CHAMPION!\p"
+	.string "I'm WATTSON, the GYM LEADER of\n"
+	.string "MAUVILLE CITY in HOENN.\p"
+	.string "This AMPHAROS gives off a\n"
+	.string "marvelous charge!\p"
+	.string "Let's see how much voltage you've\n"
+	.string "got! Wahahahah!$"
+
+OlivineLighthouse_Text_WattsonDefeat:
+	.string "Wahahahah!\n"
+	.string "I've been completely discharged!$"
+
+OlivineLighthouse_Text_WattsonPostBattle:
+	.string "Fine work! Fine work indeed!\p"
+	.string "I might just charge up to the\n"
+	.string "POKéMON LEAGUE and challenge you\l"
+	.string "again! Wahahahah!$"
+
+OlivineLighthouse_Text_WattsonAfter:
+	.string "AMPHY lights the way for every\n"
+	.string "ship in OLIVINE. Marvelous!$"
