@@ -5,6 +5,8 @@ DaoDaoIsles_LandfallIsle_hns_MapScripts::
 	.byte 0
 
 DaoDaoIsles_LandfallIsle_hns_OnTransition:
+	@ Catch-up for saves that met the ranger before she opened the DAODAO dex stage.
+	call_if_ge VAR_DAODAO_STATE, 1, DaoDaoIsles_LandfallIsle_EventScript_DexStage
 	call_if_unset FLAG_TRIGGERED_DAODAO_LANDFALL_TOTEM, DaoDaoIsles_LandfallIsle_EventScript_HideTotem
 	setrespawn HEAL_LOCATION_DAODAO_LANDFALL_ISLE_HNS
 	gettimeofday
@@ -34,15 +36,23 @@ DaoDaoIsles_LandfallIsle_hns_OnFrameTable:
 	map_script_2 VAR_DAODAO_TRAVEL, 1, DaoDaoIsles_LandfallIsle_GetOffBoat
 	.2byte 0
 
+@ STEVEN stays in FUCHSIA with his staff (MIGRATION_DECISIONS.md 86); one of his SAFARI
+@ RANGERS meets the player instead, and opens the DAODAO stage of the POKéDEX.
 DaoDaoIsles_LandfallIsle_EventScript_Arrival::
 	lock
 	playse SE_PIN
-	applymovement LOCALID_DAODAO_STEVEN_LANDING, Common_Movement_ExclamationMark
+	applymovement LOCALID_DAODAO_RANGER_LANDING, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_DAODAO_STEVEN_LANDING, Common_Movement_FaceDown
+	applymovement LOCALID_DAODAO_RANGER_LANDING, Common_Movement_FaceDown
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
-	msgbox DaoDaoIsles_LandfallIsle_Text_StevenArrival, MSGBOX_DEFAULT
+	msgbox DaoDaoIsles_LandfallIsle_Text_RangerArrival, MSGBOX_DEFAULT
+	call DaoDaoIsles_LandfallIsle_EventScript_DexStage
+	playfanfare MUS_OBTAIN_ITEM
+	message DaoDaoIsles_LandfallIsle_Text_RangerDex
+	waitfanfare
+	delay 50
+	msgbox DaoDaoIsles_LandfallIsle_Text_RangerIsles, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_DAODAO_STATE, 1
 	setflag FLAG_VISITED_DAODAO
@@ -50,18 +60,35 @@ DaoDaoIsles_LandfallIsle_EventScript_Arrival::
 	release
 	end
 
-DaoDaoIsles_LandfallIsle_EventScript_Steven::
+DaoDaoIsles_LandfallIsle_EventScript_Ranger::
 	lock
 	faceplayer
-	msgbox DaoDaoIsles_LandfallIsle_Text_StevenAgain, MSGBOX_DEFAULT
+	msgbox DaoDaoIsles_LandfallIsle_Text_RangerAgain, MSGBOX_DEFAULT
 	release
 	end
 
-DaoDaoIsles_LandfallIsle_Text_StevenArrival:
-	.string "{PLAYER}! You made the crossing.\p"
+@ Never lowers the stage: OAK's MT. SILVER permission may already have opened SINJOH.
+DaoDaoIsles_LandfallIsle_EventScript_DexStage:
+	call_if_lt VAR_DEX_STAGE, DEX_STAGE_ALOLA, DaoDaoIsles_LandfallIsle_EventScript_SetDexStage
+	return
+
+DaoDaoIsles_LandfallIsle_EventScript_SetDexStage:
+	setvar VAR_DEX_STAGE, DEX_STAGE_ALOLA
+	return
+
+@ STEVEN's arrival lines, given to the ranger (drafts, MIGRATION_DECISIONS.md 86). Everything
+@ from "Word from the FUCHSIA docks" on is his text unchanged, bar "I" becoming "STEVEN".
+DaoDaoIsles_LandfallIsle_Text_RangerArrival:
+	.string "You must be {PLAYER}.\p"
+	.string "I'm one of STEVEN's RANGERS, from\n"
+	.string "the SAFARI ZONE in FUCHSIA.\p"
+	.string "He'd have come himself. He won't\n"
+	.string "leave the staff, not after what\l"
+	.string "the FEDERATION put them through.\p"
+	.string "So you get me.\p"
 	.string "Rough out past the shelf, isn't it.\n"
-	.string "I've done it twice and I still don't\l"
-	.string "care for it.\p"
+	.string "I came out on the first crossing\l"
+	.string "and I still don't care for it.\p"
 	.string "Word from the FUCHSIA docks is that\n"
 	.string "GIDEON came out this way.\p"
 	.string "He's the last thing carrying the\n"
@@ -70,6 +97,17 @@ DaoDaoIsles_LandfallIsle_Text_StevenArrival:
 	.string "West, past the water. There's more\n"
 	.string "standing out there than open sea,\l"
 	.string "whatever the charts say.\p"
+	.string "One more thing. Your POKéDEX.\p"
+	.string "I've been logging everything that\n"
+	.string "lives on these isles since I got\l"
+	.string "here. Hold still…$"
+
+DaoDaoIsles_LandfallIsle_Text_RangerDex:
+	.string "{PLAYER}'s POKéDEX now includes\n"
+	.string "the POKéMON of the DAODAO ISLES!$"
+
+DaoDaoIsles_LandfallIsle_Text_RangerIsles:
+	.string "There. That should help.\p"
 	.string "As for the rest of it…\p"
 	.string "Three isles. This one, the burnt one\n"
 	.string "across the channel, and the low one\l"
@@ -79,11 +117,12 @@ DaoDaoIsles_LandfallIsle_Text_StevenArrival:
 	.string "haven't been, and I'm not going to\l"
 	.string "tell you to.\p"
 	.string "Go and look, or don't. GIDEON is the\n"
-	.string "only thing I need from these islands.\p"
+	.string "only thing STEVEN needs from these\l"
+	.string "islands.\p"
 	.string "The POKéMON CENTER is north, by the\n"
 	.string "way. You may need it.$"
 
-DaoDaoIsles_LandfallIsle_Text_StevenAgain:
+DaoDaoIsles_LandfallIsle_Text_RangerAgain:
 	.string "West, past the water.\p"
 	.string "Everything else out here is yours to\n"
 	.string "find or leave alone.$"

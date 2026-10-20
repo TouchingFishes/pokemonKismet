@@ -1,0 +1,58 @@
+{
+  "id": "MAP_SINJOH_RUINS_CHAMBER2_HNS",
+  "name": "SinjohRuins_Chamber2_hns",
+  "layout": "LAYOUT_SINJOH_RUINS_CHAMBER2_HNS",
+  "music": "MUS_HG_SINJOU_RUINS",
+  "region_map_section": "MAPSEC_SINJOH_RUINS",
+  "requires_flash": false,
+  "weather": "WEATHER_SNOW",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_SINJOH_RUINS_HALL_HNS",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 10,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_SINJOH_RUINS_CHAMBER2_HNS",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 18,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_SINJOH_RUINS_CHAMBER2_HNS",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SINJOH_RUINS_CHAMBER2_HNS",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 22,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_SINJOH_RUINS_CHAMBER2_HNS",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "game_version": "hns",
+  "region": "REGION_HISUI"
+}

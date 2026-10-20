@@ -138,28 +138,32 @@
 #define sZigzagoonGalarLevelUpLearnset  sNoneLevelUpLearnset
 #endif
 
-// Hisuian forms - 20 level-up learnsets
+// Hisuian forms - 18 level-up learnsets
 #if !P_HISUIAN_FORMS
-#define sArcanineHisuiLevelUpLearnset        sNoneLevelUpLearnset
-#define sAvaluggHisuiLevelUpLearnset         sNoneLevelUpLearnset
+#define sArcanineHisuiLevelUpLearnset   sNoneLevelUpLearnset
+#define sAvaluggHisuiLevelUpLearnset    sNoneLevelUpLearnset
+#define sBraviaryHisuiLevelUpLearnset   sNoneLevelUpLearnset
+#define sDecidueyeHisuiLevelUpLearnset  sNoneLevelUpLearnset
+#define sElectrodeHisuiLevelUpLearnset  sNoneLevelUpLearnset
+#define sGoodraHisuiLevelUpLearnset     sNoneLevelUpLearnset
+#define sGrowlitheHisuiLevelUpLearnset  sNoneLevelUpLearnset
+#define sLilligantHisuiLevelUpLearnset  sNoneLevelUpLearnset
+#define sOverqwilLevelUpLearnset        sNoneLevelUpLearnset
+#define sQwilfishHisuiLevelUpLearnset   sNoneLevelUpLearnset
+#define sSamurottHisuiLevelUpLearnset   sNoneLevelUpLearnset
+#define sSliggooHisuiLevelUpLearnset    sNoneLevelUpLearnset
+#define sSneaselHisuiLevelUpLearnset    sNoneLevelUpLearnset
+#define sSneaslerLevelUpLearnset        sNoneLevelUpLearnset
+#define sTyphlosionHisuiLevelUpLearnset sNoneLevelUpLearnset
+#define sVoltorbHisuiLevelUpLearnset    sNoneLevelUpLearnset
+#define sZoroarkHisuiLevelUpLearnset    sNoneLevelUpLearnset
+#define sZoruaHisuiLevelUpLearnset      sNoneLevelUpLearnset
+#endif
+
+// White-Striped Basculin and Basculegion - 2 level-up learnsets, on their own gate
+#if !(P_HISUIAN_FORMS || P_KISMET_BASCULEGION)
 #define sBasculegionLevelUpLearnset          sNoneLevelUpLearnset
 #define sBasculinWhiteStripedLevelUpLearnset sNoneLevelUpLearnset
-#define sBraviaryHisuiLevelUpLearnset        sNoneLevelUpLearnset
-#define sDecidueyeHisuiLevelUpLearnset       sNoneLevelUpLearnset
-#define sElectrodeHisuiLevelUpLearnset       sNoneLevelUpLearnset
-#define sGoodraHisuiLevelUpLearnset          sNoneLevelUpLearnset
-#define sGrowlitheHisuiLevelUpLearnset       sNoneLevelUpLearnset
-#define sLilligantHisuiLevelUpLearnset       sNoneLevelUpLearnset
-#define sOverqwilLevelUpLearnset             sNoneLevelUpLearnset
-#define sQwilfishHisuiLevelUpLearnset        sNoneLevelUpLearnset
-#define sSamurottHisuiLevelUpLearnset        sNoneLevelUpLearnset
-#define sSliggooHisuiLevelUpLearnset         sNoneLevelUpLearnset
-#define sSneaselHisuiLevelUpLearnset         sNoneLevelUpLearnset
-#define sSneaslerLevelUpLearnset             sNoneLevelUpLearnset
-#define sTyphlosionHisuiLevelUpLearnset      sNoneLevelUpLearnset
-#define sVoltorbHisuiLevelUpLearnset         sNoneLevelUpLearnset
-#define sZoroarkHisuiLevelUpLearnset         sNoneLevelUpLearnset
-#define sZoruaHisuiLevelUpLearnset           sNoneLevelUpLearnset
 #endif
 
 // Paldean forms - 5 level-up learnsets
@@ -222,28 +226,32 @@
 #define sZigzagoonGalarTeachableLearnset  sNoneTeachableLearnset
 #endif
 
-// Hisuian forms - 20 teachable learnsets
+// Hisuian forms - 18 teachable learnsets
 #if !P_HISUIAN_FORMS
-#define sArcanineHisuiTeachableLearnset        sNoneTeachableLearnset
-#define sAvaluggHisuiTeachableLearnset         sNoneTeachableLearnset
+#define sArcanineHisuiTeachableLearnset   sNoneTeachableLearnset
+#define sAvaluggHisuiTeachableLearnset    sNoneTeachableLearnset
+#define sBraviaryHisuiTeachableLearnset   sNoneTeachableLearnset
+#define sDecidueyeHisuiTeachableLearnset  sNoneTeachableLearnset
+#define sElectrodeHisuiTeachableLearnset  sNoneTeachableLearnset
+#define sGoodraHisuiTeachableLearnset     sNoneTeachableLearnset
+#define sGrowlitheHisuiTeachableLearnset  sNoneTeachableLearnset
+#define sLilligantHisuiTeachableLearnset  sNoneTeachableLearnset
+#define sOverqwilTeachableLearnset        sNoneTeachableLearnset
+#define sQwilfishHisuiTeachableLearnset   sNoneTeachableLearnset
+#define sSamurottHisuiTeachableLearnset   sNoneTeachableLearnset
+#define sSliggooHisuiTeachableLearnset    sNoneTeachableLearnset
+#define sSneaselHisuiTeachableLearnset    sNoneTeachableLearnset
+#define sSneaslerTeachableLearnset        sNoneTeachableLearnset
+#define sTyphlosionHisuiTeachableLearnset sNoneTeachableLearnset
+#define sVoltorbHisuiTeachableLearnset    sNoneTeachableLearnset
+#define sZoroarkHisuiTeachableLearnset    sNoneTeachableLearnset
+#define sZoruaHisuiTeachableLearnset      sNoneTeachableLearnset
+#endif
+
+// White-Striped Basculin and Basculegion - 2 teachable learnsets, on their own gate
+#if !(P_HISUIAN_FORMS || P_KISMET_BASCULEGION)
 #define sBasculegionTeachableLearnset          sNoneTeachableLearnset
 #define sBasculinWhiteStripedTeachableLearnset sNoneTeachableLearnset
-#define sBraviaryHisuiTeachableLearnset        sNoneTeachableLearnset
-#define sDecidueyeHisuiTeachableLearnset       sNoneTeachableLearnset
-#define sElectrodeHisuiTeachableLearnset       sNoneTeachableLearnset
-#define sGoodraHisuiTeachableLearnset          sNoneTeachableLearnset
-#define sGrowlitheHisuiTeachableLearnset       sNoneTeachableLearnset
-#define sLilligantHisuiTeachableLearnset       sNoneTeachableLearnset
-#define sOverqwilTeachableLearnset             sNoneTeachableLearnset
-#define sQwilfishHisuiTeachableLearnset        sNoneTeachableLearnset
-#define sSamurottHisuiTeachableLearnset        sNoneTeachableLearnset
-#define sSliggooHisuiTeachableLearnset         sNoneTeachableLearnset
-#define sSneaselHisuiTeachableLearnset         sNoneTeachableLearnset
-#define sSneaslerTeachableLearnset             sNoneTeachableLearnset
-#define sTyphlosionHisuiTeachableLearnset      sNoneTeachableLearnset
-#define sVoltorbHisuiTeachableLearnset         sNoneTeachableLearnset
-#define sZoroarkHisuiTeachableLearnset         sNoneTeachableLearnset
-#define sZoruaHisuiTeachableLearnset           sNoneTeachableLearnset
 #endif
 
 // Paldean forms - 5 teachable learnsets

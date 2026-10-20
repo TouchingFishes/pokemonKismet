@@ -89,6 +89,7 @@ FuchsiaCity_EventScript_StevenBackers::
 	applymovement LOCALID_FUCHSIA_STEVEN, Common_Movement_FacePlayer
 	waitmovement LOCALID_FUCHSIA_STEVEN
 	msgbox FuchsiaCity_Text_StevenBackers, MSGBOX_DEFAULT
+	msgbox FuchsiaCity_Text_StevenCharter, MSGBOX_YESNO
 	setvar VAR_FUCHSIA_SCENE, 4
 	setflag FLAG_HIDE_FUCHSIA_STEVEN
 	goto_if_eq VAR_RESULT, NO, FuchsiaCity_EventScript_StevenCharterDecline
@@ -168,17 +169,26 @@ FuchsiaCity_Text_StevenBackers:
 @ The charter, moved out of the SAFARI ZONE ENTRANCE so nothing sits between this
 @ scene and the ROUTE 13 boat. Same beats as the version there, rewritten for a
 @ street corner: he cannot gesture at his own building, and he has just named the
-@ man, so the reason he cannot follow it up himself is the point.
+@ man, so the reason he cannot follow it up himself is the point. That reason is his
+@ people (MIGRATION_DECISIONS.md 86): the SAFARI staff need him after the occupation,
+@ so he stays, and the battle is him testing the one he is sending instead.
+@ (Until 86 the script never showed this text: it read StevenBackers and then
+@ branched on whatever VAR_RESULT was left over.)
 FuchsiaCity_Text_StevenCharter:
 	.string "SURGE, ERIKA, SABRINA, JANINE.\p"
 	.string "All four, and the FEDERATION on top\n"
 	.string "of it.\p"
-	.string "GIDEON is not in KANTO any more, and\n"
-	.string "wherever he has gone I cannot reach\l"
-	.string "it from here.\p"
-	.string "I have chartered a boat out of the\n"
+	.string "GIDEON is not in KANTO any more. I\n"
+	.string "would go after him myself, but I\l"
+	.string "cannot leave FUCHSIA.\p"
+	.string "My attendants spent the occupation\n"
+	.string "locked in their own back room. They\l"
+	.string "need me here, and so does the\l"
+	.string "SAFARI ZONE.\p"
+	.string "So I have chartered a boat out of the\n"
 	.string "ROUTE 13 dock. I want you on it.\p"
-	.string "But not before I have seen for myself\n"
+	.string "I am sending you where I cannot\n"
+	.string "follow, so I need to see for myself\l"
 	.string "that you are ready.\p"
 	.string "Show me. Here and now?$"
 
@@ -195,6 +205,9 @@ FuchsiaCity_Text_StevenCharterAfter:
 	.string "That was a fine battle.\p"
 	.string "The ship is at the dock on ROUTE 13.\n"
 	.string "The captain has his orders.\p"
+	.string "One of my RANGERS went out on the\n"
+	.string "first crossing. She will meet you\l"
+	.string "on the other side.\p"
 	.string "Find GIDEON, {PLAYER}.\p"
 	.string "And be careful out there.$"
 

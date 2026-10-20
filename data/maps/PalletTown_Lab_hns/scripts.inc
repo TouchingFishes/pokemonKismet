@@ -133,6 +133,7 @@ PalletTown_Lab_EventScript_GreenBattle::
 	msgbox PalletTown_Lab_Text_OakOpenMtSilver, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_INDIGOJUNCTION_HIDE_SILVER_GUARD
+	setvar VAR_DEX_STAGE, DEX_STAGE_SINJOH
 	setvar VAR_PALLETTOWN_LABSTATE, 2
 	setvar VAR_PALLET_LAB_GREEN_SCENE, 2
 	releaseall

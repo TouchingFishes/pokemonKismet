@@ -161,7 +161,8 @@ static const u8 sNuzlockeLUT[] =
     // Currently the highest section value. The table is sized by its highest row, so the
     // highest section must always have one, or lookups for it read past the end.
     [MAPSEC_YELLOW_FOREST]    = 0x78,
-    // Max bit index: 0x78 (121 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
+    [MAPSEC_CHILLWIND_CAVE]   = 0x79,
+    // Max bit index: 0x79 (122 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
     // If you exceed 0x7F, grow nuzlockeEncounterFlags in include/global.h.
 
 #else

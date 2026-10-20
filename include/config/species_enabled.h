@@ -40,6 +40,12 @@
 
 #define P_SEPARATE_REGIONAL_FORMS        TRUE
 
+// Kismet: White-Striped Basculin and Basculegion stay in while the other Hisuian
+// forms are off. Both use National Dex numbers that exist anyway (#550, #902), so
+// nothing renumbers and saves are unaffected. Their blocks are gated
+// P_HISUIAN_FORMS || P_KISMET_BASCULEGION (MIGRATION_DECISIONS.md 82).
+#define P_KISMET_BASCULEGION             TRUE
+
 // Big groups of forms that aren't always desired when choosing families.
 #define P_PIKACHU_EXTRA_FORMS            TRUE
 #define P_COSPLAY_PIKACHU_FORMS          P_PIKACHU_EXTRA_FORMS

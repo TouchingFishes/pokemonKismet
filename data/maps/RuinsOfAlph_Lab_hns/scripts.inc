@@ -57,6 +57,10 @@ RuinsOfAlph_Lab_EventScript_FossilScientist::
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_NoticeDomeFossil
 	checkitem ITEM_OLD_AMBER
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_NoticeOldAmber
+	checkitem ITEM_SKULL_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_NoticeSkullFossil
+	checkitem ITEM_ARMOR_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_NoticeArmorFossil
 	release
 	end
 
@@ -78,6 +82,10 @@ RuinsOfAlph_Lab_EventScript_NoticeRootFossil::
 	checkitem ITEM_DOME_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
 	checkitem ITEM_OLD_AMBER
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_SKULL_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_ARMOR_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
 	goto RuinsOfAlph_Lab_EventScript_GiveRootFossil
 	end
@@ -109,6 +117,10 @@ RuinsOfAlph_Lab_EventScript_NoticeClawFossil::
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
 	checkitem ITEM_OLD_AMBER
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_SKULL_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_ARMOR_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
 	goto RuinsOfAlph_Lab_EventScript_GiveClawFossil
 	end
 
@@ -138,6 +150,10 @@ RuinsOfAlph_Lab_EventScript_NoticeHelixFossil::
 	checkitem ITEM_DOME_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
 	checkitem ITEM_OLD_AMBER
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_SKULL_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_ARMOR_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
 	goto RuinsOfAlph_Lab_EventScript_GiveHelixFossil
 	end
@@ -169,6 +185,10 @@ RuinsOfAlph_Lab_EventScript_NoticeDomeFossil::
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
 	checkitem ITEM_OLD_AMBER
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_SKULL_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_ARMOR_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
 	goto RuinsOfAlph_Lab_EventScript_GiveDomeFossil
 	end
 
@@ -199,6 +219,10 @@ RuinsOfAlph_Lab_EventScript_NoticeOldAmber::
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
 	checkitem ITEM_DOME_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_SKULL_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_ARMOR_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
 	goto RuinsOfAlph_Lab_EventScript_GiveOldAmber
 	end
 
@@ -208,6 +232,75 @@ RuinsOfAlph_Lab_EventScript_GiveOldAmber::
 	removeitem ITEM_OLD_AMBER
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
 	setvar VAR_WHICH_FOSSIL_REVIVED, 5
+	release
+	end
+
+@ SKULL and ARMOR FOSSILS, found in SINJOH's CHILLWIND CAVE (MIGRATION_DECISIONS.md 86).
+RuinsOfAlph_Lab_EventScript_NoticeSkullFossil::
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_RUINS_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark
+	delay 55
+	waitmovement LOCALID_RUINS_FOSSIL_SCIENTIST
+	applymovement LOCALID_RUINS_FOSSIL_SCIENTIST, Common_Movement_Delay48
+	waitmovement 0
+	msgbox RuinsOfAlph_Lab_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, RuinsOfAlph_Lab_EventScript_DeclineGiveFossil
+	checkitem ITEM_ROOT_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_CLAW_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_HELIX_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_DOME_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_OLD_AMBER
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_ARMOR_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	goto RuinsOfAlph_Lab_EventScript_GiveSkullFossil
+	end
+
+RuinsOfAlph_Lab_EventScript_GiveSkullFossil::
+	bufferitemname STR_VAR_1, ITEM_SKULL_FOSSIL
+	msgbox RuinsOfAlph_Lab_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
+	removeitem ITEM_SKULL_FOSSIL
+	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
+	setvar VAR_WHICH_FOSSIL_REVIVED, 6
+	release
+	end
+
+RuinsOfAlph_Lab_EventScript_NoticeArmorFossil::
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_RUINS_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark
+	delay 55
+	waitmovement LOCALID_RUINS_FOSSIL_SCIENTIST
+	applymovement LOCALID_RUINS_FOSSIL_SCIENTIST, Common_Movement_Delay48
+	waitmovement 0
+	msgbox RuinsOfAlph_Lab_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, RuinsOfAlph_Lab_EventScript_DeclineGiveFossil
+	checkitem ITEM_ROOT_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_CLAW_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_HELIX_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_DOME_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_OLD_AMBER
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	checkitem ITEM_SKULL_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ChooseFossil
+	goto RuinsOfAlph_Lab_EventScript_GiveArmorFossil
+	end
+
+RuinsOfAlph_Lab_EventScript_GiveArmorFossil::
+	bufferitemname STR_VAR_1, ITEM_ARMOR_FOSSIL
+	msgbox RuinsOfAlph_Lab_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
+	removeitem ITEM_ARMOR_FOSSIL
+	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
+	setvar VAR_WHICH_FOSSIL_REVIVED, 7
 	release
 	end
 
@@ -232,6 +325,8 @@ RuinsOfAlph_Lab_EventScript_FossilMonReady::
 	goto_if_eq VAR_WHICH_FOSSIL_REVIVED, 3, RuinsOfAlph_Lab_EventScript_OmanyteReady
 	goto_if_eq VAR_WHICH_FOSSIL_REVIVED, 4, RuinsOfAlph_Lab_EventScript_KabutoReady
 	goto_if_eq VAR_WHICH_FOSSIL_REVIVED, 5, RuinsOfAlph_Lab_EventScript_AeroReady
+	goto_if_eq VAR_WHICH_FOSSIL_REVIVED, 6, RuinsOfAlph_Lab_EventScript_CranidosReady
+	goto_if_eq VAR_WHICH_FOSSIL_REVIVED, 7, RuinsOfAlph_Lab_EventScript_ShieldonReady
 	end
 
 RuinsOfAlph_Lab_EventScript_LileepReady::
@@ -562,14 +657,17 @@ RuinsOfAlph_Lab_EventScript_FinishReceivingAero::
 RuinsOfAlph_Lab_EventScript_ChooseFossil::
 	message RuinsOfAlph_Lab_Text_TwoFossilsPickOne
 	waitmessage
-	multichoice 17, 0, MULTI_FOSSIL_HNS, FALSE
+	@ MULTI_FOSSIL_HNS held five fossils; with SKULL and ARMOR the list scrolls instead.
+	dynmultichoice 17, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, RuinsOfAlph_Lab_Text_ChoiceClaw, RuinsOfAlph_Lab_Text_ChoiceRoot, RuinsOfAlph_Lab_Text_ChoiceHelix, RuinsOfAlph_Lab_Text_ChoiceDome, RuinsOfAlph_Lab_Text_ChoiceOldAmber, RuinsOfAlph_Lab_Text_ChoiceSkull, RuinsOfAlph_Lab_Text_ChoiceArmor, gText_Exit
 	switch VAR_RESULT
 	case 0, RuinsOfAlph_Lab_EventScript_ChooseClawFossil
 	case 1, RuinsOfAlph_Lab_EventScript_ChooseRootFossil
 	case 2, RuinsOfAlph_Lab_EventScript_ChooseHelixFossil
 	case 3, RuinsOfAlph_Lab_EventScript_ChooseDomeFossil
 	case 4, RuinsOfAlph_Lab_EventScript_ChooseOldAmber
-	case 5, RuinsOfAlph_Lab_EventScript_CancelFossilSelect
+	case 5, RuinsOfAlph_Lab_EventScript_ChooseSkullFossil
+	case 6, RuinsOfAlph_Lab_EventScript_ChooseArmorFossil
+	case 7, RuinsOfAlph_Lab_EventScript_CancelFossilSelect
 	case MULTI_B_PRESSED, RuinsOfAlph_Lab_EventScript_CancelFossilSelect
 	end
 
@@ -601,6 +699,150 @@ RuinsOfAlph_Lab_EventScript_ChooseOldAmber::
 	checkitem ITEM_OLD_AMBER
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_GiveOldAmber
 	goto_if_eq VAR_RESULT, FALSE, RuinsOfAlph_Lab_EventScript_DeclineGiveFossil2
+	end
+
+RuinsOfAlph_Lab_EventScript_ChooseSkullFossil::
+	checkitem ITEM_SKULL_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_GiveSkullFossil
+	goto_if_eq VAR_RESULT, FALSE, RuinsOfAlph_Lab_EventScript_DeclineGiveFossil2
+	end
+
+RuinsOfAlph_Lab_EventScript_ChooseArmorFossil::
+	checkitem ITEM_ARMOR_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_GiveArmorFossil
+	goto_if_eq VAR_RESULT, FALSE, RuinsOfAlph_Lab_EventScript_DeclineGiveFossil2
+	end
+
+RuinsOfAlph_Lab_EventScript_CranidosReady::
+	bufferspeciesname STR_VAR_2, SPECIES_CRANIDOS
+	msgbox RuinsOfAlph_Lab_Text_FossilizedMonBroughtBackToLife, MSGBOX_DEFAULT
+	goto RuinsOfAlph_Lab_EventScript_ReceiveCranidos
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceiveCranidos::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CRANIDOS
+	givemon SPECIES_CRANIDOS, 20
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, RuinsOfAlph_Lab_EventScript_ReceiveCranidosParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, RuinsOfAlph_Lab_EventScript_ReceiveCranidosPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceiveCranidosParty::
+	call RuinsOfAlph_Lab_EventScript_ReceivedCranidosFanfare
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ReceiveCranidosParty_Nuzlocke
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, RuinsOfAlph_Lab_EventScript_FinishReceivingCranidos
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto RuinsOfAlph_Lab_EventScript_FinishReceivingCranidos
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceiveCranidosParty_Nuzlocke::
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto RuinsOfAlph_Lab_EventScript_FinishReceivingCranidos
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceiveCranidosPC::
+	call RuinsOfAlph_Lab_EventScript_ReceivedCranidosFanfare
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ReceiveCranidosPC_Nuzlocke
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, RuinsOfAlph_Lab_EventScript_TransferCranidosToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto RuinsOfAlph_Lab_EventScript_TransferCranidosToPC
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceiveCranidosPC_Nuzlocke::
+	call Common_EventScript_NameReceivedBoxMon
+	goto RuinsOfAlph_Lab_EventScript_TransferCranidosToPC
+	end
+
+RuinsOfAlph_Lab_EventScript_TransferCranidosToPC::
+	call Common_EventScript_TransferredToPC
+	goto RuinsOfAlph_Lab_EventScript_FinishReceivingCranidos
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceivedCranidosFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_CRANIDOS
+	playfanfare MUS_OBTAIN_ITEM
+	message RuinsOfAlph_Lab_Text_ReceivedMonFromResearcher
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_CRANIDOS
+	return
+
+RuinsOfAlph_Lab_EventScript_FinishReceivingCranidos::
+	setvar VAR_FOSSIL_RESURRECTION_STATE, 0
+	setflag FLAG_RECEIVED_REVIVED_FOSSIL_MON
+	release
+	end
+
+RuinsOfAlph_Lab_EventScript_ShieldonReady::
+	bufferspeciesname STR_VAR_2, SPECIES_SHIELDON
+	msgbox RuinsOfAlph_Lab_Text_FossilizedMonBroughtBackToLife, MSGBOX_DEFAULT
+	goto RuinsOfAlph_Lab_EventScript_ReceiveShieldon
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceiveShieldon::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIELDON
+	givemon SPECIES_SHIELDON, 20
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, RuinsOfAlph_Lab_EventScript_ReceiveShieldonParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, RuinsOfAlph_Lab_EventScript_ReceiveShieldonPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceiveShieldonParty::
+	call RuinsOfAlph_Lab_EventScript_ReceivedShieldonFanfare
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ReceiveShieldonParty_Nuzlocke
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, RuinsOfAlph_Lab_EventScript_FinishReceivingShieldon
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto RuinsOfAlph_Lab_EventScript_FinishReceivingShieldon
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceiveShieldonParty_Nuzlocke::
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto RuinsOfAlph_Lab_EventScript_FinishReceivingShieldon
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceiveShieldonPC::
+	call RuinsOfAlph_Lab_EventScript_ReceivedShieldonFanfare
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_Lab_EventScript_ReceiveShieldonPC_Nuzlocke
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, RuinsOfAlph_Lab_EventScript_TransferShieldonToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto RuinsOfAlph_Lab_EventScript_TransferShieldonToPC
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceiveShieldonPC_Nuzlocke::
+	call Common_EventScript_NameReceivedBoxMon
+	goto RuinsOfAlph_Lab_EventScript_TransferShieldonToPC
+	end
+
+RuinsOfAlph_Lab_EventScript_TransferShieldonToPC::
+	call Common_EventScript_TransferredToPC
+	goto RuinsOfAlph_Lab_EventScript_FinishReceivingShieldon
+	end
+
+RuinsOfAlph_Lab_EventScript_ReceivedShieldonFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_SHIELDON
+	playfanfare MUS_OBTAIN_ITEM
+	message RuinsOfAlph_Lab_Text_ReceivedMonFromResearcher
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SHIELDON
+	return
+
+RuinsOfAlph_Lab_EventScript_FinishReceivingShieldon::
+	setvar VAR_FOSSIL_RESURRECTION_STATE, 0
+	setflag FLAG_RECEIVED_REVIVED_FOSSIL_MON
+	release
 	end
 
 RuinsOfAlph_Lab_EventScript_CancelFossilSelect::
@@ -728,4 +970,23 @@ RuinsOfAlph_Lab_Text_WhatToWorkOnNext:
 	.string "One couldn't ask for a better\n"
 	.string "environment as an engineer.$"
 
+RuinsOfAlph_Lab_Text_ChoiceClaw:
+	.string "CLAW FOSSIL$"
 
+RuinsOfAlph_Lab_Text_ChoiceRoot:
+	.string "ROOT FOSSIL$"
+
+RuinsOfAlph_Lab_Text_ChoiceHelix:
+	.string "HELIX FOSSIL$"
+
+RuinsOfAlph_Lab_Text_ChoiceDome:
+	.string "DOME FOSSIL$"
+
+RuinsOfAlph_Lab_Text_ChoiceOldAmber:
+	.string "OLD AMBER$"
+
+RuinsOfAlph_Lab_Text_ChoiceSkull:
+	.string "SKULL FOSSIL$"
+
+RuinsOfAlph_Lab_Text_ChoiceArmor:
+	.string "ARMOR FOSSIL$"

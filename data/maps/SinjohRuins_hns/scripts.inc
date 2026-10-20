@@ -22,34 +22,8 @@ SinjohRuins_CynthiaLanding::
     return
 
 SinjohRuins_hns_OnLoad::
-    call_if_ge VAR_PLATECOUNTER, 3, SinjohRuins_OpenRegirock
-    call_if_ge VAR_PLATECOUNTER, 6, SinjohRuins_OpenRegice
-    call_if_ge VAR_PLATECOUNTER, 9, SinjohRuins_OpenRegisteel
-    call_if_ge VAR_PLATECOUNTER, 12, SinjohRuins_OpenRegieleki
-    call_if_ge VAR_PLATECOUNTER, 15, SinjohRuins_OpenRegidrago
     call_if_ge VAR_PLATECOUNTER, 17, SinjohRuins_OpenArceus
     end
-
-SinjohRuins_OpenRegirock::
-    setmetatile 9, 44, 0x378, FALSE
-    setmetatile 8, 44, 0x0BE, TRUE
-    return
-SinjohRuins_OpenRegice::
-    setmetatile 7, 48, 0x370, FALSE
-    setmetatile 6, 48, 0x0BE, TRUE
-    return
-SinjohRuins_OpenRegisteel::
-    setmetatile 8, 54, 0x370, FALSE
-    setmetatile 7, 54, 0x0BE, TRUE
-    return
-SinjohRuins_OpenRegieleki::
-    setmetatile 38, 44, 0x371, FALSE
-    setmetatile 39, 44, 0x0BD, TRUE
-    return
-SinjohRuins_OpenRegidrago::
-    setmetatile 37, 49, 0x371, FALSE
-    setmetatile 38, 49, 0x0BD, TRUE
-    return
 
 SinjohRuins_OpenArceus::
     @left stairs
@@ -355,6 +329,48 @@ SinjohRuins_Text_CynthiaDefeat:
 SinjohRuins_EventScript_Cynthia::
     msgbox SinjohRuins_Text_CynthiaAfterPlate, MSGBOX_NPC
     end
+
+@ BAXCALIBUR guards the temple door like the AZURE FLUTE's NOBLES: it cannot be caught or
+@ fled, and once beaten it is gone and the dungeon is open (MIGRATION_DECISIONS.md 82).
+@ A whiteout clears the engine flags (B_RESET_FLAGS_VARS_AFTER_WHITEOUT) and leaves it here.
+SinjohRuins_EventScript_Baxcalibur::
+	lock
+	faceplayer
+	playmoncry SPECIES_BAXCALIBUR, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setwildbossbattle species=SPECIES_BAXCALIBUR, level=80, item=ITEM_DRAGON_FANG, move1_1=MOVE_GLAIVE_RUSH, move1_2=MOVE_ICICLE_CRASH, move1_3=MOVE_EARTHQUAKE, move1_4=MOVE_SWORDS_DANCE
+	settotemboost B_POSITION_OPPONENT_LEFT, 0, 1, 1, 0, 1, 0
+	setflag FLAG_NO_WILD_CATCHING
+	setflag FLAG_NO_WILD_RUNNING
+	setflag FLAG_SMART_WILD_AI
+	setflag FLAG_NO_SHINY
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SinjohRuins_EventScript_BaxcaliburRan
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_SINJOHRUINS_BAXCALIBUR
+	setflag FLAG_HIDE_SINJOHRUINS_BAXCALIBUR
+	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox SinjohRuins_Text_BaxcaliburRetreated, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_NO_WILD_CATCHING
+	clearflag FLAG_NO_WILD_RUNNING
+	clearflag FLAG_SMART_WILD_AI
+	clearflag FLAG_NO_SHINY
+	release
+	end
+
+SinjohRuins_EventScript_BaxcaliburRan::
+	clearflag FLAG_NO_WILD_CATCHING
+	clearflag FLAG_NO_WILD_RUNNING
+	clearflag FLAG_SMART_WILD_AI
+	clearflag FLAG_NO_SHINY
+	release
+	end
+
+SinjohRuins_Text_BaxcaliburRetreated:
+	.string "BAXCALIBUR retreated.\n"
+	.string "The way into the ruins is open.$"
 
 SinjohRuins_EventScript_Sign::
     msgbox SinjohRuins_Text_Sign, MSGBOX_SIGN

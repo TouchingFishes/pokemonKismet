@@ -1211,6 +1211,14 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_LUXIO] = sShinxTeachableLearnset_Kismet,
     [SPECIES_LUXRAY] = sLuxrayTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_CRANIDOS
+    [SPECIES_CRANIDOS] = sCranidosTeachableLearnset_Kismet,
+    [SPECIES_RAMPARDOS] = sRampardosTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_SHIELDON
+    [SPECIES_SHIELDON] = sShieldonTeachableLearnset_Kismet,
+    [SPECIES_BASTIODON] = sBastiodonTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_BURMY
     [SPECIES_BURMY] = sBurmyTeachableLearnset_Kismet,
     [SPECIES_BURMY_PLANT] = sBurmyTeachableLearnset_Kismet,
@@ -1281,8 +1289,21 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_ABOMASNOW] = sAbomasnowTeachableLearnset_Kismet,
     [SPECIES_ABOMASNOW_MEGA] = sAbomasnowTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_DIALGA
+    [SPECIES_DIALGA] = sDialgaTeachableLearnset_Kismet,
+    [SPECIES_DIALGA_ORIGIN] = sDialgaTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_PALKIA
+    [SPECIES_PALKIA] = sPalkiaTeachableLearnset_Kismet,
+    [SPECIES_PALKIA_ORIGIN] = sPalkiaTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_REGIGIGAS
     [SPECIES_REGIGIGAS] = sRegigigasTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_GIRATINA
+    [SPECIES_GIRATINA] = sGiratinaTeachableLearnset_Kismet,
+    [SPECIES_GIRATINA_ALTERED] = sGiratinaTeachableLearnset_Kismet,
+    [SPECIES_GIRATINA_ORIGIN] = sGiratinaTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_ARCEUS
     [SPECIES_ARCEUS_NORMAL] = sArceusNormalTeachableLearnset_Kismet,
@@ -1526,6 +1547,13 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_REGIDRAGO
     [SPECIES_REGIDRAGO] = sRegidragoTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_BASCULIN
+#if P_HISUIAN_FORMS || P_KISMET_BASCULEGION
+    [SPECIES_BASCULEGION_F] = sBasculegionFTeachableLearnset_Kismet,
+    [SPECIES_BASCULEGION_M] = sBasculegionFTeachableLearnset_Kismet,
+    [SPECIES_BASCULEGION] = sBasculegionFTeachableLearnset_Kismet,
+#endif
+#endif
 #if P_FAMILY_WATTREL
     [SPECIES_WATTREL] = sWattrelTeachableLearnset_Kismet,
     [SPECIES_KILOWATTREL] = sKilowattrelTeachableLearnset_Kismet,
@@ -1559,6 +1587,12 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_GREAVARD] = sGreavardTeachableLearnset_Kismet,
     [SPECIES_HOUNDSTONE] = sHoundstoneTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_FRIGIBAX
+    [SPECIES_FRIGIBAX] = sFrigibaxTeachableLearnset_Kismet,
+    [SPECIES_ARCTIBAX] = sArctibaxTeachableLearnset_Kismet,
+    [SPECIES_BAXCALIBUR] = sBaxcaliburTeachableLearnset_Kismet,
+    [SPECIES_BAXCALIBUR_MEGA] = sBaxcaliburTeachableLearnset_Kismet,
+#endif
 #if P_KISMET_FAKEMON
     [SPECIES_RAELIC] = sRaelicTeachableLearnset_Kismet,
     [SPECIES_ROMUSHU] = sRomushuTeachableLearnset_Kismet,
@@ -1572,5 +1606,10 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_ALT_MEGANIUM] = sAltMeganiumTeachableLearnset_Kismet,
     [SPECIES_ALT_TYPHLOSION] = sAltTyphlosionTeachableLearnset_Kismet,
     [SPECIES_ALT_FERALIGATR] = sAltFeraligatrTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_BASCULIN
+#if P_HISUIAN_FORMS || P_KISMET_BASCULEGION
+    [SPECIES_BASCULIN_WHITE_STRIPED] = sBasculinWhiteStripedTeachableLearnset_Kismet,
+#endif
 #endif
 };

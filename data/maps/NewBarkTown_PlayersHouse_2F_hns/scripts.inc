@@ -152,8 +152,6 @@ NewBarkTown_PlayersHouse_2F_EventScript_RocketLabTest::
 	case 2, NewBarkTown_PlayersHouse_2F_EventScript_LabGiovanni
 	goto NewBarkTown_PlayersHouse_2F_EventScript_LabGenesect
 
-@ STEVEN's charter has run (state 5), nothing in the lab has, and the cordon is up. Every flag
-@ is written outright rather than as a delta, so a save that played further gets reset too.
 NewBarkTown_PlayersHouse_2F_EventScript_LabBeforeGideon::
 	setvar VAR_FUCHSIA_FEDERATION_STATE, 5
 	clearflag FLAG_DEFEATED_DAODAO_LAB_GIDEON
@@ -168,7 +166,6 @@ NewBarkTown_PlayersHouse_2F_EventScript_LabBeforeGideon::
 	cleartrainerflag TRAINER_DAODAO_LAB_CUEBALL_2_HNS
 	cleartrainerflag TRAINER_DAODAO_LAB_SCIENTIST_1_HNS
 	cleartrainerflag TRAINER_DAODAO_LAB_SCIENTIST_2_HNS
-	cleartrainerflag TRAINER_DAODAO_LAB_BIKER_2_HNS
 	@ Common_EventScript_ClearKantoCordon, undone. Nothing else sets these four, and the
 	@ guard's flag is only ever cleared elsewhere (ROUTE 27).
 	clearflag FLAG_DAODAO_CLEARED

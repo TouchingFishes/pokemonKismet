@@ -12605,7 +12605,7 @@ static const struct LevelUpMove sBasculinLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-#if P_HISUIAN_FORMS
+#if P_HISUIAN_FORMS || P_KISMET_BASCULEGION
 static const struct LevelUpMove sBasculinWhiteStripedLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
@@ -12647,7 +12647,7 @@ static const struct LevelUpMove sBasculegionLevelUpLearnset[] = {
     LEVEL_UP_MOVE(56, MOVE_HEAD_SMASH),
     LEVEL_UP_END
 };
-#endif //P_HISUIAN_FORMS
+#endif //P_HISUIAN_FORMS || P_KISMET_BASCULEGION
 #endif //P_FAMILY_BASCULIN
 
 #if P_FAMILY_SANDILE

@@ -1199,8 +1199,17 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_SNOVER] = sSnoverLevelUpLearnset_Kismet,
     [SPECIES_ABOMASNOW] = sAbomasnowLevelUpLearnset_Kismet,
 #endif
+#if P_FAMILY_DIALGA
+    [SPECIES_DIALGA] = sDialgaLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_PALKIA
+    [SPECIES_PALKIA] = sPalkiaLevelUpLearnset_Kismet,
+#endif
 #if P_FAMILY_REGIGIGAS
     [SPECIES_REGIGIGAS] = sRegigigasLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_GIRATINA
+    [SPECIES_GIRATINA] = sGiratinaLevelUpLearnset_Kismet,
 #endif
 #if P_FAMILY_ARCEUS
     [SPECIES_ARCEUS] = sArceusLevelUpLearnset_Kismet,
@@ -1416,6 +1425,13 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_REGIDRAGO
     [SPECIES_REGIDRAGO] = sRegidragoLevelUpLearnset_Kismet,
 #endif
+#if P_FAMILY_BASCULIN
+#if P_HISUIAN_FORMS || P_KISMET_BASCULEGION
+    [SPECIES_BASCULEGION] = sBasculegionLevelUpLearnset_Kismet,
+    [SPECIES_BASCULEGION_F] = sBasculegionLevelUpLearnset_Kismet,
+    [SPECIES_BASCULEGION_M] = sBasculegionLevelUpLearnset_Kismet,
+#endif
+#endif
 #if P_FAMILY_WATTREL
     [SPECIES_WATTREL] = sWattrelLevelUpLearnset_Kismet,
     [SPECIES_KILOWATTREL] = sKilowattrelLevelUpLearnset_Kismet,
@@ -1447,6 +1463,11 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_GREAVARD] = sGreavardLevelUpLearnset_Kismet,
     [SPECIES_HOUNDSTONE] = sHoundstoneLevelUpLearnset_Kismet,
 #endif
+#if P_FAMILY_FRIGIBAX
+    [SPECIES_FRIGIBAX] = sFrigibaxLevelUpLearnset_Kismet,
+    [SPECIES_ARCTIBAX] = sArctibaxLevelUpLearnset_Kismet,
+    [SPECIES_BAXCALIBUR] = sBaxcaliburLevelUpLearnset_Kismet,
+#endif
 #if P_KISMET_FAKEMON
     [SPECIES_RAELIC] = sRaelicLevelUpLearnset_Kismet,
     [SPECIES_ROMUSHU] = sRomushuLevelUpLearnset_Kismet,
@@ -1466,5 +1487,13 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #endif
 #if P_FAMILY_TOTODILE
     [SPECIES_ALT_FERALIGATR] = sFeraligatrLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_BASCULIN
+    [SPECIES_BASCULIN] = sBasculinLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_BASCULIN
+#if P_HISUIAN_FORMS || P_KISMET_BASCULEGION
+    [SPECIES_BASCULIN_WHITE_STRIPED] = sBasculinWhiteStripedLevelUpLearnset_Kismet,
+#endif
 #endif
 };

@@ -2321,6 +2321,11 @@ enum JohtoDexOrder
     JOHTO_DEX_GLIMMORA,
     JOHTO_DEX_ZORUA,
     JOHTO_DEX_ZOROARK,
+    JOHTO_DEX_BASCULIN,
+    JOHTO_DEX_BASCULEGION,
+    JOHTO_DEX_FRIGIBAX,
+    JOHTO_DEX_ARCTIBAX,
+    JOHTO_DEX_BAXCALIBUR,
     JOHTO_DEX_LATIAS,
     JOHTO_DEX_LATIOS,
     JOHTO_DEX_DEOXYS,
@@ -2331,6 +2336,9 @@ enum JohtoDexOrder
     JOHTO_DEX_REGIDRAGO,
     JOHTO_DEX_REGIGIGAS,
     JOHTO_DEX_GENESECT,
+    JOHTO_DEX_DIALGA,
+    JOHTO_DEX_PALKIA,
+    JOHTO_DEX_GIRATINA,
     JOHTO_DEX_ARCEUS,
 };
 
@@ -2890,9 +2898,26 @@ enum ObtainableDexOrder {
     OBTAINABLE_DEX_GRENINJA,
     // The post-game shadow in the FOXFIRE HOLLOW Mansion's study. Appended for the same reason.
     OBTAINABLE_DEX_MARSHADOW,
+    // White-Striped Basculin's and Frigibax's lines (MIGRATION_DECISIONS.md 82). Appended
+    // for the same reason. None can be caught until their wild spots are placed.
+    OBTAINABLE_DEX_BASCULIN,
+    OBTAINABLE_DEX_BASCULEGION,
+    OBTAINABLE_DEX_FRIGIBAX,
+    OBTAINABLE_DEX_ARCTIBAX,
+    OBTAINABLE_DEX_BAXCALIBUR,
+    // The creation trio in the Deep Hall of the Sinjoh Ruins (MIGRATION_DECISIONS.md 85).
+    // Appended for the same reason.
+    OBTAINABLE_DEX_DIALGA,
+    OBTAINABLE_DEX_PALKIA,
+    OBTAINABLE_DEX_GIRATINA,
+    // The SINNOH fossil lines, revived from CHILLWIND CAVE's fossils (MIGRATION_DECISIONS.md 86).
+    OBTAINABLE_DEX_CRANIDOS,
+    OBTAINABLE_DEX_RAMPARDOS,
+    OBTAINABLE_DEX_SHIELDON,
+    OBTAINABLE_DEX_BASTIODON,
 };
 
-#define OBTAINABLE_DEX_COUNT (OBTAINABLE_DEX_MARSHADOW + 1)
+#define OBTAINABLE_DEX_COUNT (OBTAINABLE_DEX_BASTIODON + 1)
 
 #else
 

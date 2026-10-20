@@ -664,7 +664,16 @@
     "NewSinjoh_House4_hns",
     "NewSinjoh_KimonoHideout_hns",
     "SinjohRuins_House1_hns",
-    "MirageForest_House_hns"
+    "MirageForest_House_hns",
+    "SinjohRuins_Hall_hns",
+    "SinjohRuins_Chamber1_hns",
+    "SinjohRuins_Chamber2_hns",
+    "SinjohRuins_Chamber3_hns",
+    "SinjohRuins_Chamber4_hns",
+    "SinjohRuins_Chamber5_hns",
+    "SinjohRuins_DeepHall_hns",
+    "SinjohRuins_Labyrinth_hns",
+    "ChillwindCave_hns"
   ],
   "gMapGroup_SpecialArea_Hns": [
     "TrainerHill_Courtyard_hns",

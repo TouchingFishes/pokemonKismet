@@ -17253,6 +17253,114 @@
       "border_width": 3,
       "game_version": "hns",
       "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_SINJOH_RUINS_HALL_HNS",
+      "name": "SinjohRuins_Hall_hns_Layout",
+      "width": 31,
+      "height": 38,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/SinjohRuins_Hall_hns/border.bin",
+      "blockdata_filepath": "data/layouts/SinjohRuins_Hall_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_SINJOH_RUINS_CHAMBER1_HNS",
+      "name": "SinjohRuins_Chamber1_hns_Layout",
+      "width": 21,
+      "height": 34,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/SinjohRuins_Chamber1_hns/border.bin",
+      "blockdata_filepath": "data/layouts/SinjohRuins_Chamber1_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_SINJOH_RUINS_CHAMBER2_HNS",
+      "name": "SinjohRuins_Chamber2_hns_Layout",
+      "width": 29,
+      "height": 30,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/SinjohRuins_Chamber2_hns/border.bin",
+      "blockdata_filepath": "data/layouts/SinjohRuins_Chamber2_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_SINJOH_RUINS_CHAMBER3_HNS",
+      "name": "SinjohRuins_Chamber3_hns_Layout",
+      "width": 33,
+      "height": 36,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/SinjohRuins_Chamber3_hns/border.bin",
+      "blockdata_filepath": "data/layouts/SinjohRuins_Chamber3_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_SINJOH_RUINS_CHAMBER4_HNS",
+      "name": "SinjohRuins_Chamber4_hns_Layout",
+      "width": 37,
+      "height": 29,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/SinjohRuins_Chamber4_hns/border.bin",
+      "blockdata_filepath": "data/layouts/SinjohRuins_Chamber4_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_SINJOH_RUINS_CHAMBER5_HNS",
+      "name": "SinjohRuins_Chamber5_hns_Layout",
+      "width": 25,
+      "height": 30,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/SinjohRuins_Chamber5_hns/border.bin",
+      "blockdata_filepath": "data/layouts/SinjohRuins_Chamber5_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_SINJOH_RUINS_DEEP_HALL_HNS",
+      "name": "SinjohRuins_DeepHall_hns_Layout",
+      "width": 35,
+      "height": 21,
+      "primary_tileset": "gTileset_MtSilver_Exp_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/SinjohRuins_DeepHall_hns/border.bin",
+      "blockdata_filepath": "data/layouts/SinjohRuins_DeepHall_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_SINJOH_RUINS_LABYRINTH_HNS",
+      "name": "SinjohRuins_Labyrinth_hns_Layout",
+      "width": 29,
+      "height": 29,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/SinjohRuins_Labyrinth_hns/border.bin",
+      "blockdata_filepath": "data/layouts/SinjohRuins_Labyrinth_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_CHILLWIND_CAVE_HNS",
+      "name": "ChillwindCave_hns_Layout",
+      "width": 44,
+      "height": 36,
+      "primary_tileset": "gTileset_MtSilver_Exp_Hns",
+      "secondary_tileset": "gTileset_Cave_Ice_Hns",
+      "border_filepath": "data/layouts/ChillwindCave_hns/border.bin",
+      "blockdata_filepath": "data/layouts/ChillwindCave_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
     }
   ]
 }

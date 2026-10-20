@@ -51,7 +51,7 @@ enum {
 // test it first. These five mapsecs must stay contiguous in
 // region_map_sections.json for this range to remain correct.
 #define HISUI_MAPSEC_START  MAPSEC_SNOWSWEPT_CAVERN
-#define HISUI_MAPSEC_END    MAPSEC_SINJOH_RUINS
+#define HISUI_MAPSEC_END    MAPSEC_CHILLWIND_CAVE
 #define HISUI_MAPSEC_COUNT  (HISUI_MAPSEC_END - HISUI_MAPSEC_START + 1)
 
 #else

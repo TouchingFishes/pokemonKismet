@@ -17299,7 +17299,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-#if P_HISUIAN_FORMS
+#if P_HISUIAN_FORMS || P_KISMET_BASCULEGION
     const u32 gMonFrontPic_BasculinWhiteStriped[] = INCBIN_U32("graphics/pokemon/basculin/white_striped/anim_front.4bpp.smol");
     const u16 gMonPalette_BasculinWhiteStriped[] = INCBIN_U16("graphics/pokemon/basculin/white_striped/normal.gbapal");
     const u32 gMonBackPic_BasculinWhiteStriped[] = INCBIN_U32("graphics/pokemon/basculin/white_striped/back.4bpp.smol");
@@ -17339,7 +17339,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_BasculegionF[] = INCBIN_U16("graphics/pokemon/basculegion/f/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
-#endif //P_HISUIAN_FORMS
+#endif //P_HISUIAN_FORMS || P_KISMET_BASCULEGION
 #endif //P_FAMILY_BASCULIN
 
 #if P_FAMILY_SANDILE

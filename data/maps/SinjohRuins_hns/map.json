@@ -332,6 +332,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_DAY_POKEMON"
+    },
+    {
+      "local_id": "LOCALID_SINJOHRUINS_BAXCALIBUR",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_BAXCALIBUR",
+      "x": 24,
+      "y": 41,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohRuins_EventScript_Baxcalibur",
+      "flag": "FLAG_HIDE_SINJOHRUINS_BAXCALIBUR"
     }
   ],
   "warp_events": [
@@ -346,7 +360,7 @@
       "x": 24,
       "y": 40,
       "elevation": 0,
-      "dest_map": "MAP_SINJOH_RUINS_TEMPLE_HNS",
+      "dest_map": "MAP_SINJOH_RUINS_HALL_HNS",
       "dest_warp_id": "0"
     },
     {
@@ -368,41 +382,6 @@
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_SINJOH_RUINS_ARCEUS_ROOM_HNS",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 9,
-      "y": 44,
-      "elevation": 0,
-      "dest_map": "MAP_SINJOH_RUINS_REGIROCK_ROOM_HNS",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 7,
-      "y": 48,
-      "elevation": 0,
-      "dest_map": "MAP_SINJOH_RUINS_REGICE_ROOM_HNS",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 8,
-      "y": 54,
-      "elevation": 0,
-      "dest_map": "MAP_SINJOH_RUINS_REGISTEEL_ROOM_HNS",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 38,
-      "y": 44,
-      "elevation": 0,
-      "dest_map": "MAP_SINJOH_RUINS_REGIELEKI_ROOM_HNS",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 37,
-      "y": 49,
-      "elevation": 0,
-      "dest_map": "MAP_SINJOH_RUINS_REGIDRACO_ROOM_HNS",
       "dest_warp_id": "0"
     }
   ],

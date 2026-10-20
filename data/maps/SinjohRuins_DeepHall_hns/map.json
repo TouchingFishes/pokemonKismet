@@ -1,0 +1,82 @@
+{
+  "id": "MAP_SINJOH_RUINS_DEEP_HALL_HNS",
+  "name": "SinjohRuins_DeepHall_hns",
+  "layout": "LAYOUT_SINJOH_RUINS_DEEP_HALL_HNS",
+  "music": "MUS_DP_HALL_OF_ORIGIN",
+  "region_map_section": "MAPSEC_SINJOH_RUINS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_SINJOHRUINS_DEEPHALL_DIALGA",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_DIALGA",
+      "x": 17,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohRuins_DeepHall_EventScript_Dialga",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "local_id": "LOCALID_SINJOHRUINS_DEEPHALL_PALKIA",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_PALKIA",
+      "x": 17,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohRuins_DeepHall_EventScript_Palkia",
+      "flag": "FLAG_TEMP_13"
+    },
+    {
+      "local_id": "LOCALID_SINJOHRUINS_DEEPHALL_GIRATINA",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_GIRATINA",
+      "x": 17,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohRuins_DeepHall_EventScript_Giratina",
+      "flag": "FLAG_TEMP_14"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 17,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_SINJOH_RUINS_LABYRINTH_HNS",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "SinjohRuins_DeepHall_EventScript_Altar"
+    }
+  ],
+  "game_version": "hns",
+  "region": "REGION_HISUI"
+}

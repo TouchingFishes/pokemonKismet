@@ -3972,7 +3972,7 @@ static const struct SpriteFrameImage sPicTable_BasculinRedStriped[] = {
 static const struct SpriteFrameImage sPicTable_BasculinBlueStriped[] = {
     overworld_ascending_frames(gObjectEventPic_BasculinBlueStriped, 4, 4),
 };
-#if P_HISUIAN_FORMS
+#if P_HISUIAN_FORMS || P_KISMET_BASCULEGION
 static const struct SpriteFrameImage sPicTable_BasculinWhiteStriped[] = {
     overworld_ascending_frames(gObjectEventPic_BasculinWhiteStriped, 4, 4),
 };
@@ -3982,7 +3982,7 @@ static const struct SpriteFrameImage sPicTable_BasculegionM[] = {
 static const struct SpriteFrameImage sPicTable_BasculegionF[] = {
     overworld_ascending_frames(gObjectEventPic_BasculegionF, 4, 4),
 };
-#endif //P_HISUIAN_FORMS
+#endif //P_HISUIAN_FORMS || P_KISMET_BASCULEGION
 #endif //P_FAMILY_BASCULIN
 
 #if P_FAMILY_SANDILE

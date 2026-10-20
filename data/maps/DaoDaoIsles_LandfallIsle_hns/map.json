@@ -49,8 +49,8 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_DAODAO_STEVEN_LANDING",
-      "graphics_id": "OBJ_EVENT_GFX_STEVEN_HNS",
+      "local_id": "LOCALID_DAODAO_RANGER_LANDING",
+      "graphics_id": "OBJ_EVENT_GFX_POKERANGER_F_HNS",
       "x": 20,
       "y": 30,
       "elevation": 3,
@@ -59,7 +59,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DaoDaoIsles_LandfallIsle_EventScript_Steven",
+      "script": "DaoDaoIsles_LandfallIsle_EventScript_Ranger",
       "flag": "FLAG_HIDE_DAODAO_LAB_GIDEON"
     },
     {

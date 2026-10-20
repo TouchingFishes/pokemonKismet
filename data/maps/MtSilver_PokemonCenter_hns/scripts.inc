@@ -4,6 +4,9 @@ MtSilver_PokemonCenter_hns_MapScripts::
 
 MtSilver_PokemonCenter_OnTransition::
 	setrespawn HEAL_LOCATION_MT_SILVER_HNS
+	@ Only reachable once OAK has opened MT.SILVER, so saves made before the Sinjoh dex
+	@ stage existed pick it up here (MIGRATION_DECISIONS.md 82).
+	setvar VAR_DEX_STAGE, DEX_STAGE_SINJOH
 	end
 
 MtSilver_PokemonCenter_EventScript_Meara::

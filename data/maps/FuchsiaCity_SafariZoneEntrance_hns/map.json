@@ -296,6 +296,24 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "FuchsiaCity_SafariZoneEntrance_EventScript_EntranceCounterTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_FUCHSIA_SCENE",
+      "var_value": "1",
+      "script": "FuchsiaCity_SafariZoneEntrance_EventScript_StevenSiegeBriefing"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_FUCHSIA_SCENE",
+      "var_value": "1",
+      "script": "FuchsiaCity_SafariZoneEntrance_EventScript_StevenSiegeBriefing"
     }
   ],
   "bg_events": [

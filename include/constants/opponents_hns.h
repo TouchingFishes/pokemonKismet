@@ -885,7 +885,7 @@
 #define TRAINER_DAODAO_LAB_BIKER_1_HNS                812
 #define TRAINER_DAODAO_LAB_CUEBALL_1_HNS              813
 #define TRAINER_DAODAO_LAB_SCIENTIST_1_HNS            814
-#define TRAINER_DAODAO_LAB_BIKER_2_HNS                815
+#define TRAINER_UNUSED_815_HNS                        815
 #define TRAINER_DAODAO_LAB_CUEBALL_2_HNS              816
 #define TRAINER_DAODAO_LAB_SCIENTIST_2_HNS            817
 #define TRAINER_LAWSON_HNS                            818

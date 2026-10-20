@@ -548,6 +548,12 @@ NewBarkTown_Lab_EventScript_ElmLeague::
 NewBarkTown_Lab_EventScript_ElmSSTicket::
 	msgbox NewBarkTown_Lab_Text_ElmGiveTicket1, MSGBOX_DEFAULT
 	giveitem ITEM_SS_TICKET
+	msgbox NewBarkTown_Lab_Text_ElmKantoDex, MSGBOX_DEFAULT
+	call_if_lt VAR_DEX_STAGE, DEX_STAGE_KANTO, NewBarkTown_Lab_EventScript_SetKantoDexStage
+	playfanfare MUS_OBTAIN_ITEM
+	message NewBarkTown_Lab_Text_KantoDexAdded
+	waitfanfare
+	delay 50
 	msgbox NewBarkTown_Lab_Text_ElmGiveTicket2, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_SSAQUA_1F_GRANDPA
@@ -555,6 +561,10 @@ NewBarkTown_Lab_EventScript_ElmSSTicket::
 	clearflag FLAG_HIDE_OLIVINE_PORT_OAK
 	release
 	end
+
+NewBarkTown_Lab_EventScript_SetKantoDexStage:
+	setvar VAR_DEX_STAGE, DEX_STAGE_KANTO
+	return
 
 NewBarkTown_Lab_EventScript_TriggerAideGiveBalls::
 	lock
@@ -1070,6 +1080,18 @@ NewBarkTown_Lab_Text_ElmGiveTicket1:
 	.string "See? It's an S.S.TICKET.\p"
 	.string "Now you can catch POKéMON in\n"
 	.string "KANTO.$"
+
+@ Drafts (MIGRATION_DECISIONS.md 86).
+NewBarkTown_Lab_Text_ElmKantoDex:
+	.string "Oh, and before you go! Let me see\n"
+	.string "your POKéDEX for a moment.\p"
+	.string "PROF.OAK sent over his notes on the\n"
+	.string "POKéMON of KANTO. I'll add them\l"
+	.string "for you.$"
+
+NewBarkTown_Lab_Text_KantoDexAdded:
+	.string "{PLAYER}'s POKéDEX now includes\n"
+	.string "the POKéMON of KANTO!$"
 
 NewBarkTown_Lab_Text_ElmGiveTicket2:
 	.string "The ship departs from OLIVINE\n"

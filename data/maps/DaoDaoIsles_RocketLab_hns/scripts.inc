@@ -106,11 +106,6 @@ DaoDaoIsles_RocketLab_EventScript_Scientist1::
 	msgbox DaoDaoIsles_RocketLab_Text_Scientist1Post, MSGBOX_AUTOCLOSE
 	end
 
-DaoDaoIsles_RocketLab_EventScript_Biker2::
-	trainerbattle_single TRAINER_DAODAO_LAB_BIKER_2_HNS, DaoDaoIsles_RocketLab_Text_Biker2Intro, DaoDaoIsles_RocketLab_Text_Biker2Defeat
-	msgbox DaoDaoIsles_RocketLab_Text_Biker2Post, MSGBOX_AUTOCLOSE
-	end
-
 DaoDaoIsles_RocketLab_EventScript_Cueball2::
 	trainerbattle_single TRAINER_DAODAO_LAB_CUEBALL_2_HNS, DaoDaoIsles_RocketLab_Text_Cueball2Intro, DaoDaoIsles_RocketLab_Text_Cueball2Defeat
 	msgbox DaoDaoIsles_RocketLab_Text_Cueball2Post, MSGBOX_AUTOCLOSE
@@ -270,18 +265,6 @@ DaoDaoIsles_RocketLab_Text_Scientist1Post:
 	.string "Nothing with a cannon bolted to\n"
 	.string "its spine is defensive.$"
 
-DaoDaoIsles_RocketLab_Text_Biker2Intro:
-	.string "Hey. HEY.\p"
-	.string "You don't get to just walk in\n"
-	.string "here and look around!$"
-
-DaoDaoIsles_RocketLab_Text_Biker2Defeat:
-	.string "Fine. Look. Whatever.$"
-
-DaoDaoIsles_RocketLab_Text_Biker2Post:
-	.string "Half of us only stayed because\n"
-	.string "GIDEON did.$"
-
 DaoDaoIsles_RocketLab_Text_Cueball2Intro:
 	.string "Turn around, kid.\p"
 	.string "There's nothing back there worth\n"
@@ -308,27 +291,31 @@ DaoDaoIsles_RocketLab_Text_Scientist2Post:
 	.string "That was the whole of the work.$"
 
 DaoDaoIsles_RocketLab_Text_GideonIntro:
-	.string "You.\p"
-	.string "You pulled the FEDERATION apart in\n"
-	.string "FUCHSIA and you still came out\l"
-	.string "here after me.\p"
-	.string "PAXTON shouted. I packed.\p"
-	.string "Do you have any idea what we built\n"
-	.string "in this room?$"
+	.string "Don't touch that. Or that.\p"
+	.string "You took my FEDERATION apart in\n"
+	.string "FUCHSIA, and now you've come to\l"
+	.string "take apart my lab.\p"
+	.string "PAXTON was the muscle. I was\n"
+	.string "the reason he had any.\p"
+	.string "Let's see if you understand\n"
+	.string "what you're breaking.$"
 
 DaoDaoIsles_RocketLab_Text_GideonDefeat:
-	.string "My work was sound!$"
+	.string "Crude. Effective, but crude.$"
 
 DaoDaoIsles_RocketLab_Text_GideonPostBattle:
-	.string "The FEDERATION was going to be my\n"
-	.string "second chance. Clean work.\p"
-	.string "It took about a month to turn into\n"
-	.string "the same thing again.\p"
-	.string "The boss never left either. Far\n"
-	.string "end of the floor. Still waiting.\p"
-	.string "Mind what's between you. We took\n"
-	.string "that out of the ruins, and it has\l"
-	.string "never once powered down.$"
+	.string "I wanted one thing in twenty\n"
+	.string "years that GIOVANNI's money\l"
+	.string "never touched.\p"
+	.string "The FEDERATION lasted a month\n"
+	.string "before it was his again in all\l"
+	.string "but the name.\p"
+	.string "He's here. The far end of the\n"
+	.string "floor. He never left.\p"
+	.string "The thing between you was in\n"
+	.string "the ruins before any of us.\l"
+	.string "It has never powered down.\l"
+	.string "Mind it.$"
 
 DaoDaoIsles_RocketLab_Text_KlinklangIntro:
 	.string "It has been turning on the same\n"

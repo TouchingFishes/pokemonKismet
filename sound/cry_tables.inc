@@ -1422,9 +1422,9 @@ gCryTable::
 .endif @ P_FAMILY_PETILIL
 .if P_FAMILY_BASCULIN == TRUE
 	cry Cry_Basculin
-.if P_HISUIAN_FORMS == TRUE
+.if (P_HISUIAN_FORMS || P_KISMET_BASCULEGION) == TRUE
 	cry Cry_Basculegion
-.endif @ P_HISUIAN_FORMS
+.endif @ P_HISUIAN_FORMS || P_KISMET_BASCULEGION
 .endif @ P_FAMILY_BASCULIN
 .if P_FAMILY_SANDILE == TRUE
 	cry Cry_Sandile
@@ -3999,9 +3999,9 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_PETILIL
 .if P_FAMILY_BASCULIN == TRUE
 	cry_reverse Cry_Basculin
-.if P_HISUIAN_FORMS == TRUE
+.if (P_HISUIAN_FORMS || P_KISMET_BASCULEGION) == TRUE
 	cry_reverse Cry_Basculegion
-.endif @ P_HISUIAN_FORMS
+.endif @ P_HISUIAN_FORMS || P_KISMET_BASCULEGION
 .endif @ P_FAMILY_BASCULIN
 .if P_FAMILY_SANDILE == TRUE
 	cry_reverse Cry_Sandile

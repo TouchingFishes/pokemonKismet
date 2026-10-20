@@ -4991,14 +4991,14 @@ Cry_Basculin::
 	.incbin "sound/direct_sound_samples/cries/basculin.bin"
 .endif
 
-.if P_HISUIAN_FORMS == TRUE
+.if (P_HISUIAN_FORMS || P_KISMET_BASCULEGION) == TRUE
 	.align 2
 Cry_Basculegion::
 .if TESTING == FALSE
 	.incbin "sound/direct_sound_samples/cries/basculegion.bin"
 .endif
 
-.endif @ P_HISUIAN_FORMS
+.endif @ P_HISUIAN_FORMS || P_KISMET_BASCULEGION
 .endif @ P_FAMILY_BASCULIN
 
 .if P_FAMILY_SANDILE == TRUE

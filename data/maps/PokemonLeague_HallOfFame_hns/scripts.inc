@@ -131,6 +131,7 @@ PokemonLeague_HallOfFame_EventScript_SetGameClearFlags::
 	call PokemonLeague_HallOfFame_EventScript_SpawnSinjohMons
 	call PokemonLeague_HallOfFame_EventScript_SpawnDaoDaoLegendaries
 	call_if_ge VAR_SINJOH_STORYLINE, 13 PokemonLeague_HallOfFame_EventScript_SpawnArceus
+	call PokemonLeague_HallOfFame_EventScript_SpawnSinjohTrio
 	clearflag FLAG_DEFEATED_MEW
 	clearflag FLAG_CAUGHT_MEW
 	clearflag FLAG_BATTLED_DEOXYS
@@ -177,6 +178,29 @@ PokemonLeague_HallOfFame_EventScript_SpawnSinjohMons::
 
 PokemonLeague_HallOfFame_EventScript_SpawnArceus::
 	clearflag FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_ARCEUS
+	return
+
+@ A member of the creation trio that was knocked out in the Sinjoh Ruins' Deep Hall can be called
+@ at its altar again. A caught one cannot: the Pokedex caught flag tells the two apart.
+PokemonLeague_HallOfFame_EventScript_SpawnSinjohTrio::
+	getcaughtmon SPECIES_DIALGA
+	call_if_eq VAR_RESULT, FALSE, PokemonLeague_HallOfFame_EventScript_FreeDialga
+	getcaughtmon SPECIES_PALKIA
+	call_if_eq VAR_RESULT, FALSE, PokemonLeague_HallOfFame_EventScript_FreePalkia
+	getcaughtmon SPECIES_GIRATINA
+	call_if_eq VAR_RESULT, FALSE, PokemonLeague_HallOfFame_EventScript_FreeGiratina
+	return
+
+PokemonLeague_HallOfFame_EventScript_FreeDialga:
+	clearflag FLAG_SINJOH_DIALGA_GONE
+	return
+
+PokemonLeague_HallOfFame_EventScript_FreePalkia:
+	clearflag FLAG_SINJOH_PALKIA_GONE
+	return
+
+PokemonLeague_HallOfFame_EventScript_FreeGiratina:
+	clearflag FLAG_SINJOH_GIRATINA_GONE
 	return
 
 PokemonLeague_HallOfFame_EventScript_SpawnPichu::

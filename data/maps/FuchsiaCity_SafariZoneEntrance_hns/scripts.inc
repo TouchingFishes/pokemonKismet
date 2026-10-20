@@ -19,14 +19,13 @@ FuchsiaCity_SafariZoneEntrance_hns_MapScripts::
 @ the key on every input poll (src/field_control_avatar.c:192), so a script that
 @ returns without changing it re-fires forever. Suppressing the welcome is done by
 @ setting the var elsewhere - in ON_TRANSITION below - never by an early goto here.
-@ The three entries are mutually exclusive, so their order carries no meaning:
-@ the welcome is disarmed on every load from state 1 on, the siege briefing is
-@ only armed from state 1, and VAR_SAFARI_ZONE_STATE is only 2 while the player
-@ is inside the safari itself.
+@ The two entries are mutually exclusive, so their order carries no meaning: the
+@ welcome is disarmed on every load from state 1 on, and VAR_SAFARI_ZONE_STATE is
+@ only 2 while the player is inside the safari itself. The siege briefing is not
+@ here any more: it is a step trigger at the siege room's entrance (see below).
 FuchsiaCity_SafariZoneEntrance_OnFrame::
 	map_script_2 VAR_SAFARI_WELCOME, 0, FuchsiaCity_SafariZoneEntrance_EventScript_MeetSteven
 	map_script_2 VAR_SAFARI_ZONE_STATE, 2, FuchsiaCity_SafariZoneEntrance_EventScript_ExitSafari
-	map_script_2 VAR_FUCHSIA_SCENE, 1, FuchsiaCity_SafariZoneEntrance_EventScript_StevenSiegeBriefing
 	.2byte 0
 
 @ ⚠️ ONE STEVEN OBJECT, RELOCATED - NOT two objects with complementary flags.
@@ -222,21 +221,20 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenNoRoomForCase:
 	.string "Make some space and ask me again.\n"
 	.string "I'm not going anywhere.$"
 
-@ ===[ THE SIEGE BRIEFING - fires on walking in, once, during the lockdown ]====
+@ ===[ THE SIEGE BRIEFING - once, on entering the siege room ]==================
 @ Armed by BeginLockdown (VAR_FUCHSIA_SCENE 1) and disarmed here (2). This replaced
 @ a pokenavcall that fired on the player's first step into FUCHSIA CITY: in person
 @ it is a better scene, and it removes the awkwardness of a phone call from a man
 @ the player may never have met - VERMILION's introduction is skippable.
 @
+@ It fires from coord_events on (7,8) and (7,9), the gap in the pillar that is the
+@ only way from the entrance corridor into the siege room ((7,7) is held by a siege
+@ biker). It used to fire on walking in the door
+@ grunt (2026-10-19). GIL's sight (column 6, y 7-10) covers both tiles the gap can
+@ be stepped into from, so he is always fought first; BRIX comes after the scene.
+@
 @ ⚠️ HE DOES NOT TURN HERE EITHER, for the same reason as his talk script: he
 @ cannot disengage. He speaks with his back to the player.
-@
-@ ⚠️ ONE TILE OF MARGIN ON THE SPAWN WINDOW. The player enters on the warp at
-@ (5,13), and objects only spawn for ty in [py-7, py+9] = [6,22]. STEVEN is at
-@ (11,6) during the siege, exactly on the top edge, so the applymovement below
-@ works - but anything moved in this scene must stay at y>=6. The mons at y=5 are
-@ NOT spawned yet when this runs, and applymovement on a despawned object is a
-@ silent no-op (src/script_movement.c:27).
 FuchsiaCity_SafariZoneEntrance_EventScript_StevenSiegeBriefing::
 	lock
 	playse SE_PIN
@@ -997,17 +995,22 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenNotReady:
 	.string "first. JANINE is back at her GYM.$"
 
 @ ⚠️ He has already named GIDEON out on the road by the time this can be read, so
-@ this no longer pretends not to know. The out-of-reach point survives - it is
-@ GIDEON's whereabouts that KANTO cannot get at, not his identity.
+@ this no longer pretends not to know. Since MIGRATION_DECISIONS.md 86 the reason he
+@ does not go himself is his staff, as in the street version (FuchsiaCity_Text_StevenCharter).
 FuchsiaCity_SafariZoneEntrance_Text_StevenChallenge:
 	.string "SURGE, ERIKA, SABRINA, JANINE.\p"
 	.string "All four, and the FEDERATION too.\p"
-	.string "GIDEON is not in KANTO any more, and\n"
-	.string "wherever he has gone, I cannot reach\l"
-	.string "it from here.\p"
+	.string "GIDEON is not in KANTO any more. I\n"
+	.string "would go after him myself, but I\l"
+	.string "can't leave this place.\p"
+	.string "My attendants spent the occupation\n"
+	.string "locked in that back room. They need\l"
+	.string "me here, and so does the SAFARI\l"
+	.string "ZONE.\p"
 	.string "I have chartered a boat out of the\n"
 	.string "ROUTE 13 dock. I want you on it.\p"
-	.string "But not before I've seen for myself\n"
+	.string "I'm sending you where I can't\n"
+	.string "follow, so I need to see for myself\l"
 	.string "that you're ready.\p"
 	.string "Show me. Here and now?$"
 
@@ -1028,6 +1031,9 @@ FuchsiaCity_SafariZoneEntrance_Text_StevenBattleAfter:
 	.string "The ship is at the dock on\n"
 	.string "ROUTE 13. The captain has his\l"
 	.string "orders.\p"
+	.string "One of my RANGERS went out on the\n"
+	.string "first crossing. She will meet you\l"
+	.string "on the other side.\p"
 	.string "Find GIDEON, {PLAYER}.\p"
 	.string "And be careful out there.$"
 

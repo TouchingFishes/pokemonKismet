@@ -4670,7 +4670,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 
-#if P_HISUIAN_FORMS
+#if P_HISUIAN_FORMS || P_KISMET_BASCULEGION
     [SPECIES_BASCULIN_WHITE_STRIPED] =
     {
         .baseHP        = 70,
@@ -4869,7 +4869,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sBasculegionTeachableLearnset,
         .formSpeciesIdTable = sBasculegionFormSpeciesIdTable,
     },
-#endif //P_HISUIAN_FORMS
+#endif //P_HISUIAN_FORMS || P_KISMET_BASCULEGION
 #endif //P_FAMILY_BASCULIN
 
 #if P_FAMILY_SANDILE

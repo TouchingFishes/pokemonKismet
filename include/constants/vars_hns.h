@@ -119,7 +119,10 @@
 // player in its doorway), 3 met her and the MIMIKYU is still hiding, 1 KAREN took it (her rematch
 // brings it), 2 the player kept it. The name is from when the dolls sat at a shrine outside.
 #define VAR_DOLL_SHRINE_STATE                            0x40C9
-#define VAR_UNUSED_HNS_0x40CA                            0x40CA
+// The creation trio in the Deep Hall of the Sinjoh Ruins (MIGRATION_DECISIONS.md 85): 0 none called,
+// 1/2/3 DIALGA/PALKIA/GIRATINA called and at full strength (the boss battle), 4/5/6 the same one
+// weakened (the catchable battle). FLAG_SINJOH_*_GONE marks the ones already caught or knocked out.
+#define VAR_SINJOH_TRIO_STATE                            0x40CA
 
 #define VAR_UNUSED_HNS_0x40D8                           0x40D8
 #define VAR_UNUSED_HNS_0x40D9                           0x40D9
@@ -192,7 +195,7 @@
 #define VAR_DAODAO_STATE                                 0x40AE // state of the story in alola
 
 // Sinjoh Vars
-#define VAR_SINJOH_STORYLINE                             0x40AF // 6: Free roam. 7: return to steven with plates. 9: stairs opened, battle with steven. 10: meet arceus. 11: done.
+#define VAR_SINJOH_STORYLINE                             0x40AF // 6: Free roam. 7: return to cynthia with plates. 9: stairs opened, battle with cynthia. 10: meet arceus. 11: done.
 #define VAR_PLATECOUNTER                                 0x40B0
 #define VAR_REGIS_SCANNED                                0x40B1
 #define VAR_NOBLE_SNEASLER                               0x40B2

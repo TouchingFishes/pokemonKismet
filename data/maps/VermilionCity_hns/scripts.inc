@@ -5,6 +5,7 @@ VermilionCity_hns_MapScripts::
 
 VermilionCity_MapScript_OnTransition::
 	setflag FLAG_VISITED_VERMILION_CITY
+	call_if_lt VAR_DEX_STAGE, DEX_STAGE_KANTO, NewBarkTown_Lab_EventScript_SetKantoDexStage
 	goto_if_eq VAR_SUICUNE_ENCOUNTERS, 3, VermilionCity_EventScript_SetSuicuneScene
 	setflag FLAG_HIDE_VERMILION_EUSINE_SUICUNE
 	callnative SetTimeBasedEncounters

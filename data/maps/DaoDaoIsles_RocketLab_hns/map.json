@@ -99,20 +99,6 @@
       "flag": "FLAG_HIDE_DAODAO_LAB_GIDEON"
     },
     {
-      "local_id": "LOCALID_DAODAO_LAB_BIKER_2",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER_HNS",
-      "x": 7,
-      "y": 17,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "DaoDaoIsles_RocketLab_EventScript_Biker2",
-      "flag": "FLAG_HIDE_DAODAO_LAB_GIDEON"
-    },
-    {
       "local_id": "LOCALID_DAODAO_LAB_CUEBALL_2",
       "graphics_id": "OBJ_EVENT_GFX_CUEBALL_HNS",
       "x": 17,
