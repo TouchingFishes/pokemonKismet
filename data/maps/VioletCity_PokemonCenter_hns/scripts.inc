@@ -53,8 +53,11 @@ VioletCity_PokemonCenter_EventScript_Aide_Accepted::
 	msgbox VioletCity_PokeCenter_Text_ElmsAideGiveItem, MSGBOX_DEFAULT
 	giveitem ITEM_EXP_SHARE_SMALL
 	setflag FLAG_HIDE_VIOLET_CITY_AIDE
-	setvar VAR_VIOLET_CITY_KIMONO_GIRL, 1
-	clearflag FLAG_HIDE_VIOLET_CITY_KIMONO_GIRL
+	@ Was 1 (which armed VioletCity_hns's kimono-girl cameo on next visit).
+	@ That encounter is retired for now - jump straight to her "already seen"
+	@ state so it never arms, without touching VioletCity_EventScript_Kimono_Girl
+	@ or its text, which stay in VioletCity_hns for possible reuse later.
+	setvar VAR_VIOLET_CITY_KIMONO_GIRL, 2
 	clearflag FLAG_HIDE_NEWBARKTOWN_LAB_AIDE
 	release
 	end

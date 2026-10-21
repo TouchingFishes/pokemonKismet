@@ -33,8 +33,10 @@ GoldenrodCity_RadioTower_5F_EventScript_Petrel::
 	trainerbattle_no_intro TRAINER_PETREL_2_HNS, GoldenrodCity_RadioTower_5F_Text_FakeDirectorWin
 	msgbox GoldenrodCity_RadioTower_5F_Text_FakeDirectorAfter, MSGBOX_DEFAULT
 	giveitem ITEM_BASEMENT_KEY
-	setvar VAR_GOLDENROD_CITY_STATE, 7
-	clearflag FLAG_HIDE_GOLDENROD_UNDERGROUND_KIMONO
+	@ was 7, then the Goldenrod Underground kimono-girl scene bumped it to 8
+	@ (unlocking Silver's Underground Switches trigger). That scene is gone,
+	@ so jump straight to 8 and skip the now-dead state.
+	setvar VAR_GOLDENROD_CITY_STATE, 8
 	closemessage
 	release
 	end
