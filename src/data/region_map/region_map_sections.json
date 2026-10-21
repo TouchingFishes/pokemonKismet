@@ -2618,6 +2618,14 @@
     },
     {
       "height": 1,
+      "id": "MAPSEC_CHILLWIND_CAVE",
+      "name": "CHILLWIND CAVE",
+      "width": 1,
+      "x": 20,
+      "y": 3
+    },
+    {
+      "height": 1,
       "id": "MAPSEC_NATIONAL_PARK",
       "name": "NATIONAL PARK",
       "width": 1,
