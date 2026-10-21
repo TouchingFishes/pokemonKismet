@@ -198,14 +198,14 @@
 #define VAR_SINJOH_STORYLINE                             0x40AF // 6: Free roam. 7: return to cynthia with plates. 9: stairs opened, battle with cynthia. 10: meet arceus. 11: done.
 #define VAR_PLATECOUNTER                                 0x40B0
 #define VAR_REGIS_SCANNED                                0x40B1
-#define VAR_NOBLE_SNEASLER                               0x40B2
-#define VAR_NOBLE_OVERQWIL                               0x40B5
+#define VAR_NOBLE_GLIMMORA                               0x40B2
+#define VAR_NOBLE_MILOTIC                                0x40B5
 #define VAR_NOBLE_WYRDEER                                0x40B6
-#define VAR_NOBLE_ARCANINE                               0x40B7
+#define VAR_NOBLE_DARMANITAN                             0x40B7
 #define VAR_NOBLE_URSALUNA                               0x40B8
-#define VAR_NOBLE_KLEAVOR                                0x40B9
-#define VAR_NOBLE_ELECTRODE                              0x40BA
-#define VAR_NOBLE_TYPHLOSION                             0x40BB
+#define VAR_NOBLE_FROSMOTH                               0x40B9
+#define VAR_NOBLE_GIGALITH                               0x40BA
+#define VAR_NOBLE_SPIRITOMB                              0x40BB
 
 #define VAR_SAFFRON_CITY_STATE                           0x40BD
 #define VAR_SHUCKIE                                      0x40BE

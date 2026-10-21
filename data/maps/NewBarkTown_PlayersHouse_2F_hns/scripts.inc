@@ -84,6 +84,8 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @   ROCKET LAB - any of the DAODAO lab's four steps, the earlier ones marked done.
 @   CHALLENGERS - the KANTO title, all 16 badges and every CHAMPION's ROOM challenger's
 @             unlock battle, then the CHAMPION's ROOM door (MIGRATION_DECISIONS.md 81).
+@   MIRAGE ZOROARK - the MIRAGE FOREST ZOROARK's DREAD PLATE fight, from its STANTLER
+@             illusion on (MIGRATION_DECISIONS.md 87).
 @
 @ Talking to him at all opens the start menu's POKeDEX, and its POKeMON entry once the player
 @ has a POKeMON (TestMenuFlags), so a save that used him early can look at both like any other.
@@ -101,8 +103,8 @@ NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	call NewBarkTown_PlayersHouse_2F_EventScript_TestMenuFlags
 	message NewBarkTown_PlayersHouse_2F_Text_TestAsk
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptOlivineGate, NewBarkTown_PlayersHouse_2F_Text_TestOptKimono, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptRocketLab, NewBarkTown_PlayersHouse_2F_Text_TestOptChallengers, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
-	goto_if_ge VAR_RESULT, 8, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptOlivineGate, NewBarkTown_PlayersHouse_2F_Text_TestOptKimono, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptRocketLab, NewBarkTown_PlayersHouse_2F_Text_TestOptChallengers, NewBarkTown_PlayersHouse_2F_Text_TestOptZoroark, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
+	goto_if_ge VAR_RESULT, 9, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
 	copyvar VAR_0x8006, VAR_RESULT
 	msgbox NewBarkTown_PlayersHouse_2F_Text_TestKitAsk, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_TestBasics
@@ -113,6 +115,7 @@ NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	goto_if_eq VAR_0x8006, 5, NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest
 	goto_if_eq VAR_0x8006, 6, NewBarkTown_PlayersHouse_2F_EventScript_RocketLabTest
 	goto_if_eq VAR_0x8006, 7, NewBarkTown_PlayersHouse_2F_EventScript_ChallengersTest
+	goto_if_eq VAR_0x8006, 8, NewBarkTown_PlayersHouse_2F_EventScript_ZoroarkTest
 	goto NewBarkTown_PlayersHouse_2F_EventScript_FoxfireTest
 
 @ The start menu shows POKeDEX on FLAG_SYS_POKEDEX_GET and POKeMON on FLAG_SYS_POKEMON_GET
@@ -270,6 +273,32 @@ NewBarkTown_PlayersHouse_2F_EventScript_ShrineTest::
 	warp MAP_DAO_DAO_ISLES_MANSION_1F_HNS, 15, 4
 	waitstate
 	end
+
+@ The MIRAGE FOREST ZOROARK (MIGRATION_DECISIONS.md 87). Its STANTLER illusion stands on (29,4)
+@ from the plate hunt (VAR_SINJOH_STORYLINE 6) until the DREAD PLATE is won, so both of its
+@ flags are cleared and the player lands just south of it. A save from before the hunt starts
+@ it the way CYNTHIA's briefing does, NOBLEs armed (SinjohRuins_Lab_EventScript_StartPlateHunt).
+@ A DREAD PLATE in the bag is taken back along with its count, so a win only restores both.
+@ ⚠️ A DREAD PLATE in the PC or held by a POKeMON is not found, and is then counted twice.
+NewBarkTown_PlayersHouse_2F_EventScript_ZoroarkTest::
+	msgbox NewBarkTown_PlayersHouse_2F_Text_TestPartyAsk, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty
+	special HealPlayerParty
+	call_if_lt VAR_SINJOH_STORYLINE, 6, SinjohRuins_Lab_EventScript_StartPlateHunt
+	clearflag FLAG_HIDE_MIRAGE_ZOROARK
+	clearflag FLAG_BATTLED_MIRAGE_ZOROARK
+	checkitem ITEM_DREAD_PLATE
+	call_if_eq VAR_RESULT, TRUE, NewBarkTown_PlayersHouse_2F_EventScript_ZoroarkTakePlate
+	msgbox NewBarkTown_PlayersHouse_2F_Text_ZoroarkGo, MSGBOX_DEFAULT
+	closemessage
+	warp MAP_MIRAGE_FOREST_HNS, 29, 5
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_ZoroarkTakePlate:
+	removeitem ITEM_DREAD_PLATE
+	subvar VAR_PLATECOUNTER, 1
+	return
 
 @ The TOWN MAP, the HMs and the MAX REPELs go in silently and only while the player
 @ has none - a second visit would otherwise stack copies. The map gets its own check so that saves which already
@@ -593,6 +622,9 @@ NewBarkTown_PlayersHouse_2F_Text_TestOptRocketLab:
 NewBarkTown_PlayersHouse_2F_Text_TestOptChallengers:
 	.string "CHAMPION's ROOM challengers$"
 
+NewBarkTown_PlayersHouse_2F_Text_TestOptZoroark:
+	.string "MIRAGE ZOROARK$"
+
 NewBarkTown_PlayersHouse_2F_Text_TestOptCancel:
 	.string "Nothing$"
 
@@ -701,3 +733,8 @@ NewBarkTown_PlayersHouse_2F_Text_KimonoHooh:
 NewBarkTown_PlayersHouse_2F_Text_KimonoGo:
 	.string "TEST: You'll arrive at the THEATER\n"
 	.string "door. Step in to start it.$"
+
+NewBarkTown_PlayersHouse_2F_Text_ZoroarkGo:
+	.string "TEST: You'll arrive in front of\n"
+	.string "the MIRAGE FOREST STANTLER.\p"
+	.string "Talk to it to break the illusion.$"

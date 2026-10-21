@@ -19,10 +19,182 @@
       "direction": "right"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_SINJOHLAKE_YOUKO",
+      "graphics_id": "OBJ_EVENT_GFX_KIMONO_HNS",
+      "x": 8,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohLake_EventScript_Youko",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "local_id": "LOCALID_SINJOHLAKE_ESPEON",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_ESPEON",
+      "x": 7,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohLake_EventScript_Espeon",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "local_id": "LOCALID_SINJOHLAKE_UMBREON",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_UMBREON",
+      "x": 9,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohLake_EventScript_Umbreon",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "local_id": "LOCALID_SINJOHLAKE_FAWN",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STANTLER",
+      "x": 6,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohLake_EventScript_Fawn",
+      "flag": "FLAG_SINJOH_FAWN_FOUND"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F_HNS",
+      "x": 26,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "SinjohLake_EventScript_Alexa",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY_HNS",
+      "x": 24,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "SinjohLake_EventScript_Damian",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
+      "x": 16,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohLake_EventScript_ItemSunStone",
+      "flag": "FLAG_SINJOHLAKE_ITEM_SUN_STONE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
+      "x": 37,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohLake_EventScript_ItemMoonStone",
+      "flag": "FLAG_SINJOHLAKE_ITEM_MOON_STONE"
+    }
+  ],
   "warp_events": [],
-  "coord_events": [],
-  "bg_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SinjohLake_EventScript_YoukoSceneA"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SinjohLake_EventScript_YoukoSceneB"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SinjohLake_EventScript_YoukoSceneC"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SinjohLake_EventScript_YoukoSceneD"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SinjohLake_EventScript_YoukoSceneE"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 5,
+      "y": 25,
+      "elevation": 0,
+      "item": "ITEM_BIG_PEARL",
+      "flag": "FLAG_SINJOHLAKE_HIDDEN_ITEM_BIG_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 8,
+      "y": 30,
+      "elevation": 0,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_SINJOHLAKE_HIDDEN_ITEM_HEART_SCALE"
+    }
+  ],
   "game_version": "hns",
   "region": "REGION_HISUI"
 }

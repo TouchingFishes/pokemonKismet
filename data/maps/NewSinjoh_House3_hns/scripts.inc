@@ -5,7 +5,7 @@ NewSinjoh_House3_hns_MapScripts::
 
 
 NewSinjoh_House3_OnTransition::
-    call_if_ge VAR_NOBLE_TYPHLOSION, 2, NewSinjoh_House3_AddStairs
+    call_if_ge VAR_NOBLE_SPIRITOMB, 2, NewSinjoh_House3_AddStairs
     end
 
 NewSinjoh_House3_AddStairs::
@@ -24,8 +24,8 @@ NewSinjoh_House3_OnFrame:
 
 NewSinjoh_HauntedHouse_EventScript_Enter::
     setvar VAR_TEMP_0, 1
-    goto_if_eq VAR_NOBLE_TYPHLOSION, 1, NewSinjoh_HauntedHouse_EventScript_StartScary
-    goto_if_eq VAR_NOBLE_TYPHLOSION, 0, NewSinjoh_HauntedHouse_EventScript_TooEarly
+    goto_if_eq VAR_NOBLE_SPIRITOMB, 1, NewSinjoh_HauntedHouse_EventScript_StartScary
+    goto_if_eq VAR_NOBLE_SPIRITOMB, 0, NewSinjoh_HauntedHouse_EventScript_TooEarly
     end
 
 NewSinjoh_HauntedHouse_EventScript_TooEarly::
@@ -68,17 +68,21 @@ NewSinjoh_HauntedHouse_EventScript_StartScary::
     applymovement2 OBJ_EVENT_ID_CAMERA, NewSinjoh_House3_Movement_CameraPanRight
     waitmovement 0
     special RemoveCameraObject
-    addobject LOCALID_NEWSINJOH_HOUSE3_NOBLE_TYPHLOSION
-    clearflag FLAG_HIDE_NEWSINJOH_HOUSE3_NOBLE_TYPHLOSION
-    setvar VAR_NOBLE_TYPHLOSION, 2
+    addobject LOCALID_NEWSINJOH_HOUSE3_NOBLE_SPIRITOMB
+    clearflag FLAG_HIDE_NEWSINJOH_HOUSE3_NOBLE_SPIRITOMB
+    setvar VAR_NOBLE_SPIRITOMB, 2
     release
     end
 
-NewSinjoh_House3_EventScript_NobleTyphlosion::
+NewSinjoh_House3_EventScript_NobleSpiritomb::
 	lock
 	faceplayer
 	playmoncry SPECIES_SPIRITOMB, CRY_MODE_ENCOUNTER
+	msgbox NewSinjoh_House3_Text_SpiritombCry, MSGBOX_AUTOCLOSE
 	waitmoncry
+	msgbox NewSinjoh_House3_Text_SpiritombPlate, MSGBOX_YESNO
+	closemessage
+	goto_if_eq VAR_RESULT, NO, NewSinjoh_House3_EventScript_NobleSpiritombRan
 	setwildbossbattle species=SPECIES_SPIRITOMB, level=80, item=ITEM_STARF_BERRY, move1_1=MOVE_FOUL_PLAY, move1_2=MOVE_HYPNOSIS, move1_3=MOVE_OMINOUS_WIND move1_4=MOVE_WATER_PULSE
 	settotemboost B_POSITION_OPPONENT_LEFT, 0, 2, 0, 1, 2, 0
 	setflag FLAG_NO_WILD_CATCHING
@@ -87,14 +91,14 @@ NewSinjoh_House3_EventScript_NobleTyphlosion::
 	setflag FLAG_NO_SHINY
     dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewSinjoh_House3_EventScript_NobleTyphlosionRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewSinjoh_House3_EventScript_NobleSpiritombRan
     bufferspeciesname STR_VAR_1, SPECIES_SPIRITOMB
     msgbox SinjohRuins_Lab_Text_DropedItem, MSGBOX_DEFAULT
     giveitem ITEM_SPOOKY_PLATE
     addvar VAR_PLATECOUNTER, 1
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_NEWSINJOH_HOUSE3_NOBLE_TYPHLOSION
-	setflag FLAG_HIDE_NEWSINJOH_HOUSE3_NOBLE_TYPHLOSION
+	removeobject LOCALID_NEWSINJOH_HOUSE3_NOBLE_SPIRITOMB
+	setflag FLAG_HIDE_NEWSINJOH_HOUSE3_NOBLE_SPIRITOMB
 	fadescreenswapbuffers FADE_FROM_BLACK
     call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
     call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
@@ -109,13 +113,22 @@ NewSinjoh_House3_EventScript_NobleTyphlosion::
 	release
 	end
 
-NewSinjoh_House3_EventScript_NobleTyphlosionRan::
+NewSinjoh_House3_EventScript_NobleSpiritombRan::
 	clearflag FLAG_NO_WILD_CATCHING
 	clearflag FLAG_NO_WILD_RUNNING
 	clearflag FLAG_SMART_WILD_AI
 	clearflag FLAG_NO_SHINY
 	release
 	end
+
+NewSinjoh_House3_Text_SpiritombCry:
+	.string "Kekeke… Ooooh…$"
+
+NewSinjoh_House3_Text_SpiritombPlate:
+	.string "The NOBLE SPIRITOMB's voices\n"
+	.string "whisper all at once.\p"
+	.string "A PLATE is bound to its stone.\p"
+	.string "Battle it?$"
 
 NewSinjoh_House3_Movement_CameraPanLeft:
     walk_left

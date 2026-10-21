@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_NEWSINJOH_KIMONOHIDEOUT_SHIZUKO",
+      "local_id": "LOCALID_NEWSINJOH_KIMONOHIDEOUT_YOUKO",
       "graphics_id": "OBJ_EVENT_GFX_KIMONO_HNS",
       "x": 9,
       "y": 3,
@@ -25,11 +25,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewSinjoh_KimonoHideout_EventScript_Shizuko",
-      "flag": "0"
+      "script": "NewSinjoh_KimonoHideout_EventScript_Youko",
+      "flag": "FLAG_TEMP_12"
     },
     {
-      "local_id": "LOCALID_NEWSINJOH_KIMONOHIDEOUT_YOUKO",
+      "local_id": "LOCALID_NEWSINJOH_KIMONOHIDEOUT_SUZU",
       "graphics_id": "OBJ_EVENT_GFX_KIMONO_HNS",
       "x": 13,
       "y": 3,
@@ -39,11 +39,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewSinjoh_KimonoHideout_EventScript_Youko",
+      "script": "NewSinjoh_KimonoHideout_EventScript_Suzu",
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_NEWSINJOH_KIMONOHIDEOUT_MIHARU",
+      "local_id": "LOCALID_NEWSINJOH_KIMONOHIDEOUT_AYAME",
       "graphics_id": "OBJ_EVENT_GFX_KIMONO_HNS",
       "x": 5,
       "y": 3,
@@ -53,7 +53,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewSinjoh_KimonoHideout_EventScript_Miharu",
+      "script": "NewSinjoh_KimonoHideout_EventScript_Ayame",
       "flag": "0"
     },
     {

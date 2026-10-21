@@ -1,7 +1,15 @@
 NewSinjoh_KimonoHideout_hns_MapScripts::
-   map_script MAP_SCRIPT_ON_FRAME_TABLE, NewSinjoh_KimonoHideout_OnFrame
-    .byte 0
+	map_script MAP_SCRIPT_ON_TRANSITION, NewSinjoh_KimonoHideout_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, NewSinjoh_KimonoHideout_OnFrame
+	.byte 0
 
+NewSinjoh_KimonoHideout_OnTransition:
+	call_if_ge VAR_SINJOH_STORYLINE, 6, NewSinjoh_KimonoHideout_HideYouko
+	end
+
+NewSinjoh_KimonoHideout_HideYouko:
+	setflag FLAG_TEMP_12
+	return
 
 NewSinjoh_KimonoHideout_OnFrame:
 	map_script_2 VAR_SINJOH_STORYLINE, 4, NewSinjoh_KimonoHideout_EventScript_PlayerMeetsKimonos
@@ -16,19 +24,19 @@ NewSinjoh_KimonoHideout_EventScript_PlayerMeetsKimonos::
 	waitmovement 0
 
 	playse SE_M_PETAL_DANCE
-	applymovement LOCALID_NEWSINJOH_KIMONOHIDEOUT_MIHARU, NewSinjoh_KimonoHideout_Movement_KimonoWalksDown
+	applymovement LOCALID_NEWSINJOH_KIMONOHIDEOUT_AYAME, NewSinjoh_KimonoHideout_Movement_KimonoWalksDown
 	waitmovement 0
-	msgbox NewSinjoh_KimonoHideout_Text_PlayerMeetsMiharu, MSGBOX_AUTOCLOSE
+	msgbox NewSinjoh_KimonoHideout_Text_PlayerMeetsAyame, MSGBOX_AUTOCLOSE
 	playse SE_M_PETAL_DANCE
-	applymovement LOCALID_NEWSINJOH_KIMONOHIDEOUT_MIHARU, NewSinjoh_KimonoHideout_Movement_KimonoWalksUp
+	applymovement LOCALID_NEWSINJOH_KIMONOHIDEOUT_AYAME, NewSinjoh_KimonoHideout_Movement_KimonoWalksUp
 	waitmovement 0
 
 	playse SE_M_PETAL_DANCE
-	applymovement LOCALID_NEWSINJOH_KIMONOHIDEOUT_SHIZUKO, NewSinjoh_KimonoHideout_Movement_KimonoWalksDown
+	applymovement LOCALID_NEWSINJOH_KIMONOHIDEOUT_SUZU, NewSinjoh_KimonoHideout_Movement_KimonoWalksDown
 	waitmovement 0
-	msgbox NewSinjoh_KimonoHideout_Text_PlayerMeetsShizuko, MSGBOX_AUTOCLOSE
+	msgbox NewSinjoh_KimonoHideout_Text_PlayerMeetsSuzu, MSGBOX_AUTOCLOSE
 	playse SE_M_PETAL_DANCE
-	applymovement LOCALID_NEWSINJOH_KIMONOHIDEOUT_SHIZUKO, NewSinjoh_KimonoHideout_Movement_KimonoWalksUp
+	applymovement LOCALID_NEWSINJOH_KIMONOHIDEOUT_SUZU, NewSinjoh_KimonoHideout_Movement_KimonoWalksUp
 	waitmovement 0
 
 	playse SE_M_PETAL_DANCE
@@ -93,8 +101,8 @@ NewSinjoh_KimonoHideout_Text_PlayerMeetsKimonos:
 	.string "{PLAYER}.\p"
 	.string "Please, approach.$"
 
-NewSinjoh_KimonoHideout_Text_PlayerMeetsMiharu:
-    .string "MIHARU: Welcome to NEW SINJOH, \n"
+NewSinjoh_KimonoHideout_Text_PlayerMeetsAyame:
+    .string "AYAME: Welcome to NEW SINJOH, \n"
 	.string "{PLAYER}.\p"
 	.string "For generations, this village has\n"
 	.string "peacefully coexisted with immensely\l"
@@ -106,8 +114,8 @@ NewSinjoh_KimonoHideout_Text_PlayerMeetsMiharu:
 	.string "careful balance we have long\l"
 	.string "protected.$"
 
-NewSinjoh_KimonoHideout_Text_PlayerMeetsShizuko:
-	.string "SHIZUKO: Our cousins in ECRUTEAK\n"
+NewSinjoh_KimonoHideout_Text_PlayerMeetsSuzu:
+	.string "SUZU: Our cousins in ECRUTEAK\n"
 	.string "CITY made us aware of your\l"
 	.string "connection to the LEGENDARY POKéMON\l"
 	.string "of the JOHTO REGION, and your\l"
@@ -125,171 +133,70 @@ NewSinjoh_KimonoHideout_Text_PlayerMeetsYouko:
 	.string "POKéMON there are not disturbed\l"
 	.string "by the unworthy.$"
 
-
-@ ============KIMONO GIRL NPCs=====================================================================================
-
-NewSinjoh_KimonoHideout_EventScript_Miharu::
+NewSinjoh_KimonoHideout_EventScript_Ayame::
 	lock
 	faceplayer
-	goto_if_ge VAR_SINJOH_STORYLINE, 13, NewSinjoh_KimonoHideout_EventScript_MiharuFinal
-	goto_if_defeated TRAINER_MIHARU_HNS, NewSinjoh_KimonoHideout_EventScript_MiharuAfter
-	msgbox NewSinjoh_KimonoHideout_Text_PlayerMeetsMiharu, MSGBOX_AUTOCLOSE
-	goto_if_not_defeated TRAINER_MIHARU_HNS, NewSinjoh_KimonoHideout_EventScript_TryMiharuBattle
-	release
-	end
-NewSinjoh_KimonoHideout_EventScript_TryMiharuBattle::
-	goto_if_eq VAR_SINJOH_STORYLINE, 6, NewSinjoh_KimonoHideout_EventScript_MiharuBattle
-	release
-	end
-NewSinjoh_KimonoHideout_EventScript_MiharuBattle::
-	msgbox NewSinjoh_KimonoHideout_Text_MiharuBeforeBattle, MSGBOX_DEFAULT
-	closemessage
-	settotemboost B_POSITION_OPPONENT_LEFT, 2, 2, 0, 0, 2, 0
-	trainerbattle_no_intro TRAINER_MIHARU_HNS, EcruteakCity_Theater_Text_KimonoGirlBeaten
-	giveitem ITEM_MEADOW_PLATE
-	addvar VAR_PLATECOUNTER, 1
-	msgbox NewSinjoh_KimonoHideout_Text_MiharuAfter, MSGBOX_DEFAULT
-	closemessage
-	call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
-	call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
-	call_if_eq VAR_PLATECOUNTER, 9, SinjohRuins_Lab_EventScript_9Plates
-	call_if_eq VAR_PLATECOUNTER, 12, SinjohRuins_Lab_EventScript_12Plates
-	call_if_eq VAR_PLATECOUNTER, 15, SinjohRuins_Lab_EventScript_15Plates
-	call_if_eq VAR_PLATECOUNTER, 16, SinjohRuins_Lab_EventScript_16Plates
-	release
-	end
-NewSinjoh_KimonoHideout_EventScript_MiharuAfter::
-	msgbox NewSinjoh_KimonoHideout_Text_MiharuAfter, MSGBOX_AUTOCLOSE
+	goto_if_ge VAR_SINJOH_STORYLINE, 13, NewSinjoh_KimonoHideout_EventScript_AyameFinal
+	goto_if_ge VAR_SINJOH_STORYLINE, 6, NewSinjoh_KimonoHideout_EventScript_AyameHunt
+	msgbox NewSinjoh_KimonoHideout_Text_PlayerMeetsAyame, MSGBOX_DEFAULT
 	release
 	end
 
-NewSinjoh_KimonoHideout_Text_MiharuBeforeBattle:
-	.string "MIHARU: Just as we predicted.\p"
-	.string "The champion of stone sent you\n"
-	.string "to collect the PLATES.\p"
-	.string "Our order has guarded these\n"
-	.string "PLATES for centuries.\p"
-	.string "We will not part with them\n"
-	.string "readily.$"
-
-NewSinjoh_KimonoHideout_Text_MiharuAfter:
-	.string "MIHARU: You are worthy.$"
-
-NewSinjoh_KimonoHideout_EventScript_MiharuFinal::
-	msgbox NewSinjoh_KimonoHideout_Text_MiharuFinal, MSGBOX_AUTOCLOSE
+NewSinjoh_KimonoHideout_EventScript_AyameHunt:
+	msgbox NewSinjoh_KimonoHideout_Text_AyameHunt, MSGBOX_DEFAULT
+	release
 	end
 
-NewSinjoh_KimonoHideout_Text_MiharuFinal:
-	.string "MIHARU: You have done our village\n"
-	.string "a great service, {PLAYER}.\p"
-	.string "We will not forget this.$"
+NewSinjoh_KimonoHideout_EventScript_AyameFinal:
+	msgbox NewSinjoh_KimonoHideout_Text_AyameFinal, MSGBOX_DEFAULT
+	release
+	end
+
+NewSinjoh_KimonoHideout_EventScript_Suzu::
+	lock
+	faceplayer
+	goto_if_ge VAR_SINJOH_STORYLINE, 13, NewSinjoh_KimonoHideout_EventScript_SuzuFinal
+	goto_if_ge VAR_SINJOH_STORYLINE, 6, NewSinjoh_KimonoHideout_EventScript_SuzuHunt
+	msgbox NewSinjoh_KimonoHideout_Text_PlayerMeetsSuzu, MSGBOX_DEFAULT
+	release
+	end
+
+NewSinjoh_KimonoHideout_EventScript_SuzuHunt:
+	msgbox NewSinjoh_KimonoHideout_Text_SuzuHunt, MSGBOX_DEFAULT
+	release
+	end
+
+NewSinjoh_KimonoHideout_EventScript_SuzuFinal:
+	msgbox NewSinjoh_KimonoHideout_Text_SuzuFinal, MSGBOX_DEFAULT
+	release
+	end
 
 NewSinjoh_KimonoHideout_EventScript_Youko::
 	lock
 	faceplayer
-	goto_if_ge VAR_SINJOH_STORYLINE, 13, NewSinjoh_KimonoHideout_EventScript_YoukoFinal
-	goto_if_defeated TRAINER_YOUKO_HNS, NewSinjoh_KimonoHideout_EventScript_YoukoAfter
-	msgbox NewSinjoh_KimonoHideout_Text_PlayerMeetsYouko, MSGBOX_AUTOCLOSE
-	goto_if_not_defeated TRAINER_YOUKO_HNS, NewSinjoh_KimonoHideout_EventScript_TryYoukoBattle
-	release
-	end
-NewSinjoh_KimonoHideout_EventScript_TryYoukoBattle::
-	goto_if_eq VAR_SINJOH_STORYLINE, 6, NewSinjoh_KimonoHideout_EventScript_YoukoBattle
-	release
-	end
-NewSinjoh_KimonoHideout_EventScript_YoukoBattle::
-	msgbox NewSinjoh_KimonoHideout_Text_YoukoBeforeBattle, MSGBOX_DEFAULT
-	closemessage
-	settotemboost B_POSITION_OPPONENT_LEFT, 0, 2, 1, 2, 2, 2
-	trainerbattle_no_intro TRAINER_YOUKO_HNS, EcruteakCity_Theater_Text_KimonoGirlBeaten
-	giveitem ITEM_ICICLE_PLATE
-	addvar VAR_PLATECOUNTER, 1
-	msgbox NewSinjoh_KimonoHideout_Text_YoukoAfter, MSGBOX_DEFAULT
-	closemessage
-	call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
-	call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
-	call_if_eq VAR_PLATECOUNTER, 9, SinjohRuins_Lab_EventScript_9Plates
-	call_if_eq VAR_PLATECOUNTER, 12, SinjohRuins_Lab_EventScript_12Plates
-	call_if_eq VAR_PLATECOUNTER, 15, SinjohRuins_Lab_EventScript_15Plates
-	call_if_eq VAR_PLATECOUNTER, 16, SinjohRuins_Lab_EventScript_16Plates
-	release
-	end
-NewSinjoh_KimonoHideout_EventScript_YoukoAfter::
-	msgbox NewSinjoh_KimonoHideout_Text_YoukoAfter, MSGBOX_AUTOCLOSE
+	msgbox NewSinjoh_KimonoHideout_Text_PlayerMeetsYouko, MSGBOX_DEFAULT
 	release
 	end
 
-NewSinjoh_KimonoHideout_Text_YoukoBeforeBattle:
-	.string "YOUKO: Our cousins speak so\n"
-	.string "highly of you.\p"
-	.string "Is it true?\p"
-	.string "I will find out.$"
+NewSinjoh_KimonoHideout_Text_AyameHunt:
+	.string "AYAME: The EXPERTS on ROUTE 50\n"
+	.string "let you through to the ruins.\p"
+	.string "Before you, only CYNTHIA had\n"
+	.string "earned that.$"
 
-NewSinjoh_KimonoHideout_Text_YoukoAfter:
-	.string "YOUKO: Our cousins were right\n"
-	.string "about you.$"
+NewSinjoh_KimonoHideout_Text_SuzuHunt:
+	.string "SUZU: YOUKO has gone to the lake\n"
+	.string "past SINJOH CANYON.\p"
+	.string "She dances with both sun and\n"
+	.string "moon. I hope to, one day.$"
 
-NewSinjoh_KimonoHideout_EventScript_YoukoFinal::
-	msgbox NewSinjoh_KimonoHideout_Text_YoukoFinal, MSGBOX_AUTOCLOSE
-	end
+NewSinjoh_KimonoHideout_Text_AyameFinal:
+	.string "AYAME: You have done our village\n"
+	.string "a great service, {PLAYER}.\p"
+	.string "We will not forget this.$"
 
-NewSinjoh_KimonoHideout_Text_YoukoFinal:
-	.string "YOUKO: I had my doubts, at first.\p"
-	.string "But after what you've done, it\n"
-	.string "cannot be denied.$"
-
-NewSinjoh_KimonoHideout_EventScript_Shizuko::
-	lock
-	faceplayer
-	goto_if_ge VAR_SINJOH_STORYLINE, 13, NewSinjoh_KimonoHideout_EventScript_ShizukoFinal
-	goto_if_defeated TRAINER_SHIZUKO_HNS, NewSinjoh_KimonoHideout_EventScript_ShizukoAfter
-	msgbox NewSinjoh_KimonoHideout_Text_PlayerMeetsShizuko, MSGBOX_AUTOCLOSE
-	goto_if_not_defeated TRAINER_SHIZUKO_HNS, NewSinjoh_KimonoHideout_EventScript_TryShizukoBattle
-	release
-	end
-NewSinjoh_KimonoHideout_EventScript_TryShizukoBattle::
-	goto_if_eq VAR_SINJOH_STORYLINE, 6, NewSinjoh_KimonoHideout_EventScript_ShizukoBattle
-	release
-	end
-NewSinjoh_KimonoHideout_EventScript_ShizukoBattle::
-	msgbox NewSinjoh_KimonoHideout_Text_ShizukoBeforeBattle, MSGBOX_DEFAULT
-	closemessage
-	settotemboost B_POSITION_OPPONENT_LEFT, 2, 1, 0, 0, 1, 0
-	trainerbattle_no_intro TRAINER_SHIZUKO_HNS, EcruteakCity_Theater_Text_KimonoGirlBeaten
-	giveitem ITEM_PIXIE_PLATE
-	addvar VAR_PLATECOUNTER, 1
-	msgbox NewSinjoh_KimonoHideout_Text_ShizukoAfter, MSGBOX_DEFAULT
-	closemessage
-	call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
-	call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
-	call_if_eq VAR_PLATECOUNTER, 9, SinjohRuins_Lab_EventScript_9Plates
-	call_if_eq VAR_PLATECOUNTER, 12, SinjohRuins_Lab_EventScript_12Plates
-	call_if_eq VAR_PLATECOUNTER, 15, SinjohRuins_Lab_EventScript_15Plates
-	call_if_eq VAR_PLATECOUNTER, 16, SinjohRuins_Lab_EventScript_16Plates
-	release
-	end
-NewSinjoh_KimonoHideout_EventScript_ShizukoAfter::
-	msgbox NewSinjoh_KimonoHideout_Text_ShizukoAfter, MSGBOX_AUTOCLOSE
-	release
-	end
-
-NewSinjoh_KimonoHideout_Text_ShizukoBeforeBattle:
-	.string "SHIZUKO: We are trained in\n"
-	.string "battle as well as dance.\p"
-	.string "Obtaining the PLATEs will\n"
-	.string "require strength and determination.$"
-
-NewSinjoh_KimonoHideout_Text_ShizukoAfter:
-	.string "SHIZUKO: The bond you share\n"
-	.string "with your POKéMON is quite strong.\p"
-	.string "You have earned this PLATE.$"
-
-NewSinjoh_KimonoHideout_EventScript_ShizukoFinal::
-	msgbox NewSinjoh_KimonoHideout_Text_ShizukoFinal, MSGBOX_AUTOCLOSE
-	end
-
-NewSinjoh_KimonoHideout_Text_ShizukoFinal:
-	.string "SHIZUKO: Few trainers in all\n"
+NewSinjoh_KimonoHideout_Text_SuzuFinal:
+	.string "SUZU: Few trainers in all\n"
 	.string "of SINJOH's storied history have\l"
 	.string "managed what you've just done.\p"
 	.string "Quite impressive, {PLAYER}.$"

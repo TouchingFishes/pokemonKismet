@@ -24,18 +24,245 @@
       "direction": "left"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STANTLER",
+      "x": 3,
+      "y": 57,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewSinjoh_EventScript_PetStantler",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STANTLER",
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STANTLER",
+      "x": 6,
+      "y": 56,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewSinjoh_EventScript_PetStantler",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STANTLER",
+      "x": 3,
+      "y": 62,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewSinjoh_EventScript_PetStantler",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SINJOHCANYON_NOBLE_GIGALITH",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_GIGALITH",
+      "x": 2,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_DOWN_LEFT",
+      "movement_range_x": 7,
+      "movement_range_y": 9,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohCanyon_EventScript_Gigalith",
+      "flag": "FLAG_HIDE_SINJOHCANYON_NOBLE_GIGALITH"
+    },
+    {
+      "local_id": "LOCALID_SINJOHCANYON_WYRDEER",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_WYRDEER",
+      "x": 4,
+      "y": 54,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohCanyon_EventScript_Wyrdeer",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STANTLER",
+      "x": 13,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SINJOHCANYON_FAWN",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STANTLER",
+      "x": 5,
+      "y": 54,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohCanyon_EventScript_FawnHome",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER_HNS",
+      "x": 21,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "SinjohCanyon_EventScript_Dawson",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_HNS",
+      "x": 26,
+      "y": 42,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "SinjohCanyon_EventScript_Dai",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
+      "x": 19,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohCanyon_EventScript_ItemMaxRevive",
+      "flag": "FLAG_SINJOHCANYON_ITEM_MAX_REVIVE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
+      "x": 14,
+      "y": 29,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohCanyon_EventScript_ItemBlackAugurite",
+      "flag": "FLAG_SINJOHCANYON_ITEM_BLACK_AUGURITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
+      "x": 24,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinjohCanyon_EventScript_ItemRareCandy",
+      "flag": "FLAG_SINJOHCANYON_ITEM_RARE_CANDY"
+    }
+  ],
   "warp_events": [
     {
-      "x": 10,
+      "x": 18,
       "y": 49,
       "elevation": 0,
       "dest_map": "MAP_CHILLWIND_CAVE_HNS",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_NOBLE_GIGALITH",
+      "var_value": "1",
+      "script": "SinjohCanyon_EventScript_ActivateGigalith"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_NOBLE_GIGALITH",
+      "var_value": "1",
+      "script": "SinjohCanyon_EventScript_ActivateGigalith"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_NOBLE_GIGALITH",
+      "var_value": "1",
+      "script": "SinjohCanyon_EventScript_ActivateGigalith"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SinjohCanyon_EventScript_FawnTrigger"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 27,
+      "y": 75,
+      "elevation": 0,
+      "item": "ITEM_PP_UP",
+      "flag": "FLAG_SINJOHCANYON_HIDDEN_ITEM_PP_UP"
+    },
+    {
+      "type": "hidden_item",
+      "x": 6,
+      "y": 57,
+      "elevation": 0,
+      "item": "ITEM_BIG_NUGGET",
+      "flag": "FLAG_SINJOHCANYON_HIDDEN_ITEM_BIG_NUGGET"
+    }
+  ],
   "game_version": "hns",
   "region": "REGION_HISUI"
 }

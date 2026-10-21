@@ -11,11 +11,6 @@ ChallengersCave_1F_EventScript_Nelson::
 	msgbox ChallengersCave_1F_Text_NelsonAfter, MSGBOX_AUTOCLOSE
 	end
 
-ChallengersCave_1F_EventScript_Dai::
-	trainerbattle_single TRAINER_DAI_HNS, ChallengersCave_1F_Text_DaiSeen, ChallengersCave_1F_Text_DaiBeaten
-	msgbox ChallengersCave_1F_Text_DaiAfter, MSGBOX_AUTOCLOSE
-	end
-
 ChallengersCave_1F_EventScript_Colby::
 	trainerbattle_single TRAINER_COLBY_HNS, ChallengersCave_1F_Text_ColbySeen, ChallengersCave_1F_Text_ColbyBeaten
 	msgbox ChallengersCave_1F_Text_ColbyAfter, MSGBOX_AUTOCLOSE
@@ -26,19 +21,9 @@ ChallengersCave_1F_EventScript_Terry::
 	msgbox ChallengersCave_1F_Text_TerryAfter, MSGBOX_AUTOCLOSE
 	end
 
-ChallengersCave_1F_EventScript_Alexa::
-	trainerbattle_single TRAINER_ALEXA_HNS, ChallengersCave_1F_Text_AlexaSeen, ChallengersCave_1F_Text_AlexaBeaten
-	msgbox ChallengersCave_1F_Text_AlexaAfter, MSGBOX_AUTOCLOSE
-	end
-
 ChallengersCave_1F_EventScript_Naomi::
 	trainerbattle_single TRAINER_NAOMI_HNS, ChallengersCave_1F_Text_NaomiSeen, ChallengersCave_1F_Text_NaomiBeaten
 	msgbox ChallengersCave_1F_Text_NaomiAfter, MSGBOX_AUTOCLOSE
-	end
-
-ChallengersCave_1F_EventScript_Dawson::
-	trainerbattle_single TRAINER_DAWSON_HNS, ChallengersCave_1F_Text_DawsonSeen, ChallengersCave_1F_Text_DawsonBeaten
-	msgbox ChallengersCave_1F_Text_DawsonAfter, MSGBOX_AUTOCLOSE
 	end
 
 ChallengersCave_1F_EventScript_Newton::
@@ -82,20 +67,6 @@ ChallengersCave_1F_Text_NelsonAfter:
 	.string "sometimes I drop\l"
 	.string "both!$"
 
-ChallengersCave_1F_Text_DaiSeen:
-	.string "My fighting spirit\n"
-	.string "burns bright!\l"
-	.string "Face me!$"
-
-ChallengersCave_1F_Text_DaiBeaten:
-	.string "My spirit…\n"
-	.string "shaken!$"
-
-ChallengersCave_1F_Text_DaiAfter:
-	.string "A true fighter\n"
-	.string "grows from defeat.\l"
-	.string "I'll train harder!$"
-
 ChallengersCave_1F_Text_ColbySeen:
 	.string "I train wherever\n"
 	.string "strong POKéMON\l"
@@ -126,21 +97,6 @@ ChallengersCave_1F_Text_TerryAfter:
 	.string "learn quickly.\l"
 	.string "I'll improve too!$"
 
-ChallengersCave_1F_Text_AlexaSeen:
-	.string "I study every\n"
-	.string "battle I fight.\p"
-	.string "Let us learn from\n"
-	.string "each other!$"
-
-ChallengersCave_1F_Text_AlexaBeaten:
-	.string "My notes didn't\n"
-	.string "prepare me!$"
-
-ChallengersCave_1F_Text_AlexaAfter:
-	.string "Your strategy was\n"
-	.string "unexpected…\l"
-	.string "I need new data.$"
-
 ChallengersCave_1F_Text_NaomiSeen:
 	.string "CHALLENGER'S CAVE\n"
 	.string "is where we prove\l"
@@ -156,22 +112,6 @@ ChallengersCave_1F_Text_NaomiAfter:
 	.string "push my limits.\l"
 	.string "Next time, I'll\l"
 	.string "win for sure!$"
-
-ChallengersCave_1F_Text_DawsonSeen:
-	.string "Nothing beats a\n"
-	.string "good battle\l"
-	.string "underground!$"
-
-ChallengersCave_1F_Text_DawsonBeaten:
-	.string "Whoa! You hit\n"
-	.string "harder than a\l"
-	.string "ROCK SLIDE!$"
-
-ChallengersCave_1F_Text_DawsonAfter:
-	.string "I hike here all\n"
-	.string "the time. My\l"
-	.string "POKéMON keep me\l"
-	.string "company!$"
 
 ChallengersCave_1F_Text_NewtonSeen:
 	.string "Do you know this\n"

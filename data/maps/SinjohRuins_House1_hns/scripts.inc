@@ -88,17 +88,21 @@ SinjohRuins_Lab_EventScript_IntroChoice::
 SinjohRuins_Lab_EventScript_IntroChoseYes::
 	msgbox SinjohRuins_Lab_Text_CynthiaIntroCutscene6, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_SINJOH_STORYLINE, 6
-	setvar VAR_NOBLE_SNEASLER, 1
-	setvar VAR_NOBLE_OVERQWIL, 1
-	setvar VAR_NOBLE_WYRDEER, 1
-	setvar VAR_NOBLE_ARCANINE, 1
-	setvar VAR_NOBLE_URSALUNA, 1
-	setvar VAR_NOBLE_KLEAVOR, 1
-	setvar VAR_NOBLE_ELECTRODE, 1
-	setvar VAR_NOBLE_TYPHLOSION, 1
+	call SinjohRuins_Lab_EventScript_StartPlateHunt
 	release
 	end
+
+SinjohRuins_Lab_EventScript_StartPlateHunt::
+	setvar VAR_SINJOH_STORYLINE, 6
+	setvar VAR_NOBLE_GLIMMORA, 1
+	@ VAR_NOBLE_MILOTIC is armed by MUALANI's win
+	setvar VAR_NOBLE_WYRDEER, 1
+	setvar VAR_NOBLE_DARMANITAN, 1
+	setvar VAR_NOBLE_URSALUNA, 1
+	setvar VAR_NOBLE_FROSMOTH, 1
+	setvar VAR_NOBLE_GIGALITH, 1
+	setvar VAR_NOBLE_SPIRITOMB, 1
+	return
 
 SinjohRuins_Lab_Movement_CynthiaMeetPlayer:
 	walk_up

@@ -498,8 +498,8 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_SNOWSWEPT_CAVERN_SNEASLER",
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_NOIVERN",
+      "local_id": "LOCALID_SNOWSWEPT_CAVERN_GLIMMORA",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_GLIMMORA",
       "x": 5,
       "y": 26,
       "elevation": 0,
@@ -508,8 +508,8 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Snowswept_Cavern_EventScript_Sneasler",
-      "flag": "FLAG_HIDE_SNOWSWEPT_NOBLE_SNEASLER"
+      "script": "Snowswept_Cavern_EventScript_Glimmora",
+      "flag": "FLAG_HIDE_SNOWSWEPT_NOBLE_GLIMMORA"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_ROGGENROLA",
@@ -547,9 +547,9 @@
       "x": 10,
       "y": 28,
       "elevation": 0,
-      "var": "VAR_NOBLE_SNEASLER",
+      "var": "VAR_NOBLE_GLIMMORA",
       "var_value": "1",
-      "script": "Snowswept_Cavern_EventScript_ActivateSneasler"
+      "script": "Snowswept_Cavern_EventScript_ActivateGlimmora"
     }
   ],
   "bg_events": [

@@ -1,5 +1,13 @@
 Route50_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route50_OnTransition
 	.byte 0
+
+Route50_OnTransition:
+	goto_if_not_defeated TRAINER_EXPERT_SHIZUKO_HNS, Route50_OnTransition_End
+	goto_if_not_defeated TRAINER_EXPERT_FUYUKI_HNS, Route50_OnTransition_End
+	call Route50_EventScript_ExpertsStandAside
+Route50_OnTransition_End:
+	end
 
 Route50_EventScript_BlackBelt1::
 	msgbox Route50_Text_BlackBelt1, MSGBOX_NPC
@@ -49,15 +57,16 @@ Route50_EventScript_WesselAfter::
 	end
 
 Route50_Text_WesselBefore:
-	.string "Incredible, A VOLTORB!\p"
-    .string "But it appears to be made\n"
-    .string "of... Wood?\p"
-    .string "My hypothesis that this route\n"
-    .string "would contain many steel types\l"
-    .string "is disproven yet again.\p"
-    .string "But why else would I have found\n"
-    .string "this STEEL PLATE here?\p"
-    .string "I must collect more data!$"
+	.string "Incredible, a GIGALITH!\p"
+	.string "Not one ounce of steel in it.\n"
+	.string "Rock and crystal, all the way\l"
+	.string "through.\p"
+	.string "My hypothesis that this route\n"
+	.string "would contain many steel types\l"
+	.string "is disproven yet again.\p"
+	.string "But why else would I have found\n"
+	.string "this IRON PLATE here?\p"
+	.string "I must collect more data!$"
 
 Route50_Text_WesselBeforeBattle:
 	.string "You want this PLATE?\n"
@@ -134,9 +143,9 @@ Route50_EventScript_Item_Big_Nugget::
     finditem ITEM_BIG_NUGGET
     end
 
-Route50_EventScript_ActivateKleavor::
+Route50_EventScript_ActivateFrosmoth::
     lock
-    setobjectxyperm LOCALID_ROUTE50_NOBLE_KLEAVOR, 75, 12
+    setobjectxyperm LOCALID_ROUTE50_NOBLE_FROSMOTH, 75, 12
     playse SE_M_DETECT
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 	dofieldeffectsparkle VAR_TEMP_1, VAR_TEMP_2, 0
@@ -151,161 +160,52 @@ Route50_EventScript_ActivateKleavor::
     playbgm MUS_DP_AZURE_FLUTE, FALSE
     delay 200
     fadedefaultbgm
-    addobject LOCALID_ROUTE50_NOBLE_KLEAVOR
-    clearflag FLAG_HIDE_ROUTE50_NOBLE_KLEAVOR
-    applymovement2 LOCALID_ROUTE50_NOBLE_KLEAVOR, Route50_Movement_KleavorEntrance1
+    addobject LOCALID_ROUTE50_NOBLE_FROSMOTH
+    clearflag FLAG_HIDE_ROUTE50_NOBLE_FROSMOTH
+    applymovement2 LOCALID_ROUTE50_NOBLE_FROSMOTH, Route50_Movement_FrosmothEntrance1
     delay 10
-    playmoncry SPECIES_KLEAVOR, CRY_MODE_NORMAL
+    playmoncry SPECIES_FROSMOTH, CRY_MODE_NORMAL
     waitmoncry
-    playmoncry SPECIES_KLEAVOR, CRY_MODE_NORMAL
+    playmoncry SPECIES_FROSMOTH, CRY_MODE_NORMAL
     waitmoncry
     waitmovement 0
-    applymovement2 LOCALID_ROUTE50_NOBLE_KLEAVOR, Route50_Movement_KleavorEntrance2
+    applymovement2 LOCALID_ROUTE50_NOBLE_FROSMOTH, Route50_Movement_FrosmothEntrance2
     delay 10
     playse SE_LEDGE
     delay 20
-	waitmovement LOCALID_ROUTE50_NOBLE_KLEAVOR
+	waitmovement LOCALID_ROUTE50_NOBLE_FROSMOTH
     setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
 	setvar VAR_0x8006, 5  @ num shakes
 	setvar VAR_0x8007, 2  @ shake delay
 	special ShakeCamera
-    setobjectxyperm LOCALID_ROUTE50_NOBLE_KLEAVOR, 75, 14
-    setvar VAR_NOBLE_KLEAVOR, 2
+    setobjectxyperm LOCALID_ROUTE50_NOBLE_FROSMOTH, 75, 14
+    setvar VAR_NOBLE_FROSMOTH, 2
     release
     end
 
-Route50_Movement_KleavorEntrance1:
+Route50_Movement_FrosmothEntrance1:
     jump_in_place_down
     walk_in_place_fast_down
     walk_in_place_fast_down
 	step_end
 
-Route50_Movement_KleavorEntrance2:
+Route50_Movement_FrosmothEntrance2:
 	jump_2_down
     walk_in_place_slow_down
 	walk_in_place_slow_down
 	jump_in_place_down
 	step_end
 
-Route50_EventScript_Kleavor::
-	lock
-	faceplayer
-	playmoncry SPECIES_KLEAVOR, CRY_MODE_ENCOUNTER
-	waitmoncry
-	setwildbossbattle species=SPECIES_KLEAVOR, level=80, item=ITEM_SCOPE_LENS, move1_1=MOVE_STONE_AXE, move1_2=MOVE_CROSS_POISON, move1_3=MOVE_LUNGE move1_4=MOVE_FOCUS_ENERGY
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 2, 0, 0, 2, 0
-	setflag FLAG_NO_WILD_CATCHING
-	setflag FLAG_NO_WILD_RUNNING
-	setflag FLAG_SMART_WILD_AI
-	setflag FLAG_NO_SHINY
-    dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route50_EventScript_KleavorRan
-    bufferspeciesname STR_VAR_1, SPECIES_KLEAVOR
-    msgbox SinjohRuins_Lab_Text_DropedItem, MSGBOX_DEFAULT
-    giveitem ITEM_INSECT_PLATE
-    addvar VAR_PLATECOUNTER, 1
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_ROUTE50_NOBLE_KLEAVOR
-	setflag FLAG_HIDE_ROUTE50_NOBLE_KLEAVOR
-	fadescreenswapbuffers FADE_FROM_BLACK
-    call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
-    call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
-    call_if_eq VAR_PLATECOUNTER, 9, SinjohRuins_Lab_EventScript_9Plates
-    call_if_eq VAR_PLATECOUNTER, 12, SinjohRuins_Lab_EventScript_12Plates
-    call_if_eq VAR_PLATECOUNTER, 15, SinjohRuins_Lab_EventScript_15Plates
-    call_if_eq VAR_PLATECOUNTER, 16, SinjohRuins_Lab_EventScript_16Plates
-	clearflag FLAG_NO_WILD_CATCHING
-	clearflag FLAG_NO_WILD_RUNNING
-	clearflag FLAG_SMART_WILD_AI
-	clearflag FLAG_NO_SHINY
-	release
-	end
-
-Route50_EventScript_KleavorRan::
-	clearflag FLAG_NO_WILD_CATCHING
-	clearflag FLAG_NO_WILD_RUNNING
-	clearflag FLAG_SMART_WILD_AI
-	clearflag FLAG_NO_SHINY
-	release
-	end
-
-
-Route50_EventScript_ActivateElectrode::
-    lock
-    setobjectxyperm LOCALID_ROUTE50_NOBLE_ELECTRODE, 18, 26
-    playse SE_M_DETECT
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
-	dofieldeffectsparkle VAR_TEMP_1, VAR_TEMP_2, 0
-	waitfieldeffect FLDEFF_SPARKLE
-    playse SE_PIN
-    applymovement2 LOCALID_PLAYER, Common_Movement_ExclamationMark
-    delay 55
-    waitmovement LOCALID_PLAYER
-    msgbox SinjohRuins_Lab_Text_PlayFlute, MSGBOX_YESNO
-	closemessage
-    goto_if_eq VAR_RESULT, FALSE, SinjohRuins_Lab_EventScript_NoOp
-    playbgm MUS_DP_AZURE_FLUTE, FALSE
-    delay 200
-    fadedefaultbgm
-    addobject LOCALID_ROUTE50_NOBLE_ELECTRODE
-    clearflag FLAG_HIDE_ROUTE50_NOBLE_ELECTRODE
-    applymovement2 LOCALID_ROUTE50_NOBLE_ELECTRODE, Route50_Movement_ElectrodeEntrance1
-    delay 10
-    playmoncry SPECIES_FROSMOTH, CRY_MODE_NORMAL
-    waitmoncry
-    playmoncry SPECIES_FROSMOTH, CRY_MODE_NORMAL
-    waitmoncry
-    waitmovement 0
-    applymovement2 LOCALID_ROUTE50_NOBLE_ELECTRODE, Route50_Movement_ElectrodeEntrance2
-    delay 10
-    playse SE_LEDGE
-    delay 20
-	waitmovement 0
-    setvar VAR_0x8004, 1  @ vertical pan
-	setvar VAR_0x8005, 1  @ horizontal pan
-	setvar VAR_0x8006, 5  @ num shakes
-	setvar VAR_0x8007, 2  @ shake delay
-	special ShakeCamera
-	applymovement2 LOCALID_ROUTE50_NOBLE_ELECTRODE, Route50_Movement_ElectrodeEntrance3
-	waitmovement LOCALID_ROUTE50_NOBLE_ELECTRODE
-	removeobject LOCALID_ROUTE50_NOBLE_ELECTRODE
-	delay 20
-	setobjectxyperm LOCALID_ROUTE50_NOBLE_ELECTRODE, 14, 31
-	addobject LOCALID_ROUTE50_NOBLE_ELECTRODE
-	clearflag FLAG_HIDE_ROUTE50_NOBLE_ELECTRODE
-    setvar VAR_NOBLE_ELECTRODE, 2
-    release
-    end
-
-Route50_Movement_ElectrodeEntrance1:
-	walk_right
-    jump_in_place_right
-    walk_in_place_fast_right
-    walk_in_place_fast_right
-	step_end
-
-Route50_Movement_ElectrodeEntrance2:
-	jump_2_right
-    walk_in_place_slow_up
-	walk_in_place_slow_up
-	jump_in_place_down
-	step_end
-
-Route50_Movement_ElectrodeEntrance3:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-Route50_EventScript_Electrode::
+Route50_EventScript_Frosmoth::
 	lock
 	faceplayer
 	playmoncry SPECIES_FROSMOTH, CRY_MODE_ENCOUNTER
+	msgbox Route50_Text_FrosmothCry, MSGBOX_AUTOCLOSE
 	waitmoncry
+	msgbox Route50_Text_FrosmothPlate, MSGBOX_YESNO
+	closemessage
+	goto_if_eq VAR_RESULT, NO, Route50_EventScript_FrosmothRan
 	setwildbossbattle species=SPECIES_FROSMOTH, level=80, item=ITEM_NEVER_MELT_ICE, move1_1=MOVE_BLIZZARD, move1_2=MOVE_BUG_BUZZ, move1_3=MOVE_QUIVER_DANCE move1_4=MOVE_GIGA_DRAIN
 	settotemboost B_POSITION_OPPONENT_LEFT, 0, 3, 1, 0, 3, 0
 	setflag FLAG_NO_WILD_CATCHING
@@ -314,14 +214,14 @@ Route50_EventScript_Electrode::
 	setflag FLAG_NO_SHINY
     dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route50_EventScript_ElectrodeRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route50_EventScript_FrosmothRan
     bufferspeciesname STR_VAR_1, SPECIES_FROSMOTH
     msgbox SinjohRuins_Lab_Text_DropedItem, MSGBOX_DEFAULT
-    giveitem ITEM_ZAP_PLATE
+    giveitem ITEM_INSECT_PLATE
     addvar VAR_PLATECOUNTER, 1
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_ROUTE50_NOBLE_ELECTRODE
-	setflag FLAG_HIDE_ROUTE50_NOBLE_ELECTRODE
+	removeobject LOCALID_ROUTE50_NOBLE_FROSMOTH
+	setflag FLAG_HIDE_ROUTE50_NOBLE_FROSMOTH
 	fadescreenswapbuffers FADE_FROM_BLACK
     call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
     call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
@@ -336,10 +236,165 @@ Route50_EventScript_Electrode::
 	release
 	end
 
-Route50_EventScript_ElectrodeRan::
+Route50_EventScript_FrosmothRan::
 	clearflag FLAG_NO_WILD_CATCHING
 	clearflag FLAG_NO_WILD_RUNNING
 	clearflag FLAG_SMART_WILD_AI
 	clearflag FLAG_NO_SHINY
 	release
 	end
+
+Route50_Text_FrosmothCry:
+	.string "Frooosss…!$"
+
+Route50_Text_FrosmothPlate:
+	.string "The NOBLE FROSMOTH's wings scatter\n"
+	.string "glittering frost.\p"
+	.string "A PLATE rests on its back.\p"
+	.string "Battle it?$"
+
+Route50_EventScript_ExpertShizuko::
+	lock
+	faceplayer
+	goto_if_not_defeated TRAINER_EXPERT_SHIZUKO_HNS, Route50_EventScript_ExpertTrial
+	goto_if_not_defeated TRAINER_EXPERT_FUYUKI_HNS, Route50_EventScript_ExpertTrial
+	msgbox Route50_Text_ShizukoAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Route50_EventScript_ExpertFuyuki::
+	lock
+	faceplayer
+	goto_if_not_defeated TRAINER_EXPERT_SHIZUKO_HNS, Route50_EventScript_ExpertTrial
+	goto_if_not_defeated TRAINER_EXPERT_FUYUKI_HNS, Route50_EventScript_ExpertTrial
+	msgbox Route50_Text_FuyukiAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Route50_EventScript_ExpertTrial:
+	msgbox Route50_Text_ExpertTrialAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route50_EventScript_ExpertTrialDeclined
+	msgbox Route50_Text_ShizukoFirst, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_EXPERT_SHIZUKO_HNS, Route50_Text_ShizukoDefeat
+	msgbox Route50_Text_FuyukiNext, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_EXPERT_FUYUKI_HNS, Route50_Text_FuyukiDefeat
+	msgbox Route50_Text_ExpertTrialPassed, MSGBOX_DEFAULT
+	checkitem ITEM_MEADOW_PLATE
+	call_if_eq VAR_RESULT, FALSE, Route50_EventScript_GiveMeadowPlate
+	checkitem ITEM_ICICLE_PLATE
+	call_if_eq VAR_RESULT, FALSE, Route50_EventScript_GiveIciclePlate
+	msgbox Route50_Text_ExpertsStepAside, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_0x8004, VAR_0x8005
+	call_if_eq VAR_0x8005, 1, Route50_EventScript_ExpertTrialPlayerStepsBack
+	applymovement LOCALID_ROUTE50_EXPERT_SHIZUKO, Route50_Movement_ShizukoStepsAside
+	applymovement LOCALID_ROUTE50_EXPERT_FUYUKI, Route50_Movement_FuyukiStepsAside
+	waitmovement LOCALID_ROUTE50_EXPERT_SHIZUKO
+	waitmovement LOCALID_ROUTE50_EXPERT_FUYUKI
+	call Route50_EventScript_ExpertsStandAside
+	goto_if_lt VAR_SINJOH_STORYLINE, 6, Route50_EventScript_ExpertTrialEnd
+	call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
+	call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
+	call_if_eq VAR_PLATECOUNTER, 9, SinjohRuins_Lab_EventScript_9Plates
+	call_if_eq VAR_PLATECOUNTER, 12, SinjohRuins_Lab_EventScript_12Plates
+	call_if_eq VAR_PLATECOUNTER, 15, SinjohRuins_Lab_EventScript_15Plates
+	call_if_eq VAR_PLATECOUNTER, 16, SinjohRuins_Lab_EventScript_16Plates
+Route50_EventScript_ExpertTrialEnd:
+	release
+	end
+
+Route50_EventScript_ExpertTrialDeclined:
+	msgbox Route50_Text_ExpertTrialDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+Route50_EventScript_ExpertTrialPlayerStepsBack:
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
+	waitmovement 0
+	return
+
+Route50_EventScript_GiveMeadowPlate:
+	giveitem ITEM_MEADOW_PLATE
+	addvar VAR_PLATECOUNTER, 1
+	return
+
+Route50_EventScript_GiveIciclePlate:
+	giveitem ITEM_ICICLE_PLATE
+	addvar VAR_PLATECOUNTER, 1
+	return
+
+Route50_EventScript_ExpertsStandAside:
+	setobjectxyperm LOCALID_ROUTE50_EXPERT_SHIZUKO, 17, 1
+	setobjectmovementtype LOCALID_ROUTE50_EXPERT_SHIZUKO, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_ROUTE50_EXPERT_FUYUKI, 20, 1
+	setobjectmovementtype LOCALID_ROUTE50_EXPERT_FUYUKI, MOVEMENT_TYPE_FACE_LEFT
+	return
+
+Route50_Movement_ShizukoStepsAside:
+	walk_left
+	face_right
+	step_end
+
+Route50_Movement_FuyukiStepsAside:
+	walk_right
+	face_left
+	step_end
+
+Route50_Text_ExpertTrialAsk:
+	.string "SHIZUKO: The SINJOH RUINS lie\n"
+	.string "beyond us.\p"
+	.string "FUYUKI: No one takes this road who\n"
+	.string "has not passed our trial.\p"
+	.string "SHIZUKO: CYNTHIA passed it. Her\n"
+	.string "people walk the ruins in her name.\p"
+	.string "FUYUKI: Two battles, back to back,\n"
+	.string "and no rest between.\p"
+	.string "Will you take our trial?$"
+
+Route50_Text_ExpertTrialDeclined:
+	.string "SHIZUKO: Then heal, and come back\n"
+	.string "when you are ready.$"
+
+Route50_Text_ShizukoFirst:
+	.string "SHIZUKO: I am first. Let the sun\n"
+	.string "show us what you are made of.$"
+
+Route50_Text_ShizukoDefeat:
+	.string "SHIZUKO: The meadow bends to you.$"
+
+Route50_Text_FuyukiNext:
+	.string "FUYUKI: Do not catch your breath.\n"
+	.string "The cold does not wait.$"
+
+Route50_Text_FuyukiDefeat:
+	.string "FUYUKI: …Thawed.$"
+
+Route50_Text_ExpertTrialPassed:
+	.string "SHIZUKO: It is done. You passed\n"
+	.string "our trial, as CYNTHIA did.\p"
+	.string "FUYUKI: We kept these for whoever\n"
+	.string "earned the road. Take them.$"
+
+Route50_Text_ExpertsStepAside:
+	.string "SHIZUKO: The SINJOH RUINS are open\n"
+	.string "to you.$"
+
+Route50_Text_ShizukoAfter:
+	.string "SHIZUKO: Walk gently in the ruins.\n"
+	.string "They remember every footstep.$"
+
+Route50_Text_FuyukiAfter:
+	.string "FUYUKI: The road is yours.\n"
+	.string "Do not make us regret it.$"
+
+Route50_EventScript_GigalithRest::
+	msgbox Route50_Text_GigalithRest, MSGBOX_SIGN
+	end
+
+Route50_Text_GigalithRest:
+	.string "The stones here are cracked and\n"
+	.string "scattered, and still faintly warm.\p"
+	.string "Something enormous slept in this\n"
+	.string "grove for a very long time.$"

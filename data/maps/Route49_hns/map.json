@@ -157,7 +157,7 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_ROUTE49_NOBLE_OVERQWIL",
+      "local_id": "LOCALID_ROUTE49_NOBLE_MILOTIC",
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MILOTIC",
       "x": 48,
       "y": 44,
@@ -167,8 +167,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route49_EventScript_Overqwil",
-      "flag": "FLAG_HIDE_ROUTE49_NOBLE_OVERQWIL"
+      "script": "Route49_EventScript_Milotic",
+      "flag": "FLAG_HIDE_ROUTE49_NOBLE_MILOTIC"
     },
     {
       "local_id": "LOCALID_ROUTE49_NOBLE_WYRDEER",
@@ -356,45 +356,45 @@
       "x": 46,
       "y": 44,
       "elevation": 0,
-      "var": "VAR_NOBLE_OVERQWIL",
+      "var": "VAR_NOBLE_MILOTIC",
       "var_value": "1",
-      "script": "Route49_EventScript_ActivateOverqwil"
+      "script": "Route49_EventScript_ActivateMilotic"
     },
     {
       "type": "trigger",
       "x": 47,
       "y": 45,
       "elevation": 0,
-      "var": "VAR_NOBLE_OVERQWIL",
+      "var": "VAR_NOBLE_MILOTIC",
       "var_value": "1",
-      "script": "Route49_EventScript_ActivateOverqwil"
+      "script": "Route49_EventScript_ActivateMilotic"
     },
     {
       "type": "trigger",
       "x": 48,
       "y": 45,
       "elevation": 0,
-      "var": "VAR_NOBLE_OVERQWIL",
+      "var": "VAR_NOBLE_MILOTIC",
       "var_value": "1",
-      "script": "Route49_EventScript_ActivateOverqwil"
+      "script": "Route49_EventScript_ActivateMilotic"
     },
     {
       "type": "trigger",
       "x": 49,
       "y": 45,
       "elevation": 0,
-      "var": "VAR_NOBLE_OVERQWIL",
+      "var": "VAR_NOBLE_MILOTIC",
       "var_value": "1",
-      "script": "Route49_EventScript_ActivateOverqwil"
+      "script": "Route49_EventScript_ActivateMilotic"
     },
     {
       "type": "trigger",
       "x": 50,
       "y": 44,
       "elevation": 0,
-      "var": "VAR_NOBLE_OVERQWIL",
+      "var": "VAR_NOBLE_MILOTIC",
       "var_value": "1",
-      "script": "Route49_EventScript_ActivateOverqwil"
+      "script": "Route49_EventScript_ActivateMilotic"
     },
     {
       "type": "trigger",

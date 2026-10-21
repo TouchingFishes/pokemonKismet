@@ -1,24 +1,82 @@
 MirageForest_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MirageForest_OnTransition
 	.byte 0
+
+@ The ZOROARK at the heart of the wood holds the DREAD PLATE (MIGRATION_DECISIONS.md 87). During
+@ the plate hunt (VAR_SINJOH_STORYLINE 6 on) one of the STANTLER wandering round its cove at (29,4)
+@ is the ZOROARK's illusion, among five real ones (MIGRATION_DECISIONS.md 88). It appears where the
+@ illusion stood. Talking to it breaks the illusion, and the ZOROARK fights Noble-style:
+@ no catching or running, boosted, L80 (ZORUA is still wild here, so ZOROARK stays obtainable).
+@ Both objects hide on temp flags worked out here on every load, so a whiteout or a run brings
+@ the illusion back; FLAG_HIDE_MIRAGE_ZOROARK ends it for good once the plate is won.
+MirageForest_OnTransition:
+	setflag FLAG_TEMP_12
+	setflag FLAG_TEMP_13
+	goto_if_set FLAG_HIDE_MIRAGE_ZOROARK, MirageForest_OnTransition_End
+	goto_if_lt VAR_SINJOH_STORYLINE, 6, MirageForest_OnTransition_End
+	clearflag FLAG_TEMP_12
+MirageForest_OnTransition_End:
+	end
+
+MirageForest_EventScript_ZoroarkIllusion::
+	lock
+	faceplayer
+	msgbox MirageForest_Text_ZoroarkIntro, MSGBOX_DEFAULT
+	closemessage
+	getobjectxy LOCALID_MIRAGE_ZOROARK_ILLUSION, CURRENT_POSITION, VAR_0x8004, VAR_0x8005
+	playse SE_M_DETECT
+	dofieldeffectsparkle VAR_0x8004, VAR_0x8005, 0
+	waitfieldeffect FLDEFF_SPARKLE
+	removeobject LOCALID_MIRAGE_ZOROARK_ILLUSION
+	setflag FLAG_TEMP_12
+	clearflag FLAG_TEMP_13
+	setobjectxyperm LOCALID_MIRAGE_ZOROARK, VAR_0x8004, VAR_0x8005
+	addobject LOCALID_MIRAGE_ZOROARK
+	playmoncry SPECIES_ZOROARK, CRY_MODE_ENCOUNTER
+	msgbox MirageForest_Text_IllusionBreaks, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	goto MirageForest_EventScript_ZoroarkFight
 
 MirageForest_EventScript_Zoroark::
 	lock
 	faceplayer
-	setflag FLAG_BATTLED_MIRAGE_ZOROARK
-	msgbox MirageForest_Text_ZoroarkIntro, MSGBOX_DEFAULT
-	playmoncry SPECIES_ZOROARK, 0
+	playmoncry SPECIES_ZOROARK, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbossbattle species=SPECIES_ZOROARK, level=72, move1_1=MOVE_NIGHT_DAZE, move1_2=MOVE_NASTY_PLOT, move1_3=MOVE_EXTRASENSORY, move1_4=MOVE_FLAMETHROWER
+MirageForest_EventScript_ZoroarkFight:
+	setflag FLAG_BATTLED_MIRAGE_ZOROARK
+	setwildbossbattle species=SPECIES_ZOROARK, level=80, item=ITEM_BLACK_GLASSES, move1_1=MOVE_NIGHT_DAZE, move1_2=MOVE_NASTY_PLOT, move1_3=MOVE_EXTRASENSORY, move1_4=MOVE_FLAMETHROWER
+	settotemboost B_POSITION_OPPONENT_LEFT, 0, 0, 1, 1, 1, 0
+	setflag FLAG_NO_WILD_CATCHING
+	setflag FLAG_NO_WILD_RUNNING
+	setflag FLAG_SMART_WILD_AI
+	setflag FLAG_NO_SHINY
 	dowildbattle
+	clearflag FLAG_NO_WILD_CATCHING
+	clearflag FLAG_NO_WILD_RUNNING
+	clearflag FLAG_SMART_WILD_AI
+	clearflag FLAG_NO_SHINY
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MirageForest_EventScript_ZoroarkGone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MirageForest_EventScript_ZoroarkGone
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MirageForest_EventScript_ZoroarkStays
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MirageForest_EventScript_ZoroarkStays
+	bufferspeciesname STR_VAR_1, SPECIES_ZOROARK
+	msgbox SinjohRuins_Lab_Text_DropedItem, MSGBOX_DEFAULT
+	giveitem ITEM_DREAD_PLATE
+	addvar VAR_PLATECOUNTER, 1
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_MIRAGE_ZOROARK
+	setflag FLAG_HIDE_MIRAGE_ZOROARK
+	fadescreenswapbuffers FADE_FROM_BLACK
+	call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
+	call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
+	call_if_eq VAR_PLATECOUNTER, 9, SinjohRuins_Lab_EventScript_9Plates
+	call_if_eq VAR_PLATECOUNTER, 12, SinjohRuins_Lab_EventScript_12Plates
+	call_if_eq VAR_PLATECOUNTER, 15, SinjohRuins_Lab_EventScript_15Plates
+	call_if_eq VAR_PLATECOUNTER, 16, SinjohRuins_Lab_EventScript_16Plates
 	release
 	end
 
-MirageForest_EventScript_ZoroarkGone::
-	setflag FLAG_HIDE_MIRAGE_ZOROARK
-	removeobject LOCALID_MIRAGE_ZOROARK
+MirageForest_EventScript_ZoroarkStays::
 	release
 	end
 
@@ -57,6 +115,10 @@ MirageForest_Text_ZoroarkIntro:
 	.string "Something at the heart of the\n"
 	.string "wood is watching, and it is\l"
 	.string "tired of being looked for.$"
+
+MirageForest_Text_IllusionBreaks:
+	.string "The STANTLER's outline flickers…\p"
+	.string "It was a ZOROARK all along!$"
 
 MirageForest_Text_RosalindIntro:
 	.string "You found your way in.\p"

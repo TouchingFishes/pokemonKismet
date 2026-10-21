@@ -284,7 +284,7 @@ SinjohRuins_EventScript_CynthiaBattle::
     msgbox SinjohRuins_Text_ChallengeCynthia, MSGBOX_AUTOCLOSE
     trainerbattle_no_intro TRAINER_CYNTHIA_HNS, SinjohRuins_Text_CynthiaDefeat
     msgbox SinjohRuins_Text_CynthiaAfterBattle, MSGBOX_AUTOCLOSE
-    giveitem ITEM_STONE_PLATE
+    giveitem ITEM_ZAP_PLATE
     msgbox SinjohRuins_Text_HealParty, MSGBOX_AUTOCLOSE
     fadescreenswapbuffers FADE_TO_BLACK
 	special HealPlayerParty
@@ -307,7 +307,9 @@ SinjohRuins_Text_CynthiaAfterBattle:
 	.string "CYNTHIA: To think, another trainer \n"
 	.string "would defeat me like this.\p"
     .string "Incredible.\p"
-	.string "Take this, it's the final plate.$"
+	.string "Take this, it's the final plate.\p"
+	.string "My team found it during our\n"
+	.string "research, before you arrived.$"
 
 SinjohRuins_Text_CynthiaReadytoBattle:
     .string "CYNTHIA: {PLAYER}.\p"

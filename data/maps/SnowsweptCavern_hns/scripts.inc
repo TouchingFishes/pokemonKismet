@@ -10,10 +10,10 @@ SnowsweptCavern_hns_SetBoulderLocation::
     setobjectxyperm LOCALID_SNOWSWEPT_CAVERN_BOULDER, 38, 56
     end
 
-Snowswept_Cavern_EventScript_ActivateSneasler::
+Snowswept_Cavern_EventScript_ActivateGlimmora::
     lock
-    setobjectmovementtype LOCALID_SNOWSWEPT_CAVERN_SNEASLER, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
-    setobjectxyperm LOCALID_SNOWSWEPT_CAVERN_SNEASLER, 6, 24
+    setobjectmovementtype LOCALID_SNOWSWEPT_CAVERN_GLIMMORA, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+    setobjectxyperm LOCALID_SNOWSWEPT_CAVERN_GLIMMORA, 6, 24
     playse SE_M_DETECT
 	dofieldeffectsparkle 10, 28, 0
 	waitfieldeffect FLDEFF_SPARKLE
@@ -27,19 +27,19 @@ Snowswept_Cavern_EventScript_ActivateSneasler::
     playbgm MUS_DP_AZURE_FLUTE, FALSE
     delay 200
     fadedefaultbgm
-    addobject LOCALID_SNOWSWEPT_CAVERN_SNEASLER
-    clearflag FLAG_HIDE_SNOWSWEPT_NOBLE_SNEASLER
+    addobject LOCALID_SNOWSWEPT_CAVERN_GLIMMORA
+    clearflag FLAG_HIDE_SNOWSWEPT_NOBLE_GLIMMORA
     
-    applymovement2 LOCALID_SNOWSWEPT_CAVERN_SNEASLER, Snowswept_Cavern_Movement_SpawnSneasler1
+    applymovement2 LOCALID_SNOWSWEPT_CAVERN_GLIMMORA, Snowswept_Cavern_Movement_SpawnGlimmora1
     delay 10
-    playmoncry SPECIES_NOIVERN, CRY_MODE_NORMAL
+    playmoncry SPECIES_GLIMMORA, CRY_MODE_NORMAL
     waitmoncry
-    playmoncry SPECIES_NOIVERN, CRY_MODE_NORMAL
+    playmoncry SPECIES_GLIMMORA, CRY_MODE_NORMAL
     waitmoncry
     waitmovement 0
 
 
-    applymovement2 LOCALID_SNOWSWEPT_CAVERN_SNEASLER, Snowswept_Cavern_Movement_SpawnSneasler2
+    applymovement2 LOCALID_SNOWSWEPT_CAVERN_GLIMMORA, Snowswept_Cavern_Movement_SpawnGlimmora2
     delay 10
     playse SE_LEDGE
     delay 20
@@ -50,13 +50,13 @@ Snowswept_Cavern_EventScript_ActivateSneasler::
 	special ShakeCamera
     waitmovement 0
     
-    setobjectxyperm LOCALID_SNOWSWEPT_CAVERN_SNEASLER, 5, 26
+    setobjectxyperm LOCALID_SNOWSWEPT_CAVERN_GLIMMORA, 5, 26
 
-    setvar VAR_NOBLE_SNEASLER, 2
+    setvar VAR_NOBLE_GLIMMORA, 2
     release
     end
 
-Snowswept_Cavern_Movement_SpawnSneasler1:
+Snowswept_Cavern_Movement_SpawnGlimmora1:
     walk_in_place_fast_down
     jump_in_place_down
     jump_in_place_down
@@ -64,33 +64,37 @@ Snowswept_Cavern_Movement_SpawnSneasler1:
     jump_in_place_down
     step_end
 
-Snowswept_Cavern_Movement_SpawnSneasler2:
+Snowswept_Cavern_Movement_SpawnGlimmora2:
     jump_2_down
     walk_in_place_down
     face_down
     step_end
 
-Snowswept_Cavern_EventScript_Sneasler::
+Snowswept_Cavern_EventScript_Glimmora::
 	lock
 	faceplayer
-	playmoncry SPECIES_NOIVERN, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_GLIMMORA, CRY_MODE_ENCOUNTER
+	msgbox Snowswept_Cavern_Text_GlimmoraCry, MSGBOX_AUTOCLOSE
 	waitmoncry
-	setwildbossbattle species=SPECIES_NOIVERN, level=80, item=ITEM_WISE_GLASSES, move1_1=MOVE_BOOMBURST, move1_2=MOVE_DRAGON_PULSE, move1_3=MOVE_AIR_SLASH move1_4=MOVE_ROOST
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 0, 2, 0, 0, 0
+	msgbox Snowswept_Cavern_Text_GlimmoraPlate, MSGBOX_YESNO
+	closemessage
+	goto_if_eq VAR_RESULT, NO, Snowswept_Cavern_EventScript_GlimmoraRan
+	setwildbossbattle species=SPECIES_GLIMMORA, level=80, item=ITEM_BLACK_SLUDGE, move1_1=MOVE_SLUDGE_WAVE, move1_2=MOVE_POWER_GEM, move1_3=MOVE_EARTH_POWER, move1_4=MOVE_TOXIC_SPIKES
+	settotemboost B_POSITION_OPPONENT_LEFT, 0, 1, 0, 2, 1, 0
 	setflag FLAG_NO_WILD_CATCHING
 	setflag FLAG_NO_WILD_RUNNING
 	setflag FLAG_SMART_WILD_AI
 	setflag FLAG_NO_SHINY
     dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Snowswept_Cavern_EventScript_SneaslerRan
-    bufferspeciesname STR_VAR_1, SPECIES_NOIVERN
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Snowswept_Cavern_EventScript_GlimmoraRan
+    bufferspeciesname STR_VAR_1, SPECIES_GLIMMORA
     msgbox SinjohRuins_Lab_Text_DropedItem, MSGBOX_DEFAULT
     giveitem ITEM_TOXIC_PLATE
     addvar VAR_PLATECOUNTER, 1
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_SNOWSWEPT_CAVERN_SNEASLER
-	setflag FLAG_HIDE_SNOWSWEPT_NOBLE_SNEASLER
+	removeobject LOCALID_SNOWSWEPT_CAVERN_GLIMMORA
+	setflag FLAG_HIDE_SNOWSWEPT_NOBLE_GLIMMORA
 	fadescreenswapbuffers FADE_FROM_BLACK
     call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
     call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
@@ -105,13 +109,23 @@ Snowswept_Cavern_EventScript_Sneasler::
 	release
 	end
 
-Snowswept_Cavern_EventScript_SneaslerRan::
+Snowswept_Cavern_EventScript_GlimmoraRan::
 	clearflag FLAG_NO_WILD_CATCHING
 	clearflag FLAG_NO_WILD_RUNNING
 	clearflag FLAG_SMART_WILD_AI
 	clearflag FLAG_NO_SHINY
 	release
 	end
+
+Snowswept_Cavern_Text_GlimmoraCry:
+	.string "Glimmoraaa!!$"
+
+Snowswept_Cavern_Text_GlimmoraPlate:
+	.string "GLIMMORA's petals glint with\n"
+	.string "beautiful poison crystals.\p"
+	.string "A PLATE sits at the heart of its\n"
+	.string "bloom.\p"
+	.string "Battle it?$"
 
 Snowswept_Cavern_Eventscript_Machamp::
 	lock

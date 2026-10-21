@@ -139,9 +139,9 @@ Route49_Text_Sign:
     .string "The sign is faded.\n"
     .string "ROUTE 49$"
 
-Route49_EventScript_ActivateOverqwil::
+Route49_EventScript_ActivateMilotic::
     lock
-    setobjectxyperm LOCALID_ROUTE49_NOBLE_OVERQWIL, 48, 42
+    setobjectxyperm LOCALID_ROUTE49_NOBLE_MILOTIC, 48, 42
     playse SE_M_DETECT
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 	dofieldeffectsparkle VAR_TEMP_1, VAR_TEMP_2, 0
@@ -156,31 +156,31 @@ Route49_EventScript_ActivateOverqwil::
     playbgm MUS_DP_AZURE_FLUTE, FALSE
     delay 200
     fadedefaultbgm
-    addobject LOCALID_ROUTE49_NOBLE_OVERQWIL
-    clearflag FLAG_HIDE_ROUTE49_NOBLE_OVERQWIL
-    applymovement2 LOCALID_ROUTE49_NOBLE_OVERQWIL, Route49_Movement_OverqwilEntrance1
+    addobject LOCALID_ROUTE49_NOBLE_MILOTIC
+    clearflag FLAG_HIDE_ROUTE49_NOBLE_MILOTIC
+    applymovement2 LOCALID_ROUTE49_NOBLE_MILOTIC, Route49_Movement_MiloticEntrance1
     delay 10
     playmoncry SPECIES_MILOTIC, CRY_MODE_NORMAL
     waitmoncry
     playmoncry SPECIES_MILOTIC, CRY_MODE_NORMAL
     waitmoncry
     waitmovement 0
-    applymovement2 LOCALID_ROUTE49_NOBLE_OVERQWIL, Route49_Movement_OverqwilEntrance2
+    applymovement2 LOCALID_ROUTE49_NOBLE_MILOTIC, Route49_Movement_MiloticEntrance2
     delay 10
     playse SE_LEDGE
     delay 20
-	waitmovement LOCALID_ROUTE49_NOBLE_OVERQWIL
+	waitmovement LOCALID_ROUTE49_NOBLE_MILOTIC
     setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
 	setvar VAR_0x8006, 5  @ num shakes
 	setvar VAR_0x8007, 2  @ shake delay
 	special ShakeCamera
-    setobjectxyperm LOCALID_ROUTE49_NOBLE_OVERQWIL, 48, 44
-    setvar VAR_NOBLE_OVERQWIL, 2
+    setobjectxyperm LOCALID_ROUTE49_NOBLE_MILOTIC, 48, 44
+    setvar VAR_NOBLE_MILOTIC, 2
     release
     end
 
-Route49_Movement_OverqwilEntrance1:
+Route49_Movement_MiloticEntrance1:
     walk_in_place_fast_down
     jump_in_place_down
     jump_in_place_down
@@ -188,7 +188,7 @@ Route49_Movement_OverqwilEntrance1:
     jump_in_place_down
 	step_end
 
-Route49_Movement_OverqwilEntrance2:
+Route49_Movement_MiloticEntrance2:
 	walk_slow_down
 	walk_slow_down
     walk_in_place_slow_down
@@ -197,11 +197,15 @@ Route49_Movement_OverqwilEntrance2:
 	step_end
 
 
-Route49_EventScript_Overqwil::
+Route49_EventScript_Milotic::
 	lock
 	faceplayer
 	playmoncry SPECIES_MILOTIC, CRY_MODE_ENCOUNTER
+	msgbox Route49_Text_MiloticCry, MSGBOX_AUTOCLOSE
 	waitmoncry
+	msgbox Route49_Text_MiloticPlate, MSGBOX_YESNO
+	closemessage
+	goto_if_eq VAR_RESULT, NO, Route49_EventScript_MiloticRan
 	setwildbossbattle species=SPECIES_MILOTIC, level=80, item=ITEM_LEFTOVERS, move1_1=MOVE_SCALD, move1_2=MOVE_ICE_BEAM, move1_3=MOVE_RECOVER move1_4=MOVE_DRAGON_TAIL
 	settotemboost B_POSITION_OPPONENT_LEFT, 0, 2, 0, 0, 3, 0
 	setflag FLAG_NO_WILD_CATCHING
@@ -210,14 +214,14 @@ Route49_EventScript_Overqwil::
 	setflag FLAG_NO_SHINY
     dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route49_EventScript_OverqwilRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route49_EventScript_MiloticRan
     bufferspeciesname STR_VAR_1, SPECIES_MILOTIC
     msgbox SinjohRuins_Lab_Text_DropedItem, MSGBOX_DEFAULT
-    giveitem ITEM_DREAD_PLATE
+    giveitem ITEM_SPLASH_PLATE
     addvar VAR_PLATECOUNTER, 1
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_ROUTE49_NOBLE_OVERQWIL
-	setflag FLAG_HIDE_ROUTE49_NOBLE_OVERQWIL
+	removeobject LOCALID_ROUTE49_NOBLE_MILOTIC
+	setflag FLAG_HIDE_ROUTE49_NOBLE_MILOTIC
 	fadescreenswapbuffers FADE_FROM_BLACK
     call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
     call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
@@ -232,13 +236,22 @@ Route49_EventScript_Overqwil::
 	release
 	end
 
-Route49_EventScript_OverqwilRan::
+Route49_EventScript_MiloticRan::
 	clearflag FLAG_NO_WILD_CATCHING
 	clearflag FLAG_NO_WILD_RUNNING
 	clearflag FLAG_SMART_WILD_AI
 	clearflag FLAG_NO_SHINY
 	release
 	end
+
+Route49_Text_MiloticCry:
+	.string "Miloooo!$"
+
+Route49_Text_MiloticPlate:
+	.string "The NOBLE MILOTIC rises from the\n"
+	.string "falls, its scales shining.\p"
+	.string "A PLATE gleams in its coils.\p"
+	.string "Battle it?$"
 
 
 Route49_Movement_PlayerWyrdeerRight:
@@ -363,7 +376,11 @@ Route49_EventScript_Wyrdeer::
 	lock
 	faceplayer
 	playmoncry SPECIES_WYRDEER, CRY_MODE_ENCOUNTER
+	msgbox Route49_Text_WyrdeerCry, MSGBOX_AUTOCLOSE
 	waitmoncry
+	msgbox Route49_Text_WyrdeerPlate, MSGBOX_YESNO
+	closemessage
+	goto_if_eq VAR_RESULT, NO, Route49_EventScript_WyrdeerRan
 	setwildbossbattle species=SPECIES_WYRDEER, level=80, item=ITEM_CLEAR_AMULET, move1_1=MOVE_PSYSHIELD_BASH, move1_2=MOVE_LUNGE, move1_3=MOVE_CALM_MIND move1_4=MOVE_THUNDERBOLT
 	settotemboost B_POSITION_OPPONENT_LEFT, 0, 1, 2, 0, 1, 0
 	setflag FLAG_NO_WILD_CATCHING
@@ -401,6 +418,15 @@ Route49_EventScript_WyrdeerRan::
 	clearflag FLAG_NO_SHINY
 	release
 	end
+
+Route49_Text_WyrdeerCry:
+	.string "Wyrrrdeer!!$"
+
+Route49_Text_WyrdeerPlate:
+	.string "The NOBLE WYRDEER's antlers bend\n"
+	.string "the air around them.\p"
+	.string "A PLATE floats between them.\p"
+	.string "Battle it?$"
 
 Route49_EventScript_Item_TMRockClimb::
 	finditem ITEM_TM_GIGA_IMPACT

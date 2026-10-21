@@ -26,21 +26,19 @@ NewSinjoh_HotSprings_EventScript_Mualani::
 NewSinjoh_HotSprings_EventScript_TryMualaniBattle::
 	goto_if_eq VAR_SINJOH_STORYLINE, 6, NewSinjoh_HotSprings_EventScript_MualaniBattle
 	end
+
 NewSinjoh_HotSprings_EventScript_MualaniBattle::
 	lock
 	msgbox NewSinjoh_HotSprings_Text_MualaniBeforeBattle, MSGBOX_AUTOCLOSE
 	trainerbattle_no_intro TRAINER_MUALANI_HNS, NewSinjoh_HotSprings_Text_MualaniDefeat
-	giveitem ITEM_SPLASH_PLATE
-	addvar VAR_PLATECOUNTER, 1
+	call_if_eq VAR_NOBLE_MILOTIC, 0, NewSinjoh_HotSprings_EventScript_ArmMilotic
 	msgbox NewSinjoh_HotSprings_Text_MualaniAfter, MSGBOX_AUTOCLOSE
-	call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
-	call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
-	call_if_eq VAR_PLATECOUNTER, 9, SinjohRuins_Lab_EventScript_9Plates
-	call_if_eq VAR_PLATECOUNTER, 12, SinjohRuins_Lab_EventScript_12Plates
-	call_if_eq VAR_PLATECOUNTER, 15, SinjohRuins_Lab_EventScript_15Plates
-	call_if_eq VAR_PLATECOUNTER, 16, SinjohRuins_Lab_EventScript_16Plates
 	release
 	end
+
+NewSinjoh_HotSprings_EventScript_ArmMilotic:
+	setvar VAR_NOBLE_MILOTIC, 1
+	return
 NewSinjoh_HotSprings_EventScript_MualaniAfter::
 	msgbox NewSinjoh_HotSprings_Text_MualaniAfter, MSGBOX_NPC
 	end
@@ -51,28 +49,31 @@ NewSinjoh_HotSprings_Text_MualaniBefore:
     .string "If you must know, I'm a local.\p"
     .string "My family was among the first to\n"
     .string "enjoy these springs.\p"
-    .string "See, I even have this SPLASH PLATE\n"
-    .string "to prove it.$"
+    .string "And we have watched over the\n"
+    .string "MILOTIC under the falls on\l"
+    .string "ROUTE 49 for just as long.$"
 
 NewSinjoh_HotSprings_Text_MualaniBeforeBattle:
 	.string "Wait...\p"
 	.string "You need the SPLASH PLATE\n"
 	.string "to tame the legendary POKéMON?\p"
+	.string "Our MILOTIC carries it.\p"
 	.string "If the KIMONO GIRLS think you\n"
 	.string "are worthy, then so do I.\p"
 	.string "But you'll still need to earn\n"
-	.string "it.$"
+	.string "the right to meet it.$"
 
 NewSinjoh_HotSprings_Text_MualaniDefeat:
 	.string "Well earned.$"
 
 NewSinjoh_HotSprings_Text_MualaniAfter:
-	.string "It is hard for me to let that\n"
-	.string "plate go.\p"
+	.string "It is hard for me to send\n"
+	.string "anyone to it.\p"
 	.string "But when the situation changes,\n"
 	.string "it is important for us to change\l"
 	.string "too.\p"
-	.string "The plate is yours.$"
+	.string "Play your flute beneath the twin\n"
+	.string "falls on ROUTE 49. It will come.$"
 
 
 NewSinjoh_HotSprings_EventScript_Sign1::
@@ -256,9 +257,9 @@ NewSinjoh_HotSprings_Text_PLAMove_Cancel:
 	.string "CANCEL$"
 
 
-NewSinjoh_HotSprings_EventScript_ActivateArcanine::
+NewSinjoh_HotSprings_EventScript_ActivateDarmanitan::
     lock
-    setobjectxyperm LOCALID_HOTSPRINGS_NOBLE_ARCANINE, 16, 4
+    setobjectxyperm LOCALID_HOTSPRINGS_NOBLE_DARMANITAN, 16, 4
     playse SE_M_DETECT
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 	dofieldeffectsparkle VAR_TEMP_1, VAR_TEMP_2, 0
@@ -273,50 +274,54 @@ NewSinjoh_HotSprings_EventScript_ActivateArcanine::
     playbgm MUS_DP_AZURE_FLUTE, FALSE
     delay 200
     fadedefaultbgm
-    addobject LOCALID_HOTSPRINGS_NOBLE_ARCANINE
-    clearflag FLAG_HIDE_HOTSPRINGS_NOBLE_ARCANINE
-    applymovement2 LOCALID_HOTSPRINGS_NOBLE_ARCANINE, NewSinjoh_HotSprings_Movement_ArcanineEntrance1
+    addobject LOCALID_HOTSPRINGS_NOBLE_DARMANITAN
+    clearflag FLAG_HIDE_HOTSPRINGS_NOBLE_DARMANITAN
+    applymovement2 LOCALID_HOTSPRINGS_NOBLE_DARMANITAN, NewSinjoh_HotSprings_Movement_DarmanitanEntrance1
     delay 10
 	playse SE_LEDGE
     playmoncry SPECIES_DARMANITAN, CRY_MODE_NORMAL
     waitmoncry
     waitmovement 0
-    applymovement2 LOCALID_HOTSPRINGS_NOBLE_ARCANINE, NewSinjoh_HotSprings_Movement_ArcanineEntrance2
+    applymovement2 LOCALID_HOTSPRINGS_NOBLE_DARMANITAN, NewSinjoh_HotSprings_Movement_DarmanitanEntrance2
     delay 10
 	playmoncry SPECIES_DARMANITAN, CRY_MODE_NORMAL
     waitmoncry
     playse SE_LEDGE
     delay 20
-	waitmovement LOCALID_HOTSPRINGS_NOBLE_ARCANINE
+	waitmovement LOCALID_HOTSPRINGS_NOBLE_DARMANITAN
     setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
 	setvar VAR_0x8006, 5  @ num shakes
 	setvar VAR_0x8007, 2  @ shake delay
 	special ShakeCamera
-    setobjectxyperm LOCALID_HOTSPRINGS_NOBLE_ARCANINE, 16, 8
-    setvar VAR_NOBLE_ARCANINE, 2
+    setobjectxyperm LOCALID_HOTSPRINGS_NOBLE_DARMANITAN, 16, 8
+    setvar VAR_NOBLE_DARMANITAN, 2
     release
     end
 
-NewSinjoh_HotSprings_Movement_ArcanineEntrance1:
+NewSinjoh_HotSprings_Movement_DarmanitanEntrance1:
     slide_down
 	slide_down
 	slide_down
 	slide_down
 	step_end
 
-NewSinjoh_HotSprings_Movement_ArcanineEntrance2:
+NewSinjoh_HotSprings_Movement_DarmanitanEntrance2:
     walk_in_place_slow_down
 	walk_in_place_slow_down
 	jump_in_place_down
 	step_end
 
 
-NewSinjoh_HotSprings_EventScript_Arcanine::
+NewSinjoh_HotSprings_EventScript_Darmanitan::
 	lock
 	faceplayer
 	playmoncry SPECIES_DARMANITAN, CRY_MODE_ENCOUNTER
+	msgbox NewSinjoh_HotSprings_Text_DarmanitanCry, MSGBOX_AUTOCLOSE
 	waitmoncry
+	msgbox NewSinjoh_HotSprings_Text_DarmanitanPlate, MSGBOX_YESNO
+	closemessage
+	goto_if_eq VAR_RESULT, NO, NewSinjoh_HotSprings_EventScript_DarmanitanRan
     setwildbossbattle species=SPECIES_DARMANITAN, level=80, item=ITEM_CHARCOAL, move1_1=MOVE_FLARE_BLITZ, move1_2=MOVE_EARTHQUAKE, move1_3=MOVE_ROCK_SLIDE move1_4=MOVE_SUPERPOWER
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 0, 2, 0, 0, 0
 	setflag FLAG_NO_WILD_CATCHING
@@ -325,14 +330,14 @@ NewSinjoh_HotSprings_EventScript_Arcanine::
 	setflag FLAG_NO_SHINY
     dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewSinjoh_HotSprings_EventScript_ArcanineRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewSinjoh_HotSprings_EventScript_DarmanitanRan
     bufferspeciesname STR_VAR_1, SPECIES_DARMANITAN
     msgbox SinjohRuins_Lab_Text_DropedItem, MSGBOX_DEFAULT
     giveitem ITEM_FLAME_PLATE
     addvar VAR_PLATECOUNTER, 1
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_HOTSPRINGS_NOBLE_ARCANINE
-	setflag FLAG_HIDE_HOTSPRINGS_NOBLE_ARCANINE
+	removeobject LOCALID_HOTSPRINGS_NOBLE_DARMANITAN
+	setflag FLAG_HIDE_HOTSPRINGS_NOBLE_DARMANITAN
 	fadescreenswapbuffers FADE_FROM_BLACK
     call_if_eq VAR_PLATECOUNTER, 3, SinjohRuins_Lab_EventScript_3Plates
     call_if_eq VAR_PLATECOUNTER, 6, SinjohRuins_Lab_EventScript_6Plates
@@ -347,13 +352,22 @@ NewSinjoh_HotSprings_EventScript_Arcanine::
 	release
 	end
 
-NewSinjoh_HotSprings_EventScript_ArcanineRan::
+NewSinjoh_HotSprings_EventScript_DarmanitanRan::
 	clearflag FLAG_NO_WILD_CATCHING
 	clearflag FLAG_NO_WILD_RUNNING
 	clearflag FLAG_SMART_WILD_AI
 	clearflag FLAG_NO_SHINY
 	release
 	end
+
+NewSinjoh_HotSprings_Text_DarmanitanCry:
+	.string "Darmaaa!!$"
+
+NewSinjoh_HotSprings_Text_DarmanitanPlate:
+	.string "The NOBLE DARMANITAN burns as hot\n"
+	.string "as the springs below.\p"
+	.string "A PLATE glows red in its grip.\p"
+	.string "Battle it?$"
 
 
 NewSinjoh_HotSprings_EventScript_ActivateUrsaluna::
@@ -416,7 +430,11 @@ NewSinjoh_HotSprings_EventScript_Ursaluna::
 	lock
 	faceplayer
 	playmoncry SPECIES_URSALUNA, CRY_MODE_ENCOUNTER
+	msgbox NewSinjoh_HotSprings_Text_UrsalunaCry, MSGBOX_AUTOCLOSE
 	waitmoncry
+	msgbox NewSinjoh_HotSprings_Text_UrsalunaPlate, MSGBOX_YESNO
+	closemessage
+	goto_if_eq VAR_RESULT, NO, NewSinjoh_HotSprings_EventScript_UrsalunaRan
 	setwildbossbattle species=SPECIES_URSALUNA, level=80, item=ITEM_EARTH_PLATE, move1_1=MOVE_EARTHQUAKE, move1_2=MOVE_AVALANCHE, move1_3=MOVE_BULK_UP move1_4=MOVE_GIGA_IMPACT
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 0, 2, 0, 0, 0
 	setflag FLAG_NO_WILD_CATCHING
@@ -454,6 +472,15 @@ NewSinjoh_HotSprings_EventScript_UrsalunaRan::
 	clearflag FLAG_NO_SHINY
 	release
 	end
+
+NewSinjoh_HotSprings_Text_UrsalunaCry:
+	.string "Grrooaaar!!$"
+
+NewSinjoh_HotSprings_Text_UrsalunaPlate:
+	.string "The NOBLE URSALUNA paws at the\n"
+	.string "steaming earth.\p"
+	.string "A PLATE hangs from its claws.\p"
+	.string "Battle it?$"
 
 NewSinjoh_HotSprings_EventScript_Flannery::
 	lock

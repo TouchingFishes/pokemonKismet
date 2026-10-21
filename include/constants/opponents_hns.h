@@ -621,9 +621,9 @@
 #define TRAINER_DAODAO_KILN_SWIMMER_3_HNS             607
 
 #define TRAINER_MILKMAN_HNS                           608
-#define TRAINER_MIHARU_HNS                            609
-#define TRAINER_YOUKO_HNS                             610
-#define TRAINER_SHIZUKO_HNS                           611
+#define TRAINER_EXPERT_SHIZUKO_HNS                    609
+#define TRAINER_EXPERT_FUYUKI_HNS                     610
+#define TRAINER_KIMONO_YOUKO_HNS                      611
 #define TRAINER_STEVEN_HNS                            612
 #define TRAINER_FINLEY_HNS                            613
 #define TRAINER_MUALANI_HNS                           614

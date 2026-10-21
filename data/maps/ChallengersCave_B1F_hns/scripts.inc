@@ -16,11 +16,6 @@ ChallengersCave_B1F_EventScript_Zed::
 	msgbox ChallengersCave_B1F_Text_ZedAfter, MSGBOX_AUTOCLOSE
 	end
 
-ChallengersCave_B1F_EventScript_Damian::
-	trainerbattle_single TRAINER_DAMIAN_HNS, ChallengersCave_B1F_Text_DamianSeen, ChallengersCave_B1F_Text_DamianBeaten
-	msgbox ChallengersCave_B1F_Text_DamianAfter, MSGBOX_AUTOCLOSE
-	end
-
 ChallengersCave_B1F_EventScript_Esme::
 	trainerbattle_single TRAINER_ESME_HNS, ChallengersCave_B1F_Text_EsmeSeen, ChallengersCave_B1F_Text_EsmeBeaten
 	msgbox ChallengersCave_B1F_Text_EsmeAfter, MSGBOX_AUTOCLOSE
@@ -102,24 +97,6 @@ ChallengersCave_B1F_Text_ZedAfter:
 	.string "Dragons respect\n"
 	.string "those who endure.\p"
 	.string "Go.$"
-
-ChallengersCave_B1F_Text_DamianSeen:
-	.string "They told me not\n"
-	.string "to come here.\p"
-	.string "Said this place\n"
-	.string "was… unlucky.\p"
-	.string "But some of us\n"
-	.string "are born to win,\l"
-	.string "no matter what.$"
-
-ChallengersCave_B1F_Text_DamianBeaten:
-	.string "…Impossible.$"
-
-ChallengersCave_B1F_Text_DamianAfter:
-	.string "Hmph.\p"
-	.string "Even fate doesn't\n"
-	.string "always go as\l"
-	.string "planned.$"
 
 ChallengersCave_B1F_Text_EsmeSeen:
 	.string "…You're not alone\n"
