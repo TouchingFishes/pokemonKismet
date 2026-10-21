@@ -76,7 +76,8 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @             LOADS - see the long note in that gate house's scripts.inc.
 @   OLIVINE GATE - replays the ROCKET robbery in the ROUTE 39 / OLIVINE gate,
 @             which otherwise expires once the fifth badge is set.
-@   KIMONO GIRLS - the ECRUTEAK THEATER gauntlet before LUGIA or HO-OH.
+@   KIMONO GIRLS - either ECRUTEAK THEATER gauntlet: the classic one that ends in
+@             HM SURF, or the one before LUGIA or HO-OH.
 @   FOXFIRE - sets any stage of the NINETALES story and warps to where it plays.
 @   DOLL SHRINE - resets the MIMIKYU hide-and-seek and warps to the shrine in
 @             DAODAO's ETERNA FOREST (MIGRATION_DECISIONS.md 60).
@@ -379,12 +380,49 @@ NewBarkTown_PlayersHouse_2F_EventScript_OlivineGateTest::
 	waitstate
 	end
 
+@ Two gauntlets share the THEATER: the classic one first, then the legendary one.
+NewBarkTown_PlayersHouse_2F_EventScript_KimonoTest::
+	message NewBarkTown_PlayersHouse_2F_Text_KimonoGauntlet
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 2, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_KimonoClassic, NewBarkTown_PlayersHouse_2F_Text_KimonoLegendary
+	goto_if_eq VAR_RESULT, 0, NewBarkTown_PlayersHouse_2F_EventScript_KimonoClassicTest
+	goto_if_ne VAR_RESULT, 1, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	goto NewBarkTown_PlayersHouse_2F_EventScript_KimonoLegendaryTest
+
+@ The classic GEN 2 gauntlet: the five KIMONO GIRLS one at a time, then the gentleman's
+@ HM SURF (EcruteakCity_Theater_EventScript_SurfGuy). The THEATER is set as ECRUTEAK's
+@ first visit leaves it - VAR_ECRUTEAK_CITY_THEATER 0, KIMONOs and audience shown - and
+@ their early trainer flags and FLAG_RECEIVED_HM_SURF are cleared. A held HM SURF (the
+@ test kit gives one) is taken back, so the gift is not a second copy.
+@ ⚠️ The gentleman sets VAR_ECRUTEAK_CITY_THEATER to 3, which rewinds a save that was
+@ already past the THEATER's later stages.
+NewBarkTown_PlayersHouse_2F_EventScript_KimonoClassicTest::
+	msgbox NewBarkTown_PlayersHouse_2F_Text_TestPartyAsk, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty
+	special HealPlayerParty
+	setvar VAR_ECRUTEAK_CITY_THEATER, 0
+	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_NPCS
+	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_KIMONOS
+	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_ZUKI
+	cleartrainerflag TRAINER_ZUKI_2_HNS
+	cleartrainerflag TRAINER_NAOKO_2_HNS
+	cleartrainerflag TRAINER_MIKI_2_HNS
+	cleartrainerflag TRAINER_SAYO_2_HNS
+	cleartrainerflag TRAINER_KUNI_2_HNS
+	clearflag FLAG_RECEIVED_HM_SURF
+	removeitem ITEM_HM_SURF
+	msgbox NewBarkTown_PlayersHouse_2F_Text_KimonoClassicGo, MSGBOX_DEFAULT
+	closemessage
+	warp MAP_ECRUTEAK_CITY_THEATER_HNS, 0
+	waitstate
+	end
+
 @ The KIMONO GIRLS' gauntlet in the ECRUTEAK THEATER (VAR_ECRUTEAK_CITY_THEATER 5, as
 @ after SILVER's ECRUTEAK scene): KIMONOs shown and the audience hidden, as ELM's call
 @ leaves it. The menu picks VAR_LUGIA_OR_HOOH (1 LUGIA, 2 HO-OH), which decides the
 @ bell and the legendary afterwards. The player lands on the door and trips the
 @ cutscene by stepping in.
-NewBarkTown_PlayersHouse_2F_EventScript_KimonoTest::
+NewBarkTown_PlayersHouse_2F_EventScript_KimonoLegendaryTest::
 	message NewBarkTown_PlayersHouse_2F_Text_KimonoWhich
 	waitmessage
 	dynmultichoice 0, 0, FALSE, 2, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_KimonoLugia, NewBarkTown_PlayersHouse_2F_Text_KimonoHooh
@@ -634,6 +672,21 @@ NewBarkTown_PlayersHouse_2F_Text_OlivineGateGo:
 	.string "TEST: You'll arrive at the ROUTE 39\n"
 	.string "end of the OLIVINE gate.\p"
 	.string "Walk south to trip the robbery.$"
+
+NewBarkTown_PlayersHouse_2F_Text_KimonoGauntlet:
+	.string "TEST: Which gauntlet?$"
+
+NewBarkTown_PlayersHouse_2F_Text_KimonoClassic:
+	.string "CLASSIC (SURF)$"
+
+NewBarkTown_PlayersHouse_2F_Text_KimonoLegendary:
+	.string "LEGENDARY$"
+
+NewBarkTown_PlayersHouse_2F_Text_KimonoClassicGo:
+	.string "TEST: You'll arrive at the THEATER\n"
+	.string "door. Beat all five KIMONO GIRLS,\l"
+	.string "then talk to the gentleman for\l"
+	.string "HM SURF.$"
 
 NewBarkTown_PlayersHouse_2F_Text_KimonoWhich:
 	.string "TEST: Which legendary do they\n"
