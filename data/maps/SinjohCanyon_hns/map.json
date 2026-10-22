@@ -160,8 +160,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
-      "x": 19,
-      "y": 17,
+      "x": 27,
+      "y": 75,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -173,8 +173,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
-      "x": 14,
-      "y": 29,
+      "x": 32,
+      "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -186,8 +186,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
-      "x": 24,
-      "y": 34,
+      "x": 14,
+      "y": 52,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -196,6 +196,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SinjohCanyon_EventScript_ItemRareCandy",
       "flag": "FLAG_SINJOHCANYON_ITEM_RARE_CANDY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_STANTLER",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_range_x": 5,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -248,16 +261,16 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 27,
-      "y": 75,
+      "x": 26,
+      "y": 40,
       "elevation": 0,
       "item": "ITEM_PP_UP",
       "flag": "FLAG_SINJOHCANYON_HIDDEN_ITEM_PP_UP"
     },
     {
       "type": "hidden_item",
-      "x": 6,
-      "y": 57,
+      "x": 23,
+      "y": 5,
       "elevation": 0,
       "item": "ITEM_BIG_NUGGET",
       "flag": "FLAG_SINJOHCANYON_HIDDEN_ITEM_BIG_NUGGET"

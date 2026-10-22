@@ -78,10 +78,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F_HNS",
-      "x": 26,
+      "x": 8,
       "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -104,8 +104,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
-      "x": 16,
-      "y": 12,
+      "x": 31,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -117,8 +117,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
-      "x": 37,
-      "y": 12,
+      "x": 39,
+      "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -157,39 +157,21 @@
       "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "SinjohLake_EventScript_YoukoSceneC"
-    },
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 18,
-      "elevation": 0,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "SinjohLake_EventScript_YoukoSceneD"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 18,
-      "elevation": 0,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "SinjohLake_EventScript_YoukoSceneE"
     }
   ],
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 5,
-      "y": 25,
+      "x": 19,
+      "y": 10,
       "elevation": 0,
       "item": "ITEM_BIG_PEARL",
       "flag": "FLAG_SINJOHLAKE_HIDDEN_ITEM_BIG_PEARL"
     },
     {
       "type": "hidden_item",
-      "x": 8,
-      "y": 30,
+      "x": 29,
+      "y": 21,
       "elevation": 0,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_SINJOHLAKE_HIDDEN_ITEM_HEART_SCALE"
