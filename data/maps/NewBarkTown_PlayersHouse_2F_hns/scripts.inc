@@ -86,6 +86,8 @@ NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2:
 @             unlock battle, then the CHAMPION's ROOM door (MIGRATION_DECISIONS.md 81).
 @   MIRAGE ZOROARK - the MIRAGE FOREST ZOROARK's DREAD PLATE fight, from its STANTLER
 @             illusion on (MIGRATION_DECISIONS.md 87).
+@   SINJOH - any step of the SINJOH arc, from MEARA to the creation trio, with every
+@             earlier step done (MIGRATION_DECISIONS.md 89).
 @
 @ Talking to him at all opens the start menu's POKeDEX, and its POKeMON entry once the player
 @ has a POKeMON (TestMenuFlags), so a save that used him early can look at both like any other.
@@ -103,8 +105,8 @@ NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	call NewBarkTown_PlayersHouse_2F_EventScript_TestMenuFlags
 	message NewBarkTown_PlayersHouse_2F_Text_TestAsk
 	waitmessage
-	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptOlivineGate, NewBarkTown_PlayersHouse_2F_Text_TestOptKimono, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptRocketLab, NewBarkTown_PlayersHouse_2F_Text_TestOptChallengers, NewBarkTown_PlayersHouse_2F_Text_TestOptZoroark, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
-	goto_if_ge VAR_RESULT, 9, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_TestOptGreen, NewBarkTown_PlayersHouse_2F_Text_TestOptFuchsia, NewBarkTown_PlayersHouse_2F_Text_TestOptOlivineGate, NewBarkTown_PlayersHouse_2F_Text_TestOptKimono, NewBarkTown_PlayersHouse_2F_Text_TestOptFoxfire, NewBarkTown_PlayersHouse_2F_Text_TestOptShrine, NewBarkTown_PlayersHouse_2F_Text_TestOptRocketLab, NewBarkTown_PlayersHouse_2F_Text_TestOptChallengers, NewBarkTown_PlayersHouse_2F_Text_TestOptZoroark, NewBarkTown_PlayersHouse_2F_Text_TestOptSinjoh, NewBarkTown_PlayersHouse_2F_Text_TestOptCancel
+	goto_if_ge VAR_RESULT, 10, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
 	copyvar VAR_0x8006, VAR_RESULT
 	msgbox NewBarkTown_PlayersHouse_2F_Text_TestKitAsk, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_TestBasics
@@ -116,6 +118,7 @@ NewBarkTown_PlayersHouse_2F_EventScript_GreenTestNpc::
 	goto_if_eq VAR_0x8006, 6, NewBarkTown_PlayersHouse_2F_EventScript_RocketLabTest
 	goto_if_eq VAR_0x8006, 7, NewBarkTown_PlayersHouse_2F_EventScript_ChallengersTest
 	goto_if_eq VAR_0x8006, 8, NewBarkTown_PlayersHouse_2F_EventScript_ZoroarkTest
+	goto_if_eq VAR_0x8006, 9, NewBarkTown_PlayersHouse_2F_EventScript_SinjohTest
 	goto NewBarkTown_PlayersHouse_2F_EventScript_FoxfireTest
 
 @ The start menu shows POKeDEX on FLAG_SYS_POKEDEX_GET and POKeMON on FLAG_SYS_POKEMON_GET
@@ -300,6 +303,334 @@ NewBarkTown_PlayersHouse_2F_EventScript_ZoroarkTakePlate:
 	subvar VAR_PLATECOUNTER, 1
 	return
 
+@ The SINJOH arc at any of its steps (MIGRATION_DECISIONS.md 89). Every stage starts from the whole
+@ arc undone (SinjohReset), replays what each earlier step leaves behind (the SinjohAfter steps,
+@ each calling the one before it), and lands beside the next event:
+@   MEARA      storyline 0, beside her in the MT. SILVER POKeMON CENTER. Her YES runs the real
+@              flag heap and the whole arc can be played from there.
+@   MACHAMP    2, in SNOWSWEPT CAVERN beside the MACHAMP and its boulder.
+@   KIMONO     3, ROUTE 49 from the cave: the KIMONO GIRL's scene plays on arrival.
+@   HIDEOUT    4, at the KIMONO HIDEOUT door: the meeting plays on arrival.
+@   EXPERTS    5, on ROUTE 50 below SHIZUKO and FUYUKI.
+@   BRIEFING   5, EXPERTS beaten, at the RUINS LAB door: walk east to CYNTHIA's triggers.
+@   PLATE HUNT 6, NEW SINJOH POKeMON CENTER: 3 PLATES in hand, the other 13 to find.
+@   ALL 16     7, at the LAB door: the 17-PLATE scene, then the stairs scene, play on arrival.
+@   CYNTHIA    9, below the RUINS' west stairs: walk up and east onto her trigger.
+@   ARCEUS     10, at the ARCEUS ROOM door: walk north onto the triggers.
+@   TRIO       13, at the DEEP HALL door, BAXCALIBUR beaten: read the altar.
+@ Side effects, as with every stage: the arc's trainers count as unbeaten until replayed, so
+@ CYNTHIA leaves the CHAMPION's ROOM pool (MIGRATION_DECISIONS.md 81) until she is beaten again.
+@ Route trainers, item balls and the PEAT BLOCK are not reset.
+@ ⚠️ Only PLATES in the bag are taken back. One in the PC or held by a POKeMON stays, and is then
+@ counted twice.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohTest::
+	message NewBarkTown_PlayersHouse_2F_Text_SinjohStage
+	waitmessage
+	dynmultichoice 0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, NewBarkTown_PlayersHouse_2F_Text_SinjohMeara, NewBarkTown_PlayersHouse_2F_Text_SinjohMachamp, NewBarkTown_PlayersHouse_2F_Text_SinjohKimonoGirl, NewBarkTown_PlayersHouse_2F_Text_SinjohHideout, NewBarkTown_PlayersHouse_2F_Text_SinjohExperts, NewBarkTown_PlayersHouse_2F_Text_SinjohBriefing, NewBarkTown_PlayersHouse_2F_Text_SinjohHunt, NewBarkTown_PlayersHouse_2F_Text_SinjohAllPlates, NewBarkTown_PlayersHouse_2F_Text_SinjohCynthia, NewBarkTown_PlayersHouse_2F_Text_SinjohArceus, NewBarkTown_PlayersHouse_2F_Text_SinjohTrio
+	goto_if_ge VAR_RESULT, 11, NewBarkTown_PlayersHouse_2F_EventScript_GreenTestDecline
+	copyvar VAR_0x8005, VAR_RESULT
+	msgbox NewBarkTown_PlayersHouse_2F_Text_TestPartyAsk, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty
+	special HealPlayerParty
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohReset
+	msgbox NewBarkTown_PlayersHouse_2F_Text_FoxfireGo, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_0x8005
+	case 0, NewBarkTown_PlayersHouse_2F_EventScript_SinjohMeara
+	case 1, NewBarkTown_PlayersHouse_2F_EventScript_SinjohMachamp
+	case 2, NewBarkTown_PlayersHouse_2F_EventScript_SinjohKimonoGirl
+	case 3, NewBarkTown_PlayersHouse_2F_EventScript_SinjohHideout
+	case 4, NewBarkTown_PlayersHouse_2F_EventScript_SinjohExperts
+	case 5, NewBarkTown_PlayersHouse_2F_EventScript_SinjohBriefing
+	case 6, NewBarkTown_PlayersHouse_2F_EventScript_SinjohHunt
+	case 7, NewBarkTown_PlayersHouse_2F_EventScript_SinjohAllPlates
+	case 8, NewBarkTown_PlayersHouse_2F_EventScript_SinjohCynthia
+	case 9, NewBarkTown_PlayersHouse_2F_EventScript_SinjohArceus
+	goto NewBarkTown_PlayersHouse_2F_EventScript_SinjohTrio
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohMeara::
+	warp MAP_MT_SILVER_POKEMON_CENTER_HNS, 11, 5
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohMachamp::
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterScientist
+	warp MAP_SNOWSWEPT_CAVERN_HNS, 36, 49
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohKimonoGirl::
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterMachamp
+	warp MAP_ROUTE49_HNS, 0
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohHideout::
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterKimonoGirl
+	warp MAP_NEW_SINJOH_KIMONO_HIDEOUT_HNS, 0
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohExperts::
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterHideout
+	warp MAP_ROUTE50_HNS, 18, 3
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohBriefing::
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterExperts
+	warp MAP_SINJOH_RUINS_HOUSE1_HNS, 0
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohHunt::
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterBriefing
+	warp MAP_NEW_SINJOH_HNS, 39, 42
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAllPlates::
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterHunt
+	warp MAP_SINJOH_RUINS_HOUSE1_HNS, 0
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohCynthia::
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterStairs
+	warp MAP_SINJOH_RUINS_HNS, 18, 38
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohArceus::
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterCynthia
+	warp MAP_SINJOH_RUINS_ARCEUS_ROOM_HNS, 0
+	waitstate
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohTrio::
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterArceus
+	warp MAP_SINJOH_RUINS_DEEP_HALL_HNS, 0
+	waitstate
+	end
+
+@ The arc before MEARA, with nothing of it done: every NOBLE unarmed and hidden, every PLATE
+@ taken out of the bag, the trio uncalled and the lost fawn back at the lake. The AZURE FLUTE
+@ goes in if missing, since MEARA asks for it.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohReset::
+	setvar VAR_SINJOH_STORYLINE, 0
+	setvar VAR_PLATECOUNTER, 0
+	setvar VAR_REGIS_SCANNED, 0
+	setvar VAR_SINJOH_TRIO_STATE, 0
+	setvar VAR_DEX_STAGE, DEX_STAGE_SINJOH
+	setvar VAR_NOBLE_GLIMMORA, 0
+	setvar VAR_NOBLE_MILOTIC, 0
+	setvar VAR_NOBLE_WYRDEER, 0
+	setvar VAR_NOBLE_DARMANITAN, 0
+	setvar VAR_NOBLE_URSALUNA, 0
+	setvar VAR_NOBLE_FROSMOTH, 0
+	setvar VAR_NOBLE_GIGALITH, 0
+	setvar VAR_NOBLE_SPIRITOMB, 0
+	setflag FLAG_HIDE_SNOWSWEPT_NOBLE_GLIMMORA
+	setflag FLAG_HIDE_ROUTE49_NOBLE_WYRDEER
+	setflag FLAG_HIDE_ROUTE49_NOBLE_MILOTIC
+	setflag FLAG_HIDE_HOTSPRINGS_NOBLE_DARMANITAN
+	setflag FLAG_HIDE_HOTSPRINGS_NOBLE_URSALUNA
+	setflag FLAG_HIDE_SINJOHCANYON_NOBLE_GIGALITH
+	setflag FLAG_HIDE_ROUTE50_NOBLE_FROSMOTH
+	setflag FLAG_HIDE_NEWSINJOH_HOUSE3_NOBLE_SPIRITOMB
+	setflag FLAG_MT_SILVER_1F_HIDE_SCIENTIST
+	setflag FLAG_HIDE_SINJOHRUINS_CYNTHIA
+	setflag FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_ARCEUS
+	setflag FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_CYNTHIA
+	setflag FLAG_HIDE_NEWSINJOH_CYNTHIA
+	clearflag FLAG_HIDE_SINJOHRUINS_LAB_CYNTHIA
+	clearflag FLAG_GOT_FIST_PLATE
+	clearflag FLAG_ROUTE_49_KIMONOGIRL
+	clearflag FLAG_HIDE_MIRAGE_ZOROARK
+	clearflag FLAG_BATTLED_MIRAGE_ZOROARK
+	clearflag FLAG_HIDE_SINJOHRUINS_BAXCALIBUR
+	clearflag FLAG_SINJOH_FAWN_FOUND
+	clearflag FLAG_SINJOH_FAWN_RETURNED
+	clearflag FLAG_SINJOH_DIALGA_GONE
+	clearflag FLAG_SINJOH_PALKIA_GONE
+	clearflag FLAG_SINJOH_GIRATINA_GONE
+	cleartrainerflag TRAINER_SKYLAR_HNS
+	cleartrainerflag TRAINER_WESSEL_HNS
+	cleartrainerflag TRAINER_FINLEY_HNS
+	cleartrainerflag TRAINER_MUALANI_HNS
+	cleartrainerflag TRAINER_EXPERT_SHIZUKO_HNS
+	cleartrainerflag TRAINER_EXPERT_FUYUKI_HNS
+	cleartrainerflag TRAINER_KIMONO_YOUKO_HNS
+	cleartrainerflag TRAINER_CYNTHIA_HNS
+	setvar VAR_0x8004, ITEM_FIST_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_MEADOW_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_ICICLE_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_TOXIC_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_MIND_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_SPLASH_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_FLAME_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_EARTH_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_STONE_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_INSECT_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_SPOOKY_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_DREAD_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_SKY_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_DRACO_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_IRON_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_PIXIE_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setvar VAR_0x8004, ITEM_ZAP_PLATE
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+	setrespawn HEAL_LOCATION_MT_SILVER_HNS
+	checkitem ITEM_AZURE_FLUTE
+	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_PlayersHouse_2F_EventScript_SinjohResetDone
+	additem ITEM_AZURE_FLUTE
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohResetDone:
+	return
+
+@ Every copy of the PLATE in VAR_0x8004, out of the bag.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate:
+	checkitem VAR_0x8004
+	goto_if_eq VAR_RESULT, FALSE, NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlateDone
+	removeitem VAR_0x8004
+	goto NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlate
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohTakePlateDone:
+	return
+
+@ MEARA's flag heap (MtSilver_PokemonCenter_EventScript_Meara_BonusContentPrompt).
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterMeara:
+	clearflag FLAG_MT_SILVER_1F_HIDE_SCIENTIST
+	setvar VAR_SINJOH_STORYLINE, 1
+	return
+
+@ The scientist in the waterfall room has left.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterScientist:
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterMeara
+	setflag FLAG_MT_SILVER_1F_HIDE_SCIENTIST
+	setvar VAR_SINJOH_STORYLINE, 2
+	return
+
+@ MACHAMP beaten: the FIST PLATE, and its boulder pushed aside.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterMachamp:
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterScientist
+	additem ITEM_FIST_PLATE
+	addvar VAR_PLATECOUNTER, 1
+	setflag FLAG_GOT_FIST_PLATE
+	setvar VAR_SINJOH_STORYLINE, 3
+	return
+
+@ The ROUTE 49 KIMONO GIRL has gone ahead, and NEW SINJOH has been reached.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterKimonoGirl:
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterMachamp
+	setflag FLAG_ROUTE_49_KIMONOGIRL
+	setflag FLAG_VISITED_NEW_SINJOH
+	setrespawn HEAL_LOCATION_NEW_SINJOH_HNS
+	setvar VAR_SINJOH_STORYLINE, 4
+	return
+
+@ The KIMONO GIRLS met in their hideout.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterHideout:
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterKimonoGirl
+	setvar VAR_SINJOH_STORYLINE, 5
+	return
+
+@ SHIZUKO and FUYUKI beaten: the MEADOW and ICICLE PLATES. ROUTE 50's own
+@ ON_TRANSITION stands them aside.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterExperts:
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterHideout
+	settrainerflag TRAINER_EXPERT_SHIZUKO_HNS
+	settrainerflag TRAINER_EXPERT_FUYUKI_HNS
+	additem ITEM_MEADOW_PLATE
+	additem ITEM_ICICLE_PLATE
+	addvar VAR_PLATECOUNTER, 2
+	return
+
+@ CYNTHIA's briefing: the hunt starts and the NOBLES are armed.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterBriefing:
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterExperts
+	call SinjohRuins_Lab_EventScript_StartPlateHunt
+	return
+
+@ All 16 PLATES: every NOBLE beaten (var 2, hidden), MILOTIC after MUALANI, the
+@ ZOROARK, SKYLAR, WESSEL, FINLEY and YOUKO, as SinjohRuins_Lab_EventScript_16Plates
+@ leaves things.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterHunt:
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterBriefing
+	setvar VAR_NOBLE_GLIMMORA, 2
+	setvar VAR_NOBLE_MILOTIC, 2
+	setvar VAR_NOBLE_WYRDEER, 2
+	setvar VAR_NOBLE_DARMANITAN, 2
+	setvar VAR_NOBLE_URSALUNA, 2
+	setvar VAR_NOBLE_FROSMOTH, 2
+	setvar VAR_NOBLE_GIGALITH, 2
+	setvar VAR_NOBLE_SPIRITOMB, 2
+	settrainerflag TRAINER_MUALANI_HNS
+	settrainerflag TRAINER_SKYLAR_HNS
+	settrainerflag TRAINER_WESSEL_HNS
+	settrainerflag TRAINER_FINLEY_HNS
+	settrainerflag TRAINER_KIMONO_YOUKO_HNS
+	setflag FLAG_BATTLED_MIRAGE_ZOROARK
+	setflag FLAG_HIDE_MIRAGE_ZOROARK
+	additem ITEM_TOXIC_PLATE
+	additem ITEM_MIND_PLATE
+	additem ITEM_SPLASH_PLATE
+	additem ITEM_FLAME_PLATE
+	additem ITEM_EARTH_PLATE
+	additem ITEM_STONE_PLATE
+	additem ITEM_INSECT_PLATE
+	additem ITEM_SPOOKY_PLATE
+	additem ITEM_DREAD_PLATE
+	additem ITEM_SKY_PLATE
+	additem ITEM_DRACO_PLATE
+	additem ITEM_IRON_PLATE
+	additem ITEM_PIXIE_PLATE
+	setvar VAR_PLATECOUNTER, 16
+	setvar VAR_SINJOH_STORYLINE, 7
+	return
+
+@ The LAB's 17-PLATE scene and the RUINS' stairs scene: CYNTHIA waits at the top.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterStairs:
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterHunt
+	setvar VAR_PLATECOUNTER, 17
+	setflag FLAG_HIDE_SINJOHRUINS_LAB_CYNTHIA
+	clearflag FLAG_HIDE_SINJOHRUINS_CYNTHIA
+	setvar VAR_SINJOH_STORYLINE, 9
+	return
+
+@ CYNTHIA beaten: the ZAP PLATE.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterCynthia:
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterStairs
+	settrainerflag TRAINER_CYNTHIA_HNS
+	additem ITEM_ZAP_PLATE
+	setvar VAR_SINJOH_STORYLINE, 10
+	return
+
+@ ARCEUS met and CYNTHIA gone to NEW SINJOH. BAXCALIBUR is beaten too, as it
+@ stands between the RUINS and the DEEP HALL.
+NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterArceus:
+	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterCynthia
+	setflag FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_ARCEUS
+	setflag FLAG_HIDE_SINJOHRUINS_CYNTHIA
+	clearflag FLAG_HIDE_NEWSINJOH_CYNTHIA
+	setflag FLAG_HIDE_SINJOHRUINS_BAXCALIBUR
+	setvar VAR_SINJOH_STORYLINE, 13
+	return
+
 @ The TOWN MAP, the HMs and the MAX REPELs go in silently and only while the player
 @ has none - a second visit would otherwise stack copies. The map gets its own check so that saves which already
 @ have the HMs still receive it. VAR_NUM_BADGES is only ever raised, never
@@ -375,14 +706,17 @@ NewBarkTown_PlayersHouse_2F_EventScript_GreenTestFuchsia::
 
 @ AERODACTYL goes first so it lands in the party rather than the PC when the
 @ player already carries a POKeMON, and it knows FLY: test the TOWN MAP and the
-@ fly map from anywhere outdoors. Its other three moves are its level-up ones.
+@ fly map from anywhere outdoors. Every member has a full set: 31 IVs, a nature,
+@ 508 EVs, a held item and four moves, all legal in the modern learnsets. Kismet
+@ abilities: ROCK HEAD makes HEAD SMASH free, IRON FIST boosts INFERNAPE's THUNDER
+@ PUNCH, MAGIC GUARD makes ALAKAZAM's LIFE ORB free (MIGRATION_DECISIONS.md 88).
 NewBarkTown_PlayersHouse_2F_EventScript_GiveTestParty::
-	givemon SPECIES_AERODACTYL, 95, move1=MOVE_FLY
-	givemon SPECIES_TYPHLOSION, 95
-	givemon SPECIES_LUCARIO, 95
-	givemon SPECIES_MILOTIC, 95
-	givemon SPECIES_ALAKAZAM, 95
-	givemon SPECIES_HYDREIGON, 95
+	givemon SPECIES_AERODACTYL, 95, item=ITEM_EXPERT_BELT, nature=NATURE_JOLLY, abilityNum=0, hpEv=4, atkEv=252, defEv=0, speedEv=252, spAtkEv=0, spDefEv=0, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31, move1=MOVE_HEAD_SMASH, move2=MOVE_EARTHQUAKE, move3=MOVE_AERIAL_ACE, move4=MOVE_FLY
+	givemon SPECIES_INFERNAPE, 95, item=ITEM_LIFE_ORB, nature=NATURE_JOLLY, abilityNum=2, hpEv=4, atkEv=252, defEv=0, speedEv=252, spAtkEv=0, spDefEv=0, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31, move1=MOVE_CLOSE_COMBAT, move2=MOVE_FLARE_BLITZ, move3=MOVE_THUNDER_PUNCH, move4=MOVE_EARTHQUAKE
+	givemon SPECIES_DUNLONG, 95, item=ITEM_LEFTOVERS, nature=NATURE_MODEST, abilityNum=0, hpEv=252, atkEv=0, defEv=0, speedEv=0, spAtkEv=252, spDefEv=4, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31, move1=MOVE_DRAGON_PULSE, move2=MOVE_FLASH_CANNON, move3=MOVE_EARTH_POWER, move4=MOVE_ROOST
+	givemon SPECIES_MILOTIC, 95, item=ITEM_LEFTOVERS, nature=NATURE_BOLD, abilityNum=0, hpEv=252, atkEv=0, defEv=252, speedEv=0, spAtkEv=4, spDefEv=0, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31, move1=MOVE_SURF, move2=MOVE_ICE_BEAM, move3=MOVE_RECOVER, move4=MOVE_DRAGON_PULSE
+	givemon SPECIES_ALAKAZAM, 95, item=ITEM_LIFE_ORB, nature=NATURE_TIMID, abilityNum=2, hpEv=4, atkEv=0, defEv=0, speedEv=252, spAtkEv=252, spDefEv=0, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31, move1=MOVE_PSYCHIC, move2=MOVE_SHADOW_BALL, move3=MOVE_FOCUS_BLAST, move4=MOVE_DAZZLING_GLEAM
+	givemon SPECIES_HYDREIGON, 95, item=ITEM_WISE_GLASSES, nature=NATURE_TIMID, abilityNum=0, hpEv=4, atkEv=0, defEv=0, speedEv=252, spAtkEv=252, spDefEv=0, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31, move1=MOVE_NASTY_PLOT, move2=MOVE_DARK_PULSE, move3=MOVE_DRAGON_PULSE, move4=MOVE_FLAMETHROWER
 	special HealPlayerParty
 	call NewBarkTown_PlayersHouse_2F_EventScript_TestMenuFlags
 	return
@@ -624,6 +958,46 @@ NewBarkTown_PlayersHouse_2F_Text_TestOptChallengers:
 
 NewBarkTown_PlayersHouse_2F_Text_TestOptZoroark:
 	.string "MIRAGE ZOROARK$"
+
+NewBarkTown_PlayersHouse_2F_Text_TestOptSinjoh:
+	.string "SINJOH story$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohStage:
+	.string "TEST: Which step of the SINJOH\n"
+	.string "story?$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohMeara:
+	.string "MEARA: the start$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohMachamp:
+	.string "SNOWSWEPT: MACHAMP$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohKimonoGirl:
+	.string "ROUTE 49: KIMONO GIRL$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohHideout:
+	.string "HIDEOUT: the KIMONOs$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohExperts:
+	.string "ROUTE 50: the EXPERTS$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohBriefing:
+	.string "LAB: CYNTHIA's briefing$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohHunt:
+	.string "PLATE HUNT$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohAllPlates:
+	.string "LAB: all 16 PLATES$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohCynthia:
+	.string "RUINS: CYNTHIA$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohArceus:
+	.string "ARCEUS$"
+
+NewBarkTown_PlayersHouse_2F_Text_SinjohTrio:
+	.string "DEEP HALL: the trio$"
 
 NewBarkTown_PlayersHouse_2F_Text_TestOptCancel:
 	.string "Nothing$"
