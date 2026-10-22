@@ -4810,6 +4810,14 @@ static const struct WeekDayVisibility sWeekDayVisibility[] =
       .hideFlag      = FLAG_HIDE_UNION_CAVE_LAPRAS_TODAY,
       .requiresClear = FLAG_HIDE_UNION_CAVE_LAPRAS },
 
+    // CHILLWIND CAVE's BAXCALIBUR, a small easter egg: it only shows on the days of
+    // Crystal's Bug-Catching Contest. Built like the LAPRAS rule above - the day flag is
+    // rewritten here, the permanent record stops it for good once it is caught or
+    // knocked out (MIGRATION_DECISIONS.md 90).
+    { .dayMask       = WEEKDAY_BIT(WEEKDAY_TUE) | WEEKDAY_BIT(WEEKDAY_THU) | WEEKDAY_BIT(WEEKDAY_SAT),
+      .hideFlag      = FLAG_HIDE_CHILLWIND_BAXCALIBUR_TODAY,
+      .requiresClear = FLAG_HIDE_CHILLWIND_BAXCALIBUR },
+
     // MORI and SARI visit their grandfather in CHERRYGROVE at weekends, but only
     // once the player has beaten the CHAMPION a second time. This is the first
     // use of requiresSet, and the reason it exists: an object event reads exactly

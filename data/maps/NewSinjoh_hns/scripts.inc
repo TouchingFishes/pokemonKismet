@@ -207,7 +207,12 @@ NewSinjoh_EventScript_OldLady1::
 
 NewSinjoh_Text_OldLady1:
 	.string "There's nothing like a nice view to\n"
-	.string "invigorate this old soul.$"
+	.string "invigorate this old soul.\p"
+	.string "My grandson swears an ice dragon\n"
+	.string "comes to CHILLWIND CAVE on the\p"
+	.string "days the bug catchers down in\l"
+	.string "JOHTO used to hold bug contests.\p"
+	.string "Kids these days!$"
 
 NewSinjoh_EventScript_OldLady2::
 	goto_if_ge VAR_SINJOH_STORYLINE, 13, NewSinjoh_EventScript_OldLady2Cynthia

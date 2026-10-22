@@ -323,7 +323,12 @@ Route35NationalParkGate_Text_Rocker:
 	.string "last night!$"
 
 Route35NationalParkGate_Text_BC2:
-	.string "I caught a whopping SCYTHER!$"
+	.string "I caught a whopping SCYTHER!\p"
+	.string "A hiker told me some ice dragon\n"
+	.string "only shows itself up north on\l"
+	.string "contest days.\p"
+	.string "Terrible timing! I'm not missing\n"
+	.string "a contest for it.$"
 
 Route35NationalParkGate_Text_Beauty:
 	.string "He always wins these contests!$"

@@ -45,7 +45,7 @@
       "flag": "FLAG_HIDE_ROUTE50_NOBLE_FROSMOTH"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_CASTFORM_SNOWY",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SNOM",
       "x": 14,
       "y": 13,
       "elevation": 6,

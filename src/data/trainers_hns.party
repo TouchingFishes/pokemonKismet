@@ -17430,57 +17430,67 @@ Pic: Skier F Hns
 Gender: Female
 Music: Hg Girl 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Scyther @ King's Rock  
-Ability: Technician  
+Skarmory @ Rocky Helmet
+Ability: Sturdy
 Level: 70
-EVs: 4 HP / 252 Atk / 252 Spe  
-Hasty Nature  
-- MOVE_ACROBATICS  
-- MOVE_DOUBLE_EDGE  
-- Lunge  
-- MOVE_NIGHT_SLASH  
+EVs: 252 HP / 252 Def / 4 SpD
+Impish Nature
+- Spikes
+- Brave Bird
+- Whirlwind
+- Roost
 
-Gliscor @ Toxic Orb  
-Ability: Poison Heal  
-Level: 70 
-EVs: 124 Atk / 252 Def / 132 SpD  
-Adamant Nature  
-- Tailwind  
-- Fling  
-- Acrobatics  
-- Earthquake  
+Togekiss @ Leftovers
+Ability: Serene Grace
+Level: 70
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Air Slash
+- Dazzling Gleam
+- Thunder Wave
+- Roost
 
-Crobat @ Big Root  
-Ability: Technician  
-Level: 70 
-EVs: 252 HP / 252 Atk / 4 SpD  
-Adamant Nature  
-- Cross Poison  
-- Aerial Ace  
-- Roost  
-- Leech Life  
+Vespiquen @ Leftovers
+Ability: Hive Queen
+Level: 70
+EVs: 252 HP / 252 Def / 4 SpD
+Impish Nature
+- Attack Order
+- Power Gem
+- Defend Order
+- Heal Order
 
-Swellow @ Flame Orb  
-Ability: Guts  
-Level: 70  
-EVs: 252 Atk / 252 Spe  
-Adamant Nature  
-- Facade  
-- Roost  
-- Steel Wing  
-- Tailwind  
+Gliscor @ Toxic Orb
+Ability: Poison Heal
+Level: 71
+EVs: 252 HP / 4 Atk / 252 Def
+Impish Nature
+- Swords Dance
+- Earthquake
+- Facade
+- Knock Off
 
-Fearow @ Scope Lens  
-Ability: Sniper  
-Level: 70  
-EVs: 252 Atk / 252 Spe  
-Naive Nature  
-- Drill Run  
-- Focus Energy  
-- Drill Peck  
-- Double-Edge  
+Talonflame @ Sharp Beak
+Ability: Gale Wings
+Level: 71
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Brave Bird
+- Flare Blitz
+- Swords Dance
+- Roost
+
+Staraptor @ Sky Plate
+Ability: Intimidate
+Level: 72
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Brave Bird
+- Close Combat
+- Double-Edge
+- Quick Attack
 
 === TRAINER_CYNTHIA_HNS ===
 Name: CYNTHIA
@@ -19408,8 +19418,8 @@ EVs: 252 HP / 100 SpA
 
 === TRAINER_ROSALIND_HNS ===
 Name: ROSALIND
-Class: Expert Hns
-Pic: Expert F
+Class: Pkmn Ranger Hns
+Pic: Pokemon Ranger F
 Music: Hg Girl 2
 Gender: Female
 Double Battle: No
@@ -21841,8 +21851,8 @@ IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 
 === TRAINER_DAMIAN_HNS ===
 Name: DAMIAN
-Class: Gentleman Hns
-Pic: Gentleman Frlg
+Class: Rich Boy Hns
+Pic: Rich Boy Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No

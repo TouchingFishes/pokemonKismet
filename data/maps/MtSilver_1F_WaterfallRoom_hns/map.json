@@ -249,8 +249,8 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_MT_SILVER_1F_WATERFALL_ROOM_SCIENTIST",
-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_F_HNS",
+      "local_id": "LOCALID_MT_SILVER_1F_WATERFALL_ROOM_MEARA",
+      "graphics_id": "OBJ_EVENT_GFX_MEARA_HNS",
       "x": 42,
       "y": 9,
       "elevation": 0,

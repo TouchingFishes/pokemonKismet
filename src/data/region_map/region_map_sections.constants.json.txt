@@ -48,10 +48,10 @@ enum {
 
 // Sinjoh and its surrounding routes count as Hisui for regional-form purposes.
 // This range sits *inside* the Johto range above, so GetRegionForSectionId must
-// test it first. These five mapsecs must stay contiguous in
+// test it first. These eight mapsecs must stay contiguous in
 // region_map_sections.json for this range to remain correct.
 #define HISUI_MAPSEC_START  MAPSEC_SNOWSWEPT_CAVERN
-#define HISUI_MAPSEC_END    MAPSEC_CHILLWIND_CAVE
+#define HISUI_MAPSEC_END    MAPSEC_MIRAGE_FOREST
 #define HISUI_MAPSEC_COUNT  (HISUI_MAPSEC_END - HISUI_MAPSEC_START + 1)
 
 #else

@@ -330,7 +330,7 @@
       "flag": "FLAG_NEWSINJOH_ITEM_DUSK_BALL"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MISDREAVUS",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SHUPPET",
       "x": 17,
       "y": 19,
       "elevation": 0,
@@ -343,7 +343,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_GASTLY",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_BANETTE",
       "x": 11,
       "y": 21,
       "elevation": 0,
@@ -356,7 +356,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_HAUNTER",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_FROSLASS",
       "x": 26,
       "y": 18,
       "elevation": 0,

@@ -15,7 +15,8 @@ SinjohCanyon_OnTransition_End:
 
 SinjohCanyon_EventScript_ActivateGigalith::
 	lock
-	setobjectxyperm LOCALID_SINJOHCANYON_NOBLE_GIGALITH, 5, 30
+	setobjectxyperm LOCALID_SINJOHCANYON_NOBLE_GIGALITH, 6, 33
+	setobjectmovementtype LOCALID_SINJOHCANYON_NOBLE_GIGALITH, MOVEMENT_TYPE_FACE_RIGHT
 	playse SE_M_DETECT
 	getplayerxy VAR_0x8004, VAR_0x8005
 	dofieldeffectsparkle VAR_0x8004, VAR_0x8005, 0
@@ -40,56 +41,55 @@ SinjohCanyon_EventScript_ActivateGigalith::
 	addobject LOCALID_SINJOHCANYON_NOBLE_GIGALITH
 	clearflag FLAG_HIDE_SINJOHCANYON_NOBLE_GIGALITH
 	playse SE_M_ROCK_THROW
-	applymovement2 LOCALID_SINJOHCANYON_NOBLE_GIGALITH, SinjohCanyon_Movement_GigalithRises
+	applymovement2 LOCALID_SINJOHCANYON_NOBLE_GIGALITH, SinjohCanyon_Movement_GigalithBurstsOut
 	waitmovement LOCALID_SINJOHCANYON_NOBLE_GIGALITH
 	playmoncry SPECIES_GIGALITH, CRY_MODE_NORMAL
 	waitmoncry
-	playmoncry SPECIES_GIGALITH, CRY_MODE_NORMAL
-	waitmoncry
-	applymovement2 LOCALID_SINJOHCANYON_NOBLE_GIGALITH, SinjohCanyon_Movement_GigalithStomps
+	applymovement2 LOCALID_SINJOHCANYON_NOBLE_GIGALITH, SinjohCanyon_Movement_GigalithLeaps
 	waitmovement LOCALID_SINJOHCANYON_NOBLE_GIGALITH
-	playse SE_LEDGE
-	setvar VAR_0x8004, 1  @ vertical pan
+	playse SE_BANG
+	setvar VAR_0x8004, 2  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
-	setvar VAR_0x8006, 5  @ num shakes
-	setvar VAR_0x8007, 2  @ shake delay
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 3  @ shake delay
 	special ShakeCamera
 	waitstate
+	turnobject LOCALID_SINJOHCANYON_NOBLE_GIGALITH, DIR_NORTH
+	playmoncry SPECIES_GIGALITH, CRY_MODE_ENCOUNTER
+	waitmoncry
 	applymovement2 LOCALID_SINJOHCANYON_NOBLE_GIGALITH, SinjohCanyon_Movement_GigalithToPatrol
 	waitmovement LOCALID_SINJOHCANYON_NOBLE_GIGALITH
 	removeobject LOCALID_SINJOHCANYON_NOBLE_GIGALITH
 	setobjectxyperm LOCALID_SINJOHCANYON_NOBLE_GIGALITH, 2, 38
+	setobjectmovementtype LOCALID_SINJOHCANYON_NOBLE_GIGALITH, MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_DOWN_LEFT
 	addobject LOCALID_SINJOHCANYON_NOBLE_GIGALITH
 	clearflag FLAG_HIDE_SINJOHCANYON_NOBLE_GIGALITH
 	setvar VAR_NOBLE_GIGALITH, 2
 	release
 	end
 
-SinjohCanyon_Movement_GigalithRises:
-	walk_in_place_slow_up
-	walk_in_place_slow_up
-	jump_up
+SinjohCanyon_Movement_GigalithBurstsOut:
+	jump_right
+	walk_in_place_fast_right
 	step_end
 
-SinjohCanyon_Movement_GigalithStomps:
-	walk_in_place_slow_right
-	jump_in_place_right
-	face_right
+SinjohCanyon_Movement_GigalithLeaps:
+	jump_2_right
 	step_end
 
 SinjohCanyon_Movement_GigalithToPatrol:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	walk_left
 	walk_left
 	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 SinjohCanyon_EventScript_Gigalith::
@@ -282,20 +282,21 @@ SinjohCanyon_EventScript_Dawson::
 	end
 
 SinjohCanyon_Text_DawsonSeen:
-	.string "Nothing beats a\n"
-	.string "good battle\l"
-	.string "out here!$"
+	.string "Nothing beats a good battle out\n"
+	.string "here!$"
 
 SinjohCanyon_Text_DawsonBeaten:
-	.string "Whoa! You hit\n"
-	.string "harder than a\l"
-	.string "ROCK SLIDE!$"
+	.string "Whoa! You hit harder than a ROCK\n"
+	.string "SLIDE!$"
 
 SinjohCanyon_Text_DawsonAfter:
-	.string "I hike here all\n"
-	.string "the time. My\l"
-	.string "POKéMON keep me\l"
-	.string "company!$"
+	.string "I hike here all the time. My\n"
+	.string "POKéMON keep me company!\p"
+	.string "Not in CHILLWIND CAVE, though.\p"
+	.string "Some days a huge, icy beast\n"
+	.string "sleeps right in the middle of it.\p"
+	.string "Other days there's nothing there\n"
+	.string "at all. Weird, right?$"
 
 SinjohCanyon_EventScript_Dai::
 	trainerbattle_single TRAINER_DAI_HNS, SinjohCanyon_Text_DaiSeen, SinjohCanyon_Text_DaiBeaten
@@ -303,18 +304,15 @@ SinjohCanyon_EventScript_Dai::
 	end
 
 SinjohCanyon_Text_DaiSeen:
-	.string "My fighting spirit\n"
-	.string "burns bright!\l"
+	.string "My fighting spirit burns bright!\n"
 	.string "Face me!$"
 
 SinjohCanyon_Text_DaiBeaten:
-	.string "My spirit…\n"
-	.string "shaken!$"
+	.string "My spirit… shaken!$"
 
 SinjohCanyon_Text_DaiAfter:
-	.string "A true fighter\n"
-	.string "grows from defeat.\l"
-	.string "I'll train harder!$"
+	.string "A true fighter grows from\n"
+	.string "defeat. I'll train harder!$"
 
 SinjohCanyon_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE

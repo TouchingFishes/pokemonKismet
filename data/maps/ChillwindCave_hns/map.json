@@ -65,11 +65,25 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ChillwindCave_EventScript_ItemMaxElixir",
       "flag": "FLAG_CHILLWIND_ITEM_MAX_ELIXIR"
+    },
+    {
+      "local_id": "LOCALID_CHILLWIND_BAXCALIBUR",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_BAXCALIBUR",
+      "x": 22,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ChillwindCave_EventScript_Baxcalibur",
+      "flag": "FLAG_HIDE_CHILLWIND_BAXCALIBUR_TODAY"
     }
   ],
   "warp_events": [
     {
-      "x": 38,
+      "x": 36,
       "y": 32,
       "elevation": 0,
       "dest_map": "MAP_SINJOH_CANYON_HNS",

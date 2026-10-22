@@ -89,8 +89,24 @@ MirageForest_EventScript_ItemMaxRevive::
 	end
 
 MirageForest_EventScript_Rosalind::
-	trainerbattle_single TRAINER_ROSALIND_HNS, MirageForest_Text_RosalindIntro, MirageForest_Text_RosalindDefeat
-	msgbox MirageForest_Text_RosalindAfter, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_ROSALIND_HNS, MirageForest_Text_RosalindIntro, MirageForest_Text_RosalindDefeat, MirageForest_EventScript_RosalindHerd
+	lock
+	faceplayer
+MirageForest_EventScript_RosalindHerd::
+	goto_if_set FLAG_HIDE_MIRAGE_ZOROARK, MirageForest_EventScript_RosalindHerdCalm
+	goto_if_ge VAR_SINJOH_STORYLINE, 6, MirageForest_EventScript_RosalindHerdOdd
+	msgbox MirageForest_Text_RosalindHerdRestless, MSGBOX_DEFAULT
+	release
+	end
+
+MirageForest_EventScript_RosalindHerdOdd:
+	msgbox MirageForest_Text_RosalindHerdOdd, MSGBOX_DEFAULT
+	release
+	end
+
+MirageForest_EventScript_RosalindHerdCalm:
+	msgbox MirageForest_Text_RosalindHerdCalm, MSGBOX_DEFAULT
+	release
 	end
 
 MirageForest_EventScript_Tabitha::
@@ -121,18 +137,37 @@ MirageForest_Text_IllusionBreaks:
 	.string "It was a ZOROARK all along!$"
 
 MirageForest_Text_RosalindIntro:
-	.string "You found your way in.\p"
-	.string "Most people only think they\n"
-	.string "have.$"
+	.string "Shh! Keep your voice down, or\n"
+	.string "you'll spook the herd.\p"
+	.string "...You climbed all the way up\n"
+	.string "here? Then let's see if your\l"
+	.string "POKéMON are as steady as you!$"
 
 MirageForest_Text_RosalindDefeat:
-	.string "You saw through it.$"
+	.string "Steady hands. You'll do.$"
 
-MirageForest_Text_RosalindAfter:
-	.string "The forest shows you what you\n"
-	.string "expect to see.\p"
-	.string "Stop expecting, and you will\n"
-	.string "find your way out.$"
+MirageForest_Text_RosalindHerdRestless:
+	.string "I'm a POKéMON RANGER. I've kept\n"
+	.string "watch over this STANTLER herd\l"
+	.string "for weeks now.\p"
+	.string "Lately they won't settle. They\n"
+	.string "keep staring into the trees, as\l"
+	.string "if something is watching them.$"
+
+MirageForest_Text_RosalindHerdOdd:
+	.string "Can I tell you something strange?\p"
+	.string "I count this herd every morning.\n"
+	.string "Five STANTLER. Always five.\p"
+	.string "Today there are six.\p"
+	.string "And one of them doesn't leave a\n"
+	.string "single track in the snow.\p"
+	.string "If you go near them... be careful.$"
+
+MirageForest_Text_RosalindHerdCalm:
+	.string "The herd has finally calmed down.\p"
+	.string "Whatever was walking among them\n"
+	.string "is gone. I counted five again\l"
+	.string "this morning.$"
 
 MirageForest_Text_TabithaIntro:
 	.string "Shh. Do not startle them.\p"

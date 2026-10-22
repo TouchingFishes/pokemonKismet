@@ -37,109 +37,82 @@ ChallengersCave_1F_EventScript_Helena::
 	end
 
 ChallengersCave_1F_Text_VinceSeen:
-	.string "Strong POKéMON\n"
-	.string "are good! But\l"
-	.string "battling you seems\l"
-	.string "even better!$"
+	.string "Strong POKéMON are good! But\n"
+	.string "battling you seems even better!$"
 
 ChallengersCave_1F_Text_VinceBeaten:
-	.string "I'm stunned, like\n"
-	.string "a PARALYZED\l"
+	.string "I'm stunned, like a PARALYZED\n"
 	.string "POKéMON!$"
 
 ChallengersCave_1F_Text_VinceAfter:
-	.string "If you see any\n"
-	.string "unusual POKéMON,\l"
+	.string "If you see any unusual POKéMON,\n"
 	.string "tell me!$"
 
 ChallengersCave_1F_Text_NelsonSeen:
-	.string "Heh heh! Can you\n"
-	.string "keep up with my\l"
+	.string "Heh heh! Can you keep up with my\n"
 	.string "battle rhythm?$"
 
 ChallengersCave_1F_Text_NelsonBeaten:
-	.string "You broke my\n"
-	.string "focus!$"
+	.string "You broke my focus!$"
 
 ChallengersCave_1F_Text_NelsonAfter:
-	.string "I juggle moves and\n"
-	.string "strategies…\l"
-	.string "sometimes I drop\l"
-	.string "both!$"
+	.string "I juggle moves and strategies…\n"
+	.string "sometimes I drop both!$"
 
 ChallengersCave_1F_Text_ColbySeen:
-	.string "I train wherever\n"
-	.string "strong POKéMON\l"
+	.string "I train wherever strong POKéMON\n"
 	.string "gather! Let's go!$"
 
 ChallengersCave_1F_Text_ColbyBeaten:
-	.string "Your power…\n"
-	.string "It's the real\l"
-	.string "deal!$"
+	.string "Your power… It's the real deal!$"
 
 ChallengersCave_1F_Text_ColbyAfter:
-	.string "Keep battling like\n"
-	.string "that and you'll go\l"
-	.string "far, maybe farther\l"
+	.string "Keep battling like that and\n"
+	.string "you'll go far, maybe farther\l"
 	.string "than me.$"
 
 ChallengersCave_1F_Text_TerrySeen:
-	.string "Down here, every\n"
-	.string "battle is a test!\l"
-	.string "Are you ready?$"
+	.string "Down here, every battle is a\n"
+	.string "test! Are you ready?$"
 
 ChallengersCave_1F_Text_TerryBeaten:
-	.string "I slipped up…\n"
-	.string "That cost me!$"
+	.string "I slipped up… That cost me!$"
 
 ChallengersCave_1F_Text_TerryAfter:
-	.string "Strong trainers\n"
-	.string "learn quickly.\l"
+	.string "Strong trainers learn quickly.\n"
 	.string "I'll improve too!$"
 
 ChallengersCave_1F_Text_NaomiSeen:
-	.string "CHALLENGER'S CAVE\n"
-	.string "is where we prove\l"
-	.string "our strength!$"
+	.string "CHALLENGER'S CAVE is where we\n"
+	.string "prove our strength!$"
 
 ChallengersCave_1F_Text_NaomiBeaten:
-	.string "You're even\n"
-	.string "stronger than I\l"
+	.string "You're even stronger than I\n"
 	.string "expected!$"
 
 ChallengersCave_1F_Text_NaomiAfter:
-	.string "I come here to\n"
-	.string "push my limits.\l"
-	.string "Next time, I'll\l"
-	.string "win for sure!$"
+	.string "I come here to push my limits.\n"
+	.string "Next time, I'll win for sure!$"
 
 ChallengersCave_1F_Text_NewtonSeen:
-	.string "Do you know this\n"
-	.string "cave well?\l"
-	.string "I've mapped it!$"
+	.string "Do you know this cave well? I've\n"
+	.string "mapped it!$"
 
 ChallengersCave_1F_Text_NewtonBeaten:
-	.string "My calculations\n"
-	.string "were off!$"
+	.string "My calculations were off!$"
 
 ChallengersCave_1F_Text_NewtonAfter:
-	.string "The cave shifts\n"
-	.string "seasonally…\l"
-	.string "I need more data!$"
+	.string "The cave shifts seasonally… I\n"
+	.string "need more data!$"
 
 ChallengersCave_1F_Text_HelenaSeen:
-	.string "This cave tests\n"
-	.string "patience and\l"
-	.string "strength. Show me\l"
-	.string "yours!$"
+	.string "This cave tests patience and\n"
+	.string "strength. Show me yours!$"
 
 ChallengersCave_1F_Text_HelenaBeaten:
-	.string "You've passed my\n"
-	.string "test.$"
+	.string "You've passed my test.$"
 
 ChallengersCave_1F_Text_HelenaAfter:
-	.string "Experience guides\n"
-	.string "me forward.\p"
-	.string "Keep training!\n"
-	.string "Your journey\l"
+	.string "Experience guides me forward.\p"
+	.string "Keep training! Your journey\n"
 	.string "continues!$"

@@ -20,17 +20,17 @@ MtSilver_1F_WaterfallRoom_OnFrame::
 MtSilver_1F_WaterfallRoom_Scientist_Scene::
 	msgbox MtSilver_1F_WaterfallRoom_Text_Scientist, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_MT_SILVER_1F_WATERFALL_ROOM_SCIENTIST, MtSilver_1F_Movement_Scientist
+	applymovement LOCALID_MT_SILVER_1F_WATERFALL_ROOM_MEARA, MtSilver_1F_Movement_Scientist
 	playse SE_LEDGE
 	waitmovement 0
-	removeobject LOCALID_MT_SILVER_1F_WATERFALL_ROOM_SCIENTIST
+	removeobject LOCALID_MT_SILVER_1F_WATERFALL_ROOM_MEARA
 	setflag FLAG_MT_SILVER_1F_HIDE_SCIENTIST
 	setvar VAR_SINJOH_STORYLINE, 2
 	release
 	end
 
 MtSilver_1F_WaterfallRoom_Text_Scientist:
-	.string "This is the entrance to the\n"
+	.string "MEARA: This is the entrance to the\n"
 	.string "unexplored branch... {PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}\p"
 	.string "Does it feel cold here to you?\p"
 	.string "Okay I'm going to leave now.\p"

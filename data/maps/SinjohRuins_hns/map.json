@@ -217,7 +217,7 @@
       "flag": "FLAG_DAY_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_HOUNDOUR",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_DUSKULL",
       "x": 38,
       "y": 61,
       "elevation": 0,
@@ -230,7 +230,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_HOUNDOUR",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_NOIBAT",
       "x": 40,
       "y": 57,
       "elevation": 0,
@@ -243,7 +243,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_HOUNDOOM",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_GOLURK",
       "x": 43,
       "y": 37,
       "elevation": 0,
@@ -332,20 +332,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_DAY_POKEMON"
-    },
-    {
-      "local_id": "LOCALID_SINJOHRUINS_BAXCALIBUR",
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_BAXCALIBUR",
-      "x": 24,
-      "y": 41,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SinjohRuins_EventScript_Baxcalibur",
-      "flag": "FLAG_HIDE_SINJOHRUINS_BAXCALIBUR"
     }
   ],
   "warp_events": [

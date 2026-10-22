@@ -304,12 +304,12 @@ SinjohRuins_Text_CynthiaAfterPlate:
     .string "Go on, I'm right behind you.$"
 
 SinjohRuins_Text_CynthiaAfterBattle:
-	.string "CYNTHIA: To think, another trainer \n"
+	.string "CYNTHIA: To think, another trainer\n"
 	.string "would defeat me like this.\p"
-    .string "Incredible.\p"
-	.string "Take this, it's the final plate.\p"
-	.string "My team found it during our\n"
-	.string "research, before you arrived.$"
+	.string "Incredible.\p"
+	.string "Take this, it's the final PLATE.\p"
+	.string "The expedition found it in the\n"
+	.string "ruins before you arrived.$"
 
 SinjohRuins_Text_CynthiaReadytoBattle:
     .string "CYNTHIA: {PLAYER}.\p"
@@ -331,48 +331,6 @@ SinjohRuins_Text_CynthiaDefeat:
 SinjohRuins_EventScript_Cynthia::
     msgbox SinjohRuins_Text_CynthiaAfterPlate, MSGBOX_NPC
     end
-
-@ BAXCALIBUR guards the temple door like the AZURE FLUTE's NOBLES: it cannot be caught or
-@ fled, and once beaten it is gone and the dungeon is open (MIGRATION_DECISIONS.md 82).
-@ A whiteout clears the engine flags (B_RESET_FLAGS_VARS_AFTER_WHITEOUT) and leaves it here.
-SinjohRuins_EventScript_Baxcalibur::
-	lock
-	faceplayer
-	playmoncry SPECIES_BAXCALIBUR, CRY_MODE_ENCOUNTER
-	waitmoncry
-	setwildbossbattle species=SPECIES_BAXCALIBUR, level=80, item=ITEM_DRAGON_FANG, move1_1=MOVE_GLAIVE_RUSH, move1_2=MOVE_ICICLE_CRASH, move1_3=MOVE_EARTHQUAKE, move1_4=MOVE_SWORDS_DANCE
-	settotemboost B_POSITION_OPPONENT_LEFT, 0, 1, 1, 0, 1, 0
-	setflag FLAG_NO_WILD_CATCHING
-	setflag FLAG_NO_WILD_RUNNING
-	setflag FLAG_SMART_WILD_AI
-	setflag FLAG_NO_SHINY
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SinjohRuins_EventScript_BaxcaliburRan
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_SINJOHRUINS_BAXCALIBUR
-	setflag FLAG_HIDE_SINJOHRUINS_BAXCALIBUR
-	fadescreenswapbuffers FADE_FROM_BLACK
-	msgbox SinjohRuins_Text_BaxcaliburRetreated, MSGBOX_DEFAULT
-	closemessage
-	clearflag FLAG_NO_WILD_CATCHING
-	clearflag FLAG_NO_WILD_RUNNING
-	clearflag FLAG_SMART_WILD_AI
-	clearflag FLAG_NO_SHINY
-	release
-	end
-
-SinjohRuins_EventScript_BaxcaliburRan::
-	clearflag FLAG_NO_WILD_CATCHING
-	clearflag FLAG_NO_WILD_RUNNING
-	clearflag FLAG_SMART_WILD_AI
-	clearflag FLAG_NO_SHINY
-	release
-	end
-
-SinjohRuins_Text_BaxcaliburRetreated:
-	.string "BAXCALIBUR retreated.\n"
-	.string "The way into the ruins is open.$"
 
 SinjohRuins_EventScript_Sign::
     msgbox SinjohRuins_Text_Sign, MSGBOX_SIGN

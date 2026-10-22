@@ -2626,6 +2626,30 @@
     },
     {
       "height": 1,
+      "id": "MAPSEC_SINJOH_CANYON",
+      "name": "SINJOH CANYON",
+      "width": 1,
+      "x": 20,
+      "y": 3
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_SINJOH_LAKE",
+      "name": "SINJOH LAKE",
+      "width": 1,
+      "x": 20,
+      "y": 3
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_MIRAGE_FOREST",
+      "name": "MIRAGE FOREST",
+      "width": 1,
+      "x": 20,
+      "y": 3
+    },
+    {
+      "height": 1,
       "id": "MAPSEC_NATIONAL_PARK",
       "name": "NATIONAL PARK",
       "width": 1,

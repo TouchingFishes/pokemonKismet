@@ -325,19 +325,15 @@ SinjohLake_EventScript_Alexa::
 	end
 
 SinjohLake_Text_AlexaSeen:
-	.string "I study every\n"
-	.string "battle I fight.\p"
-	.string "Let us learn from\n"
-	.string "each other!$"
+	.string "I study every battle I fight.\p"
+	.string "Let us learn from each other!$"
 
 SinjohLake_Text_AlexaBeaten:
-	.string "My notes didn't\n"
-	.string "prepare me!$"
+	.string "My notes didn't prepare me!$"
 
 SinjohLake_Text_AlexaAfter:
-	.string "Your strategy was\n"
-	.string "unexpected…\l"
-	.string "I need new data.$"
+	.string "Your strategy was unexpected… I\n"
+	.string "need new data.$"
 
 SinjohLake_EventScript_Damian::
 	trainerbattle_single TRAINER_DAMIAN_HNS, SinjohLake_Text_DamianSeen, SinjohLake_Text_DamianBeaten
@@ -345,12 +341,9 @@ SinjohLake_EventScript_Damian::
 	end
 
 SinjohLake_Text_DamianSeen:
-	.string "They told me not\n"
-	.string "to come here.\p"
-	.string "Said this place\n"
-	.string "was… unlucky.\p"
-	.string "But some of us\n"
-	.string "are born to win,\l"
+	.string "They told me not to come here.\p"
+	.string "Said this place was… unlucky.\p"
+	.string "But some of us are born to win,\n"
 	.string "no matter what.$"
 
 SinjohLake_Text_DamianBeaten:
@@ -358,8 +351,7 @@ SinjohLake_Text_DamianBeaten:
 
 SinjohLake_Text_DamianAfter:
 	.string "Hmph.\p"
-	.string "Even fate doesn't\n"
-	.string "always go as\l"
+	.string "Even fate doesn't always go as\n"
 	.string "planned.$"
 
 SinjohLake_EventScript_ItemSunStone::

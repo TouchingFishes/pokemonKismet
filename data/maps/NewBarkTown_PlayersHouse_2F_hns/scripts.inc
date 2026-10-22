@@ -317,7 +317,7 @@ NewBarkTown_PlayersHouse_2F_EventScript_ZoroarkTakePlate:
 @   ALL 16     7, at the LAB door: the 17-PLATE scene, then the stairs scene, play on arrival.
 @   CYNTHIA    9, below the RUINS' west stairs: walk up and east onto her trigger.
 @   ARCEUS     10, at the ARCEUS ROOM door: walk north onto the triggers.
-@   TRIO       13, at the DEEP HALL door, BAXCALIBUR beaten: read the altar.
+@   TRIO       13, at the DEEP HALL door: read the altar.
 @ Side effects, as with every stage: the arc's trainers count as unbeaten until replayed, so
 @ CYNTHIA leaves the CHAMPION's ROOM pool (MIGRATION_DECISIONS.md 81) until she is beaten again.
 @ Route trainers, item balls and the PEAT BLOCK are not reset.
@@ -414,8 +414,11 @@ NewBarkTown_PlayersHouse_2F_EventScript_SinjohTrio::
 	end
 
 @ The arc before MEARA, with nothing of it done: every NOBLE unarmed and hidden, every PLATE
-@ taken out of the bag, the trio uncalled and the lost fawn back at the lake. The AZURE FLUTE
-@ goes in if missing, since MEARA asks for it.
+@ taken out of the bag, the trio uncalled and the lost fawn back at the lake; CHILLWIND CAVE's
+@ BAXCALIBUR and the MIRAGE FOREST teapot are back too (the teapot's two hide flags are worked
+@ out on every load, so its record is the only one that needs clearing). The AZURE FLUTE goes
+@ in if missing, since MEARA asks for it. BAXCALIBUR still keeps to contest days: set the clock
+@ to a Tuesday, Thursday or Saturday to meet it.
 NewBarkTown_PlayersHouse_2F_EventScript_SinjohReset::
 	setvar VAR_SINJOH_STORYLINE, 0
 	setvar VAR_PLATECOUNTER, 0
@@ -448,7 +451,8 @@ NewBarkTown_PlayersHouse_2F_EventScript_SinjohReset::
 	clearflag FLAG_ROUTE_49_KIMONOGIRL
 	clearflag FLAG_HIDE_MIRAGE_ZOROARK
 	clearflag FLAG_BATTLED_MIRAGE_ZOROARK
-	clearflag FLAG_HIDE_SINJOHRUINS_BAXCALIBUR
+	clearflag FLAG_HIDE_CHILLWIND_BAXCALIBUR
+	clearflag FLAG_BATTLED_MIRAGE_POLTEAGEIST
 	clearflag FLAG_SINJOH_FAWN_FOUND
 	clearflag FLAG_SINJOH_FAWN_RETURNED
 	clearflag FLAG_SINJOH_DIALGA_GONE
@@ -620,14 +624,12 @@ NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterCynthia:
 	setvar VAR_SINJOH_STORYLINE, 10
 	return
 
-@ ARCEUS met and CYNTHIA gone to NEW SINJOH. BAXCALIBUR is beaten too, as it
-@ stands between the RUINS and the DEEP HALL.
+@ ARCEUS met and CYNTHIA gone to NEW SINJOH.
 NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterArceus:
 	call NewBarkTown_PlayersHouse_2F_EventScript_SinjohAfterCynthia
 	setflag FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_ARCEUS
 	setflag FLAG_HIDE_SINJOHRUINS_CYNTHIA
 	clearflag FLAG_HIDE_NEWSINJOH_CYNTHIA
-	setflag FLAG_HIDE_SINJOHRUINS_BAXCALIBUR
 	setvar VAR_SINJOH_STORYLINE, 13
 	return
 
@@ -647,6 +649,14 @@ NewBarkTown_PlayersHouse_2F_EventScript_TestBasics::
 	call_if_lt VAR_NUM_BADGES, 8, NewBarkTown_PlayersHouse_2F_EventScript_TestEightBadges
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_SYS_B_DASH
+	@ The HnS field moves need the HM's "received" flag as well as a POKeMON that knows the move
+	@ (field_move_scripts_hns.inc). The kit hands over the HMs, so it sets the flags too; FLY,
+	@ DIVE and WATERFALL have none in HnS.
+	setflag FLAG_RECEIVED_HM_CUT
+	setflag FLAG_RECEIVED_HM_FLASH
+	setflag FLAG_RECEIVED_HM_ROCK_SMASH
+	setflag FLAG_RECEIVED_HM_STRENGTH
+	setflag FLAG_RECEIVED_HM_SURF
 	callnative FillObtainablePokedex
 	checkitem ITEM_MAX_REPEL
 	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_PlayersHouse_2F_EventScript_TestBasicsMap

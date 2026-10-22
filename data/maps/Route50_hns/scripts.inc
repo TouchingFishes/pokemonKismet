@@ -144,57 +144,40 @@ Route50_EventScript_Item_Big_Nugget::
     end
 
 Route50_EventScript_ActivateFrosmoth::
-    lock
-    setobjectxyperm LOCALID_ROUTE50_NOBLE_FROSMOTH, 75, 12
-    playse SE_M_DETECT
+	lock
+	setobjectxyperm LOCALID_ROUTE50_NOBLE_FROSMOTH, 75, 14
+	playse SE_M_DETECT
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 	dofieldeffectsparkle VAR_TEMP_1, VAR_TEMP_2, 0
 	waitfieldeffect FLDEFF_SPARKLE
-    playse SE_PIN
-    applymovement2 LOCALID_PLAYER, Common_Movement_ExclamationMark
-    delay 55
-    waitmovement LOCALID_PLAYER
-    msgbox SinjohRuins_Lab_Text_PlayFlute, MSGBOX_YESNO
+	playse SE_PIN
+	applymovement2 LOCALID_PLAYER, Common_Movement_ExclamationMark
+	delay 55
+	waitmovement LOCALID_PLAYER
+	msgbox SinjohRuins_Lab_Text_PlayFlute, MSGBOX_YESNO
 	closemessage
-    goto_if_eq VAR_RESULT, FALSE, SinjohRuins_Lab_EventScript_NoOp
-    playbgm MUS_DP_AZURE_FLUTE, FALSE
-    delay 200
-    fadedefaultbgm
-    addobject LOCALID_ROUTE50_NOBLE_FROSMOTH
-    clearflag FLAG_HIDE_ROUTE50_NOBLE_FROSMOTH
-    applymovement2 LOCALID_ROUTE50_NOBLE_FROSMOTH, Route50_Movement_FrosmothEntrance1
-    delay 10
-    playmoncry SPECIES_FROSMOTH, CRY_MODE_NORMAL
-    waitmoncry
-    playmoncry SPECIES_FROSMOTH, CRY_MODE_NORMAL
-    waitmoncry
-    waitmovement 0
-    applymovement2 LOCALID_ROUTE50_NOBLE_FROSMOTH, Route50_Movement_FrosmothEntrance2
-    delay 10
-    playse SE_LEDGE
-    delay 20
+	goto_if_eq VAR_RESULT, FALSE, SinjohRuins_Lab_EventScript_NoOp
+	playbgm MUS_DP_AZURE_FLUTE, FALSE
+	delay 200
+	fadedefaultbgm
+	addobject LOCALID_ROUTE50_NOBLE_FROSMOTH
+	clearflag FLAG_HIDE_ROUTE50_NOBLE_FROSMOTH
+	playse SE_M_GUST
+	applymovement2 LOCALID_ROUTE50_NOBLE_FROSMOTH, Route50_Movement_FrosmothFlutters
 	waitmovement LOCALID_ROUTE50_NOBLE_FROSMOTH
-    setvar VAR_0x8004, 1  @ vertical pan
-	setvar VAR_0x8005, 1  @ horizontal pan
-	setvar VAR_0x8006, 5  @ num shakes
-	setvar VAR_0x8007, 2  @ shake delay
-	special ShakeCamera
-    setobjectxyperm LOCALID_ROUTE50_NOBLE_FROSMOTH, 75, 14
-    setvar VAR_NOBLE_FROSMOTH, 2
-    release
-    end
+	playse SE_M_ICY_WIND
+	dofieldeffectsparkle 75, 14, 0
+	waitfieldeffect FLDEFF_SPARKLE
+	playmoncry SPECIES_FROSMOTH, CRY_MODE_NORMAL
+	waitmoncry
+	setvar VAR_NOBLE_FROSMOTH, 2
+	release
+	end
 
-Route50_Movement_FrosmothEntrance1:
-    jump_in_place_down
-    walk_in_place_fast_down
-    walk_in_place_fast_down
-	step_end
-
-Route50_Movement_FrosmothEntrance2:
-	jump_2_down
-    walk_in_place_slow_down
+Route50_Movement_FrosmothFlutters:
+	fly_down
 	walk_in_place_slow_down
-	jump_in_place_down
+	walk_in_place_slow_down
 	step_end
 
 Route50_EventScript_Frosmoth::
@@ -274,12 +257,26 @@ Route50_EventScript_ExpertFuyuki::
 Route50_EventScript_ExpertTrial:
 	msgbox Route50_Text_ExpertTrialAsk, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route50_EventScript_ExpertTrialDeclined
+	closemessage
+	call Route50_EventScript_ExpertTrialPlacePlayer
+	playbgm MUS_HG_ENCOUNTER_SAGE, FALSE
+	playse SE_PIN
+	applymovement LOCALID_ROUTE50_EXPERT_SHIZUKO, Common_Movement_ExclamationMark
+	waitmovement 0
+	call_if_eq VAR_TEMP_3, 1, Route50_EventScript_ShizukoStepsForward
 	msgbox Route50_Text_ShizukoFirst, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_EXPERT_SHIZUKO_HNS, Route50_Text_ShizukoDefeat
+	call_if_eq VAR_TEMP_3, 1, Route50_EventScript_ShizukoStepsBack
+	playbgm MUS_HG_ENCOUNTER_SAGE, FALSE
+	playse SE_PIN
+	applymovement LOCALID_ROUTE50_EXPERT_FUYUKI, Common_Movement_ExclamationMark
+	waitmovement 0
+	call_if_eq VAR_TEMP_3, 1, Route50_EventScript_FuyukiStepsForward
 	msgbox Route50_Text_FuyukiNext, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_EXPERT_FUYUKI_HNS, Route50_Text_FuyukiDefeat
+	call_if_eq VAR_TEMP_3, 1, Route50_EventScript_FuyukiStepsBack
 	msgbox Route50_Text_ExpertTrialPassed, MSGBOX_DEFAULT
 	checkitem ITEM_MEADOW_PLATE
 	call_if_eq VAR_RESULT, FALSE, Route50_EventScript_GiveMeadowPlate
@@ -287,10 +284,8 @@ Route50_EventScript_ExpertTrial:
 	call_if_eq VAR_RESULT, FALSE, Route50_EventScript_GiveIciclePlate
 	msgbox Route50_Text_ExpertsStepAside, MSGBOX_DEFAULT
 	closemessage
-	getplayerxy VAR_0x8004, VAR_0x8005
-	call_if_eq VAR_0x8005, 1, Route50_EventScript_ExpertTrialPlayerStepsBack
-	applymovement LOCALID_ROUTE50_EXPERT_SHIZUKO, Route50_Movement_ShizukoStepsAside
-	applymovement LOCALID_ROUTE50_EXPERT_FUYUKI, Route50_Movement_FuyukiStepsAside
+	applymovement LOCALID_ROUTE50_EXPERT_SHIZUKO, Route50_Movement_ShizukoToPost
+	applymovement LOCALID_ROUTE50_EXPERT_FUYUKI, Route50_Movement_FuyukiToPost
 	waitmovement LOCALID_ROUTE50_EXPERT_SHIZUKO
 	waitmovement LOCALID_ROUTE50_EXPERT_FUYUKI
 	call Route50_EventScript_ExpertsStandAside
@@ -310,8 +305,55 @@ Route50_EventScript_ExpertTrialDeclined:
 	release
 	end
 
-Route50_EventScript_ExpertTrialPlayerStepsBack:
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
+Route50_EventScript_ExpertTrialPlacePlayer:
+	setvar VAR_TEMP_3, 1
+	getplayerxy VAR_0x8004, VAR_0x8005
+	goto_if_eq VAR_0x8005, 0, Route50_EventScript_ExpertTrialFromRuins
+	goto_if_eq VAR_0x8005, 1, Route50_EventScript_ExpertTrialFromSide
+	goto_if_eq VAR_0x8004, 19, Route50_EventScript_ExpertTrialFrom19
+	applymovement OBJ_EVENT_ID_PLAYER, Route50_Movement_PlayerFrom18
+	waitmovement 0
+	return
+
+Route50_EventScript_ExpertTrialFrom19:
+	applymovement OBJ_EVENT_ID_PLAYER, Route50_Movement_PlayerFrom19
+	waitmovement 0
+	return
+
+Route50_EventScript_ExpertTrialFromSide:
+	goto_if_eq VAR_0x8004, 20, Route50_EventScript_ExpertTrialFromEast
+	applymovement OBJ_EVENT_ID_PLAYER, Route50_Movement_PlayerFromWest
+	waitmovement 0
+	return
+
+Route50_EventScript_ExpertTrialFromEast:
+	applymovement OBJ_EVENT_ID_PLAYER, Route50_Movement_PlayerFromEast
+	waitmovement 0
+	return
+
+Route50_EventScript_ExpertTrialFromRuins:
+	setvar VAR_TEMP_3, 0
+	turnobject LOCALID_ROUTE50_EXPERT_SHIZUKO, DIR_NORTH
+	turnobject LOCALID_ROUTE50_EXPERT_FUYUKI, DIR_NORTH
+	return
+
+Route50_EventScript_ShizukoStepsForward:
+	applymovement LOCALID_ROUTE50_EXPERT_SHIZUKO, Route50_Movement_ShizukoStepsForward
+	waitmovement 0
+	return
+
+Route50_EventScript_ShizukoStepsBack:
+	applymovement LOCALID_ROUTE50_EXPERT_SHIZUKO, Route50_Movement_ShizukoStepsBack
+	waitmovement 0
+	return
+
+Route50_EventScript_FuyukiStepsForward:
+	applymovement LOCALID_ROUTE50_EXPERT_FUYUKI, Route50_Movement_FuyukiStepsForward
+	waitmovement 0
+	return
+
+Route50_EventScript_FuyukiStepsBack:
+	applymovement LOCALID_ROUTE50_EXPERT_FUYUKI, Route50_Movement_FuyukiStepsBack
 	waitmovement 0
 	return
 
@@ -326,18 +368,84 @@ Route50_EventScript_GiveIciclePlate:
 	return
 
 Route50_EventScript_ExpertsStandAside:
-	setobjectxyperm LOCALID_ROUTE50_EXPERT_SHIZUKO, 17, 1
+	setobjectxyperm LOCALID_ROUTE50_EXPERT_SHIZUKO, 16, 7
 	setobjectmovementtype LOCALID_ROUTE50_EXPERT_SHIZUKO, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectxyperm LOCALID_ROUTE50_EXPERT_FUYUKI, 20, 1
+	setobjectxyperm LOCALID_ROUTE50_EXPERT_FUYUKI, 22, 7
 	setobjectmovementtype LOCALID_ROUTE50_EXPERT_FUYUKI, MOVEMENT_TYPE_FACE_LEFT
 	return
 
-Route50_Movement_ShizukoStepsAside:
+Route50_Movement_PlayerFrom18:
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	face_up
+	step_end
+
+Route50_Movement_PlayerFrom19:
+	walk_down
 	walk_left
+	face_up
+	step_end
+
+Route50_Movement_PlayerFromWest:
+	walk_down
+	walk_down
+	walk_right
+	face_up
+	step_end
+
+Route50_Movement_PlayerFromEast:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+Route50_Movement_ShizukoStepsForward:
+	walk_down
+	step_end
+
+Route50_Movement_ShizukoStepsBack:
+	lock_facing_direction
+	walk_up
+	unlock_facing_direction
+	step_end
+
+Route50_Movement_FuyukiStepsForward:
+	walk_down
+	walk_left
+	face_down
+	step_end
+
+Route50_Movement_FuyukiStepsBack:
+	lock_facing_direction
+	walk_right
+	walk_up
+	unlock_facing_direction
+	step_end
+
+Route50_Movement_ShizukoToPost:
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_down
 	face_right
 	step_end
 
-Route50_Movement_FuyukiStepsAside:
+Route50_Movement_FuyukiToPost:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
 	walk_right
 	face_left
 	step_end
@@ -347,8 +455,8 @@ Route50_Text_ExpertTrialAsk:
 	.string "beyond us.\p"
 	.string "FUYUKI: No one takes this road who\n"
 	.string "has not passed our trial.\p"
-	.string "SHIZUKO: CYNTHIA passed it. Her\n"
-	.string "people walk the ruins in her name.\p"
+	.string "SHIZUKO: CYNTHIA passed it, and her\n"
+	.string "word let the expedition through.\p"
 	.string "FUYUKI: Two battles, back to back,\n"
 	.string "and no rest between.\p"
 	.string "Will you take our trial?$"

@@ -243,6 +243,9 @@ static const u8 sMapSecClimates[MAPSEC_COUNT] =
     [MAPSEC_SINJOH_RUINS]       = CLIMATE_SINJOH,
     [MAPSEC_ROUTE_49]           = CLIMATE_SINJOH,
     [MAPSEC_ROUTE_50]           = CLIMATE_SINJOH,
+    [MAPSEC_SINJOH_CANYON]      = CLIMATE_SINJOH,
+    [MAPSEC_SINJOH_LAKE]        = CLIMATE_SINJOH,
+    [MAPSEC_MIRAGE_FOREST]      = CLIMATE_SINJOH,
 };
 
 void RollDailyWeatherPattern(void)

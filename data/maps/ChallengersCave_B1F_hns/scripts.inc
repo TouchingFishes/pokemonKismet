@@ -37,30 +37,22 @@ ChallengersCave_B1F_EventScript_Shaun::
 	end
 
 ChallengersCave_B1F_Text_GeorgieSeen:
-	.string "Hey… can you feel\n"
-	.string "that?\p"
-	.string "This cave gets\n"
-	.string "quiet in a way\l"
-	.string "I don't like.\p"
-	.string "Still, I'm not\n"
-	.string "turning back.\p"
-	.string "If something's\n"
-	.string "waiting down here,\l"
-	.string "I'll face it.$"
+	.string "Hey… can you feel that?\p"
+	.string "This cave gets quiet in a way I\n"
+	.string "don't like.\p"
+	.string "Still, I'm not turning back.\p"
+	.string "If something's waiting down\n"
+	.string "here, I'll face it.$"
 
 ChallengersCave_B1F_Text_GeorgieBeaten:
-	.string "Hah… guess I\n"
-	.string "should've listened\l"
+	.string "Hah… guess I should've listened\n"
 	.string "to that feeling.$"
 
 ChallengersCave_B1F_Text_GeorgieAfter:
-	.string "Down here, it\n"
-	.string "feels like things\l"
+	.string "Down here, it feels like things\n"
 	.string "watch you.\p"
-	.string "But fear only wins\n"
-	.string "if you run.\p"
-	.string "You're not scared,\n"
-	.string "are you?$"
+	.string "But fear only wins if you run.\p"
+	.string "You're not scared, are you?$"
 
 ChallengersCave_B1F_Text_IvySeen:
 	.string "I didn't come all\n"
@@ -72,60 +64,48 @@ ChallengersCave_B1F_Text_IvyBeaten:
 	.string "So… you noticed.$"
 
 ChallengersCave_B1F_Text_IvyAfter:
-	.string "True beauty holds\n"
-	.string "up under pressure.\p"
+	.string "True beauty holds up under\n"
+	.string "pressure.\p"
 	.string "You passed.$"
 
 ChallengersCave_B1F_Text_ZedSeen:
 	.string "You've come far.\p"
-	.string "This is where\n"
-	.string "most challengers\l"
+	.string "This is where most challengers\n"
 	.string "lose their nerve.\p"
 	.string "Dragons don't.\p"
-	.string "If you wish to go\n"
-	.string "on, prove you can\l"
-	.string "stand your ground.$"
+	.string "If you wish to go on, prove you\n"
+	.string "can stand your ground.$"
 
 ChallengersCave_B1F_Text_ZedBeaten:
 	.string "…Impressive.\p"
-	.string "Your spirit does\n"
-	.string "not waver.$"
+	.string "Your spirit does not waver.$"
 
 ChallengersCave_B1F_Text_ZedAfter:
-	.string "Beyond me waits\n"
-	.string "the final trial.\p"
-	.string "Dragons respect\n"
-	.string "those who endure.\p"
+	.string "Beyond me waits the final trial.\p"
+	.string "Dragons respect those who\n"
+	.string "endure.\p"
 	.string "Go.$"
 
 ChallengersCave_B1F_Text_EsmeSeen:
-	.string "…You're not alone\n"
-	.string "in this cave.\p"
-	.string "So many echoes.\n"
-	.string "Battles long\l"
+	.string "…You're not alone in this cave.\p"
+	.string "So many echoes. Battles long\n"
 	.string "finished…$"
 
 ChallengersCave_B1F_Text_EsmeBeaten:
-	.string "The voices…\n"
-	.string "they grow quiet.$"
+	.string "The voices… they grow quiet.$"
 
 ChallengersCave_B1F_Text_EsmeAfter:
-	.string "One presence\n"
-	.string "remains ahead.\p"
-	.string "It burns brighter\n"
-	.string "than the rest.$"
+	.string "One presence remains ahead.\p"
+	.string "It burns brighter than the rest.$"
 
 ChallengersCave_B1F_Text_DesmondSeen:
-	.string "This cave weeds\n"
-	.string "out hesitation.\p"
-	.string "Only trainers who\n"
-	.string "trust their teams\l"
-	.string "make it this far.\p"
+	.string "This cave weeds out hesitation.\p"
+	.string "Only trainers who trust their\n"
+	.string "teams make it this far.\p"
 	.string "Show me yours.$"
 
 ChallengersCave_B1F_Text_DesmondBeaten:
-	.string "No doubts.\n"
-	.string "That was clean.$"
+	.string "No doubts. That was clean.$"
 
 ChallengersCave_B1F_Text_DesmondAfter:
 	.string "You didn't flinch.\p"
@@ -133,16 +113,13 @@ ChallengersCave_B1F_Text_DesmondAfter:
 	.string "takes from here on.$"
 
 ChallengersCave_B1F_Text_MintySeen:
-	.string "Every step in here\n"
-	.string "filters trainers\l"
-	.string "out.\p"
-	.string "I collect the ones\n"
-	.string "who make it this\l"
-	.string "far.$"
+	.string "Every step in here filters\n"
+	.string "trainers out.\p"
+	.string "I collect the ones who make it\n"
+	.string "this far.$"
 
 ChallengersCave_B1F_Text_MintyBeaten:
-	.string "Heh, another rare\n"
-	.string "loss for me.$"
+	.string "Heh, another rare loss for me.$"
 
 ChallengersCave_B1F_Text_MintyAfter:
 	.string "Strong battles are\n"
@@ -153,14 +130,11 @@ ChallengersCave_B1F_Text_MintyAfter:
 ChallengersCave_B1F_Text_ShaunSeen:
 	.string "So.\p"
 	.string "You made it.\p"
-	.string "Every battle here\n"
-	.string "was meant to wear\l"
-	.string "you down.\p"
-	.string "I'm the one who\n"
-	.string "waits for whoever\l"
-	.string "endures.\p"
-	.string "Let's see if your\n"
-	.string "strength still\l"
+	.string "Every battle here was meant to\n"
+	.string "wear you down.\p"
+	.string "I'm the one who waits for\n"
+	.string "whoever endures.\p"
+	.string "Let's see if your strength still\n"
 	.string "remains.$"
 
 ChallengersCave_B1F_Text_ShaunBeaten:
@@ -168,11 +142,7 @@ ChallengersCave_B1F_Text_ShaunBeaten:
 	.string "You never broke.$"
 
 ChallengersCave_B1F_Text_ShaunAfter:
-	.string "This cave wasn't\n"
-	.string "about victory.\p"
-	.string "It was about\n"
-	.string "resolve.\p"
-	.string "Remember this\n"
-	.string "feeling.\p"
-	.string "You've earned\n"
-	.string "what comes next.$"
+	.string "This cave wasn't about victory.\p"
+	.string "It was about resolve.\p"
+	.string "Remember this feeling.\p"
+	.string "You've earned what comes next.$"

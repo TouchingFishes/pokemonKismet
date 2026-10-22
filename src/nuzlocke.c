@@ -162,7 +162,10 @@ static const u8 sNuzlockeLUT[] =
     // highest section must always have one, or lookups for it read past the end.
     [MAPSEC_YELLOW_FOREST]    = 0x78,
     [MAPSEC_CHILLWIND_CAVE]   = 0x79,
-    // Max bit index: 0x79 (122 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
+    [MAPSEC_SINJOH_CANYON]    = 0x7A,
+    [MAPSEC_SINJOH_LAKE]      = 0x7B,
+    [MAPSEC_MIRAGE_FOREST]    = 0x7C,
+    // Max bit index: 0x7C (125 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
     // If you exceed 0x7F, grow nuzlockeEncounterFlags in include/global.h.
 
 #else
