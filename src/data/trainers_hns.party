@@ -8494,7 +8494,7 @@ Mugshot: Yellow
 Items: Full Restore / Full Restore
 
 SPECIES_SKARMORY
-Level: 38
+Level: 36
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_SPIKES
 - MOVE_DRILL_PECK
@@ -8502,7 +8502,7 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_STEEL_WING
 
 SPECIES_CORSOREEF
-Level: 40
+Level: 38
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_RAIN_DANCE
 - MOVE_SURF
@@ -8510,7 +8510,7 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_ANCIENT_POWER
 
 SPECIES_MAGNEZONE
-Level: 38
+Level: 36
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_MIRROR_SHOT
 - MOVE_TRI_ATTACK
@@ -8518,7 +8518,7 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_THUNDER
 
 SPECIES_TINKATON @ ITEM_FOCUS_BAND
-Level: 40
+Level: 38
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_BRICK_BREAK
 - MOVE_KNOCK_OFF
@@ -8526,7 +8526,7 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_GIGATON_HAMMER
 
 SPECIES_STEELIX @ ITEM_QUICK_CLAW
-Level: 41
+Level: 39
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_CRUNCH
 - MOVE_EARTHQUAKE
@@ -13370,8 +13370,8 @@ AI: Smart Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
-SPECIES_PINECO
-Level: Badge+6
+SPECIES_FORRETRESS
+Level: Badge+7
 IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_PIN_MISSILE
 - MOVE_EXPLOSION
@@ -13379,7 +13379,7 @@ IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_SPIKE_CANNON
 
 SPECIES_MURKROW
-Level: Badge+6
+Level: Badge+7
 IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_NIGHT_SHADE
 - MOVE_FLY
@@ -13387,7 +13387,7 @@ IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_MIRROR_MOVE
 
 SPECIES_MAGCARGO
-Level: Badge+6
+Level: Badge+7
 IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_CLEAR_SMOG
 - MOVE_FLAMETHROWER
@@ -13395,7 +13395,7 @@ IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_CURSE
 
 SPECIES_CLOYSTER
-Level: Badge+6
+Level: Badge+7
 IVs: 27 HP / 27 Atk / 31 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_ICE_BEAM
 - MOVE_CLAMP
@@ -13465,7 +13465,7 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
 SPECIES_MURKROW
-Level: Badge+6
+Level: Badge+7
 IVs: 27 HP / 31 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_FAINT_ATTACK
 - MOVE_PAY_DAY
@@ -13473,7 +13473,7 @@ IVs: 27 HP / 31 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_WING_ATTACK
 
 SPECIES_VILEPLUME
-Level: Badge+6
+Level: Badge+8
 IVs: 27 HP / 31 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_SWEET_SCENT
 - MOVE_SLEEP_POWDER
@@ -13481,7 +13481,7 @@ IVs: 27 HP / 31 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_GIGA_DRAIN
 
 SPECIES_ARBOK
-Level: Badge+7
+Level: Badge+9
 IVs: 27 HP / 31 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 - MOVE_GLARE
 - MOVE_SLUDGE_BOMB
