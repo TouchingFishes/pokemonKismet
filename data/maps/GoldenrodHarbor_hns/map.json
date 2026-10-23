@@ -32,7 +32,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F_HNS",
-      "x": 26,
+      "x": 27,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -45,7 +45,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE_HNS",
-      "x": 32,
+      "x": 33,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -72,7 +72,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR_HNS",
       "x": 34,
-      "y": 26,
+      "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -149,10 +149,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F_HNS",
-      "x": 27,
-      "y": 19,
+      "x": 29,
+      "y": 20,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -162,7 +162,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_HNS",
-      "x": 33,
+      "x": 34,
       "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -275,19 +275,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CherryGroveCity_EventScript_Krabby",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SLOWPOKE",
-      "x": 16,
-      "y": 22,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "AzaleaTown_EventScript_Slowpoke",
       "flag": "0"
     },
     {

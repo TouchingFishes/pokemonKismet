@@ -80,7 +80,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_BALTOY",
       "x": 21,
-      "y": 32,
+      "y": 35,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_TOWER_BEAM",
       "movement_range_x": 0,
@@ -258,19 +258,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_DAY_POKEMON"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_NATU",
-      "x": 36,
-      "y": 40,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SMALL_LIGHT_HNS",
@@ -456,7 +443,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_BALTOY",
-      "x": 13,
+      "x": 9,
       "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",

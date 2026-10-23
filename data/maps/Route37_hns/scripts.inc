@@ -144,7 +144,8 @@ Route37_Text_Sign:
 	.string "ROUTE 37\n"
 	.string "ECRUTEAK CITY AHEAD$"
 
-Route37_EventScript_BreederFAmala::  @ rematch branch dropped - no REMATCH row for this trainer
+Route37_EventScript_BreederFAmala::
+	trainerbattle_single TRAINER_AMALA_HNS, Route37_Text_BreederFAmala_Seen, Route37_Text_BreederFAmala_Beaten
 	msgbox Route37_Text_BreederFAmala_After, MSGBOX_AUTOCLOSE
 	end
 
@@ -171,6 +172,15 @@ Route37_EventScript_CamperJordan::
 Route37_EventScript_Item_GrassKnot::
 	finditem ITEM_TM_GRASS_KNOT
 	end
+
+Route37_Text_BreederFAmala_Seen::
+	.string "Certain POKéMON can only evolve\p"
+	.string "if someone truly cares for them.\n"
+	.string "Care can overcome any obstacle,\n"
+	.string "I'll show you.$"
+	
+Route37_Text_BreederFAmala_Beaten::
+	.string "What a caring display.$"
 
 Route37_Text_BreederFAmala_After::
 	.string "Raising POKéMON isn't just about\n"
