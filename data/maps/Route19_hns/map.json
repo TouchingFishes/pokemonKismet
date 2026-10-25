@@ -61,7 +61,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "7",
-      "script": "Route19_EventScript_Tucker",
+      "script": "Route19_EventScript_Tanner",
       "flag": "0"
     },
     {

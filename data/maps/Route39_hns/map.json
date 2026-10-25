@@ -35,7 +35,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route39_EventScript_Norman",
+      "script": "Route39_EventScript_Norris",
       "flag": "0"
     },
     {

@@ -44,9 +44,9 @@ UnionCave_1F_EventScript_HikerDaniel::
 	msgbox UnionCave_1F_Text_HikerDanielAfter, MSGBOX_AUTOCLOSE
 	end
 
-UnionCave_1F_EventScript_FirebreatherBill::
-	trainerbattle_single TRAINER_BILL_HNS, UnionCave_1F_Text_FirebreatherBillSeen, UnionCave_1F_Text_FirebreatherBillBeaten
-	msgbox UnionCave_1F_Text_FirebreatherBillAfter, MSGBOX_AUTOCLOSE
+UnionCave_1F_EventScript_FirebreatherWilbur::
+	trainerbattle_single TRAINER_WILBUR_HNS, UnionCave_1F_Text_FirebreatherWilburSeen, UnionCave_1F_Text_FirebreatherWilburBeaten
+	msgbox UnionCave_1F_Text_FirebreatherWilburAfter, MSGBOX_AUTOCLOSE
 	end
 
 UnionCave_1F_EventScript_FirebreatherRay::
@@ -108,15 +108,15 @@ UnionCave_1F_Text_HikerDanielAfter:
 	.string "SLOWPOKETAIL.\p"
 	.string "I feel sorry for the poor POKéMON.$"
 
-UnionCave_1F_Text_FirebreatherBillSeen:
+UnionCave_1F_Text_FirebreatherWilburSeen:
 	.string "ZUBAT's SUPERSONIC keeps confusing\n"
 	.string "my POKéMON.\p"
 	.string "I'm seriously upset about that!$"
 
-UnionCave_1F_Text_FirebreatherBillBeaten:
+UnionCave_1F_Text_FirebreatherWilburBeaten:
 	.string "I flamed out!$"
 
-UnionCave_1F_Text_FirebreatherBillAfter:
+UnionCave_1F_Text_FirebreatherWilburAfter:
 	.string "On weekends, you can hear strange\n"
 	.string "roars from deep in the cave.$"
 

@@ -1,6 +1,17 @@
 RuinsOfAlph_B1F_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, RuinsOfAlph_B1F_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, RuinsOfAlph_B1F_OnFrame
 	.byte 0
+
+@ The Ho-Oh puzzle's Rare Candy stays hidden until the puzzle is solved. This floor is open from
+@ outside, and saves already past VIOLET CITY never hid the ball there.
+RuinsOfAlph_B1F_OnTransition:
+	call_if_unset FLAG_COMPLETED_HOOH_PUZZLE, RuinsOfAlph_B1F_EventScript_HideRareCandy
+	end
+
+RuinsOfAlph_B1F_EventScript_HideRareCandy:
+	setflag FLAG_ITEM_RUINS_OF_ALPH_RARE_CANDY
+	return
 
 RuinsOfAlph_B1F_OnFrame::
 	map_script_2 VAR_RUINSOFALPH_STATE, 1, RuinsOfAlph_B1F_EventScript_Presence
@@ -48,8 +59,8 @@ RuinsOfAlph_PuzzleAndRewardChambers_EventScript_OldAmber::
 	finditem ITEM_OLD_AMBER
 	end
 
-RuinsOfAlph_PuzzleAndRewardChambers_EventScript_GSBALL::
-	finditem ITEM_GS_BALL
+RuinsOfAlph_PuzzleAndRewardChambers_EventScript_RareCandy::
+	finditem ITEM_RARE_CANDY
 	end
 
 RuinsOfAlph_B1F_Text_Presence:

@@ -227,15 +227,15 @@ RocketHideout_B3F_EventScript_IncrementPasswordGruntF::
 	setflag FLAG_GOT_PASSWORD_FROM_GRUNTF
 	end
 
-RocketHideout_B3F_EventScript_Eto::
-	trainerbattle_single TRAINER_ETO_2_HNS, RocketHideout_B3F_Text_GruntM28Seen, RocketHideout_B3F_Text_GruntM28Beaten
+RocketHideout_B3F_EventScript_GruntM28::
+	trainerbattle_single TRAINER_GRUNT_35_HNS, RocketHideout_B3F_Text_GruntM28Seen, RocketHideout_B3F_Text_GruntM28Beaten
 	msgbox RocketHideout_B3F_Text_GruntM28After, MSGBOX_NPC
-	goto_if_unset FLAG_GOT_PASSWORD_FROM_ETO, RocketHideout_B3F_EventScript_IncrementPasswordEto
+	goto_if_unset FLAG_GOT_PASSWORD_FROM_GRUNTM, RocketHideout_B3F_EventScript_IncrementPasswordGruntM
 	end
 
-RocketHideout_B3F_EventScript_IncrementPasswordEto::
+RocketHideout_B3F_EventScript_IncrementPasswordGruntM::
 	addvar VAR_ROCKET_PASSWORD, 1
-	setflag FLAG_GOT_PASSWORD_FROM_ETO
+	setflag FLAG_GOT_PASSWORD_FROM_GRUNTM
 	end
 
 RocketHideout_B3F_EventScript_Ross::
@@ -646,21 +646,17 @@ RocketHideout_B3F_Text_GruntF5After:
     .string "two passwords.$"
 
 RocketHideout_B3F_Text_GruntM28Seen:
-    .string "Hyuck-hyuck-hyuck!\p"
-    .string "I remember you from the well!\p"
-    .string "You're challenging me again?\p"
-    .string "Hah! You're nuts, but you have\n"
-    .string "guts!\p"
-    .string "I'll warn you, I got better!\p"
-    .string "If you can beat me, I'll tell\l"
-    .string "you a password to the boss'\n"
+    .string "Hold it! No brats allowed on\n"
+    .string "this floor!\p"
+    .string "If you can beat me, I'll tell\n"
+    .string "you a password to the boss'\l"
     .string "room!$"
 
 RocketHideout_B3F_Text_GruntM28Beaten:
-    .string "Hyuck-hyuck-hyuck! You're good!$"
+    .string "Argh! You're too good!$"
 
 RocketHideout_B3F_Text_GruntM28After:
-    .string "Hyuck-hyuck-hyuck!\p"
+    .string "A deal's a deal…\p"
     .string "The password to the boss' room…\p"
     .string "Uh…, I think it is RATICATE TAIL.$"
 

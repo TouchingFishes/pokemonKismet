@@ -33,8 +33,8 @@ SlowpokeWell_B1F_EventScript_Grunt22F::
 	msgbox SlowpokeWell_B1F_Text_GruntF1After, MSGBOX_AUTOCLOSE
 	end
 
-SlowpokeWell_B1F_EventScript_Eto::
-	trainerbattle_single TRAINER_ETO_HNS, SlowpokeWell_B1F_Text_GruntM2Seen, SlowpokeWell_B1F_Text_GruntM2Beaten
+SlowpokeWell_B1F_EventScript_GruntM2::
+	trainerbattle_single TRAINER_GRUNT_34_HNS, SlowpokeWell_B1F_Text_GruntM2Seen, SlowpokeWell_B1F_Text_GruntM2Beaten
 	msgbox SlowpokeWell_B1F_Text_GruntM2After, MSGBOX_AUTOCLOSE
 	end
 
@@ -141,14 +141,13 @@ SlowpokeWell_B1F_Text_ProtonAfter:
 	.string "what is to come!$"
 
 SlowpokeWell_B1F_Text_GruntM2Seen:
-	.string "Hyuck-hyuck-hyuck!\n"
-	.string "Quit taking SLOWPOKETAILS?\p"
-	.string "You're nuts!\n"
-	.string "If we obeyed you, TEAM ROCKET's\l"
+	.string "Quit taking SLOWPOKETAILS?\n"
+	.string "You're nuts!\p"
+	.string "If we obeyed you, TEAM ROCKET's\n"
 	.string "rep would be ruined!$"
 
 SlowpokeWell_B1F_Text_GruntM2Beaten:
-	.string "Hyuck…\n"
+	.string "Argh…\n"
 	.string "Too strong…$"
 
 SlowpokeWell_B1F_Text_GruntM2After:

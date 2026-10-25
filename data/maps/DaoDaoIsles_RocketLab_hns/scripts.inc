@@ -658,7 +658,7 @@ DaoDaoIsles_RocketLab_Text_Genesect:
 	.string "and locks on.$"
 
 DaoDaoIsles_RocketLab_Text_Notes:
-	.string "RESEARCH LOG — SPECIMEN G-0\p"
+	.string "RESEARCH LOG - SPECIMEN G-0\p"
 	.string "The fossil reconstruction is\n"
 	.string "complete. The organism's original\n"
 	.string "anatomy was insufficient for our\n"
@@ -695,7 +695,7 @@ DaoDaoIsles_RocketLab_Text_Notes:
 	.string "Something below it does.$"
 
 DaoDaoIsles_RocketLab_Text_Notes2:
-	.string "RESEARCH LOG — FOLLOW-UP\p"
+	.string "RESEARCH LOG - FOLLOW-UP\p"
 	.string "Specimen G-0 reacted to the gear\n"
 	.string "assembly again last night.\p"
 	.string "The moment KLINKLANG began turning,\n"
@@ -721,8 +721,8 @@ DaoDaoIsles_RocketLab_Text_Notes2:
 	.string "known record of civilization here.\p"
 	.string "Then he asked me a question I\n"
 	.string "haven't been able to forget:\n"
-	.string "\"What if we didn't invent the weapon?\n"
-	.string "What if we only reminded it?\"\p"
+	.string "“What if we didn't invent the weapon?\n"
+	.string "What if we only reminded it?”\p"
 	.string "KLINKLANG is outside the chamber\n"
 	.string "again. Its gears have stopped.\p"
 	.string "Something beneath the floor has\n"

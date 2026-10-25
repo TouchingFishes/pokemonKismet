@@ -8,6 +8,12 @@
 // docstring. Four are copy-paste leftovers from species swaps;
 // Drapion's and Gallade's could never fire, as nothing hatches
 // as either.
+//
+// HAND-ADDED, not from the fork (MIGRATION_DECISIONS.md §91): Shieldon,
+// Snivy, Tepig, Oshawott, Woobat, White-Striped Basculin, Chespin,
+// Fennekin and Froakie carry 2.0's lists minus the moves.h banlist.
+// eggmove_emit.py does not know them - re-add them after a --write;
+// banned_move_audit.py's egg pass reports it if they go missing.
 
 #include "constants/moves.h"
 
@@ -3020,6 +3026,23 @@ static const u16 sShinxEggMoveLearnset_KismetGen3[] = {
 };
 
 #endif
+#if P_FAMILY_SHIELDON
+// 2.0's list without the moves.h banlist (§91), not fork data
+static const u16 sShieldonEggMoveLearnset_KismetGen3[] = {
+    MOVE_HEADBUTT,
+    MOVE_SCARY_FACE,
+    MOVE_FOCUS_ENERGY,
+    MOVE_DOUBLE_EDGE,
+    MOVE_ROCK_BLAST,
+    MOVE_BODY_SLAM,
+    MOVE_SCREECH,
+    MOVE_CURSE,
+    MOVE_FISSURE,
+    MOVE_COUNTER,
+    MOVE_GUARD_SPLIT,
+    MOVE_UNAVAILABLE,
+};
+#endif
 #if P_FAMILY_BUIZEL
 static const u16 sBuizelEggMoveLearnset_KismetGen3[] = {
     MOVE_MUD_SLAP,
@@ -3207,6 +3230,48 @@ static const u16 sSnoverEggMoveLearnset_KismetGen3[] = {
 };
 
 #endif
+#if P_FAMILY_SNIVY
+// 2.0's list without the moves.h banlist (§91), not fork data
+static const u16 sSnivyEggMoveLearnset_KismetGen3[] = {
+    MOVE_GLARE,
+    MOVE_IRON_TAIL,
+    MOVE_MAGICAL_LEAF,
+    MOVE_SWEET_SCENT,
+    MOVE_MIRROR_COAT,
+    MOVE_PURSUIT,
+    MOVE_MEAN_LOOK,
+    MOVE_TWISTER,
+    MOVE_UNAVAILABLE,
+};
+#endif
+#if P_FAMILY_TEPIG
+// 2.0's list without the moves.h banlist (§91), not fork data
+static const u16 sTepigEggMoveLearnset_KismetGen3[] = {
+    MOVE_COVET,
+    MOVE_BODY_SLAM,
+    MOVE_THRASH,
+    MOVE_MAGNITUDE,
+    MOVE_SUPERPOWER,
+    MOVE_CURSE,
+    MOVE_ENDEAVOR,
+    MOVE_YAWN,
+    MOVE_SLEEP_TALK,
+    MOVE_HEAVY_SLAM,
+    MOVE_UNAVAILABLE,
+};
+#endif
+#if P_FAMILY_OSHAWOTT
+// 2.0's list without the moves.h banlist (§91), not fork data
+static const u16 sOshawottEggMoveLearnset_KismetGen3[] = {
+    MOVE_COPYCAT,
+    MOVE_DETECT,
+    MOVE_AIR_SLASH,
+    MOVE_BRINE,
+    MOVE_NIGHT_SLASH,
+    MOVE_SCREECH,
+    MOVE_UNAVAILABLE,
+};
+#endif
 #if P_FAMILY_ROGGENROLA
 static const u16 sRoggenrolaEggMoveLearnset_KismetGen3[] = {
     MOVE_MAGNITUDE,
@@ -3219,6 +3284,29 @@ static const u16 sRoggenrolaEggMoveLearnset_KismetGen3[] = {
     MOVE_UNAVAILABLE,
 };
 
+#endif
+#if P_FAMILY_WOOBAT
+// 2.0's list without the moves.h banlist (§91), not fork data
+static const u16 sWoobatEggMoveLearnset_KismetGen3[] = {
+    MOVE_CHARM,
+    MOVE_KNOCK_OFF,
+    MOVE_FAKE_TEARS,
+    MOVE_SUPERSONIC,
+    MOVE_STORED_POWER,
+    MOVE_ROOST,
+    MOVE_FLATTER,
+    MOVE_HELPING_HAND,
+    MOVE_UNAVAILABLE,
+};
+#endif
+#if P_FAMILY_BASCULIN
+#if P_HISUIAN_FORMS || P_KISMET_BASCULEGION
+// 2.0's list without the moves.h banlist (§91), not fork data
+static const u16 sBasculinWhiteStripedEggMoveLearnset_KismetGen3[] = {
+    MOVE_ENDEAVOR,
+    MOVE_UNAVAILABLE,
+};
+#endif
 #endif
 #if P_FAMILY_SANDILE
 static const u16 sSandileEggMoveLearnset_KismetGen3[] = {
@@ -3401,6 +3489,39 @@ static const u16 sLarvestaEggMoveLearnset_KismetGen3[] = {
     MOVE_UNAVAILABLE,
 };
 
+#endif
+#if P_FAMILY_CHESPIN
+// 2.0's list without the moves.h banlist (§91), not fork data
+static const u16 sChespinEggMoveLearnset_KismetGen3[] = {
+    MOVE_SYNTHESIS,
+    MOVE_BELLY_DRUM,
+    MOVE_CURSE,
+    MOVE_SPIKES,
+    MOVE_DEFENSE_CURL,
+    MOVE_ROLLOUT,
+    MOVE_UNAVAILABLE,
+};
+#endif
+#if P_FAMILY_FENNEKIN
+// 2.0's list without the moves.h banlist (§91), not fork data
+static const u16 sFennekinEggMoveLearnset_KismetGen3[] = {
+    MOVE_WISH,
+    MOVE_HYPNOSIS,
+    MOVE_HEAT_WAVE,
+    MOVE_MAGIC_COAT,
+    MOVE_UNAVAILABLE,
+};
+#endif
+#if P_FAMILY_FROAKIE
+// 2.0's list without the moves.h banlist (§91), not fork data
+static const u16 sFroakieEggMoveLearnset_KismetGen3[] = {
+    MOVE_MIND_READER,
+    MOVE_TOXIC_SPIKES,
+    MOVE_MUD_SPORT,
+    MOVE_CAMOUFLAGE,
+    MOVE_WATER_SPORT,
+    MOVE_UNAVAILABLE,
+};
 #endif
 #if P_FAMILY_FLETCHLING
 static const u16 sFletchlingEggMoveLearnset_KismetGen3[] = {

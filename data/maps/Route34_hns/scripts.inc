@@ -69,9 +69,9 @@ Route34_EventScript_OfficerKeith::
 	end
 
 
-Route34_EventScript_PokefanMBrandon::
-	trainerbattle_single TRAINER_BRANDON_HNS, Route34_Text_PokefanBrandon_Seen, Route34_Text_PokefanBrandon_Beaten
-	msgbox Route34_Text_PokefanBrandon_After, MSGBOX_AUTOCLOSE
+Route34_EventScript_PokefanMBraden::
+	trainerbattle_single TRAINER_BRADEN_HNS, Route34_Text_PokefanBraden_Seen, Route34_Text_PokefanBraden_Beaten
+	msgbox Route34_Text_PokefanBraden_After, MSGBOX_AUTOCLOSE
 	end
 
 Route34_EventScript_Irene::
@@ -198,15 +198,15 @@ Route34_Text_OfficerKeith_Daytime:
 	.string "I'm on patrol for suspicious\n"
 	.string "individuals.$"
 
-Route34_Text_PokefanBrandon_Seen:
+Route34_Text_PokefanBraden_Seen:
 	.string "I just got my POKéMON back from\n"
 	.string "DAY-CARE.\p"
 	.string "Let's see how much stronger it got!$"
 
-Route34_Text_PokefanBrandon_Beaten:
+Route34_Text_PokefanBraden_Beaten:
 	.string "Why does it end this way?$"
 
-Route34_Text_PokefanBrandon_After:
+Route34_Text_PokefanBraden_After:
 	.string "My POKéMON came back with new moves.\p"
 	.string "That confounded me to no end!$"
 

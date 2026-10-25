@@ -913,6 +913,13 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
 
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
+    // Vanilla reloads only the secondary tileset here, because all its outdoor maps share one
+    // primary. HnS spreads Johto and Kanto over several primaries, so a seam can change it
+    // (CHERRYGROVE BAY is Johto_South, CHERRYGROVE CITY Johto_General), and the new map was
+    // drawn from the old primary's tiles and palettes until a warp reloaded everything.
+    const struct Tileset *prevPrimary = gMapHeader.mapLayout->primaryTileset;
+    bool32 primaryChanged;
+
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
     // Dont transition map music between BF Outside West/East
@@ -941,12 +948,24 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     InitMap();
+    primaryChanged = (gMapHeader.mapLayout->primaryTileset != prevPrimary);
+    if (primaryChanged)
+    {
+        CopyPrimaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
+        LoadPrimaryTilesetPalette(gMapHeader.mapLayout, TRUE);
+    }
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
     LoadSecondaryTilesetPalette(gMapHeader.mapLayout, TRUE); // skip copying to Faded, gamma shift will take care of it
 
-    ApplyWeatherColorMapToPals(GetNumPalsInPrimary(gMapHeader.mapLayout), NUM_PALS_TOTAL - GetNumPalsInPrimary(gMapHeader.mapLayout)); // palettes [6,12]
+    if (primaryChanged)
+        ApplyWeatherColorMapToPals(0, NUM_PALS_TOTAL);
+    else
+        ApplyWeatherColorMapToPals(GetNumPalsInPrimary(gMapHeader.mapLayout), NUM_PALS_TOTAL - GetNumPalsInPrimary(gMapHeader.mapLayout)); // palettes [6,12]
 
-    InitSecondaryTilesetAnimation();
+    if (primaryChanged)
+        InitTilesetAnimations();
+    else
+        InitSecondaryTilesetAnimation();
     UpdateLocationHistoryForRoamer();
     MoveAllRoamers();
     TryShowRoamerFlash();

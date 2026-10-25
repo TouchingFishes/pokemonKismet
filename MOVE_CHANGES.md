@@ -17,8 +17,8 @@ Regenerate with `py -3 .claude/gen_move_changes.py`. Do not hand-edit — it is 
 
 | | |
 |---|---:|
-| Moves changed | 130 |
-| Field changes applied | 179 |
+| Moves changed | 131 |
+| Field changes applied | 180 |
 | …whose base value is itself a gen-gated expression | 61 |
 | Excluded by decision | 8 |
 | Representation-only differences, not ported | 37 |
@@ -57,7 +57,7 @@ Nothing is hardcoded. `include/config/general.h` defines `CUSTOM_FOR_KISMET` as 
 
 To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATED_MOVE_TYPES` in `include/config/battle.h` back to `GEN_LATEST`. The two gates are independent: types and numeric data can be reverted separately.
 
-61 of the 179 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
+61 of the 180 changes have a base value that is itself a gen-gated expression; those are preserved verbatim as the else branch, so reverting restores the full generational behaviour rather than a flattened snapshot.
 
 ## All changes
 
@@ -195,6 +195,7 @@ To restore stock expansion move data, set `B_UPDATED_MOVE_DATA` and/or `B_UPDATE
 | `ROCK_TOMB` | Power | (B_UPDATED_MOVE_DATA >= GEN_6 ? 60 : 50) | **70** | yes |
 | `ROLLING_KICK` | Accuracy | 85 | **100** |  |
 | `ROLLING_KICK` | Power | 60 | **75** |  |
+| `SANDSEAR_STORM` | Never misses in sandstorm | FALSE | **TRUE** |  |
 | `SHADOW_PUNCH` | Power | 60 | **80** |  |
 | `SIGNAL_BEAM` | Secondary chance | 10 | **20** |  |
 | `SILVER_WIND` | Secondary chance | 10 | **15** |  |

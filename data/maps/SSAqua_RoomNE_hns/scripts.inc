@@ -1,9 +1,9 @@
 SSAqua_RoomNE_hns_MapScripts::
 	.byte 0
 
-SSAqua_RoomNE_EventScript_Noland::
-	trainerbattle_single TRAINER_NOLAND_HNS, SSAqua_RoomNE_Text_HikerNolandSeen, SSAqua_RoomNE_Text_HikerNolandBeaten
-	msgbox SSAqua_RoomNE_Text_HikerNolandAfterBattle, MSGBOX_AUTOCLOSE
+SSAqua_RoomNE_EventScript_Landon::
+	trainerbattle_single TRAINER_LANDON_HNS, SSAqua_RoomNE_Text_HikerLandonSeen, SSAqua_RoomNE_Text_HikerLandonBeaten
+	msgbox SSAqua_RoomNE_Text_HikerLandonAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
 SSAqua_RoomNE_EventScript_Ethan::
@@ -11,14 +11,14 @@ SSAqua_RoomNE_EventScript_Ethan::
 	msgbox SSAqua_RoomNE_Text_PokemaniacEthanAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-SSAqua_RoomNE_Text_HikerNolandSeen:
+SSAqua_RoomNE_Text_HikerLandonSeen:
     .string "Are you alone?\n"
     .string "Then let's battle!$"
 
-SSAqua_RoomNE_Text_HikerNolandBeaten:
+SSAqua_RoomNE_Text_HikerLandonBeaten:
     .string "That's too much to handle!$"
 
-SSAqua_RoomNE_Text_HikerNolandAfterBattle:
+SSAqua_RoomNE_Text_HikerLandonAfterBattle:
     .string "I wonder if there are any\n"
     .string "mountains worth climbing in KANTO?$"
 

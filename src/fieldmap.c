@@ -1069,9 +1069,15 @@ void CopySecondaryTilesetToVramUsingHeap(struct MapLayout const *mapLayout)
     CopyTilesetToVramUsingHeap(mapLayout->secondaryTileset, NUM_TILES_TOTAL - GetNumTilesInPrimary(mapLayout), GetNumTilesInPrimary(mapLayout));
 }
 
-static void LoadPrimaryTilesetPalette(struct MapLayout const *mapLayout)
+// Only needed mid-walk when a seam joins two primary tilesets (LoadMapFromCameraTransition)
+void CopyPrimaryTilesetToVramUsingHeap(struct MapLayout const *mapLayout)
 {
-    LoadTilesetPalette(mapLayout->primaryTileset, 0, GetNumPalsInPrimary(mapLayout) * PLTT_SIZE_4BPP, FALSE, GetNumPalsInPrimary(mapLayout));
+    CopyTilesetToVramUsingHeap(mapLayout->primaryTileset, GetNumTilesInPrimary(mapLayout), 0);
+}
+
+void LoadPrimaryTilesetPalette(struct MapLayout const *mapLayout, bool8 skipFaded)
+{
+    LoadTilesetPalette(mapLayout->primaryTileset, 0, GetNumPalsInPrimary(mapLayout) * PLTT_SIZE_4BPP, skipFaded, GetNumPalsInPrimary(mapLayout));
 }
 
 void LoadSecondaryTilesetPalette(struct MapLayout const *mapLayout, bool8 skipFaded)
@@ -1092,7 +1098,7 @@ void LoadMapTilesetPalettes(struct MapLayout const *mapLayout)
 {
     if (mapLayout)
     {
-        LoadPrimaryTilesetPalette(mapLayout);
+        LoadPrimaryTilesetPalette(mapLayout, FALSE);
         LoadSecondaryTilesetPalette(mapLayout, FALSE);
     }
 }

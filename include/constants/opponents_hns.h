@@ -157,15 +157,15 @@
 #define TRAINER_GRUNT_31_HNS                          149
 #define TRAINER_GRUNT_32_HNS                          150
 #define TRAINER_GRUNT_33_HNS                          151
-#define TRAINER_ETO_HNS                               152
-#define TRAINER_ETO_2_HNS                             153
-#define TRAINER_ETO_3_HNS                             154
+#define TRAINER_GRUNT_34_HNS                          152
+#define TRAINER_GRUNT_35_HNS                          153
+#define TRAINER_GRUNT_36_HNS                          154
 #define TRAINER_PRESTON_HNS                           155
 #define TRAINER_EDWARD_HNS                            156
 #define TRAINER_GREGORY_HNS                           157
 #define TRAINER_VIRGIL_HNS                            158
 #define TRAINER_ALFRED_HNS                            159
-#define TRAINER_ROXANNE_HNS                           160
+#define TRAINER_CELIA_HNS                             160
 #define TRAINER_CLARISSA_HNS                          161
 #define TRAINER_COLETTE_HNS                           162
 #define TRAINER_HILLARY_HNS                           163
@@ -211,7 +211,7 @@
 #define TRAINER_WALTER_HNS                            203
 #define TRAINER_TONY_HNS                              204
 #define TRAINER_JEROME_HNS                            205
-#define TRAINER_TUCKER_HNS                            206
+#define TRAINER_TANNER_HNS                            206
 #define TRAINER_RICK_HNS                              207
 #define TRAINER_CAMERON_HNS                           208
 #define TRAINER_SETH_HNS                              209
@@ -274,8 +274,8 @@
 #define TRAINER_TIMOTHY_HNS                           266
 #define TRAINER_BAILEY_HNS                            267
 #define TRAINER_TIM_HNS                               268
-#define TRAINER_NOLAND_HNS                            269
-#define TRAINER_SIDNEY_HNS                            270
+#define TRAINER_LANDON_HNS                            269
+#define TRAINER_DENNIS_HNS                            270
 #define TRAINER_KENNY_HNS                             271
 #define TRAINER_JIM_HNS                               272
 #define TRAINER_DEVIN_HNS                             273
@@ -297,7 +297,7 @@
 #define TRAINER_DICK_HNS                              289
 #define TRAINER_NED_HNS                               290
 #define TRAINER_BURT_HNS                              291
-#define TRAINER_BILL_HNS                              292
+#define TRAINER_WILBUR_HNS                            292
 #define TRAINER_WALT_HNS                              293
 #define TRAINER_RAY_HNS                               294
 #define TRAINER_LYLE_HNS                              295
@@ -316,7 +316,7 @@
 #define TRAINER_HERMAN_HNS                            308
 #define TRAINER_FIDEL_HNS                             309
 #define TRAINER_GREG_HNS                              310
-#define TRAINER_NORMAN_HNS                            311
+#define TRAINER_NORRIS_HNS                            311
 #define TRAINER_MARK_HNS                              312
 #define TRAINER_PHIL_HNS                              313
 #define TRAINER_RICHARD_HNS                           314
@@ -388,7 +388,7 @@
 #define TRAINER_JO_AND_LEXI_HNS                              375
 #define TRAINER_CARTER_HNS                            376
 #define TRAINER_TREVOR_HNS                            377
-#define TRAINER_BRANDON_HNS                           378
+#define TRAINER_BRADEN_HNS                            378
 #define TRAINER_JEREMY_HNS                            379
 #define TRAINER_COLIN_HNS                             380
 #define TRAINER_ALEX_HNS                              381

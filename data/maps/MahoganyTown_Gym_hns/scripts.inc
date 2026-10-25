@@ -54,9 +54,9 @@ MahoganyTown_Gym_EventScript_Douglas::
 	msgbox MahoganyTown_Gym_Text_BoarderDouglasAfter, MSGBOX_AUTOCLOSE
 	end
 
-MahoganyTown_Gym_EventScript_Roxanne::
-	trainerbattle_single TRAINER_ROXANNE_HNS, MahoganyTown_Gym_Text_SkierRoxanneSeen, MahoganyTown_Gym_Text_SkierRoxanneBeaten
-	msgbox MahoganyTown_Gym_Text_SkierRoxanneAfter, MSGBOX_AUTOCLOSE
+MahoganyTown_Gym_EventScript_Celia::
+	trainerbattle_single TRAINER_CELIA_HNS, MahoganyTown_Gym_Text_SkierCeliaSeen, MahoganyTown_Gym_Text_SkierCeliaBeaten
+	msgbox MahoganyTown_Gym_Text_SkierCeliaAfter, MSGBOX_AUTOCLOSE
 	end
 
 MahoganyTown_Gym_EventScript_Clarissa::
@@ -241,14 +241,14 @@ MahoganyTown_Gym_Text_BoarderDouglasAfter:
     .string "daily to strengthen his mind\l"
     .string "and body.$"
 
-MahoganyTown_Gym_Text_SkierRoxanneSeen:
+MahoganyTown_Gym_Text_SkierCeliaSeen:
     .string "To get to PRYCE, our GYM LEADER,\n"
     .string "you need to think before you skate.$"
 
-MahoganyTown_Gym_Text_SkierRoxanneBeaten:
+MahoganyTown_Gym_Text_SkierCeliaBeaten:
     .string "I wouldn't lose to you in skiing!$"
 
-MahoganyTown_Gym_Text_SkierRoxanneAfter:
+MahoganyTown_Gym_Text_SkierCeliaAfter:
     .string "If you don't skate with precision,\n"
     .string "you won't get far in this GYM.$"
 

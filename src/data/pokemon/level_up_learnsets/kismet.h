@@ -11493,6 +11493,7 @@ static const struct LevelUpMove sRegidragoLevelUpLearnset_Kismet[] = {
 #if P_FAMILY_BASCULIN
 #if P_HISUIAN_FORMS || P_KISMET_BASCULEGION
 static const struct LevelUpMove sBasculegionLevelUpLearnset_Kismet[] = {
+    LEVEL_UP_MOVE( 1, MOVE_PHANTOM_FORCE),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 6, MOVE_AQUA_JET),
     LEVEL_UP_MOVE(11, MOVE_BITE),

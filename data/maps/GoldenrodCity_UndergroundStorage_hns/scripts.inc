@@ -30,8 +30,8 @@ GoldenrodCity_UndergroundStorage_EventScript_Grunt12::
 	msgbox RadioTowerBasement_Text_GruntM14After, MSGBOX_AUTOCLOSE
 	end
 
-GoldenrodCity_UndergroundStorage_EventScript_Eto::
-    trainerbattle_single TRAINER_ETO_3_HNS, RadioTowerBasement_Text_GruntM15Seen, RadioTowerBasement_Text_GruntM15Beaten
+GoldenrodCity_UndergroundStorage_EventScript_Grunt36::
+    trainerbattle_single TRAINER_GRUNT_36_HNS, RadioTowerBasement_Text_GruntM15Seen, RadioTowerBasement_Text_GruntM15Beaten
 	msgbox RadioTowerBasement_Text_GruntM15After, MSGBOX_AUTOCLOSE
 	end
 
@@ -73,19 +73,17 @@ RadioTowerBasement_Text_GruntM14After:
     .string "Please forgive me, GIOVANNI!$"
 
 RadioTowerBasement_Text_GruntM15Seen:
-    .string "Hyuck-hyuck-hyuck! Look who it is!\p"
-    .string "Ready? I'm really tough now!$"
+    .string "You made it all the way down\n"
+    .string "here? You've got some nerve!\p"
+    .string "TEAM ROCKET won't let you\n"
+    .string "ruin our big plan!$"
 
 RadioTowerBasement_Text_GruntM15Beaten:
-    .string "Hyuck-hyuck-hyuck! You're so good!\p"
-    .string "This TEAM ROCKET thing is just\n"
-    .string "a job, but I can see it hurts others.\p"
-    .string "That's it, I'm leaving.\p"
-    .string "Thank you so much. Sorry GIOVANNI!$"
+    .string "No! The boss will be furious…$"
 
 RadioTowerBasement_Text_GruntM15After:
-    .string "Hyuck-hyuck-hyuck! That was a blast!\n"
-    .string "I'll remember you!$"
+    .string "We'll take over the RADIO TOWER\n"
+    .string "no matter what you do!$"
 
 RadioTowerBasement_Text_DirectorIntro:
     .string "DIRECTOR: Who? What? You came to\n"

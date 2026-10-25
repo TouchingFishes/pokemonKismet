@@ -49,11 +49,13 @@ OlivineCity_EventScript_SilverTrigger::
 	call_if_eq VAR_TEMP_1, 28, OlivineCity_EventScript_SilverWalkToPlayer1
 	call_if_eq VAR_TEMP_1, 29, OlivineCity_EventScript_SilverWalkToPlayer2
 	call_if_eq VAR_TEMP_1, 30, OlivineCity_EventScript_SilverWalkToPlayer3
+	call_if_eq VAR_TEMP_1, 32, OlivineCity_EventScript_SilverWalkToPlayerSouth
 	msgbox OlivineCity_Text_SilverEncounter, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_TEMP_1, 28, OlivineCity_EventScript_SilverLeaveAdjust1
 	call_if_eq VAR_TEMP_1, 29, OlivineCity_EventScript_SilverLeaveAdjust2
 	call_if_eq VAR_TEMP_1, 30, OlivineCity_EventScript_SilverLeaveAdjust2
+	call_if_eq VAR_TEMP_1, 32, OlivineCity_EventScript_SilverLeaveAdjustSouth
 	applymovement LOCALID_OLIVINE_SILVER, OlivineCity_Movement_SilverLeave
 	waitmovement 0
 	setvar VAR_OLIVINE_CITY_STATE, 2
@@ -88,6 +90,51 @@ OlivineCity_EventScript_SilverLeaveAdjust2::
 	waitmovement 0
 	return
 
+@ From the south the player is on (10-12,32), the only way past the gym on that side. SILVER
+@ comes down to the tile above them, and afterwards lines up on (13,30), where the usual exit
+@ runs clear of the gym wall.
+OlivineCity_EventScript_SilverWalkToPlayerSouth::
+	call_if_eq VAR_TEMP_0, 10, OlivineCity_EventScript_SilverWalkToPlayerSouthWest
+	call_if_eq VAR_TEMP_0, 11, OlivineCity_EventScript_SilverWalkToPlayerSouthMid
+	call_if_eq VAR_TEMP_0, 12, OlivineCity_EventScript_SilverWalkToPlayerSouthEast
+	return
+
+OlivineCity_EventScript_SilverWalkToPlayerSouthWest::
+	applymovement LOCALID_OLIVINE_SILVER, OlivineCity_Movement_SilverWalkToPlayerSouthWest
+	waitmovement 0
+	return
+
+OlivineCity_EventScript_SilverWalkToPlayerSouthMid::
+	applymovement LOCALID_OLIVINE_SILVER, OlivineCity_Movement_SilverWalkToPlayerSouthMid
+	waitmovement 0
+	return
+
+OlivineCity_EventScript_SilverWalkToPlayerSouthEast::
+	applymovement LOCALID_OLIVINE_SILVER, OlivineCity_Movement_SilverWalkToPlayerSouthEast
+	waitmovement 0
+	return
+
+OlivineCity_EventScript_SilverLeaveAdjustSouth::
+	call_if_eq VAR_TEMP_0, 10, OlivineCity_EventScript_SilverLeaveAdjustSouthWest
+	call_if_eq VAR_TEMP_0, 11, OlivineCity_EventScript_SilverLeaveAdjustSouthMid
+	call_if_eq VAR_TEMP_0, 12, OlivineCity_EventScript_SilverLeaveAdjustSouthEast
+	return
+
+OlivineCity_EventScript_SilverLeaveAdjustSouthWest::
+	applymovement LOCALID_OLIVINE_SILVER, OlivineCity_Movement_SilverLeaveAdjustSouthWest
+	waitmovement 0
+	return
+
+OlivineCity_EventScript_SilverLeaveAdjustSouthMid::
+	applymovement LOCALID_OLIVINE_SILVER, OlivineCity_Movement_SilverLeaveAdjustSouthMid
+	waitmovement 0
+	return
+
+OlivineCity_EventScript_SilverLeaveAdjustSouthEast::
+	applymovement LOCALID_OLIVINE_SILVER, OlivineCity_Movement_SilverLeaveAdjustSouthEast
+	waitmovement 0
+	return
+
 OlivineCity_Movement_SilverWalkToPlayer1:
 	walk_down
 	walk_right
@@ -110,6 +157,46 @@ OlivineCity_Movement_SilverWalkToPlayer3:
 	walk_right
 	step_end
 
+
+@ (11,27) -> (10,31)
+OlivineCity_Movement_SilverWalkToPlayerSouthWest:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_down
+	step_end
+@ (11,27) -> (11,31)
+OlivineCity_Movement_SilverWalkToPlayerSouthMid:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+@ (11,27) -> (12,31)
+OlivineCity_Movement_SilverWalkToPlayerSouthEast:
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_down
+	step_end
+@ the three below end on (13,30), where OlivineCity_Movement_SilverLeave picks up
+OlivineCity_Movement_SilverLeaveAdjustSouthWest:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	step_end
+OlivineCity_Movement_SilverLeaveAdjustSouthMid:
+	walk_up
+	walk_right
+	walk_right
+	step_end
+OlivineCity_Movement_SilverLeaveAdjustSouthEast:
+	walk_up
+	walk_right
+	step_end
 
 OlivineCity_Movement_SilverLeave:
 	walk_right

@@ -6,6 +6,9 @@ PokemonLeague_ChampionsRoom_hns_MapScripts::
 
 PokemonLeague_ChampionsRoom_OnTransition:
 	setflag FLAG_TEMP_HIDE_CHALLENGER
+	@ MARY and OAK only appear through addobject, which ignores this flag. Route 27 is the
+	@ only other place that sets it, so a player who never walked it saw them standing here.
+	setflag FLAG_HIDE_INDIGO_PLATEAU_MARY_OAK
 	end
 
 PokemonLeague_ChampionsRoom_OnResume::

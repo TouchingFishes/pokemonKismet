@@ -317,20 +317,20 @@ Route39_Text_PokefanFRuthAfter:
 	.string "POKéMON?\p"
 	.string "I bet they're just adorable!$"
 
-Route39_EventScript_Norman::
-	trainerbattle_single TRAINER_NORMAN_HNS, Route39_Text_PsychicNormanSeen, Route39_Text_PsychicNormanBeaten
-	msgbox Route39_Text_PsychicNormanAfter, MSGBOX_AUTOCLOSE
+Route39_EventScript_Norris::
+	trainerbattle_single TRAINER_NORRIS_HNS, Route39_Text_PsychicNorrisSeen, Route39_Text_PsychicNorrisBeaten
+	msgbox Route39_Text_PsychicNorrisAfter, MSGBOX_AUTOCLOSE
 	end
 
-Route39_Text_PsychicNormanSeen:
+Route39_Text_PsychicNorrisSeen:
 	.string "Let me see what your\n"
 	.string "POKéMON are capable of.$"
 
-Route39_Text_PsychicNormanBeaten:
+Route39_Text_PsychicNorrisBeaten:
 	.string "Ooh, your POKéMON have\n"
 	.string "potential.$"
 
-Route39_Text_PsychicNormanAfter:
+Route39_Text_PsychicNorrisAfter:
 	.string "You know how POKéMON have\n"
 	.string "different abilities?\p"
 	.string "People are like that too.\n"

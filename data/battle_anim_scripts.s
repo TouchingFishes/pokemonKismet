@@ -1439,40 +1439,34 @@ gBattleAnimMove_PoisonJab::
 	blendoff
 	end
 
+@ The fork's Dark Pulse (pokemonHnS, Move_DARK_PULSE), on Moritz's word.
 gBattleAnimMove_DarkPulse::
-	loadspritegfx ANIM_TAG_PURPLE_RING
+	loadspritegfx ANIM_TAG_THIN_RING
 	monbg ANIM_TARGET
 	fadetobg BG_DARK
 	waitbgfadein
+	delay 0
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB(9, 8, 7), 12
+	createvisualtask AnimTask_SpiteTargetShadow, 2
 	loopsewithpan SE_M_PSYBEAM, SOUND_PAN_TARGET, 20, 3
-	createvisualtask AnimTask_SwayMon, ANIM_TARGET, 0, 6, 0x0800, 8, ANIM_TARGET
-	blend_color_cycle selector=F_PAL_TARGET, delay=2, num_blends=4, initial_blend_y=0, target_blend_y=12, color=RGB(30, 10, 13)
-	call DarkPulseParticle
-	call DarkPulseParticle
-	call DarkPulseParticle
+	delay 8
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB(9, 8, 7), 12
+	delay 8
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB(9, 8, 7), 12
+	delay 8
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB(9, 8, 7), 12
+	delay 8
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB(9, 8, 7), 12
+	delay 8
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB(9, 8, 7), 12
+	delay 8
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB(9, 8, 7), 12
 	waitforvisualfinish
-	blendoff
 	clearmonbg ANIM_TARGET
+	delay 1
 	restorebg
 	waitbgfadein
 	end
-DarkPulseParticle:
-	createsprite gDarkPulseSpriteTemplate, ANIM_TARGET, 2, 0, 0, 16
-	delay 2
-	createsprite gDarkPulseSpriteTemplate, ANIM_TARGET, 2, 0, 0, 16
-	delay 2
-	createsprite gDarkPulseSpriteTemplate, ANIM_TARGET, 2, 0, 0, 16
-	delay 2
-	createsprite gDarkPulseSpriteTemplate, ANIM_TARGET, 2, 0, 0, 16
-	delay 2
-	createsprite gDarkPulseSpriteTemplate, ANIM_TARGET, 2, 0, 0, 16
-	delay 2
-	createsprite gDarkPulseSpriteTemplate, ANIM_TARGET, 2, 0, 0, 16
-	delay 2
-	createsprite gDarkPulseSpriteTemplate, ANIM_TARGET, 2, 0, 0, 16
-	delay 2
-	createsprite gDarkPulseSpriteTemplate, ANIM_TARGET, 2, 0, 0, 16
-	return
 
 gBattleAnimMove_NightSlash::
 	loadspritegfx ANIM_TAG_SLASH

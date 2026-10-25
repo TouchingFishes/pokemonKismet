@@ -87,7 +87,7 @@ const struct ContestEffect gContestEffects[] =
     [CONTEST_EFFECT_STARTLE_PREV_MON] =
     {
         #if C_UPDATED_MOVE_EFFECTS >= GEN_6
-        .description = COMPOUND_STRING("Startles the last Pokémon\nto act before the user."),
+        .description = COMPOUND_STRING("Startles the last POKéMON\nto act before the user."),
         #else
         .description = COMPOUND_STRING("Startles the POKéMON that\nappealed before the user."),
         #endif
@@ -99,7 +99,7 @@ const struct ContestEffect gContestEffects[] =
     [CONTEST_EFFECT_STARTLE_PREV_MONS] =
     {
         #if C_UPDATED_MOVE_EFFECTS >= GEN_6
-        .description = COMPOUND_STRING("Startles all of the Pokémon\nto act before the user."),
+        .description = COMPOUND_STRING("Startles all of the POKéMON\nto act before the user."),
         #else
         .description = COMPOUND_STRING("Startles all POKéMON that\nhave done their appeals."),
         #endif
@@ -227,7 +227,7 @@ const struct ContestEffect gContestEffects[] =
     [CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS] =
     {
         #if C_UPDATED_MOVE_EFFECTS >= GEN_6
-        .description = COMPOUND_STRING("Makes the remaining\nPokémon nervous."),
+        .description = COMPOUND_STRING("Makes the remaining\nPOKéMON nervous."),
         #else
         .description = COMPOUND_STRING("Makes all POKéMON after\nthe user nervous."),
         #endif
@@ -323,7 +323,7 @@ const struct ContestEffect gContestEffects[] =
     [CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL] =
     {
         #if C_UPDATED_MOVE_EFFECTS >= GEN_6
-        .description = COMPOUND_STRING("Affected by how well the\nprevious Pokémon's move went."),
+        .description = COMPOUND_STRING("Affected by how well the\nprevious POKéMON's move went."),
         #else
         .description = COMPOUND_STRING("Affected by how well the\nappeal in front goes."),
         #endif

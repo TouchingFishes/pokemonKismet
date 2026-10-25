@@ -153,7 +153,7 @@ static const u8 sCreditsText_TheSmithPlaysGameplay[]           = _("Crystal Lega
 static const u8 sCreditsText_Dialogue[]                        = _("Dialogue");
 static const u8 sCreditsText_TheSmithPlaysDialogue[]           = _("Crystal Legacy - TSP");
 
-static const u8 sCreditsText_SurfMons[]                        = _("Surfing Pokémon");
+static const u8 sCreditsText_SurfMons[]                        = _("Surfing POKéMON");
 static const u8 sCreditsText_slawter666[]                      = _("slawter666");
 static const u8 sCreditsText_wally217[]                        = _("wally-217");
 

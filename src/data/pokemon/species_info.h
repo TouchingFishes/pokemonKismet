@@ -209,7 +209,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .height = 0,
         .weight = 0,
         .description = COMPOUND_STRING(
-            "This is a newly discovered Pokémon.\n"
+            "This is a newly discovered POKéMON.\n"
             "It is currently under investigation.\n"
             "No detailed information is available\n"
             "at this time."),

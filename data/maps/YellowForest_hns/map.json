@@ -209,7 +209,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "YellowForest_EventScript_Pikachu",
-      "flag": "FLAG_HIDE_YELLOW_FOREST_PIKACHU"
+      "flag": "FLAG_TEMP_12"
     }
   ],
   "warp_events": [

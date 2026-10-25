@@ -6,7 +6,15 @@ YellowForest_hns_MapScripts::
 YellowForest_OnTransition:
 	callnative SetTimeBasedEncounters
 	call_if_unset FLAG_HIDE_YELLOW_FOREST_PIKACHU, YellowForest_EventScript_HideLightBall
+	call_if_unset FLAG_DEFEATED_RED, YellowForest_EventScript_HidePikachu
+	call_if_set FLAG_HIDE_YELLOW_FOREST_PIKACHU, YellowForest_EventScript_HidePikachu
 	end
+
+@ The Pikachu sleeps here only once RED is beaten. FLAG_TEMP_12 is its object flag, worked out on
+@ every load; FLAG_HIDE_YELLOW_FOREST_PIKACHU stays the permanent record of its battle.
+YellowForest_EventScript_HidePikachu:
+	setflag FLAG_TEMP_12
+	return
 
 @ The LIGHT BALL ball only shows once the Pikachu has run off without being caught.
 YellowForest_EventScript_HideLightBall:

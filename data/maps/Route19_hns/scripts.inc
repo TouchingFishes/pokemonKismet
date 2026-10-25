@@ -12,9 +12,9 @@ Route19_EventScript_Harold::
 	msgbox Route19_Text_SwimmermHaroldAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route19_EventScript_Tucker::
-	trainerbattle_single TRAINER_TUCKER_HNS, Route19_Text_SwimmermTuckerSeen, Route19_Text_SwimmermTuckerBeaten
-	msgbox Route19_Text_SwimmermTuckerAfterBattle, MSGBOX_AUTOCLOSE
+Route19_EventScript_Tanner::
+	trainerbattle_single TRAINER_TANNER_HNS, Route19_Text_SwimmermTannerSeen, Route19_Text_SwimmermTannerBeaten
+	msgbox Route19_Text_SwimmermTannerAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route19_EventScript_Dawn::
@@ -69,14 +69,14 @@ Route19_Text_SwimmermHaroldAfterBattle:
 	.string "At night, the sea turns black. It\n"
 	.string "feels like it will swallow you up.$"
 
-Route19_Text_SwimmermTuckerSeen:
+Route19_Text_SwimmermTannerSeen:
 	.string "Pant, pant… Just… a little…\p"
 	.string "farther… to… FUCHSIA…$"
 
-Route19_Text_SwimmermTuckerBeaten:
+Route19_Text_SwimmermTannerBeaten:
 	.string "I'm drowning!$"
 
-Route19_Text_SwimmermTuckerAfterBattle:
+Route19_Text_SwimmermTannerAfterBattle:
 	.string "I… asked my girlfriend to swim to\n"
 	.string "FUCHSIA… Gasp…$"
 

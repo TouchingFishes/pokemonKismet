@@ -225,7 +225,7 @@ OlivineCity_Gym_SetGymTrainers_hns::
 	return
 
 MahoganyTown_Gym_SetGymTrainers_hns::
-	settrainerflag TRAINER_ROXANNE_HNS
+	settrainerflag TRAINER_CELIA_HNS
 	settrainerflag TRAINER_RONALD_HNS
 	settrainerflag TRAINER_CLARISSA_HNS
 	settrainerflag TRAINER_BRAD_HNS

@@ -31,6 +31,7 @@ EcruteakCity_Theater_EventScript_Naoko::
 	faceplayer
 	goto_if_ge VAR_ECRUTEAK_CITY_THEATER, 5, EcruteakCity_Theater_EventScript_KimonoGirlLate
 	goto_if_defeated TRAINER_NAOKO_2_HNS, EcruteakCity_Theater_EventScript_KimonoGirlBeatenEarly
+	call EcruteakCity_Theater_EventScript_KimonoChallengeDance
 	msgbox EcruteakCity_Theater_Text_NaokoChallenge, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_NAOKO_2_HNS, EcruteakCity_Theater_Text_KimonoEarlyDefeat
@@ -42,6 +43,7 @@ EcruteakCity_Theater_EventScript_Sayo::
 	faceplayer
 	goto_if_ge VAR_ECRUTEAK_CITY_THEATER, 5, EcruteakCity_Theater_EventScript_KimonoGirlLate
 	goto_if_defeated TRAINER_SAYO_2_HNS, EcruteakCity_Theater_EventScript_KimonoGirlBeatenEarly
+	call EcruteakCity_Theater_EventScript_KimonoChallengeDance
 	msgbox EcruteakCity_Theater_Text_SayoChallenge, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_SAYO_2_HNS, EcruteakCity_Theater_Text_KimonoEarlyDefeat
@@ -53,6 +55,7 @@ EcruteakCity_Theater_EventScript_Kuni::
 	faceplayer
 	goto_if_ge VAR_ECRUTEAK_CITY_THEATER, 5, EcruteakCity_Theater_EventScript_KimonoGirlLate
 	goto_if_defeated TRAINER_KUNI_2_HNS, EcruteakCity_Theater_EventScript_KimonoGirlBeatenEarly
+	call EcruteakCity_Theater_EventScript_KimonoChallengeDance
 	msgbox EcruteakCity_Theater_Text_KuniChallenge, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_KUNI_2_HNS, EcruteakCity_Theater_Text_KimonoEarlyDefeat
@@ -64,6 +67,7 @@ EcruteakCity_Theater_EventScript_Miki::
 	faceplayer
 	goto_if_ge VAR_ECRUTEAK_CITY_THEATER, 5, EcruteakCity_Theater_EventScript_KimonoGirlLate
 	goto_if_defeated TRAINER_MIKI_2_HNS, EcruteakCity_Theater_EventScript_KimonoGirlBeatenEarly
+	call EcruteakCity_Theater_EventScript_KimonoChallengeDance
 	msgbox EcruteakCity_Theater_Text_MikiChallenge, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_MIKI_2_HNS, EcruteakCity_Theater_Text_KimonoEarlyDefeat
@@ -87,6 +91,16 @@ EcruteakCity_Theater_EventScript_AlderAfter::
 	closemessage
 	release
 	end
+
+@ An early challenge opens the way the gauntlet does: the encounter music and a turn of the
+@ dance, then she faces the player to speak.
+EcruteakCity_Theater_EventScript_KimonoChallengeDance::
+	playbgm MUS_HG_ENCOUNTER_KIMONO_GIRL, FALSE
+	playse SE_M_PETAL_DANCE
+	applymovement2 VAR_LAST_TALKED, EcruteakCity_Theater_Movement_KimonoSpin
+	waitmovement 0
+	faceplayer
+	return
 
 EcruteakCity_Theater_EventScript_KimonoGirlBeatenEarly::
 	msgbox EcruteakCity_Theater_Text_KimonoEarlyAfter, MSGBOX_DEFAULT
@@ -114,6 +128,7 @@ EcruteakCity_Theater_EventScript_Zuki::
 	goto_if_eq VAR_ECRUTEAK_CITY_THEATER, 6, EcruteakCity_Theater_EventScript_ZukiBattle
 	goto_if_ge VAR_ECRUTEAK_CITY_THEATER, 5, EcruteakCity_Theater_EventScript_ZukiLate
 	goto_if_defeated TRAINER_ZUKI_2_HNS, EcruteakCity_Theater_EventScript_KimonoGirlBeatenEarly
+	call EcruteakCity_Theater_EventScript_KimonoChallengeDance
 	msgbox EcruteakCity_Theater_Text_ZukiChallenge, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_ZUKI_2_HNS, EcruteakCity_Theater_Text_KimonoEarlyDefeat
@@ -607,6 +622,7 @@ EcruteakCity_Theater_EventScript_LegendaryCutscene::
 	waitmovement 0
 	setvar VAR_ECRUTEAK_CITY_THEATER, 6
 EcruteakCity_Theater_EventScript_ZukiBattle::
+	playbgm MUS_HG_ENCOUNTER_KIMONO_GIRL, FALSE
 	msgbox EcruteakCity_Theater_Text_ZukiSeenAgain, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, EcruteakCity_Theater_EventScript_LegendaryDenied
 	call_if_eq VAR_FACING, DIR_SOUTH, EcruteakCity_Theater_Movement_SouthCorrection
@@ -617,6 +633,7 @@ EcruteakCity_Theater_EventScript_ZukiBattle::
 	applymovement2 LOCALID_ECRUTEAK_ZUKI, EcruteakCity_Theater_Movement_ZukiWalkUp
 	waitmovement 0
 EcruteakCity_Theater_EventScript_NaokoBattle::
+	playbgm MUS_HG_ENCOUNTER_KIMONO_GIRL, FALSE
 	playse SE_M_PETAL_DANCE
 	applymovement2 LOCALID_ECRUTEAK_NAOKO, EcruteakCity_Theater_Movement_KimonoSpin
 	waitmovement 0
@@ -628,6 +645,7 @@ EcruteakCity_Theater_EventScript_NaokoBattle::
 	applymovement2 LOCALID_ECRUTEAK_NAOKO, EcruteakCity_Theater_Movement_NaokoWalkBack
 	waitmovement 0
 EcruteakCity_Theater_EventScript_MikiBattle::
+	playbgm MUS_HG_ENCOUNTER_KIMONO_GIRL, FALSE
 	playse SE_M_PETAL_DANCE
 	applymovement2 LOCALID_ECRUTEAK_MIKI, EcruteakCity_Theater_Movement_KimonoSpin
 	waitmovement 0
@@ -639,6 +657,7 @@ EcruteakCity_Theater_EventScript_MikiBattle::
 	applymovement2 LOCALID_ECRUTEAK_MIKI, EcruteakCity_Theater_Movement_MikiWalkBack
 	waitmovement 0
 EcruteakCity_Theater_EventScript_SayoBattle::
+	playbgm MUS_HG_ENCOUNTER_KIMONO_GIRL, FALSE
 	playse SE_M_PETAL_DANCE
 	applymovement2 LOCALID_ECRUTEAK_SAYO, EcruteakCity_Theater_Movement_KimonoSpin
 	waitmovement 0
@@ -650,6 +669,7 @@ EcruteakCity_Theater_EventScript_SayoBattle::
 	applymovement2 LOCALID_ECRUTEAK_SAYO, EcruteakCity_Theater_Movement_SayoWalkBack
 	waitmovement 0
 EcruteakCity_Theater_EventScript_KuniBattle::
+	playbgm MUS_HG_ENCOUNTER_KIMONO_GIRL, FALSE
 	playse SE_M_PETAL_DANCE
 	applymovement2 LOCALID_ECRUTEAK_KUNI, EcruteakCity_Theater_Movement_KimonoSpin
 	waitmovement 0
@@ -810,6 +830,7 @@ EcruteakCity_Theater_Movement_Sister:
 EcruteakCity_Theater_EventScript_LegendaryDenied::
 	msgbox EcruteakCity_Theater_Text_ZukiNo, MSGBOX_DEFAULT
 	closemessage
+	fadedefaultbgm
 	release
 	end
 

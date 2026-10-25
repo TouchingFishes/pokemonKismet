@@ -2835,8 +2835,8 @@ SPECIES_ARIADOS
 Level: 24
 IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
-=== TRAINER_ETO_HNS ===
-Name: ETO
+=== TRAINER_GRUNT_34_HNS ===
+Name: GRUNT
 Class: Team Rocket Hns
 Pic: Rocket Grunt M Frlg
 Gender: Male
@@ -2852,8 +2852,8 @@ SPECIES_DROWZEE
 Level: 11
 IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
-=== TRAINER_ETO_2_HNS ===
-Name: ETO
+=== TRAINER_GRUNT_35_HNS ===
+Name: GRUNT
 Class: Team Rocket Hns
 Pic: Rocket Grunt M Frlg
 Gender: Male
@@ -2861,24 +2861,20 @@ Music: Rocket
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_JYNX
+SPECIES_RATICATE
 Level: Badge+4
 IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
-SPECIES_POLIWHIRL
+SPECIES_GOLBAT
 Level: Badge+4
 IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
-SPECIES_MAGMAR
+SPECIES_KOFFING
 Level: Badge+4
 IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
-SPECIES_ELECTABUZZ
-Level: Badge+4
-IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
-
-=== TRAINER_ETO_3_HNS ===
-Name: ETO
+=== TRAINER_GRUNT_36_HNS ===
+Name: GRUNT
 Class: Team Rocket Hns
 Pic: Rocket Grunt M Frlg
 Gender: Male
@@ -2886,24 +2882,16 @@ Music: Rocket
 Double Battle: No
 AI: Check Bad Move
 
-Poliwrath
+SPECIES_ARBOK
 Level: 36
 IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
-Magmar
+SPECIES_GOLBAT
 Level: 36
 IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
-Jynx
-Level: 36
-IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
-
-Electabuzz
-Level: 36
-IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
-
-Rhydon
-Level: 36
+SPECIES_RATICATE
+Level: 37
 IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
 === TRAINER_PRESTON_HNS ===
@@ -2975,8 +2963,8 @@ SPECIES_NOCTOWL
 Level: Badge+4
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_ROXANNE_HNS ===
-Name: ROXANNE
+=== TRAINER_CELIA_HNS ===
+Name: CELIA
 Class: Skier Hns
 Pic: Skier F Hns
 Gender: Female
@@ -3905,8 +3893,8 @@ SPECIES_SEADRA
 Level: 56
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_TUCKER_HNS ===
-Name: TUCKER
+=== TRAINER_TANNER_HNS ===
+Name: TANNER
 Class: Swimmer M Hns
 Pic: Swimmer M Frlg
 Gender: Male
@@ -5088,8 +5076,8 @@ SPECIES_OMASTAR
 Level: 61
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_NOLAND_HNS ===
-Name: NOLAND
+=== TRAINER_LANDON_HNS ===
+Name: LANDON
 Class: Hiker Hns
 Pic: Hiker
 Gender: Male
@@ -5113,8 +5101,8 @@ SPECIES_SUDOWOODO
 Level: 55
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_SIDNEY_HNS ===
-Name: SIDNEY
+=== TRAINER_DENNIS_HNS ===
+Name: DENNIS
 Class: Hiker Hns
 Pic: Hiker
 Gender: Male
@@ -5527,8 +5515,8 @@ SPECIES_TORKOAL
 Level: 62
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_BILL_HNS ===
-Name: BILL
+=== TRAINER_WILBUR_HNS ===
+Name: WILBUR
 Class: Firebreather Hns
 Pic: Firebreather Hns
 Gender: Male
@@ -5894,8 +5882,8 @@ SPECIES_DROWZEE
 Level: 17
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_NORMAN_HNS ===
-Name: NORMAN
+=== TRAINER_NORRIS_HNS ===
+Name: NORRIS
 Class: Psychic M Hns
 Pic: Psychic M Frlg
 Gender: Male
@@ -7283,8 +7271,8 @@ SPECIES_QUAGSIRE
 Level: 60
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-=== TRAINER_BRANDON_HNS ===
-Name: BRANDON
+=== TRAINER_BRADEN_HNS ===
+Name: BRADEN
 Class: Pokefan Hns
 Pic: Pokefan M
 Gender: Male
@@ -7768,11 +7756,11 @@ Music: Hg Girl 1
 Double Battle: Yes
 AI: Check Bad Move
 
-SPECIES_LUVDISC
+SPECIES_AZUMARILL
 Level: 46
 IVs: 16 HP / 12 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
-SPECIES_LUVDISC
+SPECIES_AZUMARILL
 Level: 46
 IVs: 16 HP / 12 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
@@ -17641,7 +17629,7 @@ Jolly Nature
 
 === TRAINER_ALDER_HNS ===
 Name: ALDER
-Class: Expert Hns
+Class: Champion Hns
 Pic: Expert M
 Gender: Male
 Music: Hg Champion
@@ -23469,7 +23457,7 @@ Jolly Nature
 
 === TRAINER_CHALLENGER_ALDER_HNS ===
 Name: ALDER
-Class: Expert Hns
+Class: Champion Hns
 Pic: Expert M
 Gender: Male
 Music: Hg Champion

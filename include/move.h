@@ -129,10 +129,11 @@ struct MoveInfo
     bool32 alwaysHitsInRain:1;
     bool32 accuracy50InSun:1;
     bool32 alwaysHitsInHailSnow:1;
+    bool32 alwaysHitsInSandstorm:1; // Kismet: Sandsear Storm
     bool32 alwaysHitsOnSameType:1; // Always hits if user is of same type as move
     bool32 noAffectOnSameTypeTarget:1; // Fails if target is of same type as move
     bool32 accIncreaseByTenOnSameType:1; // Accuracy is increased by 10% if user is of same type as move
-    bool32 padding1:15;
+    bool32 padding1:14;
     // end of word
 
     // Ban flags
@@ -463,6 +464,11 @@ static inline bool32 MoveHas50AccuracyInSun(enum Move moveId)
 static inline bool32 MoveAlwaysHitsInHailSnow(enum Move moveId)
 {
     return gMovesInfo[SanitizeMoveId(moveId)].alwaysHitsInHailSnow;
+}
+
+static inline bool32 MoveAlwaysHitsInSandstorm(enum Move moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].alwaysHitsInSandstorm;
 }
 
 static inline bool32 MoveAlwaysHitsOnSameType(enum Move moveId)

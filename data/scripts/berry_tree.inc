@@ -543,7 +543,7 @@ BerryTree_EventScript_EncounterPests::
 	return
 
 BerryTree_Text_APokemonAppeared:
-	.string "A Pokémon appeared!$"
+	.string "A POKéMON appeared!$"
 .endif
 
 #endif

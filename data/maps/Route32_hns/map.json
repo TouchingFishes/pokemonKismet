@@ -732,8 +732,8 @@
       "x": 30,
       "y": 97,
       "elevation": 0,
-      "item": "ITEM_SHELL_BELL",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE32_SHELL_BELL"
+      "item": "ITEM_COVERT_CLOAK",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE32_COVERT_CLOAK"
     }
   ],
   "game_version": "hns",

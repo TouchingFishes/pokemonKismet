@@ -64,7 +64,7 @@ KiwameHouse_Text_UltimateWhichMon:
 	.string "Do not choose lightly.\p"
 	.string "The one you select will carry\n"
 	.string "a force beyond restraint…\p"
-	.string "Which Pokémon will stand at\n"
+	.string "Which POKéMON will stand at\n"
 	.string "the edge of true greatness?$"
 
 KiwameHouse_Text_UltimateDeclined:

@@ -354,7 +354,7 @@ NationalPark_Text_LadyVanilliteGift:
 	.string "You seem like someone who\n"
 	.string "could use a little relief.\p"
 	.string "...\p"
-	.string "Here, this Pokémon will help\n"
+	.string "Here, this POKéMON will help\n"
 	.string "you beat the heat.\p"
 	.string "Do take good care of it.$"
 

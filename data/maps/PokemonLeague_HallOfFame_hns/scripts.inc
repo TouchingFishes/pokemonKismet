@@ -1,6 +1,18 @@
 PokemonLeague_HallOfFame_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PokemonLeague_HallOfFame_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PokemonLeague_HallOfFame_OnFrame
 	.byte 0
+
+@ PROF.OAK registers the title defenses, LANCE the first and second entries. Both stand on
+@ (5,11); one temp flag hides whoever is not walking the player in.
+PokemonLeague_HallOfFame_OnTransition:
+	goto_if_set FLAG_IS_KANTO_CHAMPION, PokemonLeague_HallOfFame_EventScript_OakEscorts
+	setflag FLAG_TEMP_13
+	end
+
+PokemonLeague_HallOfFame_EventScript_OakEscorts:
+	setflag FLAG_TEMP_12
+	end
 
 PokemonLeague_HallOfFame_OnFrame::
 	map_script_2 VAR_LEAGUE_STATE, 6, PokemonLeague_HallOfFame_EventScript_Cutscene
@@ -56,11 +68,12 @@ PokemonLeague_HallOfFame_EventScript_CutsceneKantoChamp::
 	end
 
 PokemonLeague_HallOfFame_EventScript_CutsceneTitleDefense::
-	applymovement LOCALID_HALLOFFAME_LANCE, PokemonLeague_HallOfFame_Movement_LanceEnter
+	@ OAK takes the path LANCE walks for the first two entries
+	applymovement LOCALID_HALLOFFAME_OAK, PokemonLeague_HallOfFame_Movement_LanceEnter
 	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_HallOfFame_Movement_PlayerEnter
 	waitmovement OBJ_EVENT_ID_PLAYER
-	waitmovement LOCALID_HALLOFFAME_LANCE
-	msgbox PokemonLeague_HallOfFame_TitleDefense_LanceText, MSGBOX_DEFAULT
+	waitmovement LOCALID_HALLOFFAME_OAK
+	msgbox PokemonLeague_HallOfFame_TitleDefense_OakText, MSGBOX_DEFAULT
 	closemessage
 	special GivePartyMonChampionRibbon
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
@@ -107,7 +120,6 @@ PokemonLeague_HallOfFame_EventScript_SetGameClearFlags::
 	clearflag FLAG_HIDE_ZAPDOS
 	clearflag FLAG_HIDE_ARTICUNO
 	clearflag FLAG_HIDE_MOLTRES
-	clearflag FLAG_ITEM_GS_BALL
 	setflag FLAG_HIDE_BATTLEFRONTIER_ENGINEER
 	setflag FLAG_IS_KANTO_CHAMPION
 	@ Refightable trainers
@@ -291,11 +303,11 @@ PokemonLeague_HallOfFame_Rematch_LanceText:
     .string "you, and your trusted partners,\l"
     .string "as champions once again.$"
 
-PokemonLeague_HallOfFame_TitleDefense_LanceText:
-	.string "LANCE: Another challenger has come\n"
-	.string "and gone, {PLAYER}.\p"
-	.string "Everyone who climbs those stairs\n"
-	.string "tests the CHAMPION anew…\p"
-	.string "and each time, you have answered.\p"
-	.string "Let us record this victory beside\n"
-	.string "the others.$"
+PokemonLeague_HallOfFame_TitleDefense_OakText:
+	.string "PROF.OAK: Ah, {PLAYER}!\n"
+	.string "Another challenger turned back!\p"
+	.string "I came as soon as I heard.\n"
+	.string "You've defended the title!\p"
+	.string "Let's record this victory, and\n"
+	.string "your POKéMON, here in the\l"
+	.string "HALL OF FAME.$"
