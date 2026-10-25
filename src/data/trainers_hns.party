@@ -1160,7 +1160,7 @@ SPECIES_LUDICOLO
 Level: 45
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
-SPECIES_URSARING
+SPECIES_URSARING @ ITEM_EVIOLITE
 Level: 43
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
@@ -1547,15 +1547,15 @@ Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_ROSELIA
+SPECIES_SUNFLORA
 Level: 45
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
-SPECIES_ROSELIA
+SPECIES_MLLOY
 Level: 45
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
-SPECIES_LUDICOLO
+SPECIES_CORSOREEF
 Level: 45
 IVs: 19 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 24 Spe
 
@@ -3611,8 +3611,8 @@ SPECIES_QWILFISH
 Level: 43
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_RELICANTH
-Level: 43
+SPECIES_GYARADOS
+Level: 44
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_HAROLD_HNS ===
@@ -5967,12 +5967,12 @@ SPECIES_GIRAFARIG
 Level: 42
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_EXEGGUTOR
-Level: 44
+SPECIES_GIRAFARIG
+Level: 42
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_GIRAFARIG
-Level: 44
+SPECIES_GRUMPIG
+Level: 46
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_JARED_HNS ===
