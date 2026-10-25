@@ -21523,15 +21523,14 @@ Modest Nature
 - MOVE_THUNDERBOLT
 - MOVE_MINIMIZE
 
-SPECIES_MIMIKYU @ ITEM_FOCUS_SASH
+SPECIES_MEGANIUM @ ITEM_LIGHT_CLAY
 Level: Badge+4
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
-Jolly Nature
-- MOVE_SHADOW_CLAW
-- MOVE_PLAY_ROUGH
-- MOVE_SWORDS_DANCE
-- MOVE_SHADOW_SNEAK
+- MOVE_MAGICAL_LEAF
+- MOVE_ANCIENT_POWER
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
 
 SPECIES_DUSCLOPS @ ITEM_EVIOLITE
 Level: Badge+4
@@ -23547,16 +23546,26 @@ Adamant Nature
 - MOVE_STEEL_WING  
 - Spikes
 
-Omastar @ Sitrus Berry  
-Ability: Solid Rock  
-Level: 81
-EVs: 128 Def / 40 SpA / 252 SpD  
+Cradily @ ITEM_LEFTOVERS
+Ability: Storm Drain  
+Level: 83
+EVs: 252 HP / 128 Def / 128 SpD  
 Relaxed Nature  
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Hydro Pump  
-- Meteor Beam  
-- Brine  
-- Toxic Spikes
+- MOVE_GIGA_DRAIN
+- MOVE_INGRAIN
+- MOVE_SUBSTITUTE
+- MOVE_ANCIENT_POWER
+
+Armaldo @ Scope Lens  
+Ability: Water Absorb  
+Level: 83
+EVs: 124 SpD / 132 Def / 252 Spe  
+Adamant Nature  
+- Stone Edge  
+- X-Scissor  
+- Earthquake
+- Hone Claws  
 
 Claydol @ Light Clay  
 Ability: Levitate  
@@ -23578,16 +23587,6 @@ Adamant Nature
 - Body Press  
 - Curse  
 - Rock Slide
-
-Kleavor @ Scope Lens  
-Ability: Sharpness  
-Level: 83
-EVs: 124 Atk / 132 Def / 252 Spe  
-Adamant Nature  
-- Stone Axe  
-- X-Scissor  
-- MOVE_ROCK_SLIDE  
-- Double Team
 
 Metagross @ Metal Coat  
 Ability: Clear Body  
