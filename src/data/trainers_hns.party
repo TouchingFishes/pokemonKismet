@@ -9365,7 +9365,7 @@ Pic: Leader Blue Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Blue
 Items: Full Restore / Full Restore
 
@@ -9424,7 +9424,7 @@ Pic: Elite Four Will Hns
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Pink
 Items: Full Restore / Full Restore
 
@@ -9475,7 +9475,7 @@ Pic: Elite Four Will Hns
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Pink
 Items: Full Restore / Full Restore
 
@@ -9534,7 +9534,7 @@ Pic: Elite Four Bruno Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
@@ -9585,7 +9585,7 @@ Pic: Elite Four Bruno Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
@@ -9644,7 +9644,7 @@ Pic: Elite Four Karen Hns
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
@@ -9695,7 +9695,7 @@ Pic: Elite Four Karen Hns
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
@@ -9754,7 +9754,7 @@ Pic: Elite Four Karen Hns
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
@@ -9813,7 +9813,7 @@ Pic: Leader Koga Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Purple
 Items: Full Restore / Full Restore
 
@@ -9864,7 +9864,7 @@ Pic: Leader Koga Frlg
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Purple
 Items: Full Restore / Full Restore
 
@@ -9923,7 +9923,7 @@ Pic: Champion Lance Hns
 Gender: Male
 Music: Hg Champion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Items: Full Restore / Full Restore
 Mugshot: Blue
 
@@ -9982,7 +9982,7 @@ Pic: Champion Lance Hns
 Gender: Male
 Music: Hg Champion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Items: Full Restore / Full Restore
 Mugshot: Blue
 
@@ -10073,7 +10073,7 @@ Pic: Leader Clair Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Blue
 Items: Full Restore / Full Restore
 
@@ -17168,7 +17168,7 @@ Pic: Steven
 Music: Hg Champion
 Gender: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Items: Full Restore / Full Restore
 Mugshot: Orange
 
@@ -20400,7 +20400,7 @@ Pic: Steven
 Gender: Male
 Music: Elite Four
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 
 SPECIES_SKARMORY @ ITEM_LIECHI_BERRY
 Level: 63
