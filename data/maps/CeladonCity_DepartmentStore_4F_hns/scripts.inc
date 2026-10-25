@@ -12,6 +12,30 @@ CeladonDept_EventScript_Directory::
 	msgbox CeladonDeptStore4F_Text_Directory, MSGBOX_NPC
 	end
 
+CeladonDept_EventScript_Clerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart CeladonDept_Pokemart_VitaminsAndStones
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+CeladonDept_Pokemart_VitaminsAndStones:
+	.2byte ITEM_PROTEIN
+	.2byte ITEM_CALCIUM
+	.2byte ITEM_IRON
+	.2byte ITEM_ZINC
+	.2byte ITEM_CARBOS
+	.2byte ITEM_HP_UP
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_LEAF_STONE
+	pokemartlistend
+
 CeladonDeptStore4F_Text_SuperNerd:
 	.string "I'm here to buy SURF MAIL to send\n"
 	.string "to my girlfriend.\p"
