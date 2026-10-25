@@ -818,8 +818,6 @@ FuchsiaCity_SafariZoneEntrance_EventScript_Brix::
 FuchsiaCity_SafariZoneEntrance_EventScript_Paxton::
 	lock
 	faceplayer
-	goto_if_not_defeated TRAINER_GIL_HNS, FuchsiaCity_SafariZoneEntrance_EventScript_PaxtonWait
-	goto_if_not_defeated TRAINER_BRIX_HNS, FuchsiaCity_SafariZoneEntrance_EventScript_PaxtonWait
 	msgbox FuchsiaCity_SafariZoneEntrance_Text_PaxtonSeen, MSGBOX_DEFAULT
 	@ Bookmark, so a save made mid-scene resumes with the tie already surfaced.
 	setvar VAR_FUCHSIA_FEDERATION_STATE, 2
@@ -862,12 +860,6 @@ FuchsiaCity_SafariZoneEntrance_EventScript_Paxton::
 	fadescreenswapbuffers FADE_FROM_BLACK
 	goto FuchsiaCity_SafariZoneEntrance_EventScript_FederationAftermath
 
-FuchsiaCity_SafariZoneEntrance_EventScript_PaxtonWait::
-	msgbox FuchsiaCity_SafariZoneEntrance_Text_PaxtonWait, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
 @ State 3 -> 4. Restores FUCHSIA itself: the townsfolk come back, JANINE returns
 @ to her GYM, the zoo is restocked, and the takeover BGM stops being selected the
 @ next time the city map loads. Done here rather than on the city map so the player
@@ -900,15 +892,19 @@ FuchsiaCity_SafariZoneEntrance_Text_CounterShut:
 	.string "those people are inside.$"
 
 FuchsiaCity_SafariZoneEntrance_Text_GilSeen:
-	.string "DEVON walks in, buys the SAFARI\n"
-	.string "ZONE, and we're supposed to smile?$"
+	.string "So DEVON gets to bring in all\n"
+	.string "those RARE POKéMON, and we just\n"
+	.string "have to watch from the sidelines?\p"
+	.string "Not a chance. I'm leaving here\n"
+	.string "with something valuable!$"
 
 FuchsiaCity_SafariZoneEntrance_Text_GilBeaten:
-	.string "Agh! Fine, fine!$"
+	.string "Agh! Fine! Keep your stupid\n"
+	.string "POKéMON!$"
 
 FuchsiaCity_SafariZoneEntrance_Text_GilAfter:
-	.string "This was our ground before it had\n"
-	.string "a gate and a ticket price.$"
+	.string "Some of those RARE POKéMON could\n"
+	.string "fetch a fortune…$."
 
 FuchsiaCity_SafariZoneEntrance_Text_BrixSeen:
 	.string "PAXTON said to flatten anyone who\n"
@@ -918,101 +914,111 @@ FuchsiaCity_SafariZoneEntrance_Text_BrixBeaten:
 	.string "…Not paid enough for this.$"
 
 FuchsiaCity_SafariZoneEntrance_Text_BrixAfter:
-	.string "We're not thieves. We're owed.\p"
-	.string "That's what the man paying us said,\n"
-	.string "anyway.$"
-
-FuchsiaCity_SafariZoneEntrance_Text_PaxtonWait:
-	.string "Stay back, kid.\p"
-	.string "My people are still counting what's\n"
-	.string "in this building.$"
+	.string "DEVON can't keep an eye on me\n"
+	.string "forever. I'll find my chance.$"
 
 FuchsiaCity_SafariZoneEntrance_Text_PaxtonSeen:
+	.string "…You little punk.\n"
 	.string "So you're the one knocking my\n"
 	.string "people down.\p"
-	.string "Look around. DEVON fenced off the\n"
-	.string "marsh, sells tickets to what used\l"
-	.string "to be ours, and calls it charity.\p"
-	.string "I got run off an island once by\n"
-	.string "people who talked like that.\p"
-	.string "Not again.\p"
-	.string "Someone finally offered to help us\n"
-	.string "take it back.\p"
-	.string "I didn't ask his name.\n"
-	.string "I didn't need to.$"
+	.string "DEVON brings in rare POKéMON,\n"
+	.string "locks them behind a fence, and\n"
+	.string "expects everyone to play nice.\p"
+	.string "My employer wants those POKéMON.\n"
+	.string "I'm getting paid to take them.\p"
+	.string "You, on the other hand, are\n"
+	.string "getting in my way.\p"
+	.string "So here's how this goes.\n"
+	.string "You walk away, or I make you.$"
 
 FuchsiaCity_SafariZoneEntrance_Text_PaxtonBeaten:
-	.string "…Should've asked his name.$"
+	.string "This wasn't supposed to be\n"
+	.string "part of the job.$"
 
 FuchsiaCity_SafariZoneEntrance_Text_PaxtonAfter:
-	.string "He told us there'd be a kid.\p"
-	.string "Said if a kid from JOHTO turned up,\n"
-	.string "we were to leave and say nothing.\p"
-	.string "…He knew you'd come.$"
+	.string "…That science weirdo.\p"
+	.string "Told me if anything went wrong,\n"
+	.string "we were to abandon the job.\p"
+	.string "Said he'd be waiting on an island\n"
+	.string "if I ever needed to reach him.\p"
+	.string "Never gave me a name. Never\n"
+	.string "told me what he really wanted.\p"
+	.string "Just the money. Just the job.\p"
+	.string "…Should've known better than to\n"
+	.string "work for a man like that.$"
 
-@ ⚠️ This used to say "I can't fight him", which was the plot hole rather than an
-@ explanation - he is a former CHAMPION and the FEDERATION are bikers. He is
-@ winning now, and still stuck, and the reason he is stuck is the reason the player
-@ is needed.
 FuchsiaCity_SafariZoneEntrance_Text_StevenUnderSiege:
 	.string "{PLAYER}! You shouldn't be in here.\p"
-	.string "…No. I am glad you are.\p"
-	.string "I can keep these two standing there\n"
-	.string "all day. That was never the problem.\p"
-	.string "They have my attendants in the back\n"
-	.string "room, and the one giving the orders\l"
-	.string "has not taken his eyes off me since.\p"
-	.string "The moment I break off, or take one\n"
-	.string "step towards him, somebody in there\l"
-	.string "pays for it.\p"
-	.string "So I hold. It is the only thing I am\n"
-	.string "any use for in here.\p"
-	.string "You can do the rest. Please.$"
+	.string "…But. I am glad you are.\p"
+	.string "Three of them. All at once.\n"
+	.string "I can keep them busy, but I can't\l"
+	.string "afford to let my guard down.\p"
+	.string "And their leader knows it.\n"
+	.string "He's been watching, waiting for me\l"
+	.string "to make a mistake.\p"
+	.string "If I turn my back on these three,\n"
+	.string "he'll have his opening. If I go for\l"
+	.string "him, they'll come at me together.\p"
+	.string "I'm holding them here. That's all\n"
+	.string "I can do without giving him the edge.\p"
+	.string "Can you deal with their boss?\n"
+	.string "I'll keep the others occupied.$"
 
-@ Plants the thread the reveal outside the GYM pays off: he does not have the name
-@ yet, says so, and says he will follow the money to it - which is exactly how he
-@ gets it (FuchsiaCity_Text_StevenBackers). PAXTON never knew it either.
 FuchsiaCity_SafariZoneEntrance_Text_StevenAftermath:
 	.string "It's over…\p"
 	.string "My attendants are shaken, but they\n"
 	.string "are safe. Thank you, {PLAYER}.\p"
-	.string "Did you hear him? He kept saying\n"
-	.string "'he'. Never a name.\p"
-	.string "Someone paid for all this. Someone\n"
-	.string "who knew you were coming before\l"
-	.string "I did.\p"
-	.string "I intend to find out who. DEVON keeps\n"
-	.string "records, and money leaves a trail\l"
-	.string "even when men are careful.\p"
+	.string "You heard what he said. A scientist\n"
+	.string "hired them to steal the RARE POKéMON.\p"
+	.string "No name, apparently. Just a promise\n"
+	.string "of money and an island to return to.\p"
+	.string "Whoever this man is, he had the\n"
+	.string "resources to organize all this, and\n"
+	.string "the sense to keep himself at a distance.\p"
+	.string "DEVON may have records of unusual\n"
+	.string "purchases, shipments, or payments.\n"
+	.string "It's a place to start, at least.\p"
 	.string "Come and find me once FUCHSIA is\n"
-	.string "back on its feet. I have a favor\l"
-	.string "to ask you.$"
+	.string "back on its feet. I will know more\n"
+	.string "by then.$"
 
 FuchsiaCity_SafariZoneEntrance_Text_StevenNotReady:
 	.string "There's something I want to ask\n"
 	.string "of you, {PLAYER}.\p"
-	.string "But finish what you came here for\n"
-	.string "first. JANINE is back at her GYM.$"
+	.string "I still have a few calls to make.\n"
+	.string "Let's talk once I've sorted things\n"
+	.string "out here.\p"
+	.string "In the meantime, JANINE is back\n"
+	.string "at her GYM. You could challenge\n"
+	.string "her while I'm busy.$"
 
-@ ⚠️ He has already named GIDEON out on the road by the time this can be read, so
-@ this no longer pretends not to know. Since MIGRATION_DECISIONS.md 86 the reason he
-@ does not go himself is his staff, as in the street version (FuchsiaCity_Text_StevenCharter).
 FuchsiaCity_SafariZoneEntrance_Text_StevenChallenge:
-	.string "SURGE, ERIKA, SABRINA, JANINE.\p"
-	.string "All four, and the FEDERATION too.\p"
-	.string "GIDEON is not in KANTO any more. I\n"
-	.string "would go after him myself, but I\l"
-	.string "can't leave this place.\p"
-	.string "My attendants spent the occupation\n"
-	.string "locked in that back room. They need\l"
-	.string "me here, and so does the SAFARI\l"
-	.string "ZONE.\p"
-	.string "I have chartered a boat out of the\n"
-	.string "ROUTE 13 dock. I want you on it.\p"
-	.string "I'm sending you where I can't\n"
-	.string "follow, so I need to see for myself\l"
-	.string "that you're ready.\p"
-	.string "Show me. Here and now?$"
+	.string "The FEDERATION is gone.\p"
+	.string "I've spent the last few hours\n"
+	.string "investigating and asking around.\p"
+	.string "My team found something interesting.\n"
+	.string "Shipping records. Payment logs.\n"
+	.string "Orders that were never supposed\n"
+	.string "to pass through DEVON's hands.\p"
+	.string "They all lead back to one name.\p"
+	.string "GIDEON.\p"
+	.string "He's the one behind the FEDERATION.\n"
+	.string "I was told that he is operating\n"
+	.string "form a small archipelago called the\l"
+	.string "DAO DAO isles, it's remote. Whatever\l"
+	.string "he was building here, it isn't over.\p"
+	.string "I want to follow that trail myself,\n"
+	.string "but my attendants need me here.\n"
+	.string "The SAFARI ZONE has to be rebuilt,\n"
+	.string "and I won't abandon them again.\p"
+	.string "I've chartered a boat from the\n"
+	.string "ROUTE 13 dock. It'll take you beyond\n"
+	.string "KANTO.\p"
+	.string "But before I send you after GIDEON,\n"
+	.string "I need to know you're ready for\n"
+	.string "such a challenge.\p"
+	.string "Show me what you can do.\n"
+	.string "Here and now?$"
 
 FuchsiaCity_SafariZoneEntrance_Text_StevenAccept:
 	.string "Good.\p"

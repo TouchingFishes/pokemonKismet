@@ -7517,7 +7517,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
     #if P_UPDATED_ABILITIES == CUSTOM_FOR_KISMET
-        .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_WEAK_ARMOR },
+        .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_ROUGH_SKIN },
     #else
         .abilities = { ABILITY_KEEN_EYE, ABILITY_STURDY, ABILITY_WEAK_ARMOR },
     #endif

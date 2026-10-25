@@ -112,19 +112,11 @@ FuchsiaCity_EventScript_StevenBackersLeave::
 	release
 	end
 
-@ The street opener, then the body and the case, which are shared with his talk
-@ script in the SAFARI building (a player who loses this fight, or walks in
-@ between PAXTON and JANINE, is inducted there instead).
 FuchsiaCity_EventScript_StevenSafariAside::
 	msgbox FuchsiaCity_Text_StevenSafariAside, MSGBOX_DEFAULT
 	call FuchsiaCity_SafariZoneEntrance_EventScript_StevenInduction
 	return
 
-@ (18,33) to (10,33) and back, in two legs of four: he walks on camera, gives
-@ his "!" at (14,33), then comes the rest of the way. The visible columns with the
-@ player on (9,33) are 2-16, so (18,33) is two tiles off the edge. The road is
-@ clear along y=33 from x=5 to x=22, and the GYM doorman objects that stand on
-@ (9,33) during the occupation are both hidden by the time this runs.
 FuchsiaCity_Movement_StevenApproach:
 	walk_left
 	walk_left

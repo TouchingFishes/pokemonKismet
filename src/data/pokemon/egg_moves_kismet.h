@@ -2271,6 +2271,7 @@ static const u16 sWingullEggMoveLearnset_Kismet[] = {
     MOVE_MIST,
     MOVE_TWISTER,
     MOVE_AGILITY,
+    MOVE_WATER_SPOUT,
     MOVE_GUST,
     MOVE_WATER_SPORT,
     MOVE_AQUA_RING,
@@ -2462,6 +2463,7 @@ static const u16 sAronEggMoveLearnset_Kismet[] = {
     MOVE_IRON_HEAD,
     MOVE_DRAGON_RUSH,
     MOVE_HEAD_SMASH,
+    MOVE_ANCIENT_POWER,
     MOVE_SUPERPOWER,
     MOVE_REVERSAL,
     MOVE_UNAVAILABLE,
@@ -3816,6 +3818,8 @@ static const u16 sGekoponEggMoveLearnset_Kismet[] = {
     MOVE_THUNDER_SHOCK,
     MOVE_SEED_BOMB,
     MOVE_GIGA_DRAIN,
+    MOVE_MUDDY_WATER,
+    MOVE_FOCUES_BLAST,
     MOVE_UNAVAILABLE,
 };
 

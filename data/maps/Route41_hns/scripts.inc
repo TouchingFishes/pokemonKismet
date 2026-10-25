@@ -297,10 +297,7 @@ Route41_Text_TentacruelHeal:
 Route41_EventScript_RuinManiac::
     lock
     faceplayer
-    waitse
     msgbox Route41_Text_RuinManiacIntro, MSGBOX_DEFAULT
-    waitmoncry
-    closemessage
     release
     end
 

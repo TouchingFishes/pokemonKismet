@@ -191,7 +191,7 @@ Route42_EventScript_TullyNoRoom::
 	msgbox Route42_Text_TullyNoRoom, MSGBOX_AUTOCLOSE
 	end
 
-Route42_EventScript_Ben::
+Route42_EventScript_Benjamin::
 	trainerbattle_single TRAINER_BENJAMIN_HNS, Route42_Text_HikerBenjaminSeen, Route42_Text_HikerBenjaminBeaten
 	msgbox Route42_Text_HikerBenjaminAfter, MSGBOX_AUTOCLOSE
 	end

@@ -37,11 +37,11 @@ Pic: Scientist Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Check Bad Move
+AI: Smart Trainer
 
 SPECIES_DITTO
 Level: Badge+8
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_JED_HNS ===
 Name: JED
@@ -53,11 +53,11 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_OMANYTE
-Level: Badge+4
+Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_KABUTO
-Level: Badge+4
+Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_MARC_HNS ===
@@ -2043,11 +2043,11 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_NIDORINO
-Level: Badge
+Level: Badge+1
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_NIDOKING
-Level: Badge
+Level: Badge+1
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_BEN_HNS ===
@@ -2179,11 +2179,11 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_NIDOKING
-Level: Badge+5
+Level: Badge+6
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_NIDOQUEEN
-Level: Badge+5
+Level: Badge+6
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_GRUNT_HNS ===
@@ -2510,7 +2510,7 @@ Level: Badge+2
 IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
 SPECIES_RATICATE
-Level: Badge+2
+Level: Badge+4
 IVs: 18 HP / 26 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
 === TRAINER_GRUNT_16_HNS ===
@@ -3411,7 +3411,7 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_QWILFISH
-Level: Badge+3
+Level: Badge+4
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_ANDRE_HNS ===
@@ -4816,7 +4816,7 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_GRUMPIG
-Level: Badge+8
+Level: Badge+9
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_CLYDE_HNS ===
@@ -4935,15 +4935,15 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_ARON
-Level: Badge-4
+Level: Badge-3
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_ARON
-Level: Badge-4
+Level: Badge-3
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_DUGTRIO
-Level: Badge+4
+Level: Badge+5
 IVs: 16 HP / 20 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_ERIK_HNS ===
@@ -6637,7 +6637,7 @@ Level: Badge+2
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_FLETCHINDER
-Level: Badge+4
+Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_QUENTIN_HNS ===
@@ -6894,7 +6894,15 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_WORMADAM
-Level: Badge+2
+Level: Badge+3
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_RAZOR_LEAF
+- MOVE_GROWTH
+- MOVE_BUG_BITE
+- MOVE_GRASS_WHISTLE
+
+SPECIES_WORMADAM
+Level: Badge+3
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 - MOVE_RAZOR_LEAF
 - MOVE_GROWTH
@@ -7103,19 +7111,19 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_SEEL
-Level: Badge+5
+Level: Badge+4
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_SEEL
+Level: Badge+4
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SWINUB
 Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_SWINUB
-Level: Badge+6
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-
-SPECIES_SWINUB
-Level: Badge+6
+Level: Badge+5
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_DOUGLAS_HNS ===
@@ -8384,7 +8392,7 @@ Mugshot: Yellow
 Items: Super Potion / Super Potion
 
 SPECIES_SKARMORY
-Level: 35
+Level: 33
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_SPIKES
 - MOVE_DRILL_PECK
@@ -8392,23 +8400,15 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_STEEL_WING
 
 SPECIES_CORSOREEF
-Level: 35
+Level: 33
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_RAIN_DANCE
 - MOVE_SURF
 - MOVE_RECOVER
 - MOVE_ANCIENT_POWER
 
-SPECIES_MAGNETON
-Level: 35
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- MOVE_MIRROR_SHOT
-- MOVE_TRI_ATTACK
-- MOVE_RAIN_DANCE
-- MOVE_THUNDER
-
 SPECIES_TINKATON @ ITEM_FOCUS_BAND
-Level: 38
+Level: 36
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_STRENGTH
 - MOVE_KNOCK_OFF
@@ -8416,7 +8416,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_GIGATON_HAMMER
 
 SPECIES_STEELIX @ ITEM_QUICK_CLAW
-Level: 39
+Level: 37
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_CRUNCH
 - MOVE_EARTHQUAKE
@@ -8494,7 +8494,7 @@ Mugshot: Yellow
 Items: Full Restore / Full Restore
 
 SPECIES_SKARMORY
-Level: 36
+Level: 35
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_SPIKES
 - MOVE_DRILL_PECK
@@ -8502,23 +8502,23 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_STEEL_WING
 
 SPECIES_CORSOREEF
-Level: 38
+Level: 36
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_RAIN_DANCE
 - MOVE_SURF
 - MOVE_RECOVER
 - MOVE_ANCIENT_POWER
 
-SPECIES_MAGNEZONE
-Level: 36
+SPECIES_MAGNETON
+Level: 34
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
-- MOVE_MIRROR_SHOT
-- MOVE_TRI_ATTACK
+- MOVE_MAGNET_BOMB
+- MOVE_MAGNET_RISE
 - MOVE_RAIN_DANCE
 - MOVE_THUNDER
 
 SPECIES_TINKATON @ ITEM_FOCUS_BAND
-Level: 38
+Level: 37
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_BRICK_BREAK
 - MOVE_KNOCK_OFF
@@ -8526,7 +8526,7 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_GIGATON_HAMMER
 
 SPECIES_STEELIX @ ITEM_QUICK_CLAW
-Level: 39
+Level: 38
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - MOVE_CRUNCH
 - MOVE_EARTHQUAKE
@@ -8544,6 +8544,14 @@ AI: Smart Trainer
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
+SPECIES_MAGNEZONE
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FLASH_CANNON
+- MOVE_TRI_ATTACK
+- MOVE_RAIN_DANCE
+- MOVE_THUNDER
+
 SPECIES_SKARMORY
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -8559,14 +8567,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SURF
 - MOVE_RECOVER
 - MOVE_ANCIENT_POWER
-
-SPECIES_MAGNEZONE
-Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_MIRROR_SHOT
-- MOVE_TRI_ATTACK
-- MOVE_RAIN_DANCE
-- MOVE_THUNDER
 
 SPECIES_TINKATON @ ITEM_FOCUS_BAND
 Level: 40
@@ -8850,7 +8850,7 @@ AI: Smart Trainer
 Mugshot: Blue
 Items: Full Restore / Full Restore
 
-SPECIES_DRAGONAIR @ ITEM_SITRUS_BERRY
+SPECIES_DRAGONAIR @ ITEM_EVIOLITE
 Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDER_WAVE
@@ -8882,7 +8882,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_FLY
 - MOVE_DRAGON_BREATH
 
-SPECIES_DRAGONAIR @ ITEM_SITRUS_BERRY
+SPECIES_DRAGONAIR @ ITEM_EVIOLITE
 Level: 67
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDER_WAVE
@@ -13178,7 +13178,7 @@ Pic: Archer Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
@@ -13212,7 +13212,7 @@ IVs: 31 HP / 27 Atk / 27 Def / 31 SpA / 27 SpD / 27 Spe
 - MOVE_BITE
 - MOVE_STRENGTH
 - MOVE_BOUNCE
-- MOVE_HYDRO_PUMP
+- MOVE_AQUA_TAIL
 
 SPECIES_GRIMMSNARL
 Level: 43
@@ -14821,7 +14821,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Qwilfish
-Level: 24
+Level: Badge+6
 
 === TRAINER_TULLY_3_HNS ===
 Name: TULLY
@@ -14857,14 +14857,21 @@ Music: Hg Suspicious 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Seaking
-Level: 52
+SPECIES_QWILFISH
+Level: Badge+7
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-Qwilfish
-Level: 55
+SPECIES_WAILORD
+Level: Badge+9
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-Seaking
-Level: 52
+SPECIES_QWILFISH
+Level: Badge+7
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SEAKING
+Level: Badge+5
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_BRENT_2_HNS ===
 Name: BRENT
@@ -17177,67 +17184,67 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Items: Full Restore / Full Restore
 Mugshot: Orange
 
-Skarmory @ Covert Cloak  
-Ability: Sturdy  
+Skarmory @ ITEM_ROCKY_HELMET
+Ability: Rough Skin
 Level: 77 
 EVs: 8 HP / 252 Atk / 248 Def  
-Adamant Nature  
-- MOVE_IRON_DEFENSE  
-- Brave Bird  
+Impish Nature  
+- MOVE_FLY
+- MOVE_ROOST 
 - MOVE_STEEL_WING  
-- Spikes  
+- MOVE_SPIKES
 
-Omastar @ Sitrus Berry  
-Ability: Solid Rock  
+Cradily @ ITEM_LEFTOVERS
+Ability: Storm Drain  
 Level: 77 
-EVs: 128 Def / 40 SpA / 252 SpD  
+EVs: 252 HP / 128 Def / 128 SpD  
 Relaxed Nature  
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Hydro Pump  
-- Meteor Beam  
-- Brine  
-- Toxic Spikes  
+- MOVE_GIGA_DRAIN
+- MOVE_INGRAIN
+- MOVE_SUBSTITUTE
+- MOVE_ANCIENT_POWER
 
-Claydol @ Light Clay  
+Armaldo @ Scope Lens  
+Ability: Water Absorb  
+Level: 77  
+EVs: 124 SpD / 132 Def / 252 Spe  
+Adamant Nature  
+- Stone Edge  
+- X-Scissor  
+- Earthquake
+- Hone Claws  
+
+Claydol @ ITEM_TWISTED_SPOON  
 Ability: Levitate  
 Level: 77
 EVs: 248 HP / 252 SpA / 8 SpD  
 Modest Nature  
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Light Screen  
-- Reflect  
-- MOVE_EXTRASENSORY  
-- Earth Power  
+- MOVE_ANCIENT_POWER
+- MOVE_COSMIC_POWER
+- MOVE_STORED_POWER
+- MOVE_EARTH_POWER
 
-Aggron @ Rocky Helmet  
-Ability: Heavy Metal  
+Aggron @ ITEM_WISE_GLASSES 
+Ability: Sturdy
 Level: 77 
-EVs: 4 HP / 248 Atk / 252 Def / 4 SpD  
-Adamant Nature  
-- MOVE_IRON_TAIL  
-- Body Press  
-- Curse  
-- Rock Slide  
+EVs: 4 HP / 248 SpA / 252 Def / 4 SpD  
+Modest Nature  
+- MOVE_FLASH_CANNON  
+- MOVE_THUNDERBOLT
+- MOVE_ICE_BEAM
+- MOVE_ANCIENT_POWER
 
-Kleavor @ Scope Lens  
-Ability: Sharpness  
-Level: 77  
-EVs: 124 Atk / 132 Def / 252 Spe  
-Adamant Nature  
-- Stone Axe  
-- X-Scissor  
-- MOVE_ROCK_SLIDE  
-- Double Team  
-
-Metagross @ Metal Coat  
-Ability: Clear Body  
+Metagross @ ITEM_MUSCLE_BAND
+Ability: ABILITY_TOUGH_CLAWS
 Level: 79   
 EVs: 128 HP / 120 Atk / 4 Def / 252 SpD  
-Brave Nature  
-- MOVE_METAL_CLAW  
-- Meteor Mash  
-- MOVE_PSYCHO_CUT  
-- Cosmic Power 
+Adamant Nature  
+- MOVE_ZEN_HEADBUTT  
+- MOVE_METEOR_MASH  
+- MOVE_EARTHQUAKE  
+- MOVE_HAMMER_ARM
 
 === TRAINER_FINLEY_HNS ===
 Name: FINLEY
@@ -20044,13 +20051,13 @@ Music: Elite Four
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-SPECIES_CLOYSTER
-Level: Badge+3
+SPECIES_AZUMARILL
+Level: Badge+4
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- MOVE_TOXIC
-- MOVE_ICE_BEAM
-- MOVE_DIVE
-- MOVE_SPIKES
+- MOVE_WATERFALL
+- MOVE_BOUNCE
+- MOVE_SUPERPOWER
+- MOVE_ICE_PUNCH
 
 SPECIES_SLOWBRO
 Level: Badge+4
@@ -20061,15 +20068,15 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_ICE_BEAM
 
 SPECIES_EMPOLEON
-Level: Badge+4
+Level: Badge+5
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- MOVE_ROCK_TOMB
-- MOVE_DRILL_PECK
-- MOVE_SURF
+- MOVE_FLASH_CANNON
+- MOVE_CHILLING_WATER
+- MOVE_HYDRO_PUMP
 - MOVE_ICE_BEAM
 
 SPECIES_GLACEON
-Level: Badge+2
+Level: Badge+5
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_SHADOW_BALL
 - MOVE_BLIZZARD
@@ -20077,7 +20084,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_TOXIC
 
 SPECIES_JYNX
-Level: Badge+5
+Level: Badge+7
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_PSYCHIC
 - MOVE_LOVELY_KISS
@@ -20085,7 +20092,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_BLIZZARD
 
 SPECIES_LAPRAS
-Level: Badge+5
+Level: Badge+9
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_HYDRO_PUMP
 - MOVE_PSYCHIC
@@ -20107,7 +20114,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_SHADOW_BALL
 - MOVE_THUNDERBOLT
 - MOVE_HYPNOSIS
-- MOVE_ICE_PUNCH
+- MOVE_ICY_WIND
 
 SPECIES_CHANDELURE
 Level: Badge+4
@@ -20117,19 +20124,19 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_WILL_O_WISP
 - MOVE_CONFUSE_RAY
 
-SPECIES_DUSCLOPS
+SPECIES_HOUNDSTONE
 Level: Badge+4
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- MOVE_SHADOW_PUNCH
-- MOVE_FIRE_PUNCH
-- MOVE_ICE_PUNCH
-- MOVE_THUNDER_PUNCH
+- MOVE_SHADOW_CLAW
+- MOVE_CRUNCH
+- MOVE_PLAY_ROUGH
+- MOVE_DOUBLE_EDGE
 
 SPECIES_CROBAT
 Level: Badge+5
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- MOVE_AIR_CUTTER
-- MOVE_SLUDGE_BOMB
+- MOVE_AERIAL_ACE
+- MOVE_POISON_FANG
 - MOVE_FAINT_ATTACK
 - MOVE_QUICK_ATTACK
 
@@ -20158,24 +20165,24 @@ Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_GOLBAT
-Level: 60
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_AIR_CUTTER
-- MOVE_BITE
-- MOVE_CONFUSE_RAY
-- MOVE_POISON_FANG
-
-SPECIES_KOFFING
-Level: 60
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+SPECIES_WEEZING
+Level: 57
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_SLUDGE_BOMB
 - MOVE_FLAMETHROWER
-- MOVE_SCREECH
+- MOVE_WILL_O_WISP
 - MOVE_EXPLOSION
 
-SPECIES_PRIMEAPE
-Level: 61
+SPECIES_WEEZING
+Level: 57
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_FLAMETHROWER
+- MOVE_WILL_O_WISP
+- MOVE_EXPLOSION
+
+SPECIES_HARIYAMA
+Level: 60
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_CROSS_CHOP
 - MOVE_ROCK_SLIDE
@@ -20192,7 +20199,7 @@ Double Battle: No
 AI: Check Bad Move
 
 SPECIES_GOLBAT
-Level: 60
+Level: 55
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_AIR_CUTTER
 - MOVE_BITE
@@ -20200,7 +20207,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_POISON_FANG
 
 SPECIES_GOLBAT
-Level: 60
+Level: 55
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_AIR_CUTTER
 - MOVE_BITE
@@ -20208,7 +20215,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_POISON_FANG
 
 SPECIES_ELECTABUZZ
-Level: 61
+Level: 58
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_FIRE_PUNCH
 - MOVE_THUNDER_PUNCH
@@ -20223,30 +20230,6 @@ Gender: Male
 Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move
-
-SPECIES_ELECTRODE
-Level: 60
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_THUNDERBOLT
-- MOVE_SWIFT
-- MOVE_LIGHT_SCREEN
-- MOVE_EXPLOSION
-
-SPECIES_GRIMER
-Level: 59
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_SLUDGE_BOMB
-- MOVE_SHADOW_PUNCH
-- MOVE_GIGA_DRAIN
-- MOVE_ACID_ARMOR
-
-SPECIES_GRIMER
-Level: 59
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- MOVE_SLUDGE_BOMB
-- MOVE_SHADOW_PUNCH
-- MOVE_GIGA_DRAIN
-- MOVE_ACID_ARMOR
 
 SPECIES_MUK
 Level: 61
@@ -20265,16 +20248,24 @@ Music: Hg Suspicious 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-SPECIES_MAGNETON
-Level: 62
+SPECIES_ELECTRODE
+Level: 56
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- MOVE_THUNDERBOLT
-- MOVE_THUNDER_WAVE
+- MOVE_ELECTRO_BALL
 - MOVE_SWIFT
-- MOVE_METAL_SOUND
+- MOVE_LIGHT_SCREEN
+- MOVE_EXPLOSION
+
+SPECIES_ELECTRODE
+Level: 56
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- MOVE_ELECTRO_BALL
+- MOVE_SWIFT
+- MOVE_LIGHT_SCREEN
+- MOVE_EXPLOSION
 
 SPECIES_WEEZING
-Level: 62
+Level: 59
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_SLUDGE_BOMB
 - MOVE_FLAMETHROWER
@@ -20282,7 +20273,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_EXPLOSION
 
 SPECIES_ELECTRODE
-Level: 63
+Level: 56
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_ELECTRO_BALL
 - MOVE_SWIFT
@@ -20298,24 +20289,16 @@ Music: Hg Suspicious 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-SPECIES_MAGNETON
-Level: 63
+SPECIES_ELECTABUZZ
+Level: 60
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- MOVE_THUNDERBOLT
-- MOVE_THUNDER_WAVE
-- MOVE_SWIFT
-- MOVE_METAL_SOUND
-
-SPECIES_ARBOK
-Level: 63
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- MOVE_SLUDGE_BOMB
-- MOVE_CRUNCH
-- MOVE_EARTHQUAKE
-- MOVE_GLARE
+- MOVE_THUNDER_PUNCH
+- MOVE_BRICK_BREAK
+- MOVE_ICE_PUNCH
+- MOVE_DISCHARGE
 
 SPECIES_PRIMEAPE
-Level: 64
+Level: 62
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_CROSS_CHOP
 - MOVE_ROCK_SLIDE
@@ -20332,7 +20315,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint
 
 SPECIES_MUK
-Level: 63
+Level: 58
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_SLUDGE_BOMB
 - MOVE_FIRE_PUNCH
@@ -20340,7 +20323,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_SCREECH
 
 SPECIES_MAGNETON
-Level: 61
+Level: 57
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_THUNDERBOLT
 - MOVE_THUNDER_WAVE
@@ -20348,7 +20331,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_METAL_SOUND
 
 SPECIES_MAGNETON
-Level: 61
+Level: 57
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_THUNDERBOLT
 - MOVE_THUNDER_WAVE
@@ -20356,7 +20339,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_METAL_SOUND
 
 SPECIES_PANGORO
-Level: 64
+Level: 59
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - MOVE_HAMMER_ARM
 - MOVE_EARTHQUAKE
@@ -20375,7 +20358,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Items: Hyper Potion / Hyper Potion
 
 SPECIES_DODRIO
-Level: 66
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_TRI_ATTACK
 - MOVE_JUMP_KICK
@@ -20383,15 +20366,15 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_MIRROR_MOVE
 
 SPECIES_GRUMPIG
-Level: 66
+Level: 59
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- MOVE_PSYCHIC
+- MOVE_PSYSHOCK
 - MOVE_CALM_MIND
 - MOVE_SHOCK_WAVE
 - MOVE_ICY_WIND
 
 SPECIES_NIDOQUEEN
-Level: 67
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_EARTHQUAKE
 - MOVE_SUPERPOWER
@@ -20399,7 +20382,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_THUNDERBOLT
 
 SPECIES_WEAVILE
-Level: 67
+Level: 60
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_ICE_PUNCH
 - MOVE_SLASH
@@ -20407,7 +20390,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_SWORDS_DANCE
 
 SPECIES_NIDOKING
-Level: 67
+Level: 61
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_EARTHQUAKE
 - MOVE_MEGAHORN
@@ -20415,7 +20398,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_ICE_BEAM
 
 SPECIES_ANNIHILAPE
-Level: 68
+Level: 62
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_CLOSE_COMBAT
 - MOVE_SHADOW_CLAW
@@ -20432,7 +20415,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 SPECIES_SKARMORY
-Level: 68
+Level: 63
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_STEEL_WING
 - MOVE_AERIAL_ACE
@@ -20440,7 +20423,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_ROOST
 
 SPECIES_OMASTAR
-Level: 70
+Level: 65
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_SURF
 - MOVE_ANCIENT_POWER
@@ -20448,7 +20431,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_SPIKES
 
 SPECIES_KABUTOPS
-Level: 70
+Level: 65
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_SLASH
 - MOVE_ANCIENT_POWER
@@ -20456,7 +20439,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_LIQUIDATION
 
 SPECIES_CLAYDOL
-Level: 69
+Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_PSYCHIC
 - MOVE_EARTH_POWER
@@ -20464,7 +20447,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_REFLECT
 
 SPECIES_AGGRON
-Level: 69
+Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_EARTHQUAKE
 - MOVE_ROCK_SLIDE
@@ -20472,7 +20455,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_THUNDER
 
 SPECIES_METAGROSS
-Level: 71
+Level: 66
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - MOVE_METEOR_MASH
 - MOVE_PSYCHIC
@@ -22545,19 +22528,19 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_SHADOW_BALL
 - MOVE_CALM_MIND
 
-SPECIES_PERSIAN
+SPECIES_KANGASKHAN
 Level: Badge+7
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- MOVE_HYPNOSIS
-- MOVE_BODY_SLAM
-- MOVE_KNOCK_OFF
+- MOVE_FAKE_OUT
+- MOVE_FACADE
+- MOVE_BRICK_BREAK
 - MOVE_IRON_TAIL
 
 SPECIES_VIGOROTH @ ITEM_SITRUS_BERRY
 Level: Badge+8
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - MOVE_BULK_UP
-- MOVE_SLASH
+- MOVE_FACADE
 - MOVE_ROCK_SLIDE
 - MOVE_BRICK_BREAK
 
@@ -22576,35 +22559,37 @@ Pic: Leader Roxanne
 Gender: Female
 Music: Hg Girl 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
-SPECIES_GOLEM @ ITEM_QUICK_CLAW
+SPECIES_GIGALITH @ ITEM_QUICK_CLAW
+Ability: Sand Stream
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_EARTHQUAKE
 - MOVE_STONE_EDGE
 - MOVE_EXPLOSION
-- MOVE_FIRE_PUNCH
+- MOVE_HEAVY_SLAM
 
-SPECIES_RELICANTH @ ITEM_SITRUS_BERRY
+SPECIES_FLYGON @ ITEM_LIFE_ORB
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_HEAD_SMASH
-- MOVE_WATERFALL
-- MOVE_EARTHQUAKE
-- MOVE_YAWN
+- MOVE_BUG_BUZZ
+- MOVE_FIRE_BLAST
+- MOVE_SANDSEAR_STORM
+- MOVE_DRAGON_CLAW
 
-SPECIES_OMASTAR @ ITEM_MYSTIC_WATER
+SPECIES_CRADILY @ ITEM_LEFTOVERS
 Level: 82
+Ability: ABILITY_STORM_DRAIN
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_HYDRO_PUMP
+- MOVE_GIGA_DRAIN
 - MOVE_ANCIENT_POWER
-- MOVE_ICE_BEAM
+- MOVE_PROTECT
 - MOVE_EARTH_POWER
 
-SPECIES_KABUTOPS @ ITEM_SCOPE_LENS
+SPECIES_ARMALDO @ ITEM_HARD_STONE
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_STONE_EDGE
@@ -22612,16 +22597,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_X_SCISSOR
 - MOVE_SWORDS_DANCE
 
-SPECIES_AERODACTYL @ ITEM_HARD_STONE
-Ability: Rock Head
+SPECIES_LUCARIO @ ITEM_BLACK_BELT
 Level: 83
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_HEAD_SMASH
-- MOVE_EARTHQUAKE
-- MOVE_ROCK_POLISH
-- MOVE_CRUNCH
+- MOVE_CLOSE_COMBAT
+- MOVE_EXTREME_SPEED
+- MOVE_PSYCHIC
+- MOVE_DRAGON_PULSE
 
 SPECIES_PROBOPASS @ ITEM_LEFTOVERS
+Ability: Levitate
 Level: 85
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_POWER_GEM
@@ -22636,17 +22621,9 @@ Pic: Leader Brawly
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Blue
 Items: Full Restore / Full Restore
-
-SPECIES_HITMONTOP @ ITEM_KINGS_ROCK
-Level: 81
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_CLOSE_COMBAT
-- MOVE_TRIPLE_KICK
-- MOVE_MACH_PUNCH
-- MOVE_FAKE_OUT
 
 SPECIES_BRELOOM @ ITEM_LUM_BERRY
 Level: 81
@@ -22657,21 +22634,29 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_MACH_PUNCH
 
 SPECIES_POLIWRATH @ ITEM_MYSTIC_WATER
-Level: 82
+Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_WATERFALL
 - MOVE_DYNAMIC_PUNCH
 - MOVE_ICE_PUNCH
 - MOVE_EARTHQUAKE
 
-SPECIES_MACHAMP @ ITEM_BLACK_BELT
-Ability: No Guard
+SPECIES_ELECTIVIRE @ ITEM_MAGNET
+Ability: Galvanize
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_DYNAMIC_PUNCH
-- MOVE_STONE_EDGE
-- MOVE_EARTHQUAKE
+- MOVE_DOUBLE_EDGE
+- MOVE_CROSS_CHOP
 - MOVE_ICE_PUNCH
+- MOVE_EARTHQUAKE
+
+SPECIES_MAGMORTAR @ ITEM_CHARCOAL
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FLAMETHROWER
+- MOVE_PSYCHIC
+- MOVE_THUNDERBOLT
+- MOVE_HYPER_BEAM
 
 SPECIES_GALLADE @ ITEM_SCOPE_LENS
 Ability: Sharpness
@@ -22680,9 +22665,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_CLOSE_COMBAT
 - MOVE_PSYCHO_CUT
 - MOVE_LEAF_BLADE
-- MOVE_ICE_PUNCH
+- MOVE_AERIAL_ACE
 
 SPECIES_HARIYAMA @ ITEM_LEFTOVERS
+Ability: Sheer Force
 Level: 85
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_CLOSE_COMBAT
@@ -22697,41 +22683,41 @@ Pic: Leader Wattson
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
-SPECIES_ELECTRODE @ ITEM_FOCUS_SASH
+SPECIES_FORRETRESS @ ITEM_LEFTOVERS
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_THUNDERBOLT
+- MOVE_FLASH_CANNON
 - MOVE_EXPLOSION
-- MOVE_THUNDER_WAVE
-- MOVE_SIGNAL_BEAM
+- MOVE_TOXIC_SPIKES
+- MOVE_STEAMROLLER
 
-SPECIES_RAICHU @ ITEM_MAGNET
+SPECIES_GEKOPON @ ITEM_MAGNET
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDERBOLT
-- MOVE_FOCUS_BLAST
-- MOVE_GRASS_KNOT
-- MOVE_NASTY_PLOT
+- MOVE_MUDDY_WATER
+- MOVE_GIGA_DRAIN
+- MOVE_YAWN
 
-SPECIES_LANTURN @ ITEM_LEFTOVERS
+SPECIES_KILOWATTREL @ ITEM_FLYING_GEM
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SURF
-- MOVE_DISCHARGE
-- MOVE_ICE_BEAM
+- MOVE_ACROBATICS
+- MOVE_ELECTRO_BALL
+- MOVE_WATER_PULSE
 - MOVE_THUNDER_WAVE
 
-SPECIES_AMPHAROS @ ITEM_WISE_GLASSES
+SPECIES_PORYGON_Z @ ITEM_WISE_GLASSES
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_THUNDER
-- MOVE_POWER_GEM
+- MOVE_TRI_ATTACK
+- MOVE_DARK_PULSE
 - MOVE_FOCUS_BLAST
-- MOVE_SIGNAL_BEAM
+- MOVE_ICE_BEAM
 
 SPECIES_MAGNEZONE @ ITEM_METAL_COAT
 Level: 83
@@ -22756,9 +22742,18 @@ Pic: Leader Flannery
 Gender: Female
 Music: Hg Girl 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
+
+SPECIES_CHARIZARD @ ITEM_DRAGON_FANG
+Ability: Drought
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_FIRE_BLAST
+- MOVE_SOLAR_BEAM
+- MOVE_ANCIENT_POWER
+- MOVE_DRAGON_CLAW
 
 SPECIES_MAGCARGO @ ITEM_SITRUS_BERRY
 Level: 81
@@ -22768,30 +22763,22 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_ANCIENT_POWER
 - MOVE_RECOVER
 
-SPECIES_MAGMORTAR @ ITEM_CHARCOAL
+SPECIES_ARCANINE @ ITEM_CHARCOAL
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FIRE_BLAST
-- MOVE_THUNDERBOLT
-- MOVE_FOCUS_BLAST
-- MOVE_HYPER_BEAM
+- MOVE_OVERHEAT
+- MOVE_WILD_CHARGE
+- MOVE_CRUNCH
+- MOVE_EXTREME_SPEED
 
-SPECIES_NINETALES @ ITEM_HEAT_ROCK
-Ability: Drought
+SPECIES_LURANTIS @ ITEM_BLACK_GLASSES
+Ability: Chlorophyll
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FIRE_BLAST
-- MOVE_SOLAR_BEAM
-- MOVE_WILL_O_WISP
-- MOVE_NASTY_PLOT
-
-SPECIES_HOUNDOOM @ ITEM_BLACK_GLASSES
-Level: 82
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FIRE_BLAST
-- MOVE_DARK_PULSE
-- MOVE_SLUDGE_BOMB
-- MOVE_NASTY_PLOT
+- MOVE_SOLAR_BLADE
+- MOVE_X_SCISSOR
+- MOVE_BRICK_BREAK
+- MOVE_SWORDS_DANCE
 
 SPECIES_CAMERUPT @ ITEM_LUM_BERRY
 Level: 83
@@ -22817,25 +22804,25 @@ Pic: Leader Winona
 Gender: Female
 Music: Hg Girl 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Light Blue
 Items: Hyper Potion / Hyper Potion
 
-SPECIES_PIDGEOT
+SPECIES_TOGETIC
 Level: Badge+6
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- MOVE_WING_ATTACK
-- MOVE_QUICK_ATTACK
-- MOVE_FEATHER_DANCE
+- MOVE_ANCIENT_POWER
 - MOVE_AERIAL_ACE
+- MOVE_SWEET_KISS
+- MOVE_METRONOME
 
-SPECIES_MANTINE
+SPECIES_CHARIZARD @ ITEM_DRAGON_FANG
 Level: Badge+7
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- MOVE_WATER_PULSE
+- MOVE_FLAMETHROWER
 - MOVE_AERIAL_ACE
-- MOVE_SUPERSONIC
-- MOVE_PROTECT
+- MOVE_DRAGON_CLAW
+- MOVE_ANCIENT_POWER
 
 SPECIES_TROPIUS
 Level: Badge+7
@@ -22868,33 +22855,33 @@ Pic: Leader Tate And Liza
 Gender: Male
 Music: Hg Boy 1
 Double Battle: Yes
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Pink
 Items: Full Restore / Full Restore
 
-SPECIES_XATU @ ITEM_LIGHT_CLAY
+SPECIES_GOLURK @ ITEM_SOFT_SAND
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_AIR_SLASH
-- MOVE_TAILWIND
-- MOVE_REFLECT
+- MOVE_EARTHQUAKE
+- MOVE_PHANTOM_FORCE
+- MOVE_HAMMER_ARM
+- MOVE_HEAVY_SLAM
 
-SPECIES_SLOWKING @ ITEM_LEFTOVERS
+SPECIES_DECIBELLE @ ITEM_LEFTOVERS
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SURF
+- MOVE_DAZZLING_GLEAM
 - MOVE_PSYCHIC
-- MOVE_FLAMETHROWER
-- MOVE_ICE_BEAM
+- MOVE_FLASH_CANNON
+- MOVE_CALM_MIND
 
-SPECIES_CLAYDOL @ ITEM_SITRUS_BERRY
-Level: 82
+SPECIES_GALLADE @ ITEM_MUSCLE_BAND
+Level: 83
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_EARTHQUAKE
-- MOVE_PSYCHIC
-- MOVE_ICE_BEAM
-- MOVE_LIGHT_SCREEN
+- MOVE_PSYCHO_CUT
+- MOVE_AERIAL_ACE
+- MOVE_LEAF_BLADE
 
 SPECIES_GARDEVOIR @ ITEM_WISE_GLASSES
 Level: 83
@@ -22927,49 +22914,52 @@ Pic: Champion Wallace
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Purple
 Items: Full Restore / Full Restore
 
-SPECIES_WAILORD @ ITEM_MYSTIC_WATER
+
+SPECIES_PELIPPER @ ITEM_LUM_BERRY
+Ability: Drizzle
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_WATER_SPOUT
+- MOVE_HURRICANE
+- MOVE_ROOST
 - MOVE_ICE_BEAM
-- MOVE_EARTHQUAKE
-- MOVE_REST
 
-SPECIES_TENTACRUEL @ ITEM_BLACK_SLUDGE
+SPECIES_LUDICOLO @ ITEM_MIRACLE_SEED
+Ability: Rain Dish
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SCALD
+- MOVE_GIGA_DRAIN
+- MOVE_ICE_BEAM
+- MOVE_SUBSTITUTE
+
+SPECIES_GOODRA @ ITEM_MYSTIC_WATER
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_DRAGON_PULSE
+- MOVE_FLAMETHROWER
+- MOVE_EARTHQUAKE
+- MOVE_POWER_WHIP
+
+SPECIES_KUJINOUGHT @ ITEM_CHARCOAL
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HYDRO_PUMP
-- MOVE_SLUDGE_BOMB
+- MOVE_FLAMETHROWER
+- MOVE_CHARGE_BEAM
 - MOVE_ICE_BEAM
-- MOVE_TOXIC
 
-SPECIES_LUDICOLO @ ITEM_DAMP_ROCK
-Level: 82
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SURF
-- MOVE_GIGA_DRAIN
-- MOVE_ICE_BEAM
-- MOVE_RAIN_DANCE
-
-SPECIES_WHISCASH @ ITEM_SITRUS_BERRY
-Level: 82
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_WATERFALL
-- MOVE_EARTHQUAKE
-- MOVE_DRAGON_DANCE
-- MOVE_ZEN_HEADBUTT
-
-SPECIES_GYARADOS @ ITEM_LUM_BERRY
+SPECIES_STARMIE @ ITEM_WISE_GLASSES
 Level: 83
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_WATERFALL
-- MOVE_EARTHQUAKE
-- MOVE_DRAGON_DANCE
-- MOVE_ICE_FANG
+- MOVE_SURF
+- MOVE_ICE_BEAM
+- MOVE_PSYSHOCK
+- MOVE_THUNDERBOLT
 
 SPECIES_MILOTIC @ ITEM_LEFTOVERS
 Level: 85
@@ -22986,26 +22976,26 @@ Pic: Leader Norman
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Green
 Items: Full Restore / Full Restore
 
-SPECIES_AMBIPOM @ ITEM_KINGS_ROCK
+SPECIES_VIGOROTH @ ITEM_EVIOLITE
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FAKE_OUT
-- MOVE_DOUBLE_HIT
-- MOVE_SHADOW_CLAW
-- MOVE_ICE_PUNCH
+- MOVE_SLASH
+- MOVE_BULK_UP
+- MOVE_ROCK_SLIDE
+- MOVE_BRICK_BREAK
 
-SPECIES_URSARING @ ITEM_FLAME_ORB
-Ability: Guts
+SPECIES_STARAPTOR @ ITEM_BLACK_BELT
+Ability: Intimidate
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FACADE
-- MOVE_CRUNCH
-- MOVE_EARTHQUAKE
-- MOVE_SWORDS_DANCE
+- MOVE_CLOSE_COMBAT
+- MOVE_BRAVE_BIRD
+- MOVE_BULK_UP
+- MOVE_KNOCK_OFF
 
 SPECIES_FARIGIRAF @ ITEM_SITRUS_BERRY
 Level: 82
@@ -23015,29 +23005,29 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SHADOW_BALL
 - MOVE_CALM_MIND
 
-SPECIES_KANGASKHAN @ ITEM_LEFTOVERS
+SPECIES_HOUNDSTONE @ ITEM_SPELL_TAG
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FAKE_OUT
+- MOVE_SHADOW_CLAW
 - MOVE_DOUBLE_EDGE
 - MOVE_EARTHQUAKE
 - MOVE_CRUNCH
-
-SPECIES_VIGOROTH @ ITEM_EVIOLITE
-Level: 83
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_BULK_UP
-- MOVE_SLASH
-- MOVE_ROCK_SLIDE
-- MOVE_BRICK_BREAK
 
 SPECIES_SLAKING @ ITEM_SILK_SCARF
 Level: 85
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_DOUBLE_EDGE
-- MOVE_EARTHQUAKE
+- MOVE_SHADOW_CLAW
 - MOVE_HAMMER_ARM
 - MOVE_SLACK_OFF
+
+SPECIES_SLAKING @ ITEM_LEFTOVERS
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_HYPER_BEAM
+- MOVE_EARTHQUAKE
+- MOVE_HAMMER_ARM
+- MOVE_AERIAL_ACE
 
 === TRAINER_CHALLENGER_WINONA_HNS ===
 Name: WINONA
@@ -23046,7 +23036,7 @@ Pic: Leader Winona
 Gender: Female
 Music: Hg Girl 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Light Blue
 Items: Full Restore / Full Restore
 
@@ -23066,13 +23056,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_BOUNCE
 - MOVE_DRAGON_DANCE
 
-SPECIES_TROPIUS @ ITEM_SITRUS_BERRY
+SPECIES_HYDREIGON @ ITEM_SITRUS_BERRY
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_LEAF_BLADE
-- MOVE_AIR_SLASH
-- MOVE_EARTHQUAKE
-- MOVE_SYNTHESIS
+- MOVE_RAGING_FURY
+- MOVE_DARK_PULSE
+- MOVE_SURF
+- MOVE_OUTRAGE
 
 SPECIES_CHARIZARD @ ITEM_CHARCOAL
 Level: 82
@@ -23105,17 +23095,9 @@ Pic: Champion Lance Hns
 Gender: Male
 Music: Hg Champion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Blue
 Items: Full Restore / Full Restore
-
-SPECIES_AERODACTYL @ ITEM_SCOPE_LENS
-Level: 81
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_BRAVE_BIRD
-- MOVE_ROCK_SLIDE
-- MOVE_EARTHQUAKE
-- MOVE_IRON_TAIL
 
 SPECIES_EELEKTROSS @ ITEM_LEFTOVERS
 Level: 81
@@ -23172,25 +23154,25 @@ Pic: Eusine Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Yellow
 Items: Full Restore / Full Restore
 
-SPECIES_HYPNO @ ITEM_LEFTOVERS
+SPECIES_GLIMMORA @ ITEM_LIGHT_CLAY
 Level: 81
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_PSYCHIC
-- MOVE_HYPNOSIS
-- MOVE_SHADOW_BALL
-- MOVE_NASTY_PLOT
-
-SPECIES_ELECTRODE @ ITEM_LIGHT_CLAY
-Level: 81
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_THUNDER
-- MOVE_EXPLOSION
+- MOVE_SLUDGE_WAVE
+- MOVE_REFLECT
 - MOVE_LIGHT_SCREEN
-- MOVE_THUNDER_WAVE
+- MOVE_POWER_GEM
+
+SPECIES_MILOTIC @ ITEM_LEFTOVERS
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- MOVE_SCALD
+- MOVE_HYPNOSIS
+- MOVE_ICE_BEAM
+- MOVE_DREAM_EATER
 
 SPECIES_STARMIE @ ITEM_SITRUS_BERRY
 Level: 82
@@ -23200,13 +23182,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_THUNDERBOLT
 - MOVE_ICE_BEAM
 
-SPECIES_SMEARGLE @ ITEM_FOCUS_SASH
+SPECIES_BAXCALIBUR @ ITEM_FOCUS_SASH
+Ability: ABILITY_THERMAL_EXCHANGE
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_FLY
-- MOVE_SPORE
-- MOVE_MEAN_LOOK
-- MOVE_ENERGY_BALL
+- MOVE_GLAIVE_RUSH
+- MOVE_ICICLE_CRASH
+- MOVE_EARTHQUAKE
+- MOVE_CRUNCH
 
 SPECIES_GENGAR @ ITEM_SPELL_TAG
 Level: 83
@@ -23231,7 +23214,7 @@ Pic: Giovanni Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Dark Red
 Items: Full Restore / Full Restore / Full Restore
 
@@ -23291,7 +23274,7 @@ Pic: Leader Clair Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Blue
 Items: Full Restore / Full Restore
 
@@ -23311,13 +23294,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_HURRICANE
 - MOVE_EARTHQUAKE
 
-SPECIES_DRAGONAIR @ ITEM_EVIOLITE
+SPECIES_MILOTIC @ ITEM_MYSTIC_WATER
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_THUNDER_WAVE
-- MOVE_THUNDERBOLT
+- MOVE_DRAGON_PULSE
+- MOVE_RECOVER
 - MOVE_SURF
-- MOVE_DRAGON_BREATH
+- MOVE_ICE_BEAM
 
 SPECIES_DUNLONG @ ITEM_DRAGON_FANG
 Level: 82
@@ -23350,7 +23333,7 @@ Pic: Cynthia Hns
 Gender: Female
 Music: Hg Champion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Items: Full Restore / Full Restore
 
 Spiritomb @ Leftovers
@@ -23420,7 +23403,7 @@ Pic: Iris Hns
 Gender: Female
 Music: Hg Champion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Items: Full Restore / Full Restore
 
 Hydreigon @ Lum Berry
@@ -23490,7 +23473,7 @@ Pic: Expert M
 Gender: Male
 Music: Hg Champion
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
@@ -23561,7 +23544,7 @@ Pic: Steven
 Music: Hg Champion
 Gender: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Items: Full Restore / Full Restore
 Mugshot: Orange
 

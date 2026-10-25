@@ -261,8 +261,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SHUPPET",
-      "x": 20,
-      "y": 44,
+      "x": 31,
+      "y": 56,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -456,10 +456,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREEDER_F_HNS",
-      "x": 19,
-      "y": 48,
+      "x": 17,
+      "y": 62,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -570,6 +570,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_NIGHT_POKEMON"
+    },
+    {
+      "local_id": "LOCALID_R39_SHADOW",
+      "graphics_id": "OBJ_EVENT_GFX_LEGENDARY_SHADOW_HNS",
+      "x": 20,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_ROUTE39_SHADOW"
+    },
+    {
+      "local_id": "LOCALID_R39_BAOBA",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_HNS",
+      "x": 16,
+      "y": 50,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_ENABLE_BAOBA_MATCH_CALL"
     }
   ],
   "warp_events": [
@@ -606,6 +634,42 @@
       "var": "VAR_ECRUTEAK_CITY_STATE",
       "var_value": "0",
       "script": "EcruteakCity_EventScript_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_LUGIA_OR_HOOH",
+      "var_value": "0",
+      "script": "Route39_EventScript_LegendaryTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_LUGIA_OR_HOOH",
+      "var_value": "0",
+      "script": "Route39_EventScript_LegendaryTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_LUGIA_OR_HOOH",
+      "var_value": "0",
+      "script": "Route39_EventScript_LegendaryTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_LUGIA_OR_HOOH",
+      "var_value": "0",
+      "script": "Route39_EventScript_LegendaryTrigger"
     }
   ],
   "bg_events": [

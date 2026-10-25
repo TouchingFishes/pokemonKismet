@@ -86,10 +86,6 @@ FuchsiaCity_Route15_Gate_EventScript_FedStage1::
 @ apart now, which is why this needs its own entry.
 FuchsiaCity_Route15_Gate_EventScript_FedStage1Darius::
 	call FuchsiaCity_Route15_Gate_EventScript_FedFlagsLockdown
-	@ No visibility flag differs from the stage above - it is the four trainer
-	@ flags. DARIUS's own is enough to clear the SAFARI ZONE door: his hide flag
-	@ is FLAG_TEMP_2, which FuchsiaCity_EventScript_PlaceDarius recomputes from
-	@ it on every load of the city.
 	setflag TRAINER_FLAGS_START + TRAINER_MACK_HNS
 	setflag TRAINER_FLAGS_START + TRAINER_VERN_HNS
 	setflag TRAINER_FLAGS_START + TRAINER_HOYT_HNS
