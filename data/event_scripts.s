@@ -2427,6 +2427,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/DaoDaoIsles_EternaForest_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_BingCurrent_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_RocketLab_hns/scripts.inc"
+	.include "data/maps/DaoDaoIsles_RocketLab_B1F_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_RegirockChamber_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_RegisteelChamber_hns/scripts.inc"
 	.include "data/maps/DaoDaoIsles_RegiceChamber_hns/scripts.inc"

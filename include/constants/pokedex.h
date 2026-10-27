@@ -2915,9 +2915,13 @@ enum ObtainableDexOrder {
     OBTAINABLE_DEX_RAMPARDOS,
     OBTAINABLE_DEX_SHIELDON,
     OBTAINABLE_DEX_BASTIODON,
+    // MILCERY, the CELADON cafe CHEF's gift, and ALCREMIE, which any evolution stone makes of
+    // it (MIGRATION_DECISIONS.md 92). Appended for the same reason.
+    OBTAINABLE_DEX_MILCERY,
+    OBTAINABLE_DEX_ALCREMIE,
 };
 
-#define OBTAINABLE_DEX_COUNT (OBTAINABLE_DEX_BASTIODON + 1)
+#define OBTAINABLE_DEX_COUNT (OBTAINABLE_DEX_ALCREMIE + 1)
 
 #else
 

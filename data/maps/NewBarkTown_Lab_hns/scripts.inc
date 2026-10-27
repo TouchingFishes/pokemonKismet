@@ -526,6 +526,8 @@ NewBarkTown_Lab_EventScript_ElmMasterBall::
 	setflag FLAG_HIDE_ECRUTEAK_SILVER
 	setflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_NPCS
 	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_KIMONOS
+	@ Beaten the LEAGUE before coming back from BLACKTHORN: the call left this state alone.
+	goto_if_set FLAG_IS_CHAMPION, NewBarkTown_Lab_EventScript_ElmSSTicket
 	release
 	end
 

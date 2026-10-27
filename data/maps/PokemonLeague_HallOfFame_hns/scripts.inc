@@ -18,10 +18,15 @@ PokemonLeague_HallOfFame_OnFrame::
 	map_script_2 VAR_LEAGUE_STATE, 6, PokemonLeague_HallOfFame_EventScript_Cutscene
 	.2byte 0
 
+@ Branched like LANCE's own script in the CHAMPION's ROOM: a JOHTO champion without the
+@ sixteenth badge re-runs the LEAGUE against LANCE's first team, and that win is a repeat,
+@ not the KANTO clear. Keying the KANTO clear on FLAG_IS_CHAMPION alone handed out its
+@ unlocks early, and falling through to the first clear would rewind NEW BARK to 6
+@ (a second call from ELM and a second S.S. TICKET).
 PokemonLeague_HallOfFame_EventScript_Cutscene::
 	lock
 	goto_if_set FLAG_IS_KANTO_CHAMPION, PokemonLeague_HallOfFame_EventScript_CutsceneTitleDefense
-	goto_if_set FLAG_IS_CHAMPION, PokemonLeague_HallOfFame_EventScript_CutsceneKantoChamp
+	goto_if_set FLAG_IS_CHAMPION, PokemonLeague_HallOfFame_EventScript_CutsceneChampion
 	applymovement LOCALID_HALLOFFAME_LANCE, PokemonLeague_HallOfFame_Movement_LanceEnter
 	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_HallOfFame_Movement_PlayerEnter
 	waitmovement OBJ_EVENT_ID_PLAYER
@@ -37,6 +42,30 @@ PokemonLeague_HallOfFame_EventScript_Cutscene::
 	delay 40
 	setvar VAR_TEMP_1, 1
 	call PokemonLeague_HallOfFame_EventScript_SetFirstGameClearFlags
+	setrespawn HEAL_LOCATION_NEW_BARK_TOWN_HNS
+	fadescreenspeed FADE_TO_BLACK, 24
+	special GameClear
+	waitstate
+	releaseall
+	end
+
+PokemonLeague_HallOfFame_EventScript_CutsceneChampion:
+	goto_if_set FLAG_BADGE16_GET, PokemonLeague_HallOfFame_EventScript_CutsceneKantoChamp
+	applymovement LOCALID_HALLOFFAME_LANCE, PokemonLeague_HallOfFame_Movement_LanceEnter
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_HallOfFame_Movement_PlayerEnter
+	waitmovement OBJ_EVENT_ID_PLAYER
+	waitmovement LOCALID_HALLOFFAME_LANCE
+	msgbox PokemonLeague_HallOfFame_Repeat_LanceText, MSGBOX_DEFAULT
+	closemessage
+	special GivePartyMonChampionRibbon
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	delay 20
+	dofieldeffect FLDEFF_HALL_OF_FAME_RECORD_FRLG
+	waitfieldeffect FLDEFF_HALL_OF_FAME_RECORD_FRLG
+	delay 40
+	setvar VAR_TEMP_1, 1
+	setvar VAR_LEAGUE_STATE, 1
 	setrespawn HEAL_LOCATION_NEW_BARK_TOWN_HNS
 	fadescreenspeed FADE_TO_BLACK, 24
 	special GameClear
@@ -277,6 +306,13 @@ PokemonLeague_HallOfFame_LanceText:
     .string "all the makings of greatness!\p"
     .string "{PLAYER}, allow me to register you\n"
     .string "and your partners as CHAMPIONS!$"
+
+PokemonLeague_HallOfFame_Repeat_LanceText:
+    .string "LANCE: Back again, {PLAYER}.\p"
+    .string "Holding on to a title is harder\n"
+    .string "than winning it.\p"
+    .string "Your POKéMON will be honored\n"
+    .string "here once more.$"
 
 PokemonLeague_HallOfFame_Rematch_LanceText:
     .string "LANCE: I remember, it wasn't long ago\n"

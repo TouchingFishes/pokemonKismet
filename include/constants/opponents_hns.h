@@ -711,13 +711,6 @@
 #define TRAINER_RIVAL_FROAKIE_5_HNS              677
 #define TRAINER_RIVAL_FROAKIE_6_HNS              678
 #define TRAINER_RIVAL_FROAKIE_7_HNS              679
-// These were TRAINER_RIVAL_TREECKO_1..7, retired when Hoenn Grass moved onto TURTWIG's
-// party (Sceptile now comes from src/data/rival_aces_hns.party). Their flags had NEVER been
-// set on any save: rival defeat flags key on the script's Johto ID (GetTrainerAFlag,
-// src/battle_setup.c), never on a redirected one. Reused in place on 2026-10-18 for the
-// HOENN GYM LEADERS met in JOHTO and KANTO (MIGRATION_DECISIONS.md 81). WINONA's is her
-// CHERRYGROVE BAY team; the other six fight with the same team in the CHAMPION's ROOM.
-// Do not delete any of these IDs, or every trainer after them renumbers and its flag moves.
 #define TRAINER_LEADER_ROXANNE_HNS               680
 #define TRAINER_LEADER_BRAWLY_HNS                681
 #define TRAINER_LEADER_WATTSON_HNS               682
@@ -725,17 +718,12 @@
 #define TRAINER_LEADER_WINONA_HNS                684
 #define TRAINER_LEADER_TATE_AND_LIZA_HNS         685
 #define TRAINER_LEADER_WALLACE_HNS               686
-// TURTWIG's rival family, unused since SILVER's regroup (2026-10-16: Hoenn, Sinnoh, Unova
-// and Kalos Grass all ride on CHIKORITA's party now). Same reasoning as the RESERVED blocks:
-// rival IDs' own flags were never set. Two went to new trainers on 2026-10-18 and three to
-// CHAMPION's ROOM challengers the same day (MIGRATION_DECISIONS.md 81); RESERVED_18 and 19
-// are spare - rename one here to use it.
 #define TRAINER_PERCY_HNS                        687
 #define TRAINER_TRENT_HNS                        688
 #define TRAINER_CHALLENGER_STEVEN_HNS            689
 #define TRAINER_CHALLENGER_NORMAN_HNS            690
 #define TRAINER_CHALLENGER_WINONA_HNS            691
-#define TRAINER_RESERVED_18_HNS                  692
+#define TRAINER_LI_2_HNS                         692
 #define TRAINER_RESERVED_19_HNS                  693
 #define TRAINER_ALEC_HNS                         694
 #define TRAINER_AMALA_HNS                        695

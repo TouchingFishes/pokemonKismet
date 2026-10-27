@@ -138,7 +138,7 @@ NewBarkTown_PlayersHouse_2F_EventScript_TestMenuFlagsDone:
 @ flags from the gate house's own stage setter (FedFlagsAftermath), and the KANTO cordon is
 @ up before GIDEON and down after, exactly as his defeat leaves it. The save can be played on
 @ from there. GIDEON starts at the lab door so the grunts are there to fight; the other steps
-@ land beside their boss.
+@ land beside their boss on B1F.
 NewBarkTown_PlayersHouse_2F_EventScript_RocketLabTest::
 	message NewBarkTown_PlayersHouse_2F_Text_LabStage
 	waitmessage
@@ -162,7 +162,7 @@ NewBarkTown_PlayersHouse_2F_EventScript_RocketLabTest::
 NewBarkTown_PlayersHouse_2F_EventScript_LabBeforeGideon::
 	setvar VAR_FUCHSIA_FEDERATION_STATE, 5
 	clearflag FLAG_DEFEATED_DAODAO_LAB_GIDEON
-	clearflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
+	clearflag FLAG_DEFEATED_DAODAO_LAB_KLINKLANG
 	clearflag FLAG_DEFEATED_DAODAO_LAB_GIOVANNI
 	clearflag FLAG_DAODAO_GENESECT_TAKEN
 	clearflag FLAG_DAODAO_GENESECT_KNOCKED_OUT
@@ -197,23 +197,23 @@ NewBarkTown_PlayersHouse_2F_EventScript_LabGideon::
 
 NewBarkTown_PlayersHouse_2F_EventScript_LabKlinklang::
 	call NewBarkTown_PlayersHouse_2F_EventScript_LabAfterGideon
-	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_HNS, 12, 14
+	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_B1F_HNS, 10, 5
 	waitstate
 	end
 
 NewBarkTown_PlayersHouse_2F_EventScript_LabGiovanni::
 	call NewBarkTown_PlayersHouse_2F_EventScript_LabAfterGideon
-	setflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
-	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_HNS, 7, 6
+	setflag FLAG_DEFEATED_DAODAO_LAB_KLINKLANG
+	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_B1F_HNS, 10, 4
 	waitstate
 	end
 
 NewBarkTown_PlayersHouse_2F_EventScript_LabGenesect::
 	call NewBarkTown_PlayersHouse_2F_EventScript_LabAfterGideon
-	setflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
+	setflag FLAG_DEFEATED_DAODAO_LAB_KLINKLANG
 	setflag FLAG_DEFEATED_DAODAO_LAB_GIOVANNI
 	settrainerflag TRAINER_GIOVANNI_LAB_HNS
-	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_HNS, 5, 5
+	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_B1F_HNS, 4, 11
 	waitstate
 	end
 

@@ -632,7 +632,8 @@
     "DaoDaoIsles_Mansion_1F_hns",
     "DaoDaoIsles_Mansion_2F_hns",
     "DaoDaoIsles_Mansion_3F_hns",
-    "DaoDaoIsles_Mansion_B1F_hns"
+    "DaoDaoIsles_Mansion_B1F_hns",
+    "DaoDaoIsles_RocketLab_B1F_hns"
   ],
   "gMapGroup_IndoorDynamic_Hns": [
     "UnionRoom_hns"

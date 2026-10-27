@@ -395,9 +395,11 @@ struct FromScreenData
     u8 arrowSpriteId;
 };
 
+#define DEX_LIST_COUNT NATIONAL_DEX_COUNT
+
 struct PokedexView
 {
-    struct PokedexListItem pokedexList[OBTAINABLE_DEX_COUNT + 1];
+    struct PokedexListItem pokedexList[DEX_LIST_COUNT + 1];
     u16 pokemonListCount;
     u16 selectedPokemon;
     u16 selectedPokemonBackup;
@@ -2064,15 +2066,15 @@ static void ResetPokedexView(struct PokedexView *pokedexView)
 {
     u16 i;
 
-    for (i = 0; i < OBTAINABLE_DEX_COUNT; i++)
+    for (i = 0; i < DEX_LIST_COUNT; i++)
     {
         pokedexView->pokedexList[i].dexNum = 0xFFFF;
         pokedexView->pokedexList[i].seen = FALSE;
         pokedexView->pokedexList[i].owned = FALSE;
     }
-    pokedexView->pokedexList[OBTAINABLE_DEX_COUNT].dexNum = 0;
-    pokedexView->pokedexList[OBTAINABLE_DEX_COUNT].seen = FALSE;
-    pokedexView->pokedexList[OBTAINABLE_DEX_COUNT].owned = FALSE;
+    pokedexView->pokedexList[DEX_LIST_COUNT].dexNum = 0;
+    pokedexView->pokedexList[DEX_LIST_COUNT].seen = FALSE;
+    pokedexView->pokedexList[DEX_LIST_COUNT].owned = FALSE;
     pokedexView->pokemonListCount = 0;
     pokedexView->selectedPokemon = 0;
     pokedexView->selectedPokemonBackup = 0;
@@ -2608,7 +2610,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         break;
     }
 
-    for (i = sPokedexView->pokemonListCount; i < OBTAINABLE_DEX_COUNT; i++)
+    for (i = sPokedexView->pokemonListCount; i < DEX_LIST_COUNT; i++)
     {
         sPokedexView->pokedexList[i].dexNum = 0xFFFF;
         sPokedexView->pokedexList[i].seen = FALSE;
@@ -2651,7 +2653,7 @@ static void CreateMonListEntry(u8 position, u16 b, u16 ignored)
         entryNum = b - 5;
         for (i = 0; i <= 10; i++)
         {
-            if (entryNum < 0 || entryNum >= OBTAINABLE_DEX_COUNT || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
+            if (entryNum < 0 || entryNum >= DEX_LIST_COUNT || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
             {
                 ClearMonListEntry(MON_LIST_X, i * 2, ignored);
             }
@@ -2676,7 +2678,7 @@ static void CreateMonListEntry(u8 position, u16 b, u16 ignored)
         break;
     case 1: // Up
         entryNum = b - 5;
-        if (entryNum < 0 || entryNum >= OBTAINABLE_DEX_COUNT || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
+        if (entryNum < 0 || entryNum >= DEX_LIST_COUNT || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
         {
             ClearMonListEntry(MON_LIST_X, sPokedexView->listVOffset * 2, ignored);
         }
@@ -2702,7 +2704,7 @@ static void CreateMonListEntry(u8 position, u16 b, u16 ignored)
         vOffset = sPokedexView->listVOffset + 10;
         if (vOffset >= LIST_SCROLL_STEP)
             vOffset -= LIST_SCROLL_STEP;
-        if (entryNum < 0 || entryNum >= OBTAINABLE_DEX_COUNT || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
+        if (entryNum < 0 || entryNum >= DEX_LIST_COUNT || sPokedexView->pokedexList[entryNum].dexNum == 0xFFFF)
             ClearMonListEntry(MON_LIST_X, vOffset * 2, ignored);
         else
         {
@@ -7299,6 +7301,11 @@ static void Task_HandleFormsScreenInput(u8 taskId)
 
 #define FORM_SPECIES_END (0xffff)
 
+// Each form icon's sprite id is kept in gTasks[taskId].data[4 + n], and a task has
+// NUM_TASK_DATA of them, so the page holds 11 forms. ALCREMIE (62), UNOWN (27) and ARCEUS
+// (17) have more, and listing them all wrote past the task (MIGRATION_DECISIONS.md 93).
+#define MAX_FORM_ICONS (NUM_TASK_DATA - 5)
+
 static void PrintForms(u8 taskId, u16 species)
 {
     u8 i;
@@ -7319,7 +7326,7 @@ static void PrintForms(u8 taskId, u16 species)
 
     StringCopy(gStringVar1, GetSpeciesName(species));
 
-    for (i=0; i < 30; i++)
+    for (i=0; i < 30 && times < MAX_FORM_ICONS; i++)
     {
         speciesForm = GetFormSpeciesId(species, i);
         if (speciesForm == FORM_SPECIES_END)
@@ -8013,7 +8020,7 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, enum BodyColor bod
 
     CreatePokedexList(dexMode, order);
 
-    for (i = 0, resultsCount = 0; i < OBTAINABLE_DEX_COUNT; i++)
+    for (i = 0, resultsCount = 0; i < DEX_LIST_COUNT; i++)
     {
         if (sPokedexView->pokedexList[i].seen)
         {
@@ -8107,7 +8114,7 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, enum BodyColor bod
 
     if (sPokedexView->pokemonListCount != 0)
     {
-        for (i = sPokedexView->pokemonListCount; i < OBTAINABLE_DEX_COUNT; i++)
+        for (i = sPokedexView->pokemonListCount; i < DEX_LIST_COUNT; i++)
         {
             sPokedexView->pokedexList[i].dexNum = 0xFFFF;
             sPokedexView->pokedexList[i].seen = FALSE;

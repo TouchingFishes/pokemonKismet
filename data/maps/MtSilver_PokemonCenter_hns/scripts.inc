@@ -21,8 +21,6 @@ MtSilver_PokemonCenter_EventScript_Meara::
 
 MtSilver_PokemonCenter_EventScript_Meara_BonusContentPrompt::
 	msgbox MtSilver_PokemonCenter_Text_Meara2, MSGBOX_AUTOCLOSE
-	helpwindow HELP_SINJOH_WINDOW
-	
 	msgbox MtSilver_PokemonCenter_Text_Prompt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, MtSilver_PokemonCenter_EventScript_Meara_BonusContentNo
 	closemessage
@@ -80,9 +78,7 @@ MtSilver_PokemonCenter_Text_Meara2:
 	.string "archaeologist!\p"
 	.string "There's a branch of the cave\n"
 	.string "where the POKéMON are too strong\l"
-	.string "for me to safely explore.\p"
-	.string "If I take you there, would you\n"
-	.string "explore it for more artifacts?$"
+	.string "for me to safely explore.$"
 
 MtSilver_PokemonCenter_Text_Prompt:
 	.string "If I take you there, would you\n"

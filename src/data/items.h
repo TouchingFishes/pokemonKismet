@@ -15085,11 +15085,20 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_BIG_BAMBOO_SHOOT] =
     {
         .name = ITEM_NAME("BIG BAMBOO SHOOT"),
+#if IS_HNS
+        // ELDER LI's gift for KURT's GS BALL (MIGRATION_DECISIONS.md §92), so not for sale.
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A shoot from\n"
+            "SPROUT TOWER's\n"
+            "swaying pillar."),
+#else
         .price = 3000,
         .description = COMPOUND_STRING(
             "A large and rare\n"
             "bamboo shoot. Best\n"
             "sold to gourmands."),
+#endif
         .pocket = POCKET_TREASURES,
         .sortType = ITEM_TYPE_SELLABLE,
         .type = ITEM_USE_BAG_MENU,

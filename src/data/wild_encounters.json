@@ -53590,12 +53590,12 @@
               {
                 "min_level": 45,
                 "max_level": 45,
-                "species": "SPECIES_MACHOKE"
+                "species": "SPECIES_MAWILE"
               },
               {
                 "min_level": 45,
                 "max_level": 45,
-                "species": "SPECIES_MAROWAK"
+                "species": "SPECIES_MAWILE"
               },
               {
                 "min_level": 42,
@@ -53739,7 +53739,7 @@
               {
                 "min_level": 45,
                 "max_level": 45,
-                "species": "SPECIES_GOLBAT"
+                "species": "SPECIES_SABLEYE"
               },
               {
                 "min_level": 42,
@@ -53749,7 +53749,7 @@
               {
                 "min_level": 42,
                 "max_level": 42,
-                "species": "SPECIES_HAUNTER"
+                "species": "SPECIES_SABLEYE"
               },
               {
                 "min_level": 42,

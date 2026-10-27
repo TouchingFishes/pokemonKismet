@@ -4,9 +4,6 @@ DaoDaoIsles_RocketLab_hns_MapScripts::
 
 DaoDaoIsles_RocketLab_OnTransition:
 	call DaoDaoIsles_RocketLab_SetGideon
-	call DaoDaoIsles_RocketLab_SetKlinklang
-	call DaoDaoIsles_RocketLab_SetGiovanni
-	call DaoDaoIsles_RocketLab_SetGenesect
 	call DaoDaoIsles_RocketLab_SetAssistant
 	end
 
@@ -14,33 +11,6 @@ DaoDaoIsles_RocketLab_SetGideon:
 	setflag FLAG_HIDE_DAODAO_LAB_GIDEON
 	goto_if_set FLAG_DEFEATED_DAODAO_LAB_GIDEON, DaoDaoIsles_RocketLab_Ret
 	clearflag FLAG_HIDE_DAODAO_LAB_GIDEON
-	return
-
-@ KLINKLANG is the REGISTEEL boss, but it is gated on GIDEON alone - NOT on
-@ FLAG_DAODAO_REGIS_ENABLED like the other four. Gating it on the braille riddle
-@ would put a puzzle in a different chamber on a different island in front of
-@ finishing the KANTO POKeMON FEDERATION arc.
-DaoDaoIsles_RocketLab_SetKlinklang:
-	setflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
-	goto_if_set FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL, DaoDaoIsles_RocketLab_Ret
-	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_GIDEON, DaoDaoIsles_RocketLab_Ret
-	clearflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
-	return
-
-DaoDaoIsles_RocketLab_SetGiovanni:
-	setflag FLAG_HIDE_DAODAO_LAB_GIOVANNI
-	goto_if_set FLAG_DEFEATED_DAODAO_LAB_GIOVANNI, DaoDaoIsles_RocketLab_Ret
-	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_GIDEON, DaoDaoIsles_RocketLab_Ret
-	goto_if_unset FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL, DaoDaoIsles_RocketLab_Ret
-	clearflag FLAG_HIDE_DAODAO_LAB_GIOVANNI
-	return
-
-DaoDaoIsles_RocketLab_SetGenesect:
-	setflag FLAG_HIDE_DAODAO_LAB_GENESECT
-	goto_if_set FLAG_DAODAO_GENESECT_TAKEN, DaoDaoIsles_RocketLab_Ret
-	goto_if_set FLAG_DAODAO_GENESECT_KNOCKED_OUT, DaoDaoIsles_RocketLab_Ret
-	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_GIOVANNI, DaoDaoIsles_RocketLab_Ret
-	clearflag FLAG_HIDE_DAODAO_LAB_GENESECT
 	return
 
 @ The assistant who stayed behind, at GIDEON's desk once he is gone - the KLINK and KLANG
@@ -129,345 +99,49 @@ DaoDaoIsles_RocketLab_EventScript_GideonDefeated::
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_LAB_GIDEON
 	setflag FLAG_HIDE_DAODAO_LAB_GIDEON
-	clearflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
-	addobject LOCALID_DAODAO_BOSS_REGISTEEL
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 
-DaoDaoIsles_RocketLab_EventScript_BossKlinklang::
-	lock
-	faceplayer
-	playmoncry SPECIES_KLINKLANG, CRY_MODE_ENCOUNTER
-	waitmoncry
-	msgbox DaoDaoIsles_RocketLab_Text_KlinklangIntro, MSGBOX_DEFAULT
+@ The stairs down to the generator hall (B1F, MIGRATION_DECISIONS.md 92), a trigger on (10,2): the
+@ stair art there is plain floor to the engine, so the warp event only marks where B1F returns
+@ the player. Shut while GIDEON still runs the lab.
+DaoDaoIsles_RocketLab_EventScript_StairsDown::
+	lockall
+	goto_if_set FLAG_DEFEATED_DAODAO_LAB_GIDEON, DaoDaoIsles_RocketLab_EventScript_GoDownstairs
+	msgbox DaoDaoIsles_RocketLab_Text_StairsNotYet, MSGBOX_DEFAULT
 	closemessage
-	setwildbossbattle species=SPECIES_KLINKLANG, level=70, item=ITEM_METAL_COAT, move1_1=MOVE_GEAR_GRIND, move1_2=MOVE_WILD_CHARGE, move1_3=MOVE_FLASH_CANNON, move1_4=MOVE_SHIFT_GEAR
-	settotemboost B_POSITION_OPPONENT_LEFT, 2, 1, 1, 0, 0, 0
-	setflag FLAG_NO_WILD_CATCHING
-	setflag FLAG_NO_WILD_RUNNING
-	setflag FLAG_SMART_WILD_AI
-	setflag FLAG_NO_SHINY
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_RocketLab_EventScript_BossStays
-	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a win.
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_RocketLab_EventScript_BossStays
-	setflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
-	clearflag FLAG_NO_WILD_CATCHING
-	clearflag FLAG_NO_WILD_RUNNING
-	clearflag FLAG_SMART_WILD_AI
-	clearflag FLAG_NO_SHINY
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_DAODAO_BOSS_REGISTEEL
-	setflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
-	fadescreenswapbuffers FADE_FROM_BLACK
-	msgbox DaoDaoIsles_RocketLab_Text_KlinklangBeaten, MSGBOX_DEFAULT
-	closemessage
-	goto DaoDaoIsles_RocketLab_EventScript_GiovanniArrives
-
-DaoDaoIsles_RocketLab_EventScript_BossStays::
-	clearflag FLAG_NO_WILD_CATCHING
-	clearflag FLAG_NO_WILD_RUNNING
-	clearflag FLAG_SMART_WILD_AI
-	clearflag FLAG_NO_SHINY
-	release
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	call_if_eq VAR_RESULT, DIR_NORTH, DaoDaoIsles_RocketLab_EventScript_StairsStepDown
+	call_if_eq VAR_RESULT, DIR_EAST, DaoDaoIsles_RocketLab_EventScript_StairsStepLeft
+	releaseall
 	end
 
-DaoDaoIsles_RocketLab_EventScript_GiovanniArrives:
-	getplayerxy VAR_0x8004, VAR_0x8005
-	call_if_eq VAR_0x8005, 13, DaoDaoIsles_RocketLab_EventScript_PlayerFromNorth
-	call_if_eq VAR_0x8004, 10, DaoDaoIsles_RocketLab_EventScript_PlayerFromWest
-	call_if_eq VAR_0x8004, 12, DaoDaoIsles_RocketLab_EventScript_PlayerFromEast
-	call DaoDaoIsles_RocketLab_EventScript_LightsFlicker
-	clearflag FLAG_HIDE_DAODAO_LAB_GIOVANNI
-	addobject LOCALID_DAODAO_LAB_GIOVANNI
-	addobject LOCALID_DAODAO_LAB_PERSIAN
-	call DaoDaoIsles_RocketLab_EventScript_LightsFlicker
-	special SpawnCameraObject
-	applymovement OBJ_EVENT_ID_CAMERA, DaoDaoIsles_RocketLab_Movement_CameraToGiovanni
-	waitmovement 0
-	playbgm MUS_HG_ENCOUNTER_ROCKET, FALSE
-	playse SE_PIN
-	applymovement LOCALID_DAODAO_LAB_GIOVANNI, Common_Movement_ExclamationMark
-	waitmovement 0
-	playmoncry SPECIES_PERSIAN, CRY_MODE_ENCOUNTER
-	waitmoncry
-	applymovement OBJ_EVENT_ID_CAMERA, DaoDaoIsles_RocketLab_Movement_CameraBack
-	waitmovement 0
-	special RemoveCameraObject
-	applymovement LOCALID_DAODAO_LAB_GIOVANNI, DaoDaoIsles_RocketLab_Movement_GiovanniWalksUp
-	applymovement LOCALID_DAODAO_LAB_PERSIAN, DaoDaoIsles_RocketLab_Movement_PersianWalksUp
-	waitmovement LOCALID_DAODAO_LAB_GIOVANNI
-	waitmovement LOCALID_DAODAO_LAB_PERSIAN
-	msgbox DaoDaoIsles_RocketLab_Text_GiovanniIntro, MSGBOX_DEFAULT
-	goto DaoDaoIsles_RocketLab_EventScript_GiovanniAskReady
-
-DaoDaoIsles_RocketLab_EventScript_PlayerFromNorth:
-	applymovement OBJ_EVENT_ID_PLAYER, DaoDaoIsles_RocketLab_Movement_PlayerFromNorth
-	waitmovement 0
-	return
-
-DaoDaoIsles_RocketLab_EventScript_PlayerFromWest:
-	applymovement OBJ_EVENT_ID_PLAYER, DaoDaoIsles_RocketLab_Movement_PlayerFromWest
-	waitmovement 0
-	return
-
-DaoDaoIsles_RocketLab_EventScript_PlayerFromEast:
-	applymovement OBJ_EVENT_ID_PLAYER, DaoDaoIsles_RocketLab_Movement_PlayerFromEast
-	waitmovement 0
-	return
-
-DaoDaoIsles_RocketLab_EventScript_LightsFlicker:
-	playse SE_SWITCH
-	fadescreenspeed FADE_TO_BLACK, 1
-	delay 8
-	fadescreenspeed FADE_FROM_BLACK, 1
-	delay 4
-	playse SE_SWITCH
-	fadescreenspeed FADE_TO_BLACK, 1
-	delay 16
-	fadescreenspeed FADE_FROM_BLACK, 2
-	return
-
-DaoDaoIsles_RocketLab_EventScript_Giovanni::
-	lock
-	faceplayer
-	playbgm MUS_HG_ENCOUNTER_ROCKET, FALSE
-	goto_if_eq VAR_TEMP_2, 1, DaoDaoIsles_RocketLab_EventScript_GiovanniAskReady
-	msgbox DaoDaoIsles_RocketLab_Text_GiovanniIntro, MSGBOX_DEFAULT
-DaoDaoIsles_RocketLab_EventScript_GiovanniAskReady:
-	msgbox DaoDaoIsles_RocketLab_Text_GiovanniReady, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, DaoDaoIsles_RocketLab_EventScript_GiovanniWaits
-	msgbox DaoDaoIsles_RocketLab_Text_GiovanniShowMe, MSGBOX_DEFAULT
-	closemessage
-	trainerbattle_no_intro TRAINER_GIOVANNI_LAB_HNS, DaoDaoIsles_RocketLab_Text_GiovanniDefeat
-	goto DaoDaoIsles_RocketLab_EventScript_GiovanniDefeated
-
-DaoDaoIsles_RocketLab_EventScript_GiovanniWaits:
-	setvar VAR_TEMP_2, 1
-	msgbox DaoDaoIsles_RocketLab_Text_GiovanniWaits, MSGBOX_DEFAULT
-	closemessage
-	fadedefaultbgm
-	release
-	end
-
-DaoDaoIsles_RocketLab_EventScript_Persian::
-	lock
-	faceplayer
-	playmoncry SPECIES_PERSIAN, CRY_MODE_ENCOUNTER
-	msgbox DaoDaoIsles_RocketLab_Text_Persian, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
-DaoDaoIsles_RocketLab_EventScript_GiovanniDefeated::
-	setflag FLAG_DEFEATED_DAODAO_LAB_GIOVANNI
-	msgbox DaoDaoIsles_RocketLab_Text_GiovanniPostBattle, MSGBOX_DEFAULT
-	closemessage
-	turnobject LOCALID_DAODAO_LAB_GIOVANNI, DIR_NORTH
-	delay 20
-	getobjectxy LOCALID_DAODAO_LAB_GIOVANNI, CURRENT_POSITION, VAR_0x8004, VAR_0x8005
-	subvar VAR_0x8005, 2
-	setobjectxyperm LOCALID_DAODAO_LAB_GENESECT, VAR_0x8004, VAR_0x8005
-	playse SE_BALL_THROW
-	waitse
-	playse SE_M_CHARGE
-	setvar VAR_0x8004, 1  @ vertical pan
-	setvar VAR_0x8005, 1  @ horizontal pan
-	setvar VAR_0x8006, 10  @ num shakes
-	setvar VAR_0x8007, 3  @ shake delay
-	special ShakeCamera
+DaoDaoIsles_RocketLab_EventScript_GoDownstairs:
+	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_B1F_HNS, 0
 	waitstate
-	fadescreenspeed FADE_TO_WHITE, 1
-	fadescreenspeed FADE_FROM_WHITE, 1
-	playse SE_M_CHARGE
-	fadescreenspeed FADE_TO_WHITE, 1
-	clearflag FLAG_HIDE_DAODAO_LAB_GENESECT
-	addobject LOCALID_DAODAO_LAB_GENESECT
-	playse SE_BALL_OPEN
-	fadescreenspeed FADE_FROM_WHITE, 2
-	playmoncry SPECIES_GENESECT, CRY_MODE_ENCOUNTER
-	setvar VAR_0x8004, 2  @ vertical pan
-	setvar VAR_0x8005, 2  @ horizontal pan
-	setvar VAR_0x8006, 8  @ num shakes
-	setvar VAR_0x8007, 2  @ shake delay
-	special ShakeCamera
-	waitstate
-	waitmoncry
-	delay 20
-	msgbox DaoDaoIsles_RocketLab_Text_GiovanniFreesGenesect, MSGBOX_DEFAULT
-	closemessage
-	playse SE_M_HYPER_BEAM
-	applymovement LOCALID_DAODAO_LAB_GENESECT, DaoDaoIsles_RocketLab_Movement_GenesectStreaksOff
+	releaseall
+	end
+
+DaoDaoIsles_RocketLab_EventScript_StairsStepDown:
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
-	removeobject LOCALID_DAODAO_LAB_GENESECT
-	setobjectxyperm LOCALID_DAODAO_LAB_GENESECT, 4, 5
-	addobject LOCALID_DAODAO_LAB_GENESECT
-	clearflag FLAG_HIDE_DAODAO_LAB_GENESECT
-	msgbox DaoDaoIsles_RocketLab_Text_GenesectStreaksOff, MSGBOX_DEFAULT
-	closemessage
-	getobjectxy LOCALID_DAODAO_LAB_GIOVANNI, CURRENT_POSITION, VAR_0x8004, VAR_0x8005
-	goto_if_eq VAR_0x8004, 11, DaoDaoIsles_RocketLab_EventScript_GiovanniWalksOff
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_DAODAO_LAB_GIOVANNI
-	removeobject LOCALID_DAODAO_LAB_PERSIAN
-	setflag FLAG_HIDE_DAODAO_LAB_GIOVANNI
-	fadescreenswapbuffers FADE_FROM_BLACK
-	release
-	end
+	return
 
-DaoDaoIsles_RocketLab_EventScript_GiovanniWalksOff:
-	applymovement LOCALID_DAODAO_LAB_PERSIAN, DaoDaoIsles_RocketLab_Movement_PersianWalksOff
-	applymovement LOCALID_DAODAO_LAB_GIOVANNI, DaoDaoIsles_RocketLab_Movement_GiovanniWalksOff
-	waitmovement LOCALID_DAODAO_LAB_PERSIAN
-	waitmovement LOCALID_DAODAO_LAB_GIOVANNI
-	removeobject LOCALID_DAODAO_LAB_GIOVANNI
-	removeobject LOCALID_DAODAO_LAB_PERSIAN
-	setflag FLAG_HIDE_DAODAO_LAB_GIOVANNI
-	release
-	end
+DaoDaoIsles_RocketLab_EventScript_StairsStepLeft:
+	applymovement OBJ_EVENT_ID_PLAYER, DaoDaoIsles_RocketLab_Movement_StepLeft
+	waitmovement 0
+	return
 
-DaoDaoIsles_RocketLab_Movement_PlayerFromNorth:
-	lock_facing_direction
-	walk_down
-	unlock_facing_direction
-	face_up
-	step_end
-
-DaoDaoIsles_RocketLab_Movement_PlayerFromWest:
-	walk_right
-	face_up
-	step_end
-
-DaoDaoIsles_RocketLab_Movement_PlayerFromEast:
-	walk_left
-	face_up
-	step_end
-
-DaoDaoIsles_RocketLab_Movement_CameraToGiovanni:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	step_end
-
-DaoDaoIsles_RocketLab_Movement_CameraBack:
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	step_end
-
-DaoDaoIsles_RocketLab_Movement_GiovanniWalksUp:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_down
-	step_end
-
-DaoDaoIsles_RocketLab_Movement_PersianWalksUp:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-DaoDaoIsles_RocketLab_Movement_GenesectStreaksOff:
-	fly_up
-	step_end
-
-DaoDaoIsles_RocketLab_Movement_PersianWalksOff:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
+DaoDaoIsles_RocketLab_Movement_StepLeft:
 	walk_left
 	step_end
 
-DaoDaoIsles_RocketLab_Movement_GiovanniWalksOff:
-	walk_up
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-DaoDaoIsles_RocketLab_EventScript_Genesect::
-	lock
-	faceplayer
-	playmoncry SPECIES_GENESECT, CRY_MODE_ENCOUNTER
-	waitmoncry
-	msgbox DaoDaoIsles_RocketLab_Text_Genesect, MSGBOX_DEFAULT
-	closemessage
-	seteventmon SPECIES_GENESECT, 80
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartLegendaryBattle
-	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_RocketLab_EventScript_GenesectStays
-	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a knockout.
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_RocketLab_EventScript_GenesectStays
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, DaoDaoIsles_RocketLab_EventScript_Genesect_Caught
-	@ Knocked out: back after the next Hall of Fame (SpawnDaoDaoLegendaries).
-	setflag FLAG_DAODAO_GENESECT_KNOCKED_OUT
-	goto DaoDaoIsles_RocketLab_EventScript_Genesect_Gone
-
-DaoDaoIsles_RocketLab_EventScript_Genesect_Caught:
-	setflag FLAG_DAODAO_GENESECT_TAKEN
-DaoDaoIsles_RocketLab_EventScript_Genesect_Gone:
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_DAODAO_LAB_GENESECT
-	setflag FLAG_HIDE_DAODAO_LAB_GENESECT
-	fadescreenswapbuffers FADE_FROM_BLACK
-	release
-	end
-
-DaoDaoIsles_RocketLab_EventScript_GenesectStays::
-	release
-	end
+DaoDaoIsles_RocketLab_Text_StairsNotYet:
+	.string "Something down there is grinding\n"
+	.string "and turning…\p"
+	.string "It would be unwise to go down\n"
+	.string "while GIDEON is still around.$"
 
 DaoDaoIsles_RocketLab_Notes::
 	lock
@@ -575,87 +249,6 @@ DaoDaoIsles_RocketLab_Text_GideonPostBattle:
 	.string "I don't know what it wants.\n"
 	.string "I only know it knows we're here.\p"
 	.string "Don't go near it.$"
-
-DaoDaoIsles_RocketLab_Text_KlinklangIntro:
-	.string "It has turned in the same spot\n"
-	.string "for twenty years.\p"
-	.string "No fuel. No maintenance.\n"
-	.string "No discernible power source.\p"
-	.string "I've examined every gear.\n"
-	.string "Those markings aren't decorative.\l"
-	.string "They're identical to the ones\n"
-	.string "carved into the ruin walls.\p"
-	.string "I used to think the ruins were\n"
-	.string "built around some great machine.\p"
-	.string "Now I'm not so sure.\n"
-	.string "Perhaps the machine came first.$"
-
-DaoDaoIsles_RocketLab_Text_KlinklangBeaten:
-	.string "The gears stop.\p"
-	.string "For the first time in twenty years,\n"
-	.string "the warehouse falls silent.\p"
-	.string "Somewhere beneath our feet,\n"
-	.string "something answers.\p"
-	.string "A deep, metallic groan rolls up\n"
-	.string "through the foundations.\p"
-	.string "The markings on the gears begin\n"
-	.string "to glow. One by one.\p"
-	.string "And at the far end of the room…\n"
-	.string "something moves.$"
-
-DaoDaoIsles_RocketLab_Text_GiovanniIntro:
-	.string "So the warehouse still had one\n"
-	.string "more visitor in it.\p"
-	.string "I sank this place because it was\n"
-	.string "the only thing I ever regretted\l"
-	.string "building.\p"
-	.string "Turn around, or I will sink it\n"
-	.string "again with you inside.$"
-
-DaoDaoIsles_RocketLab_Text_GiovanniReady:
-	.string "GIOVANNI: Your POKéMON have just\n"
-	.string "fought that machine to a standstill.\p"
-	.string "I will not insult either of us by\n"
-	.string "fighting them like that.\p"
-	.string "Well? Are you ready?$"
-
-DaoDaoIsles_RocketLab_Text_GiovanniShowMe:
-	.string "GIOVANNI: Then show me.$"
-
-DaoDaoIsles_RocketLab_Text_GiovanniWaits:
-	.string "GIOVANNI: Tend to them, then.\p"
-	.string "I have waited twenty years. I can\n"
-	.string "wait a little longer.$"
-
-DaoDaoIsles_RocketLab_Text_Persian:
-	.string "PERSIAN: Mrrrowr…!$"
-
-DaoDaoIsles_RocketLab_Text_GenesectStreaksOff:
-	.string "GENESECT streaked off into the\n"
-	.string "dark!$"
-
-DaoDaoIsles_RocketLab_Text_GiovanniDefeat:
-	.string "Enough.$"
-
-DaoDaoIsles_RocketLab_Text_GiovanniPostBattle:
-	.string "Gideon drew it. I paid for it.\p"
-	.string "Neither of us could ever switch\n"
-	.string "it off.\p"
-	.string "Twenty years I have kept it on a\n"
-	.string "belt, because I did not trust\l"
-	.string "anyone else to.$"
-
-DaoDaoIsles_RocketLab_Text_GiovanniFreesGenesect:
-	.string "GIOVANNI released GENESECT.\p"
-	.string "I am done carrying it.\p"
-	.string "It was never mine. It was only\n"
-	.string "ever pointed somewhere.\p"
-	.string "If it follows you, that is your\n"
-	.string "burden now.$"
-
-DaoDaoIsles_RocketLab_Text_Genesect:
-	.string "The cannon on its back swivels\n"
-	.string "and locks on.$"
 
 DaoDaoIsles_RocketLab_Text_Notes:
 	.string "RESEARCH LOG - SPECIMEN G-0\p"

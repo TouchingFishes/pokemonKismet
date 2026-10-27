@@ -761,7 +761,7 @@ EcruteakCity_Theater_EventScript_Lugia::
 	setflag FLAG_HIDE_WHIRL_ISLANDS_TENTACRUEL
 	setflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_ZUKI
 	setflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_KIMONOS
-	setvar VAR_NEWBARKTOWN_LABSTATE, 9
+	call_if_lt VAR_NEWBARKTOWN_LABSTATE, 9, EcruteakCity_Theater_EventScript_ElmAwaitsLeague
 	setvar VAR_ECRUTEAK_CITY_THEATER, 7
 	release
 	end
@@ -807,10 +807,14 @@ EcruteakCity_Theater_EventScript_Hooh::
 	setvar VAR_COMPLETED_LUGIA, 3
 	setflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_ZUKI
 	setflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_KIMONOS
-	setvar VAR_NEWBARKTOWN_LABSTATE, 9
+	call_if_lt VAR_NEWBARKTOWN_LABSTATE, 9, EcruteakCity_Theater_EventScript_ElmAwaitsLeague
 	setvar VAR_ECRUTEAK_CITY_THEATER, 7
 	release
 	end
+
+EcruteakCity_Theater_EventScript_ElmAwaitsLeague:
+	setvar VAR_NEWBARKTOWN_LABSTATE, 9
+	return
 
 EcruteakCity_Theater_Movement_Sister:
 	walk_fast_up

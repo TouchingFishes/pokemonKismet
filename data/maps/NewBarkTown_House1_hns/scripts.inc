@@ -12,8 +12,24 @@ NewBarkTown_House1_EventScript_Mother::
 NewBarkTown_House1_EventScript_Daughter::
 	lock
 	faceplayer
+	goto_if_set FLAG_GOT_TM_SIGNAL_BEAM, NewBarkTown_House1_EventScript_DaughterAfter
 	msgbox NewBarkTown_House1_Text_NeighborsDaughter, MSGBOX_DEFAULT
+	goto_if_unset FLAG_DEFEATED_BLACKTHORN_GYM, NewBarkTown_House1_EventScript_DaughterEnd
+	msgbox NewBarkTown_House1_Text_OfferSignalBeam, MSGBOX_DEFAULT
+	giveitem ITEM_TM_SIGNAL_BEAM
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_GOT_TM_SIGNAL_BEAM
+	msgbox NewBarkTown_House1_Text_ReceivedSignalBeam, MSGBOX_DEFAULT
+	release
+	end
+
+NewBarkTown_House1_EventScript_DaughterEnd:
 	closemessage
+	release
+	end
+
+NewBarkTown_House1_EventScript_DaughterAfter:
+	msgbox NewBarkTown_House1_Text_After, MSGBOX_DEFAULT
 	release
 	end
 
@@ -27,6 +43,26 @@ NewBarkTown_House1_Text_NeighborsDaughter:
 	.string "I wish I could be a researcher\n"
 	.string "like him…$"
 
+
+NewBarkTown_House1_Text_OfferSignalBeam:
+	.string "Oh! You've come so far already!\p"
+	.string "If my BUTTERFREE were with you,\n"
+	.string "it would want to help.\p"
+	.string "Here… this move is something it\n"
+	.string "learned along the way.\p"
+	.string "It might help your POKéMON too.$"
+
+NewBarkTown_House1_Text_ReceivedSignalBeam:
+	.string "That move is SIGNAL BEAM.\p"
+	.string "It may look gentle…\n"
+	.string "but it can confuse your foes and\l"
+	.string "turn battles around.\p"
+	.string "Please use it well!$"
+
+NewBarkTown_House1_Text_After:
+	.string "BUTTERFREE always believed in\n"
+	.string "growing stronger, step by step.\p"
+	.string "I'm sure your POKéMON will too.$"
 
 NewBarkTown_House1_Text_Neighbor:
 	.string "My daughter is adamant about\n"

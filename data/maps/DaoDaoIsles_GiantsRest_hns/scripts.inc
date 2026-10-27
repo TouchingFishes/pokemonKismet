@@ -203,3 +203,7 @@ DaoDaoIsles_GiantsRest_Text_RegigigasWakes:
 	.string "moss, one after another.\p"
 	.string "The last of the stone falls away,\n"
 	.string "and it steps down off the plinth.$"
+
+DaoDaoIsles_GiantsRest_EventScript_ItemSolarBeam::
+	finditem ITEM_TM_SOLAR_BEAM
+	end

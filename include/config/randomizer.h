@@ -46,6 +46,8 @@
 #define RANDOMIZER_VAR_SPECIES_MODE               VAR_UNUSED_0x404E
 
 #if !RANDOMIZER_SEED_IS_TRAINER_ID
+// Not free in HnS: 0x40FA/0x40FB are VAR_OLIVINE_GATE_ROCKET and VAR_FUCHSIA_FEDERATION_STATE.
+// Move these first (MIGRATION_DECISIONS.md §92 lists the free numbers).
 #define RANDOMIZER_VAR_SEED_L                     VAR_UNUSED_0x40FA
 #define RANDOMIZER_VAR_SEED_H                     VAR_UNUSED_0x40FB
 #endif

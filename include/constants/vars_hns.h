@@ -124,11 +124,13 @@
 // weakened (the catchable battle). FLAG_SINJOH_*_GONE marks the ones already caught or knocked out.
 #define VAR_SINJOH_TRIO_STATE                            0x40CA
 
-#define VAR_UNUSED_HNS_0x40D8                           0x40D8
+// KURT's GS BALL (MIGRATION_DECISIONS.md §92). 0 not begun, 1 KURT told his story (see ELDER LI),
+// 2 LI's BIG BAMBOO SHOOT in hand, 3 KURT working overnight (FLAG_DAILY_KURT_GS_BALL), 4 the
+// ball handed over. A CELEBI that gets away sends a 4 back to 3.
+#define VAR_KURT_GS_BALL_STATE                           0x40D8
 #define VAR_UNUSED_HNS_0x40D9                           0x40D9
 #define VAR_UNUSED_HNS_0x40DA                           0x40DA
-#define VAR_UNUSED_HNS_0x40DB                           0x40DB
-#define VAR_UNUSED_HNS_0x40DC                           0x40DC
+// 0x40DB and 0x40DC: VAR_WEEKDAY_OFFSET and VAR_WEATHER_PATTERN, in vars.h for every build.
 #define VAR_UNUSED_HNS_0x40DD                           0x40DD
 #define VAR_UNUSED_HNS_0x40DE                           0x40DE
 #define VAR_UNUSED_HNS_0x40DF                           0x40DF
@@ -170,9 +172,9 @@
 // back in her GYM), 5 = STEVEN's charter battle won (ROUTE 13 boat open),
 // 6 = GIDEON beaten, arc closed. DARIUS's defeat is his trainer flag, not a state.
 #define VAR_FUCHSIA_FEDERATION_STATE                     0x40FB
-#define VAR_UNUSED_HNS_0x40FC                            0x40FC
-#define VAR_UNUSED_HNS_0x40FD                            0x40FD
-#define VAR_STARTER_REGION                               0x40FE
+// The region ELM's starters come from (STARTER_REGION_*). It sat on 0x40FE until
+// MIGRATION_DECISIONS.md §92, where the surf code zeroed it on every surf.
+#define VAR_STARTER_REGION                               0x40FC
 // How far the staged regional dex is
 #define VAR_DEX_STAGE                                    0x40FF
 
@@ -235,8 +237,16 @@
 #define VAR_SS_TIDAL_SCOTT_STATE_UNSAFE                  0x40D4
 #define VAR_ROAMER_POKEMON_UNSAFE                        0x40D5
 #define VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE_UNSAFE          0x40D7
+#define VAR_SURF_MON_SLOT_UNSAFE                         0x40FD
+#define VAR_FREEZE_SURF_BLOB_UNSAFE                      0x40FE
 // 0x40CE 0x40CF 0x40D0 0x40D1 0x40D6 are also unsafe, but already carry their
 // Emerald names in the shared block at the top of this file.
+// Not free either, though still named VAR_UNUSED_HNS_* above, because shared code writes
+// them under their Emerald names: 0x40DD (Pichu gift), 0x40DE-0x40E4 (Mystery Gift),
+// 0x40E6-0x40EB and 0x40F1 (TV day counters), 0x40EC-0x40F0 (secret bases) and
+// 0x40F2-0x40F6 (Hoenn call step counters). 0x40F8/0x40F9 held radio data in upstream
+// builds of May-August 2026. Check vars.h and the code using its names before taking a
+// number here (MIGRATION_DECISIONS.md §92).
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

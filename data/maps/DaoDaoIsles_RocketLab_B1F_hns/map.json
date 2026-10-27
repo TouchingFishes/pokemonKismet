@@ -1,0 +1,87 @@
+{
+  "id": "MAP_DAO_DAO_ISLES_ROCKET_LAB_B1F_HNS",
+  "name": "DaoDaoIsles_RocketLab_B1F_hns",
+  "layout": "LAYOUT_DAO_DAO_ISLES_ROCKET_LAB_B1F_HNS",
+  "music": "MUS_HG_TEAM_ROCKET_HQ",
+  "region_map_section": "MAPSEC_ALOLA_OCEAN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_DAODAO_LAB_KLINKLANG",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KLINKLANG)",
+      "x": 10,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_RocketLab_B1F_EventScript_BossKlinklang",
+      "flag": "FLAG_HIDE_DAODAO_LAB_KLINKLANG"
+    },
+    {
+      "local_id": "LOCALID_DAODAO_LAB_GIOVANNI",
+      "graphics_id": "OBJ_EVENT_GFX_GIOVANNI_HNS",
+      "x": 10,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_RocketLab_B1F_EventScript_Giovanni",
+      "flag": "FLAG_HIDE_DAODAO_LAB_GIOVANNI"
+    },
+    {
+      "local_id": "LOCALID_DAODAO_LAB_PERSIAN",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PERSIAN)",
+      "x": 11,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_RocketLab_B1F_EventScript_Persian",
+      "flag": "FLAG_HIDE_DAODAO_LAB_GIOVANNI"
+    },
+    {
+      "local_id": "LOCALID_DAODAO_LAB_GENESECT",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GENESECT)",
+      "x": 3,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_RocketLab_B1F_EventScript_Genesect",
+      "flag": "FLAG_HIDE_DAODAO_LAB_GENESECT"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 18,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_DAO_DAO_ISLES_ROCKET_LAB_HNS",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "game_version": "hns",
+  "region": "REGION_ALOLA"
+}

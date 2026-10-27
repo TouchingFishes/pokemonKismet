@@ -1,11 +1,19 @@
 DaoDaoIsles_WaterLabyrinth_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DaoDaoIsles_WaterLabyrinth_OnTransition
 	.byte 0
 
-DaoDaoIsles_WaterLabyrinth_EventScript_DoorGuard::
-	trainerbattle_single TRAINER_DAODAO_LAB_BIKER_1_HNS, DaoDaoIsles_WaterLabyrinth_Text_GuardIntro, DaoDaoIsles_WaterLabyrinth_Text_GuardDefeat, DaoDaoIsles_WaterLabyrinth_EventScript_GuardLeaves
+DaoDaoIsles_WaterLabyrinth_OnTransition:
+	setflag FLAG_TEMP_1
+	goto_if_defeated TRAINER_DAODAO_LAB_BIKER_1_HNS, DaoDaoIsles_WaterLabyrinth_OnTransitionEnd
+	clearflag FLAG_TEMP_1
+DaoDaoIsles_WaterLabyrinth_OnTransitionEnd:
 	end
 
-DaoDaoIsles_WaterLabyrinth_EventScript_GuardLeaves::
+DaoDaoIsles_WaterLabyrinth_EventScript_DoorGuard::
+	lock
+	faceplayer
+	msgbox DaoDaoIsles_WaterLabyrinth_Text_GuardIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_DAODAO_LAB_BIKER_1_HNS, DaoDaoIsles_WaterLabyrinth_Text_GuardDefeat
 	msgbox DaoDaoIsles_WaterLabyrinth_Text_GuardPost, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_DAODAO_LAB_DOORGUARD, Common_Movement_WalkInPlaceFasterDown
@@ -13,7 +21,6 @@ DaoDaoIsles_WaterLabyrinth_EventScript_GuardLeaves::
 	playse SE_EXIT
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_LAB_DOORGUARD
-	setflag FLAG_HIDE_DAODAO_LAB_DOORGUARD
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end

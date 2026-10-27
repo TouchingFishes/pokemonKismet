@@ -51,3 +51,7 @@ DaoDaoIsles_WakeIsle_Cave_FindItem2::
 
 DaoDaoIsles_WakeIsle_Cave_BattleProbopass_Text_0:
 	.string "Gaaah!$"
+
+DaoDaoIsles_WakeIsle_Cave_FindTMDragonBreath::
+	finditem ITEM_TM_DRAGON_BREATH
+	end

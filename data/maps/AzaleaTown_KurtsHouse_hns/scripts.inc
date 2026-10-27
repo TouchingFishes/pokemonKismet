@@ -49,6 +49,7 @@ AzaleaTown_KurtsHouse_EventScript_Girl::
 	end
 
 AzaleaTown_KurtsHouse_EventScript_Girl2::
+	call AzaleaTown_KurtsHouse_EventScript_GirlGsHint
 	goto_if_eq VAR_AZALEA_TOWN_STATE, 3, AzaleaTown_KurtsHouse_EventScript_Girl4
 	goto_if_eq VAR_AZALEA_TOWN_STATE, 4, AzaleaTown_KurtsHouse_EventScript_Girl4
 	goto_if_eq VAR_AZALEA_TOWN_STATE, 5, AzaleaTown_KurtsHouse_EventScript_Girl4
@@ -79,6 +80,100 @@ AzaleaTown_KurtsHouse_EventScript_Girl5::
 	release
 	end	
 
+@ Points the player at KURT once both wings are in the bag (MIGRATION_DECISIONS.md 92).
+AzaleaTown_KurtsHouse_EventScript_GirlGsHint:
+	goto_if_ne VAR_KURT_GS_BALL_STATE, 0, AzaleaTown_KurtsHouse_EventScript_Return
+	call AzaleaTown_KurtsHouse_EventScript_CheckGsArcReady
+	goto_if_eq VAR_RESULT, FALSE, AzaleaTown_KurtsHouse_EventScript_Return
+	msgbox KurtsHouse_Text_GranddaughterOldPhoto, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+@ VAR_RESULT TRUE when the arc can begin: both wings, no GS BALL yet, CELEBI not caught.
+AzaleaTown_KurtsHouse_EventScript_CheckGsArcReady:
+	setvar VAR_RESULT, FALSE
+	goto_if_set FLAG_CAUGHT_CELEBI, AzaleaTown_KurtsHouse_EventScript_Return
+	checkitem ITEM_GS_BALL
+	goto_if_eq VAR_RESULT, TRUE, AzaleaTown_KurtsHouse_EventScript_NotReady
+	checkitem ITEM_RAINBOW_WING
+	goto_if_eq VAR_RESULT, FALSE, AzaleaTown_KurtsHouse_EventScript_Return
+	checkitem ITEM_SILVER_WING
+	return
+
+AzaleaTown_KurtsHouse_EventScript_NotReady:
+	setvar VAR_RESULT, FALSE
+AzaleaTown_KurtsHouse_EventScript_Return:
+	return
+
+@ KURT's GS BALL (MIGRATION_DECISIONS.md 92). Returns to KURT's usual script when nothing applies, so
+@ a GS BALL from the old puzzle still goes through his "What is that?" examination below.
+AzaleaTown_KurtsHouse_EventScript_KurtGsArc:
+	goto_if_set FLAG_CAUGHT_CELEBI, AzaleaTown_KurtsHouse_EventScript_Return
+	checkitem ITEM_GS_BALL
+	goto_if_eq VAR_RESULT, TRUE, AzaleaTown_KurtsHouse_EventScript_KurtGsBallBack
+	goto_if_eq VAR_KURT_GS_BALL_STATE, 1, AzaleaTown_KurtsHouse_EventScript_KurtGsAskLi
+	goto_if_eq VAR_KURT_GS_BALL_STATE, 2, AzaleaTown_KurtsHouse_EventScript_KurtGsShoot
+	goto_if_eq VAR_KURT_GS_BALL_STATE, 3, AzaleaTown_KurtsHouse_EventScript_KurtGsWorking
+	goto_if_ne VAR_KURT_GS_BALL_STATE, 0, AzaleaTown_KurtsHouse_EventScript_Return
+	call AzaleaTown_KurtsHouse_EventScript_CheckGsArcReady
+	goto_if_eq VAR_RESULT, FALSE, AzaleaTown_KurtsHouse_EventScript_Return
+	msgbox KurtsHouse_Text_KurtGsStory, MSGBOX_DEFAULT
+	setvar VAR_KURT_GS_BALL_STATE, 1
+	closemessage
+	release
+	end
+
+@ The shrine keeps the BALL, so a CELEBI that got away comes back here: KURT reworks it overnight.
+AzaleaTown_KurtsHouse_EventScript_KurtGsBallBack:
+	goto_if_ne VAR_KURT_GS_BALL_STATE, 4, AzaleaTown_KurtsHouse_EventScript_Return
+	goto_if_ne VAR_AZALEA_TOWN_STATE, 10, AzaleaTown_KurtsHouse_EventScript_Return
+	msgbox KurtsHouse_Text_KurtGsRework, MSGBOX_DEFAULT
+	removeitem ITEM_GS_BALL
+	setflag FLAG_DAILY_KURT_GS_BALL
+	setvar VAR_KURT_GS_BALL_STATE, 3
+	closemessage
+	release
+	end
+
+AzaleaTown_KurtsHouse_EventScript_KurtGsAskLi:
+	msgbox KurtsHouse_Text_KurtGsAskLi, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+AzaleaTown_KurtsHouse_EventScript_KurtGsShoot:
+	checkitem ITEM_BIG_BAMBOO_SHOOT
+	goto_if_eq VAR_RESULT, FALSE, AzaleaTown_KurtsHouse_EventScript_KurtGsAskLi
+	msgbox KurtsHouse_Text_KurtGsTakeShoot, MSGBOX_DEFAULT
+	removeitem ITEM_BIG_BAMBOO_SHOOT
+	setflag FLAG_DAILY_KURT_GS_BALL
+	setvar VAR_KURT_GS_BALL_STATE, 3
+	closemessage
+	release
+	end
+
+AzaleaTown_KurtsHouse_EventScript_KurtGsWorking:
+	goto_if_unset FLAG_DAILY_KURT_GS_BALL, AzaleaTown_KurtsHouse_EventScript_KurtGsDone
+	msgbox KurtsHouse_Text_KurtGsNotYet, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+@ A night has passed. The ball shakes the way the old puzzle's did, and the rest is that scene.
+AzaleaTown_KurtsHouse_EventScript_KurtGsDone:
+	setvar VAR_KURT_GS_BALL_STATE, 4
+	playse SE_BANG
+	applymovement LOCALID_AZALEA_TOWN_KURT, AzaleaTownKurt_Movement_Making_Ball
+	waitmovement 0
+	playse SE_BANG
+	applymovement LOCALID_AZALEA_TOWN_KURT, AzaleaTownKurt_Movement_Making_Ball
+	waitmovement 0
+	faceplayer
+	msgbox KurtsHouse_Text_KurtGsFinished, MSGBOX_DEFAULT
+	closemessage
+	goto AzaleaTown_KurtsHouse_EventScript_KurtGsBallShakes
+
 AzaleaTown_KurtsHouse_EventScript_ReturnFromWellSetup::
 	setobjectmovementtype LOCALID_AZALEA_TOWN_KURT, MOVEMENT_TYPE_FACE_DOWN
 	end
@@ -106,6 +201,7 @@ AzaleaTown_KurtsHouse_EventScript_Kurt::
 	faceplayer
 	goto_if_eq VAR_AZALEA_TOWN_STATE, 8, AzaleaTown_KurtsHouse_EventScript_KurtGsBall2
 	goto_if_eq VAR_AZALEA_TOWN_STATE, 9, AzaleaTown_KurtsHouse_EventScript_KurtGsBall3
+	call AzaleaTown_KurtsHouse_EventScript_KurtGsArc
 	msgbox KurtsHouse_Text_KurtAskYouHaveAnApricorn, MSGBOX_DEFAULT
 	closemessage
 	call_if_unset FLAG_CAUGHT_CELEBI, AzaleaTown_KurtsHouse_EventScript_KurtCheckGSBall
@@ -168,6 +264,7 @@ AzaleaTown_KurtsHouse_EventScript_KurtGsBall::
 	faceplayer
 	msgbox KurtsHouse_Text_KurtThisBallStartedToShake, MSGBOX_DEFAULT
 	closemessage
+AzaleaTown_KurtsHouse_EventScript_KurtGsBallShakes:
 	playse SE_M_PETAL_DANCE
 	waitse
 	playse SE_PIN
@@ -370,6 +467,62 @@ KurtsHouse_Text_Forest:
 
 KurtsHouse_Text_Slowpoke:
 	.string "SLOWPOKE: … Yawn?$"
+
+KurtsHouse_Text_GranddaughterOldPhoto:
+	.string "Grandpa has been staring at that\n"
+	.string "old photo all week.\p"
+	.string "He keeps mumbling about “the BALL\n"
+	.string "he never finished”…$"
+
+KurtsHouse_Text_KurtGsStory:
+	.string "Hm? Those feathers…\p"
+	.string "A RAINBOW WING and a SILVER WING,\n"
+	.string "both in one bag! I never thought\l"
+	.string "I'd live to see it.\p"
+	.string "Let me tell you a story, {PLAYER}.\p"
+	.string "Long ago, OAK and I were young\n"
+	.string "men. One evening, at the shrine in\l"
+	.string "ILEX FOREST, we saw it.\p"
+	.string "The forest's protector. It was\n"
+	.string "there for a heartbeat, then gone.\p"
+	.string "OAK sketched a BALL for it that\n"
+	.string "same night. Gold and silver, like\l"
+	.string "those two wings.\p"
+	.string "I started on it, but I never\n"
+	.string "finished. Its shell can only be\l"
+	.string "woven from one thing…\p"
+	.string "A shoot of SPROUT TOWER's\n"
+	.string "swaying pillar.\p"
+	.string "Only ELDER LI can grant one.\n"
+	.string "Will you ask him for me?$"
+
+KurtsHouse_Text_KurtGsAskLi:
+	.string "ELDER LI is at the top of SPROUT\n"
+	.string "TOWER, in VIOLET CITY.\p"
+	.string "Tell him KURT of AZALEA sent you!$"
+
+KurtsHouse_Text_KurtGsTakeShoot:
+	.string "That's it! A shoot of the swaying\n"
+	.string "pillar!\p"
+	.string "Gold and silver, just as OAK drew\n"
+	.string "it… This will take me all night.\p"
+	.string "Come back tomorrow, {PLAYER}!$"
+
+KurtsHouse_Text_KurtGsNotYet:
+	.string "Not yet, not yet!\n"
+	.string "Come back tomorrow!$"
+
+KurtsHouse_Text_KurtGsFinished:
+	.string "{PLAYER}! It's done!\p"
+	.string "And this BALL started to shake\n"
+	.string "while I was finishing it!\p"
+	.string "There must be something to this!$"
+
+KurtsHouse_Text_KurtGsRework:
+	.string "It got away from the shrine?\p"
+	.string "Then the BALL isn't right yet.\n"
+	.string "Leave it with me tonight.\p"
+	.string "Come back tomorrow!$"
 
 KurtsHouse_Text_OakPhoto:
 	.string "…A young PROF. OAK?$"

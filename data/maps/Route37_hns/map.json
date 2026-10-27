@@ -572,7 +572,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "local_id": "LOCALID_R39_SHADOW",
+      "local_id": "LOCALID_ROUTE37_SHADOW",
       "graphics_id": "OBJ_EVENT_GFX_LEGENDARY_SHADOW_HNS",
       "x": 20,
       "y": 39,
@@ -583,10 +583,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_ROUTE39_SHADOW"
+      "flag": "FLAG_HIDE_ROUTE37_SHADOW"
     },
     {
-      "local_id": "LOCALID_R39_BAOBA",
+      "local_id": "LOCALID_ROUTE37_BAOBA",
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN_HNS",
       "x": 16,
       "y": 50,
@@ -642,7 +642,7 @@
       "elevation": 0,
       "var": "VAR_LUGIA_OR_HOOH",
       "var_value": "0",
-      "script": "Route39_EventScript_LegendaryTrigger"
+      "script": "Route37_EventScript_LegendaryTrigger"
     },
     {
       "type": "trigger",
@@ -651,7 +651,7 @@
       "elevation": 0,
       "var": "VAR_LUGIA_OR_HOOH",
       "var_value": "0",
-      "script": "Route39_EventScript_LegendaryTrigger"
+      "script": "Route37_EventScript_LegendaryTrigger"
     },
     {
       "type": "trigger",
@@ -660,7 +660,7 @@
       "elevation": 0,
       "var": "VAR_LUGIA_OR_HOOH",
       "var_value": "0",
-      "script": "Route39_EventScript_LegendaryTrigger"
+      "script": "Route37_EventScript_LegendaryTrigger"
     },
     {
       "type": "trigger",
@@ -669,7 +669,7 @@
       "elevation": 0,
       "var": "VAR_LUGIA_OR_HOOH",
       "var_value": "0",
-      "script": "Route39_EventScript_LegendaryTrigger"
+      "script": "Route37_EventScript_LegendaryTrigger"
     }
   ],
   "bg_events": [

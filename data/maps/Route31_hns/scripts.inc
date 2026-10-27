@@ -72,8 +72,8 @@ Route31_EventScript_SleepyMan_GiveKenya::
 	delay 55
 	callnative UpdateFollowingPokemon
 	msgbox Route31_Text_ReadingMail, MSGBOX_DEFAULT
-	giveitem ITEM_TM_REST
-	msgbox Route31_Text_DescribeRest, MSGBOX_DEFAULT
+	giveitem ITEM_TM_NIGHTMARE
+	msgbox Route31_Text_DescribeNightmare, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_KENYA, 2
 	release
@@ -165,13 +165,12 @@ Route31_Text_ReadingMail:
 	.string "I know! I want you to have\n"
 	.string "this!$"
 
-Route31_Text_DescribeRest:
-	.string "...Zzz...\p"
-	.string "...Umm... Rest!\p"
-	.string "The phrase 'recover fast' became\n"
-	.string "shortened to 'Rest,' you see?\p"
-	.string "This is a move to sleep and recover\n"
-	.string "some HP.$"
+Route31_Text_DescribeNightmare:
+	.string "TM75 is NIGHTMARE.\p"
+	.string "It's a wicked move that steadily\n"
+	.string "cuts the HP of a sleeping enemy.\p"
+	.string "Ooooh… That's scary…\p"
+	.string "I don't want to have bad dreams.$"
 
 Route31_Text_WrongMail:
 	.string "This MAIL isn't for me.$"

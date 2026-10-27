@@ -15,9 +15,13 @@ NewBarkTown_EventScript_ElmCallAfterLeague::
 	waitmessage
 	delay 30
 	setvar VAR_NEWBARK_TOWN_STATE, 7
-	setvar VAR_NEWBARKTOWN_LABSTATE, 10
+	call_if_ne VAR_NEWBARKTOWN_LABSTATE, 7, NewBarkTown_EventScript_ElmHasTicket
 	release
 	end
+
+NewBarkTown_EventScript_ElmHasTicket:
+	setvar VAR_NEWBARKTOWN_LABSTATE, 10
+	return
 
 NewBarkTown_Text_ElmName:
 	.string "PROF.ELM$"

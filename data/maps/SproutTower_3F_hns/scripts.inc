@@ -103,6 +103,8 @@ SproutTower_3F_EventScript_TriggerSceneRight::
 SproutTower_3F_EventScript_SageLi::
 	lock
 	faceplayer
+	goto_if_eq VAR_KURT_GS_BALL_STATE, 1, SproutTower_3F_EventScript_SageLiKurtRequest
+	goto_if_eq VAR_KURT_GS_BALL_STATE, 2, SproutTower_3F_EventScript_SageLiShootCheck
 	goto_if_set FLAG_RECEIVED_HM_FLASH, SproutTower_3F_EventScript_SageLi_Beaten
 	msgbox SproutTower_Text_SageLi_Seen, MSGBOX_DEFAULT
 	closemessage
@@ -117,6 +119,40 @@ SproutTower_3F_EventScript_SageLi::
 
 SproutTower_3F_EventScript_SageLi_Beaten::
 	msgbox SproutTower_Text_SageLi_AfterBattle, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+@ KURT's GS BALL (MIGRATION_DECISIONS.md 92): the shell is woven from a shoot of the swaying pillar,
+@ and LI tests the player before he gives one. Beaten but no shoot (a full bag) gives it next time.
+SproutTower_3F_EventScript_SageLiKurtRequest:
+	goto_if_defeated TRAINER_LI_2_HNS, SproutTower_3F_EventScript_SageLiGiveShoot
+	msgbox SproutTower_Text_SageLi_KurtRequest, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_LI_2_HNS, SproutTower_Text_SageLi_RematchBeaten
+SproutTower_3F_EventScript_SageLiGiveShoot:
+	msgbox SproutTower_Text_SageLi_GiveShoot, MSGBOX_DEFAULT
+	giveitem ITEM_BIG_BAMBOO_SHOOT
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setvar VAR_KURT_GS_BALL_STATE, 2
+	msgbox SproutTower_Text_SageLi_ShootForKurt, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+@ A shoot that left the bag before reaching KURT is replaced; nothing else gives one.
+SproutTower_3F_EventScript_SageLiShootCheck:
+	checkitem ITEM_BIG_BAMBOO_SHOOT
+	goto_if_eq VAR_RESULT, FALSE, SproutTower_3F_EventScript_SageLiAnotherShoot
+	msgbox SproutTower_Text_SageLi_ShootForKurt, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+SproutTower_3F_EventScript_SageLiAnotherShoot:
+	msgbox SproutTower_Text_SageLi_AnotherShoot, MSGBOX_DEFAULT
+	giveitem ITEM_BIG_BAMBOO_SHOOT
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	closemessage
 	release
 	end
@@ -214,6 +250,34 @@ SproutTower_Text_SageLi_FlashExplain:
 SproutTower_Text_SageLi_AfterBattle:
 	.string "I hope you learn and grow from\n"
 	.string "your journey.$"
+
+SproutTower_Text_SageLi_KurtRequest:
+	.string "KURT of AZALEA asks for a shoot\n"
+	.string "of the swaying pillar?\p"
+	.string "The pillar has swayed since this\n"
+	.string "tower was raised. Its shoots are\l"
+	.string "not given lightly.\p"
+	.string "You have grown far stronger since\n"
+	.string "you first climbed these floors.\p"
+	.string "Let me check the ties between\n"
+	.string "your POKéMON and you once more!$"
+
+SproutTower_Text_SageLi_RematchBeaten:
+	.string "The pillar has spoken.$"
+
+SproutTower_Text_SageLi_GiveShoot:
+	.string "Your bond is strong enough to\n"
+	.string "carry this.$"
+
+SproutTower_Text_SageLi_ShootForKurt:
+	.string "Take the shoot to KURT.\p"
+	.string "May the BALL he weaves bring the\n"
+	.string "forest's protector to you.$"
+
+SproutTower_Text_SageLi_AnotherShoot:
+	.string "The shoot is gone?\p"
+	.string "…The pillar is generous.\n"
+	.string "Take another to KURT.$"
 
 SproutTower_Text_SageJin_Seen:
 	.string "I train to find enlightenment\n"

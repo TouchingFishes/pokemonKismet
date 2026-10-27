@@ -480,3 +480,7 @@ Route13_TravelToAlola_Text_NoWordYet:
 	.string "I sail when the man in the SAFARI\n"
 	.string "ZONE office says I sail, and he\l"
 	.string "hasn't said so yet.$"
+
+Route13_EventScript_Item_Venoshock::
+	finditem ITEM_TM_VENOSHOCK
+	end

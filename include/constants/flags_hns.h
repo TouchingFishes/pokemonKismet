@@ -165,7 +165,7 @@
 #define FLAG_HIDE_MTMOON_SILVER                     0x0AA
 #define FLAG_INDIGOJUNCTION_HIDE_KANTO_GUARD        0x0AB
 #define FLAG_INDIGOJUNCTION_HIDE_SILVER_GUARD       0x0AC
-#define FLAG_HIDE_ROUTE39_SHADOW                    0x0AD
+#define FLAG_HIDE_ROUTE37_SHADOW                    0x0AD
 #define FLAG_HIDE_ROUTE42_EUSINE                    0x0AE
 #define FLAG_HIDE_VIRIDIAN_BLUE                     0x0AF
 #define FLAG_HIDE_VIRIDIAN_BUGSY                    0x0B0
@@ -982,11 +982,7 @@
 #define FLAG_GOT_HONEDGE_PEWTER             (HNS_EXTENDED_CONTENT_START + 83)
 // Three DaoDao flags taken from this reusable gap rather than the tail, which has
 // only 11 slots left before TRAINER_FLAGS_START.
-//
-// The ROCKET BIKER who blocks the hideout door from outside. (11,17) is the door's
-// ONLY approach - north, west and east are all collision 1 - so one body there seals
-// it, and beating him opens the way the way a Rocket grunt should.
-#define FLAG_HIDE_DAODAO_LAB_DOORGUARD              (HNS_EXTENDED_CONTENT_START + 84)
+#define FLAG_UNUSED_EXTENDED_84                     (HNS_EXTENDED_CONTENT_START + 84)
 // STEVEN at GIANT'S REST. He is the inverse of a normal hide flag: visible only ONCE
 // FLAG_HIDE_DAODAO_REGIGIGAS is set (the SAFARI STEVEN leaves on that same flag),
 // and hidden again once he is beaten AND the BELDUM trade is done - he carries
@@ -1096,13 +1092,13 @@
 #define FLAG_CHILLWIND_HIDDEN_ITEM_NUGGET          (HNS_EXTENDED_CONTENT_START + 176)
 #define FLAG_HIDE_CHILLWIND_BAXCALIBUR             (HNS_EXTENDED_CONTENT_START + 177)
 #define FLAG_ITEM_RUINS_OF_ALPH_RARE_CANDY         (HNS_EXTENDED_CONTENT_START + 178) // the Ho-Oh puzzle's prize, B1F
-#define FLAG_EXTENDED_CONTENT_179                  (HNS_EXTENDED_CONTENT_START + 179)
-#define FLAG_EXTENDED_CONTENT_180                  (HNS_EXTENDED_CONTENT_START + 180)
-#define FLAG_EXTENDED_CONTENT_181                  (HNS_EXTENDED_CONTENT_START + 181)
-#define FLAG_EXTENDED_CONTENT_182                  (HNS_EXTENDED_CONTENT_START + 182)
-#define FLAG_EXTENDED_CONTENT_183                  (HNS_EXTENDED_CONTENT_START + 183)
-#define FLAG_EXTENDED_CONTENT_184                  (HNS_EXTENDED_CONTENT_START + 184)
-#define FLAG_EXTENDED_CONTENT_185                  (HNS_EXTENDED_CONTENT_START + 185)
+#define FLAG_GOT_TM_SIGNAL_BEAM                    (HNS_EXTENDED_CONTENT_START + 179) // NEW BARK neighbour's daughter, 8th badge
+#define FLAG_RECEIVED_MILCERY                      (HNS_EXTENDED_CONTENT_START + 180) // the CELADON café CHEF's gift
+#define FLAG_ITEM_ROUTE13_TM_VENOSHOCK     (HNS_EXTENDED_CONTENT_START + 181) // TM_VENOSHOCK ball (§92, on ROUTE 13 since §93)
+#define FLAG_DAODAO_GIANTS_REST_TM_SOLAR_BEAM (HNS_EXTENDED_CONTENT_START + 182) // TM_SOLAR_BEAM ball (§92)
+#define FLAG_DAODAO_WAKE_CAVE_TM_DRAGON_BREATH (HNS_EXTENDED_CONTENT_START + 183) // TM_DRAGON_BREATH ball (§92)
+#define FLAG_SINJOHCANYON_ITEM_TM_EARTH_POWER (HNS_EXTENDED_CONTENT_START + 184) // TM_EARTH_POWER ball (§92)
+#define FLAG_GOT_TM_REST_YELLOW_FOREST_GATE        (HNS_EXTENDED_CONTENT_START + 185) // the gate's sleepy man (§93)
 #define FLAG_EXTENDED_CONTENT_186                  (HNS_EXTENDED_CONTENT_START + 186)
 #define FLAG_EXTENDED_CONTENT_187                  (HNS_EXTENDED_CONTENT_START + 187)
 #define FLAG_EXTENDED_CONTENT_188                  (HNS_EXTENDED_CONTENT_START + 188)
@@ -1428,7 +1424,7 @@
 #define FLAG_HIDE_DAODAO_REGIELEKI                  (HNS_EXTENDED_CONTENT_START + 348)
 #define FLAG_HIDE_DAODAO_REGIDRAGO                  (HNS_EXTENDED_CONTENT_START + 349)
 #define FLAG_DEFEATED_DAODAO_BOSS_REGIROCK          (HNS_EXTENDED_CONTENT_START + 350)
-#define FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL         (HNS_EXTENDED_CONTENT_START + 351)
+#define FLAG_DEFEATED_DAODAO_LAB_KLINKLANG          (HNS_EXTENDED_CONTENT_START + 351)
 #define FLAG_DEFEATED_DAODAO_BOSS_REGICE            (HNS_EXTENDED_CONTENT_START + 352)
 #define FLAG_DEFEATED_DAODAO_BOSS_REGIELEKI         (HNS_EXTENDED_CONTENT_START + 353)
 #define FLAG_DEFEATED_DAODAO_BOSS_REGIDRAGO         (HNS_EXTENDED_CONTENT_START + 354)
@@ -1447,7 +1443,7 @@
 // riddle would make the KANTO POKeMON FEDERATION arc unfinishable for anyone who
 // has not solved a puzzle in a different chamber on a different island.
 #define FLAG_HIDE_DAODAO_BOSS_REGIROCK              (HNS_EXTENDED_CONTENT_START + 356)
-#define FLAG_HIDE_DAODAO_BOSS_REGISTEEL             (HNS_EXTENDED_CONTENT_START + 357)
+#define FLAG_HIDE_DAODAO_LAB_KLINKLANG              (HNS_EXTENDED_CONTENT_START + 357)
 #define FLAG_HIDE_DAODAO_BOSS_REGICE                (HNS_EXTENDED_CONTENT_START + 358)
 #define FLAG_HIDE_DAODAO_BOSS_REGIELEKI             (HNS_EXTENDED_CONTENT_START + 359)
 #define FLAG_HIDE_DAODAO_BOSS_REGIDRAGO             (HNS_EXTENDED_CONTENT_START + 360)
@@ -1714,8 +1710,10 @@
 #define FLAG_DAILY_TREASURE_ROCK_6                  (DAILY_FLAGS_START +17)
 #define FLAG_DAILY_TREASURE_ROCK_7                  (DAILY_FLAGS_START +18)
 #define FLAG_DAILY_TREASURE_ROCK_8                  (DAILY_FLAGS_START +19)
+// KURT is working on the GS BALL; cleared at the date rollover, which finishes it.
+#define FLAG_DAILY_KURT_GS_BALL                     (DAILY_FLAGS_START +20)
 
-#define DAILY_FLAGS_END                             (DAILY_FLAGS_START +19)
+#define DAILY_FLAGS_END                             (DAILY_FLAGS_START +20)
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
 #define BUILD_FLAGS_END                             DAILY_FLAGS_END
 

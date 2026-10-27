@@ -2,7 +2,26 @@ CeladonCity_House1_hns_MapScripts::
 	.byte 0
 
 CeladonCity_House1_EventScript_Chef::
-	msgbox CeladonCity_House1_Text_ChefEatathon, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_MILCERY, CeladonCity_House1_EventScript_ChefAfter
+	msgbox CeladonCity_House1_Text_ChefEatathon, MSGBOX_DEFAULT
+	msgbox CeladonCity_House1_Text_ChefMilcery, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CeladonCity_House1_EventScript_ChefDeclined
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MILCERY
+	bufferspeciesname STR_VAR_1, SPECIES_MILCERY
+	givemon SPECIES_MILCERY, 5
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, Common_EventScript_NoMoreRoomForPokemon
+	call Common_EventScript_GiftMon
+	setflag FLAG_RECEIVED_MILCERY
+CeladonCity_House1_EventScript_ChefAfter:
+	msgbox CeladonCity_House1_Text_ChefAfter, MSGBOX_DEFAULT
+	release
+	end
+
+CeladonCity_House1_EventScript_ChefDeclined:
+	msgbox CeladonCity_House1_Text_ChefDeclined, MSGBOX_DEFAULT
+	release
 	end
 
 CeladonCity_House1_EventScript_Fisher1::
@@ -58,6 +77,26 @@ CeladonCity_House1_Text_ChefEatathon:
 	.string "We're holding an eatathon contest.\p"
 	.string "We can't serve you right now.\n"
 	.string "Sorry.$"
+
+CeladonCity_House1_Text_ChefMilcery:
+	.string "…Oh, and this little one keeps\n"
+	.string "sneaking into the kitchen for\l"
+	.string "the whipped cream.\p"
+	.string "A trainer like you could give it\n"
+	.string "a better home than my pantry.\p"
+	.string "Would you take MILCERY with you?$"
+
+CeladonCity_House1_Text_ChefAfter:
+	.string "How is MILCERY doing?\p"
+	.string "They say it turns into ALCREMIE\n"
+	.string "when it touches an evolution\l"
+	.string "stone.\p"
+	.string "Every stone makes a different\n"
+	.string "flavor. Isn't that sweet?$"
+
+CeladonCity_House1_Text_ChefDeclined:
+	.string "Oh… Then it stays with the\n"
+	.string "cream for now.$"
 
 CeladonCity_House1_Text_Fisher1Snarfle:
 	.string "…Snarfle, chew…$"

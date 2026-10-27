@@ -325,3 +325,7 @@ SinjohCanyon_EventScript_ItemBlackAugurite::
 SinjohCanyon_EventScript_ItemRareCandy::
 	finditem ITEM_RARE_CANDY
 	end
+
+SinjohCanyon_EventScript_ItemEarthPower::
+	finditem ITEM_TM_EARTH_POWER
+	end

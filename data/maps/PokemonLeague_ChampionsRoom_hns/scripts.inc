@@ -9,7 +9,14 @@ PokemonLeague_ChampionsRoom_OnTransition:
 	@ MARY and OAK only appear through addobject, which ignores this flag. Route 27 is the
 	@ only other place that sets it, so a player who never walked it saw them standing here.
 	setflag FLAG_HIDE_INDIGO_PLATEAU_MARY_OAK
+	@ LANCE hid on FLAG_IS_KANTO_CHAMPION itself until MIGRATION_DECISIONS.md 92, so the removeobject
+	@ ending his first defeat made the player KANTO champion and misrouted the HALL OF FAME.
+	call_if_set FLAG_IS_KANTO_CHAMPION, PokemonLeague_ChampionsRoom_EventScript_HideLance
 	end
+
+PokemonLeague_ChampionsRoom_EventScript_HideLance:
+	setflag FLAG_TEMP_12
+	return
 
 PokemonLeague_ChampionsRoom_OnResume::
 	setvar VAR_0x8004, 4

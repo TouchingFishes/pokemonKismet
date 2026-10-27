@@ -228,10 +228,12 @@ static const u8 sMapSecClimates[MAPSEC_COUNT] =
     [MAPSEC_ROUTE_27]           = CLIMATE_KANTO_INLAND,
     [MAPSEC_ROUTE_28]           = CLIMATE_MOUNTAIN,
 
-    // Alola. The two forest maps are deliberately absent: Akala Forest has its
-    // own map section and Ula'ula Forest shares MAPSEC_ULAULA_ISLAND with the
-    // isle, but both name WEATHER_SHADE in their headers, so the header wins
-    // there either way and the climate only reaches the open island maps.
+    // The DaoDao Isles, which took over the five Alola sections: LANDFALL ISLE,
+    // KILN ISLE, GIANT'S REACH, WAKE ISLE and the DAODAO ISLES sea. The two
+    // forests are deliberately absent: ETERNA FOREST has its own section
+    // (MAPSEC_AKALA_FOREST) and BERRY FOREST shares MAPSEC_ULAULA_ISLAND with
+    // GIANT'S REACH, but both name WEATHER_SHADE in their headers, so the header
+    // wins there either way and the climate only reaches the open island maps.
     [MAPSEC_MELEMELE_ISLAND]    = CLIMATE_ALOLA,
     [MAPSEC_AKALA_ISLAND]       = CLIMATE_ALOLA,
     [MAPSEC_ULAULA_ISLAND]      = CLIMATE_ALOLA,

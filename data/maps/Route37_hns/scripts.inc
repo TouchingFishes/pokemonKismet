@@ -5,6 +5,7 @@ Route37_hns_MapScripts::
 
 Route37_OnTransition: 
 	callnative SetTimeBasedEncounters
+	setflag FLAG_HIDE_ROUTE37_SHADOW
 	end
 
 
@@ -258,3 +259,237 @@ Route37_Text_CamperJordan_After::
 Route37_EventScript_Item_HoneClaws::
 	finditem ITEM_TM_HONE_CLAWS
 	end
+
+Route37_EventScript_LegendaryTrigger::
+	lock
+	clearflag FLAG_HIDE_ROUTE37_SHADOW
+	addobject LOCALID_ROUTE37_SHADOW
+	playse SE_M_RAZOR_WIND
+	applymovement LOCALID_ROUTE37_SHADOW, Route37_Movement_ShadowSlideDown
+	waitmovement 0
+	setflag FLAG_HIDE_ROUTE37_SHADOW
+	removeobject LOCALID_ROUTE37_SHADOW
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	waitmovement 0
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
+	delay 60
+	@ BAOBA waits at (16,50), out of sight of the triggers at x=24, so he walks in beside
+	@ the player first and only then reacts. VAR_TEMP_1 keeps the row for his exit.
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 48, Route37_EventScript_BaobaApproach48
+	call_if_eq VAR_TEMP_1, 49, Route37_EventScript_BaobaApproach49
+	call_if_eq VAR_TEMP_1, 50, Route37_EventScript_BaobaApproach50
+	call_if_eq VAR_TEMP_1, 51, Route37_EventScript_BaobaApproach51
+	playse SE_PIN
+	applymovement LOCALID_ROUTE37_BAOBA, Common_Movement_QuestionMark
+	waitmovement 0
+	turnobject LOCALID_ROUTE37_BAOBA, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+Route37_EventScript_ChooseLegend::
+	msgbox Route37_Text_ChooseLegend, MSGBOX_DEFAULT
+	multichoice 20, 8, MULTI_GOLDSILVER, FALSE
+	switch VAR_RESULT
+	case 0, Route37_EventScript_LegendaryTriggerGold
+	case 1, Route37_EventScript_LegendaryTriggerSilver
+	case MULTI_B_PRESSED, Route37_EventScript_ChooseLegend
+	release
+	end
+
+Route37_EventScript_BaobaApproach48:
+	applymovement LOCALID_ROUTE37_BAOBA, Route37_Movement_BaobaApproach48
+	waitmovement 0
+	return
+
+Route37_EventScript_BaobaApproach49:
+	applymovement LOCALID_ROUTE37_BAOBA, Route37_Movement_BaobaApproach49
+	waitmovement 0
+	return
+
+Route37_EventScript_BaobaApproach50:
+	applymovement LOCALID_ROUTE37_BAOBA, Route37_Movement_BaobaApproach50
+	waitmovement 0
+	return
+
+Route37_EventScript_BaobaApproach51:
+	applymovement LOCALID_ROUTE37_BAOBA, Route37_Movement_BaobaApproach51
+	waitmovement 0
+	return
+
+Route37_EventScript_LegendaryTriggerGold::
+	setvar VAR_LUGIA_OR_HOOH, 2
+	goto Route37_EventScript_BaobaIntro
+
+Route37_EventScript_LegendaryTriggerSilver::
+	setvar VAR_LUGIA_OR_HOOH, 1
+	goto Route37_EventScript_BaobaIntro
+
+Route37_EventScript_BaobaIntro::
+	msgbox Route37_Text_BaobaIntro, MSGBOX_DEFAULT
+	playse MUS_HG_POKEGEAR_REGISTERED
+	msgbox Route37_Text_Registered, MSGBOX_DEFAULT
+	waitse
+	msgbox Route37_Text_WillCall, MSGBOX_DEFAULT
+	closemessage
+	@ Back up to row 48, then west along it and north out of view.
+	call_if_eq VAR_TEMP_1, 49, Route37_EventScript_BaobaUp1
+	call_if_eq VAR_TEMP_1, 50, Route37_EventScript_BaobaUp2
+	call_if_eq VAR_TEMP_1, 51, Route37_EventScript_BaobaUp3
+	applymovement LOCALID_ROUTE37_BAOBA, Route37_Movement_BaobaLeave
+	waitmovement 0
+	setflag FLAG_ENABLE_BAOBA_MATCH_CALL
+	removeobject LOCALID_ROUTE37_BAOBA
+	release
+	end
+
+Route37_EventScript_BaobaUp1:
+	applymovement LOCALID_ROUTE37_BAOBA, Route37_Movement_BaobaUp1
+	waitmovement 0
+	return
+
+Route37_EventScript_BaobaUp2:
+	applymovement LOCALID_ROUTE37_BAOBA, Route37_Movement_BaobaUp2
+	waitmovement 0
+	return
+
+Route37_EventScript_BaobaUp3:
+	applymovement LOCALID_ROUTE37_BAOBA, Route37_Movement_BaobaUp3
+	waitmovement 0
+	return
+
+Route37_Movement_BaobaApproach48:
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Route37_Movement_BaobaApproach49:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Route37_Movement_BaobaApproach50:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Route37_Movement_BaobaApproach51:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Route37_Movement_BaobaUp1:
+	walk_up
+	step_end
+
+Route37_Movement_BaobaUp2:
+	walk_up
+	walk_up
+	step_end
+
+Route37_Movement_BaobaUp3:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Route37_Movement_BaobaLeave:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Route37_Movement_ShadowSlideDown:
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	step_end
+
+Route37_Text_ChooseLegend::
+	.string "BAOBA: GOOD HEAVENS! Did that\n"
+	.string "shadow belong to a POKéMON?\p"
+	.string "Did you get a good look at it?\n"
+	.string "I can't tell what color it was...$"
+
+Route37_Text_BaobaIntro::
+	.string "How strange...\p"
+	.string "...Ohh!\n"
+	.string "What you are holding is...\l"
+	.string "what they call... a POKéDEX!\p"
+	.string "Haven't seen one of those in ages.\p"
+	.string "My name is BAOBA!\n"
+	.string "I used to run a SAFARI ZONE in\l"
+	.string "FUCHSIA CITY, but it was becoming\l"
+	.string "out of date with new entertainment\l"
+	.string "options coming out.\p"
+	.string "I decided to go overseas to learn\n"
+	.string "the newest technology and open a\l"
+	.string "state-of-the-art SAFARI ZONE\l"
+	.string "in CIANWOOD.\p"
+	.string "It may be more than a coincidence\n"
+	.string "that we are chatting.\p"
+	.string "Why don't we register each other's\n"
+	.string "numbers in the POKéGEAR?\p"
+	.string "I can give you a call once the\n"
+	.string "SAFARI ZONE is open before I call\l"
+	.string "anyone else!$"
+
+Route37_Text_Registered:
+	.string "{PLAYER} registered BAOBA\n"
+	.string "in the POKéGEAR!$"
+
+Route37_Text_WillCall:
+	.string "BAOBA: I'll let you know\n"
+	.string "on the POKéGEAR soon!$"

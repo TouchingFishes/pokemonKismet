@@ -32302,6 +32302,59 @@ static const u16 sGrimmsnarlTeachableLearnset_Kismet[] = {
 };
 
 #endif
+#if P_FAMILY_MILCERY
+static const u16 sMilceryTeachableLearnset_Kismet[] = {
+    MOVE_PROTECT,
+    MOVE_FACADE,
+    MOVE_REST,
+    MOVE_ATTRACT,
+    MOVE_SLEEP_TALK,
+    MOVE_SWEET_SCENT,
+    MOVE_FLING,
+    MOVE_BIDE,
+    MOVE_DAZZLING_GLEAM,
+    MOVE_ENDURE,
+    MOVE_SNORE,
+    MOVE_SUBSTITUTE,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sAlcremieBerryCaramelSwirlTeachableLearnset_Kismet[] = {
+    MOVE_CALM_MIND,
+    MOVE_HIDDEN_POWER,
+    MOVE_HYPER_BEAM,
+    MOVE_LIGHT_SCREEN,
+    MOVE_PROTECT,
+    MOVE_GIGA_DRAIN,
+    MOVE_SAFEGUARD,
+    MOVE_FRUSTRATION,
+    MOVE_SOLAR_BEAM,
+    MOVE_RETURN,
+    MOVE_PSYCHIC,
+    MOVE_FACADE,
+    MOVE_SECRET_POWER,
+    MOVE_REST,
+    MOVE_ATTRACT,
+    MOVE_MIMIC,
+    MOVE_ENERGY_BALL,
+    MOVE_SLEEP_TALK,
+    MOVE_SWEET_SCENT,
+    MOVE_FLING,
+    MOVE_DRAIN_PUNCH,
+    MOVE_PSYSHOCK,
+    MOVE_GIGA_IMPACT,
+    MOVE_BIDE,
+    MOVE_DAZZLING_GLEAM,
+    MOVE_ENDURE,
+    MOVE_METRONOME,
+    MOVE_PSYCH_UP,
+    MOVE_SNORE,
+    MOVE_SUBSTITUTE,
+    MOVE_TRI_ATTACK,
+    MOVE_UNAVAILABLE,
+};
+
+#endif
 #if P_FAMILY_SNOM
 static const u16 sSnomTeachableLearnset_Kismet[] = {
     MOVE_PROTECT,
