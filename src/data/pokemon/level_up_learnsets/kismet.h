@@ -9918,6 +9918,7 @@ static const struct LevelUpMove sKlangLevelUpLearnset_Kismet[] = {
 };
 
 static const struct LevelUpMove sKlinklangLevelUpLearnset_Kismet[] = {
+    LEVEL_UP_MOVE( 1, MOVE_IRON_HEAD),
     LEVEL_UP_MOVE( 1, MOVE_ZAP_CANNON),
     LEVEL_UP_MOVE( 1, MOVE_MIRROR_SHOT),
     LEVEL_UP_MOVE( 1, MOVE_VICE_GRIP),

@@ -162,7 +162,7 @@ NewBarkTown_PlayersHouse_2F_EventScript_RocketLabTest::
 NewBarkTown_PlayersHouse_2F_EventScript_LabBeforeGideon::
 	setvar VAR_FUCHSIA_FEDERATION_STATE, 5
 	clearflag FLAG_DEFEATED_DAODAO_LAB_GIDEON
-	clearflag FLAG_DEFEATED_DAODAO_LAB_KLINKLANG
+	clearflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
 	clearflag FLAG_DEFEATED_DAODAO_LAB_GIOVANNI
 	clearflag FLAG_DAODAO_GENESECT_TAKEN
 	clearflag FLAG_DAODAO_GENESECT_KNOCKED_OUT
@@ -203,14 +203,14 @@ NewBarkTown_PlayersHouse_2F_EventScript_LabKlinklang::
 
 NewBarkTown_PlayersHouse_2F_EventScript_LabGiovanni::
 	call NewBarkTown_PlayersHouse_2F_EventScript_LabAfterGideon
-	setflag FLAG_DEFEATED_DAODAO_LAB_KLINKLANG
+	setflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
 	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_B1F_HNS, 10, 4
 	waitstate
 	end
 
 NewBarkTown_PlayersHouse_2F_EventScript_LabGenesect::
 	call NewBarkTown_PlayersHouse_2F_EventScript_LabAfterGideon
-	setflag FLAG_DEFEATED_DAODAO_LAB_KLINKLANG
+	setflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
 	setflag FLAG_DEFEATED_DAODAO_LAB_GIOVANNI
 	settrainerflag TRAINER_GIOVANNI_LAB_HNS
 	warp MAP_DAO_DAO_ISLES_ROCKET_LAB_B1F_HNS, 4, 11

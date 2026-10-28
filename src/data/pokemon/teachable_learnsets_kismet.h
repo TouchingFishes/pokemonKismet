@@ -28978,6 +28978,7 @@ static const u16 sKlinklangTeachableLearnset_Kismet[] = {
     MOVE_GIGA_IMPACT,
     MOVE_ROCK_SMASH,
     MOVE_BIDE,
+    MOVE_BODY_PRESS,
     MOVE_CONFIDE,
     MOVE_ENDURE,
     MOVE_SNORE,

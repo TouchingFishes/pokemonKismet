@@ -4826,6 +4826,13 @@ static const struct WeekDayVisibility sWeekDayVisibility[] =
     { .dayMask     = WEEKDAYS_WEEKEND,
       .hideFlag    = FLAG_HIDE_CHERRYGROVE_GRANDKIDS,
       .requiresSet = FLAG_IS_KANTO_CHAMPION },
+
+    // SILVER waits at INDIGO PLATEAU only on Mondays, Wednesdays and Fridays
+    // (MIGRATION_DECISIONS.md 94). FLAG_HIDE_INDIGO_PLATEAU_SILVER stays the story
+    // gate (set on ROUTE 27, cleared at MT. MOON); the object reads the day flag.
+    { .dayMask       = WEEKDAY_BIT(WEEKDAY_MON) | WEEKDAY_BIT(WEEKDAY_WED) | WEEKDAY_BIT(WEEKDAY_FRI),
+      .hideFlag      = FLAG_HIDE_INDIGO_SILVER_TODAY,
+      .requiresClear = FLAG_HIDE_INDIGO_PLATEAU_SILVER },
 };
 
 void UpdateWeekDayObjectFlags(void)
