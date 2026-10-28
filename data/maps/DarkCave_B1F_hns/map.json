@@ -30,8 +30,15 @@
   ],
   "warp_events": [
     {
-      "x": 10,
-      "y": 22,
+      "x": 11,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 16,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
       "dest_warp_id": "2"

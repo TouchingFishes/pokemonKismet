@@ -18,7 +18,7 @@
       "local_id": "LOCALID_DARK_CAVE_B3F_DARKRAI",
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_DARKRAI",
       "x": 11,
-      "y": 9,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -29,7 +29,15 @@
       "flag": "FLAG_TEMP_1"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
+      "dest_warp_id": "2"
+    }
+  ],
   "coord_events": [],
   "bg_events": [],
   "game_version": "hns",
