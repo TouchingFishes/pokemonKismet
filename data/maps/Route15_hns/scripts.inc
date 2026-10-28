@@ -102,16 +102,17 @@ Route15_Text_TeacherColetteAfterBattle:
 	.string "to forget a lot of things.$"
 
 Route15_Text_TeacherHillarySeen:
-	.string "On sunny days, I think that the\n"
-	.string "kids would rather be playing in the\l"
-	.string "schoolyard than studying in class.$"
+	.string "Class is outdoors today!\p"
+	.string "These beetles and this tropical\n"
+	.string "plant help each other. Watch!$"
 
 Route15_Text_TeacherHillaryBeaten:
-	.string "I didn't want to lose…$"
+	.string "Hm! Lesson learned… by me.$"
 
 Route15_Text_TeacherHillaryAfterBattle:
-	.string "Studying is important, but\n"
-	.string "exercise is just as vital.$"
+	.string "LEDIAN visit the flowers, and\n"
+	.string "TROPIUS grows the fruit they eat.\p"
+	.string "The children love that lesson!$"
 
 Route15_Text_HillaryRegister:
 	.string "You've taught me a lesson!\n"

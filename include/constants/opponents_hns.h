@@ -598,7 +598,7 @@
 #define TRAINER_JOEL_3_HNS                            584
 #define TRAINER_CHARLES_2_HNS                         585
 #define TRAINER_CHARLES_3_HNS                         586
-#define TRAINER_UNUSED_587_HNS                        587
+#define TRAINER_BASTIEN_HNS                           587
 #define TRAINER_PHANTONOMY_UNUSED_HNS                 588
 #define TRAINER_DAODAO_LANDFALL_SWIMMER_1_HNS         589
 #define TRAINER_DAODAO_BING_CURRENT_SWIMMER_HNS       590

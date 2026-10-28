@@ -286,7 +286,7 @@ Emolga
 Level: 58
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-Ampharos
+Ambipom
 Level: 62
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -3007,31 +3007,27 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_COLETTE_HNS ===
 Name: COLETTE
-Class: Expert Hns
-Pic: Expert F
+Class: Lady Hns
+Pic: Lady Hns
 Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_CLEFAIRY
+SPECIES_CLEFABLE
 Level: 66
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 === TRAINER_HILLARY_HNS ===
 Name: HILLARY
-Class: Expert Hns
-Pic: Expert F
+Class: Aroma Lady Hns
+Pic: Aroma Lady Hns
 Gender: Female
-Music: Hg Girl 2
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_AIPOM
-Level: 55
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-
-SPECIES_TROPIUS
+SPECIES_LEDIAN
 Level: 55
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
@@ -3039,7 +3035,7 @@ SPECIES_LEDIAN
 Level: 56
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
-SPECIES_AMBIPOM
+SPECIES_TROPIUS
 Level: 60
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
@@ -3226,8 +3222,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_KEN_HNS ===
 Name: KEN
-Class: Bug Catcher Hns
-Pic: Bug Catcher Frlg
+Class: Bug Maniac Hns
+Pic: Bug Maniac
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -5508,8 +5504,8 @@ IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_BURT_HNS ===
 Name: BURT
-Class: Firebreather Hns
-Pic: Firebreather Hns
+Class: Hiker Hns
+Pic: Hiker
 Gender: Male
 Music: Hg Suspicious 2
 Double Battle: No
@@ -15940,39 +15936,39 @@ Level: Badge+15
 
 === TRAINER_HILLARY_2_HNS ===
 Name: HILLARY
-Class: Lass Hns
-Pic: Lass
+Class: Aroma Lady Hns
+Pic: Aroma Lady Hns
 Gender: Male
-Music: Hg Girl 2
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
-Sunkern
-Level: Badge+4
+SPECIES_LEDIAN
+Level: Badge+12
 
-Aipom
-Level: Badge+27
+SPECIES_LEDIAN
+Level: Badge+13
 
-Cubone
-Level: Badge+26
+SPECIES_TROPIUS
+Level: Badge+17
 
 === TRAINER_HILLARY_3_HNS ===
 Name: HILLARY
-Class: Lass Hns
-Pic: Lass
+Class: Aroma Lady Hns
+Pic: Aroma Lady Hns
 Gender: Male
-Music: Hg Girl 2
+Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
-Sunflora
-Level: Badge+29
+SPECIES_LEDIAN
+Level: Badge+14
 
-Aipom
-Level: Badge+27
+SPECIES_LEDIAN
+Level: Badge+15
 
-Cubone
-Level: Badge+26
+SPECIES_TROPIUS
+Level: Badge+19
 
 === TRAINER_ROB_2_HNS ===
 Name: ROB
@@ -16229,17 +16225,32 @@ Level: Badge+17
 Mightyena
 Level: Badge+19
 
-=== TRAINER_UNUSED_587_HNS ===
-Name: UNUSED
-Class: Professor Hns
-Pic: Samson Oak Hns
+=== TRAINER_BASTIEN_HNS ===
+Name: BASTIEN
+Class: Guitarist Hns
+Pic: Guitarist
 Gender: Male
-Music: Elite Four
+Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Check Bad Move
 
-Rattata
-Level: 1
+SPECIES_EMOLGA
+Level: 62
+
+SPECIES_DUSKNOIR
+Level: 62
+
+SPECIES_PORYGON_Z
+Level: 64
+
+SPECIES_AERODACTYL
+Level: 62
+
+SPECIES_NINETALES
+Level: 64
+
+SPECIES_SWAMPERT
+Level: 67
 
 === TRAINER_PHANTONOMY_UNUSED_HNS ===
 Name: PHANTONOMY
@@ -22972,13 +22983,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_ROOST
 - MOVE_ICE_BEAM
 
-SPECIES_LUDICOLO @ ITEM_MIRACLE_SEED
-Ability: Rain Dish
+SPECIES_SERPERIOR @ ITEM_MIRACLE_SEED
+Ability: Contrary
 Level: 82
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SCALD
+- MOVE_LEAF_STORM
 - MOVE_GIGA_DRAIN
-- MOVE_ICE_BEAM
+- MOVE_LEECH_SEED
 - MOVE_SUBSTITUTE
 
 SPECIES_GOODRA @ ITEM_MYSTIC_WATER

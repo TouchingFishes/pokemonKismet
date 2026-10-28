@@ -23,8 +23,8 @@ Route3_EventScript_Jimmy::
 	end
 
 Route3_EventScript_Burt::
-	trainerbattle_single TRAINER_BURT_HNS, Route3_Text_FirebreatherBurt_Seen, Route3_Text_FirebreatherBurt_Beaten
-	msgbox Route3_Text_FirebreatherBurt_AfterBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_BURT_HNS, Route3_Text_HikerBurt_Seen, Route3_Text_HikerBurt_Beaten
+	msgbox Route3_Text_HikerBurt_AfterBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route3_EventScript_Sign::
@@ -61,16 +61,16 @@ Route3_Text_YoungsterJimmy_AfterBattle:
 	.string "I wear shorts the whole year round.\p"
 	.string "That's my fashion policy.$"
 
-Route3_Text_FirebreatherBurt_Seen:
-	.string "Step right up and take a look!$"
+Route3_Text_HikerBurt_Seen:
+	.string "I came down from MT. MOON just\n"
+	.string "to test my POKéMON on you!$"
 
-Route3_Text_FirebreatherBurt_Beaten:
-	.string "Yow! That's hot!$"
+Route3_Text_HikerBurt_Beaten:
+	.string "Whoa! Talk about a rockslide!$"
 
-Route3_Text_FirebreatherBurt_AfterBattle:
-	.string "The greatest fire-breather in KANTO,\n"
-	.string "that's me.\p"
-	.string "But not the best trainer…$"
+Route3_Text_HikerBurt_AfterBattle:
+	.string "My POKéMON blow smoke to clear\n"
+	.string "the dust in the caves. Handy, eh?$"
 
 Route3_Text_MtMoonSquareSign:
 	.string "MT.MOON SQUARE\p"
