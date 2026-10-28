@@ -1211,6 +1211,12 @@ const struct LevelUpMove *const gLevelUpLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_GIRATINA
     [SPECIES_GIRATINA] = sGiratinaLevelUpLearnset_Kismet,
 #endif
+#if P_FAMILY_CRESSELIA
+    [SPECIES_CRESSELIA] = sCresseliaLevelUpLearnset_Kismet,
+#endif
+#if P_FAMILY_DARKRAI
+    [SPECIES_DARKRAI] = sDarkraiLevelUpLearnset_Kismet,
+#endif
 #if P_FAMILY_ARCEUS
     [SPECIES_ARCEUS] = sArceusLevelUpLearnset_Kismet,
     [SPECIES_ARCEUS_NORMAL] = sArceusLevelUpLearnset_Kismet,

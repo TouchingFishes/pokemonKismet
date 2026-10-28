@@ -156,6 +156,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "DarkCave2_EventScript_Bobby",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_DARK_CAVE_MALIA",
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC_HNS",
+      "x": 20,
+      "y": 28,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DarkCave2_EventScript_Malia",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -172,6 +186,13 @@
       "elevation": 0,
       "dest_map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 18,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_DARK_CAVE_B1F_HNS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

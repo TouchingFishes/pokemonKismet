@@ -2195,6 +2195,8 @@ enum JohtoDexOrder
     JOHTO_DEX_GROUDON,
     JOHTO_DEX_KYOGRE,
     JOHTO_DEX_RAYQUAZA,
+    JOHTO_DEX_CRESSELIA,
+    JOHTO_DEX_DARKRAI,
     JOHTO_DEX_JIRACHI,
     // --- Alola stage
     JOHTO_DEX_SANDILE,
@@ -2896,32 +2898,26 @@ enum ObtainableDexOrder {
     OBTAINABLE_DEX_FROAKIE,
     OBTAINABLE_DEX_FROGADIER,
     OBTAINABLE_DEX_GRENINJA,
-    // The post-game shadow in the FOXFIRE HOLLOW Mansion's study. Appended for the same reason.
     OBTAINABLE_DEX_MARSHADOW,
-    // White-Striped Basculin's and Frigibax's lines (MIGRATION_DECISIONS.md 82). Appended
-    // for the same reason. None can be caught until their wild spots are placed.
     OBTAINABLE_DEX_BASCULIN,
     OBTAINABLE_DEX_BASCULEGION,
     OBTAINABLE_DEX_FRIGIBAX,
     OBTAINABLE_DEX_ARCTIBAX,
     OBTAINABLE_DEX_BAXCALIBUR,
-    // The creation trio in the Deep Hall of the Sinjoh Ruins (MIGRATION_DECISIONS.md 85).
-    // Appended for the same reason.
     OBTAINABLE_DEX_DIALGA,
     OBTAINABLE_DEX_PALKIA,
     OBTAINABLE_DEX_GIRATINA,
-    // The SINNOH fossil lines, revived from CHILLWIND CAVE's fossils (MIGRATION_DECISIONS.md 86).
     OBTAINABLE_DEX_CRANIDOS,
     OBTAINABLE_DEX_RAMPARDOS,
     OBTAINABLE_DEX_SHIELDON,
     OBTAINABLE_DEX_BASTIODON,
-    // MILCERY, the CELADON cafe CHEF's gift, and ALCREMIE, which any evolution stone makes of
-    // it (MIGRATION_DECISIONS.md 92). Appended for the same reason.
     OBTAINABLE_DEX_MILCERY,
     OBTAINABLE_DEX_ALCREMIE,
+    OBTAINABLE_DEX_CRESSELIA,
+    OBTAINABLE_DEX_DARKRAI,
 };
 
-#define OBTAINABLE_DEX_COUNT (OBTAINABLE_DEX_ALCREMIE + 1)
+#define OBTAINABLE_DEX_COUNT (OBTAINABLE_DEX_DARKRAI + 1)
 
 #else
 

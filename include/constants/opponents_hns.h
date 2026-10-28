@@ -724,7 +724,7 @@
 #define TRAINER_CHALLENGER_NORMAN_HNS            690
 #define TRAINER_CHALLENGER_WINONA_HNS            691
 #define TRAINER_LI_2_HNS                         692
-#define TRAINER_RESERVED_19_HNS                  693
+#define TRAINER_MALIA_HNS                        693
 #define TRAINER_ALEC_HNS                         694
 #define TRAINER_AMALA_HNS                        695
 #define TRAINER_AMALA_2_HNS                      696

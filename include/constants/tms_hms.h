@@ -35,7 +35,7 @@
     F(PSYCHIC)       /* TM29 - Mauville City Game Corner, Saffron City House1 done */ \
     F(SHADOW_BALL)   /* TM30 - Ecruteak City Gym done */ \
     F(BRICK_BREAK)   /* TM31 - Celadon City Department Store 3F, Route17, Sootopolis City House1 done */ \
-    F(DOUBLE_TEAM)   /* TM32 - Mauville City Game Corner done */ \
+    F(DOUBLE_TEAM)   /* TM32 - Dark Cave B1F (HnS); Mauville City Game Corner done */ \
     F(REFLECT)       /* TM33 - Celadon City Department Store 3F, Lilycove City Department Store 4F done */ \
     F(SHOCK_WAVE)    /* TM34 - Mauville City Gym, Vermilion City Gym done */ \
     F(FLAMETHROWER)  /* TM35 - Goldenrod City Game Corner, Mauville City Game Corner, Route28 done */ \
@@ -91,7 +91,7 @@
     F(X_SCISSOR)     /* TM85 - Route2 done */ \
     F(GYRO_BALL)     /* TM86 - Route13 done */ \
     F(HEX)           /* TM87 - Ice Path 1F done */ \
-    F(BODY_PRESS)    /* TM88 - unplaced */ \
+    F(BODY_PRESS)    /* TM88 - Mt. Moon upper cave (HnS) */ \
     F(PLUCK)         /* TM89 - Route40 done */ \
     F(DETECT)        /* TM90 - Goldenrod City Game Corner done */ \
     F(FLASH_CANNON)  /* TM91 - Route9 done */ \

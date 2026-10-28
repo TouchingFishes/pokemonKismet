@@ -1305,6 +1305,13 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_GIRATINA_ALTERED] = sGiratinaTeachableLearnset_Kismet,
     [SPECIES_GIRATINA_ORIGIN] = sGiratinaTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_CRESSELIA
+    [SPECIES_CRESSELIA] = sCresseliaTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_DARKRAI
+    [SPECIES_DARKRAI] = sDarkraiTeachableLearnset_Kismet,
+    [SPECIES_DARKRAI_MEGA] = sDarkraiTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_ARCEUS
     [SPECIES_ARCEUS_NORMAL] = sArceusNormalTeachableLearnset_Kismet,
     [SPECIES_ARCEUS_FIGHTING] = sArceusNormalTeachableLearnset_Kismet,

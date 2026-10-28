@@ -17375,6 +17375,54 @@
       "border_width": 2,
       "game_version": "hns",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_DARK_CAVE_B1F_HNS",
+      "name": "DarkCave_B1F_hns_Layout",
+      "width": 49,
+      "height": 52,
+      "primary_tileset": "gTileset_Johto_General_Hns",
+      "secondary_tileset": "gTileset_Cave_Default_Hns",
+      "border_filepath": "data/layouts/DarkCave_B1F_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DarkCave_B1F_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DARK_CAVE_B3F_HNS",
+      "name": "DarkCave_B3F_hns_Layout",
+      "width": 22,
+      "height": 18,
+      "primary_tileset": "gTileset_Johto_General_Hns",
+      "secondary_tileset": "gTileset_Cave_Default_Hns",
+      "border_filepath": "data/layouts/DarkCave_B3F_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DarkCave_B3F_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_MT_MOON_UPPER_CAVE_HNS",
+      "name": "MtMoon_UpperCave_hns_Layout",
+      "width": 36,
+      "height": 32,
+      "primary_tileset": "gTileset_Johto_General_Hns",
+      "secondary_tileset": "gTileset_Cave_MtMoon_Hns",
+      "border_filepath": "data/layouts/MtMoon_UpperCave_hns/border.bin",
+      "blockdata_filepath": "data/layouts/MtMoon_UpperCave_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_MT_MOON_SUMMIT_HNS",
+      "name": "MtMoon_Summit_hns_Layout",
+      "width": 30,
+      "height": 24,
+      "primary_tileset": "gTileset_Johto_General_Hns",
+      "secondary_tileset": "gTileset_CherrygroveCity_Hns",
+      "border_filepath": "data/layouts/MtMoon_Summit_hns/border.bin",
+      "blockdata_filepath": "data/layouts/MtMoon_Summit_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
     }
   ]
 }

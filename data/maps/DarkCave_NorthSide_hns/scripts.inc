@@ -66,3 +66,20 @@ DarkCave2_Text_BobbyAfter:
 	.string "If people wanted to, me and\n"
 	.string "my pals could build a\l"
 	.string "tunnel here…$"
+
+DarkCave2_EventScript_Malia::
+	trainerbattle_single TRAINER_MALIA_HNS, DarkCave2_Text_MaliaSeen, DarkCave2_Text_MaliaBeaten
+	msgbox DarkCave2_Text_MaliaAfter, MSGBOX_AUTOCLOSE
+	end
+
+DarkCave2_Text_MaliaSeen:
+	.string "Let the spooky games commence!$"
+
+DarkCave2_Text_MaliaBeaten:
+	.string "Oh no! My ritual failed!$"
+
+DarkCave2_Text_MaliaAfter:
+	.string "Nighttime is when ghosts thrive…\p"
+	.string "If you're frightened by them, you\n"
+	.string "should think twice before going\l"
+	.string "out…$"

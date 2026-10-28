@@ -1,4 +1,5 @@
 MtMoon_Outside_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MtMoon_Outside_OnTransition
 	.byte 0
 
 MtMoon_EventScript_Moonstone::
@@ -149,3 +150,34 @@ MtMoon_Outside_Text_Jirachi:
 MtMoon_Outside_Text_Clefairy:
     .string "CLEFAIRY: Pi pippippi!$"
 
+MtMoon_Outside_OnTransition:
+	goto_if_unset FLAG_BADGE16_GET, MtMoon_Outside_OnTransitionEnd
+	setobjectxyperm LOCALID_MT_MOON_SQUARE_SAGE, 39, 4
+MtMoon_Outside_OnTransitionEnd:
+	end
+
+MtMoon_Outside_EventScript_PeakSage::
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE16_GET, MtMoon_Outside_EventScript_PeakSageOpen
+	msgbox MtMoon_Outside_Text_PeakSageClosed, MSGBOX_DEFAULT
+	release
+	end
+
+MtMoon_Outside_EventScript_PeakSageOpen:
+	msgbox MtMoon_Outside_Text_PeakSageOpen, MSGBOX_DEFAULT
+	release
+	end
+
+MtMoon_Outside_Text_PeakSageClosed:
+	.string "This path climbs to the peak of\n"
+	.string "MT. MOON.\p"
+	.string "It is no place for the untested.\n"
+	.string "Return once every GYM LEADER in\l"
+	.string "KANTO knows your name.$"
+
+MtMoon_Outside_Text_PeakSageOpen:
+	.string "On clear nights, a crescent light\n"
+	.string "circles the peak.\p"
+	.string "They say it brings sweet dreams to\n"
+	.string "all who see it.$"
