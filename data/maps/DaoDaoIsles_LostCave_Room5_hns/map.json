@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_LostCave_Room5_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_LOST_CAVE_ROOM5_HNS",
   "music": "MUS_HG_RUINS_OF_ALPH",
-  "region_map_section": "MAPSEC_ALOLA_OCEAN",
+  "region_map_section": "MAPSEC_TIDEBARB_MAZE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

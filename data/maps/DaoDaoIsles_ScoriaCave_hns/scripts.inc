@@ -125,3 +125,19 @@ DaoDaoIsles_ScoriaCave_TrainerBattleCamper_Text_1:
 
 DaoDaoIsles_ScoriaCave_TrainerBattleCamper_Text_2:
 	.string "Is it warm in here or is it just me?$"
+
+DaoDaoIsles_ScoriaCave_EventScript_Burt::
+	trainerbattle_single TRAINER_DAODAO_SCORIA_CAVE_FIREBREATHER_HNS, DaoDaoIsles_ScoriaCave_Text_BurtSeen, DaoDaoIsles_ScoriaCave_Text_BurtBeaten
+	msgbox DaoDaoIsles_ScoriaCave_Text_BurtAfter, MSGBOX_AUTOCLOSE
+	end
+
+DaoDaoIsles_ScoriaCave_Text_BurtSeen:
+	.string "Step right up and take a look!$"
+
+DaoDaoIsles_ScoriaCave_Text_BurtBeaten:
+	.string "Yow! That's hot!$"
+
+DaoDaoIsles_ScoriaCave_Text_BurtAfter:
+	.string "The greatest fire-breather in KANTO,\n"
+	.string "that's me.\p"
+	.string "But not the best trainer…$"

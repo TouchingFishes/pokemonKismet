@@ -1159,6 +1159,10 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
     [SPECIES_GLAMEOW] = sGlameowLevelUpLearnset_KismetGen3,
     [SPECIES_PURUGLY] = sPuruglyLevelUpLearnset_KismetGen3,
 #endif
+#if P_FAMILY_STUNKY
+    [SPECIES_STUNKY] = sStunkyLevelUpLearnset_KismetGen3,
+    [SPECIES_SKUNTANK] = sSkuntankLevelUpLearnset_KismetGen3,
+#endif
 #if P_FAMILY_BRONZOR
     [SPECIES_BRONZOR] = sBronzorLevelUpLearnset_KismetGen3,
     [SPECIES_BRONZONG] = sBronzongLevelUpLearnset_KismetGen3,
@@ -1250,6 +1254,16 @@ const struct LevelUpMove *const gLevelUpLearnsets_KismetGen3[NUM_SPECIES + 1] = 
 #if P_FAMILY_ZORUA
     [SPECIES_ZORUA] = sZoruaLevelUpLearnset_KismetGen3,
     [SPECIES_ZOROARK] = sZoroarkLevelUpLearnset_KismetGen3,
+#endif
+#if P_FAMILY_GOTHITA
+    [SPECIES_GOTHITA] = sGothitaLevelUpLearnset_KismetGen3,
+    [SPECIES_GOTHORITA] = sGothoritaLevelUpLearnset_KismetGen3,
+    [SPECIES_GOTHITELLE] = sGothitelleLevelUpLearnset_KismetGen3,
+#endif
+#if P_FAMILY_SOLOSIS
+    [SPECIES_SOLOSIS] = sSolosisLevelUpLearnset_KismetGen3,
+    [SPECIES_DUOSION] = sDuosionLevelUpLearnset_KismetGen3,
+    [SPECIES_REUNICLUS] = sReuniclusLevelUpLearnset_KismetGen3,
 #endif
 #if P_FAMILY_VANILLITE
     [SPECIES_VANILLITE] = sVanilliteLevelUpLearnset_KismetGen3,

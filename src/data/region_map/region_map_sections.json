@@ -1718,7 +1718,7 @@
     },
     {
       "id": "MAPSEC_ULAULA_CAVE_2",
-      "name": "BARB HOLLOW",
+      "name": "DEWDROP HOLLOW",
       "in_hns": true
     },
     {
@@ -1838,7 +1838,11 @@
     },
     {
       "id": "MAPSEC_ULAULA_CAVE_2",
-      "name": "BARB HOLLOW"
+      "name": "DEWDROP HOLLOW"
+    },
+    {
+      "id": "MAPSEC_TIDEBARB_MAZE",
+      "name": "TIDEBARB MAZE"
     },
     {
       "height": 1,

@@ -165,7 +165,8 @@ static const u8 sNuzlockeLUT[] =
     [MAPSEC_SINJOH_CANYON]    = 0x7A,
     [MAPSEC_SINJOH_LAKE]      = 0x7B,
     [MAPSEC_MIRAGE_FOREST]    = 0x7C,
-    // Max bit index: 0x7C (125 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
+    [MAPSEC_TIDEBARB_MAZE]    = 0x7D, // LOST CAVE, its own section since §98
+    // Max bit index: 0x7D (126 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
     // If you exceed 0x7F, grow nuzlockeEncounterFlags in include/global.h.
 
 #else

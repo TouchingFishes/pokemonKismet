@@ -4833,6 +4833,12 @@ static const struct WeekDayVisibility sWeekDayVisibility[] =
     { .dayMask       = WEEKDAY_BIT(WEEKDAY_MON) | WEEKDAY_BIT(WEEKDAY_WED) | WEEKDAY_BIT(WEEKDAY_FRI),
       .hideFlag      = FLAG_HIDE_INDIGO_SILVER_TODAY,
       .requiresClear = FLAG_HIDE_INDIGO_PLATEAU_SILVER },
+
+    // GIANT'S REACH's east ledge has a DRIFBLIM at the end of the week, Friday to Sunday, until it is
+    // caught or knocked out (MIGRATION_DECISIONS.md 98). Built like the LAPRAS rule above.
+    { .dayMask       = WEEKDAY_BIT(WEEKDAY_FRI) | WEEKDAY_BIT(WEEKDAY_SAT) | WEEKDAY_BIT(WEEKDAY_SUN),
+      .hideFlag      = FLAG_HIDE_GIANTS_REACH_DRIFBLIM_TODAY,
+      .requiresClear = FLAG_HIDE_GIANTS_REACH_DRIFBLIM },
 };
 
 void UpdateWeekDayObjectFlags(void)

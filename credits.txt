@@ -46,6 +46,9 @@ Pokefan F (pokefan_f_hns)             Aveontrainer                   [source A]
   Source A marks the Aveontrainer entry "Aveontrainer(?)" - the question mark
   is theirs, so treat that attribution as unconfirmed.
 
+Triathlete M / F (triathlete_m_hns,   Aveontrainer
+  triathlete_f_hns) - walking sprites, added 2026-10-28 (MIGRATION_DECISIONS.md 98)
+
 Pokefan M (pokefan_m_hns)             UNATTRIBUTED
 
   Source A credits Pokefan_F but never Pokefan_M, and the sprite appears in no

@@ -1,19 +1,6 @@
 DaoDaoIsles_GiantsReach_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DaoDaoIsles_GiantsReach_OnTransition
 	.byte 0
-
-@ The PHANT cutscene, copied from UlaulaIsle because Giant's Reach cannot
-@ share it.
-@
-@ Two reasons, both silent:
-@  - Giant's Reach lost the TAPU object in chunk 1, so PHANT sits at object
-@    11/12 here and 12/13 on UlaulaIsle. map_event_ids.h has no namespacing, so
-@    the two maps disagreed on what `Phant_Outside` means and one of them
-@    despawned the wrong NPC.
-@  - Giant's Reach is 47 columns wide against UlaulaIsle's 51 and PHANT stands at
-@    x=32 rather than 36, so every hardcoded player-x test was 4 columns out.
-@
-@ The Text_ and Movement_ labels are still UlaulaIsle's - those are shared data
-@ with no coordinates or local ids in them.
 
 DaoDaoIsles_GiantsReach_PhantOutside::
 	lock
@@ -646,3 +633,103 @@ DaoDaoIsles_GiantsReach_Text_TutorMove_WildCharge:
 
 DaoDaoIsles_GiantsReach_Text_TutorMove_Cancel:
 	.string "CANCEL$"
+
+DaoDaoIsles_GiantsReach_OnTransition:
+	clearflag FLAG_TEMP_1
+	goto_if_unset FLAG_VISITED_NEW_SINJOH, DaoDaoIsles_GiantsReach_OnTransitionEnd
+	setflag FLAG_TEMP_1
+DaoDaoIsles_GiantsReach_OnTransitionEnd:
+	end
+
+DaoDaoIsles_GiantsReach_EventScript_EngineerW::
+	msgbox DaoDaoIsles_GiantsReach_Text_EngineerW, MSGBOX_NPC
+	end
+
+DaoDaoIsles_GiantsReach_EventScript_EngineerE::
+	msgbox DaoDaoIsles_GiantsReach_Text_EngineerE, MSGBOX_NPC
+	end
+
+DaoDaoIsles_GiantsReach_EventScript_Marco::
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE16_GET, DaoDaoIsles_GiantsReach_EventScript_MarcoBattle
+	msgbox DaoDaoIsles_GiantsReach_Text_MarcoNotYet, MSGBOX_DEFAULT
+	release
+	end
+
+DaoDaoIsles_GiantsReach_EventScript_MarcoBattle:
+	trainerbattle_single TRAINER_MARCO_HNS, DaoDaoIsles_GiantsReach_Text_MarcoSeen, DaoDaoIsles_GiantsReach_Text_MarcoBeaten
+	msgbox DaoDaoIsles_GiantsReach_Text_MarcoAfter, MSGBOX_DEFAULT
+	release
+	end
+
+DaoDaoIsles_GiantsReach_EventScript_HexManiac::
+	trainerbattle_single TRAINER_DAODAO_GIANTS_REACH_HEX_MANIAC_HNS, DaoDaoIsles_GiantsReach_Text_HexManiacSeen, DaoDaoIsles_GiantsReach_Text_HexManiacBeaten
+	msgbox DaoDaoIsles_GiantsReach_Text_HexManiacAfter, MSGBOX_AUTOCLOSE
+	end
+
+DaoDaoIsles_GiantsReach_EventScript_Drifblim::
+	lock
+	faceplayer
+	playmoncry SPECIES_DRIFBLIM, CRY_MODE_ENCOUNTER
+	msgbox DaoDaoIsles_GiantsReach_Text_DrifblimCry, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	setwildbattle SPECIES_DRIFBLIM, 75
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_GiantsReach_EventScript_DrifblimStays
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_GiantsReach_EventScript_DrifblimStays
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_DAODAO_GIANTS_REACH_DRIFBLIM
+	setflag FLAG_HIDE_GIANTS_REACH_DRIFBLIM
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+DaoDaoIsles_GiantsReach_EventScript_DrifblimStays:
+	release
+	end
+
+DaoDaoIsles_GiantsReach_Text_EngineerW:
+	.string "Sorry, the bridge is closed.\p"
+	.string "We're waiting on parts from up\n"
+	.string "north, a place called SINJOH.$"
+
+DaoDaoIsles_GiantsReach_Text_EngineerE:
+	.string "These planks won't hold anyone\n"
+	.string "until those parts arrive.$"
+
+DaoDaoIsles_GiantsReach_Text_MarcoNotYet:
+	.string "Hmph. I only battle TRAINERS who\n"
+	.string "hold every BADGE there is.\p"
+	.string "Come back with all sixteen.$"
+
+DaoDaoIsles_GiantsReach_Text_MarcoSeen:
+	.string "Sixteen BADGES… Finally, a worthy\n"
+	.string "opponent! Show me what you've got!$"
+
+DaoDaoIsles_GiantsReach_Text_MarcoBeaten:
+	.string "Incredible… My collection pales\n"
+	.string "next to yours.$"
+
+DaoDaoIsles_GiantsReach_Text_MarcoAfter:
+	.string "Money buys rare POKéMON, but not\n"
+	.string "a TRAINER's strength.\p"
+	.string "I'll remember that.$"
+
+DaoDaoIsles_GiantsReach_Text_HexManiacSeen:
+	.string "The spirits on this ledge are\n"
+	.string "restless… Can you feel them?$"
+
+DaoDaoIsles_GiantsReach_Text_HexManiacBeaten:
+	.string "The spirits have spoken… for you.$"
+
+DaoDaoIsles_GiantsReach_Text_HexManiacAfter:
+	.string "At the end of the week, a spirit\n"
+	.string "like a balloon drifts over this\l"
+	.string "ledge. Friday to Sunday, they say.$"
+
+DaoDaoIsles_GiantsReach_Text_DrifblimCry:
+	.string "A ghostly balloon drifts down\n"
+	.string "from the sky!$"

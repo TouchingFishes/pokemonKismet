@@ -1253,6 +1253,10 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_GLAMEOW] = sGlameowTeachableLearnset_Kismet,
     [SPECIES_PURUGLY] = sPuruglyTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_STUNKY
+    [SPECIES_STUNKY] = sStunkyTeachableLearnset_Kismet,
+    [SPECIES_SKUNTANK] = sSkuntankTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_BRONZOR
     [SPECIES_BRONZOR] = sBronzorTeachableLearnset_Kismet,
     [SPECIES_BRONZONG] = sBronzongTeachableLearnset_Kismet,
@@ -1372,6 +1376,16 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
 #if P_FAMILY_ZORUA
     [SPECIES_ZORUA] = sZoruaTeachableLearnset_Kismet,
     [SPECIES_ZOROARK] = sZoroarkTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_GOTHITA
+    [SPECIES_GOTHITA] = sGothitaTeachableLearnset_Kismet,
+    [SPECIES_GOTHORITA] = sGothoritaTeachableLearnset_Kismet,
+    [SPECIES_GOTHITELLE] = sGothitelleTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_SOLOSIS
+    [SPECIES_SOLOSIS] = sSolosisTeachableLearnset_Kismet,
+    [SPECIES_DUOSION] = sSolosisTeachableLearnset_Kismet,
+    [SPECIES_REUNICLUS] = sReuniclusTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_VANILLITE
     [SPECIES_VANILLITE] = sVanilliteTeachableLearnset_Kismet,

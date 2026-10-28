@@ -292,7 +292,8 @@ static const struct RegionMapLocation sRegionMapEntries_JK[] = {
     [MAPSEC_AKALA_FOREST]     = { 27, 11, 1, 1, COMPOUND_STRING("ETERNA FOREST") },
     [MAPSEC_PONI_CAVE]        = { 25, 14, 1, 1, COMPOUND_STRING("WAKE CAVE") },
     [MAPSEC_ULAULA_CAVE]     = { 26, 14, 1, 1, COMPOUND_STRING("ULA'ULA CAVE") },
-    [MAPSEC_ULAULA_CAVE_2]   = { 26, 12, 1, 1, COMPOUND_STRING("BARB HOLLOW") },
+    [MAPSEC_ULAULA_CAVE_2]   = { 26, 12, 1, 1, COMPOUND_STRING("DEWDROP HOLLOW") },
+    [MAPSEC_TIDEBARB_MAZE]   = { 25, 12, 1, 1, COMPOUND_STRING("TIDEBARB MAZE") },
 };
 #endif
 
@@ -1843,6 +1844,7 @@ static u8 GetMapsecType(mapsec_u16_t mapSecId)
     case MAPSEC_PONI_CAVE:
     case MAPSEC_ULAULA_CAVE:
     case MAPSEC_ULAULA_CAVE_2:
+    case MAPSEC_TIDEBARB_MAZE:
         return FlagGet(FLAG_VISITED_DAODAO) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
 #endif
     case MAPSEC_SOUTHERN_ISLAND:

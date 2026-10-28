@@ -873,7 +873,7 @@
 #define TRAINER_DAODAO_LAB_BIKER_1_HNS                812
 #define TRAINER_DAODAO_LAB_CUEBALL_1_HNS              813
 #define TRAINER_DAODAO_LAB_SCIENTIST_1_HNS            814
-#define TRAINER_UNUSED_815_HNS                        815
+#define TRAINER_DAODAO_SCORIA_CAVE_FIREBREATHER_HNS   815
 #define TRAINER_DAODAO_LAB_CUEBALL_2_HNS              816
 #define TRAINER_DAODAO_LAB_SCIENTIST_2_HNS            817
 #define TRAINER_LAWSON_HNS                            818
@@ -921,7 +921,10 @@
 #define TRAINER_KATHRYN_HNS                           858
 #define TRAINER_SOPHIE_HNS                            859
 #define TRAINER_LEADER_NORMAN_HNS                     860
-#define TRAINERS_COUNT_HNS                       861
+#define TRAINER_MARCO_HNS                             861
+#define TRAINER_MOA_HNS                               862
+#define TRAINER_DAODAO_GIANTS_REACH_HEX_MANIAC_HNS    863
+#define TRAINERS_COUNT_HNS                       864
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
