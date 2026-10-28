@@ -91,3 +91,32 @@ DaoDaoIsles_BerryForest_Text_WelcomeSign:
 	.string "BERRY FOREST\p"
 	.string "Pick what you need.\n"
 	.string "Leave the rest to ripen.$"
+
+DaoDaoIsles_BerryForest_EventScript_AromaLady::
+	lock
+	faceplayer
+	goto_if_set FLAG_DAODAO_WAKE_CAVE_HIDDEN_ITEM_1, DaoDaoIsles_BerryForest_EventScript_AromaLadyAfter
+	msgbox DaoDaoIsles_BerryForest_Text_AromaLadyGift, MSGBOX_DEFAULT
+	giveitem ITEM_LEAF_STONE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_DAODAO_WAKE_CAVE_HIDDEN_ITEM_1
+	msgbox DaoDaoIsles_BerryForest_Text_AromaLadyAfter, MSGBOX_DEFAULT
+	release
+	end
+
+DaoDaoIsles_BerryForest_EventScript_AromaLadyAfter:
+	msgbox DaoDaoIsles_BerryForest_Text_AromaLadyAfter, MSGBOX_DEFAULT
+	release
+	end
+
+DaoDaoIsles_BerryForest_Text_AromaLadyGift:
+	.string "Mmm... Can you smell it? These\n"
+	.string "flowers bloom all year round.\p"
+	.string "I found this stone under them.\n"
+	.string "It smells of leaves and sunlight.\p"
+	.string "I think it wants to go with\n"
+	.string "someone who travels. Here!$"
+
+DaoDaoIsles_BerryForest_Text_AromaLadyAfter:
+	.string "A LEAF STONE makes some GRASS\n"
+	.string "POKéMON evolve. Use it kindly!$"

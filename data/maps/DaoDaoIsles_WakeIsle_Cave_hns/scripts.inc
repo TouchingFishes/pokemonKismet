@@ -39,11 +39,6 @@ DaoDaoIsles_WakeIsle_Cave_BattleProbopass_3:
 	end
 
 
-DaoDaoIsles_WakeIsle_Cave_FindItem1::
-	finditem ITEM_LEAF_STONE, 1
-	end
-
-
 DaoDaoIsles_WakeIsle_Cave_FindItem2::
 	finditem ITEM_THUNDER_STONE, 1
 	end

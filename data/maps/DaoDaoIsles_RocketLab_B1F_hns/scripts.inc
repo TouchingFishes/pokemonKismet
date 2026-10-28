@@ -13,17 +13,17 @@ DaoDaoIsles_RocketLab_B1F_OnTransition:
 @ would put a puzzle in a different chamber on a different island in front of
 @ finishing the KANTO POKeMON FEDERATION arc.
 DaoDaoIsles_RocketLab_B1F_SetKlinklang:
-	setflag FLAG_HIDE_DAODAO_LAB_KLINKLANG
-	goto_if_set FLAG_DEFEATED_DAODAO_LAB_KLINKLANG, DaoDaoIsles_RocketLab_B1F_Ret
+	setflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
+	goto_if_set FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL, DaoDaoIsles_RocketLab_B1F_Ret
 	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_GIDEON, DaoDaoIsles_RocketLab_B1F_Ret
-	clearflag FLAG_HIDE_DAODAO_LAB_KLINKLANG
+	clearflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
 	return
 
 DaoDaoIsles_RocketLab_B1F_SetGiovanni:
 	setflag FLAG_HIDE_DAODAO_LAB_GIOVANNI
 	goto_if_set FLAG_DEFEATED_DAODAO_LAB_GIOVANNI, DaoDaoIsles_RocketLab_B1F_Ret
 	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_GIDEON, DaoDaoIsles_RocketLab_B1F_Ret
-	goto_if_unset FLAG_DEFEATED_DAODAO_LAB_KLINKLANG, DaoDaoIsles_RocketLab_B1F_Ret
+	goto_if_unset FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL, DaoDaoIsles_RocketLab_B1F_Ret
 	clearflag FLAG_HIDE_DAODAO_LAB_GIOVANNI
 	return
 
@@ -56,14 +56,14 @@ DaoDaoIsles_RocketLab_B1F_EventScript_BossKlinklang::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DaoDaoIsles_RocketLab_B1F_EventScript_BossStays
 	@ Your own Roar, Whirlwind, Dragon Tail or Circle Throw ends it as PLAYER_TELEPORTED: running, not a win.
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DaoDaoIsles_RocketLab_B1F_EventScript_BossStays
-	setflag FLAG_DEFEATED_DAODAO_LAB_KLINKLANG
+	setflag FLAG_DEFEATED_DAODAO_BOSS_REGISTEEL
 	clearflag FLAG_NO_WILD_CATCHING
 	clearflag FLAG_NO_WILD_RUNNING
 	clearflag FLAG_SMART_WILD_AI
 	clearflag FLAG_NO_SHINY
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DAODAO_LAB_KLINKLANG
-	setflag FLAG_HIDE_DAODAO_LAB_KLINKLANG
+	setflag FLAG_HIDE_DAODAO_BOSS_REGISTEEL
 	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox DaoDaoIsles_RocketLab_B1F_Text_KlinklangBeaten, MSGBOX_DEFAULT
 	closemessage
