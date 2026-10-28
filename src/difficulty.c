@@ -8,7 +8,9 @@
 
 // Baseline trainer level for each badge count, ported from the HnS 1.x fork
 // (sBadgeCountLevelTable in its src/battle_setup.c). Four levels per badge
-// through the eighth, then three - the curve flattens once Kanto starts.
+// through the eighth, then two through the 11th and three after that - the
+// curve flattens once Kanto starts. Entries 9-16 were refitted to the post-E4
+// curve (MIGRATION_DECISIONS.md 94).
 //
 // Sized by its own initialiser rather than NUM_BADGES so it works in every
 // build: the HnS target has 16 badges, Emerald and FireRed have 8, and an
@@ -16,7 +18,7 @@
 static const u8 sBadgeCountLevelTable[] =
 {
      4,  8, 12, 16, 20, 24, 28, 35, 39,  //  0-8 badges
-    40, 43, 46, 49, 52, 55, 58, 61,      // 9-16 badges
+    41, 43, 45, 48, 51, 54, 57, 60,      // 9-16 badges
 };
 
 // The fork read VAR_NUM_BADGES here but counted badge FLAGS in GetScaledLevel,
