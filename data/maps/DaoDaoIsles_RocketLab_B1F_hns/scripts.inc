@@ -354,7 +354,7 @@ DaoDaoIsles_RocketLab_B1F_Text_KlinklangIntro:
 	.string "No discernible power source.\p"
 	.string "I've examined every gear.\n"
 	.string "Those markings aren't decorative.\l"
-	.string "They're identical to the ones\n"
+	.string "They're identical to the ones\l"
 	.string "carved into the ruin walls.\p"
 	.string "I used to think the ruins were\n"
 	.string "built around some great machine.\p"

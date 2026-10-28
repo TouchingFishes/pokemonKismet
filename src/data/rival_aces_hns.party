@@ -86,7 +86,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_BLAZIKEN @ ITEM_QUICK_CLAW
-Level: 66
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SKY_UPPERCUT
 - MOVE_BLAZE_KICK
@@ -99,7 +99,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_BLAZIKEN @ ITEM_QUICK_CLAW
-Level: 70
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_SKY_UPPERCUT
 - MOVE_BLAZE_KICK
@@ -169,7 +169,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_INFERNAPE @ ITEM_BLACK_BELT
-Level: 66
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_JUMP_KICK
 - MOVE_FLAMETHROWER
@@ -182,7 +182,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_INFERNAPE @ ITEM_BLACK_BELT
-Level: 70
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_JUMP_KICK
 - MOVE_FLAMETHROWER
@@ -252,7 +252,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_SCEPTILE @ ITEM_MIRACLE_SEED
-Level: 66
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_CRUNCH
 - MOVE_THUNDER_PUNCH
@@ -265,7 +265,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_SCEPTILE @ ITEM_MIRACLE_SEED
-Level: 70
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_CRUNCH
 - MOVE_THUNDER_PUNCH
@@ -335,7 +335,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_SERPERIOR @ ITEM_MIRACLE_SEED
-Level: 66
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_LEAF_STORM
 - MOVE_DRAGON_PULSE
@@ -348,7 +348,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_SERPERIOR @ ITEM_MIRACLE_SEED
-Level: 70
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_LEAF_STORM
 - MOVE_DRAGON_PULSE
@@ -418,7 +418,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_CHESNAUGHT @ ITEM_LEFTOVERS
-Level: 66
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_WOOD_HAMMER
 - MOVE_HAMMER_ARM
@@ -431,7 +431,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_CHESNAUGHT @ ITEM_LEFTOVERS
-Level: 70
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_WOOD_HAMMER
 - MOVE_HAMMER_ARM
@@ -501,7 +501,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_EMBOAR @ ITEM_BLACK_BELT
-Level: 66
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_FLARE_BLITZ
 - MOVE_HAMMER_ARM
@@ -514,7 +514,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_EMBOAR @ ITEM_BLACK_BELT
-Level: 70
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_FLARE_BLITZ
 - MOVE_HAMMER_ARM
@@ -584,7 +584,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_SAMUROTT @ ITEM_SCOPE_LENS
-Level: 66
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_WATERFALL
 - MOVE_MEGAHORN
@@ -597,7 +597,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_SAMUROTT @ ITEM_SCOPE_LENS
-Level: 70
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_WATERFALL
 - MOVE_MEGAHORN
@@ -667,7 +667,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_SWAMPERT @ ITEM_SHELL_BELL
-Level: 66
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_AVALANCHE
 - MOVE_MUDDY_WATER
@@ -680,7 +680,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_SWAMPERT @ ITEM_SHELL_BELL
-Level: 70
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_AVALANCHE
 - MOVE_MUDDY_WATER
@@ -750,7 +750,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_FERALIGATR @ ITEM_SCOPE_LENS
-Level: 66
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_ICE_PUNCH
 - MOVE_SCALD
@@ -763,7 +763,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_FERALIGATR @ ITEM_SCOPE_LENS
-Level: 70
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_ICE_PUNCH
 - MOVE_SCALD
@@ -833,7 +833,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_TORTERRA @ ITEM_QUICK_CLAW
-Level: 66
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_CRUNCH
 - MOVE_EARTHQUAKE
@@ -846,7 +846,7 @@ Class: Rival Hns
 Pic: Silver Hns
 
 SPECIES_TORTERRA @ ITEM_QUICK_CLAW
-Level: 70
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_CRUNCH
 - MOVE_EARTHQUAKE
