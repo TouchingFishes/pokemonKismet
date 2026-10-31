@@ -8955,13 +8955,15 @@ Pic: Leader Brock Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Orange
 Items: Full Restore / Full Restore
 
 SPECIES_FORRETRESS @ ITEM_SILVER_POWDER
 Level: 71
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Brave Nature
 - MOVE_STEAMROLLER
 - MOVE_SPIKES
 - MOVE_EXPLOSION
@@ -8969,7 +8971,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_GOLEM @ ITEM_LEFTOVERS
 Level: 71
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Brave Nature
 - MOVE_EARTHQUAKE
 - MOVE_CURSE
 - MOVE_BRICK_BREAK
@@ -8977,7 +8981,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_AERODACTYL @ ITEM_HARD_STONE
 Level: 71
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Naive Nature
 - MOVE_FIRE_BLAST
 - MOVE_BRAVE_BIRD
 - MOVE_EARTHQUAKE
@@ -8985,7 +8991,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_KABUTOPS @ ITEM_MYSTIC_WATER
 Level: 71
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
 - MOVE_WATERFALL
 - MOVE_SWORDS_DANCE
 - MOVE_BODY_SLAM
@@ -8993,7 +9001,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_OMASTAR @ ITEM_FOCUS_BAND
 Level: 71
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Modest Nature
 - MOVE_SURF
 - MOVE_ICE_BEAM
 - MOVE_TOXIC
@@ -9001,7 +9011,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_STEELIX @ ITEM_QUICK_CLAW
 Level: 72
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Brave Nature
 - MOVE_HEAVY_SLAM
 - MOVE_STONE_EDGE
 - MOVE_EARTHQUAKE
@@ -9014,13 +9026,15 @@ Pic: Leader Misty Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Light Blue
 Items: Full Restore / Full Restore
 
 SPECIES_POLITOED @ ITEM_MYSTIC_WATER
 Level: 68
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_SURF
 - MOVE_ICE_BEAM
 - MOVE_BOUNCE
@@ -9028,7 +9042,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_GOLDUCK @ ITEM_TWISTED_SPOON
 Level: 69
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_SURF
 - MOVE_PSYCHIC
 - MOVE_HYPNOSIS
@@ -9036,7 +9052,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_QUAGSIRE @ ITEM_SITRUS_BERRY
 Level: 69
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Sassy Nature
 - MOVE_SURF
 - MOVE_AMNESIA
 - MOVE_EARTHQUAKE
@@ -9044,7 +9062,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_MILOTIC @ ITEM_CHESTO_BERRY
 Level: 68
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Modest Nature
 - MOVE_HYDRO_PUMP
 - MOVE_ICE_BEAM
 - MOVE_REST
@@ -9052,7 +9072,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_LAPRAS @ ITEM_LEFTOVERS
 Level: 69
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Modest Nature
 - MOVE_THUNDER
 - MOVE_ICE_BEAM
 - MOVE_RAIN_DANCE
@@ -9060,7 +9082,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_STARMIE @ ITEM_WISE_GLASSES
 Level: 71
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_SURF
 - MOVE_PSYCHIC
 - MOVE_RECOVER
@@ -9073,13 +9097,15 @@ Pic: Leader Surge Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Items: Full Restore / Full Restore
 Mugshot: Yellow
 
 SPECIES_ELECTRODE @ ITEM_FOCUS_BAND
 Level: Badge+18
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_THUNDER
 - MOVE_RAIN_DANCE
 - MOVE_THUNDER_WAVE
@@ -9087,7 +9113,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_MAGNEZONE @ ITEM_METAL_COAT
 Level: Badge+20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Modest Nature
 - MOVE_THUNDER
 - MOVE_REFLECT
 - MOVE_RAIN_DANCE
@@ -9095,7 +9123,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_LANTURN @ ITEM_LEFTOVERS
 Level: Badge+19
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Modest Nature
 - MOVE_SURF
 - MOVE_THUNDER
 - MOVE_ICE_BEAM
@@ -9103,7 +9133,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_KILOWATTREL @ ITEM_SHARP_BEAK
 Level: Badge+19
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_AERIAL_ACE
 - MOVE_RAIN_DANCE
 - MOVE_THUNDER
@@ -9111,7 +9143,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_RAICHU @ ITEM_MAGNET
 Level: Badge+20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_THUNDER
 - MOVE_RAIN_DANCE
 - MOVE_SIGNAL_BEAM
@@ -9119,7 +9153,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_ELECTIVIRE @ ITEM_SCOPE_LENS
 Level: Badge+22
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
 - MOVE_THUNDER
 - MOVE_FIRE_PUNCH
 - MOVE_ICE_PUNCH
@@ -9132,13 +9168,15 @@ Pic: Leader Erika Frlg
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Green
 Items: Full Restore / Full Restore
 
 SPECIES_JUMPLUFF @ ITEM_BRIGHT_POWDER
 Level: Badge+20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 SpA / 252 Spe
+Timid Nature
 - MOVE_GIGA_DRAIN
 - MOVE_SLEEP_POWDER
 - MOVE_ENCORE
@@ -9146,7 +9184,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_TORTERRA @ ITEM_LEFTOVERS
 Level: Badge+19
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
 - MOVE_EARTHQUAKE
 - MOVE_STONE_EDGE
 - MOVE_CURSE
@@ -9154,7 +9194,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_TANGROWTH @ ITEM_CHESTO_BERRY
 Level: Badge+19
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
 - MOVE_POWER_WHIP
 - MOVE_SLEEP_POWDER
 - MOVE_REST
@@ -9162,7 +9204,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_LUDICOLO @ ITEM_SITRUS_BERRY
 Level: Badge+20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Modest Nature
 - MOVE_GIGA_DRAIN
 - MOVE_SURF
 - MOVE_ICE_BEAM
@@ -9170,7 +9214,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_VICTREEBEL @ ITEM_POISON_BARB
 Level: Badge+21
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
 - MOVE_SLUDGE_BOMB
 - MOVE_LUNGE
 - MOVE_SWORDS_DANCE
@@ -9178,7 +9224,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_BELLOSSOM @ ITEM_MIRACLE_SEED
 Level: Badge+22
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 SpA / 252 Spe
+Timid Nature
 - MOVE_GIGA_DRAIN
 - MOVE_SYNTHESIS
 - MOVE_SLEEP_POWDER
@@ -9191,13 +9239,15 @@ Pic: Leader Sabrina Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Pink
 Items: Full Restore / Full Restore
 
 SPECIES_MR_MIME @ ITEM_QUICK_CLAW
 Level: Badge+21
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_PSYCHIC
 - MOVE_THUNDER_WAVE
 - MOVE_ENCORE
@@ -9205,7 +9255,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_JYNX @ ITEM_NEVER_MELT_ICE
 Level: Badge+20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_PSYCHIC
 - MOVE_ICE_BEAM
 - MOVE_LOVELY_KISS
@@ -9213,7 +9265,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_SLOWBRO @ ITEM_CHESTO_BERRY
 Level: Badge+20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Quiet Nature
 - MOVE_REST
 - MOVE_FIRE_BLAST
 - MOVE_CALM_MIND
@@ -9221,7 +9275,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_WOBBUFFET @ ITEM_LEFTOVERS
 Level: Badge+20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 128 Def / 128 SpD
+Relaxed Nature
 - MOVE_MIRROR_COAT
 - MOVE_COUNTER
 - MOVE_SAFEGUARD
@@ -9229,7 +9285,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_PURGISLUG @ ITEM_MIRACLE_SEED
 Level: Badge+21
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Quiet Nature
 - MOVE_PSYCHIC
 - MOVE_MAGIC_COAT
 - MOVE_SLUDGE_BOMB
@@ -9237,7 +9295,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
 Level: Badge+23
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_SHADOW_BALL
 - MOVE_PSYCHIC
 - MOVE_RECOVER
@@ -9250,13 +9310,15 @@ Pic: Leader Janine Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Purple
 Items: Full Restore / Full Restore
 
 SPECIES_ARIADOS @ ITEM_SILVER_POWDER
 Level: 65
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_BUG_BUZZ
 - MOVE_PSYCHIC
 - MOVE_DESTINY_BOND
@@ -9264,7 +9326,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_ARBOK @ ITEM_BLACK_GLASSES
 Level: 64
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
 - MOVE_CRUNCH
 - MOVE_POISON_TAIL
 - MOVE_EARTHQUAKE
@@ -9272,7 +9336,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_PENDRAGON @ ITEM_LEFTOVERS
 Level: 63
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
 - MOVE_LUNGE
 - MOVE_IRON_TAIL
 - MOVE_DIG
@@ -9280,7 +9346,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_VENUSAUR @ ITEM_QUICK_CLAW
 Level: 64
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_EARTHQUAKE
 - MOVE_SLUDGE_BOMB
 - MOVE_ENERGY_BALL
@@ -9288,7 +9356,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_GENGAR @ ITEM_SPELL_TAG
 Level: 65
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_PSYCHIC
 - MOVE_FIRE_PUNCH
 - MOVE_SHADOW_BALL
@@ -9296,7 +9366,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_VENOMOTH @ ITEM_BRIGHT_POWDER
 Level: 67
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_GIGA_DRAIN
 - MOVE_PSYCHIC
 - MOVE_BUG_BUZZ
@@ -9309,13 +9381,15 @@ Pic: Leader Blaine Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
 SPECIES_RAPIDASH @ ITEM_BLACK_BELT
 Level: 70
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_DOUBLE_KICK
 - MOVE_SUNNY_DAY
 - MOVE_SOLAR_BEAM
@@ -9323,7 +9397,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_TALONFLAME @ ITEM_SHARP_BEAK
 Level: 71
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_AERIAL_ACE
 - MOVE_SUNNY_DAY
 - MOVE_SOLAR_BEAM
@@ -9331,7 +9407,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_MAGCARGO @ ITEM_QUICK_CLAW
 Level: 70
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Quiet Nature
 - MOVE_HEAT_WAVE
 - MOVE_SUBSTITUTE
 - MOVE_RECOVER
@@ -9339,7 +9417,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_KUJINOUGHT @ ITEM_LEFTOVERS
 Level: 72
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Quiet Nature
 - MOVE_OCTAZOOKA
 - MOVE_CHARGE_BEAM
 - MOVE_ICE_BEAM
@@ -9347,7 +9427,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_TYPHLOSION @ ITEM_CHARCOAL
 Level: 72
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_SUNNY_DAY
 - MOVE_ERUPTION
 - MOVE_SOLAR_BEAM
@@ -9355,7 +9437,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 SPECIES_MAGMORTAR @ ITEM_WHITE_HERB
 Level: 72
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Naive Nature
 - MOVE_THUNDER_PUNCH
 - MOVE_CROSS_CHOP
 - MOVE_PSYCHIC
@@ -9368,13 +9452,15 @@ Pic: Leader Blue Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Prediction / Hp Aware / Try To 2hko / Weigh Ability Prediction / Ace Pokemon
 Mugshot: Blue
 Items: Full Restore / Full Restore
 
 SPECIES_JOLTEON @ ITEM_FOCUS_BAND
 Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_THUNDERBOLT
 - MOVE_SHADOW_BALL
 - MOVE_AGILITY
@@ -9383,6 +9469,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 SPECIES_SCIZOR @ ITEM_SILVER_POWDER
 Level: 75
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Brave Nature
 - MOVE_STEEL_WING
 - MOVE_AERIAL_ACE
 - MOVE_SILVER_WIND
@@ -9391,6 +9479,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 SPECIES_ALAKAZAM @ ITEM_TWISTED_SPOON
 Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
 - MOVE_PSYCHIC
 - MOVE_CHARGE_BEAM
 - MOVE_ENERGY_BALL
@@ -9399,6 +9489,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 SPECIES_TYRANITAR @ ITEM_CHOICE_BAND
 Level: 79
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
 - MOVE_CRUNCH
 - MOVE_STONE_EDGE
 - MOVE_EARTHQUAKE
@@ -9407,6 +9499,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 SPECIES_ARCANINE @ ITEM_SILK_SCARF
 Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Naive Nature
 - MOVE_FLAMETHROWER
 - MOVE_DRAGON_BREATH
 - MOVE_CRUNCH
@@ -9415,6 +9509,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 SPECIES_BLASTOISE @ ITEM_CHESTO_BERRY
 Level: 79
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+Modest Nature
 - MOVE_HYDRO_PUMP
 - MOVE_REST
 - MOVE_ICE_BEAM
