@@ -4,6 +4,12 @@ PewterCity_hns_MapScripts::
 
 PewterCity_EventScript_CityEnter::
 	setflag FLAG_VISITED_PEWTER_CITY
+	setflag FLAG_TEMP_2
+	goto_if_defeated TRAINER_SHAUN_HNS, PewterCity_EventScript_ShowShaun
+	end
+
+PewterCity_EventScript_ShowShaun:
+	clearflag FLAG_TEMP_2
 	end
 
 PewterCity_EventScript_CooltrainerF::
@@ -156,3 +162,31 @@ PewterCity_Text_BugCatcherExtra:
 	.string "Then you can afford a night off.\p"
 	.string "The CLEFAIRY come out at MT.MOON.\n"
 	.string "Go and watch them sometime.$"
+
+PewterCity_EventScript_Shaun::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_HONEDGE, PewterCity_EventScript_ShaunAfter
+	msgbox PewterCity_Text_ShaunHonedge, MSGBOX_DEFAULT
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HONEDGE
+	bufferspeciesname STR_VAR_1, SPECIES_HONEDGE
+	givemon SPECIES_HONEDGE, 25
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, Common_EventScript_NoMoreRoomForPokemon
+	call Common_EventScript_GiftMon
+	setflag FLAG_RECEIVED_HONEDGE
+PewterCity_EventScript_ShaunAfter:
+	msgbox PewterCity_Text_ShaunAfter, MSGBOX_DEFAULT
+	release
+	end
+
+PewterCity_Text_ShaunHonedge:
+	.string "SHAUN: So you came.\p"
+	.string "I found this in the deepest hall\n"
+	.string "of CHALLENGERS CAVE, years ago.\p"
+	.string "It never answered to me.\n"
+	.string "I think it was waiting for you.$"
+
+PewterCity_Text_ShaunAfter:
+	.string "SHAUN: Treat that blade well.\p"
+	.string "It chose you. Don't make it\n"
+	.string "regret it.$"

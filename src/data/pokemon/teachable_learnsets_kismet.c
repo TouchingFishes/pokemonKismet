@@ -1492,6 +1492,8 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_PANGORO] = sPangoroTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_HONEDGE
+    [SPECIES_HONEDGE] = sHonedgeTeachableLearnset_Kismet,
+    [SPECIES_DOUBLADE] = sHonedgeTeachableLearnset_Kismet,
     [SPECIES_AEGISLASH] = sAegislashTeachableLearnset_Kismet,
     [SPECIES_AEGISLASH_SHIELD] = sAegislashTeachableLearnset_Kismet,
     [SPECIES_AEGISLASH_BLADE] = sAegislashTeachableLearnset_Kismet,

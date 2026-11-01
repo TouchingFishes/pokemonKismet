@@ -31580,6 +31580,43 @@ static const u16 sPangoroTeachableLearnset_Kismet[] = {
 
 #endif
 #if P_FAMILY_HONEDGE
+static const u16 sHonedgeTeachableLearnset_Kismet[] = {
+    MOVE_TOXIC,
+    MOVE_HIDDEN_POWER,
+    MOVE_PROTECT,
+    MOVE_RAIN_DANCE,
+    MOVE_FRUSTRATION,
+    MOVE_RETURN,
+    MOVE_BRICK_BREAK,
+    MOVE_DOUBLE_TEAM,
+    MOVE_REFLECT,
+    MOVE_SHOCK_WAVE,
+    MOVE_AERIAL_ACE,
+    MOVE_FACADE,
+    MOVE_SECRET_POWER,
+    MOVE_REST,
+    MOVE_ATTRACT,
+    MOVE_SLEEP_TALK,
+    MOVE_FALSE_SWIPE,
+    MOVE_SHADOW_CLAW,
+    MOVE_GYRO_BALL,
+    MOVE_FLASH_CANNON,
+    MOVE_CUT,
+    MOVE_ROCK_SMASH,
+    MOVE_BIDE,
+    MOVE_CONFIDE,
+    MOVE_ENDURE,
+    MOVE_FURY_CUTTER,
+    MOVE_HEADBUTT,
+    MOVE_ROCK_SLIDE,
+    MOVE_SNORE,
+    MOVE_SUBSTITUTE,
+    MOVE_SWAGGER,
+    MOVE_SWORDS_DANCE,
+    MOVE_POWER_TRICK,
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sAegislashTeachableLearnset_Kismet[] = {
     MOVE_TOXIC,
     MOVE_HIDDEN_POWER,

@@ -79462,6 +79462,144 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_TANGLEBRUSH_HNS",
+          "base_label": "gTanglebrush_hns_Day",
+          "land_mons": {
+            "encounter_rate": 5,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_HERACROSS"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_PINSIR"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_YANMEGA"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_BRELOOM"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_SCYTHER"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_TANGROWTH"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_VILEPLUME"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_BELLOSSOM"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_SHIFTRY"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_SHIFTRY"
+              },
+              {
+                "min_level": 49,
+                "max_level": 49,
+                "species": "SPECIES_SCIZOR"
+              },
+              {
+                "min_level": 49,
+                "max_level": 49,
+                "species": "SPECIES_SCIZOR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_TANGLEBRUSH_HNS",
+          "base_label": "gTanglebrush_hns_Night",
+          "land_mons": {
+            "encounter_rate": 5,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_VENOMOTH"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_ARIADOS"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_SHIFTRY"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_VILEPLUME"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_YANMEGA"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_TANGROWTH"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_BRELOOM"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_BRELOOM"
+              },
+              {
+                "min_level": 49,
+                "max_level": 49,
+                "species": "SPECIES_SCIZOR"
+              },
+              {
+                "min_level": 49,
+                "max_level": 49,
+                "species": "SPECIES_SCIZOR"
+              }
+            ]
+          }
         }
       ]
     },

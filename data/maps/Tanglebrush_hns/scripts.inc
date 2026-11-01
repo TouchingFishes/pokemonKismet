@@ -127,3 +127,18 @@ Tanglebrush_Text_LaytonDefeat:
 Tanglebrush_Text_LaytonAfter:
 	.string "That SUDOWOODO was standing on\nsomething. I know it!$"
 
+Tanglebrush_EventScript_ItemBigMushroom::
+	finditem ITEM_BIG_MUSHROOM
+	end
+
+Tanglebrush_EventScript_ItemBalmMushroom::
+	finditem ITEM_BALM_MUSHROOM
+	end
+
+Tanglebrush_EventScript_ItemLeafStone::
+	finditem ITEM_LEAF_STONE
+	end
+
+Tanglebrush_EventScript_ItemMiracleSeed::
+	finditem ITEM_MIRACLE_SEED
+	end

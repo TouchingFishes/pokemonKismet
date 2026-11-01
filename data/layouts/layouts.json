@@ -17423,6 +17423,18 @@
       "blockdata_filepath": "data/layouts/MtMoon_Summit_hns/map.bin",
       "game_version": "hns",
       "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_CHALLENGERS_CAVE_B2F_HNS",
+      "name": "ChallengersCave_B2F_hns_Layout",
+      "width": 14,
+      "height": 11,
+      "primary_tileset": "gTileset_Johto_General_Hns",
+      "secondary_tileset": "gTileset_Cave_Sandy_Hns",
+      "border_filepath": "data/layouts/ChallengersCave_B2F_hns/border.bin",
+      "blockdata_filepath": "data/layouts/ChallengersCave_B2F_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
     }
   ]
 }

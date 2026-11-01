@@ -1,5 +1,14 @@
 ChallengersCave_B1F_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ChallengersCave_B1F_OnTransition
 	.byte 0
+
+ChallengersCave_B1F_OnTransition:
+	goto_if_defeated TRAINER_SHAUN_HNS, ChallengersCave_B1F_HideShaun
+	end
+
+ChallengersCave_B1F_HideShaun:
+	setflag FLAG_TEMP_2
+	end
 
 		ChallengersCave_B1F_EventScript_Georgie::
 	trainerbattle_single TRAINER_GEORGIE_HNS, ChallengersCave_B1F_Text_GeorgieSeen, ChallengersCave_B1F_Text_GeorgieBeaten
@@ -32,7 +41,7 @@ ChallengersCave_B1F_EventScript_Minty::
 	end
 
 ChallengersCave_B1F_EventScript_Shaun::
-	trainerbattle_single TRAINER_SHAUN_HNS, ChallengersCave_B1F_Text_ShaunSeen, ChallengersCave_B1F_Text_ShaunBeaten
+	trainerbattle_single TRAINER_SHAUN_HNS, ChallengersCave_B1F_Text_ShaunSeen, ChallengersCave_B1F_Text_ShaunBeaten, ChallengersCave_B1F_EventScript_ShaunLeaves
 	msgbox ChallengersCave_B1F_Text_ShaunAfter, MSGBOX_AUTOCLOSE
 	end
 
@@ -126,6 +135,21 @@ ChallengersCave_B1F_Text_MintyAfter:
 	.string "the best keepsakes.\p"
 	.string "Yours is one I'll\n"
 	.string "remember.$"
+
+ChallengersCave_B1F_EventScript_ShaunLeaves::
+	msgbox ChallengersCave_B1F_Text_ShaunAfter, MSGBOX_DEFAULT
+	msgbox ChallengersCave_B1F_Text_ShaunPewter, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_CHALLENGERS_CAVE_SHAUN
+	setflag FLAG_TEMP_2
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+ChallengersCave_B1F_Text_ShaunPewter:
+	.string "If you want to see it,\n"
+	.string "come find me in PEWTER CITY.$"
 
 ChallengersCave_B1F_Text_ShaunSeen:
 	.string "So.\p"
