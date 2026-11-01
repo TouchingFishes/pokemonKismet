@@ -142,14 +142,14 @@
     {
       "x": 8,
       "y": 8,
-      "elevation": 3,
+      "elevation": 4,
       "dest_map": "MAP_TANGLEBRUSH_HNS",
       "dest_warp_id": "4"
     },
     {
       "x": 9,
       "y": 8,
-      "elevation": 3,
+      "elevation": 4,
       "dest_map": "MAP_TANGLEBRUSH_HNS",
       "dest_warp_id": "4"
     }
