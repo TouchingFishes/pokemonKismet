@@ -65,3 +65,20 @@ StormyBeach_Text_TammyPostRematch:
 	.string "Your bond with your POKéMON is\n"
 	.string "stronger than any wave.$"
 
+StormyBeach_EventScript_SignBeach::
+	msgbox StormyBeach_Text_SignBeach, MSGBOX_SIGN
+	end
+
+StormyBeach_Text_SignBeach:
+	.string "STORMY BEACH\p"
+	.string "Danger! WHIRLPOOLS offshore.\n"
+	.string "Do not swim alone.$"
+
+StormyBeach_EventScript_SignTree::
+	msgbox StormyBeach_Text_SignTree, MSGBOX_SIGN
+	end
+
+StormyBeach_Text_SignTree:
+	.string "THE OLD GALE TREE\p"
+	.string "It has stood through every storm\n"
+	.string "this coast has seen.$"

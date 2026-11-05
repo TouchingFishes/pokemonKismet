@@ -237,14 +237,14 @@
     {
       "x": 44,
       "y": 29,
-      "elevation": 4,
+      "elevation": 0,
       "dest_map": "MAP_TANGLEBRUSH_HNS",
       "dest_warp_id": "1"
     },
     {
       "x": 45,
       "y": 29,
-      "elevation": 4,
+      "elevation": 0,
       "dest_map": "MAP_TANGLEBRUSH_HNS",
       "dest_warp_id": "1"
     }

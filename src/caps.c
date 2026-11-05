@@ -18,25 +18,25 @@ static u8 GetCurrentBadgeCount(void)
 
 static const u8 sLevelCapTable_Normal[] =
 {
-    [0] = 11,  // no badges
-    [1] = 16,  // badge 1
-    [2] = 21,  // badge 2
-    [3] = 25,  // badge 3
-    [4] = 31,  // badge 4
-    [5] = 36,  // badge 5
-    [6] = 38,  // badge 6
+    [0] = 12,  // no badges
+    [1] = 18,  // badge 1
+    [2] = 22,  // badge 2
+    [3] = 26,  // badge 3
+    [4] = 37,  // badge 4
+    [5] = 39,  // badge 5
+    [6] = 41,  // badge 6
     [7] = 45,  // badge 7
-    [8] = 56,  // badge 8
+    [8] = 59,  // badge 8
 };
 
 static const u8 sLevelCapTable_Hard[] =
 {
-    [0] = 8,
+    [0] = 10,
     [1] = 15,
     [2] = 20,
-    [3] = 23,
-    [4] = 29,
-    [5] = 33,
+    [3] = 24,
+    [4] = 32,
+    [5] = 34,
     [6] = 37,
     [7] = 42,
     [8] = 54,

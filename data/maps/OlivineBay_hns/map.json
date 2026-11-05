@@ -315,58 +315,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OlivineBay_EventScript_ShoalSalt",
       "flag": "FLAG_ITEM_OLIVINE_BAY_SHOAL_SALT"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_EMOLGA",
-      "x": 48,
-      "y": 67,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_EMOLGA",
-      "x": 48,
-      "y": 37,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_EMOLGA",
-      "x": 48,
-      "y": 67,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_EMOLGA",
-      "x": 48,
-      "y": 37,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
     }
   ],
   "warp_events": [
@@ -379,7 +327,48 @@
     }
   ],
   "coord_events": [],
-  "bg_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 41,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OlivineBay_EventScript_SignBay"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OlivineBay_EventScript_SignLookout"
+    },
+    {
+      "type": "hidden_item",
+      "x": 33,
+      "y": 23,
+      "elevation": 0,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_OLIVINE_BAY_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 22,
+      "y": 53,
+      "elevation": 0,
+      "item": "ITEM_BIG_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_OLIVINE_BAY_BIG_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 43,
+      "y": 65,
+      "elevation": 0,
+      "item": "ITEM_SHED_SHELL",
+      "flag": "FLAG_HIDDEN_ITEM_OLIVINE_BAY_SHED_SHELL"
+    }
+  ],
   "game_version": "hns",
   "region": "REGION_JOHTO"
 }

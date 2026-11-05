@@ -191,3 +191,27 @@ Route32South_DragonTamerZander_Text_PostRematch:
 	.string "Until then… I will continue\n"
 	.string "to train.$"
 
+Route32South_EventScript_SignCoast::
+	msgbox Route32South_Text_SignCoast, MSGBOX_SIGN
+	end
+
+Route32South_Text_SignCoast:
+	.string "STARSHOAL COAST\p"
+	.string "CHERRYGROVE BAY TO THE NORTH$"
+
+Route32South_EventScript_SignCave::
+	msgbox Route32South_Text_SignCave, MSGBOX_SIGN
+	end
+
+Route32South_Text_SignCave:
+	.string "STARSHOAL CAVE\n"
+	.string "AHEAD$"
+
+Route32South_EventScript_SignPrivate::
+	msgbox Route32South_Text_SignPrivate, MSGBOX_SIGN
+	end
+
+Route32South_Text_SignPrivate:
+	.string "PRIVATE PROPERTY\p"
+	.string "No visitors, no cameras and\n"
+	.string "absolutely no autographs.$"

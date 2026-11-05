@@ -6,6 +6,8 @@ OlivineCity_hns_MapScripts::
 
 OlivineCity_MapScript_OnTransition::
 	callnative SetTimeBasedEncounters
+	setflag FLAG_HIDE_OLIVINE_SILVER
+	call_if_eq VAR_OLIVINE_CITY_STATE, 0, OlivineCity_EventScript_CityTrigger
 	goto_if_ge VAR_OLIVINE_CITY_STATE, 5, OlivineCity_MapScript_ClearWeather
 	end
 
@@ -35,7 +37,7 @@ OlivineCity_EventScript_CityTrigger:: @FLAGHEAP
 	clearflag FLAG_HIDE_CIANWOOD_SUICUNE
 	setflag FLAG_HIDE_CIANWOOD_EUSINE
 	setvar VAR_CIANWOOD_CITY_STATE, 1
-	end
+	return
 
 OlivineCity_EventScript_SilverTrigger::
 	lock

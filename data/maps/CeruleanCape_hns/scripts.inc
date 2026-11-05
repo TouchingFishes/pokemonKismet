@@ -61,3 +61,12 @@ CeruleanCape_Text_BrawlyPostBattle:
 CeruleanCape_Text_BrawlyAfter:
 	.string "I'm waiting for the perfect wave.\n"
 	.string "Some days it just never comes.$"
+
+CeruleanCape_EventScript_SignCape::
+	msgbox CeruleanCape_Text_SignCape, MSGBOX_SIGN
+	end
+
+CeruleanCape_Text_SignCape:
+	.string "CERULEAN CAPE\p"
+	.string "Couples welcome!\l"
+		.string "Please do not feed the LUVDISC.$"

@@ -233,7 +233,56 @@
     }
   ],
   "coord_events": [],
-  "bg_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 59,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route32South_EventScript_SignCoast"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 89,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route32South_EventScript_SignCave"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 106,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route32South_EventScript_SignPrivate"
+    },
+    {
+      "type": "hidden_item",
+      "x": 26,
+      "y": 15,
+      "elevation": 0,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE32_SOUTH_STARDUST"
+    },
+    {
+      "type": "hidden_item",
+      "x": 25,
+      "y": 42,
+      "elevation": 0,
+      "item": "ITEM_STAR_PIECE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE32_SOUTH_STAR_PIECE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 37,
+      "y": 72,
+      "elevation": 0,
+      "item": "ITEM_COMET_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE32_SOUTH_COMET_SHARD"
+    }
+  ],
   "game_version": "hns",
   "region": "REGION_JOHTO"
 }

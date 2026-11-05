@@ -7713,15 +7713,15 @@ IVs: 16 HP / 12 Atk / 16 Def / 16 SpA / 16 SpD / 20 Spe
 
 === TRAINER_BEVERLY_HNS ===
 Name: BEVERLY
-Class: Parasol Lady Hns
-Pic: Parasol Lady
-Gender: Male
+Class: Pokefan Hns
+Pic: Pokefan F
+Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
 
 Snubbull
-Level: 20
+Level: 18
 IVs: 17 HP / 12 Atk / 26 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_RUTH_HNS ===
@@ -15487,9 +15487,9 @@ Level: 37
 
 === TRAINER_BEVERLY_2_HNS ===
 Name: BEVERLY
-Class: Parasol Lady Hns
-Pic: Parasol Lady
-Gender: Male
+Class: Pokefan Hns
+Pic: Pokefan F
+Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
@@ -15500,9 +15500,9 @@ Level: 27
 
 === TRAINER_BEVERLY_3_HNS ===
 Name: BEVERLY
-Class: Parasol Lady Hns
-Pic: Parasol Lady
-Gender: Male
+Class: Pokefan Hns
+Pic: Pokefan F
+Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
@@ -15513,9 +15513,9 @@ Level: 36
 
 === TRAINER_BEVERLY_4_HNS ===
 Name: BEVERLY
-Class: Parasol Lady Hns
-Pic: Parasol Lady
-Gender: Male
+Class: Pokefan Hns
+Pic: Pokefan F
+Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
@@ -15526,9 +15526,9 @@ Level: 46
 
 === TRAINER_BEVERLY_5_HNS ===
 Name: BEVERLY
-Class: Parasol Lady Hns
-Pic: Parasol Lady
-Gender: Male
+Class: Pokefan Hns
+Pic: Pokefan F
+Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability

@@ -386,3 +386,19 @@ OlivineBay_Text_NoSpaceInYourBag:
 	.string "You should make room and come back\n"
 	.string "for a SHELL BELL.$"
 	
+
+OlivineBay_EventScript_SignBay::
+	msgbox OlivineBay_Text_SignBay, MSGBOX_SIGN
+	end
+
+OlivineBay_Text_SignBay:
+	.string "OLIVINE BAY\p"
+	.string "OLIVINE CITY - GOLDENROD HARBOR$"
+
+OlivineBay_EventScript_SignLookout::
+	msgbox OlivineBay_Text_SignLookout, MSGBOX_SIGN
+	end
+
+OlivineBay_Text_SignLookout:
+	.string "BAY LOOKOUT\n"
+	.string "MIND THE STEPS$"

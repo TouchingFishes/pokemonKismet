@@ -203,3 +203,12 @@ CherrygroveBay_Text_WinonaPostBattle:
 CherrygroveBay_Text_WinonaAfter:
 	.string "When the wind blows through these\n"
 	.string "trees, even the petals fly.$"
+
+CherrygroveBay_EventScript_SignBay::
+	msgbox CherrygroveBay_Text_SignBay, MSGBOX_SIGN
+	end
+
+CherrygroveBay_Text_SignBay:
+	.string "CHERRYGROVE BAY\p"
+	.string "ROUTE 32 - CHERRYGROVE CITY$"
+
