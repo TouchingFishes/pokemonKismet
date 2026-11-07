@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_GiantsReach_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_GIANTS_REACH_HNS",
   "music": "MUS_HG_CINNABAR",
-  "region_map_section": "MAPSEC_ULAULA_ISLAND",
+  "region_map_section": "MAPSEC_GIANTS_REACH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

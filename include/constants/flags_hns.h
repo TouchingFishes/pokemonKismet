@@ -1113,7 +1113,7 @@
 #define FLAG_ITEM_TANGLEBRUSH_LEAF_STONE           (HNS_EXTENDED_CONTENT_START + 197)
 #define FLAG_ITEM_TANGLEBRUSH_MIRACLE_SEED         (HNS_EXTENDED_CONTENT_START + 198)
 #define FLAG_HIDDEN_ITEM_TANGLEBRUSH_REVIVAL_HERB  (HNS_EXTENDED_CONTENT_START + 199)
-#define FLAG_ULAULA_FOREST_HIDDEN_ITEM_1           (HNS_EXTENDED_CONTENT_START + 200) // hidden item flag for ulaula forest hidden item
+#define FLAG_DAODAO_STAIR_CAVE_HIDDEN_ITEM_1            (HNS_EXTENDED_CONTENT_START + 200) // hidden MAX REVIVE in GIANT'S STAIR's cave
 #define FLAG_HIDDEN_ITEM_ROUTE21_STARDUST_3         (HNS_EXTENDED_CONTENT_START + 201)
 #define FLAG_HIDDEN_ITEM_MT_SILVER_OUTSIDE_REAPER_CLOTH (HNS_EXTENDED_CONTENT_START + 202)
 #define FLAG_HIDDEN_ITEM_MT_SILVER_OUTSIDE_FULL_RESTORE (HNS_EXTENDED_CONTENT_START + 203)
@@ -1140,7 +1140,7 @@
 #define FLAG_HIDDEN_ITEM_CHERRYGROVE_BAY_LURE_BALL (HNS_EXTENDED_CONTENT_START + 224)
 #define FLAG_HIDDEN_ITEM_CHERRYGROVE_BAY_PP_UP (HNS_EXTENDED_CONTENT_START + 225)
 #define FLAG_DAODAO_KILN_TOTEM_DAY                      (HNS_EXTENDED_CONTENT_START + 226) // sets totem to day variant on akala
-#define FLAG_ULAULA_TOTEM_DAY                           (HNS_EXTENDED_CONTENT_START + 227) // sets totem to day variant on ulaula
+#define FLAG_DAODAO_STAIR_TOTEM_DAY                     (HNS_EXTENDED_CONTENT_START + 227) // the cave's totem is the day variant
 #define FLAG_DAODAO_LANDFALL_TOTEM_DAY                  (HNS_EXTENDED_CONTENT_START + 228) // sets totem to day variant on melemele
 #define FLAG_HIDE_PHANT_INSIDE                          (HNS_EXTENDED_CONTENT_START + 229) // hide phantonomy inside on ulaula
 #define FLAG_HIDE_PHANT_OUTSIDE                         (HNS_EXTENDED_CONTENT_START + 230) // hide phantonomy outside on ulaula
@@ -1148,7 +1148,7 @@
 #define FLAG_HIDDEN_ITEM_OLIVINE_BAY_SHED_SHELL (HNS_EXTENDED_CONTENT_START + 232)
 #define FLAG_HIDDEN_ITEM_STORMY_BEACH_DAMP_ROCK (HNS_EXTENDED_CONTENT_START + 233)
 #define FLAG_HIDDEN_ITEM_STORMY_BEACH_NUGGET (HNS_EXTENDED_CONTENT_START + 234)
-#define FLAG_EXTENDED_CONTENT_235                       (HNS_EXTENDED_CONTENT_START + 235) // freed 2026-10-08 (was FLAG_HIDE_FLYOVER; older saves may have it set)
+#define FLAG_DAODAO_STAIR_CAVE_HIDDEN_ITEM_2            (HNS_EXTENDED_CONTENT_START + 235) // hidden SMOOTH ROCK in GIANT'S STAIR's cave
 #define FLAG_EXTENDED_CONTENT_236                       (HNS_EXTENDED_CONTENT_START + 236) // freed 2026-10-08 (was FLAG_HIDE_TAPU_BULU; older saves may have it set)
 #define FLAG_EXTENDED_CONTENT_237                       (HNS_EXTENDED_CONTENT_START + 237) // freed 2026-10-08 (was FLAG_HIDE_TAPU_LELE; older saves may have it set)
 #define FLAG_EXTENDED_CONTENT_238                       (HNS_EXTENDED_CONTENT_START + 238) // freed 2026-10-08 (was FLAG_HIDE_TAPU_FINI; older saves may have it set)
@@ -1161,11 +1161,11 @@
 #define FLAG_HIDDEN_ITEM_ROUTE32_SOUTH_STARDUST (HNS_EXTENDED_CONTENT_START + 245)
 #define FLAG_HIDDEN_ITEM_ROUTE32_SOUTH_STAR_PIECE (HNS_EXTENDED_CONTENT_START + 246)
 #define FLAG_TRIGGERED_DAODAO_WAKE_TOTEM                (HNS_EXTENDED_CONTENT_START + 247) // for use in triggering poni totem anim
-#define FLAG_TRIGGERED_ULAULA_TOTEM                     (HNS_EXTENDED_CONTENT_START + 248) // for use in triggering ulaula totem anim
+#define FLAG_TRIGGERED_DAODAO_STAIR_TOTEM               (HNS_EXTENDED_CONTENT_START + 248) // the cave's totem has appeared
 #define FLAG_TRIGGERED_DAODAO_KILN_TOTEM                (HNS_EXTENDED_CONTENT_START + 249) // for use in triggering akala totem anim
 #define FLAG_TRIGGERED_DAODAO_LANDFALL_TOTEM            (HNS_EXTENDED_CONTENT_START + 250) // for use in triggering melemele totem anim
-#define FLAG_EXTENDED_CONTENT_251                       (HNS_EXTENDED_CONTENT_START + 251) // freed 2026-10-08 (was FLAG_DEFEATED_SAMSON_OAK; older saves may have it set)
-#define FLAG_DEFEATED_ULAULA_TOTEM                      (HNS_EXTENDED_CONTENT_START + 252) // if the player defeated the ulaula totem
+#define FLAG_HIDE_ROUTE9_PRIMEAPE                       (HNS_EXTENDED_CONTENT_START + 251) // the totem on ROUTE 9's ledge was beaten
+#define FLAG_DEFEATED_DAODAO_STAIR_TOTEM                (HNS_EXTENDED_CONTENT_START + 252) // the player defeated the cave's totem
 #define FLAG_DEFEATED_DAODAO_WAKE_TOTEM                 (HNS_EXTENDED_CONTENT_START + 253) // if the player defeated the poni totem
 #define FLAG_DEFEATED_DAODAO_KILN_TOTEM                 (HNS_EXTENDED_CONTENT_START + 254) // if the player defeated the akala totem
 #define FLAG_DEFEATED_DAODAO_LANDFALL_TOTEM             (HNS_EXTENDED_CONTENT_START + 255) // if the player defeated the melemele totem
@@ -1178,7 +1178,7 @@
 #define FLAG_BATTLED_MIMIKYU                            (HNS_EXTENDED_CONTENT_START + 262) // used for progression if battled mimikyu at all
 #define FLAG_BATTLED_DRAPION                            (HNS_EXTENDED_CONTENT_START + 263) // used for progression if battled drapion at all
 #define FLAG_BATTLED_CAMERUPT                           (HNS_EXTENDED_CONTENT_START + 264) // used for progression if battled camerupt at all
-#define FLAG_EXTENDED_CONTENT_265                       (HNS_EXTENDED_CONTENT_START + 265) // freed 2026-10-08 (was FLAG_BATTLED_KROOKODILE; older saves may have it set)
+#define FLAG_HIDE_TANGLEBRUSH_TANGROWTH                 (HNS_EXTENDED_CONTENT_START + 265) // the totem in TANGLEBRUSH's alcove was beaten
 #define FLAG_BATTLED_TOXICROAK                          (HNS_EXTENDED_CONTENT_START + 266) // used for progression if battled toxicroak at all
 #define FLAG_BATTLED_TSAREENA                           (HNS_EXTENDED_CONTENT_START + 267) // used for progression if battled tsareena at all
 #define FLAG_HIDE_SAMSONOAK_INTRO                       (HNS_EXTENDED_CONTENT_START + 268) // hides the samson oak intro object
@@ -1193,14 +1193,14 @@
 #define FLAG_HIDE_PROBOPASS                           (HNS_EXTENDED_CONTENT_START + 277) // hide probopass if caught or defeated
 #define FLAG_HIDE_TSAREENA                            (HNS_EXTENDED_CONTENT_START + 278) // hide tsareena if caught or defeated
 #define FLAG_HIDE_DAODAO_WAKE_TOTEM                     (HNS_EXTENDED_CONTENT_START + 279) // hide the poni totem mon
-#define FLAG_HIDE_ULAULA_TOTEM                          (HNS_EXTENDED_CONTENT_START + 280) // hide the ula'ula totem mon
+#define FLAG_HIDE_DAODAO_STAIR_TOTEM                    (HNS_EXTENDED_CONTENT_START + 280) // hide the cave's totem until its trigger
 #define FLAG_HIDE_DAODAO_KILN_TOTEM                     (HNS_EXTENDED_CONTENT_START + 281) // hide the akala totem mon
 #define FLAG_HIDE_DAODAO_LANDFALL_TOTEM                 (HNS_EXTENDED_CONTENT_START + 282) // hide the melemele totem mon
 #define FLAG_HIDDEN_ITEM_OLIVINE_BAY_PEARL (HNS_EXTENDED_CONTENT_START + 283)
 #define FLAG_VISITED_DAODAO                             (HNS_EXTENDED_CONTENT_START + 284) // track if the player has been to alola before.
 #define FLAG_DAODAO_WAKE_HIDDEN_ITEM_1              (HNS_EXTENDED_CONTENT_START + 285)
-#define FLAG_ULAULA_CAVE_HIDDEN_ITEM_2              (HNS_EXTENDED_CONTENT_START + 286)
-#define FLAG_ULAULA_CAVE_HIDDEN_ITEM_1              (HNS_EXTENDED_CONTENT_START + 287)
+#define FLAG_DAODAO_STAIR_CAVE_ITEM_2                   (HNS_EXTENDED_CONTENT_START + 286) // item ball in GIANT'S STAIR's cave: FOCUS SASH
+#define FLAG_DAODAO_STAIR_CAVE_ITEM_1                   (HNS_EXTENDED_CONTENT_START + 287) // item ball in GIANT'S STAIR's cave: TOXIC ORB
 #define FLAG_DAODAO_GIANTS_REACH_HIDDEN_ITEM_2      (HNS_EXTENDED_CONTENT_START + 288)
 #define FLAG_DAODAO_GIANTS_REACH_HIDDEN_ITEM_1      (HNS_EXTENDED_CONTENT_START + 289)
 #define FLAG_DAODAO_SCORIA_CAVE_HIDDEN_ITEM_2       (HNS_EXTENDED_CONTENT_START + 290)

@@ -82,7 +82,7 @@ CeladonMansion2F_Text_Phant:
 	.string "ULTIMATE PLUS - ENGLISH?\l"
 	.string "I translated it!\p"
 	.string "For my next DEMAKE, I think I'll\n"
-	.string "do ALOLA!$"
+	.string "do DAODAO!$"
 
 CeladonMansion2F_Text_Exclsior:
 	.string "I implemented the unique surfing\n"

@@ -1439,7 +1439,6 @@ gBattleAnimMove_PoisonJab::
 	blendoff
 	end
 
-@ The fork's Dark Pulse (pokemonHnS, Move_DARK_PULSE), on Moritz's word.
 gBattleAnimMove_DarkPulse::
 	loadspritegfx ANIM_TAG_THIN_RING
 	monbg ANIM_TARGET

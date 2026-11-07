@@ -285,6 +285,8 @@ SinjohRuins_EventScript_CynthiaBattle::
     trainerbattle_no_intro TRAINER_CYNTHIA_HNS, SinjohRuins_Text_CynthiaDefeat
     msgbox SinjohRuins_Text_CynthiaAfterBattle, MSGBOX_AUTOCLOSE
     giveitem ITEM_ZAP_PLATE
+    msgbox SinjohRuins_Text_CynthiaGabite, MSGBOX_DEFAULT
+    call SinjohRuins_EventScript_GiveGabite
     msgbox SinjohRuins_Text_HealParty, MSGBOX_AUTOCLOSE
     fadescreenswapbuffers FADE_TO_BLACK
 	special HealPlayerParty
@@ -294,6 +296,25 @@ SinjohRuins_EventScript_CynthiaBattle::
     fadescreenswapbuffers FADE_FROM_BLACK
     msgbox SinjohRuins_Text_CynthiaAfterPlate, MSGBOX_AUTOCLOSE
     return
+
+SinjohRuins_EventScript_GiveGabite:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GABITE
+	bufferspeciesname STR_VAR_1, SPECIES_GABITE
+	givemon SPECIES_GABITE, 5
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, SinjohRuins_EventScript_GabiteNoRoom
+	call Common_EventScript_GiftMon
+	return
+
+SinjohRuins_EventScript_GabiteNoRoom:
+	msgbox gText_NoMoreRoomForPokemon, MSGBOX_DEFAULT
+	return
+
+SinjohRuins_Text_CynthiaGabite:
+	.string "CYNTHIA: There's one more thing.\p"
+	.string "This GABITE hatched during the\n"
+	.string "expedition. It's still very young.\p"
+	.string "It has taken a liking to strong\n"
+	.string "trainers. Please look after it.$"
 
 SinjohRuins_Text_HealParty::
     .string "CYNTHIA: Let me heal your POKéMON\n"

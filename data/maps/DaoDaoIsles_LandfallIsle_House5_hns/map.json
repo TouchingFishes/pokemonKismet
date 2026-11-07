@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_LandfallIsle_House5_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_LANDFALL_ISLE_HOUSE5_HNS",
   "music": "MUS_OCEANIC_MUSEUM",
-  "region_map_section": "MAPSEC_MELEMELE_ISLAND",
+  "region_map_section": "MAPSEC_LANDFALL_ISLE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

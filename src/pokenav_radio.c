@@ -270,11 +270,11 @@ static const u16 sWeatherPlacesKanto[] =
 // report the fallback line, so it is left out.
 static const u16 sWeatherPlacesAlola[] =
 {
-    MAPSEC_MELEMELE_ISLAND,
-    MAPSEC_AKALA_ISLAND,
-    MAPSEC_ULAULA_ISLAND,
-    MAPSEC_PONI_ISLAND,
-    MAPSEC_ALOLA_OCEAN,
+    MAPSEC_LANDFALL_ISLE,
+    MAPSEC_KILN_ISLE,
+    MAPSEC_GIANTS_REACH,
+    MAPSEC_WAKE_ISLE,
+    MAPSEC_DAODAO_ISLES,
 };
 
 // Snowswept Cavern is omitted for the same reason -- it is a cave with no

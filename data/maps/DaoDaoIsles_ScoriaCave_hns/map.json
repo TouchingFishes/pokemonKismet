@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_ScoriaCave_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_SCORIA_CAVE_HNS",
   "music": "MUS_HG_UNION_CAVE",
-  "region_map_section": "MAPSEC_AKALA_CAVE",
+  "region_map_section": "MAPSEC_SCORIA_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

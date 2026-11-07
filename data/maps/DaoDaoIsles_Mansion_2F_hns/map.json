@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_Mansion_2F_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_MANSION_2F_HNS",
   "music": "MUS_RG_POKE_MANSION",
-  "region_map_section": "MAPSEC_AKALA_FOREST",
+  "region_map_section": "MAPSEC_ETERNA_FOREST",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_INDOOR",

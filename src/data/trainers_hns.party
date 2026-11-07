@@ -367,9 +367,18 @@ Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move
 
-SPECIES_GEKOPON
-Level: Badge+15
+SPECIES_DUOSION
+Level: Badge+12
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_GEKOPON
+Level: Badge+14
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_DUOSION
+Level: Badge+12
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
 
 === TRAINER_JO_HNS ===
 Name: JO
@@ -926,13 +935,22 @@ SPECIES_VOLBEAT
 Level: 56
 IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_GRANBULL
-Level: 57
+SPECIES_SOLOSIS
+Level: 53
 IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_ILLUMISE
 Level: 56
 IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_SOLOSIS
+Level: 53
+IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_GRANBULL
+Level: 57
+IVs: 14 HP / 10 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
 
 === TRAINER_NICK_HNS ===
 Name: NICK
@@ -4696,11 +4714,11 @@ SPECIES_MAGNETON
 Level: 56
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_HYPNO
+SPECIES_GOTHORITA
 Level: 59
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_HYPNO
+SPECIES_GOTHORITA
 Level: 59
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -5835,6 +5853,7 @@ SPECIES_SOLROCK
 Level: 60
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
+
 === TRAINER_HERMAN_HNS ===
 Name: HERMAN
 Class: Psychic M Hns
@@ -5848,13 +5867,13 @@ SPECIES_EXEGGUTOR
 Level: 57
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-SPECIES_HYPNO
-Level: 55
+SPECIES_REUNICLUS
+Level: 60
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-
-SPECIES_HYPNO
-Level: 55
-IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- MOVE_PSYCHIC
+- MOVE_FOCUS_BLAST
+- MOVE_ENERGY_BALL
+- MOVE_RECOVER
 
 SPECIES_EXEGGUTOR
 Level: 57
@@ -5871,6 +5890,10 @@ AI: Check Bad Move
 
 SPECIES_GIRAFARIG
 Level: 54
+IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_HYPNO
+Level: 55
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_GIRAFARIG
@@ -7122,13 +7145,22 @@ Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
 
+SPECIES_GOTHORITA
+Level: 54
+IVs: 16 HP / 18 Ak / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
+SPECIES_GOTHORITA
+Level: 54
+IVs: 16 HP / 18 Ak / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
 SPECIES_SLOWBRO
-Level: 59
+Level: 57
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 SPECIES_PURGISLUG
-Level: 59
+Level: 57
 IVs: 16 HP / 18 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+
 
 === TRAINER_RONALD_HNS ===
 Name: RONALD
@@ -7726,9 +7758,9 @@ IVs: 17 HP / 12 Atk / 26 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_RUTH_HNS ===
 Name: RUTH
-Class: Parasol Lady Hns
-Pic: Parasol Lady
-Gender: Male
+Class: Pokefan Hns
+Pic: Pokefan F
+Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -7739,9 +7771,9 @@ IVs: 17 HP / 12 Atk / 26 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_GEORGIA_HNS ===
 Name: GEORGIA
-Class: Parasol Lady Hns
-Pic: Parasol Lady
-Gender: Male
+Class: Pokefan Hns
+Pic: Pokefan F
+Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -7768,9 +7800,9 @@ IVs: 17 HP / 12 Atk / 26 Def / 16 SpA / 16 SpD / 16 Spe
 
 === TRAINER_JAMIE_HNS ===
 Name: JAIME
-Class: Parasol Lady Hns
-Pic: Parasol Lady
-Gender: Male
+Class: Pokefan Hns
+Pic: Pokefan F
+Gender: Female
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move
@@ -9253,6 +9285,17 @@ Timid Nature
 - MOVE_ENCORE
 - MOVE_ICE_PUNCH
 
+SPECIES_GOTHITELLE @ ITEM_SITRUS_BERRY
+Ability: Shadow Tag
+Level: Badge+20
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- MOVE_PSYCHIC
+- MOVE_THUNDERBOLT
+- MOVE_SHADOW_BALL
+- MOVE_CALM_MIND
+
 SPECIES_JYNX @ ITEM_NEVER_MELT_ICE
 Level: Badge+20
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
@@ -9260,18 +9303,8 @@ EVs: 4 HP / 252 SpA / 252 Spe
 Timid Nature
 - MOVE_PSYCHIC
 - MOVE_ICE_BEAM
+- MOVE_CALM_MIND
 - MOVE_LOVELY_KISS
-- MOVE_CALM_MIND
-
-SPECIES_SLOWBRO @ ITEM_CHESTO_BERRY
-Level: Badge+20
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-EVs: 252 HP / 4 Def / 252 SpA
-Quiet Nature
-- MOVE_REST
-- MOVE_FIRE_BLAST
-- MOVE_CALM_MIND
-- MOVE_SURF
 
 SPECIES_WOBBUFFET @ ITEM_LEFTOVERS
 Level: Badge+20
@@ -16855,13 +16888,13 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move
 
-Primeape  
+Passimian  
 Ability: Defiant  
 Level: 61  
-- Cross Chop  
-- Curse  
-- MOVE_SHADOW_CLAW  
-- Ice Punch  
+- MOVE_CLOSE_COMBAT
+- MOVE_ROCK_SLIDE
+- MOVE_KNOCK_OFF
+- MOVE_BULK_UP
 
 Bewear @ Loaded Dice  
 Ability: Fluffy  
@@ -16973,13 +17006,12 @@ Level: 61
 - Swords Dance  
 - MOVE_POUNCE  
 
-Leafeon @ Sitrus Berry  
-Ability: Guts  
-Level: 63  
-- Leaf Blade  
-- Iron Tail  
-- Wish  
-- Detect  
+Oranguru @ Sitrus Berry   
+Level: 63
+- MOVE_PSYCHIC
+- MOVE_FOUL_PLAY
+- MOVE_CALM_MIND
+- MOVE_FOCUS_BLAST 
 
 
 
@@ -17035,14 +17067,13 @@ Level: 61
 - Drill Peck  
 - Rock Slide  
 
-Primeape  
+Passimian  
 Ability: Defiant  
 Level: 64  
-Happiness: 0  
-- Frustration  
-- Close Combat  
-- MOVE_NIGHT_SLASH  
-- Taunt  
+- MOVE_CLOSE_COMBAT
+- MOVE_ROCK_SLIDE
+- MOVE_KNOCK_OFF
+- MOVE_BULK_UP
 
 Tauros @ Life Orb  
 Ability: Sheer Force  
@@ -19000,6 +19031,14 @@ SPECIES_BRELOOM
 Level: 62
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 
+SPECIES_ORANGURU
+Level: 64
+IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+- MOVE_PSYCHIC
+- MOVE_FOUL_PLAY
+- MOVE_CALM_MIND
+- MOVE_FOCUS_BLAST
+
 SPECIES_PIDGEOT
 Level: 66
 IVs: 21 HP / 23 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
@@ -20854,13 +20893,14 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - MOVE_FIRE_PUNCH
 - MOVE_MACH_PUNCH
 
-SPECIES_PRIMEAPE @ ITEM_MUSCLE_BAND
+SPECIES_PASSIMIAN @ ITEM_MUSCLE_BAND
+Ability: Defiant
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- MOVE_SWAGGER
-- MOVE_BOUNCE
-- MOVE_DYNAMIC_PUNCH
-- MOVE_FORESIGHT
+- MOVE_CLOSE_COMBAT
+- MOVE_ROCK_SLIDE
+- MOVE_KNOCK_OFF
+- MOVE_BULK_UP
 
 SPECIES_HITMONTOP @ ITEM_LUM_BERRY
 Level: 71
@@ -21334,6 +21374,15 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - MOVE_ANCIENT_POWER
 - MOVE_WATER_PULSE
 - MOVE_REST
+
+SPECIES_ORANGURU
+Level: 62
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- MOVE_PSYCHIC
+- MOVE_FOUL_PLAY
+- MOVE_CALM_MIND
+- MOVE_FOCUS_BLAST
+
 
 === TRAINER_MANSION_TED_HNS ===
 Name: TED

@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_KilnIsle_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_KILN_ISLE_HNS",
   "music": "MUS_HG_VERMILION",
-  "region_map_section": "MAPSEC_AKALA_ISLAND",
+  "region_map_section": "MAPSEC_KILN_ISLE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

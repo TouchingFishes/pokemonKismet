@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_BerryForest_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_BERRY_FOREST_HNS",
   "music": "MUS_HG_VIRIDIAN_FOREST",
-  "region_map_section": "MAPSEC_ULAULA_ISLAND",
+  "region_map_section": "MAPSEC_GIANTS_REACH",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_ROUTE",

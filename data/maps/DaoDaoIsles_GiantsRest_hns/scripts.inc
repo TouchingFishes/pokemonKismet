@@ -29,6 +29,9 @@ DaoDaoIsles_GiantsRest_EventScript_Steven::
 	trainerbattle_no_intro TRAINER_STEVEN_HNS, DaoDaoIsles_GiantsRest_Text_StevenDefeat
 	setflag FLAG_DEFEATED_DAODAO_STEVEN
 	msgbox DaoDaoIsles_GiantsRest_Text_StevenAfter, MSGBOX_DEFAULT
+	msgbox DaoDaoIsles_GiantsRest_Text_StevenBeldum, MSGBOX_DEFAULT
+	call DaoDaoIsles_GiantsRest_EventScript_GiveBeldum
+	msgbox DaoDaoIsles_GiantsRest_Text_StevenFarewell, MSGBOX_DEFAULT
 	closemessage
 	goto_if_unset FLAG_FUCHSIA_SAFARI_NPC_TRADE_COMPLETED, DaoDaoIsles_GiantsRest_EventScript_StevenRelease
 	fadescreenswapbuffers FADE_TO_BLACK
@@ -39,9 +42,20 @@ DaoDaoIsles_GiantsRest_EventScript_StevenRelease:
 	release
 	end
 
+DaoDaoIsles_GiantsRest_EventScript_GiveBeldum:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BELDUM
+	bufferspeciesname STR_VAR_1, SPECIES_BELDUM
+	givemon SPECIES_BELDUM, 5
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, DaoDaoIsles_GiantsRest_EventScript_BeldumNoRoom
+	call Common_EventScript_GiftMon
+	return
+
+DaoDaoIsles_GiantsRest_EventScript_BeldumNoRoom:
+	msgbox gText_NoMoreRoomForPokemon, MSGBOX_DEFAULT
+	return
+
 DaoDaoIsles_GiantsRest_EventScript_StevenBeaten::
 	call FuchsiaCity_SafariZoneEntrance_EventScript_StevenTicketAndTrade
-	@ Traded just now, on this visit - he leaves on the next load.
 	goto_if_set FLAG_FUCHSIA_SAFARI_NPC_TRADE_COMPLETED, FuchsiaCity_SafariZoneEntrance_EventScript_StevenTradeCompleted
 	msgbox DaoDaoIsles_GiantsRest_Text_StevenIdle, MSGBOX_DEFAULT
 	closemessage
@@ -78,7 +92,16 @@ DaoDaoIsles_GiantsRest_Text_StevenAfter:
 	.string "and I am leaving it a spectator.\p"
 	.string "I won't follow you any further,\n"
 	.string "{PLAYER}. There's nothing out here\l"
-	.string "I can teach you now.\p"
+	.string "I can teach you now.$"
+
+DaoDaoIsles_GiantsRest_Text_StevenBeldum:
+	.string "Before I go, take this.\p"
+	.string "A BELDUM from my own collection.\n"
+	.string "It has never had a trainer.\p"
+	.string "Raise it well, and one day it will\n"
+	.string "hit as hard as my METAGROSS.$"
+
+DaoDaoIsles_GiantsRest_Text_StevenFarewell:
 	.string "Mind the stair on the way down.$"
 
 DaoDaoIsles_GiantsRest_EventScript_Regigigas::

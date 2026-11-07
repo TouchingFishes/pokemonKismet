@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_BingCurrent_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_BING_CURRENT_HNS",
   "music": "MUS_OCEANIC_MUSEUM",
-  "region_map_section": "MAPSEC_ALOLA_OCEAN",
+  "region_map_section": "MAPSEC_DAODAO_ISLES",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

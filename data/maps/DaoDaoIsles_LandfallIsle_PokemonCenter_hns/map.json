@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_LandfallIsle_PokemonCenter_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_LANDFALL_ISLE_POKEMON_CENTER_HNS",
   "music": "MUS_HG_POKE_CENTER",
-  "region_map_section": "MAPSEC_MELEMELE_ISLAND",
+  "region_map_section": "MAPSEC_LANDFALL_ISLE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

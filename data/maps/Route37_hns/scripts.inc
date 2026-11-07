@@ -177,7 +177,7 @@ Route37_EventScript_Item_GrassKnot::
 Route37_Text_BreederFAmala_Seen::
 	.string "Certain POKéMON can only evolve\p"
 	.string "if someone truly cares for them.\n"
-	.string "Care can overcome any obstacle,\n"
+	.string "Care can overcome any obstacle,\l"
 	.string "I'll show you.$"
 	
 Route37_Text_BreederFAmala_Beaten::

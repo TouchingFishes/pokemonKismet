@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_BingCurrentCave_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_BING_CURRENT_CAVE_HNS",
   "music": "MUS_HG_ICE_PATH",
-  "region_map_section": "MAPSEC_ALOLA_OCEAN",
+  "region_map_section": "MAPSEC_SEAFROST_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

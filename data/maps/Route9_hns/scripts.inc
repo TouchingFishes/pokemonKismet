@@ -132,3 +132,40 @@ Route9_Text_HikerDallasBeaten:
 Route9_Text_HikerDallasAfter:
 	.string "The POWER PLANT is across a small\n"
 	.string "river.$"
+
+Route9_EventScript_Primeape::
+	lock
+	faceplayer
+	playmoncry SPECIES_PRIMEAPE, 0
+	msgbox Route9_Text_PrimeapeRoar, MSGBOX_AUTOCLOSE
+	waitmoncry
+	setwildbattle SPECIES_MANKEY, 60, ITEM_NONE, SPECIES_PRIMEAPE, 60, ITEM_LUM_BERRY
+	settotemboost B_POSITION_OPPONENT_RIGHT, 1, 1, 1, 1, 1, 1
+	setflag FLAG_NO_WILD_CATCHING
+	setflag FLAG_NO_WILD_RUNNING
+	setflag FLAG_SMART_WILD_AI
+	setflag FLAG_NO_SHINY
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq Route9_EventScript_PrimeapeWon
+	goto Route9_EventScript_PrimeapeEnd
+
+Route9_EventScript_PrimeapeWon:
+	setflag FLAG_HIDE_ROUTE9_PRIMEAPE
+	removeobject LOCALID_ROUTE9_PRIMEAPE
+	msgbox Route9_Text_PrimeapeDefeated, MSGBOX_AUTOCLOSE
+Route9_EventScript_PrimeapeEnd:
+	clearflag FLAG_NO_WILD_CATCHING
+	clearflag FLAG_NO_WILD_RUNNING
+	clearflag FLAG_SMART_WILD_AI
+	clearflag FLAG_NO_SHINY
+	release
+	end
+
+Route9_Text_PrimeapeRoar:
+	.string "Graah!$"
+
+Route9_Text_PrimeapeDefeated:
+	.string "Totem PRIMEAPE was defeated!\n"
+	.string "It scampered off somewhere…$"

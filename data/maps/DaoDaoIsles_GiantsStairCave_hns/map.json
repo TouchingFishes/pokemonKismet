@@ -1,0 +1,177 @@
+{
+  "id": "MAP_DAO_DAO_ISLES_GIANTS_STAIR_CAVE_HNS",
+  "name": "DaoDaoIsles_GiantsStairCave_hns",
+  "layout": "LAYOUT_DAO_DAO_ISLES_GIANTS_STAIR_CAVE_HNS",
+  "music": "MUS_HG_UNION_CAVE",
+  "region_map_section": "MAPSEC_DAODAO_ISLES",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_DAODAO_STAIR_DRAPION",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DRAPION)",
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_GiantsStairCave_EventScript_Drapion",
+      "flag": "FLAG_HIDE_DRAPION"
+    },
+    {
+      "local_id": "LOCALID_DAODAO_STAIR_TOTEM",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_1",
+      "x": 21,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_GiantsStairCave_EventScript_Totem",
+      "flag": "FLAG_HIDE_DAODAO_STAIR_TOTEM"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKORUPI)",
+      "x": 3,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKORUPI)",
+      "x": 14,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M_HNS",
+      "x": 29,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_GiantsStairCave_EventScript_Marik",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RUIN_MANIAC_HNS",
+      "x": 25,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "DaoDaoIsles_GiantsStairCave_EventScript_Dusty",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD_HNS",
+      "x": 6,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "DaoDaoIsles_GiantsStairCave_EventScript_Russ",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
+      "x": 11,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_GiantsStairCave_EventScript_ToxicOrb",
+      "flag": "FLAG_DAODAO_STAIR_CAVE_ITEM_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
+      "x": 33,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaoDaoIsles_GiantsStairCave_EventScript_FocusSash",
+      "flag": "FLAG_DAODAO_STAIR_CAVE_ITEM_2"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 21,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_DAO_DAO_ISLES_GIANTS_STAIR_HNS",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "DaoDaoIsles_GiantsStairCave_EventScript_TotemTrigger"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 16,
+      "y": 6,
+      "elevation": 0,
+      "item": "ITEM_MAX_REVIVE",
+      "flag": "FLAG_DAODAO_STAIR_CAVE_HIDDEN_ITEM_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 19,
+      "y": 13,
+      "elevation": 0,
+      "item": "ITEM_SMOOTH_ROCK",
+      "flag": "FLAG_DAODAO_STAIR_CAVE_HIDDEN_ITEM_2"
+    }
+  ],
+  "game_version": "hns",
+  "region": "REGION_ALOLA"
+}

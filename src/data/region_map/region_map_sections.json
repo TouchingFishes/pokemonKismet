@@ -1671,53 +1671,53 @@
       "name": "NAVEL ROCK"
     },
     {
-      "id": "MAPSEC_MELEMELE_ISLAND",
+      "id": "MAPSEC_LANDFALL_ISLE",
       "name": "LANDFALL ISLE",
       "in_hns": true,
       "region": "REGION_ALOLA"
     },
     {
-      "id": "MAPSEC_AKALA_ISLAND",
+      "id": "MAPSEC_KILN_ISLE",
       "name": "KILN ISLE",
       "in_hns": true
     },
     {
-      "id": "MAPSEC_ULAULA_ISLAND",
+      "id": "MAPSEC_GIANTS_REACH",
       "name": "GIANT'S REACH",
       "in_hns": true
     },
     {
-      "id": "MAPSEC_PONI_ISLAND",
+      "id": "MAPSEC_WAKE_ISLE",
       "name": "WAKE ISLE",
       "in_hns": true
     },
     {
-      "id": "MAPSEC_ALOLA_OCEAN",
+      "id": "MAPSEC_DAODAO_ISLES",
       "name": "DAODAO ISLES",
       "in_hns": true
     },
     {
-      "id": "MAPSEC_AKALA_CAVE",
+      "id": "MAPSEC_SCORIA_CAVE",
       "name": "SCORIA CAVE",
       "in_hns": true
     },
     {
-      "id": "MAPSEC_AKALA_FOREST",
+      "id": "MAPSEC_ETERNA_FOREST",
       "name": "ETERNA FOREST",
       "in_hns": true
     },
     {
-      "id": "MAPSEC_PONI_CAVE",
+      "id": "MAPSEC_WAKE_CAVE",
       "name": "WAKE CAVE",
       "in_hns": true
     },
     {
-      "id": "MAPSEC_ULAULA_CAVE",
-      "name": "MT. LANIKALA",
+      "id": "MAPSEC_SEAFROST_CAVE",
+      "name": "SEAFROST CAVE",
       "in_hns": true
     },
     {
-      "id": "MAPSEC_ULAULA_CAVE_2",
+      "id": "MAPSEC_DEWDROP_HOLLOW",
       "name": "DEWDROP HOLLOW",
       "in_hns": true
     },
@@ -1800,44 +1800,44 @@
       "y": 3
     },
     {
-      "id": "MAPSEC_MELEMELE_ISLAND",
+      "id": "MAPSEC_LANDFALL_ISLE",
       "name": "LANDFALL ISLE",
       "region": "REGION_ALOLA"
     },
     {
-      "id": "MAPSEC_AKALA_ISLAND",
+      "id": "MAPSEC_KILN_ISLE",
       "name": "KILN ISLE"
     },
     {
-      "id": "MAPSEC_ULAULA_ISLAND",
+      "id": "MAPSEC_GIANTS_REACH",
       "name": "GIANT'S REACH"
     },
     {
-      "id": "MAPSEC_PONI_ISLAND",
+      "id": "MAPSEC_WAKE_ISLE",
       "name": "WAKE ISLE"
     },
     {
-      "id": "MAPSEC_ALOLA_OCEAN",
+      "id": "MAPSEC_DAODAO_ISLES",
       "name": "DAODAO ISLES"
     },
     {
-      "id": "MAPSEC_AKALA_CAVE",
+      "id": "MAPSEC_SCORIA_CAVE",
       "name": "SCORIA CAVE"
     },
     {
-      "id": "MAPSEC_AKALA_FOREST",
+      "id": "MAPSEC_ETERNA_FOREST",
       "name": "ETERNA FOREST"
     },
     {
-      "id": "MAPSEC_PONI_CAVE",
+      "id": "MAPSEC_WAKE_CAVE",
       "name": "WAKE CAVE"
     },
     {
-      "id": "MAPSEC_ULAULA_CAVE",
-      "name": "MT. LANIKALA"
+      "id": "MAPSEC_SEAFROST_CAVE",
+      "name": "SEAFROST CAVE"
     },
     {
-      "id": "MAPSEC_ULAULA_CAVE_2",
+      "id": "MAPSEC_DEWDROP_HOLLOW",
       "name": "DEWDROP HOLLOW"
     },
     {

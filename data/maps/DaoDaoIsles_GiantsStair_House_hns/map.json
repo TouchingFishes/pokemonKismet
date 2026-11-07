@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_GiantsStair_House_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_GIANTS_STAIR_HOUSE_HNS",
   "music": "MUS_HG_VERMILION",
-  "region_map_section": "MAPSEC_ALOLA_OCEAN",
+  "region_map_section": "MAPSEC_DAODAO_ISLES",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

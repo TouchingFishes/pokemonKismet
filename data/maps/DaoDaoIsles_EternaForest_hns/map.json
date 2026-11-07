@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_EternaForest_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_ETERNA_FOREST_HNS",
   "music": "MUS_HG_VIRIDIAN_FOREST",
-  "region_map_section": "MAPSEC_AKALA_FOREST",
+  "region_map_section": "MAPSEC_ETERNA_FOREST",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_ROUTE",

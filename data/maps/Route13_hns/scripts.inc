@@ -331,7 +331,7 @@ Route13_TravelToAlola_13:
 	playse SE_M_SURF
 	applymovement LOCALID_ROUTE13_BOAT, Route13_TravelToAlola_Movement_2
 	setvar VAR_DAODAO_TRAVEL, 1
-	setflag FLAG_HIDE_ULAULA_TOTEM
+	setflag FLAG_HIDE_DAODAO_STAIR_TOTEM
 	setflag FLAG_HIDE_SAMSONOAK_INTRO
 	setflag FLAG_HIDE_PHANT_OUTSIDE
 	setflag FLAG_HIDE_PHANT_INSIDE

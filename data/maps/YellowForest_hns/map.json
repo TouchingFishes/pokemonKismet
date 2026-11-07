@@ -214,22 +214,29 @@
   ],
   "warp_events": [
     {
-      "x": 43,
-      "y": 71,
+      "x": 44,
+      "y": 72,
       "elevation": 0,
       "dest_map": "MAP_YELLOW_FOREST_GATE_HNS",
       "dest_warp_id": "1"
     },
     {
-      "x": 42,
-      "y": 71,
+      "x": 43,
+      "y": 69,
       "elevation": 0,
       "dest_map": "MAP_YELLOW_FOREST_GATE_HNS",
       "dest_warp_id": "1"
     },
     {
       "x": 44,
-      "y": 71,
+      "y": 69,
+      "elevation": 0,
+      "dest_map": "MAP_YELLOW_FOREST_GATE_HNS",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 45,
+      "y": 69,
       "elevation": 0,
       "dest_map": "MAP_YELLOW_FOREST_GATE_HNS",
       "dest_warp_id": "1"

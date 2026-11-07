@@ -3,7 +3,7 @@
   "name": "DaoDaoIsles_WakeIsle_hns",
   "layout": "LAYOUT_DAO_DAO_ISLES_WAKE_ISLE_HNS",
   "music": "MUS_SOOTOPOLIS",
-  "region_map_section": "MAPSEC_PONI_ISLAND",
+  "region_map_section": "MAPSEC_WAKE_ISLE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

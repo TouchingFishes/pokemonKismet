@@ -1282,6 +1282,7 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_DRAPION] = sDrapionTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_CROAGUNK
+    [SPECIES_CROAGUNK] = sCroagunkTeachableLearnset_Kismet,
     [SPECIES_TOXICROAK] = sToxicroakTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_FINNEON
@@ -1487,6 +1488,20 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_FLETCHINDER] = sFletchinderTeachableLearnset_Kismet,
     [SPECIES_TALONFLAME] = sTalonflameTeachableLearnset_Kismet,
 #endif
+#if P_FAMILY_FLABEBE
+    [SPECIES_FLABEBE] = sFlabebeTeachableLearnset_Kismet,
+    [SPECIES_FLABEBE_RED] = sFlabebeTeachableLearnset_Kismet,
+    [SPECIES_FLABEBE_YELLOW] = sFlabebeTeachableLearnset_Kismet,
+    [SPECIES_FLABEBE_ORANGE] = sFlabebeTeachableLearnset_Kismet,
+    [SPECIES_FLABEBE_BLUE] = sFlabebeTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLABEBE_WHITE] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE_RED] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE_YELLOW] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE_ORANGE] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE_BLUE] = sFloetteTeachableLearnset_Kismet,
+    [SPECIES_FLOETTE_WHITE] = sFloetteTeachableLearnset_Kismet,
+#endif
 #if P_FAMILY_PANCHAM
     [SPECIES_PANCHAM] = sPanchamTeachableLearnset_Kismet,
     [SPECIES_PANGORO] = sPangoroTeachableLearnset_Kismet,
@@ -1533,6 +1548,12 @@ const u16 *const gTeachableLearnsets_Kismet[NUM_SPECIES + 1] = {
     [SPECIES_BOUNSWEET] = sBounsweetTeachableLearnset_Kismet,
     [SPECIES_STEENEE] = sSteeneeTeachableLearnset_Kismet,
     [SPECIES_TSAREENA] = sTsareenaTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_ORANGURU
+    [SPECIES_ORANGURU] = sOranguruTeachableLearnset_Kismet,
+#endif
+#if P_FAMILY_PASSIMIAN
+    [SPECIES_PASSIMIAN] = sPassimianTeachableLearnset_Kismet,
 #endif
 #if P_FAMILY_MIMIKYU
     [SPECIES_MIMIKYU_DISGUISED] = sMimikyuDisguisedTeachableLearnset_Kismet,

@@ -13,6 +13,13 @@ CliffEdgeGate_EventScript_PathOpen:
 CliffEdgeGate_EventScript_Woman::
 	lock
 	faceplayer
+	goto_if_ge VAR_SAFARI_ZONE_GATE_STATE, 2, CliffEdgeGate_EventScript_WomanOpen
+	msgbox CliffEdgeGate_Text_IntroClosed, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CliffEdgeGate_EventScript_WomanOpen:
 	msgbox CliffEdgeGate_Text_IntroOpen, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -25,6 +32,14 @@ CliffEdgeGate_EventScript_Picnicker::
 	closemessage
 	release
 	end
+
+CliffEdgeGate_Text_IntroClosed:
+	.string "Did you know? They're building a\n"
+	.string "SAFARI ZONE just around the corner.\p"
+	.string "The path is closed until it's ready,\n"
+	.string "but I already can't wait!\p"
+	.string "There will be no reason not to go,\n"
+	.string "right? Just around the corner.$"
 
 CliffEdgeGate_Text_IntroOpen:
 	.string "Did you know? There's a SAFARI ZONE\n"
@@ -44,10 +59,23 @@ CliffEdgeGate_Text_Expectations:
 
 CliffEdgeGate_EventScript_CaveSign::
 	lock
+	goto_if_ge VAR_SAFARI_ZONE_GATE_STATE, 2, CliffEdgeGate_EventScript_CaveSignOpen
+	msgbox CliffEdgeGate_Text_SignClosed, MSGBOX_SIGN
+	closemessage
+	release
+	end
+
+CliffEdgeGate_EventScript_CaveSignOpen:
 	msgbox CliffEdgeGate_Text_SignOpen, MSGBOX_SIGN
 	closemessage
 	release
 	end
+
+CliffEdgeGate_Text_SignClosed:
+	.string "Everything Will Be Thrilling!\n"
+	.string "Explore to Find Wild POKéMON!\l"
+	.string "Warden BAOBA's SAFARI ZONE\l"
+	.string "Coming Soon!$"
 
 CliffEdgeGate_Text_SignOpen:
 	.string "Everything Is Thrilling!\n"
