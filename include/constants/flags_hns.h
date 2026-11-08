@@ -1172,7 +1172,7 @@
 #define FLAG_HIDDEN_ITEM_CERULEAN_CAPE_LOVE_BALL (HNS_EXTENDED_CONTENT_START + 256)
 #define FLAG_HIDDEN_ITEM_CERULEAN_CAPE_HEART_SCALE (HNS_EXTENDED_CONTENT_START + 257)
 #define FLAG_HIDDEN_ITEM_CERULEAN_CAPE_MAX_REVIVE (HNS_EXTENDED_CONTENT_START + 258)
-#define FLAG_EXTENDED_CONTENT_259                       (HNS_EXTENDED_CONTENT_START + 259) // freed 2026-10-08 (was FLAG_CAUGHT_ALL_MELEMELE; older saves may have it set)
+#define FLAG_HIDE_SEAFOAM_BEARTIC                       (HNS_EXTENDED_CONTENT_START + 259) // the totem on SEAFOAM B1F was beaten (§108; was FLAG_CAUGHT_ALL_MELEMELE, freed 2026-10-08)
 #define FLAG_BATTLED_PROBOPASS                          (HNS_EXTENDED_CONTENT_START + 260) // used for progression if battled probopass at all
 #define FLAG_BATTLED_KLAWF                              (HNS_EXTENDED_CONTENT_START + 261) // used for progression if battled klawf at all
 #define FLAG_BATTLED_MIMIKYU                            (HNS_EXTENDED_CONTENT_START + 262) // used for progression if battled mimikyu at all

@@ -14783,7 +14783,7 @@
     {
       "id": "LAYOUT_SEAFOAM_ISLANDS_B1F_HNS",
       "name": "SeafoamIslands_B1F_hns_Layout",
-      "width": 66,
+      "width": 74,
       "height": 56,
       "primary_tileset": "gTileset_Johto_General_Hns",
       "secondary_tileset": "gTileset_Cave_Ice_Hns",

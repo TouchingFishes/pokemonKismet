@@ -69,7 +69,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_DELIBIRD",
-      "x": 42,
+      "x": 50,
       "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -95,8 +95,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL_HNS",
-      "x": 29,
-      "y": 17,
+      "x": 28,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -105,12 +105,26 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SeafoamIslands_B1F_EventScript_Item_Ice_Beam",
       "flag": "FLAG_ITEM_SEAFOAM_ISLANDS_B4F_TM_ICE_BEAM"
+    },
+    {
+      "local_id": "LOCALID_SEAFOAM_BEARTIC",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BEARTIC)",
+      "x": 50,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SeafoamIslands_B1F_EventScript_Beartic",
+      "flag": "FLAG_HIDE_SEAFOAM_BEARTIC"
     }
   ],
   "warp_events": [
     {
-      "x": 29,
-      "y": 15,
+      "x": 37,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_SEAFOAM_ISLANDS_1F_HNS",
       "dest_warp_id": "2"
@@ -123,7 +137,7 @@
       "dest_warp_id": "4"
     },
     {
-      "x": 38,
+      "x": 35,
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_SEAFOAM_ISLANDS_1F_HNS",
@@ -170,7 +184,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 36,
+      "x": 33,
       "y": 23,
       "elevation": 0,
       "item": "ITEM_GRIP_CLAW",
