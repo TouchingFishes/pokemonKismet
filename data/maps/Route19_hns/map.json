@@ -195,7 +195,7 @@
       "flag": "FLAG_DEFEATED_CINNABAR_ISLAND_GYM"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_WINGULL",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_QUAGSIRE",
       "x": 51,
       "y": 59,
       "elevation": 0,
@@ -325,7 +325,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_RUFFLET",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MANTINE",
       "x": 2,
       "y": 58,
       "elevation": 0,

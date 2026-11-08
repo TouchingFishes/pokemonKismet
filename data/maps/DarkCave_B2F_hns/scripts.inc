@@ -12,3 +12,7 @@ DarkCave_B2F_Text_Sage:
 	.string "MT. MOON can keep them at bay.\p"
 	.string "Come back when it travels\n"
 	.string "with you.$"
+
+DarkCave_B2F_EventScript_Item_DuskStone::
+	finditem ITEM_DUSK_STONE
+	end

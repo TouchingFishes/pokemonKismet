@@ -931,7 +931,7 @@
 #define FLAG_NEWSINJOH_HOTSPRINGS_HIDDEN_ITEM1                     (HNS_EXTENDED_CONTENT_START + 37)
 
 #define FLAG_ITEM_ROUTE30_TM_DRAIN_PUNCH            (HNS_EXTENDED_CONTENT_START + 38)
-#define FLAG_UNUSED_EXTENDED_39                     (HNS_EXTENDED_CONTENT_START + 39)
+#define FLAG_HIDDEN_ITEM_DARK_CAVE_B1F_STAR_PIECE   (HNS_EXTENDED_CONTENT_START + 39) // §110, Dark Cave (never set before: was FLAG_UNUSED_EXTENDED_39)
 
 #define FLAG_ROUTE50_HIDDENITEM_1                     (HNS_EXTENDED_CONTENT_START + 40)
 #define FLAG_ROUTE50_ITEMBALL_1                     (HNS_EXTENDED_CONTENT_START + 41)
@@ -994,17 +994,17 @@
 // The post-game MARSHADOW in the FOXFIRE HOLLOW Mansion's B1F study, once caught. Knocked out or
 // run from, it is back in the master's chair on the next visit.
 #define FLAG_CAUGHT_FOXFIRE_MANSION_MARSHADOW       (HNS_EXTENDED_CONTENT_START + 88)
-#define FLAG_UNUSED_EXTENDED_89                     (HNS_EXTENDED_CONTENT_START + 89)
-#define FLAG_UNUSED_EXTENDED_90                     (HNS_EXTENDED_CONTENT_START + 90)
+#define FLAG_HIDDEN_ITEM_DARK_CAVE_B2F_RARE_BONE    (HNS_EXTENDED_CONTENT_START + 89) // §110, Dark Cave (never set before: was FLAG_UNUSED_EXTENDED_89)
+#define FLAG_HIDDEN_ITEM_DARK_CAVE_B1F_BIG_PEARL    (HNS_EXTENDED_CONTENT_START + 90) // §110, Dark Cave (never set before: was FLAG_UNUSED_EXTENDED_90)
 #define FLAG_ITEM_GOLDENROD_HARBOR_STAR_PIECE       (HNS_EXTENDED_CONTENT_START + 91)
 #define FLAG_HIDDEN_ITEM_GOLDENROD_HARBOR_REVIVE    (HNS_EXTENDED_CONTENT_START + 92)
 #define FLAG_ITEM_CHALLENGERS_CAVE_1F_PP_MAX        (HNS_EXTENDED_CONTENT_START + 93) // was FLAG_UNUSED_EXTENDED_93, never set
 #define FLAG_ITEM_CHALLENGERS_CAVE_1F_MAX_REVIVE    (HNS_EXTENDED_CONTENT_START + 94) // was FLAG_UNUSED_EXTENDED_94, never set
 #define FLAG_ITEM_CHALLENGERS_CAVE_B3F_KINGS_ROCK   (HNS_EXTENDED_CONTENT_START + 95) // was FLAG_UNUSED_EXTENDED_95, never set
 #define FLAG_ITEM_CHALLENGERS_CAVE_1F_HEART_SCALE   (HNS_EXTENDED_CONTENT_START + 96) // was FLAG_UNUSED_EXTENDED_96, never set
-#define FLAG_UNUSED_EXTENDED_97                     (HNS_EXTENDED_CONTENT_START + 97)
-#define FLAG_UNUSED_EXTENDED_98                     (HNS_EXTENDED_CONTENT_START + 98)
-#define FLAG_UNUSED_EXTENDED_99                    (HNS_EXTENDED_CONTENT_START + 99)
+#define FLAG_ITEM_DARK_CAVE_B2F_DUSK_STONE          (HNS_EXTENDED_CONTENT_START + 97) // §110, Dark Cave (never set before: was FLAG_UNUSED_EXTENDED_97)
+#define FLAG_ITEM_DARK_CAVE_B1F_DUSK_BALL           (HNS_EXTENDED_CONTENT_START + 98) // §110, Dark Cave (never set before: was FLAG_UNUSED_EXTENDED_98)
+#define FLAG_ITEM_DARK_CAVE_B1F_EVERSTONE           (HNS_EXTENDED_CONTENT_START + 99) // §110, Dark Cave (never set before: was FLAG_UNUSED_EXTENDED_99)
 
 #define FLAG_HIDE_AZALEA_TOWN_TAILED_SLOWPOKES                   (HNS_EXTENDED_CONTENT_START + 100)
 #define FLAG_EXTENDED_CONTENT_SET_101                   (HNS_EXTENDED_CONTENT_START + 101)
@@ -1527,22 +1527,24 @@
 // file only in the sense that the object starts hidden - the scene clears it,
 // then sets it again on the way out.
 #define FLAG_HIDE_FUCHSIA_STEVEN                    (HNS_EXTENDED_CONTENT_START + 398)
+// §110: a hidden REVIVE in DARK CAVE B1F, the first of the 0x4F9-0x4FF tail.
+#define FLAG_HIDDEN_ITEM_DARK_CAVE_B1F_REVIVE       (HNS_EXTENDED_CONTENT_START + 399)
 
 
 //just fyi HNS_EXTENDED_CONTENT_START is 0x36A
 // Grown from 324 to 338 by the Fuchsia Federation arc and from 338 to 395 by the
 // DaoDao lab and Regi arcs, into the 0x4A6-0x4FF window this block was always
 // meant to reach (see the note at HNS_UNUSED_COUNT).
-// END is now 0x4F4; TRAINER_FLAGS_START is 0x500, so 0x4F5-0x4FF is still free.
+// END is now 0x4F9; TRAINER_FLAGS_START is 0x500, so 0x4FA-0x4FF is still free.
 // Figures verified through the preprocessor, not by hand: the note that stood
 // here said END was 0x4B1 when it was really 0x4B9. START 0x36A + COUNT 395 - 1.
 //
 // COUNT is documentation - nothing reads it or END - but it fell 18 behind while
 // the two arcs above were being written, which is exactly how the next person
 // allocates on top of a live flag. Bump it with every block you add.
-#define HNS_EXTENDED_CONTENT_COUNT                  399
+#define HNS_EXTENDED_CONTENT_COUNT                  400
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)
-// 0x4F5–0x4FF remaining reserved for future expansion
+// 0x4FA–0x4FF remaining reserved for future expansion
 
 // Trainer registered (match call) flags — one per rematchable trainer
 #define TRAINER_REGISTERED_FLAGS_START               0x310

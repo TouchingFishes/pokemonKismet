@@ -64,3 +64,32 @@ PokefanM_Text_AllanAfter:
 	.string "Isn't it cute enough to make\n"
 	.string "your heart melt?$"
 
+Route6_EventScript_Slowbro::
+	lock
+	msgbox Route6_Text_SlowbroGazing, MSGBOX_DEFAULT
+	closemessage
+	delay 60
+	faceplayer
+	delay 30
+	applymovement VAR_LAST_TALKED, Common_Movement_QuestionMark
+	waitmovement 0
+	playmoncry SPECIES_SLOWBRO, CRY_MODE_NORMAL
+	msgbox Route6_Text_SlowbroCry, MSGBOX_DEFAULT
+	waitmoncry
+	playse SE_M_BITE
+	msgbox Route6_Text_SlowbroShellder, MSGBOX_DEFAULT
+	release
+	end
+
+Route6_Text_SlowbroGazing:
+	.string "SLOWBRO is gazing at nothing in\n"
+	.string "particular...\p"
+	.string "...$"
+
+Route6_Text_SlowbroCry:
+	.string "SLOWBRO: Sloooow...bro?$"
+
+Route6_Text_SlowbroShellder:
+	.string "The SHELLDER on its tail bit down\n"
+	.string "hard!\p"
+	.string "SLOWBRO didn't notice.$"
