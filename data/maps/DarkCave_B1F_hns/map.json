@@ -40,8 +40,8 @@
       "x": 16,
       "y": 16,
       "elevation": 0,
-      "dest_map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_DARK_CAVE_B2F_HNS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

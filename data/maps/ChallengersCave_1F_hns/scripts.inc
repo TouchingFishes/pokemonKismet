@@ -116,3 +116,53 @@ ChallengersCave_1F_Text_HelenaAfter:
 	.string "Experience guides me forward.\p"
 	.string "Keep training! Your journey\n"
 	.string "continues!$"
+
+ChallengersCave_1F_EventScript_ItemPPMax::
+	finditem ITEM_PP_MAX
+	end
+
+ChallengersCave_1F_EventScript_ItemMaxRevive::
+	finditem ITEM_MAX_REVIVE
+	end
+
+ChallengersCave_1F_EventScript_ItemHeartScale::
+	finditem ITEM_HEART_SCALE
+	end
+
+ChallengersCave_1F_EventScript_Gramps::
+	lock
+	faceplayer
+	msgbox ChallengersCave_1F_Text_GrampsWelcome, MSGBOX_DEFAULT
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	msgbox ChallengersCave_1F_Text_GrampsHealed, MSGBOX_DEFAULT
+	release
+	end
+
+ChallengersCave_1F_EventScript_Slaking::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SLAKING, CRY_MODE_NORMAL
+	msgbox ChallengersCave_1F_Text_Slaking, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+ChallengersCave_1F_Text_GrampsWelcome:
+	.string "Well, well! Not many find their\n"
+	.string "way to this little hollow.\p"
+	.string "To come this far through CHALLENGERS\n"
+	.string "CAVE takes real grit.\p"
+	.string "You and your POKéMON should be\n"
+	.string "proud. Let us patch you up.$"
+
+ChallengersCave_1F_Text_GrampsHealed:
+	.string "There, all better!\p"
+	.string "SLAKING and I will be right here\n"
+	.string "whenever you need a rest.$"
+
+ChallengersCave_1F_Text_Slaking:
+	.string "SLAKING: Slaaa…\p"
+	.string "It's sprawled out on the floor, but\n"
+	.string "it opened one eye to watch you.$"
