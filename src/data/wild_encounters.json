@@ -52829,12 +52829,12 @@
               {
                 "min_level": 46,
                 "max_level": 50,
-                "species": "SPECIES_MAROWAK"
+                "species": "SPECIES_SKARMORY"
               },
               {
                 "min_level": 46,
                 "max_level": 50,
-                "species": "SPECIES_PRIMEAPE"
+                "species": "SPECIES_MAROWAK"
               },
               {
                 "min_level": 46,
@@ -52844,22 +52844,22 @@
               {
                 "min_level": 46,
                 "max_level": 50,
-                "species": "SPECIES_NIDORINA"
+                "species": "SPECIES_LARVICID"
               },
               {
                 "min_level": 46,
                 "max_level": 50,
-                "species": "SPECIES_NIDORINO"
-              },
-              {
-                "min_level": 47,
-                "max_level": 51,
-                "species": "SPECIES_MAROWAK"
+                "species": "SPECIES_GLIGAR"
               },
               {
                 "min_level": 47,
                 "max_level": 51,
                 "species": "SPECIES_PRIMEAPE"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_GLIGAR"
               },
               {
                 "min_level": 47,
@@ -53013,7 +53013,7 @@
               {
                 "min_level": 46,
                 "max_level": 50,
-                "species": "SPECIES_VENOMOTH"
+                "species": "SPECIES_SKARMORY"
               },
               {
                 "min_level": 46,
@@ -53028,7 +53028,7 @@
               {
                 "min_level": 46,
                 "max_level": 50,
-                "species": "SPECIES_ARON"
+                "species": "SPECIES_LARVICID"
               },
               {
                 "min_level": 47,
@@ -53038,7 +53038,7 @@
               {
                 "min_level": 47,
                 "max_level": 51,
-                "species": "SPECIES_VENOMOTH"
+                "species": "SPECIES_GLIGAR"
               },
               {
                 "min_level": 47,
@@ -53048,7 +53048,7 @@
               {
                 "min_level": 47,
                 "max_level": 51,
-                "species": "SPECIES_VENOMOTH"
+                "species": "SPECIES_GLIGAR"
               }
             ]
           },
@@ -53187,12 +53187,12 @@
               {
                 "min_level": 49,
                 "max_level": 53,
-                "species": "SPECIES_FEAROW"
+                "species": "SPECIES_ARON"
               },
               {
                 "min_level": 50,
                 "max_level": 54,
-                "species": "SPECIES_ELECTRODE"
+                "species": "SPECIES_SKARMORY"
               },
               {
                 "min_level": 49,
@@ -53207,12 +53207,12 @@
               {
                 "min_level": 49,
                 "max_level": 53,
-                "species": "SPECIES_ELECTRIKE"
+                "species": "SPECIES_MANECTRIC"
               },
               {
                 "min_level": 49,
                 "max_level": 53,
-                "species": "SPECIES_MAGNETON"
+                "species": "SPECIES_LARVICID"
               },
               {
                 "min_level": 50,
@@ -53361,7 +53361,7 @@
               {
                 "min_level": 49,
                 "max_level": 53,
-                "species": "SPECIES_VENOMOTH"
+                "species": "SPECIES_FEAROW"
               },
               {
                 "min_level": 50,
@@ -53371,12 +53371,12 @@
               {
                 "min_level": 49,
                 "max_level": 53,
-                "species": "SPECIES_VENOMOTH"
+                "species": "SPECIES_ARON"
               },
               {
                 "min_level": 50,
                 "max_level": 54,
-                "species": "SPECIES_ELECTRODE"
+                "species": "SPECIES_SKARMORY"
               },
               {
                 "min_level": 49,
@@ -53396,7 +53396,7 @@
               {
                 "min_level": 49,
                 "max_level": 53,
-                "species": "SPECIES_MAGNETON"
+                "species": "SPECIES_LARVICID"
               },
               {
                 "min_level": 50,
@@ -56332,7 +56332,7 @@
               {
                 "min_level": 45,
                 "max_level": 49,
-                "species": "SPECIES_GRIMER"
+                "species": "SPECIES_MAGNETON"
               },
               {
                 "min_level": 45,
@@ -56357,7 +56357,7 @@
               {
                 "min_level": 46,
                 "max_level": 50,
-                "species": "SPECIES_LARVICID"
+                "species": "SPECIES_MUK"
               },
               {
                 "min_level": 46,
@@ -56486,7 +56486,7 @@
               {
                 "min_level": 45,
                 "max_level": 49,
-                "species": "SPECIES_GRIMER"
+                "species": "SPECIES_MAGNETON"
               },
               {
                 "min_level": 45,
@@ -56511,7 +56511,7 @@
               {
                 "min_level": 46,
                 "max_level": 50,
-                "species": "SPECIES_LARVICID"
+                "species": "SPECIES_MUK"
               },
               {
                 "min_level": 46,
@@ -56635,11 +56635,11 @@
               {
                 "min_level": 46,
                 "max_level": 50,
-                "species": "SPECIES_FEAROW"
+                "species": "SPECIES_RATICATE"
               },
               {
-                "min_level": 48,
-                "max_level": 52,
+                "min_level": 44,
+                "max_level": 48,
                 "species": "SPECIES_DODUO"
               },
               {
@@ -56650,17 +56650,17 @@
               {
                 "min_level": 48,
                 "max_level": 52,
-                "species": "SPECIES_DODUO"
-              },
-              {
-                "min_level": 46,
-                "max_level": 50,
                 "species": "SPECIES_FEAROW"
               },
               {
                 "min_level": 46,
                 "max_level": 50,
-                "species": "SPECIES_FEAROW"
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 46,
+                "max_level": 50,
+                "species": "SPECIES_DODRIO"
               },
               {
                 "min_level": 47,
@@ -56675,22 +56675,22 @@
               {
                 "min_level": 47,
                 "max_level": 51,
-                "species": "SPECIES_LARVICID"
+                "species": "SPECIES_MAGNETON"
               },
               {
                 "min_level": 47,
                 "max_level": 51,
-                "species": "SPECIES_MUK"
+                "species": "SPECIES_WEEZING"
               },
               {
                 "min_level": 48,
                 "max_level": 52,
-                "species": "SPECIES_MUK"
+                "species": "SPECIES_MAGNETON"
               },
               {
                 "min_level": 48,
                 "max_level": 52,
-                "species": "SPECIES_MUK"
+                "species": "SPECIES_WEEZING"
               }
             ]
           },
@@ -56804,6 +56804,21 @@
               {
                 "min_level": 48,
                 "max_level": 52,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_MURKROW"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
                 "species": "SPECIES_NOCTOWL"
               },
               {
@@ -56819,32 +56834,17 @@
               {
                 "min_level": 47,
                 "max_level": 51,
-                "species": "SPECIES_VENOMOTH"
+                "species": "SPECIES_WEEZING"
               },
               {
-                "min_level": 47,
-                "max_level": 51,
-                "species": "SPECIES_GASTLY"
-              },
-              {
-                "min_level": 47,
-                "max_level": 51,
+                "min_level": 48,
+                "max_level": 52,
                 "species": "SPECIES_MURKROW"
               },
               {
-                "min_level": 47,
-                "max_level": 51,
-                "species": "SPECIES_HAUNTER"
-              },
-              {
                 "min_level": 48,
                 "max_level": 52,
-                "species": "SPECIES_MUK"
-              },
-              {
-                "min_level": 48,
-                "max_level": 52,
-                "species": "SPECIES_MUK"
+                "species": "SPECIES_WEEZING"
               }
             ]
           },
